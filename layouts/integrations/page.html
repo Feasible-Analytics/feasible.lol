@@ -1,0 +1,41 @@
+{{/*
+  integrations/page.html
+  Install instructions for one platform.
+
+  Created: 2026-09-03
+  Copyright (c) 2026 Cloudmanic Labs, LLC. All rights reserved.
+*/}}
+{{ define "main" }}
+  <article class="shell pt-12 sm:pt-16">
+    {{ partial "breadcrumb.html" . }}
+    <header class="max-w-[46rem]">
+      <p class="kicker mb-4">Install guide</p>
+      <h1 class="optical-l font-display text-[2rem] font-extrabold leading-[1.08] tracking-tight sm:text-[2.75rem]">
+        {{ .Title }}
+      </h1>
+      {{ with .Params.lede }}
+        <p class="mt-5 text-lg leading-relaxed text-neutral-700">{{ . | markdownify }}</p>
+      {{ end }}
+    </header>
+
+    <hr class="rule my-8" />
+
+    <div class="copy max-w-[44rem]">{{ .Content }}</div>
+
+    {{ $others := first 6 (where (where .Site.RegularPages "Section" "integrations") "Permalink" "!=" .Permalink) }}
+    {{ with $others }}
+      <div class="mt-14 max-w-[44rem] border-t-2 border-rule pt-6">
+        <h2 class="font-display text-xs font-extrabold uppercase tracking-[0.08em] text-neutral-700">
+          Other platforms
+        </h2>
+        <ul class="mt-4 grid gap-2.5 sm:grid-cols-2">
+          {{ range . }}
+            <li><a href="{{ .RelPermalink }}" class="font-medium text-neutral-800 hover:text-flag">{{ .Params.platform | default .Title }}</a></li>
+          {{ end }}
+        </ul>
+      </div>
+    {{ end }}
+  </article>
+
+  {{ partial "cta.html" (dict "site" .Site "line1" "Five minutes." "line2" "That's the whole setup.") }}
+{{ end }}

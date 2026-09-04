@@ -1,0 +1,141 @@
+---
+title: "Feasible vs Fathom"
+seotitle: "Feasible vs Fathom Analytics — Price, Limits, Features"
+description: "Fathom's smallest plan is $150 a year and starts at 100,000 pageviews. Feasible is $99 for ten times that. Prices, limits and where Fathom wins."
+lede: "Fathom's smallest plan is bigger than most sites need. Here's what that costs, and the two things they do that we can't."
+versus: "Fathom"
+checked: 2026-09-03
+weight: 30
+verdict: |
+  If your visitors are in Europe and you want their data to stay there, Fathom's
+  EU isolation is free on every plan and we have no equivalent — that alone can
+  decide it. If you're a small site paying their 100,000-pageview minimum, or a
+  big one paying $600 a year, or you want the source code, we're the cheaper and
+  more open answer.
+---
+
+Fathom has been doing privacy-friendly analytics since 2018 and has the scars to
+prove it. Their EU isolation work is real engineering that most of this market
+hasn't bothered with. Start there, because it's the reason to buy theirs.
+
+Now the prices.
+
+## The price, at every volume
+
+From [Fathom's pricing page](https://usefathom.com/pricing), read September 3,
+2026. Annual is ten times monthly.
+
+| Pageviews / month | Fathom | Feasible |
+|---|---:|---:|
+| 10,000 | $150 | **$99** |
+| 100,000 | $150 | **$99** |
+| 500,000 | $450 | **$99** |
+| 1,000,000 | $600 | **$99** |
+| 5,000,000 | $1,400 | Talk to us |
+| 10,000,000 | $2,000 | Talk to us |
+
+Annual USD, list price, before tax.
+
+**Fathom has no plan below 100,000 pageviews a month.** That's the line worth
+noticing. A blog doing 5,000 pageviews pays the same $150 a year as a site doing
+twenty times its traffic. If you're small, you're buying a plan sized for
+somebody else.
+
+At a million pageviews a month it's $600 against $99. Six times.
+
+## Custom events count as pageviews
+
+Fathom is direct about this, which we appreciate. From their pricing FAQ:
+
+> "If you decide to use our custom event tracking system on your website or use
+> our API, those requests will be counted as if they were pageviews."
+
+Feasible counts pageviews only. Custom events, custom properties, goal
+conversions and the engagement pings behind scroll depth and time on page don't
+count against the million.
+
+Say you run a SaaS marketing site at 90,000 pageviews a month and you track
+signups, trial starts, plan changes and doc searches — 20,000 events. On
+Fathom's meter that's 110,000, and you've crossed into the 200,000 tier at $250
+a year. On ours it's 90,000, and it was never going to matter anyway.
+
+The more you instrument, the wider that gap gets. Which is a strange incentive
+to put on an analytics product.
+
+## Side by side
+
+| | Feasible | Fathom |
+|---|---|---|
+| Smallest plan | $99/yr, any traffic | $150/yr, 100k pageviews |
+| At 1M pageviews/mo | $99/yr | $600/yr |
+| Billing unit | Pageviews | Pageviews + custom events |
+| Sites | Unlimited | 50 included, 75 at the 1M tier |
+| Extra sites | n/a | $100/yr per pack of 50 |
+| Team members | Unlimited, 5 roles + guests | Not published on the pricing page |
+| Retention | 5 years | "Forever," while you're a customer |
+| API | Yes, 10,000 req/hr | Yes, 600 req/hr |
+| Funnels | Yes | No |
+| Custom properties | Yes | No |
+| Webhooks | Yes | No |
+| MCP server | Built in | No |
+| Dropped-event log with reasons | Yes | No |
+| Self-hosting | Yes, the same build we run | No |
+| Source code | AGPL-3.0-or-later | Closed |
+| EU data isolation | **No** | Yes, free on every plan |
+| Cookies on visitors | None | None |
+| Session replay, heatmaps, A/B tests | No | No |
+| SSO | No | Not published |
+| Mobile SDKs | No | No |
+| Trial | 30 days, no card | 7 days |
+
+## The open-source difference, stated carefully
+
+Fathom's hosted product is closed source. That's a business model, not a flaw —
+plenty of good software is closed.
+
+But it does mean there's no version of Fathom you can run yourself if they ever
+stop, get acquired, or price you out. "Fathom Lite" on GitHub is MIT-licensed
+and still up, and Fathom says they'll keep fixing bugs in it, but it has had **no
+code changes since January 2023**, and it uses cookies — the hosted product
+doesn't. It isn't the product.
+
+Feasible is AGPL-3.0-or-later, and the build we host is the build you can run.
+There's no cut-down edition and no feature held back for the paid plan. One Go
+binary, one SQLite file, 512 MB of RAM. If we disappear, you keep running it.
+That's the point of it being there — see [open source](/open-source/) for the
+whole argument, including what AGPL actually asks of you.
+
+## Where Fathom wins
+
+**EU isolation, free on every plan.** European visitors' pageviews are routed to
+EU servers, and Fathom says the IP address is stripped inside the EU and never
+reaches their US infrastructure. We don't have this. Cloudmanic Labs is in
+Oregon; our transfers run on standard contractual clauses through our DPA. If
+your legal team wants EU processing, Fathom answers that and we don't.
+
+**"Forever" retention.** While you're a customer, your full history stays
+available. Ours is five years. Theirs is better.
+
+**A longer track record.** Years more production time, a large paying customer
+base, and a company that has publicly worked through the compliance questions in
+detail. If you want the boring, proven option in this category, that's a real
+argument.
+
+**Their script is smaller than ours.** Measured the same day with `gzip -9`:
+Fathom 2,092 bytes, Feasible 3,377. They win it.
+
+**Their over-limit policy is good.** They don't switch your analytics off over a
+traffic spike. Neither do we — we email you, and nothing stops mid-month. We're
+not claiming an edge here; both approaches are humane.
+
+## Where we'd tell you to pick us
+
+You're small and you don't want to pay a 100,000-pageview minimum. You're large
+and $600 a year for counting pageviews looks like a lot. You run more sites than
+a pack of 50. You want funnels, custom properties and webhooks. You want the
+source.
+
+That's it. It's not a long list, and it's mostly about the bill.
+
+More: [the whole price ladder](/compare/pricing/) across every vendor, or
+[what Feasible does](/features/) with the gaps listed.

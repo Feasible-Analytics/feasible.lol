@@ -1,0 +1,193 @@
+{{/*
+  help/section.html
+  The FAQ index. Every question on one page, grouped by category, with a
+  client-side filter over the whole set.
+
+  Categories are declared once in content/help/_index.md so a new answer only
+  has to name one in its front matter.
+
+  Created: 2026-09-03
+  Copyright (c) 2026 Cloudmanic Labs, LLC. All rights reserved.
+*/}}
+{{ define "main" }}
+  {{ $all := .RegularPages }}
+  {{ $cats := .Params.categories }}
+
+  <section class="shell pt-12 sm:pt-16">
+    {{ partial "breadcrumb.html" . }}
+
+    <header class="max-w-[46rem]">
+      <p class="kicker mb-4">Help</p>
+      <h1
+        class="optical-l font-display text-[2.25rem] font-extrabold leading-[1.06] tracking-tight sm:text-[3rem]"
+      >
+        {{ .Title }}
+      </h1>
+      {{ with .Params.lede }}
+        <p class="mt-5 text-lg leading-relaxed text-neutral-700">
+          {{ . | markdownify }}
+        </p>
+      {{ end }}
+
+      <div class="mt-8">
+        <label for="help-filter" class="sr-only">Filter questions</label>
+        <input
+          type="search"
+          id="help-filter"
+          placeholder="Type a word — cookies, import, funnels…"
+          autocomplete="off"
+          class="w-full border-2 border-rule bg-surface px-4 py-3 text-base placeholder:text-neutral-600 focus-visible:border-flag focus-visible:outline-none"
+        />
+        <p
+          id="help-count"
+          class="mt-2 text-sm text-neutral-700"
+          role="status"
+          aria-live="polite"
+        >
+          {{ len $all }} questions, all on this page.
+        </p>
+      </div>
+    </header>
+
+    <hr class="rule my-10" />
+
+    <nav
+      aria-label="Categories"
+      data-help-nav
+      class="mb-12 flex flex-wrap gap-x-6 gap-y-2"
+    >
+      {{- range $cats -}}
+        {{- $slug := .slug -}}
+        {{- if where $all "Params.category" $slug }}
+          <a
+            href="#{{ $slug }}"
+            class="font-display text-sm font-extrabold text-neutral-800 hover:text-flag"
+            >{{ .name }}</a
+          >
+        {{- end -}}
+      {{- end }}
+    </nav>
+
+    <div id="help-groups">
+      {{- range $cats -}}
+        {{- $slug := .slug -}}
+        {{- $name := .name -}}
+        {{- $blurb := .blurb -}}
+        {{- $questions := where $all "Params.category" $slug -}}
+        {{- if $questions }}
+          <section
+            id="{{ $slug }}"
+            data-help-group
+            class="mb-14 scroll-mt-28"
+          >
+            <h2 class="font-display text-2xl font-extrabold tracking-tight">
+              {{ $name }}
+            </h2>
+            {{- with $blurb }}
+              <p class="mt-2 max-w-[56ch] leading-relaxed text-neutral-700">
+                {{ . }}
+              </p>
+            {{- end }}
+            <ul class="mt-6 border-t-2 border-rule">
+              {{- range $questions.ByWeight }}
+                <li class="border-b border-rule-soft" data-help-item>
+                  <a
+                    href="{{ .RelPermalink }}"
+                    class="group flex items-baseline gap-4 py-3.5"
+                  >
+                    <span
+                      class="font-medium text-neutral-800 group-hover:text-flag"
+                      data-help-text
+                      >{{ .Title }}</span
+                    >
+                    <span
+                      class="ml-auto shrink-0 text-flag opacity-0 transition-opacity group-hover:opacity-100"
+                      aria-hidden="true"
+                      >→</span
+                    >
+                  </a>
+                </li>
+              {{- end }}
+            </ul>
+          </section>
+        {{- end -}}
+      {{- end }}
+      <p id="help-empty" hidden class="py-8 text-neutral-700">
+        Nothing matches that.
+        <a href="mailto:{{ .Site.Params.email }}" class="text-flag-700 underline"
+          >Ask us instead</a
+        >
+        — a real person answers, and the good questions end up on this page.
+      </p>
+    </div>
+
+    <div class="border-2 border-ink p-7 sm:p-9">
+      <h2 class="font-display text-xl font-extrabold">Still stuck?</h2>
+      <p class="mt-2 max-w-[54ch] leading-relaxed text-neutral-700">
+        Email us. We read everything, we answer in a day or two, and there's no
+        ticket number.
+      </p>
+      <a
+        href="mailto:{{ .Site.Params.email }}"
+        class="btn btn-secondary mt-5"
+        >{{ .Site.Params.email }}</a
+      >
+    </div>
+  </section>
+
+  <script>
+    // Filter the question list in place. Everything is already on the page, so
+    // this is a substring match over the rendered titles — no index to fetch
+    // and nothing to keep in sync.
+    (function () {
+      var input = document.getElementById("help-filter");
+      var count = document.getElementById("help-count");
+      var empty = document.getElementById("help-empty");
+      var nav = document.querySelector("[data-help-nav]");
+      if (!input) return;
+
+      var items = Array.prototype.map.call(
+        document.querySelectorAll("[data-help-item]"),
+        function (li) {
+          var text = li.querySelector("[data-help-text]");
+          return { el: li, text: (text ? text.textContent : "").toLowerCase() };
+        }
+      );
+      var groups = document.querySelectorAll("[data-help-group]");
+      var total = items.length;
+
+      function apply() {
+        var q = input.value.trim().toLowerCase();
+        var shown = 0;
+
+        items.forEach(function (item) {
+          var hit = !q || item.text.indexOf(q) !== -1;
+          item.el.hidden = !hit;
+          if (hit) shown++;
+        });
+
+        // A group with nothing left in it is noise, not context.
+        groups.forEach(function (group) {
+          var any = group.querySelector("[data-help-item]:not([hidden])");
+          group.hidden = !any;
+        });
+
+        if (nav) nav.hidden = !!q;
+        if (empty) empty.hidden = shown !== 0;
+        count.textContent = q
+          ? shown + (shown === 1 ? " question matches." : " questions match.")
+          : total + " questions, all on this page.";
+      }
+
+      input.addEventListener("input", apply);
+      // Escape clears rather than closing the page, which is what a search box
+      // does everywhere else.
+      input.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") {
+          input.value = "";
+          apply();
+        }
+      });
+    })();
+  </script>
+{{ end }}

@@ -1,0 +1,52 @@
+{{/*
+  compare/section.html
+  The comparison index.
+
+  Created: 2026-09-03
+  Copyright (c) 2026 Cloudmanic Labs, LLC. All rights reserved.
+*/}}
+{{ define "main" }}
+  <section class="shell pt-12 sm:pt-16">
+    {{ partial "breadcrumb.html" . }}
+    <header class="max-w-[48rem]">
+      <p class="kicker mb-4">Comparisons</p>
+      <h1 class="optical-l font-display text-[2.25rem] font-extrabold leading-[1.06] tracking-tight sm:text-[3rem]">
+        {{ .Title }}
+      </h1>
+      {{ with .Params.lede }}
+        <p class="mt-5 text-lg leading-relaxed text-neutral-700">{{ . | markdownify }}</p>
+      {{ end }}
+    </header>
+
+    <div class="mt-8 max-w-[48rem] border-2 border-ink p-6">
+      <p class="leading-relaxed">
+        <strong class="font-display font-extrabold">We make one of these.</strong>
+        Every page below compares somebody else's product to ours, using their
+        own published prices and pages, with the date we checked them. Where
+        they're the better pick, we say so.
+      </p>
+    </div>
+
+    {{ with .Content }}<div class="copy mt-8 max-w-[44rem]">{{ . }}</div>{{ end }}
+
+    <hr class="rule my-10" />
+
+    <ul class="grid gap-x-12 gap-y-8 sm:grid-cols-2">
+      {{ range .RegularPages.ByWeight }}
+        <li class="border-t-2 border-rule pt-5">
+          <h2 class="font-display text-lg font-extrabold leading-snug">
+            <a href="{{ .RelPermalink }}" class="hover:text-flag">{{ .Title }}</a>
+          </h2>
+          {{ with .Params.description }}
+            <p class="mt-2 leading-relaxed text-neutral-700">{{ . }}</p>
+          {{ end }}
+          {{ with .Params.checked }}
+            <p class="mt-2 text-sm text-neutral-600">Checked {{ dateFormat "January 2, 2006" . }}</p>
+          {{ end }}
+        </li>
+      {{ end }}
+    </ul>
+  </section>
+
+  {{ partial "cta.html" (dict "site" .Site "line1" "Try it for a month." "line2" "Then decide.") }}
+{{ end }}

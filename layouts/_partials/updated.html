@@ -6,6 +6,12 @@
   Created: 2026-09-03
   Copyright (c) 2026 Cloudmanic Labs, LLC. All rights reserved.
 */}}
+{{- with .Params.updated }}
+  <p class="mt-12 border-t-2 border-rule pt-4 text-sm text-neutral-700">
+    Last updated {{ dateFormat "January 2, 2006" . }}. We'll say here when it
+    changes.
+  </p>
+{{- end }}
 {{- with .Params.checked }}
   <p class="mt-12 border-t-2 border-rule pt-4 text-sm text-neutral-700">
     Prices and features on this page were checked on

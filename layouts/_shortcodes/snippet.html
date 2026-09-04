@@ -1,0 +1,10 @@
+{{/*
+  snippet.html (shortcode)
+  The tracking snippet, rendered from one place so a change to the script path
+  or the domain placeholder never has to be found in twenty content files.
+
+  Created: 2026-09-03
+  Copyright (c) 2026 Cloudmanic Labs, LLC. All rights reserved.
+*/}}
+{{- $domain := .Get "domain" | default "yourdomain.com" -}}
+<pre><code>&lt;script defer data-domain="{{ $domain }}" src="{{ site.Params.appURL }}/js/script.js"&gt;&lt;/script&gt;</code></pre>

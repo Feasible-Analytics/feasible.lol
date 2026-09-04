@@ -1,0 +1,38 @@
+{{/*
+  integrations/section.html
+  Every platform we have install instructions for.
+
+  Created: 2026-09-03
+  Copyright (c) 2026 Cloudmanic Labs, LLC. All rights reserved.
+*/}}
+{{ define "main" }}
+  <section class="shell pt-12 sm:pt-16">
+    {{ partial "breadcrumb.html" . }}
+    <header class="max-w-[48rem]">
+      <p class="kicker mb-4">Install guides</p>
+      <h1 class="optical-l font-display text-[2.25rem] font-extrabold leading-[1.06] tracking-tight sm:text-[3rem]">
+        {{ .Title }}
+      </h1>
+      {{ with .Params.lede }}
+        <p class="mt-5 text-lg leading-relaxed text-neutral-700">{{ . | markdownify }}</p>
+      {{ end }}
+    </header>
+
+    {{ with .Content }}<div class="copy mt-8 max-w-[44rem]">{{ . }}</div>{{ end }}
+
+    <hr class="rule my-10" />
+
+    <ul class="grid gap-x-8 gap-y-0 sm:grid-cols-2 lg:grid-cols-3">
+      {{ range .RegularPages.ByTitle }}
+        <li class="border-t-2 border-rule">
+          <a href="{{ .RelPermalink }}" class="group flex items-baseline gap-3 py-4">
+            <span class="font-display font-extrabold group-hover:text-flag">{{ .Params.platform | default .Title }}</span>
+            <span class="ml-auto text-flag opacity-0 transition-opacity group-hover:opacity-100" aria-hidden="true">→</span>
+          </a>
+        </li>
+      {{ end }}
+    </ul>
+  </section>
+
+  {{ partial "cta.html" (dict "site" .Site "line1" "Five minutes." "line2" "That's the whole setup.") }}
+{{ end }}

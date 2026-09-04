@@ -75,12 +75,17 @@ disableKinds = ["taxonomy", "term"]
   section = ["HTML", "RSS"]
   page = ["HTML"]
 
-# The JSON output at /index.json is the search index the help page reads.
 [outputFormats]
+  # The search index the help page filters against.
   [outputFormats.JSON]
     mediaType = "application/json"
     baseName = "index"
     isPlainText = true
+  # /feed.xml rather than Hugo's /index.xml — it's the name readers expect and
+  # the one the footer links to.
+  [outputFormats.RSS]
+    mediaType = "application/rss+xml"
+    baseName = "feed"
 
 [permalinks]
   [permalinks.page]
@@ -147,11 +152,6 @@ disableKinds = ["taxonomy", "term"]
     name = "Pricing"
     url = "/pricing/"
     weight = 2
-  [[menus.footer]]
-    parent = "product"
-    name = "Live demo"
-    url = "/demo/"
-    weight = 3
   [[menus.footer]]
     parent = "product"
     name = "Integrations"
@@ -280,7 +280,6 @@ disableKinds = ["taxonomy", "term"]
   appURL = "https://app.feasible.lol"
   loginURL = "https://app.feasible.lol/login"
   signupURL = "https://app.feasible.lol/register"
-  demoURL = "https://app.feasible.lol/demo"
   statusURL = "https://status.feasible.lol"
   githubURL = "https://github.com/Feasible-Analytics/app.feasible.lol"
   githubOrg = "https://github.com/Feasible-Analytics"

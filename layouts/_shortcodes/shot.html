@@ -1,0 +1,16 @@
+{{/*
+  shot.html (shortcode)
+  A screenshot inside a content page.
+
+    {{< shot src="app/goals.png" alt="The goals report" caption="Goals" >}}
+
+  Created: 2026-09-03
+  Copyright (c) 2026 Cloudmanic Labs, LLC. All rights reserved.
+*/}}
+{{ partial "shot.html" (dict
+  "src" (.Get "src")
+  "alt" (.Get "alt")
+  "caption" (.Get "caption")
+  "class" "my-8"
+  "sizes" (.Get "sizes" | default "(min-width: 1024px) 704px, 100vw")
+) }}

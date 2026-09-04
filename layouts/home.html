@@ -48,11 +48,9 @@
       {{/* The bar chart is three divs wide, not a chart library. It has to be
            readable at 320px, and a library would cost more than it's worth. */}}
       <div id="the-math" class="lg:col-span-5">
-        <p class="kicker">
-          One million pageviews a month, billed yearly
-        </p>
+        <p class="kicker">{{ hugo.Data.competitors.hero.caption }}</p>
         <div class="mt-5 space-y-3">
-          {{ range hugo.Data.bill.rows }}
+          {{ range hugo.Data.competitors.hero.rows }}
             <div class="flex items-center gap-3 sm:gap-4">
               <span
                 class="w-24 shrink-0 text-sm sm:w-28 {{ if .highlight }}font-display font-extrabold{{ end }}"
@@ -71,12 +69,11 @@
           {{ end }}
         </div>
         <p class="mt-5 text-sm leading-relaxed text-neutral-700">
-          Same visitors. Same pages. Same sources. The only thing that changes
-          is who's laughing.
+          {{ hugo.Data.competitors.hero.footnote }}
           <a
             href="/compare/pricing/"
             class="font-display font-extrabold text-flag-700 hover:text-flag"
-            >Where these numbers come from&nbsp;→</a
+            >See the whole ladder&nbsp;→</a
           >
         </p>
       </div>

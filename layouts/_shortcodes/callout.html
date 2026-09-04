@@ -1,0 +1,19 @@
+{{/*
+  callout.html (shortcode)
+  A boxed aside. `type` picks the accent: note (default), warn, or plain.
+
+    {{< callout title="One thing first" >}}Body text.{{< /callout >}}
+
+  Created: 2026-09-03
+  Copyright (c) 2026 Cloudmanic Labs, LLC. All rights reserved.
+*/}}
+{{- $type := .Get "type" | default "note" -}}
+{{- $edge := cond (eq $type "plain") "border-rule" "border-flag" -}}
+<div class="my-8 border-l-[3px] {{ $edge }} bg-surface p-6">
+  {{- with .Get "title" }}
+    <p class="font-display text-xs font-extrabold uppercase tracking-[0.08em] text-flag-700">
+      {{ . }}
+    </p>
+  {{- end }}
+  <div class="[&>*:first-child]:mt-0 [&>*+*]:mt-4">{{ .Inner | markdownify }}</div>
+</div>

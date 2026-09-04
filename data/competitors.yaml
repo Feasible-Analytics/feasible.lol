@@ -1,0 +1,212 @@
+# competitors.yaml
+# Every competitor price on this site comes from this file. One place to fix
+# when somebody changes their pricing, and one place to re-check.
+#
+# RULES FOR EDITING THIS FILE
+#
+#   1. Every price is the vendor's own published list price, in USD, excluding
+#      tax, on annual billing where they offer it.
+#   2. Every entry carries the URL it came from and the date it was read.
+#   3. Vendors do not all bill for the same thing. `unit` says what each one
+#      actually counts. Never compare two numbers without it.
+#   4. If you can't source it, don't publish it.
+#
+# Created: 2026-09-03
+# Copyright (c) 2026 Cloudmanic Labs, LLC. All rights reserved.
+
+checked: 2026-09-03
+
+# ------------------------------------------------------------------
+# The hero chart on the home page.
+#
+# These are each vendor's cheapest plan that both reaches a million pageviews a
+# month AND includes what Feasible includes as standard: funnels, custom
+# properties and the API. That's a deliberate choice, and the caption says so —
+# Plausible's entry plan is cheaper and does less, and pretending otherwise
+# would be the same trick we're complaining about.
+# ------------------------------------------------------------------
+hero:
+  caption: "One million pageviews a month, for a year"
+  footnote: >-
+    Each vendor's cheapest plan that reaches a million pageviews and includes
+    funnels, custom properties and an API — the things Feasible includes as
+    standard. Plausible's entry plan is $690 and has none of them.
+  rows:
+    - name: "Matomo Cloud"
+      price: "$2,040"
+      width: "100%"
+    - name: "Plausible Business"
+      price: "$1,390"
+      width: "68%"
+    - name: "Fathom"
+      price: "$600"
+      width: "29%"
+    - name: "Feasible"
+      price: "$99"
+      width: "4.9%"
+      highlight: true
+
+# ------------------------------------------------------------------
+# The full ladder, for /compare/pricing/.
+#
+# `tiers` are annual USD at 10k / 100k / 1M / 5M / 10M pageviews a month.
+# `null` means the vendor does not offer that volume.
+# ------------------------------------------------------------------
+volumes: ["10k", "100k", "1M", "5M", "10M"]
+
+plans:
+  - vendor: "Feasible"
+    plan: ""
+    us: true
+    tiers: ["$99", "$99", "$99", "Talk to us", "Talk to us"]
+    unit: "pageviews — events and properties are unlimited and never counted"
+    sites: "Unlimited"
+    seats: "Unlimited"
+    retention: "5 years"
+
+  - vendor: "Plausible"
+    plan: "Starter"
+    tiers: ["$90", "$190", "$690", "$1,290", "$1,690"]
+    unit: "pageviews + custom events"
+    sites: "1"
+    seats: "Owner only"
+    retention: "3 years"
+    note: "No custom properties, no funnels, no Stats API."
+    source: "https://plausible.io/#pricing"
+
+  - vendor: "Plausible"
+    plan: "Growth"
+    tiers: ["$140", "$290", "$1,040", "$1,940", "$2,540"]
+    unit: "pageviews + custom events"
+    sites: "3"
+    seats: "3"
+    retention: "3 years"
+    note: "Still no custom properties, funnels or Stats API."
+    source: "https://plausible.io/#pricing"
+
+  - vendor: "Plausible"
+    plan: "Business"
+    tiers: ["$190", "$390", "$1,390", "$2,590", "$3,390"]
+    unit: "pageviews + custom events"
+    sites: "10"
+    seats: "10"
+    retention: "5 years"
+    note: "The first plan with custom properties, funnels and the Stats API."
+    source: "https://plausible.io/#pricing"
+
+  - vendor: "Fathom"
+    plan: ""
+    tiers: ["$150", "$150", "$600", "$1,400", "$2,000"]
+    unit: "pageviews + custom events"
+    sites: "75"
+    seats: "Not published"
+    retention: "Forever"
+    note: "Smallest plan is 100,000 pageviews, so a small site pays that price."
+    source: "https://usefathom.com/pricing"
+
+  - vendor: "Simple Analytics"
+    plan: "Simple"
+    tiers: ["$150", "$200", "$600", "$1,200", "$1,600"]
+    unit: "datapoints — pageviews, events, and each stored event property"
+    sites: "10"
+    seats: "1 (+$240/yr each)"
+    retention: "3 years"
+    note: "One pageview with five properties can bill as six datapoints."
+    source: "https://www.simpleanalytics.com/pricing"
+
+  - vendor: "Matomo Cloud"
+    plan: ""
+    tiers: ["$260", "$420", "$2,040", "$9,750", "$19,000"]
+    unit: "hits — pageviews, events, downloads, outbound clicks and site searches"
+    sites: "30"
+    seats: "30"
+    retention: "Configurable"
+    note: >-
+      A site with download and outbound-link tracking can generate two or three
+      hits per pageview, so the tier you need is often larger than your traffic
+      suggests.
+    source: "https://matomo.org/pricing/"
+
+  - vendor: "Pirsch"
+    plan: "Standard"
+    tiers: ["$60", "$120", "$540", "$990", "$1,590"]
+    unit: "pageviews + custom events + 10% of session-extension events"
+    sites: "50"
+    seats: "Unlimited"
+    retention: "Unlimited"
+    note: "No funnels, no teams."
+    source: "https://pirsch.io/pricing"
+
+  - vendor: "Umami Cloud"
+    plan: "Hobby"
+    tiers: ["$0", "$0", null, null, null]
+    unit: "events — pageviews, custom events, and each stored event property"
+    sites: "1"
+    seats: "1"
+    retention: "6 months"
+    note: >-
+      Free, and capped at 100,000 events a month. A 100k-pageview site with any
+      custom events at all is already over the cap.
+    source: "https://umami.is/pricing"
+
+  - vendor: "Umami Cloud"
+    plan: "Pro"
+    tiers: ["$240", "$240", "$240", "$1,680", null]
+    unit: "events — pageviews, custom events, and each stored event property"
+    sites: "20"
+    seats: "10"
+    retention: "2 years"
+    note: "Monthly billing only — there is no annual discount."
+    source: "https://umami.is/pricing"
+
+  - vendor: "Google Analytics 4"
+    plan: ""
+    tiers: ["$0", "$0", "$0", "$0", "$0"]
+    unit: "events"
+    sites: "Unlimited"
+    seats: "Unlimited"
+    retention: "14 months by default (2 months in some regions)"
+    note: >-
+      Free to run. The cost is a consent banner, sampled reports, thresholded
+      data, and your visitors' behaviour going to an advertising company.
+    source: "https://support.google.com/analytics/answer/11202874"
+
+# ------------------------------------------------------------------
+# Prices that don't sit on a pageview ladder but still get quoted on
+# comparison pages. Same four rules as above: the vendor's own published
+# figure, in the currency they publish it in, with the URL and the date.
+# ------------------------------------------------------------------
+extras:
+  - vendor: "Matomo On-Premise"
+    plan: "Community"
+    price: "Free"
+    what: >-
+      The GPL-3.0 core, self-hosted. Funnels, heatmaps, session recording,
+      A/B testing and form analytics are sold separately as premium plugins.
+    source: "https://matomo.org/pricing/"
+
+  - vendor: "Matomo On-Premise"
+    plan: "Team"
+    price: "€2,750/yr"
+    what: >-
+      The cheapest premium plugin bundle. Up to 4 users, up to 5 million hits
+      a month.
+    source: "https://matomo.org/pricing/"
+
+  - vendor: "Matomo On-Premise"
+    plan: "Business"
+    price: "€14,500/yr"
+    what: "Up to 20 users, up to 30 million hits a month."
+    source: "https://matomo.org/pricing/"
+
+  - vendor: "Simple Analytics"
+    plan: "Extra seat"
+    price: "$240/yr"
+    what: "$20 a month per user beyond the one included."
+    source: "https://www.simpleanalytics.com/pricing"
+
+  - vendor: "Fathom"
+    plan: "Extra sites"
+    price: "$100/yr"
+    what: "A pack of 50 additional sites, up to 15 packs self-service."
+    source: "https://usefathom.com/pricing"

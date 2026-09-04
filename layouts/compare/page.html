@@ -1,0 +1,90 @@
+{{/*
+  compare/page.html
+  One comparison. The disclosure comes first, before the reader has to work out
+  for themselves that we sell one of these.
+
+  Front matter:
+    versus     — the other product's name
+    checked    — the date every price and claim here was verified
+    verdict    — one short paragraph: who should pick which
+    table      — a key from data/ to render as a side-by-side (optional)
+
+  Created: 2026-09-03
+  Copyright (c) 2026 Cloudmanic Labs, LLC. All rights reserved.
+*/}}
+{{ define "main" }}
+  <article class="shell pt-12 sm:pt-16">
+    {{ partial "breadcrumb.html" . }}
+
+    <header class="max-w-[48rem]">
+      <p class="kicker mb-4">Comparison</p>
+      <h1
+        class="optical-l font-display text-[2.25rem] font-extrabold leading-[1.06] tracking-tight sm:text-[3rem]"
+      >
+        {{ .Title }}
+      </h1>
+      {{ with .Params.lede }}
+        <p class="mt-5 text-lg leading-relaxed text-neutral-700">
+          {{ . | markdownify }}
+        </p>
+      {{ end }}
+    </header>
+
+    {{/* Standing disclosure. It is the first thing on every comparison page,
+         not a footnote, because a comparison written by one of the products
+         being compared has to say so before it says anything else. */}}
+    <div class="mt-8 max-w-[48rem] border-2 border-ink p-6">
+      <p class="leading-relaxed">
+        <strong class="font-display font-extrabold">We make one of these.</strong>
+        Feasible is our product, so read this the way you'd read any comparison
+        written by a competitor. Everything we say about
+        {{ with .Params.versus }}{{ . }}{{ else }}the other product{{ end }}
+        comes from their own published pages, linked as we go, and we say where
+        they're the better choice.
+      </p>
+    </div>
+
+    <hr class="rule my-10" />
+
+    <div class="copy {{ if .Params.wide }}max-w-none{{ else }}max-w-[46rem]{{ end }}">
+      {{ .Content }}
+    </div>
+
+    {{ with .Params.verdict }}
+      <div class="mt-12 max-w-[46rem] bg-surface p-7">
+        <h2 class="font-display text-xl font-extrabold">So which one?</h2>
+        <div class="copy mt-3">{{ . | markdownify }}</div>
+      </div>
+    {{ end }}
+
+    {{ partial "updated.html" . }}
+
+    {{ $others := where (where .Site.RegularPages "Section" "compare") "Permalink" "!=" .Permalink }}
+    {{ with first 4 $others }}
+      <div class="mt-14 border-t-2 border-rule pt-6">
+        <h2
+          class="font-display text-xs font-extrabold uppercase tracking-[0.08em] text-neutral-700"
+        >
+          Other comparisons
+        </h2>
+        <ul class="mt-4 grid gap-2.5 sm:grid-cols-2">
+          {{ range . }}
+            <li>
+              <a
+                href="{{ .RelPermalink }}"
+                class="font-medium text-neutral-800 hover:text-flag"
+                >{{ .Title }}</a
+              >
+            </li>
+          {{ end }}
+        </ul>
+      </div>
+    {{ end }}
+  </article>
+
+  {{ partial "cta.html" (dict
+    "site" .Site
+    "line1" "Try it for a month."
+    "line2" "Then decide."
+  ) }}
+{{ end }}

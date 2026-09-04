@@ -1,0 +1,65 @@
+{{/*
+  blog/page.html
+  One post. A narrow reading column, and two more posts at the bottom so the
+  reader has somewhere to go that isn't the back button.
+
+  Created: 2026-09-03
+  Copyright (c) 2026 Cloudmanic Labs, LLC. All rights reserved.
+*/}}
+{{ define "main" }}
+  <article class="shell pt-12 sm:pt-16">
+    {{ partial "breadcrumb.html" . }}
+
+    <header class="max-w-[46rem]">
+      <p class="kicker">
+        {{ .Date.Format "January 2, 2006" }} · {{ .ReadingTime }} min read
+      </p>
+      <h1
+        class="optical-l mt-4 font-display text-[2.25rem] font-extrabold leading-[1.06] tracking-tight sm:text-[3rem]"
+      >
+        {{ .Title }}
+      </h1>
+      {{ with .Params.lede }}
+        <p class="mt-5 text-lg leading-relaxed text-neutral-700">
+          {{ . | markdownify }}
+        </p>
+      {{ end }}
+    </header>
+
+    <hr class="rule my-10" />
+
+    <div class="copy max-w-[44rem]">{{ .Content }}</div>
+
+    {{ partial "updated.html" . }}
+
+    {{ $related := first 2 (where (where .Site.RegularPages "Section" "blog") "Permalink" "!=" .Permalink).ByDate.Reverse }}
+    {{ with $related }}
+      <hr class="rule mt-14 mb-8" />
+      <h2
+        class="font-display text-xs font-extrabold uppercase tracking-[0.08em] text-neutral-700"
+      >
+        Also worth reading
+      </h2>
+      <ul class="mt-5 grid gap-8 sm:grid-cols-2">
+        {{ range . }}
+          <li class="border-t-2 border-rule pt-4">
+            <h3 class="font-display text-lg font-extrabold leading-snug">
+              <a href="{{ .RelPermalink }}" class="hover:text-flag"
+                >{{ .Title }}</a
+              >
+            </h3>
+            <p class="mt-2 text-sm leading-relaxed text-neutral-700">
+              {{ or .Params.description .Summary | plainify | truncate 140 }}
+            </p>
+          </li>
+        {{ end }}
+      </ul>
+    {{ end }}
+  </article>
+
+  {{ partial "cta.html" (dict
+    "site" .Site
+    "line1" (.Params.ctaLine1 | default "Analytics you can afford.")
+    "line2" (.Params.ctaLine2 | default "And actually read.")
+  ) }}
+{{ end }}

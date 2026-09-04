@@ -1,0 +1,61 @@
+{{/*
+  docs/section.html
+  The documentation index. One flat ordered list — the docs are short enough
+  that grouping them into categories would be filing for its own sake.
+
+  Created: 2026-09-03
+  Copyright (c) 2026 Cloudmanic Labs, LLC. All rights reserved.
+*/}}
+{{ define "main" }}
+  <section class="shell pt-12 sm:pt-16">
+    {{ partial "breadcrumb.html" . }}
+    <header class="max-w-[46rem]">
+      <p class="kicker mb-4">Documentation</p>
+      <h1
+        class="optical-l font-display text-[2.25rem] font-extrabold leading-[1.06] tracking-tight sm:text-[3rem]"
+      >
+        {{ .Title }}
+      </h1>
+      {{ with .Params.lede }}
+        <p class="mt-5 text-lg leading-relaxed text-neutral-700">
+          {{ . | markdownify }}
+        </p>
+      {{ end }}
+    </header>
+
+    {{ with .Content }}<div class="copy mt-8 max-w-[44rem]">{{ . }}</div>{{ end }}
+
+    <hr class="rule my-10" />
+
+    <ol class="grid gap-x-12 gap-y-0 sm:grid-cols-2">
+      {{ range $i, $doc := .RegularPages.ByWeight }}
+        <li class="border-t-2 border-rule py-5">
+          <div class="flex gap-5">
+            <span
+              class="tnum shrink-0 font-display text-sm font-extrabold text-flag-700"
+              >{{ printf "%02d" (add $i 1) }}</span
+            >
+            <div>
+              <h2 class="font-display text-lg font-extrabold leading-snug">
+                <a href="{{ .RelPermalink }}" class="hover:text-flag"
+                  >{{ .Title }}</a
+                >
+              </h2>
+              {{ with .Params.description }}
+                <p class="mt-1.5 text-sm leading-relaxed text-neutral-700">
+                  {{ . }}
+                </p>
+              {{ end }}
+            </div>
+          </div>
+        </li>
+      {{ end }}
+    </ol>
+  </section>
+
+  {{ partial "cta.html" (dict
+    "site" .Site
+    "line1" "Reading is optional."
+    "line2" "Setup takes five minutes."
+  ) }}
+{{ end }}

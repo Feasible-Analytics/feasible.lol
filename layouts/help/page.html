@@ -1,0 +1,88 @@
+{{/*
+  help/page.html
+  One question, one answer. Short pages, so no table of contents and no
+  sidebar — just the answer and a way onward.
+
+  Created: 2026-09-03
+  Copyright (c) 2026 Cloudmanic Labs, LLC. All rights reserved.
+*/}}
+{{ define "main" }}
+  {{ $cat := .Params.category }}
+  {{ $catName := "" }}
+  {{ range .Parent.Params.categories }}
+    {{ if eq .slug $cat }}{{ $catName = .name }}{{ end }}
+  {{ end }}
+
+  <article class="shell pt-12 sm:pt-16">
+    <nav aria-label="Breadcrumb" class="mb-6 text-sm text-neutral-700">
+      <ol class="flex flex-wrap items-center gap-x-2">
+        <li><a href="/" class="hover:text-flag">Home</a></li>
+        <li aria-hidden="true" class="text-neutral-500">/</li>
+        <li><a href="/help/" class="hover:text-flag">Help</a></li>
+        {{ with $catName }}
+          <li aria-hidden="true" class="text-neutral-500">/</li>
+          <li>
+            <a href="/help/#{{ $cat }}" class="hover:text-flag">{{ . }}</a>
+          </li>
+        {{ end }}
+      </ol>
+    </nav>
+
+    <header class="max-w-[46rem]">
+      <h1
+        class="optical-l font-display text-[1.875rem] font-extrabold leading-[1.1] tracking-tight sm:text-[2.5rem]"
+      >
+        {{ .Title }}
+      </h1>
+    </header>
+
+    <hr class="rule my-8" />
+
+    <div class="copy max-w-[44rem]">{{ .Content }}</div>
+
+    {{ partial "updated.html" . }}
+
+    {{/* Three more from the same category. Someone reading about imports is
+         very likely to want the next thing about imports. */}}
+    {{ $siblings := first 4 (where (where .Site.RegularPages "Section" "help") "Params.category" $cat) }}
+    {{ $related := where $siblings "Permalink" "!=" .Permalink }}
+    {{ with first 3 $related }}
+      <div class="mt-14 max-w-[44rem] border-t-2 border-rule pt-6">
+        <h2
+          class="font-display text-xs font-extrabold uppercase tracking-[0.08em] text-neutral-700"
+        >
+          More on {{ lower $catName }}
+        </h2>
+        <ul class="mt-4 space-y-2.5">
+          {{ range . }}
+            <li>
+              <a
+                href="{{ .RelPermalink }}"
+                class="font-medium text-neutral-800 hover:text-flag"
+                >{{ .Title }}</a
+              >
+            </li>
+          {{ end }}
+        </ul>
+      </div>
+    {{ end }}
+
+    <div class="mt-10 max-w-[44rem] border-2 border-ink p-6">
+      <p class="leading-relaxed">
+        <strong class="font-display font-extrabold">Didn't answer it?</strong>
+        Email
+        <a
+          href="mailto:{{ .Site.Params.email }}"
+          class="text-flag-700 underline"
+          >{{ .Site.Params.email }}</a
+        >. A person reads it, and if the answer belongs here we'll add it.
+      </p>
+    </div>
+  </article>
+
+  {{ partial "cta.html" (dict
+    "site" .Site
+    "line1" "Analytics you can afford."
+    "line2" "And actually read."
+  ) }}
+{{ end }}

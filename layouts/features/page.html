@@ -1,0 +1,62 @@
+{{/*
+  features/page.html
+  One feature. Headline, the argument, a screenshot when there is one, then the
+  honest trade-off — every feature page carries a `note` saying what it does
+  not do, because a page that only praises itself isn't read.
+
+  Created: 2026-09-03
+  Copyright (c) 2026 Cloudmanic Labs, LLC. All rights reserved.
+*/}}
+{{ define "main" }}
+  <article class="shell pt-12 sm:pt-16">
+    {{ partial "breadcrumb.html" . }}
+
+    <header class="max-w-[48rem]">
+      <p class="kicker mb-4">Feature</p>
+      <h1 class="optical-l font-display text-[2.25rem] font-extrabold leading-[1.06] tracking-tight sm:text-[3rem]">
+        {{ .Title }}
+      </h1>
+      {{ with .Params.lede }}
+        <p class="mt-5 text-lg leading-relaxed text-neutral-700">{{ . | markdownify }}</p>
+      {{ end }}
+    </header>
+
+    {{ with .Params.shot }}
+      {{ partial "shot.html" (dict
+        "src" .
+        "alt" ($.Params.shotAlt | default $.Title)
+        "class" "mt-10"
+        "eager" true
+      ) }}
+    {{ end }}
+
+    <hr class="rule my-10" />
+
+    <div class="copy max-w-[44rem]">{{ .Content }}</div>
+
+    {{ with .Params.note }}
+      <div class="mt-10 max-w-[44rem] border-l-[3px] border-flag bg-surface p-6">
+        <p class="font-display text-xs font-extrabold uppercase tracking-[0.08em] text-flag-700">
+          The trade-off
+        </p>
+        <p class="mt-2 leading-relaxed">{{ . | markdownify }}</p>
+      </div>
+    {{ end }}
+
+    {{ $others := first 3 (where .Site.RegularPages.ByWeight "Section" "features" | symdiff (slice .)) }}
+    {{ with $others }}
+      <div class="mt-14 max-w-[44rem] border-t-2 border-rule pt-6">
+        <h2 class="font-display text-xs font-extrabold uppercase tracking-[0.08em] text-neutral-700">
+          Next
+        </h2>
+        <ul class="mt-4 space-y-2.5">
+          {{ range . }}
+            <li><a href="{{ .RelPermalink }}" class="font-medium text-neutral-800 hover:text-flag">{{ .Title }}</a></li>
+          {{ end }}
+        </ul>
+      </div>
+    {{ end }}
+  </article>
+
+  {{ partial "cta.html" (dict "site" .Site) }}
+{{ end }}
