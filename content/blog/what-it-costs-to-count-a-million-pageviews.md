@@ -1,19 +1,19 @@
 ---
 title: "What it costs to count a million pageviews"
 slug: "what-it-costs-to-count-a-million-pageviews"
-description: "A million pageviews a month is a 294 MB file and a $4 server. Here's the measured arithmetic, and the published price lists next to it."
+description: "A million pageviews a month is about 3.5 GB a year and a $6 server. Here's the measured arithmetic, and the published price lists next to it."
 lede: "We measured what a million pageviews a month actually asks of a machine, then priced the machine. Then we put the invoices next to it."
 date: 2026-08-21
 checked: 2026-09-03
 ---
 
-A pageview, stored the way we store it, is 210 bytes. A million of them a month, kept for a full year, is a 294 MB file.
+A pageview, stored the way we store it, is 210 bytes. A million of them a month, kept for a full year, is about 3.5 GB.
 
-That's most of the post. But nobody's analytics invoice looks like a 294 MB file, so it's worth walking the rest of the way slowly.
+That's most of the post. But nobody's analytics invoice looks like a 3.5 GB file, so it's worth walking the rest of the way slowly.
 
 ## What a million pageviews asks of a machine
 
-A million pageviews isn't a million rows. Scroll and engagement pings ride along so you can have time-on-page and scroll depth, so the honest event count for a million-pageview month is about 1.39 million. Over 365 days that's a 293.8 MB account database, plus 4.2 MB for the system database that holds accounts, sites and sessions.
+A million pageviews isn't a million rows. Scroll and engagement pings ride along so you can have time-on-page and scroll depth, so the honest event count for a million-pageview month is about 1.39 million. Our benchmark stored 1,394,408 of them and the account database came to 293.8 MB, plus 4.2 MB for the system database that holds accounts, sites and sessions. Twelve of those months is about 3.5 GB.
 
 The write rate is the part people get wrong. A million pageviews a month *sounds* like load. Spread over a month it's about 0.4 writes a second.
 
@@ -40,7 +40,7 @@ One note on that last row, because stale numbers circulate: Hetzner raised price
 
 Then bandwidth. Our tracking script is 3,377 bytes gzipped, 7,099 raw. Assume a deliberately pessimistic 30% of pageviews fetch it fresh rather than from cache: 300,000 × 3,377 bytes is about 1 GB a month, against the 500 GiB that $4 droplet includes. It's a rounding error, and it would still be a rounding error if we were ten times worse at caching.
 
-Storage fits. CPU is asleep. Bandwidth doesn't register. The box is $48 to $72 a year.
+Storage fits on the $6 box. CPU is asleep. Bandwidth doesn't register. The box is $48 to $72 a year.
 
 We don't run one box, to be clear. Ingest is a separate tier from the app, and there's more than one of each, because a single machine that reboots is an outage and we'd rather it weren't. That's a redundancy bill. It isn't a large one, and it doesn't scale with your pageviews the way an invoice does.
 

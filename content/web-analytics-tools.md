@@ -59,7 +59,7 @@ numbers.
 | Pirsch Standard | $120 | $540 | pageviews + events + 10% of session extensions | 50 | unlimited | unlimited | [pirsch.io](https://pirsch.io/pricing) |
 | Umami Cloud Pro | $240 | $240 | events — **each stored property counts** | 20 | 10 | 2 years | [umami.is](https://umami.is/pricing) |
 | Matomo Cloud | $420 | $2,040 | **hits** — views, events, downloads, outbound clicks, site searches | 30 | 30 | configurable | [matomo.org](https://matomo.org/pricing/) |
-| Google Analytics 4 | $0 | $0 | events | unlimited | unlimited | 14 months (2 in some regions) | [Google](https://support.google.com/analytics/answer/11202874) |
+| Google Analytics 4 | $0 | $0 | events | unlimited | unlimited | 2 or 14 months (event-level) | [Google](https://support.google.com/analytics/answer/11202874) |
 | Cloudflare Web Analytics | $0 | $0 | pageviews | — | — | not published | [cloudflare.com](https://www.cloudflare.com/web-analytics/) |
 
 Three traps in that table, all of them the vendor's own published definition:

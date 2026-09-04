@@ -136,7 +136,7 @@ The whole ladder, at 10k, 100k, 1M, 5M and 10M pageviews a month, is on
 Because counting pageviews is cheap, and the software was built to match.
 
 A stored event is about 210 bytes, all in. A million pageviews a month for a whole
-year is a 294 MB database. One process accepts around 6,000 events a second and takes
+year is about 3.5 GB. One process accepts around 6,000 events a second and takes
 about 13 microseconds to decide on one. The minimum server is one CPU core, 512 MB of
 RAM and a gigabyte of disk.
 

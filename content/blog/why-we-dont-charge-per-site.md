@@ -33,7 +33,7 @@ But look at the first three rows as a ladder rather than three products. One sit
 
 Here's our objection, and it's structural, not personal. **A per-site price puts a toll booth at the exact moment a customer is about to make you more useful to them.** The second site is when a tool stops being a thing you check and starts being the thing you check. The fifth colleague you add is the one who makes it hard to leave. Metering both is metering the habit you spent all that money acquiring.
 
-A second site costs us almost nothing. A million pageviews a month is [a 294 MB database and about 0.4 writes a second](/blog/what-it-costs-to-count-a-million-pageviews/), and splitting that across nine sites instead of one doesn't change the arithmetic. Neither does a sixth login. So we don't charge for either, and if that ever stops being true we'll tell you what changed instead of quietly adding a tier.
+A second site costs us almost nothing. A million pageviews a month is [about 3.5 GB a year and 0.4 writes a second](/blog/what-it-costs-to-count-a-million-pageviews/), and splitting that across nine sites instead of one doesn't change the arithmetic. Neither does a sixth login. So we don't charge for either, and if that ever stops being true we'll tell you what changed instead of quietly adding a tier.
 
 ## The unit is the part nobody compares
 

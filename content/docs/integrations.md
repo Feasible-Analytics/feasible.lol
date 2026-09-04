@@ -89,7 +89,7 @@ Three things to know:
 
 - **Webflow** custom code needs a paid site plan. On a free `.webflow.io` site the field saves and
   nothing is ever published.
-- **Squarespace** code injection needs a Business plan or above and doesn't run in the editor. Check
+- **Squarespace** code injection needs a Core, Plus or Advanced plan (or some legacy billing plans) and doesn't run in the editor. Check
   in a private window on the live site.
 - **Framer** and **Ghost** custom code runs only on the published site, never in the canvas or
   preview. Ghost's own portal and checkout overlays render on a different origin and aren't covered.

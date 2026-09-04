@@ -10,7 +10,7 @@ A pageview costs about 210 bytes to store. That's the whole record — which pag
 where they came from, which country, which browser, what size screen, and the moment
 it happened.
 
-A million pageviews a month, kept for a full year, is a 294 MB database. One file.
+A million pageviews a month, kept for a full year, is about 3.5 GB. One file.
 
 We measured the rest of it too, because we wanted to know. One process accepts around
 6,000 events a second and takes about 13 microseconds to decide on one. The minimum
@@ -40,7 +40,7 @@ properties, funnels and the Stats API, which is why it's the row that compares. 
 [full ladder is here](/compare/pricing/), with every figure linked to the page it
 came from.
 
-So: a 294 MB file, on a server that rents for about $4 a month, and a sticker price
+So: a 3.5 GB file, on a server that rents for about $6 a month, and a sticker price
 that runs from $240 to $2,040 a year. The hardware got cheaper every year for two
 decades. The invoice went the other way.
 

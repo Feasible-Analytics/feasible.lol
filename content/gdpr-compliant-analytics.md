@@ -151,8 +151,9 @@ most, no session replay
 
 ## Why Google Analytics is the hard case
 
-In 2022 the regulators in Austria, France, Italy, Denmark, Finland, Norway and
-Sweden all ruled against EU-to-US transfers of Google Analytics data. Those
+Between December 2021 and July 2023, regulators in Austria, France, Italy,
+Denmark, Finland, Norway and Sweden all ruled against EU-to-US transfers of
+Google Analytics data. Those
 decisions were real, and mostly ended in warnings and orders rather than fines.
 
 **They aren't a live prohibition today, and we're not going to pretend they

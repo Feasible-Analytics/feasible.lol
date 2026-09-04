@@ -66,8 +66,9 @@ instead of — its email list. The URL is checked when you save it and again whe
 it's used, through a client that refuses to connect to internal addresses.
 
 If you want something more than a message in a channel,
-[webhooks](/features/api-and-webhooks/) carry `traffic.spike` and `traffic.drop`
-as signed HTTP callbacks you can act on in your own code.
+[webhooks](/features/api-and-webhooks/) define `traffic.spike` and `traffic.drop`
+as signed HTTP callbacks — though nothing publishes them yet, so email and Slack
+are the two that work today.
 
 ## Why we don't send more
 

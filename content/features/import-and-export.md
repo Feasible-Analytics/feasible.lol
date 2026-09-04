@@ -89,6 +89,7 @@ tomorrow the software you were using still runs. Export is a button, so the
 answer to "what if we want to leave" is a shrug and a ZIP file.
 
 Imports and exports both live on one settings screen per site, and
-[webhooks](/features/api-and-webhooks/) fire `import.completed` and
-`import.failed` if you'd rather not watch a progress bar. More in
+`import.completed` and `import.failed` exist as
+[webhook](/features/api-and-webhooks/) event types too, though nothing publishes
+them yet. More in
 [the import and export docs](/docs/import-export/).

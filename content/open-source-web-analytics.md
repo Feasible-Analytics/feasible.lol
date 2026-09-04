@@ -110,7 +110,7 @@ binary, no Docker file in the repo because there's nothing to orchestrate. No
 Postgres, no ClickHouse, no Redis, no message queue.
 
 **Storage:** about 210 bytes an event. A million pageviews a month for a year is
-roughly a 294 MB database.
+roughly 3.5 GB.
 
 **Throughput:** about 6,000 events per second per process, with accept latency
 around 13 µs at the median. Reports read from pre-built roll-ups: 28 days of top

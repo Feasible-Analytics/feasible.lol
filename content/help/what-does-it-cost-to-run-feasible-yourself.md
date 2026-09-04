@@ -22,7 +22,7 @@ The numbers behind it, all measured rather than estimated:
 
 - **About 6,000 events per second** through the full accept path, per process.
 - **Roughly 13 microseconds** to accept an event.
-- **About 210 bytes stored per event.** A million pageviews a month for a full year comes to a 294 MB database.
+- **About 210 bytes stored per event.** A million pageviews stored for a full year comes to a measured 294 MB. At a million a month, a year is about 3.5 GB.
 
 So the storage cost of a busy site for a year is smaller than a phone photo album.
 

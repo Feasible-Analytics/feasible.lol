@@ -45,8 +45,13 @@ doesn't pretend to be a network error.
 
 ## Webhooks
 
-Seven events: `goal.converted`, `import.completed`, `import.failed`,
-`site.created`, `traffic.spike`, `traffic.drop`, `usage.over_limit`.
+Seven event types: `site.created`, `goal.converted`, `traffic.spike`,
+`traffic.drop`, `usage.over_limit`, `import.completed` and `import.failed`.
+
+**Only `site.created` fires today.** The other six are subscribable and their
+payload shapes are settled, but nothing publishes them yet. We'd rather say that
+than let you wire up a handler that stays quiet for a reason you can't see. For
+spikes and drops today, use [email and Slack alerts](/features/email-reports/).
 
 Every delivery is HMAC-signed with a secret you can rotate. Destination URLs are
 validated on save and refused if they point at loopback or internal addresses.
@@ -61,7 +66,7 @@ Feasible speaks the Model Context Protocol natively. Streamable HTTP at
 the same `feas_` key, and clients that speak OAuth 2.1 — including dynamic
 client registration — can get one that way instead.
 
-Ten tools and three prompts. The tools cover listing sites, running a query,
+Eleven tools and three prompts. The tools cover listing sites, running a query,
 reading realtime visitors, comparing two periods, explaining a traffic change,
 creating and updating sites, and reading goals and funnels. The prompts are the
 three questions people actually ask: how did last week go, why did traffic drop,

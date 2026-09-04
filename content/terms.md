@@ -27,7 +27,7 @@ United States
 
 We provide web analytics. Every account gets every feature — there is no tier that
 withholds one — and the plan includes 1,000,000 pageviews and custom events per calendar
-month, unlimited sites, unlimited team members and unlimited retention while the account exists.
+month, unlimited sites, unlimited team members, and five years of data retention. In practice nothing is deleted while the account is open — there is no job in the software that ages analytics data out — and five years is the figure we commit to.
 
 ## 2. Your account
 

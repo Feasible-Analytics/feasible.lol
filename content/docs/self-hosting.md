@@ -136,8 +136,8 @@ total confidence.
 
 ## Bot and spam lists
 
-A baseline of bot user-agent substrings and spam referrer domains is compiled into the binary. You
-can replace either, and supply the datacenter ranges that have no baseline at all, with newline files
+A baseline of bot user-agent substrings, spam referrer domains and datacenter address ranges is
+compiled into the binary. You can replace any of the three with newline files
 in the data directory:
 
 ```

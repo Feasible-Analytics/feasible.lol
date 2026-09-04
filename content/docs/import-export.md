@@ -69,8 +69,10 @@ record of which dimensions it reported at all. Two consequences:
 Storing per-dimension totals instead is the common shortcut, and it's why applying any filter to
 imported data elsewhere makes it vanish.
 
-Imported history is **opt-in when you read it**: a report includes it only when you ask, so a number
-is never quietly part native and part imported.
+Imported history behaves differently in the two places you read it. **The dashboard folds it into
+every non-realtime query**, so your charts show one continuous history. **The query API leaves it
+out unless you ask** — send `"include": {"imports": true}` — so an integration's number can never
+change the day an import finishes.
 
 Nothing is merged or de-duplicated — uploading the same file twice creates two imports and counts it
 twice. Deleting an import removes exactly the history it brought in, and nothing else, which is also

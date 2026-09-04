@@ -17,7 +17,7 @@ If you want to know whether people are actually reading, bounce rate is the wron
 
 Two more notes:
 
-- **Custom events don't rescue a bounce.** Only a second pageview does. A visit with one pageview and three outbound clicks is still a bounce.
+- **An interaction rescues a bounce, an engagement ping doesn't.** A second pageview ends a bounce, and so does any interactive event — an outbound click, a download, a form submission, a `feasible('Signup')`. The engagement ping that carries time on page and scroll depth is deliberately excluded, because that's the script talking rather than the visitor.
 - **A bounce still has a duration** here, because engagement is measured continuously rather than only from one pageview to the next. Plenty of tools report zero seconds for every bounce; that's an artifact of how they measure, not a fact about the visitor.
 
 [Bounce rate and exit rate get confused constantly](/help/bounce-rate-vs-exit-rate/), and they answer different questions.

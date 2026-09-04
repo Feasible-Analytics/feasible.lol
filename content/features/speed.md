@@ -57,7 +57,7 @@ launch.
 
 ## About 210 bytes an event
 
-A million pageviews a month, for a year, is a **293.8 MB** database. All in —
+A million pageviews, stored for a year, is a measured **293.8 MB** database. At a million a month, a year is about **3.5 GB**. All in —
 events, sessions, roll-ups, the lot.
 
 Ingest handles about **6,000 events a second per process**, and accepting one

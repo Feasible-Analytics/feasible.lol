@@ -77,7 +77,7 @@ nothing to shard, nothing that needs a second machine to be healthy.
 | Disk | 1 GB, plus your data | SSD |
 | OS | Linux, macOS or BSD — x86-64 or arm64 | |
 
-At a million pageviews a month, a year of data is a 294 MB database. One process
+At a million pageviews a month, a year of data is about 3.5 GB. One process
 accepts around 6,000 events a second.
 
 That number matters most next to the alternative. Column-store analytics stacks are
