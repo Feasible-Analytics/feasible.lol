@@ -1,6 +1,6 @@
 ---
 title: "Feasible vs Umami"
-seotitle: "Feasible vs Umami — Price, Event Counting, License"
+seotitle: "Feasible vs Umami — price, event counting, license"
 description: "Umami is MIT-licensed and has a free tier — both genuinely better than ours. It also counts every stored event property as an event. Compared, honestly."
 lede: "Umami's license is more permissive than ours and its free tier is real. Its meter counts every stored event property. Both of those are worth knowing."
 versus: "Umami"
@@ -84,7 +84,7 @@ Read that last sentence again, because it's the thing nobody checks before they
 sign up.
 
 Say you fire a `purchase` event with five properties on it — plan, currency,
-amount, coupon, referrer. That is **six events** against your limit. One for the
+amount, coupon, referrer. That's **six events** against your limit. One for the
 event, five for the properties.
 
 Work it through on a real shop. 700,000 pageviews a month. 20,000 purchases,

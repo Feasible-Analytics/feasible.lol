@@ -1,6 +1,6 @@
 ---
 title: "Analytics that doesn't follow anyone around"
-seotitle: "Privacy-Friendly Analytics With Nothing to Opt Out Of"
+seotitle: "Privacy-friendly analytics with nothing to opt out of"
 description: "Feasible never identifies anyone. No cookies, no fingerprinting, no cross-site tracking, nothing shared with an ad network. $9.99 a month."
 lede: "Every field we store, every field we don't, and the exact way a visitor gets counted when there's no identifier to count with."
 kicker: "PRIVACY"
@@ -17,7 +17,7 @@ faq:
   - q: "Is this fingerprinting?"
     a: "No. Fingerprinting builds a stable identifier that survives across sites and across time so a person can be recognized later. Our hash includes the site domain and a key that changes every UTC day, which makes it useless for both."
   - q: "Do you sell or share the data?"
-    a: "No. Your numbers are yours. There is no ad network in the loop, no data broker, and no cross-customer pooling."
+    a: "No. Your numbers are yours. There's no ad network in the loop, no data broker, and no cross-customer pooling."
 ---
 
 Privacy-friendly analytics is web analytics that counts visits without
@@ -43,7 +43,7 @@ One row per event, about 210 bytes of it. Here's the whole shape.
 | Event name, goal, custom properties | Whatever you choose to send |
 | A 64-bit visitor number | Explained below. It changes every day |
 
-That's it. There is no field for a name, an email, a user ID, a phone number or
+That's it. There's no field for a name, an email, a user ID, a phone number or
 an order number, because there's nowhere to put one. If you send a direct
 identifier as a custom property, you're breaking your own contract with us, not
 using a feature.
@@ -78,13 +78,13 @@ Two consequences follow, and you should hear them from us rather than discover
 them in month three.
 
 **A visitor who comes back tomorrow is a new visitor.** We can't tell it's the
-same person, because the key that made yesterday's number no longer exists. That
-is the trade. Unique visitors are a daily figure by construction.
+same person, because the key that made yesterday's number no longer exists. That's
+the trade. Unique visitors are a daily figure by construction.
 
 **The same person on two of your sites counts twice.** The domain is in the
 hash, on purpose. It's the thing that makes cross-site tracking impossible.
 
-If you need to follow one individual across weeks and devices, we are the wrong
+If you need to follow one individual across weeks and devices, we're the wrong
 product and you should stop reading here. That's a real capability, and choosing
 this model means giving it up.
 
@@ -95,7 +95,7 @@ half this industry blurs it.
 
 The visitor number is **pseudonymous**. It was derived from data that started out
 personal, it can't be reversed, and the key that made it is unrecoverable within
-a day. It is not **anonymous** in the strict legal sense, and anyone telling you
+a day. It isn't **anonymous** in the strict legal sense, and anyone telling you
 their daily rotating hash is anonymous is making a claim they'd struggle to
 defend. We'd rather be precise and boring here than clever.
 
@@ -111,7 +111,7 @@ It never reaches disk. That's a structural decision, not a setting.
 The address arrives at the ingest tier, gets used for exactly two things —
 looking up a rough location and computing the day's visitor hash — and is
 discarded before anything is written. The location lookup uses DB-IP Lite, a
-database sitting on our own disk, so there is no per-pageview call out to a
+database sitting on our own disk, so there's no per-pageview call out to a
 geolocation service. Resolution stops at country, region and city. Commercial VPN
 exits get bucketed as an anonymizing service rather than mislabeled with the
 data center's country.

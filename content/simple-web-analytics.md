@@ -1,6 +1,6 @@
 ---
 title: "Simple web analytics for people who just want the numbers"
-seotitle: "Simple Web Analytics — One Page, No Menus"
+seotitle: "Simple web analytics — one page, no menus"
 description: "Every number you need on one screen. No reports to build, no explore tab, nothing to learn. Simple website analytics for $9.99 a month."
 lede: "One page. Six numbers across the top, a graph, four cards. That's the whole product, and leaving things out was the hard part."
 kicker: "SIMPLE"
@@ -24,7 +24,7 @@ can answer "how many people read the thing I published yesterday".
 
 That used to be normal. Then it stopped.
 
-{{< shot src="app/dashboard-light.png" alt="The Feasible dashboard: six stat tiles, a graph, and four report cards" caption="The whole product. There is no second screen." >}}
+{{< shot src="app/dashboard-light.png" alt="The Feasible dashboard: six stat tiles, a graph, and four report cards" caption="The whole product. There's no second screen." >}}
 
 ## What went wrong with the tool most people have
 
@@ -54,7 +54,7 @@ reduced to 2 months, with older event-level data permanently deleted
 ([source](https://support.google.com/analytics/answer/7667196)).
 
 None of that is a complaint about power. It's a mismatch. The tool is built for
-analysts, and most people running a website are not analysts and don't want to
+analysts, and most people running a website aren't analysts and don't want to
 become one.
 
 ## The one page, annotated
@@ -62,7 +62,7 @@ become one.
 Six tiles across the top: **unique visitors**, **total visits**, **total
 pageviews**, **views per visit**, **bounce rate**, **visit duration**. Click any
 tile and the graph below redraws for that metric. All six are graphable, which
-means there is no "how do I chart this" question.
+means there's no "how do I chart this" question.
 
 Under the graph, four cards:
 
@@ -90,7 +90,7 @@ report you have to construct.
 
 Six filter operators exist and that's the whole set: is, is not, contains, does
 not contain, matches regex, does not match regex. Repeated filters combine with
-AND; multiple values inside one filter combine with OR. There is nothing else to
+AND; multiple values inside one filter combine with OR. There's nothing else to
 learn.
 
 That's the product. Thirteen date-range presets with single-key shortcuts, a

@@ -13,10 +13,10 @@
 {{- with $crumbs }}
   <nav aria-label="Breadcrumb" class="mb-6 text-sm text-neutral-700">
     <ol class="flex flex-wrap items-center gap-x-2">
-      <li><a href="/" class="hover:text-flag">Home</a></li>
+      <li><a href="/" class="hover:text-flag-700">Home</a></li>
       {{- range . }}
         <li aria-hidden="true" class="text-neutral-500">/</li>
-        <li><a href="{{ .RelPermalink }}" class="hover:text-flag">{{ .Title }}</a></li>
+        <li><a href="{{ .RelPermalink }}" class="hover:text-flag-700">{{ .Title }}</a></li>
       {{- end }}
     </ol>
   </nav>

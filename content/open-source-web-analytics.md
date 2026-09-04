@@ -1,6 +1,6 @@
 ---
 title: "Open source web analytics you can actually read"
-seotitle: "Open Source Web Analytics You Can Read and Self-Host"
+seotitle: "Open source web analytics you can read and self-host"
 description: "Feasible is AGPL-3.0-or-later. Read the code, run the same build we run on a 512 MB box, or let us host it for $9.99 a month. Go and SQLite."
 lede: "The license, the repo, what self-hosting actually takes, and an honest look at how the other open-source options are put together."
 kicker: "OPEN SOURCE"
@@ -37,19 +37,19 @@ What's actually different is what you get when you run it.
 
 Three things, all checkable.
 
-**There is no cut-down edition.** The thing we run is the thing you can run.
+**There's no cut-down edition.** The thing we run is the thing you can run.
 Set `FEASIBLE_APP_HOSTED=false` and every product feature is free and
 unrestricted: the public API, funnels, custom properties, webhooks, the built-in
 MCP server, raw event export, teams and roles, sharing, email reports, alerts.
 There's no separate "community" build with the good parts removed and no
 long-term release branch that lags the hosted one.
 
-**There is no directory in the repo you aren't allowed to compile.** No `ee/`, no
+**There's no directory in the repo you aren't allowed to compile.** No `ee/`, no
 `extra/`, no all-rights-reserved corner. Search the repo for `enterprise`,
 `license_key` or `premium` and you get nothing, because there's no license-key
 module to find.
 
-**No feature is behind a higher tier.** There is one plan. The API package
+**No feature is behind a higher tier.** There's one plan. The API package
 contains no plan check at all — not as a policy, as a fact about the code.
 
 That last one has a practical edge. **Raw event export is a button here**, in
@@ -153,7 +153,7 @@ going to email you about upgrading.
 
 If you modify Feasible and offer the modified version to other people over a
 network, you have to make your source available to those users. That's it.
-Running it for your own sites, modified or not, triggers nothing. It does not
+Running it for your own sites, modified or not, triggers nothing. It doesn't
 require you to open-source your website, and it places no restriction on
 commercial use.
 

@@ -7,7 +7,7 @@ shot: "app/goals.png"
 shotAlt: "The goals report: 404 pages, outbound link clicks, file downloads, form submissions, refunds requested, newsletter signups and a custom goal, each with unique conversions, total conversions and a conversion rate."
 note: |
   Goals don't backfill. A goal you create today starts counting today —
-  conversions before that moment are not recovered, and the report tells you the
+  conversions before that moment aren't recovered, and the report tells you the
   date it started rather than showing a flat line and letting you assume.
 ---
 
@@ -44,7 +44,7 @@ one comes from the WordPress plugin.
 
 {{< shot src="app/goals.png" alt="The Goals card listing 404 pages, Outbound link clicks, File downloads, Form submissions, Refunds requested, Newsletter signups and Read a topic page, with columns for uniques, total and conversion rate." caption="The goals report. Only goals with conversions are listed, and it tells you how many of your configured goals that is." >}}
 
-## Funnels: sequential or strict
+## Sequential or strict
 
 A funnel is 2 to 8 steps, each step a goal you already defined. Two ways to
 match them, and the difference matters more than it looks:

@@ -70,7 +70,7 @@ Two conditions vendors skate past, and we won't. The exemption **requires** you 
 
 Third-party tools are explicitly allowed — but your provider "must be a processor, not a joint controller," must use the data only to improve *your* service, and must not pool it with anything else.
 
-## France: criteria, and no more approved list
+## France retired its approved list
 
 CNIL's audience-measurement exemption under Article 82 of the *loi Informatique et Libertés* is narrower. A tracker's purpose must be strictly limited to measuring that one site, for the publisher alone, producing anonymous statistics only — and it must not cross-reference with other processing, pass non-anonymous data to third parties, or let a person be followed across sites or apps ([CNIL, July 4, 2025](https://www.cnil.fr/fr/cookies-et-autres-traceurs/regles/cookies-solutions-pour-les-outils-de-mesure-daudience)).
 

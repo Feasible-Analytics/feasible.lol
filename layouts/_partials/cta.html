@@ -16,13 +16,13 @@
 {{- $note := $ctx.note | default (printf
   "No credit card. $%s a month or $%s a year when the trial ends. Cancel any time."
   $site.Params.pricing.monthly $site.Params.pricing.yearly) -}}
-<section class="cta-band mt-24 bg-flag text-paper">
+<section class="cta-band mt-24 bg-flag-band text-paper">
   <div class="shell py-16 sm:py-20 lg:py-24">
     <h2
       class="optical-l font-display text-[2.25rem] font-extrabold leading-[1.06] tracking-tight sm:text-[3rem] lg:text-[3.5rem]"
     >
       <span class="block">{{ $line1 }}</span>
-      <span class="block text-paper/75">{{ $line2 }}</span>
+      <span class="block text-paper/80">{{ $line2 }}</span>
     </h2>
     <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
       <a href="{{ $site.Params.signupURL }}" class="btn btn-inverse">
@@ -30,6 +30,6 @@
       </a>
       <a href="/pricing/" class="btn btn-inverse-outline"> See the price </a>
     </div>
-    <p class="mt-5 text-sm text-paper/75">{{ $note }}</p>
+    <p class="mt-5 text-sm text-paper/90">{{ $note }}</p>
   </div>
 </section>

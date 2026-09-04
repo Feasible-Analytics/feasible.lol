@@ -23,7 +23,7 @@ for twenty years.
 
 ## What that costs to buy
 
-Here is what a million pageviews a month costs, per year, on the vendors' own
+Here's what a million pageviews a month costs, per year, on the vendors' own
 published pricing pages, checked September 3, 2026:
 
 | Plan | A year |
@@ -85,7 +85,7 @@ sitting there, telling on us.
 ## We were customers first
 
 Cloudmanic Labs has been building and running software for more than twenty years. We
-run our own products, including [Harbor](https://harbor.my), a notes app. We are
+run our own products, including [Harbor](https://harbor.my), a notes app. We're
 also, unavoidably, our own customers: every one of those sites needs to know whether
 anybody read the thing we shipped.
 
@@ -101,7 +101,7 @@ of this page are what came back.
 
 ## What we did instead
 
-**One plan.** $9.99 a month, or $99 a year. There is no starter tier that can't do
+**One plan.** $9.99 a month, or $99 a year. There's no starter tier that can't do
 funnels, no growth tier that adds three seats, no business tier that finally hands
 over the API. [Everything is in the one price](/pricing/).
 
@@ -122,7 +122,7 @@ than no analytics, because you'll trust it.
 
 **A limit that emails you instead of switching off.** Go over the million and
 we send a note. One month over costs nothing. Nothing is ever throttled, sampled away
-or deleted, and there is no overage charge, because that code doesn't exist.
+or deleted, and there's no overage charge, because that code doesn't exist.
 
 ## The honest catch
 

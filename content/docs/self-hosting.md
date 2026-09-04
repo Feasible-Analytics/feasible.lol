@@ -137,7 +137,7 @@ total confidence.
 ## Bot and spam lists
 
 A baseline of bot user-agent substrings and spam referrer domains is compiled into the binary. You
-can replace either, and supply the datacentre ranges that have no baseline at all, with newline files
+can replace either, and supply the datacenter ranges that have no baseline at all, with newline files
 in the data directory:
 
 ```
@@ -207,7 +207,7 @@ exact event UUID. The standalone ingester never opens `system.db` or an account 
 
 ## Billing on a self-hosted install
 
-There is none, and nothing is limited because of it.
+There's none, and nothing is limited because of it.
 
 With no payment provider configured the billing screens say so, the lifecycle clock never starts, and
 no account is ever locked or deleted for non-payment. The account lifecycle exists to manage the

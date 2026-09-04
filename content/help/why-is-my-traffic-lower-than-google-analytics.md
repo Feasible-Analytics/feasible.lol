@@ -8,7 +8,7 @@ checked: 2026-09-03
 
 Four reasons, and you can check three of them in about ten minutes.
 
-**We filter more bots, and we show you the count.** Feasible runs [five classification checks](/help/how-do-you-handle-bots/) and refuses anything that matches — crawlers, headless browsers, datacentre addresses, monitors, AI scrapers. Open the health panel and read the drop counts by reason. On a site with any backlinks at all, that number is often 20–40% of raw requests. This is usually the whole gap.
+**We filter more bots, and we show you the count.** Feasible runs [five classification checks](/help/how-do-you-handle-bots/) and refuses anything that matches — crawlers, headless browsers, datacenter addresses, monitors, AI scrapers. Open the health panel and read the drop counts by reason. On a site with any backlinks at all, that number is often 20–40% of raw requests. This is usually the whole gap.
 
 **The words mean different things.** A "visit" here is one sitting that closes after 30 minutes of inactivity. A "session" elsewhere may restart on a campaign change, on midnight, or on a different timeout. Compare pageviews to pageviews before you compare anything else — that's the one definition everybody shares.
 

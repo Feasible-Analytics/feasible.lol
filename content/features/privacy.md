@@ -29,7 +29,7 @@ the address is discarded before anything is written. The durable event type has
 nowhere to put one.
 
 Geolocation is a DB-IP Lite database read from local disk. Country, first- and
-second-level region, English city name, and nothing finer. There is no network
+second-level region, English city name, and nothing finer. There's no network
 call per pageview, ever, so no third party learns that your reader exists. A
 missing database degrades to "unknown" rather than failing. Commercial VPN exits
 are bucketed as `Anonymous VPN Service` instead of being dropped or labeled

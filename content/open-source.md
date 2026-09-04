@@ -11,8 +11,8 @@ The code is at
 **[github.com/Feasible-Analytics/app.feasible.lol](https://github.com/Feasible-Analytics/app.feasible.lol)**,
 under the **GNU Affero General Public License, version 3 or later**.
 
-We'll start with the part most open-source pages skip: **that is the same license
-Plausible uses**, and it is *less* permissive than Umami's MIT. If you're shopping for
+We'll start with the part most open-source pages skip: **that's the same license
+Plausible uses**, and it's *less* permissive than Umami's MIT. If you're shopping for
 the freest license in this category, it isn't ours. AGPL is copyleft with a network
 clause — run a modified copy as a service for other people and you owe those people
 your source.
@@ -23,8 +23,8 @@ So the license isn't the argument. This is.
 
 ### 1. There's no Community Edition
 
-There is one build. The binary we run at app.feasible.lol is compiled from the
-repository you can clone, and there is no second, smaller version of it for people who
+There's one build. The binary we run at app.feasible.lol is compiled from the
+repository you can clone, and there's no second, smaller version of it for people who
 don't pay.
 
 That's worth stating because open core is the normal arrangement in this category, and
@@ -38,7 +38,7 @@ enterprise license. Matomo's premium plugins, including Funnels, are
 rather than the GPL-3.0 that covers the core.
 
 None of that is dishonest and none of it is hidden; those companies wrote it down
-themselves. It just means the code you can run is not the code they run.
+themselves. It just means the code you can run isn't the code they run.
 
 **Ours has no such directory.** Checked September 3, 2026: no `ee/`, no `extra/`, no
 license-key module, no build tag that turns features off. If you find one, that's a bug
@@ -48,7 +48,7 @@ report we'd want.
 
 Funnels, custom properties, goals, teams and roles, shared dashboards, email reports,
 alerts, the full Stats API, the Sites API, webhooks and the built-in MCP server are all
-in every copy. The API package contains **no plan check at all** — there is no code path
+in every copy. The API package contains **no plan check at all** — there's no code path
 where a subscription tier decides whether a request is allowed.
 
 **Raw event export is a button.** Not an add-on, not a tier, not a sales call. You ask
@@ -84,7 +84,7 @@ excellent at what they do, and they're a different kind of operational commitmen
 recommends 32 GB of RAM for a production server, and Plausible's Community Edition
 README asks for 2 GB.
 
-To be clear about what we're not claiming: SQLite does not store bytes more
+To be clear about what we're not claiming: SQLite doesn't store bytes more
 efficiently than a column store. It doesn't. The claim is operational — one file, one
 process, nothing to tune, and a person with a $4 VPS and no ops team can keep it
 running.
@@ -159,7 +159,7 @@ constraint and you should know it before you evaluate us, not after.
 | Support | [help@feasible.lol](mailto:help@feasible.lol) | GitHub issues, best effort |
 
 **We'd rather you used the hosted service.** That's how this gets paid for, and at $99 a
-year it is almost certainly cheaper than your time. Self-hosting exists for the people
+year it's almost certainly cheaper than your time. Self-hosting exists for the people
 whose data can't leave their own network, the people who enjoy this sort of thing, and —
 mostly — as an answer to a question every small vendor deserves to be asked.
 

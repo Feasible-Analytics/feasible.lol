@@ -26,7 +26,7 @@
               <li class="border-b border-rule-soft">
                 <a
                   href="{{ .RelPermalink }}"
-                  class="block py-2 text-sm {{ if $here }}font-display font-extrabold text-flag{{ else }}text-neutral-800 hover:text-flag{{ end }}"
+                  class="block py-2 text-sm {{ if $here }}font-display font-extrabold text-flag-700{{ else }}text-neutral-800 hover:text-flag{{ end }}"
                   {{ if $here }}aria-current="page"{{ end }}
                   >{{ .Title }}</a
                 >
@@ -72,7 +72,7 @@
                 <p class="text-sm text-neutral-700">Previous</p>
                 <a
                   href="{{ .RelPermalink }}"
-                  class="font-display font-extrabold hover:text-flag"
+                  class="font-display font-extrabold hover:text-flag-700"
                   >← {{ .Title }}</a
                 >
               {{ end }}
@@ -82,7 +82,7 @@
                 <p class="text-sm text-neutral-700">Next</p>
                 <a
                   href="{{ .RelPermalink }}"
-                  class="font-display font-extrabold hover:text-flag"
+                  class="font-display font-extrabold hover:text-flag-700"
                   >{{ .Title }} →</a
                 >
               {{ end }}

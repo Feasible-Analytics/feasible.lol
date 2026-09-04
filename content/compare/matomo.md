@@ -1,6 +1,6 @@
 ---
 title: "Feasible vs Matomo"
-seotitle: "Feasible vs Matomo — Price, Hits vs Pageviews, Features"
+seotitle: "Feasible vs Matomo — price, hits vs pageviews, features"
 description: "Matomo Cloud is $2,040 a year at a million hits — and hits aren't pageviews. Feasible is $99. Matomo also does far more than we do. Both, explained."
 lede: "Matomo does much more than Feasible, and charges about twenty times as much. Whether that's a good trade depends entirely on which reports you open."
 versus: "Matomo"
@@ -67,7 +67,7 @@ Annual USD, list price, before tax.
 At a million a month, Matomo Cloud is $2,040 a year and Feasible is $99. Twenty
 times. But that comparison is unfair to us, and here's why.
 
-## A hit is not a pageview
+## A hit isn't a pageview
 
 Matomo doesn't bill for pageviews. It bills for hits, and its
 [own FAQ](https://matomo.org/faq/general/what-is-a-hit/) defines one as "a single
@@ -93,7 +93,7 @@ The lesson isn't that our number is always the small one. It's the check worth
 running on any two prices in this market: **find out what the number on the
 pricing page actually counts.**
 
-## Self-hosting: free core, paid plugins, real servers
+## Free core, paid plugins, real servers
 
 Matomo's core is GPL-3.0 and free to self-host. That's genuine, and it's the
 reason Matomo runs on a large share of the privacy-conscious web.
@@ -179,7 +179,7 @@ roll-up reporting across properties. If someone in your organization asks a
 question you didn't anticipate, Matomo probably answers it. We probably don't.
 
 **The premium plugins.** Heatmaps, session recording, A/B testing and form
-analytics are things we do not have and have not announced. If any of them is on
+analytics are things we don't have and haven't announced. If any of them is on
 your list, this comparison is over.
 
 **Enterprise fit.** SSO, on-premise deployment with a paid support contract,

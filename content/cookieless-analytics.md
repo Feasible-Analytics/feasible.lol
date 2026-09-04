@@ -1,6 +1,6 @@
 ---
 title: "Cookieless analytics, and what it actually buys you"
-seotitle: "Cookieless Analytics — No Cookies, No Banner"
+seotitle: "Cookieless analytics — no cookies, no banner"
 description: "Feasible sets no cookies and no persistent identifiers. For most sites that means no consent banner, and no data lost to the people who decline."
 lede: "What cookieless really means, how visitors get counted without one, whether the numbers hold up, and the honest answer on consent banners."
 kicker: "COOKIELESS"
@@ -27,7 +27,7 @@ Cookieless analytics is website analytics that measures traffic without storing
 an identifier in the visitor's browser. No cookie. No persistent ID. Nothing that
 can be read back on a later visit to recognize the same person.
 
-Feasible is cookieless. Not "cookieless if you configure it that way" — there is
+Feasible is cookieless. Not "cookieless if you configure it that way" — there's
 no cookie code in the tracker to turn on.
 
 ## How you count visitors when nothing is stored
@@ -61,7 +61,7 @@ Thursday is two visitors, because Monday's key no longer exists on Thursday. If
 "returning vs new" is a number your business runs on, this model can't give it to
 you.
 
-**Cross-device is not tracked.** Phone in the morning, laptop at lunch, two
+**Cross-device isn't tracked.** Phone in the morning, laptop at lunch, two
 visitors. Every cookieless tool has this property. Most don't say so plainly.
 
 **Two of your own sites count separately.** The domain is inside the hash on
@@ -75,7 +75,7 @@ Everything else — funnels, goals, custom properties, revenue, scroll depth, ti
 on page, the journey report — works fine, because none of it needs to remember
 anyone past midnight.
 
-## Cookieless is not fingerprinting
+## Cookieless isn't fingerprinting
 
 This is where the category gets sloppy, so let's be exact.
 
@@ -87,9 +87,9 @@ cookie. It's the workaround that made cookie rules feel pointless.
 Two design decisions make our hash useless for that:
 
 - **The site's domain is an input.** The same browser on two different sites
-  produces two unrelated numbers. There is nothing to join on.
-- **The key changes every UTC day and is never stored.** The number is not
-  stable across time. Tomorrow's cannot be derived from today's, by us or by
+  produces two unrelated numbers. There's nothing to join on.
+- **The key changes every UTC day and is never stored.** The number isn't
+  stable across time. Tomorrow's can't be derived from today's, by us or by
   anyone who took the database.
 
 We also don't read canvas, audio, fonts, GPU, battery or installed plugins. The
@@ -126,17 +126,17 @@ than an ad-linked analytics tool creates.
 Where it gets more interesting:
 
 **The UK now has a statutory analytics exemption.** The Data (Use and Access) Act
-2025 inserted a new Schedule A1 into PECR, in force since 5 February 2026. It
+2025 inserted a new Schedule A1 into PECR, in force since February 5, 2026. It
 permits storage or access whose sole purpose is collecting statistics about how
 your service is used, with a view to making improvements
 ([the text](https://www.legislation.gov.uk/ukpga/2025/18/schedule/12/enacted)).
 It comes with two conditions people skip: you must give clear information about
 it, and you must offer a **simple, free way to object**. The ICO's own guidance
 frames the boundary as "about how your service is used, not about who uses it"
-([ICO, updated 29 April 2026](https://ico.org.uk/for-organisations/direct-marketing-and-privacy-and-electronic-communications/guidance-on-the-use-of-storage-and-access-technologies/what-are-the-exceptions/)).
+([ICO, updated April 29, 2026](https://ico.org.uk/for-organisations/direct-marketing-and-privacy-and-electronic-communications/guidance-on-the-use-of-storage-and-access-technologies/what-are-the-exceptions/)).
 
 **In the EU it's less settled than the marketing suggests.** The EDPB's
-Guidelines 2/2023 on the technical scope of Article 5(3), adopted 7 October 2024,
+Guidelines 2/2023 on the technical scope of Article 5(3), adopted October 7, 2024,
 read that article more broadly than "cookies" —
 [the guidelines](https://www.edpb.europa.eu/system/files/2024-10/edpb_guidelines_202302_technical_scope_art_53_eprivacydirective_v2_en_0.pdf).
 The same document also says applicability doesn't automatically mean consent is
@@ -161,7 +161,7 @@ we're not going to quote one at you. What we'll say is the direction: a declined
 banner is a lost measurement, and you don't get to see how many.
 
 The second is the banner itself — the consent tool, the review, the thing every
-visitor has to dismiss before reading a word. There is an entire industry selling
+visitor has to dismiss before reading a word. There's an entire industry selling
 the fix for a problem that mostly arrives with the analytics tool you chose.
 
 ## Ad blockers, honestly

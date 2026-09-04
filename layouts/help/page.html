@@ -16,13 +16,13 @@
   <article class="shell pt-12 sm:pt-16">
     <nav aria-label="Breadcrumb" class="mb-6 text-sm text-neutral-700">
       <ol class="flex flex-wrap items-center gap-x-2">
-        <li><a href="/" class="hover:text-flag">Home</a></li>
+        <li><a href="/" class="hover:text-flag-700">Home</a></li>
         <li aria-hidden="true" class="text-neutral-500">/</li>
-        <li><a href="/help/" class="hover:text-flag">Help</a></li>
+        <li><a href="/help/" class="hover:text-flag-700">Help</a></li>
         {{ with $catName }}
           <li aria-hidden="true" class="text-neutral-500">/</li>
           <li>
-            <a href="/help/#{{ $cat }}" class="hover:text-flag">{{ . }}</a>
+            <a href="/help/#{{ $cat }}" class="hover:text-flag-700">{{ . }}</a>
           </li>
         {{ end }}
       </ol>
@@ -58,7 +58,7 @@
             <li>
               <a
                 href="{{ .RelPermalink }}"
-                class="font-medium text-neutral-800 hover:text-flag"
+                class="font-medium text-neutral-800 hover:text-flag-700"
                 >{{ .Title }}</a
               >
             </li>

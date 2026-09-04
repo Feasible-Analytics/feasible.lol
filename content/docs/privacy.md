@@ -94,7 +94,7 @@ somebody who is.
 
 ## Bot traffic is labeled, not deleted
 
-When we decide a request is a bot, a datacentre address or a known spam referrer, the event is still
+When we decide a request is a bot, a datacenter address or a known spam referrer, the event is still
 stored, with the reason attached, and excluded from your reports by default. You can turn it back on,
 and every drop is counted by reason on the ingestion health panel.
 

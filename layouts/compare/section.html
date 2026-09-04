@@ -35,7 +35,7 @@
       {{ range .RegularPages.ByWeight }}
         <li class="border-t-2 border-rule pt-5">
           <h2 class="font-display text-lg font-extrabold leading-snug">
-            <a href="{{ .RelPermalink }}" class="hover:text-flag">{{ .Title }}</a>
+            <a href="{{ .RelPermalink }}" class="hover:text-flag-700">{{ .Title }}</a>
           </h2>
           {{ with .Params.description }}
             <p class="mt-2 leading-relaxed text-neutral-700">{{ . }}</p>

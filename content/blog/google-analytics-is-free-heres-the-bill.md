@@ -11,7 +11,7 @@ Google Analytics 4 costs nothing. That part is true, and it's why roughly everyo
 
 The bill arrives somewhere other than the invoice. Here are the line items we can source.
 
-## Line one: the banner, and the people who click no
+## The banner, and the people who click no
 
 GA4 sets cookies. Cookies are storage on the visitor's device, which puts the tag squarely inside Article 5(3) of the ePrivacy Directive, and in the EU and UK that means a consent request before the tag runs.
 
@@ -23,7 +23,7 @@ What's certain is the direction. Your GA4 total is smaller than your real total,
 
 There's a second-order cost too. Since early March 2024, EEA advertisers have had to implement Consent Mode v2 to keep measurement working, and Google is explicit about the reach of that: "The requirements also apply if you are using Google Analytics data in Google Ads, Search Ads 360, or Display & Video 360" ([support.google.com/google-ads/answer/13695607](https://support.google.com/google-ads/answer/13695607), checked September 3, 2026). Not implementing it "may lead to loss in data" — their phrasing.
 
-## Line two: rows that quietly aren't there
+## Rows that quietly aren't there
 
 This is the one that costs you trust with whoever you report to.
 
@@ -37,7 +37,7 @@ And **cardinality**. A dimension with more than 500 unique values in a day is hi
 
 Three separate mechanisms, all on by default, none of which you can switch off, and the escape hatch for all three is an export into a data warehouse.
 
-## Line three: fourteen months
+## Fourteen months
 
 You can set GA4's retention for user-level data to 2 months or 14 months. That's the whole list ([support.google.com/analytics/answer/7667196](https://support.google.com/analytics/answer/7667196), checked September 3, 2026). 26, 38 and 50 months exist only on 360.
 
@@ -45,7 +45,7 @@ Get the scope right, because a lot of posts don't: the setting "does not affect 
 
 For comparison, since we're a vendor and you should hear it from us plainly: Feasible keeps five years on the $99 plan, and Plausible's Business plan keeps five ([plausible.io](https://plausible.io/#pricing), checked September 3, 2026).
 
-## Line four: the history that's already gone
+## The history that's already gone
 
 This is Google's sentence, not ours.
 
@@ -55,7 +55,7 @@ Standard UA properties had already stopped processing hits on July 1, 2023. Noth
 
 You can't price that line. You can only notice that it happened, and ask what your current tool would do to you.
 
-## Line five: 148 KB before it does anything
+## 148 KB before it does anything
 
 Measured on September 3, 2026, with `curl -H 'Accept-Encoding: identity' <url> | gzip -9 | wc -c`:
 
@@ -68,23 +68,23 @@ Over the wire on the day we measured, `gtag.js` came in at 147,179 bytes against
 
 Reproduce it yourself. Scripts change; that's why we date ours.
 
-While we're being straight about measurements: our script is not the smallest in the category. Plausible's is 1,291 bytes gzipped, comfortably under half of ours. The 43× is against Google, and that's the only script comparison we'll make.
+While we're being straight about measurements: our script isn't the smallest in the category. Plausible's is 1,291 bytes gzipped, comfortably under half of ours. The 43× is against Google, and that's the only script comparison we'll make.
 
-## Line six: an advertising company holds your visitors' behavior
+## An advertising company holds your visitors' behavior
 
 Google's revenue is advertising. GA4 data flows into Google Ads, Search Ads 360 and Display & Video 360 — that's not an accusation, it's the reason the Consent Mode v2 requirement above is written the way it is.
 
 Now the part where we correct a claim that would help us.
 
-**Google Analytics is not illegal in the EU.** Between 2021 and 2023, data protection authorities in Austria, France, Italy, Denmark, Finland, Norway and Sweden all found against GA in specific cases — most with reprimands and no fine, though Sweden's IMY fined Tele2 SEK 12 million in June 2023, upheld on appeal in October 2025 ([imy.se](https://www.imy.se/en/news/four-companies-must-stop-using-google-analytics/), checked September 3, 2026). Every one of those decisions turned on EU-to-US transfers after *Schrems II*.
+**Google Analytics isn't illegal in the EU.** Between 2021 and 2023, data protection authorities in Austria, France, Italy, Denmark, Finland, Norway and Sweden all found against GA in specific cases — most with reprimands and no fine, though Sweden's IMY fined Tele2 SEK 12 million in June 2023, upheld on appeal in October 2025 ([imy.se](https://www.imy.se/en/news/four-companies-must-stop-using-google-analytics/), checked September 3, 2026). Every one of those decisions turned on EU-to-US transfers after *Schrems II*.
 
 That ground moved on July 10, 2023, when the European Commission adopted the EU-US Data Privacy Framework adequacy decision. Google is certified under it, which removes the transfer basis every one of those decisions rested on. The General Court dismissed a challenge to the framework in September 2025, and an appeal is pending at the CJEU as Case C-703/25 P with no ruling yet.
 
-So the honest version: those rulings happened, they're worth knowing about, and they are not a live prohibition today. Anyone still telling you GA4 is banned in Europe is running a page they haven't updated since 2023.
+So the honest version: those rulings happened, they're worth knowing about, and they aren't a live prohibition today. Anyone still telling you GA4 is banned in Europe is running a page they haven't updated since 2023.
 
 The durable objection isn't legal. It's that the analysis you can do is capped, the rows you can see are edited, the history has a shelf life, and the counterparty's business is advertising.
 
-## Line seven: the time
+## The time it costs you
 
 The last line item is the one nobody puts on a slide. From r/GoogleAnalytics, March 12, 2026:
 

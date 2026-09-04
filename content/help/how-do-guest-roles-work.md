@@ -1,13 +1,13 @@
 ---
 title: "How do guest roles work?"
-description: "A guest gets one site and no idea the others exist. Two flavours — view only, or view and edit its settings."
+description: "A guest gets one site and no idea the others exist. Two flavors — view only, or view and edit its settings."
 category: "account-and-billing"
 weight: 70
 ---
 
 A guest is attached to one site, not to your [team](/help/what-are-the-team-roles/).
 
-They sign in, they see that site, and there's no trace of anything else you run. No site list with greyed-out rows, no team page, no billing, no hint of the client next door. Which is exactly what you want if you're an agency.
+They sign in, they see that site, and there's no trace of anything else you run. No site list with grayed-out rows, no team page, no billing, no hint of the client next door. Which is exactly what you want if you're an agency.
 
 There are two:
 

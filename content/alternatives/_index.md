@@ -1,6 +1,6 @@
 ---
 title: "Alternatives"
-seotitle: "Analytics Alternatives, Compared Honestly"
+seotitle: "Analytics alternatives, compared honestly"
 description: "Roundups of the alternatives to the big analytics tools, with real prices from each vendor's own page and the date we checked them."
 lede: "Roundups, not sales pages. We make one of the tools in these lists and we say so at the top of every one."
 kicker: "ALTERNATIVES"

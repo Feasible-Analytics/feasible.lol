@@ -42,7 +42,7 @@ Then bandwidth. Our tracking script is 3,377 bytes gzipped, 7,099 raw. Assume a 
 
 Storage fits. CPU is asleep. Bandwidth doesn't register. The box is $48 to $72 a year.
 
-We don't run one box, to be clear. Ingest is a separate tier from the app, and there's more than one of each, because a single machine that reboots is an outage and we'd rather it weren't. That's a redundancy bill. It is not a large one, and it doesn't scale with your pageviews the way an invoice does.
+We don't run one box, to be clear. Ingest is a separate tier from the app, and there's more than one of each, because a single machine that reboots is an outage and we'd rather it weren't. That's a redundancy bill. It isn't a large one, and it doesn't scale with your pageviews the way an invoice does.
 
 ## Not every architecture fits on that box
 
@@ -80,7 +80,7 @@ Two things about that table that matter more than the ordering.
 
 ## Where the gap comes from
 
-Some of it is real. A stack with a column store, a relational database and a queue in front of it costs more to run than one binary and a file — genuinely, not as a rhetorical device. Support costs money. Salaries cost money. A company that raised outside money has a number it has to hit, and that number is set by the people who wrote the cheque, not by the server.
+Some of it is real. A stack with a column store, a relational database and a queue in front of it costs more to run than one binary and a file — genuinely, not as a rhetorical device. Support costs money. Salaries cost money. A company that raised outside money has a number it has to hit, and that number is set by the people who wrote the check, not by the server.
 
 Our costs are different because our company is different. One plan. No sales team. No investors. Twenty-odd years of Cloudmanic Labs paying for itself. That isn't a virtue, it's a starting position — but it's why $99 works here and might not work somewhere else.
 

@@ -39,7 +39,7 @@ def analytics(request):
 
 Every template that does `{% extends "base.html" %}` now carries it.
 
-## Django's debug variable is not the guard you want
+## Django's debug variable isn't the guard you want
 
 Because `debug` isn't what it looks like.
 
@@ -69,7 +69,7 @@ Server-side events — a webhook, a Celery task, an offline conversion — go th
 
 Deploy, open the site in a normal browser window, and click through two or three pages. Then open Feasible.
 
-Real-time visitors should show you. If it doesn't, go to **Site settings → Ingestion health**. It counts every event that arrived and every one that was dropped, each with a named reason — `unknown_site` means `data-domain` doesn't match the site you registered, `hostname_not_allowed` means the page is on a hostname that isn't on your list. The **send a test event** button there posts through the real public URL, so it exercises exactly what a browser does.
+You should show up under Real-time visitors. If you don't, go to **Site settings → Ingestion health**. It counts every event that arrived and every one that was dropped, each with a named reason — `unknown_site` means `data-domain` doesn't match the site you registered, `hostname_not_allowed` means the page is on a hostname that isn't on your list. The **send a test event** button there posts through the real public URL, so it exercises exactly what a browser does.
 
 A brand-new site takes about fifteen seconds before its first event is accepted, so [give it that](/help/how-long-until-i-see-data/).
 

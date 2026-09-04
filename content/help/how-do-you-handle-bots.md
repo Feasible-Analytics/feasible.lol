@@ -9,7 +9,7 @@ Five checks, in order — and the filtered events are labeled, not deleted.
 
 1. **User agent.** About seventy tokens covering crawlers, headless browsers, HTTP libraries, uptime monitors, SEO tools, social unfurlers, search engines, AI crawlers and scanners. An *empty* user agent is explicitly not treated as a bot.
 2. **Automation signals from the browser** — the flags a driven browser leaves behind. Checked before the IP, because that's what catches a scraper running on somebody's home connection.
-3. **Datacentre address.** A binary search over 11,842 CIDR ranges from the big clouds and hosts. Cloudflare, Fastly and Akamai are deliberately left out: their ranges carry WARP and iCloud Private Relay, and those are real people.
+3. **Datacenter address.** A binary search over 11,842 CIDR ranges from the big clouds and hosts. Cloudflare, Fastly and Akamai are deliberately left out: their ranges carry WARP and iCloud Private Relay, and those are real people.
 4. **Outdated browser.** A narrow rule that only fires when a browser is more than eighteen major versions behind on an operating system that updates itself. It's aimed at spoofed agents, not at your one visitor who won't restart Chrome.
 5. **[Referrer spam](/help/im-seeing-spam-referrers/)** against a list of known junk domains.
 

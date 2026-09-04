@@ -45,7 +45,7 @@ health panel, and the whole event's tally comes back on an
 Numbers are normalized, so `1` and `1.0` are one value rather than two rows that look identical and
 never add up.
 
-## Scope: a property of one hit, or of a whole visit
+## A property of one hit, or of a whole visit
 
 Every property has a scope, and it's worth thinking about for ten seconds when you add one.
 

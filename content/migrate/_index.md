@@ -1,6 +1,6 @@
 ---
 title: "Migrating"
-seotitle: "Migrate to Feasible — Step-by-Step Guides"
+seotitle: "Migrate to Feasible — step-by-step guides"
 description: "How to move to Feasible from the analytics tool you're on now, including what history comes across and what doesn't."
 lede: "Step-by-step guides for moving, including the honest part about which numbers won't match afterwards."
 kicker: "MIGRATING"

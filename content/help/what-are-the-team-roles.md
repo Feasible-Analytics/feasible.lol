@@ -21,7 +21,7 @@ Team members are unlimited on every plan, so pick the right role rather than the
 
 Some notes on the edges, because that's where role systems break:
 
-**Guest roles sit outside the ranking.** A guest is not "a viewer, but scoped". They're deliberately excluded from the ordering, so a check for "at least admin" can never accidentally let one through. [How guests work](/help/how-do-guest-roles-work/).
+**Guest roles sit outside the ranking.** A guest isn't "a viewer, but scoped". They're deliberately excluded from the ordering, so a check for "at least admin" can never accidentally let one through. [How guests work](/help/how-do-guest-roles-work/).
 
 **Owner isn't invitable.** You can't invite someone as owner — ownership moves through its own transfer workflow, on purpose, so an account can't change hands by accident in an invitation email.
 

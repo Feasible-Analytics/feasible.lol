@@ -21,7 +21,7 @@ If you do nothing, here's the timetable. It's the same one a lapsed payment foll
 | 75, 85, 89 | Emails: deletion in 15 days, 5 days, tomorrow |
 | **90** | The account and its data are deleted |
 
-Ten emails. You will not be surprised by this.
+Ten emails. You won't be surprised by this.
 
 Two things stay true the whole way down.
 

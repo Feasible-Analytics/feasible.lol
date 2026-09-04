@@ -8,7 +8,7 @@ updated: 2026-09-03
 
 In the United States.
 
-Feasible is run by Cloudmanic Labs, LLC — 901 Brutscher Street, D112, Newberg, OR 97132 — and the hosted service runs on US infrastructure under Oregon law. **There is no EU region and we're not going to imply there is.** Some vendors in this category offer one; we don't, today.
+Feasible is run by Cloudmanic Labs, LLC — 901 Brutscher Street, D112, Newberg, OR 97132 — and the hosted service runs on US infrastructure under Oregon law. **There's no EU region and we're not going to imply there is.** Some vendors in this category offer one; we don't, today.
 
 If your visitors are in the EU or the UK, that's an international transfer, and it's covered the ordinary way: the [data processing addendum](/dpa/) incorporates the EU Standard Contractual Clauses (module two, controller to processor) and the UK Addendum. It's already part of the terms — [nothing to sign](/help/can-i-sign-a-dpa/).
 

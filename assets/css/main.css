@@ -65,9 +65,14 @@
   --color-surface: #eae9e9;
   --color-ink: #201e1d;
 
-  /* Action. One colour, used sparingly. */
+  /* Action. One color, used sparingly. */
   --color-flag: #ec3013;
   --color-flag-2: #e15b47;
+
+  /* The CTA band is a flood of red with text on it, so it takes a deeper red
+     than the buttons do. Paper on #ec3013 is 3.76:1 — fine for a 56px headline,
+     not for a 14px line under it. This is 5.17:1, which clears AA for both. */
+  --color-flag-band: #c62210;
 
   /* Neutral ramp — one shared lightness scale with the accent ramp, so the
      same step of either role matches in visual weight. */
@@ -114,6 +119,9 @@
   html {
     scroll-behavior: smooth;
     -webkit-text-size-adjust: 100%;
+    /* The page is light on purpose. Saying so keeps form controls, scrollbars
+       and the browser's own chrome from rendering dark around it. */
+    color-scheme: light;
   }
 
   /* Anyone who has asked their OS to stop animating things gets a page that
@@ -333,7 +341,7 @@
     overflow-wrap: anywhere;
   }
   .copy a:hover {
-    color: var(--color-flag);
+    color: var(--color-flag-800);
   }
   .copy strong {
     font-weight: 700;

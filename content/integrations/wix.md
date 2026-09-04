@@ -40,7 +40,7 @@ Custom code doesn't run in the Wix editor or in preview. It runs on the publishe
 
 Publish, open your live site in a private browser window, and click through two or three pages using the site's own navigation. Then open Feasible.
 
-Real-time visitors should show you. If it doesn't, go to **Site settings → Ingestion health**. It counts every event that arrived and every one that was dropped, each with a named reason — `unknown_site` means `data-domain` doesn't match the site you registered, `hostname_not_allowed` means the page is on a hostname that isn't on your list. The **send a test event** button there posts through the real public URL, so it exercises exactly what a browser does.
+You should show up under Real-time visitors. If you don't, go to **Site settings → Ingestion health**. It counts every event that arrived and every one that was dropped, each with a named reason — `unknown_site` means `data-domain` doesn't match the site you registered, `hostname_not_allowed` means the page is on a hostname that isn't on your list. The **send a test event** button there posts through the real public URL, so it exercises exactly what a browser does.
 
 If the health panel shows nothing arriving at all — not accepted, not dropped — the script isn't loading, and on Wix that means the snippet isn't published or isn't being served. View source on the live page and search for `feasible`. If it isn't in the HTML, the problem is on the Wix side of the fence.
 

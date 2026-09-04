@@ -1,6 +1,6 @@
 ---
 title: "Feasible vs Google Analytics"
-seotitle: "Feasible vs Google Analytics 4 — Side by Side"
+seotitle: "Feasible vs Google Analytics 4 — side by side"
 description: "Google Analytics is free, 148 KB of script, and needs a consent banner. Feasible is $99 a year, 3,377 bytes, and no banner for most sites."
 lede: "Google Analytics costs nothing and takes everything. Here's the trade, itemized, with Google's own documentation as the source."
 versus: "Google Analytics 4"
@@ -66,7 +66,7 @@ curl -H 'Accept-Encoding: identity' <url> | gzip -9 | wc -c
 
 And `gtag.js` is only the first request. It fetches more after it loads, so the
 real page cost is higher than the number above. On a phone on a bad connection,
-that is the difference between a page that renders and a page that waits.
+that's the difference between a page that renders and a page that waits.
 
 ## The consent banner
 
@@ -175,7 +175,7 @@ it, which removes the specific transfer ground every one of those decisions
 rested on. The General Court dismissed a challenge to the framework in September
 2025; an appeal is pending at the Court of Justice and undecided.
 
-So: the rulings happened, they're worth knowing about, and they are not a live
+So: the rulings happened, they're worth knowing about, and they aren't a live
 prohibition today. What's also true is that the framework's two predecessors
 were both struck down, and a tool that doesn't send data to an advertising
 company has no exposure to any of it either way.
@@ -212,7 +212,7 @@ can replicate. If you spend meaningful money on Google traffic, GA4 is part of
 your ad tooling, not just your reporting.
 
 BigQuery export gives you every raw event, unsampled, for free, and lets you
-join web behavior to your own warehouse. That is more than we offer.
+join web behavior to your own warehouse. That's more than we offer.
 
 It has cohort and retention analysis, mobile SDKs, audience building and
 cross-device modeling. We have none of those, and no plans we're announcing.

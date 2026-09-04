@@ -7,7 +7,7 @@ weight: 120
 
 You, and the people you invite. Nobody else, unless you choose to publish it.
 
-Your [dashboards](/features/teams-and-sharing/) are private by default. There is no directory of customer sites, no public index, and no way for someone to guess their way in.
+Your [dashboards](/features/teams-and-sharing/) are private by default. There's no directory of customer sites, no public index, and no way for someone to guess their way in.
 
 **Inside your team**, access is decided by [role](/help/what-are-the-team-roles/). A viewer reads dashboards and changes nothing. An editor manages site settings. A billing role sees the invoices and not much else. Owner and admin can manage people. If somebody only needs one site — a client, a contractor, a freelancer — give them a [guest role](/help/how-do-guest-roles-work/) and they'll see that site and no trace of the others.
 

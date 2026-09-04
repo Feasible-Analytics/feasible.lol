@@ -13,7 +13,7 @@ Here's the actual path it takes. A request arrives at our ingest tier. In memory
 2. It goes into the [daily visitor hash](/help/how-do-you-count-unique-visitors-without-cookies/) along with the user agent and your domain.
 3. It's checked against any [IP shields](/help/how-do-i-exclude-my-own-visits/) you've set.
 
-Then the derived event is written and the address is gone. The event record we store has no column for an IP, which is a stronger guarantee than a policy — there is nowhere to put one even by accident.
+Then the derived event is written and the address is gone. The event record we store has no column for an IP, which is a stronger guarantee than a policy — there's nowhere to put one even by accident.
 
 That ordering is why IP-based exclusions have to be configured in Feasible rather than filtered later. The ingest tier is the only place in the system where the address exists at all.
 

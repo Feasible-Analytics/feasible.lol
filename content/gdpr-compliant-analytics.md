@@ -1,6 +1,6 @@
 ---
 title: "Analytics that makes GDPR simpler"
-seotitle: "GDPR-Compliant Analytics Without a Consent Banner"
+seotitle: "GDPR-compliant analytics without a consent banner"
 description: "Feasible is GDPR-friendly by design: no cookies, no stored identifiers, no ad network. Most sites won't need a banner. Not legal advice — here's why."
 lede: "We won't tell you you're compliant. What we'll do is show you exactly what gets collected, what the rules actually ask for, and where the hard cases are."
 kicker: "GDPR"
@@ -18,7 +18,7 @@ faq:
   - q: "Where is the data stored?"
     a: "On the hosted service, in the United States. Cloudmanic Labs is an Oregon company and there is no EU-region option today. Transfers are handled by the standard contractual clauses in the DPA. If EU-only storage is a hard requirement, self-host it or pick a vendor that hosts in the EU."
   - q: "Is Google Analytics GDPR compliant?"
-    a: "That question got a lot of attention in 2022, when regulators in Austria, France, Italy, Denmark and the Nordics ruled against EU-to-US transfers of Google Analytics data. The ground under those decisions changed on 10 July 2023, when the European Commission adopted the EU-US Data Privacy Framework and Google certified under it. The durable objections to GA4 are about the product — consent banners, data retention limits, thresholded reports — not about a live ban."
+    a: "That question got a lot of attention in 2022, when regulators in Austria, France, Italy, Denmark and the Nordics ruled against EU-to-US transfers of Google Analytics data. The ground under those decisions changed on July 10, 2023, when the European Commission adopted the EU-US Data Privacy Framework and Google certified under it. The durable objections to GA4 are about the product — consent banners, data retention limits, thresholded reports — not about a live ban."
   - q: "What about CCPA and PECR?"
     a: "The same facts help with both. CCPA turns on selling or sharing personal information, and we do neither. PECR turns on storing or accessing information on a device, and since February 2026 UK law carries an express statistical-purposes exception with conditions attached."
 ---
@@ -43,8 +43,8 @@ somewhere.
 
 Take those two things away and most of the paperwork goes with them. There's no
 profile to give someone access to. There's no cross-site identity to explain.
-There's no third country receiving behavioral data for advertising, because there
-is no advertising.
+There's no third country receiving behavioral data for advertising, because there's
+no advertising.
 
 What's left is small, and we'd rather describe it accurately than round it down
 to zero.
@@ -69,7 +69,7 @@ tools in this category make it anyway.
 country, region, city, device type, screen bucket, browser, OS, language, and any
 custom properties you choose to send. About 210 bytes a row.
 
-There is no field for a name, an email or a user ID, because we didn't build one.
+There's no field for a name, an email or a user ID, because we didn't build one.
 Our DPA says explicitly that you must not send direct identifiers.
 
 ## What each rule actually asks for
@@ -78,7 +78,7 @@ Our DPA says explicitly that you must not send direct identifiers.
 Article 6. If IPs or IP-derived hashes are processed even briefly, that's
 processing, and legitimate interest under Article 6(1)(f) is the standard answer
 for audience measurement — with a documented balancing test and a right to object.
-The CJEU's *Breyer* judgment (Case C-582/14, 19 October 2016) is the reason this
+The CJEU's *Breyer* judgment (Case C-582/14, October 19, 2016) is the reason this
 is careful rather than obvious: it held a dynamic IP is personal data to a site
 operator *if* that operator has legal means to identify the visitor with the
 ISP's help ([the Court's press
@@ -97,7 +97,7 @@ there's no ad network to share with.
 
 This is the biggest change in the area and most pages haven't caught up.
 
-Since **5 February 2026**, UK law carries an express consent exception for
+Since **February 5, 2026**, UK law carries an express consent exception for
 analytics. The Data (Use and Access) Act 2025 inserted a new Schedule A1 into
 PECR ([the enacted
 text](https://www.legislation.gov.uk/ukpga/2025/18/schedule/12/enacted)). It
@@ -114,8 +114,7 @@ Traffic by page, journeys, scroll depth, device and browser mix, referrers,
 bounce rates and city-level geolocation are all on the exempt side of the ICO's
 own table. Recordings of individual visitors, ad clicks, linking a visitor ID to
 conversions shared with ad partners, and anything for advertising are not
-([ICO guidance, updated 29 April
-2026](https://ico.org.uk/for-organisations/direct-marketing-and-privacy-and-electronic-communications/guidance-on-the-use-of-storage-and-access-technologies/what-are-the-exceptions/)).
+([ICO guidance, updated April 29, 2026](https://ico.org.uk/for-organisations/direct-marketing-and-privacy-and-electronic-communications/guidance-on-the-use-of-storage-and-access-technologies/what-are-the-exceptions/)).
 
 Two things vendors skip. The exception is conditional on that disclosure and that
 opt-out — running "exempt" analytics with neither doesn't clear the bar. And the
@@ -126,7 +125,7 @@ claiming it writes nothing.
 ## In the EU it's a strong position, not a settled one
 
 The EDPB adopted Guidelines 2/2023 on the technical scope of Article 5(3) on
-**7 October 2024**, and they read that article more broadly than the industry
+**October 7, 2024**, and they read that article more broadly than the industry
 slogan does — including instructing a browser to send information, and hashed
 identifiers ([the
 guidelines](https://www.edpb.europa.eu/system/files/2024-10/edpb_guidelines_202302_technical_scope_art_53_eprivacydirective_v2_en_0.pdf)).
@@ -148,20 +147,19 @@ and if you see a vendor claiming it, that tells you something. CNIL's criteria a
 demanding and worth reading: statistics for the publisher's sole account, no
 cross-site identifier, referrer limited to the domain, city-level geolocation at
 most, no session replay
-([CNIL, 4 July
-2025](https://www.cnil.fr/fr/cookies-et-autres-traceurs/regles/cookies-solutions-pour-les-outils-de-mesure-daudience)).
+([CNIL, July 4, 2025](https://www.cnil.fr/fr/cookies-et-autres-traceurs/regles/cookies-solutions-pour-les-outils-de-mesure-daudience)).
 
-## Why Google Analytics is the hard case — and the part most pages get wrong
+## Why Google Analytics is the hard case
 
 In 2022 the regulators in Austria, France, Italy, Denmark, Finland, Norway and
 Sweden all ruled against EU-to-US transfers of Google Analytics data. Those
 decisions were real, and mostly ended in warnings and orders rather than fines.
 
-**They are not a live prohibition today, and we're not going to pretend they
+**They aren't a live prohibition today, and we're not going to pretend they
 are.** Every one of them turned on transfers after *Schrems II*, and the ground
-under them changed on **10 July 2023**, when the European Commission adopted the
+under them changed on **July 10, 2023**, when the European Commission adopted the
 EU-US Data Privacy Framework adequacy decision. Google LLC is certified under it.
-The General Court dismissed the challenge to the framework on 3 September 2025;
+The General Court dismissed the challenge to the framework on September 3, 2025;
 an appeal is pending at the CJEU and undecided.
 
 Anyone still telling you Google Analytics is illegal in the EU is running a stale
@@ -187,15 +185,15 @@ why they're the better argument:
   Explorations together; only the BigQuery export is marked "No"
   ([source](https://support.google.com/analytics/answer/13331292)).
 - **Universal Analytics history is gone.** Standard UA properties stopped
-  processing hits on 1 July 2023, and Google cut off access to current and
-  historical UA data from the week of 1 July 2024
+  processing hits on July 1, 2023, and Google cut off access to current and
+  historical UA data from the week of July 1, 2024
   ([source](https://support.google.com/analytics/answer/11583528)). Anyone who
   didn't export lost it.
 
 ## What we store, where, and under what contract
 
 **Where.** The hosted service runs in the United States. Cloudmanic Labs, LLC is
-at 901 Brutscher Street, D112, Newberg, OR 97132, and Oregon law governs. There is
+at 901 Brutscher Street, D112, Newberg, OR 97132, and Oregon law governs. There's
 no EU region today and we're not going to imply there is. International transfers
 are handled by the standard contractual clauses incorporated in our DPA, together
 with the UK Addendum.

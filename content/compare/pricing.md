@@ -1,6 +1,6 @@
 ---
 title: "What analytics actually costs"
-seotitle: "What Web Analytics Actually Costs — The Whole Price Ladder"
+seotitle: "What web analytics actually costs — the whole price ladder"
 description: "Every privacy-friendly analytics vendor's published price at 10k, 100k, 1M, 5M and 10M pageviews a month — with what each one actually counts."
 lede: "Ten vendors, five traffic levels, one table. Plus the thing that makes most of these numbers wrong: almost nobody bills for the same unit."
 versus: "everyone else"
@@ -72,7 +72,7 @@ five of these vendors don't bill pageviews.
 
 A dash means the vendor doesn't offer that volume on that plan.
 
-**We are not the cheapest at the bottom.** At 10,000 pageviews a month, Pirsch
+**We're not the cheapest at the bottom.** At 10,000 pageviews a month, Pirsch
 Standard is $60 and Plausible Starter is $90, both under our $99, and Google
 Analytics and Umami Hobby are free. If you run one small site by yourself, one
 of those is a better deal and you should take it.
@@ -140,7 +140,7 @@ Two numbers to notice.
 **Plausible's advertised entry price is a single site with no teammates.** Custom
 properties, funnels, ecommerce revenue attribution and the Stats API all start
 on Business — $1,390 a year at a million pageviews. And scheduled raw event
-export is Enterprise-only, so there is no published self-serve price at which
+export is Enterprise-only, so there's no published self-serve price at which
 you can get your own raw events out.
 
 **Simple Analytics bills per seat.** One user included, $20 a month for each
@@ -175,8 +175,8 @@ Rarely on a pricing page, always in the terms. Worth checking before you commit.
 **Feasible.** We email you at 70%, 85% and 100%. One month over costs nothing at
 all. Two consecutive full months over gets you an email asking you to reply
 within 14 days, and only if nobody replies does the dashboard lock. **Collection
-never stops, nothing is deleted, and export works the whole time.** There is no
-overage charge in our billing code, because there is no overage tier.
+never stops, nothing is deleted, and export works the whole time.** There's no
+overage charge in our billing code, because there's no overage tier.
 
 **Pirsch** publishes the strictest policy we found. From their pricing page: "If
 you reach the usage limit before the end of your billing period, your access

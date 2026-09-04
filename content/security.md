@@ -48,7 +48,7 @@ policy someone has to remember to follow.
 The visitor identifier is a **daily-rotating SipHash** of user agent, IP and domain.
 The salt derives from the UTC day number and is never stored in a database, so
 yesterday's salts can't be recovered and the identifier can't be reversed or linked
-across days. It is **pseudonymous, not anonymous** — we won't call it anonymous,
+across days. It's **pseudonymous, not anonymous** — we won't call it anonymous,
 because it isn't.
 
 **One SQLite database per account.** Your data isn't a row with a `team_id` on it in a
@@ -59,7 +59,7 @@ Geolocation is a local database file on our own disks — no network call to a t
 party per pageview, ever. Source favicons in the dashboard are proxied through our
 own origin, so a referring site never learns you were reading about it.
 
-Where the data lives: **Newberg, Oregon, United States.** There is no EU region — we
+Where the data lives: **Newberg, Oregon, United States.** There's no EU region — we
 won't claim one. Everyone we rely on to run the service is named on the
 [sub-processors list](/legal/subprocessors/).
 
@@ -104,7 +104,7 @@ Read this part. It's the reason the page exists.
 
 - **No SOC 2 report. No ISO 27001 certificate. No third-party penetration test.** Not
   "in progress" — we don't have them. If your procurement process requires one, we
-  will not pass it, and you should know that now rather than in week six.
+  won't pass it, and you should know that now rather than in week six.
 - **No bug bounty program.** We don't pay for reports. We do read every one and we'll
   credit you if you want the credit.
 - **No SSO or SAML.** It isn't built. When it is, it'll be in the one plan like

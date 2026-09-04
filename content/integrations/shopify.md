@@ -36,14 +36,14 @@ What this actually costs you is less than it sounds. You still see every product
 **Preferences has a Google Analytics box. Don't use it.** `Online Store → Preferences` has a field for a Google Analytics property. It isn't a general "paste any script here" field, and it isn't where this goes.
 
 {{< callout title="Password-protected stores" >}}
-If your store is still behind Shopify's password page, the password page is not your theme and won't carry the tag. Nothing will arrive until the store is open. That's not a broken install.
+If your store is still behind Shopify's password page, the password page isn't your theme and won't carry the tag. Nothing will arrive until the store is open. That's not a broken install.
 {{< /callout >}}
 
 ## Check it worked
 
 Open your live storefront in a normal browser window — not the theme editor — and click through two or three products. Then open Feasible.
 
-Real-time visitors should show you. If it doesn't, go to **Site settings → Ingestion health**. It counts every event that arrived and every one that was dropped, each with a named reason — `unknown_site` means `data-domain` doesn't match the site you registered, `hostname_not_allowed` means the page is on a hostname that isn't on your list. That last one is worth knowing about here: `yourstore.myshopify.com` and `yourstore.com` are different hostnames, and the health panel has a one-click action to allow whichever one you're testing on.
+You should show up under Real-time visitors. If you don't, go to **Site settings → Ingestion health**. It counts every event that arrived and every one that was dropped, each with a named reason — `unknown_site` means `data-domain` doesn't match the site you registered, `hostname_not_allowed` means the page is on a hostname that isn't on your list. That last one is worth knowing about here: `yourstore.myshopify.com` and `yourstore.com` are different hostnames, and the health panel has a one-click action to allow whichever one you're testing on.
 
 The **send a test event** button posts through the real public URL, so it exercises exactly what a browser does. A brand-new site takes about fifteen seconds before its first event is accepted, so [give it that](/help/how-long-until-i-see-data/).
 

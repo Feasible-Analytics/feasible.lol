@@ -15,7 +15,7 @@ You've either got what you came for by then or the product has failed, and we'd 
 
 There are fifteen metrics in the entire product: visitors, visits, pageviews, events, bounce rate, visit duration, views per visit, time on page, scroll depth, exit rate, conversion rate, group conversion rate, total revenue, average revenue, revenue per visitor.
 
-That's it. There is no sixteenth waiting behind a menu.
+That's it. There's no sixteenth waiting behind a menu.
 
 Six of them are on screen the moment the page loads — unique visitors, total visits, total pageviews, views per visit, bounce rate, visit duration — and each tile is a button that redraws the graph with that metric. The other nine live where they mean something: time on page and scroll depth on pages, conversion rate on goals, revenue on revenue goals.
 
@@ -63,7 +63,7 @@ Plainly, because you'll find out anyway.
 
 Some of those are missing because we haven't built them. Some are missing because we don't think they belong in a tool this size, and session replay is the clearest case: a recording of one person's session is a different product with a different privacy story, and the UK's own analytics exemption draws the line in exactly that place.
 
-The escape hatch is that we didn't lock the door. The [Stats API](/features/) is in every plan and every build — there is no plan check in that code at all — and raw event export is a button that produces a ZIP with the roll-up CSVs and the raw rows. So when you do need the arbitrary report, you take your data and build it somewhere designed for arbitrary reports. That's a better answer than us growing a worse version of that product inside this one.
+The escape hatch is that we didn't lock the door. The [Stats API](/features/) is in every plan and every build — there's no plan check in that code at all — and raw event export is a button that produces a ZIP with the roll-up CSVs and the raw rows. So when you do need the arbitrary report, you take your data and build it somewhere designed for arbitrary reports. That's a better answer than us growing a worse version of that product inside this one.
 
 ## Who shouldn't use this
 

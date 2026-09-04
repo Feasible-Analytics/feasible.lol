@@ -15,7 +15,7 @@ One button, under **Site settings → Imports and exports**.
 
 That's the part that matters, and it's worth saying why. An analytics tool that only exports aggregates has made leaving impossible even while claiming you own your data. Roll-ups can't be re-aggregated a different way and can't be re-imported anywhere useful. Raw rows can.
 
-**Export works in every account state.** Trial, paid, over the pageview limit, dashboard locked, payment lapsed, dormant, the day before deletion. There is no phase where the export button is off. It's the one route we deliberately keep open no matter what else is closed, because portability that depends on a payment isn't portability.
+**Export works in every account state.** Trial, paid, over the pageview limit, dashboard locked, payment lapsed, dormant, the day before deletion. There's no phase where the export button is off. It's the one route we deliberately keep open no matter what else is closed, because portability that depends on a payment isn't portability.
 
 Two more ways out, if a ZIP isn't the shape you want:
 

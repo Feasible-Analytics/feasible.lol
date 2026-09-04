@@ -32,14 +32,14 @@
           <h2
             class="mt-3 font-display text-[1.75rem] font-extrabold leading-tight tracking-tight sm:text-[2.25rem]"
           >
-            <a href="{{ .RelPermalink }}" class="hover:text-flag">{{ .Title }}</a>
+            <a href="{{ .RelPermalink }}" class="hover:text-flag-700">{{ .Title }}</a>
           </h2>
           <p class="mt-4 max-w-[60ch] text-lg leading-relaxed text-neutral-700">
             {{ or .Params.description .Summary | plainify | truncate 260 }}
           </p>
           <a
             href="{{ .RelPermalink }}"
-            class="mt-5 inline-block font-display font-extrabold text-flag-700 hover:text-flag"
+            class="mt-5 inline-block font-display font-extrabold text-flag-700 hover:text-flag-700"
             >Read it&nbsp;→</a
           >
         </div>
@@ -52,7 +52,7 @@
         <li class="border-t-2 border-rule pt-5">
           <p class="kicker">{{ .Date.Format "January 2, 2006" }}</p>
           <h2 class="mt-3 font-display text-xl font-extrabold leading-snug">
-            <a href="{{ .RelPermalink }}" class="hover:text-flag">{{ .Title }}</a>
+            <a href="{{ .RelPermalink }}" class="hover:text-flag-700">{{ .Title }}</a>
           </h2>
           <p class="mt-2 max-w-[52ch] leading-relaxed text-neutral-700">
             {{ or .Params.description .Summary | plainify | truncate 180 }}

@@ -20,7 +20,7 @@ Under them, every drop with a named reason. Not "other" — a reason, from a
 closed list: `bot`, `datacenter_ip`, `referrer_spam`, `outdated_browser`,
 `automation`, `hostname_not_allowed`, `unknown_site`, `shield_ip`,
 `shield_country`, `shield_page`, `rate_limited`, `invalid_payload`, and a
-handful more. There is no bucket labeled miscellaneous, because a
+handful more. There's no bucket labeled miscellaneous, because a
 miscellaneous bucket is where the bug you're looking for goes to hide.
 
 ## The last request we received

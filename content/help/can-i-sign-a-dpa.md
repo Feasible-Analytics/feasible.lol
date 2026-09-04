@@ -21,6 +21,6 @@ It runs to ten numbered sections and covers what you'd expect a DPA to cover:
 - **The EU Standard Contractual Clauses, module two, plus the UK Addendum**, which is how [US hosting](/help/where-is-my-data-stored/) is handled.
 - **Security measures**: TLS, a hashing value derived fresh each day, one database per account, encrypted volumes, hashed credentials, least privilege.
 
-One carve-out worth knowing if you [self-host](/help/can-i-run-feasible-myself/): your own hosting providers are not our sub-processors, and the DPA says so. On a self-hosted install the legal pages substitute your organization's details for ours, because in that arrangement we aren't processing anything.
+One carve-out worth knowing if you [self-host](/help/can-i-run-feasible-myself/): your own hosting providers aren't our sub-processors, and the DPA says so. On a self-hosted install the legal pages substitute your organization's details for ours, because in that arrangement we aren't processing anything.
 
 If your legal team needs a change to the text, [email us](mailto:help@feasible.lol) and we'll read it. We're a small company, so we can actually answer.

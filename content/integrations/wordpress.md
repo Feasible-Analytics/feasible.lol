@@ -35,7 +35,7 @@ There's also a WordPress plugin, feasible.lol Analytics. Install it, open **feas
 It serves the script and the events endpoint from your own domain on randomized paths, which is the part that actually survives ad blockers. It also adds two measurements a theme can't give you: **404 hits and site-search terms**.
 
 {{< callout title="Those two are the plugin, not the script" >}}
-404 and site-search tracking come from the WordPress plugin. They are not in the base script tag, on WordPress or anywhere else. If you paste the snippet by hand, you get everything else — outbound clicks, file downloads, form submissions, scroll depth — but not those two.
+404 and site-search tracking come from the WordPress plugin. They aren't in the base script tag, on WordPress or anywhere else. If you paste the snippet by hand, you get everything else — outbound clicks, file downloads, form submissions, scroll depth — but not those two.
 {{< /callout >}}
 
 ## Caching plugins
@@ -52,7 +52,7 @@ If you use a minifier, exclude the tag or check the rendered source afterwards. 
 
 Clear your cache, open your site in a normal browser window, and click through two or three pages. Then open Feasible.
 
-Real-time visitors should show you. If it doesn't, go to **Site settings → Ingestion health**. It counts every event that arrived and every one that was dropped, each with a named reason — `unknown_site` means `data-domain` doesn't match the site you registered, `hostname_not_allowed` means the page is on a hostname that isn't on your list. The **send a test event** button there posts through the real public URL, so it exercises exactly what a browser does.
+You should show up under Real-time visitors. If you don't, go to **Site settings → Ingestion health**. It counts every event that arrived and every one that was dropped, each with a named reason — `unknown_site` means `data-domain` doesn't match the site you registered, `hostname_not_allowed` means the page is on a hostname that isn't on your list. The **send a test event** button there posts through the real public URL, so it exercises exactly what a browser does.
 
 A brand-new site takes about fifteen seconds before its first event is accepted, so [give it a moment](/help/how-long-until-i-see-data/) before you start changing things.
 

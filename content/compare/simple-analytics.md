@@ -1,6 +1,6 @@
 ---
 title: "Feasible vs Simple Analytics"
-seotitle: "Feasible vs Simple Analytics — Price, Datapoints, Seats"
+seotitle: "Feasible vs Simple Analytics — price, datapoints, seats"
 description: "Simple Analytics bills datapoints, not pageviews, and charges $240 a year per extra seat. Feasible is $99 flat with unlimited users. Compared."
 lede: "Simple Analytics keeps your data in the Netherlands, which we can't. It also bills for datapoints and charges per seat, which adds up faster than the sticker suggests."
 versus: "Simple Analytics"

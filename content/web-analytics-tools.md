@@ -1,6 +1,6 @@
 ---
 title: "Web analytics tools, compared"
-seotitle: "Web Analytics Tools Compared on Price and Limits"
+seotitle: "Web analytics tools compared on price and limits"
 description: "Ten web analytics tools compared on price at 100k and 1M pageviews, site and seat limits, cookies and license. We make one of them, and we say so."
 lede: "What each one costs at real traffic, what it counts, and which situation each is genuinely the right answer for."
 kicker: "ROUNDUP"

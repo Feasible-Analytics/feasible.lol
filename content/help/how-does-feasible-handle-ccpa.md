@@ -10,9 +10,9 @@ The CCPA questions mostly don't attach to us, because the things it regulates ar
 
 California's rules turn on a handful of specific behaviors. Here's where Feasible lands on each.
 
-**Selling personal information.** We don't. Not for money, not for "other valuable consideration". There is no data broker, no ad network, no partner feed. [The longer answer](/help/do-you-sell-my-data/).
+**Selling personal information.** We don't. Not for money, not for "other valuable consideration". There's no data broker, no ad network, no partner feed. [The longer answer](/help/do-you-sell-my-data/).
 
-**Sharing for cross-context behavioral advertising.** This is the one the CPRA added, and it's the one most analytics scripts trip over. Feasible does no advertising of any kind and builds no audience. Your domain is baked into the visitor hash, so the same person on two of our customers' sites is two unrelated numbers. There is no context to cross.
+**Sharing for cross-context behavioral advertising.** This is the one the CPRA added, and it's the one most analytics scripts trip over. Feasible does no advertising of any kind and builds no audience. Your domain is baked into the visitor hash, so the same person on two of our customers' sites is two unrelated numbers. There's no context to cross.
 
 **Profiles and automated decision-making.** Neither exists. There are no user-level records, no per-person timelines, and no screen anywhere that shows you an individual.
 

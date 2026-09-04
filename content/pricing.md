@@ -124,7 +124,7 @@ three.
 
 **And be honest about the other end of the ladder:** at 10,000 pageviews a month,
 Plausible Starter is $90 a year and Pirsch Standard is $60. Both are cheaper than us.
-If you run one small site, never fire a custom event and work alone, we are not the
+If you run one small site, never fire a custom event and work alone, we're not the
 cheapest thing you can buy — we're the one whose price doesn't move when any of that
 changes.
 

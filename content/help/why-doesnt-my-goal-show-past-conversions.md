@@ -13,7 +13,7 @@ Why not just backfill? Because the numbers would be quietly wrong. A conversion 
 
 There's a real cost to this, and it's this: **create your goals on day one.** Even the ones you're not sure you need. A goal you never look at costs nothing; a goal you wish you'd made in March is gone.
 
-If you genuinely need the history, there is one route. The events themselves *are* stored — it's the goal evaluation that isn't retroactive. You can filter the dashboard by event name, or query the raw events through the [API](/docs/api/) or [the export](/help/how-do-i-export-my-data/), and count them yourself for the period before the goal existed. Clumsy, but the data is there.
+If you genuinely need the history, there's one route. The events themselves *are* stored — it's the goal evaluation that isn't retroactive. You can filter the dashboard by event name, or query the raw events through the [API](/docs/api/) or [the export](/help/how-do-i-export-my-data/), and count them yourself for the period before the goal existed. Clumsy, but the data is there.
 
 Two things that are *not* the problem, in case you're checking:
 

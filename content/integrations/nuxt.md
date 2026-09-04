@@ -69,7 +69,7 @@ Deploy, or run `nuxt build` and `nuxt preview` on a real hostname. `localhost` i
 
 Open the site, click a link to a second route rather than reloading, and watch the network tab: one `POST` to `/api/event` on load, one more per navigation. Then open Feasible.
 
-Real-time visitors should show you. If it doesn't, go to **Site settings → Ingestion health**. It counts every event that arrived and every one that was dropped, each with a named reason — `unknown_site` means `data-domain` doesn't match the site you registered, `hostname_not_allowed` means the page is on a hostname that isn't on your list, which is what a preview deployment URL will do. The **send a test event** button there posts through the real public URL, so it exercises exactly what a browser does.
+You should show up under Real-time visitors. If you don't, go to **Site settings → Ingestion health**. It counts every event that arrived and every one that was dropped, each with a named reason — `unknown_site` means `data-domain` doesn't match the site you registered, `hostname_not_allowed` means the page is on a hostname that isn't on your list, which is what a preview deployment URL will do. The **send a test event** button there posts through the real public URL, so it exercises exactly what a browser does.
 
 A brand-new site takes about fifteen seconds before its first event is accepted. [Give it that](/help/how-long-until-i-see-data/) before you change anything.
 

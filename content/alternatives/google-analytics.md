@@ -1,6 +1,6 @@
 ---
 title: "Google Analytics alternatives, compared"
-seotitle: "Google Analytics Alternatives: What You Give Up"
+seotitle: "Google Analytics alternatives: what you give up"
 description: "Nine Google Analytics alternatives compared on price, limits and privacy — Plausible, Fathom, Matomo, Umami, GoatCounter and more. We make one of them."
 lede: "What people actually leave GA4 for, what each alternative costs at real traffic, and the things you give up when you go."
 kicker: "ROUNDUP"
@@ -17,7 +17,7 @@ faq:
   - q: "Will my numbers match Google Analytics after I switch?"
     a: "No, and no two analytics tools ever match. Bot filtering differs, ad blockers hit each tool differently, the definition of a session differs, and GA4 thresholds and can sample its own reports. Expect a gap in the tens of percent and compare trends rather than absolute numbers."
   - q: "Can I keep my Google Analytics history?"
-    a: "You can. Export your GA4 reports as CSV and upload the folder into Feasible — pages, sources, locations, devices and browsers land on the same charts as your live traffic. Universal Analytics data is a different story — Google cut off access to it from the week of 1 July 2024, so if you didn't export it then, it's gone."
+    a: "You can. Export your GA4 reports as CSV and upload the folder into Feasible — pages, sources, locations, devices and browsers land on the same charts as your live traffic. Universal Analytics data is a different story — Google cut off access to it from the week of July 1, 2024, so if you didn't export it then, it's gone."
   - q: "Do Google Analytics alternatives need a cookie banner?"
     a: "The cookieless ones generally don't, for analytics. Feasible, Plausible, Fathom, Simple Analytics, Umami, Pirsch, GoatCounter and Cloudflare all set no cookies. That isn't a legal guarantee and the rest of your site may still need a banner — check with your own lawyer."
 ---
@@ -59,10 +59,10 @@ reduced to 2 months with older event-level data permanently deleted
 ([source](https://support.google.com/analytics/answer/7667196)).
 
 **Google deleted the last one.** Standard Universal Analytics properties stopped
-processing hits on 1 July 2023, and Google cut off access to current and
-historical UA data from the week of 1 July 2024
+processing hits on July 1, 2023, and Google cut off access to current and
+historical UA data from the week of July 1, 2024
 ([source](https://support.google.com/analytics/answer/11583528)). Anyone who
-didn't export in time lost a decade of history. That is the single best reason to
+didn't export in time lost a decade of history. That's the single best reason to
 care where your data lives.
 
 **And the banner.** GA4 sets cookies and needs consent in the EU and UK. Everyone
@@ -71,7 +71,7 @@ who declines is missing from your numbers, and you don't get to see how many.
 One thing we're not going to tell you: that Google Analytics is illegal in the
 EU. The 2022 rulings in Austria, France, Italy, Denmark and the Nordics were
 real, and they were about EU-to-US transfers after *Schrems II*. The ground under
-them changed on 10 July 2023 when the European Commission adopted the EU-US Data
+them changed on July 10, 2023, when the European Commission adopted the EU-US Data
 Privacy Framework, and Google is certified under it. Pages still running that
 line are stale.
 
@@ -248,7 +248,7 @@ You wouldn't, mostly. Export your GA4 reports as CSV and upload the folder, and
 pages, sources, locations, devices and browsers land on the same charts as your
 live traffic. A direct Google connection is on the way; today it's an upload.
 Universal Analytics history is a different matter: Google cut off access from the
-week of 1 July 2024, so if you didn't export then, it's gone.
+week of July 1, 2024, so if you didn't export then, it's gone.
 
 The whole process — install alongside GA, run both for two weeks, upload the CSVs,
 verify, then remove the old tag — is written out step by step in

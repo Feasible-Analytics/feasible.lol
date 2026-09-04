@@ -66,7 +66,7 @@ them. The rows.
 
 The download link is good for 24 hours.
 
-Raw event export is not a premium tier, an enterprise line item, or a support
+Raw event export isn't a premium tier, an enterprise line item, or a support
 ticket. It's a button on your settings screen, in every copy of Feasible,
 including the [self-hosted](/open-source/) one. Elsewhere in this category,
 getting your own raw events out is the thing you have to call sales about.

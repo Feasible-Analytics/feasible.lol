@@ -59,7 +59,7 @@ Deploy, or run `astro build` and `astro preview` on a real hostname. `localhost`
 
 Open the site, click through two or three pages using its own links, then open Feasible.
 
-Real-time visitors should show you. If it doesn't, go to **Site settings → Ingestion health**. It counts every event that arrived and every one that was dropped, each with a named reason — `unknown_site` means `data-domain` doesn't match the site you registered, `hostname_not_allowed` means the page is on a hostname that isn't on your list, which is what a preview deployment URL will do. The **send a test event** button there posts through the real public URL, so it exercises exactly what a browser does.
+You should show up under Real-time visitors. If you don't, go to **Site settings → Ingestion health**. It counts every event that arrived and every one that was dropped, each with a named reason — `unknown_site` means `data-domain` doesn't match the site you registered, `hostname_not_allowed` means the page is on a hostname that isn't on your list, which is what a preview deployment URL will do. The **send a test event** button there posts through the real public URL, so it exercises exactly what a browser does.
 
 A brand-new site takes about fifteen seconds before its first event is accepted. [That's expected](/help/how-long-until-i-see-data/), not a bug.
 

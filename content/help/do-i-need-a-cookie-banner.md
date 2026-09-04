@@ -8,7 +8,7 @@ updated: 2026-09-03
 
 Most sites won't need a consent banner for Feasible.
 
-We don't set a cookie. Not a first-party one, not a third-party one, not a "functional" one. There is no identifier stored on your visitor's device that persists between visits, so there's nothing for a banner to ask about on our behalf. [How we count people without one](/help/how-do-you-count-unique-visitors-without-cookies/) is a daily hash that's thrown away every night.
+We don't set a cookie. Not a first-party one, not a third-party one, not a "functional" one. There's no identifier stored on your visitor's device that persists between visits, so there's nothing for a banner to ask about on our behalf. [How we count people without one](/help/how-do-you-count-unique-visitors-without-cookies/) is a daily hash that's thrown away every night.
 
 The consent rules — GDPR Article 5(3) of the ePrivacy Directive, PECR in the UK — are about **storing or reading information on someone's device**, not about analytics as a category. That's why cookieless measurement usually falls outside them.
 

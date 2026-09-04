@@ -1,6 +1,6 @@
 ---
 title: "Moving off Google Analytics"
-seotitle: "Move From Google Analytics to Feasible"
+seotitle: "Move from Google Analytics to Feasible"
 description: "Upload your Google Analytics history as CSV, add one script tag, and remove the old one. Here's the whole process, step by step."
 lede: "Seven steps, about twenty minutes of work and two weeks of waiting. Including why the two tools will never show you the same number."
 kicker: "MIGRATING"
@@ -9,7 +9,7 @@ faq:
   - q: "How long does the migration take?"
     a: "About twenty minutes of actual work, spread over two weeks. Installing the script is one line. The waiting is deliberate — you run both tools side by side long enough to trust the new numbers before you remove the old tag."
   - q: "Can I import my Google Analytics history?"
-    a: "Yes, as CSV. Export your GA4 reports, upload the folder, and it lands on the same charts as your live traffic. Universal Analytics history is a different matter: Google cut off access to it from the week of 1 July 2024."
+    a: "Yes, as CSV. Export your GA4 reports, upload the folder, and it lands on the same charts as your live traffic. Universal Analytics history is a different matter: Google cut off access to it from the week of July 1, 2024."
   - q: "What data comes across from GA4?"
     a: "Whatever you export: daily totals, pages, sources, locations, devices and browsers. What doesn't come across: GA4's own goals and conversions, audiences, Explorations, and anything GA4 thresholded away before you hit download."
   - q: "Why don't the numbers match Google Analytics?"
@@ -25,7 +25,7 @@ while both tools run side by side.
 
 Before you start, the one thing worth knowing: **GA4 history can come across as
 CSV. Universal Analytics history probably can't.** Google cut off access to current
-and historical Universal Analytics data from the week of 1 July 2024
+and historical Universal Analytics data from the week of July 1, 2024
 ([Google's own page](https://support.google.com/analytics/answer/11583528)). If
 you didn't export it then, it isn't there to import. Nobody can get it back for
 you, and any vendor who says they can is wrong.
@@ -167,7 +167,7 @@ endpoints and not ours; some carry both. Blocking rates vary enormously by
 audience — low single digits on a mainstream consumer site, much higher on a
 developer audience. Whichever way it falls, it moves one tool and not the other.
 
-**A "session" is not the same thing.** Ours stays open for 30 minutes of
+**A "session" isn't the same thing.** Ours stays open for 30 minutes of
 inactivity and is tied to the daily visitor hash, which resets at midnight UTC.
 GA4's session logic has its own rules, its own timeout, and its own campaign
 re-attribution behavior. Two definitions, two answers.

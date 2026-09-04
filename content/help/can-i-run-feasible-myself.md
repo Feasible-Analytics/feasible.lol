@@ -16,7 +16,7 @@ cp .env.sample .env        # set FEASIBLE_APP_HOSTED=false
 
 `account create` prints a generated password once — generated rather than typed, so it never lands in your shell history or a process list.
 
-**There is no cut-down edition.** No Community build with the good parts removed, no license key, no feature flag that turns off the API or funnels or raw export. [The API has no plan check in it at all](/docs/api/) — not one you could switch on, none written. Goals, funnels, custom properties, webhooks, the MCP server, teams, sharing, exports: all of it, free.
+**There's no cut-down edition.** No Community build with the good parts removed, no license key, no feature flag that turns off the API or funnels or raw export. [The API has no plan check in it at all](/docs/api/) — not one you could switch on, none written. Goals, funnels, custom properties, webhooks, the MCP server, teams, sharing, exports: all of it, free.
 
 Setting `FEASIBLE_APP_HOSTED=false` changes exactly two categories of thing, and neither is a feature:
 

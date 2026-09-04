@@ -7,7 +7,7 @@ weight: 20
 
 We email you. Nothing else happens.
 
-The [allowance](/pricing/) is 1,000,000 pageviews and custom events a month between them, per account, pooled across every site you've added. You get emails at 70%, 85% and 100%. There is no overage rate in the system, no automatic upgrade, and no tier above 100% — those numbers are the entire ladder.
+The [allowance](/pricing/) is 1,000,000 pageviews and custom events a month between them, per account, pooled across every site you've added. You get emails at 70%, 85% and 100%. There's no overage rate in the system, no automatic upgrade, and no tier above 100% — those numbers are the entire ladder.
 
 **One full month over the limit costs nothing at all.** Not a charge, not a warning beyond the emails, not a lost row of data.
 

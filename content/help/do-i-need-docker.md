@@ -21,4 +21,4 @@ So the deployment is: a binary, a data directory, and a systemd unit. Backups ar
 
 You can absolutely put it in a container if that's how your infrastructure works — nothing stops you, and a `FROM scratch` image with one static binary in it is about as small as containers get. It just isn't a requirement, and we're not going to publish a compose file with four services in it to make a pageview counter look serious.
 
-The everything you need is [1 core and 512 MB](/help/what-does-it-cost-to-run-feasible-yourself/), and the three commands to start are on [can I run Feasible myself](/help/can-i-run-feasible-myself/).
+Everything you need is [1 core and 512 MB](/help/what-does-it-cost-to-run-feasible-yourself/), and the three commands to start are on [can I run Feasible myself](/help/can-i-run-feasible-myself/).

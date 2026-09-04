@@ -75,7 +75,7 @@ second implementation of your analytics, and second implementations drift.
 
 ## No plan check, and that's checkable
 
-There is no plan gate in the API package. Not one that returns true for
+There's no plan gate in the API package. Not one that returns true for
 everybody — none at all, nothing to remove later.
 
 That's a deliberate structural choice, not a promotion. Charging extra to read

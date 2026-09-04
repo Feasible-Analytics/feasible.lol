@@ -31,7 +31,7 @@ The HTML file loads once, before React exists, and stays loaded. That's what you
 
 The script hooks `pushState`, `replaceState`, `popstate` and `hashchange` when it loads, and reports a pageview on each. Two changes in the same tick collapse into one event at the final URL, so a redirect doesn't count twice.
 
-So there is no `<Analytics />` component to add, no `useLocation()` effect to write, and no listener to register. If you're porting a Google Analytics setup that had one, delete it — leaving it in doubles every number on the site.
+So there's no `<Analytics />` component to add, no `useLocation()` effect to write, and no listener to register. If you're porting a Google Analytics setup that had one, delete it — leaving it in doubles every number on the site.
 
 {{< callout title="Hash routers need one attribute" >}}
 If you're using `createHashRouter` or `HashRouter`, your routes live in the fragment — `/#/settings` — and fragments aren't part of the URL by default. Add `data-hash="true"` to the script tag or every route reports as `/`. Bare `data-hash` with no value does nothing; it needs the value. See [script options](/docs/script-options/).
@@ -51,7 +51,7 @@ window.feasible("Signup", { props: { plan: "annual" } });
 
 Build and deploy, or run a production preview — `localhost` is deliberately not counted, so `npm run dev` will show you nothing no matter how correct the tag is. Open the site, then click a link to a second route rather than reloading. In the network tab you should see one `POST` to `/api/event` per route.
 
-Then open Feasible. Real-time visitors should show you. If it doesn't, go to **Site settings → Ingestion health**. It counts every event that arrived and every one that was dropped, each with a named reason — `unknown_site` means `data-domain` doesn't match the site you registered, `hostname_not_allowed` means the page is on a hostname that isn't on your list, which is what a preview deployment URL will do. The **send a test event** button there posts through the real public URL, so it exercises exactly what a browser does.
+Then open Feasible. You should show up under Real-time visitors. If you don't, go to **Site settings → Ingestion health**. It counts every event that arrived and every one that was dropped, each with a named reason — `unknown_site` means `data-domain` doesn't match the site you registered, `hostname_not_allowed` means the page is on a hostname that isn't on your list, which is what a preview deployment URL will do. The **send a test event** button there posts through the real public URL, so it exercises exactly what a browser does.
 
 A brand-new site takes about fifteen seconds before its first event is accepted. [That's expected](/help/how-long-until-i-see-data/).
 

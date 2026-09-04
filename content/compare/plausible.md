@@ -1,6 +1,6 @@
 ---
 title: "Feasible vs Plausible"
-seotitle: "Feasible vs Plausible — Price, Limits, Features"
+seotitle: "Feasible vs Plausible — price, limits, features"
 description: "A million pageviews, unlimited sites and unlimited users for $99 a year. Here's how that lines up against Plausible's published pricing, tier by tier."
 lede: "Two published price lists, side by side, and an honest account of what Plausible does better."
 versus: "Plausible"
@@ -96,13 +96,13 @@ $99 a year.
 
 This is the difference that surprises people most. On Plausible, **scheduled raw
 event data export is an Enterprise feature** — it's listed on the Enterprise
-card and nowhere else. There is no published self-serve price at which you can
+card and nowhere else. There's no published self-serve price at which you can
 get your own raw events out.
 
-On Feasible, export is a button in site settings on the only plan there is. You
+On Feasible, export is a button in site settings on the only plan we have. You
 get one ZIP: ten roll-up CSVs plus the raw events. It works during a trial, and
 it keeps working if your payment fails, because locking someone out of their own
-data is not a retention strategy.
+data isn't a retention strategy.
 
 ## What each of you actually counts
 

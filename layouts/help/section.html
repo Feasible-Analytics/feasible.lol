@@ -36,7 +36,7 @@
           id="help-filter"
           placeholder="Type a word — cookies, import, funnels…"
           autocomplete="off"
-          class="w-full border-2 border-rule bg-surface px-4 py-3 text-base placeholder:text-neutral-600 focus-visible:border-flag focus-visible:outline-none"
+          class="w-full border-2 border-rule bg-surface px-4 py-3 text-base placeholder:text-neutral-700 focus-visible:border-flag focus-visible:outline-none"
         />
         <p
           id="help-count"
@@ -61,7 +61,7 @@
         {{- if where $all "Params.category" $slug }}
           <a
             href="#{{ $slug }}"
-            class="font-display text-sm font-extrabold text-neutral-800 hover:text-flag"
+            class="font-display text-sm font-extrabold text-neutral-800 hover:text-flag-700"
             >{{ .name }}</a
           >
         {{- end -}}
@@ -96,12 +96,12 @@
                     class="group flex items-baseline gap-4 py-3.5"
                   >
                     <span
-                      class="font-medium text-neutral-800 group-hover:text-flag"
+                      class="font-medium text-neutral-800 group-hover:text-flag-700"
                       data-help-text
                       >{{ .Title }}</span
                     >
                     <span
-                      class="ml-auto shrink-0 text-flag opacity-0 transition-opacity group-hover:opacity-100"
+                      class="ml-auto shrink-0 text-flag-700 opacity-0 transition-opacity group-hover:opacity-100"
                       aria-hidden="true"
                       >→</span
                     >

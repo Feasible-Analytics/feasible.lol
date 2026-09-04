@@ -46,7 +46,7 @@ When you compare against a period that's still running, we compare the same amou
 — at four in the afternoon, "vs yesterday" compares sixteen hours against sixteen hours rather than
 sixteen against twenty-four.
 
-## Four things that are not bugs
+## Four things that aren't bugs
 
 ### Visitors aren't additive, and aren't quite what you think
 

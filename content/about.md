@@ -7,7 +7,7 @@ lede: "Feasible is made by Cloudmanic Labs, LLC — a small, independent softwar
 
 Cloudmanic Labs has been building and shipping software for more than twenty years.
 It's run by **Spicer Matthews**, who writes code, answers the support email, and signs
-the invoices. That is not a growth-stage anecdote. It's the org chart.
+the invoices. That's not a growth-stage anecdote. It's the org chart.
 
 We build two things. **[Harbor](https://harbor.my)** is a notes app — private,
 offline-first, with your notes stored in a format you can take with you. **Feasible**
@@ -23,7 +23,7 @@ Francisco, because there's no need for one.
 
 People pay us $9.99 a month, or $99 a year. That's the entire business model.
 
-There is no venture money to pay back, no ad product, no data broker on the other end
+There's no venture money to pay back, no ad product, no data broker on the other end
 of the pipe. We don't sell what we collect, we don't share it, and we don't train
 anything on it. The reason we can promise that isn't virtue — it's that the
 subscription is the only revenue line there is, so we'd have to invent a second
@@ -45,12 +45,12 @@ or a reason, not an acknowledgement. Feature requests land in front of someone w
 can act on them. And nobody here has a quota that's met by moving a feature you use
 into a higher tier.
 
-**What you don't.** We're small, and there are real costs to that. There is no
+**What you don't.** We're small, and there are real costs to that. There's no
 24-hour phone line. There's no account manager, no dedicated Slack channel, no
 quarterly business review. We don't have a SOC 2 report, an ISO 27001 certificate or
 a third-party penetration test — [we say exactly what we do and don't have on the
 security page](/security/). If your procurement process requires any of those, we
-will not pass it, and we'd rather you learned that here than six weeks into an
+won't pass it, and we'd rather you learned that here than six weeks into an
 evaluation.
 
 Support runs on US Pacific time, from a person who sleeps. Most email gets a real

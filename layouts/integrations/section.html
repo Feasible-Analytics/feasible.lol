@@ -26,8 +26,8 @@
       {{ range .RegularPages.ByTitle }}
         <li class="border-t-2 border-rule">
           <a href="{{ .RelPermalink }}" class="group flex items-baseline gap-3 py-4">
-            <span class="font-display font-extrabold group-hover:text-flag">{{ .Params.platform | default .Title }}</span>
-            <span class="ml-auto text-flag opacity-0 transition-opacity group-hover:opacity-100" aria-hidden="true">→</span>
+            <span class="font-display font-extrabold group-hover:text-flag-700">{{ .Params.platform | default .Title }}</span>
+            <span class="ml-auto text-flag-700 opacity-0 transition-opacity group-hover:opacity-100" aria-hidden="true">→</span>
           </a>
         </li>
       {{ end }}

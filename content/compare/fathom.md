@@ -1,6 +1,6 @@
 ---
 title: "Feasible vs Fathom"
-seotitle: "Feasible vs Fathom Analytics — Price, Limits, Features"
+seotitle: "Feasible vs Fathom Analytics — price, limits, features"
 description: "Fathom's smallest plan is $150 a year and starts at 100,000 pageviews. Feasible is $99 for ten times that. Prices, limits and where Fathom wins."
 lede: "Fathom's smallest plan is bigger than most sites need. Here's what that costs, and the two things they do that we can't."
 versus: "Fathom"
