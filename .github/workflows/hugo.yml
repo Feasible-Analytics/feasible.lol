@@ -47,20 +47,33 @@ jobs:
         with:
           fetch-depth: 0
 
-      # Hugo runs the Tailwind CLI from node_modules/.bin. Tailwind publishes a
-      # standalone binary, so that is one download from a GitHub release rather
-      # than an npm install — npm ci repeatedly hung here for fifteen minutes at
-      # a stretch without ever failing, and the site does not need Node for
-      # anything else. Pinned to the version in package-lock.json.
-      - name: Install the Tailwind CLI
-        env:
-          TAILWIND_VERSION: 4.3.3
+      # Hugo shells out to the Tailwind v4 CLI, which needs Node on the runner.
+      # Tailwind's standalone binary does not work here: Hugo invokes the CLI
+      # through Node and refuses anything that is not a Node script.
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      # npm ci has hung on this runner for fifteen minutes at a time without
+      # ever failing, which turns a bad five minutes into a dead deploy. The
+      # timeout makes it fail fast and the retry covers a transient registry
+      # stall. --prefer-offline uses the setup-node cache rather than asking the
+      # registry again for something it already has.
+      - name: Install npm dependencies
+        timeout-minutes: 6
         run: |
-          mkdir -p node_modules/.bin
-          curl -fsSL --retry 3 --retry-delay 5 -o node_modules/.bin/tailwindcss \
-            "https://github.com/tailwindlabs/tailwindcss/releases/download/v${TAILWIND_VERSION}/tailwindcss-linux-x64"
-          chmod +x node_modules/.bin/tailwindcss
-          node_modules/.bin/tailwindcss --help | head -1
+          for attempt in 1 2 3; do
+            echo "npm ci, attempt $attempt"
+            if npm ci --no-audit --no-fund --prefer-offline; then
+              exit 0
+            fi
+            echo "attempt $attempt failed; retrying"
+            sleep 10
+          done
+          echo "::error::npm ci failed three times."
+          exit 1
 
       # Resizing the screenshot library is about a minute cold and nothing when
       # the cache hits. The key covers every input that can change a derivative,
