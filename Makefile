@@ -7,7 +7,7 @@
 #
 
 .DEFAULT_GOAL := help
-.PHONY: help install dev build clean check links seo responsive indexnow serve
+.PHONY: help install dev build clean check links seo xml responsive indexnow serve
 
 ## help: list the targets
 help:
@@ -33,7 +33,7 @@ serve: build
 	@cd public && python3 -m http.server 8899
 
 ## check: build and run every pre-publish check
-check: build links seo
+check: build links seo xml
 	@echo "All checks passed."
 
 ## links: check internal links and anchors in the built site
@@ -52,6 +52,10 @@ responsive:
 ## indexnow: tell Bing and Yandex the live pages exist or changed
 indexnow:
 	@./scripts/indexnow.sh
+
+## xml: check the sitemap and feeds are well-formed
+xml:
+	@python3 scripts/check-xml.py public
 
 ## clean: remove build output and caches
 clean:
