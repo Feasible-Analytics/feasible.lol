@@ -151,7 +151,7 @@ constraint and you should know it before you evaluate us, not after.
 | | Hosted at $9.99/month | Self-hosted |
 |---|---|---|
 | Features | All of them | All of them |
-| Pageview limit | 1,000,000 a month | Whatever your server does |
+| Monthly limit | 1,000,000 pageviews and events | Whatever your server does |
 | Price | $9.99/month or $99/year | Free |
 | Updates | We deploy them | You run `db migrate` |
 | Backups, uptime, TLS, email delivery | Ours | Yours |

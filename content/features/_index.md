@@ -9,7 +9,7 @@ doesn't do, in a box, because the list of what a tool won't do is the part you
 actually need before you switch.
 
 All of it is in the one plan — unlimited sites, unlimited team members, a
-million pageviews a month, $9.99. The API, raw-event export, funnels, custom
+million pageviews and custom events a month, $9.99. The API, raw-event export, funnels, custom
 properties, webhooks and teams are in every copy of Feasible, hosted or
 [self-hosted](/open-source/). There's no plan check to work around.
 

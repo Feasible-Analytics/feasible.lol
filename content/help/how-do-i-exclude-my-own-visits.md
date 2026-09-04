@@ -22,7 +22,7 @@ IP shields are evaluated in the ingest tier, because [that's the only place the 
 A few things that are already handled:
 
 - **Localhost is excluded automatically.** `localhost`, `127.0.0.1`, `::1` and `file:` URLs don't count. Add `data-capture-on-localhost="true"` if you actually want them.
-- **Do Not Track is honoured**, and re-read on every send.
+- **Do Not Track is honored**, and re-read on every send.
 - **Automated browsers are refused** — the driver flags Playwright, Puppeteer, Selenium and Cypress leave behind are checked before anything else.
 
 One that isn't: **LAN addresses count normally.** `192.168.x.x` and `10.x.x.x` aren't treated as local, so a staging box on your network is real traffic until you shield it.

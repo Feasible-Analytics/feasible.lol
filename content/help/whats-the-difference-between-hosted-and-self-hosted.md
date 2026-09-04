@@ -18,7 +18,7 @@ It's the same binary. Not a stripped Community build — the thing we host is th
 | | Hosted | Self-hosted |
 |---|---|---|
 | Price | $9.99/month, $99/year | Free |
-| Pageview limit | 1,000,000 a month | Whatever your box does |
+| Monthly limit | 1,000,000 pageviews and events | Whatever your box does |
 | Where the data lives | [Oregon, USA](/help/where-is-my-data-stored/) | Wherever you put it |
 | Backups, TLS, upgrades | Ours | Yours |
 | When it breaks at 2am | Ours | Yours |

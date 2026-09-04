@@ -51,7 +51,7 @@ numbers.
 
 | Tool | 100k pv/mo | 1M pv/mo | Counts | Sites | Seats | Retention | Source |
 |---|---|---|---|---|---|---|---|
-| **Feasible** | **$99** | **$99** | pageviews; events and properties unlimited | unlimited | unlimited | 5 years | [pricing](/pricing/) |
+| **Feasible** | **$99** | **$99** | pageviews + custom events; properties free | unlimited | unlimited | 5 years | [pricing](/pricing/) |
 | Plausible Starter | $190 | $690 | pageviews + custom events | 1 | owner only | 3 years | [plausible.io](https://plausible.io/#pricing) |
 | Plausible Business | $390 | $1,390 | pageviews + custom events | 10 | 10 | 5 years | [plausible.io](https://plausible.io/#pricing) |
 | Fathom | $150 | $600 | pageviews + custom events | 75 | not published | "forever" | [usefathom.com](https://usefathom.com/pricing) |
