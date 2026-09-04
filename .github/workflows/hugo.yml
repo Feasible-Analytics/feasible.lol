@@ -54,8 +54,24 @@ jobs:
           node-version: 22
           cache: npm
 
+      # npm ci has hung on this runner for fifteen minutes at a time without
+      # failing, which turns a bad five minutes into a dead deploy. The timeout
+      # makes it fail fast and the retry covers a transient registry stall.
+      # --prefer-offline uses the setup-node cache instead of asking the
+      # registry again for something it already has.
       - name: Install npm dependencies
-        run: npm ci
+        timeout-minutes: 6
+        run: |
+          for attempt in 1 2 3; do
+            echo "npm ci, attempt $attempt"
+            if npm ci --no-audit --no-fund --prefer-offline; then
+              exit 0
+            fi
+            echo "attempt $attempt failed; retrying"
+            sleep 10
+          done
+          echo "::error::npm ci failed three times."
+          exit 1
 
       # Resizing the screenshot library is about a minute cold and nothing when
       # the cache hits. The key covers every input that can change a derivative,
