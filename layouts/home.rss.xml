@@ -1,0 +1,40 @@
+{{/*
+  home.rss.xml
+  The feed at /feed.xml.
+
+  Hugo's default home feed carries every page on the site, which on this site
+  means help answers and comparison tables with no publication date. A feed is
+  for things that get published, so this one is the blog.
+
+  Created: 2026-09-03
+  Copyright (c) 2026 Cloudmanic Labs, LLC. All rights reserved.
+*/}}
+{{- $posts := where site.RegularPages "Section" "blog" -}}
+{{- $posts = $posts.ByDate.Reverse -}}
+{{- printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML }}
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>{{ site.Title }}</title>
+    <link>{{ site.BaseURL }}</link>
+    <description>{{ site.Params.description }}</description>
+    <generator>Hugo</generator>
+    <language>{{ site.Language.LanguageCode | default "en-us" }}</language>
+    <copyright>&#169; {{ now.Year }} {{ site.Params.company }}</copyright>
+    {{- with $posts }}
+      <lastBuildDate>{{ (index . 0).Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</lastBuildDate>
+    {{- end }}
+    <atom:link href="{{ "feed.xml" | absURL }}" rel="self" type="application/rss+xml" />
+    {{- range first 20 $posts }}
+      <item>
+        <title>{{ .Title }}</title>
+        <link>{{ .Permalink }}</link>
+        <pubDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</pubDate>
+        <guid>{{ .Permalink }}</guid>
+        <description>{{ or .Params.description .Summary | plainify }}</description>
+        <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/">
+          {{ .Content | transform.XMLEscape | safeHTML }}
+        </content:encoded>
+      </item>
+    {{- end }}
+  </channel>
+</rss>

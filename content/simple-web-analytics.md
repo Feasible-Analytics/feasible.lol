@@ -18,9 +18,9 @@ faq:
     a: "One script tag in your head, and data appears within seconds. Goals, funnels and traffic exclusions are optional and take about twenty minutes if you want them."
 ---
 
-Simple web analytics means you open one page and the numbers are already there.
-No report to build. No exploration to configure. No menu tree to learn before you
-can answer "how many people read the thing I published yesterday".
+You open one page and the numbers are already there. No report to build. No
+exploration to configure. No menu tree to learn before you can answer "how many
+people read the thing I published yesterday".
 
 That used to be normal. Then it stopped.
 
@@ -186,7 +186,6 @@ proudest of, because the alternative is a dashboard quietly showing you zero.
 
 ---
 
-Thirty days, no credit card.
-[Start a trial](https://app.feasible.lol/register), or read about
-[cookieless analytics](/cookieless-analytics/) and
-[the tools in this category](/web-analytics-tools/) first.
+Leaving things out was the hard part, and it's the only part that doesn't show
+up in a feature list. Next: [cookieless analytics](/cookieless-analytics/), or
+[the rest of the tools in this category](/web-analytics-tools/).

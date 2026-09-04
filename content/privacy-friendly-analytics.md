@@ -20,13 +20,12 @@ faq:
     a: "No. Your numbers are yours. There's no ad network in the loop, no data broker, and no cross-customer pooling."
 ---
 
-Privacy-friendly analytics is web analytics that counts visits without
-identifying visitors. No cookies. No persistent ID. No profile that follows a
-person from one site to the next, and nothing handed to an advertising network.
-You get the numbers. Nobody gets a dossier.
+No cookies. No persistent ID. No profile that follows a person from one site to
+the next, and nothing handed to an advertising network. You get the numbers.
+Nobody gets a dossier.
 
-That's the definition. The rest of this page is ours, in enough detail that you
-can hold it up against anyone else's.
+That's what privacy-friendly analytics counts as, and the rest of this page is
+ours in enough detail that you can hold it up against anyone else's.
 
 ## What we actually store
 
@@ -156,7 +155,6 @@ design.
 
 ---
 
-Thirty days, no card. [Start a trial](https://app.feasible.lol/register), or read
-how the same model plays out for
-[cookieless analytics](/cookieless-analytics/) and
+The same model, worked through for
+[cookieless analytics](/cookieless-analytics/) and for
 [GDPR](/gdpr-compliant-analytics/).

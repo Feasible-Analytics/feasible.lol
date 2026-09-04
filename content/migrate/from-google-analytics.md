@@ -199,6 +199,6 @@ its consent banner.
 
 ---
 
-Thirty days, no card. [Start the migration](https://app.feasible.lol/register), or
-read the [comparison with Google Analytics](/compare/google-analytics/) and
-[the wider list of alternatives](/alternatives/google-analytics/) first.
+Two weeks of running both is the whole cost of finding out. If you'd rather read
+first: the [comparison with Google Analytics](/compare/google-analytics/) and
+[the wider list of alternatives](/alternatives/google-analytics/).

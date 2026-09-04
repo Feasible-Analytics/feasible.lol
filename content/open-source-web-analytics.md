@@ -165,8 +165,6 @@ distributor of the code.
 ---
 
 Read the source at
-[github.com/Feasible-Analytics/app.feasible.lol](https://github.com/Feasible-Analytics/app.feasible.lol),
-or skip the server and [start a trial](https://app.feasible.lol/register) —
-thirty days, no card. More on
-[what it costs](/pricing/) and
+[github.com/Feasible-Analytics/app.feasible.lol](https://github.com/Feasible-Analytics/app.feasible.lol).
+More on [what the hosted service costs](/pricing/) and
 [running it yourself](/open-source/).

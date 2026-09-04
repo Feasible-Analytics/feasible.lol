@@ -219,5 +219,4 @@ after cancellation, and invoices are kept as long as tax law requires.
 
 If you're moving off GA4, the
 [step-by-step migration](/migrate/from-google-analytics/) covers the import and
-what to do with the banner. Thirty days, no card:
-[start a trial](https://app.feasible.lol/register).
+what to do with the banner.

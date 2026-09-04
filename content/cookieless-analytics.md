@@ -23,12 +23,12 @@ faq:
     a: "Some do. Blocking rates vary enormously by audience — low single digits on a mainstream consumer site, much higher on a developer audience. Serving the script from your own domain through a proxy cuts most of it."
 ---
 
-Cookieless analytics is website analytics that measures traffic without storing
-an identifier in the visitor's browser. No cookie. No persistent ID. Nothing that
-can be read back on a later visit to recognize the same person.
-
-Feasible is cookieless. Not "cookieless if you configure it that way" — there's
+Feasible sets no cookie. Not "cookieless if you configure it that way" — there's
 no cookie code in the tracker to turn on.
+
+Which is what cookieless analytics means: nothing stored in the visitor's
+browser, no persistent ID, nothing that can be read back on a later visit to
+recognize the same person.
 
 ## How you count visitors when nothing is stored
 
@@ -188,7 +188,6 @@ with `curl -H 'Accept-Encoding: identity' <url> | gzip -9 | wc -c`.
 
 ---
 
-Next: what this means for [GDPR, CCPA and PECR](/gdpr-compliant-analytics/), or
-the field-by-field list on
-[privacy-friendly analytics](/privacy-friendly-analytics/). It's $9.99 a month —
-[the pricing page has the arithmetic](/pricing/).
+What this means for [GDPR, CCPA and PECR](/gdpr-compliant-analytics/) is its own
+page, and the field-by-field list of what we store is on
+[privacy-friendly analytics](/privacy-friendly-analytics/).
