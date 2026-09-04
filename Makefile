@@ -7,7 +7,7 @@
 #
 
 .DEFAULT_GOAL := help
-.PHONY: help install dev build clean check links seo responsive serve
+.PHONY: help install dev build clean check links seo responsive indexnow serve
 
 ## help: list the targets
 help:
@@ -48,6 +48,10 @@ seo:
 ##             (needs `make serve` running in another shell — CI has no browser)
 responsive:
 	@python3 scripts/check-responsive.py 390
+
+## indexnow: tell Bing and Yandex the live pages exist or changed
+indexnow:
+	@./scripts/indexnow.sh
 
 ## clean: remove build output and caches
 clean:
