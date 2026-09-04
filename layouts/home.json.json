@@ -1,20 +1,23 @@
 {{/*
   home.json.json
-  The search index at /index.json. The help page filters it in the browser —
-  a few hundred short records is far cheaper to ship whole than to stand up a
-  search service for.
+  A lightweight index of every indexable page at /index.json.
+
+  Titles and descriptions only. Including page bodies made it 220 KB, and
+  nothing on the site searches full text — the help page filters its own
+  rendered list in place, which needs no index at all.
 
   Created: 2026-09-03
   Copyright (c) 2026 Cloudmanic Labs, LLC. All rights reserved.
 */}}
 {{- $records := slice -}}
-{{- range where site.RegularPages "Params.noindex" "!=" true -}}
-  {{- $records = $records | append (dict
-    "t" .Title
-    "u" .RelPermalink
-    "s" (or .Params.description .Summary | plainify | truncate 180)
-    "c" (or .Params.category .Section)
-    "b" (.Plain | truncate 1200)
-  ) -}}
+{{- range site.RegularPages -}}
+  {{- if not (or .Params.noindex .Params.private) -}}
+    {{- $records = $records | append (dict
+      "title" .Title
+      "url" .RelPermalink
+      "summary" (or .Params.description .Summary | plainify | truncate 180)
+      "section" (or .Params.category .Section)
+    ) -}}
+  {{- end -}}
 {{- end -}}
 {{- $records | jsonify -}}

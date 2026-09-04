@@ -8,8 +8,8 @@ weight: 160
 The short version: no cookies, no persistent identifier, no cross-site tracking, no data sold or used
 for advertising, and no IP address ever written to disk.
 
-This is the technical page. The legal one is the [privacy and data policy](/legal/privacy/), and the
-processor contract is the [data processing addendum](/legal/dpa/).
+This is the technical page. The legal one is the [privacy and data policy](/privacy/), and the
+processor contract is the [data processing addendum](/dpa/).
 
 ## The visitor identifier is pseudonymous, not anonymous
 
@@ -110,7 +110,7 @@ For the hosted service, Cloudmanic Labs, LLC is the processor and you're the con
 
 Our infrastructure sub-processors receive or store encrypted visitor analytics for compute, live
 storage and disaster recovery. Their categories and responsibilities are listed in the
-[data processing addendum](/legal/dpa/).
+[data processing addendum](/dpa/).
 
 We don't sell or rent visitor data, disclose it to billing or email providers, or use it for
 advertising.
