@@ -43,13 +43,3 @@
     });
   })();
 </script>
-
-{{/* We run our own analytics on our own site. If this tag ever gets heavy or
-     slow, that is a product problem, not a website problem. */}}
-{{- if hugo.IsProduction }}
-  <script
-    defer
-    data-domain="feasible.lol"
-    src="{{ .Site.Params.appURL }}/js/script.js"
-  ></script>
-{{- end }}

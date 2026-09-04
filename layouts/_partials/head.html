@@ -120,4 +120,14 @@
   />
 {{- end }}
 
+{{/* Our own analytics, on our own site. The per-site file carries the domain
+     inside it, so there's no data-domain attribute to get wrong, and the
+     filename is ours alone — a blocklist entry for the shared script name
+     costs every site using it; one for this name costs one site.
+
+     Production only, so a local `hugo server` never writes to real stats. */}}
+{{- if hugo.IsProduction }}
+  <script defer src="{{ .Site.Params.trackerURL }}"></script>
+{{- end }}
+
 {{ partial "schema.html" . }}

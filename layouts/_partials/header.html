@@ -29,7 +29,10 @@
         class="text-[0.9375rem] font-medium text-neutral-800 transition-colors hover:text-flag-700"
         >Log in</a
       >
-      <a href="{{ .Site.Params.signupURL }}" class="btn btn-primary !py-2.5">
+      <a
+        href="{{ .Site.Params.signupURL }}"
+        class="btn btn-primary !py-2.5 feasible-event-name=Signup feasible-event-location=header"
+      >
         Start free
       </a>
     </div>
@@ -83,7 +86,7 @@
       >
       <a
         href="{{ .Site.Params.signupURL }}"
-        class="btn btn-primary mt-4 w-full"
+        class="btn btn-primary mt-4 w-full feasible-event-name=Signup feasible-event-location=mobile+nav"
         >Start free — {{ .Site.Params.pricing.trialDays }} days</a
       >
     </nav>

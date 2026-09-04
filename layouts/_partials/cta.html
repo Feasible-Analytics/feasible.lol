@@ -25,7 +25,10 @@
       <span class="block text-paper/80">{{ $line2 }}</span>
     </h2>
     <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
-      <a href="{{ $site.Params.signupURL }}" class="btn btn-inverse">
+      <a
+        href="{{ $site.Params.signupURL }}"
+        class="btn btn-inverse feasible-event-name=Signup feasible-event-location=cta+band"
+      >
         Start free — {{ $site.Params.pricing.trialDays }} days
       </a>
       <a href="/pricing/" class="btn btn-inverse-outline"> See the price </a>

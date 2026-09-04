@@ -335,6 +335,9 @@ disableKinds = ["taxonomy", "term"]
   loginURL = "https://app.feasible.lol/login"
   signupURL = "https://app.feasible.lol/register"
   statusURL = "https://status.feasible.lol"
+  # The per-site tracker. The token is not a secret — it is served to every
+  # visitor — it just routes events to this site's account.
+  trackerURL = "https://app.feasible.lol/js/fs-pty4fgk7fztxzmkr.js"
   githubURL = "https://github.com/Feasible-Analytics/app.feasible.lol"
   githubOrg = "https://github.com/Feasible-Analytics"
   ogImage = "/images/og-default.png"
