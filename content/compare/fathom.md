@@ -1,6 +1,6 @@
 ---
 title: "Feasible vs Fathom"
-seotitle: "Feasible vs Fathom Analytics — price, limits, features"
+seotitle: "Fathom Analytics alternative — Feasible vs Fathom"
 description: "Fathom's smallest plan is $150 a year and starts at 100,000 pageviews. Feasible is $99 for ten times that. Prices, limits and where Fathom wins."
 lede: "Fathom's smallest plan is bigger than most sites need. Here's what that costs, and the two things they do that we can't."
 versus: "Fathom"
@@ -39,8 +39,8 @@ faq:
       requirement, buy theirs.
 ---
 
-Fathom has been doing privacy-friendly analytics since 2018 and has the scars to
-prove it. Their EU isolation work is real engineering that most of this market
+Fathom has been doing [privacy-friendly analytics](/privacy-friendly-analytics/)
+since 2018 and has the scars to prove it. Their EU isolation work is real engineering that most of this market
 hasn't bothered with. Start there, because it's the reason to buy theirs.
 
 Now the prices.
@@ -129,7 +129,7 @@ doesn't. It isn't the product.
 Feasible is AGPL-3.0-or-later, and the build we host is the build you can run.
 There's no cut-down edition and no feature held back for the paid plan. One Go
 binary, one SQLite file, 512 MB of RAM. If we disappear, you keep running it.
-That's the point of it being there — see [open source](/open-source/) for the
+That's the point of it being there — see [open source web analytics](/open-source-web-analytics/) for the
 whole argument, including what AGPL actually asks of you.
 
 ## Where Fathom wins
@@ -191,6 +191,13 @@ for a week and compare the numbers before you cancel anything. We'd recommend
 it. Two tools counting the same traffic will never agree exactly — different bot
 filters, different session rules — and it's better to see that gap on your own
 site than to read about it.
+
+## Looking for a Fathom Analytics alternative?
+
+Then the useful question is which part of Fathom you're replacing. If it's the EU
+isolation, don't — nothing here replaces it, and we've said so twice already. If
+it's the 100,000-pageview minimum on a site that's nowhere near 100,000, or $600
+a year at a million, that's what the table at the top has been measuring.
 
 ## Where we'd tell you to pick us
 

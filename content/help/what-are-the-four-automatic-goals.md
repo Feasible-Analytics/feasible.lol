@@ -22,7 +22,7 @@ They do send real custom events, so they count toward [the monthly million](/hel
 feasible('404')
 ```
 
-Because these goals are created with the site, they've been counting since day one — which makes them the one exception to [goals not backfilling](/help/why-doesnt-my-goal-show-past-conversions/).
+Because these goals are created with the site, they've been counting since day one — which is why they have a full history even though [goals never backfill](/help/why-doesnt-my-goal-show-past-conversions/).
 
 You can rename them, delete them, or add property constraints, same as [any goal](/help/how-do-i-track-a-signup/). Two small things: you can force a link to count as a download by putting `download` on the `<a>`, and you can replace the recognized extension list with `data-file-types` on the script tag.
 

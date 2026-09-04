@@ -215,7 +215,7 @@ hosted service's own subscriptions, not to enforce anything on you.
 
 Everything that's in the hosted product is in this build. There's no cut-down community edition, and
 no feature held back for a paid plan — the API has no plan check in it at all. More on that on
-[open source](/open-source/).
+[open source web analytics](/open-source-web-analytics/).
 
 ## API keys
 

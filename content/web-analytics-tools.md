@@ -2,7 +2,7 @@
 title: "Web analytics tools, compared"
 seotitle: "Web analytics tools compared on price and limits"
 description: "Ten web analytics tools compared on price at 100k and 1M pageviews, site and seat limits, cookies and license. We make one of them, and we say so."
-lede: "What each one costs at real traffic, what it counts, and which situation each is genuinely the right answer for."
+lede: "Ten web analytics tools compared: what each piece of website analytics software costs at real traffic, what it counts, and which situation each is genuinely the right answer for."
 kicker: "ROUNDUP"
 weight: 60
 wide: true
@@ -88,7 +88,7 @@ ad platform is real and nothing here replaces it. It's also free at any volume,
 with BigQuery export available for people who want the raw rows.
 
 The costs are elsewhere. It sets cookies and needs a consent banner in the EU and
-UK. Event-level retention is 2 or 14 months, and Google says a property
+UK, which is the whole argument for [cookieless analytics](/cookieless-analytics/). Event-level retention is 2 or 14 months, and Google says a property
 reclassified as "Large" drops automatically to 2 months with older event-level
 data permanently deleted. Reports get thresholded — "Data thresholds are system
 defined. You can't adjust them" — and Google's own table marks sampling
@@ -176,7 +176,9 @@ A one-person project with a philosophy close to ours: tiny, no cookies,
 self-hostable, and honest about what it does. The hosted service is free "for
 reasonable public usage" — explicitly not for millions of pageviews a day — and
 runs on donations. The GDPR page is the most careful writing on the subject in
-this category, including the author's own "I am not a lawyer."
+this category, including the author's own "I am not a lawyer." Ours is at
+[GDPR-friendly analytics](/gdpr-compliant-analytics/), and it's hedged for the
+same reason.
 
 **Best for:** personal sites and small projects where the tool should be free and
 stay out of the way.
@@ -215,9 +217,9 @@ you're entitled to price in.
 **Best for:** people running more than one site, or more than one person, who
 want everything included and don't want a plan ladder.
 
-## The free ones, honestly
+## The best free web analytics tools
 
-"Free" in this category means one of four things, and it's worth knowing which
+Free website analytics comes in four shapes, and it's worth knowing which one
 you're buying.
 
 - **Free because you're the product** — GA4. Your visitors' behavior goes to an
@@ -233,6 +235,13 @@ you're buying.
 
 There's no fifth option where a company with employees serves your traffic
 forever for nothing.
+
+## The best web analytics tools, by what you need
+
+The short version: Google Analytics 4 if you buy Google ads, Matomo if you need
+on-premise and every report, Plausible or Fathom if you want a mature hosted
+product, Feasible if the bill is the thing that's bothering you. Everything above
+is the arithmetic behind that.
 
 ## How to choose
 

@@ -55,7 +55,7 @@ The same instinct shows up elsewhere. Ask for bounce rate broken down by page an
 
 ## What you give up
 
-Plainly, because you'll find out anyway.
+Plainly, because you'll find out anyway. Every argument for [simple web analytics](/simple-web-analytics/) has a bill attached, and this is ours.
 
 **You can't build an arbitrary custom report.** There's no report builder, no drag-and-drop dimension canvas, no saving a view and naming it. If your job is to answer a question nobody has asked before, in a shape nobody has used before, this is the wrong screen.
 

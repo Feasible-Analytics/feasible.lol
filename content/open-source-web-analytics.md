@@ -45,9 +45,9 @@ There's no separate "community" build with the good parts removed and no
 long-term release branch that lags the hosted one.
 
 **There's no directory in the repo you aren't allowed to compile.** No `ee/`, no
-`extra/`, no all-rights-reserved corner. Search the repo for `enterprise`,
-`license_key` or `premium` and you get nothing, because there's no license-key
-module to find.
+`extra/`, no all-rights-reserved corner. Search the repo for `license_key` or `premium` and you get nothing, because
+there's no license-key module to find. The only hits for `enterprise` are us
+writing that we don't have one.
 
 **No feature is behind a higher tier.** There's one plan. The API package
 contains no plan check at all — not as a policy, as a fact about the code.
@@ -123,7 +123,7 @@ tune, and a backup is a file copy.
 For scale, the shape of the alternatives. Plausible's Community Edition compose
 file runs three services — the app, ClickHouse and Postgres — and their README
 asks for at least 2 GB of RAM; ClickHouse's own documentation recommends 32 GB
-for ClickHouse itself. Matomo's own sizing table goes from 2 GB at 100,000 hits
+for ClickHouse itself. Matomo's own sizing table goes from 2 GB at 100,000 pageviews a month
 to 8 GB at a million. PostHog's self-host stack is 37 services and its installer
 asks for 8 GB minimum. All read September 3, 2026.
 

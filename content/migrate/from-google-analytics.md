@@ -1,6 +1,6 @@
 ---
 title: "Moving off Google Analytics"
-seotitle: "Move from Google Analytics to Feasible"
+seotitle: "Google Analytics 4 migration — move to Feasible"
 description: "Upload your Google Analytics history as CSV, add one script tag, and remove the old one. Here's the whole process, step by step."
 lede: "Seven steps, about twenty minutes of work and two weeks of waiting. Including why the two tools will never show you the same number."
 kicker: "MIGRATING"
@@ -20,8 +20,8 @@ faq:
     a: "You can. The two scripts don't conflict, and some people keep GA4 purely for the Google Ads integration while doing their day-to-day reading elsewhere. If you keep GA4, you keep its consent banner."
 ---
 
-Seven steps. About twenty minutes of work, and two weeks of waiting in the middle
-while both tools run side by side.
+A Google Analytics 4 migration is seven steps here. About twenty minutes of work,
+and two weeks of waiting in the middle while both tools run side by side.
 
 Before you start, the one thing worth knowing: **GA4 history can come across as
 CSV. Universal Analytics history probably can't.** Google cut off access to current
@@ -165,7 +165,7 @@ isn't losing traffic; it's counting fewer robots.
 
 **Ad blockers hit each tool differently.** Some blocklists carry Google's
 endpoints and not ours; some carry both. Blocking rates vary enormously by
-audience — low single digits on a mainstream consumer site, much higher on a
+audience — under 10% on a mainstream consumer site, much higher on a
 developer audience. Whichever way it falls, it moves one tool and not the other.
 
 **A "session" isn't the same thing.** Ours stays open for 30 minutes of
@@ -201,5 +201,7 @@ its consent banner.
 ---
 
 Two weeks of running both is the whole cost of finding out. If you'd rather read
-first: the [comparison with Google Analytics](/compare/google-analytics/) and
-[the wider list of alternatives](/alternatives/google-analytics/).
+first: the [comparison with Google Analytics](/compare/google-analytics/),
+[the wider list of alternatives](/alternatives/google-analytics/), and
+[the wider web analytics tools comparison](/web-analytics-tools/) if you haven't
+settled on where you're going yet.

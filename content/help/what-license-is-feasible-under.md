@@ -22,4 +22,4 @@ What *is* different here is what's inside the licensed thing:
 
 The source is at [github.com/Feasible-Analytics/app.feasible.lol](https://github.com/Feasible-Analytics/app.feasible.lol), and the full license text is in the repository.
 
-We're selling the hosted service, not the source. The code being public is a promise about what happens if we disappear — you keep running. [More on that](/open-source/).
+We're selling the hosted service, not the source. The code being public is a promise about what happens if we disappear — you keep running. [More on that](/open-source-web-analytics/).

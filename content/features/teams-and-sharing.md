@@ -88,9 +88,9 @@ pressing Escape.
 Two honest limits on embedding. A password-protected link can't be embedded, and
 that isn't a setting we forgot: serving a password form that any site may frame
 is a form an attacker can hide under a button on their own page. Make a second
-link without a password. And ad-blocker filter lists block embedded dashboards
-outright — a visitor running uBlock Origin sees an empty space where the iframe
-should be. If that matters, link to the dashboard instead of embedding it.
+link without a password. And some ad-blocker filter lists block embedded
+analytics dashboards, so a visitor running one may see an empty space where the
+iframe should be. If that matters, link to the dashboard instead of embedding it.
 
 ## Why seats aren't a product
 

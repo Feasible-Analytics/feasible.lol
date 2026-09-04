@@ -1,5 +1,5 @@
 ---
-title: "No cookies, no consent banner"
+title: "No cookies, and no banner for most sites"
 description: "Feasible sets no cookies and the raw IP address never reaches disk. Most sites won't need a consent banner to run it. Here's exactly what we store."
 lede: "No cookie, no device identifier, no IP address on disk. Here's the whole derivation, so you can check it."
 weight: 20
@@ -12,7 +12,9 @@ note: |
 ---
 
 Feasible sets no cookies on the sites it measures. None — not a first-party
-one, not a "strictly necessary" one, not one with a friendlier name.
+one, not a "strictly necessary" one, not one with a friendlier name. This is the
+engineering behind [privacy-friendly analytics](/privacy-friendly-analytics/):
+what the tracker does, field by field.
 
 There's no device identifier either. The tracker writes exactly two things into
 `localStorage`, and neither identifies anybody: `feasible_ignore`, which you set
@@ -80,7 +82,8 @@ for clear information and a simple, free opt-out. If you're somewhere strict,
 check with your own lawyer.
 
 What we'll say plainly: Feasible is GDPR-, CCPA- and PECR-friendly, and most
-sites run it without a banner. We're never going to tell you that *you* are
+sites run it without a banner. The long version is on
+[GDPR-friendly analytics](/gdpr-compliant-analytics/). We're never going to tell you that *you* are
 compliant. That depends on everything else on your page, and we're not your
 lawyer.
 
@@ -107,5 +110,5 @@ Honest to the end: the identifier is pseudonymous, not anonymous. Our technical
 [privacy doc](/docs/privacy/) explains why, and the legal one covers who
 controls what. Both are public, and neither requires an account to read.
 
-The whole product is [open source](/open-source/) under the AGPL, so none of
+The whole product is [open source web analytics](/open-source-web-analytics/) under the AGPL, so none of
 the above is a claim you have to take on faith.

@@ -117,8 +117,7 @@ measurement — so every one of them is a [custom property](/docs/custom-propert
 aggregate, filter and break down by page like any other. Nothing in it reads layout: every number
 comes from the maintained Web Vitals implementation over the browser's Performance API.
 
-The one script tag is still the entire installation. The base tracker stays under 3,377 bytes
-gzipped and downloads the Web Vitals module only when this option is on, so sites that leave it off
+The one script tag is still the entire installation. The base tracker stays at 3,377 bytes gzipped, under its 3,584-byte build budget, and downloads the Web Vitals module only when this option is on, so sites that leave it off
 don't pay for the optional collector.
 
 It sends final values when a navigation is hidden. A supported single-page navigation starts a fresh

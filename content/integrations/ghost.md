@@ -1,7 +1,7 @@
 ---
 title: "Add website analytics to Ghost"
 platform: "Ghost"
-description: "Paste one script tag into Ghost's Site Header code injection field. Works on every theme, survives theme changes, no cookie banner."
+description: "Paste one script tag into Ghost's Site Header code injection field. Works on every theme, survives theme changes, and sets no cookies."
 lede: "Settings, Advanced, Code injection, Site Header. Paste and save."
 ---
 

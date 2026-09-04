@@ -80,7 +80,7 @@ Two things about that table that matter more than the ordering.
 
 ## Where the gap comes from
 
-Some of it is real. A stack with a column store, a relational database and a queue in front of it costs more to run than one binary and a file — genuinely, not as a rhetorical device. Support costs money. Salaries cost money. A company that raised outside money has a number it has to hit, and that number is set by the people who wrote the check, not by the server.
+Some of it is real. Not the privacy part — [privacy-friendly analytics](/privacy-friendly-analytics/) is a design decision, not a line on an invoice. But a stack with a column store, a relational database and a queue in front of it costs more to run than one binary and a file — genuinely, not as a rhetorical device. Support costs money. Salaries cost money. A company that raised outside money has a number it has to hit, and that number is set by the people who wrote the check, not by the server.
 
 Our costs are different because our company is different. One plan. No sales team. No investors. Twenty-odd years of Cloudmanic Labs paying for itself. That isn't a virtue, it's a starting position — but it's why $99 works here and might not work somewhere else.
 

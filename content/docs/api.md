@@ -36,7 +36,7 @@ dropped.
 | `p` | Custom properties, as an object. |
 | `t` | Page title. |
 | `$` | Revenue, as `{"amount": 49.00, "currency": "USD"}`. |
-| `sd` | Scroll depth, 1–100. |
+| `sd` | Scroll depth, 0–100. The browser tracker never sends 0, so "didn't scroll" and "never reported" stay distinguishable. |
 | `e` | Engaged time in milliseconds, as a delta since the last measurement. |
 | `k` | Idempotency key. Must be a valid UUID, or the request is a `400`. |
 | `i` | `false` marks an event as non-interactive, so it can't un-bounce a visit. Absent means interactive. |

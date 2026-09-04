@@ -61,7 +61,7 @@ answer in a day or two. [Here's what to expect and how to make it faster](/suppo
 *What happens to my data if you disappear?*
 
 It's the right question to ask a small company, and it's why two things are true from
-day one. Feasible is [open source under AGPL-3.0-or-later](/open-source/) — the whole
+day one. Feasible is [open source under AGPL-3.0-or-later](/open-source-web-analytics/) — the whole
 product, the same build we run, not a cut-down community edition — so the software
 outlives the company. And your data exports as plain CSV, raw events included,
 whenever you ask, in every state your account can be in, including after you've

@@ -84,7 +84,7 @@ company whose retention strategy is "your history is in here and you can't have
 it" has stopped selling a product and started running a lock-in.
 
 The same instinct explains the whole design. The [API](/features/api-and-webhooks/)
-has no plan check. The source is [AGPL](/open-source/), so if we disappear
+has no plan check. The source is [AGPL](/open-source-web-analytics/), so if we disappear
 tomorrow the software you were using still runs. Export is a button, so the
 answer to "what if we want to leave" is a shrug and a ZIP file.
 

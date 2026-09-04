@@ -1,7 +1,7 @@
 ---
 title: "Add website analytics to WordPress"
 platform: "WordPress"
-description: "Paste one script tag into your WordPress header — via a header-scripts plugin, a child theme, or the Feasible plugin. No cookie banner needed."
+description: "Paste one script tag into your WordPress header — via a header-scripts plugin, a child theme, or the Feasible plugin. No cookies, so most sites won't need a banner."
 lede: "One tag in your theme header, or one plugin. Both take about a minute."
 ---
 

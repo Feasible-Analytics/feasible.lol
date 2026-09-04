@@ -1,5 +1,6 @@
 ---
 title: "Documentation"
+seotitle: "Feasible docs — install, metrics, API and self-hosting"
 description: "Install Feasible, learn what each number means, and read every API — sixteen pages, no signup required."
 lede: "Sixteen pages, in the order you'll meet the product: install it, check the numbers mean what you think, then the parts that need a decision."
 ---

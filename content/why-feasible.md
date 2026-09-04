@@ -56,11 +56,12 @@ ingest tier stops accepting events at two in the morning. Bot filtering is a
 never-finished job. Bandwidth, email, card processing, tax in forty jurisdictions —
 all real.
 
-And the privacy-friendly analytics companies did the hard, unglamorous thing first.
+And the [privacy-friendly analytics](/privacy-friendly-analytics/) companies did the
+hard, unglamorous thing first.
 They demonstrated that you can measure a website without following anyone around
 the internet, and they made that argument in public, to regulators, while the rest of
 the industry shipped another consent banner. They were right. We build the same way
-because of it, and we'd rather say so plainly than pretend we arrived at cookieless
+because of it, and we'd rather say so plainly than pretend we arrived at [cookieless](/cookieless-analytics/)
 analytics alone.
 
 None of that is fourteen times.
@@ -113,7 +114,7 @@ shouldn't depend on how carefully you described a purchase.
 **Nothing held back.** The API, raw event export, webhooks, the MCP server, funnels,
 teams — the same build whether we host it or you do. There's no enterprise directory
 in the repository that you aren't allowed to compile, because
-[there's no directory like that at all](/open-source/).
+[there's no directory like that at all](/open-source-web-analytics/).
 
 **It tells you when it's broken.** Every event we drop gets counted and given a
 reason you can read: bot, datacenter address, a shield you set, a hostname you

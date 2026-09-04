@@ -37,7 +37,7 @@ Your visitor asked for the article. They didn't ask to be counted. So under the 
 
 ## The slogan is doing more work than the law allows
 
-"Cookieless means no banner" rests on a claim that Article 5(3) is never engaged at all, because nothing is written to and nothing is read from the device.
+"[Cookieless](/cookieless-analytics/) means no banner" rests on a claim that Article 5(3) is never engaged at all, because nothing is written to and nothing is read from the device.
 
 The European Data Protection Board tightened that in *Guidelines 2/2023 on the Technical Scope of Article 5(3)*, [version 2.0 adopted October 7, 2024](https://www.edpb.europa.eu/system/files/2024-10/edpb_guidelines_202302_technical_scope_art_53_eprivacydirective_v2_en_0.pdf). Their reading is broad:
 
@@ -80,11 +80,11 @@ Their self-assessment tool is unusually specific: referrer limited to host or do
 
 ## GDPR doesn't go away either
 
-Two rulebooks. Clearing ePrivacy doesn't clear GDPR.
+Two rulebooks. Clearing ePrivacy doesn't clear GDPR, and [what GDPR-friendly analytics actually means](/gdpr-compliant-analytics/) is written out on its own page.
 
 If a tool processes an IP address, even for a moment, that can be personal data — *Breyer* (C-582/14, October 19, 2016) held a dynamic IP is personal data for a site operator **if** that operator has legal means to identify the visitor using information held by the access provider. Conditional, not blanket. Where it applies you need an Article 6 basis, and legitimate interest under 6(1)(f) is the normal answer, which brings a balancing test and a right to object.
 
-Privacy-friendly analytics doesn't make GDPR stop applying. It makes it apply to a much smaller, shorter-lived pile of data with an easier case to make.
+[Privacy-friendly analytics](/privacy-friendly-analytics/) doesn't make GDPR stop applying. It makes it apply to a much smaller, shorter-lived pile of data with an easier case to make.
 
 ## What Feasible stores, exactly
 

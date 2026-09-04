@@ -42,8 +42,6 @@ still behaves like a link, and a middle-click counts too. The 404 goal is the
 exception: it's created for you, but the base script doesn't detect 404s. That
 one comes from the WordPress plugin.
 
-{{< shot src="app/goals.png" alt="The Goals card listing 404 pages, Outbound link clicks, File downloads, Form submissions, Refunds requested, Newsletter signups and Read a topic page, with columns for uniques, total and conversion rate." caption="The goals report. Only goals with conversions are listed, and it tells you how many of your configured goals that is." >}}
-
 ## Sequential or strict
 
 A funnel is 2 to 8 steps, each step a goal you already defined. Two ways to

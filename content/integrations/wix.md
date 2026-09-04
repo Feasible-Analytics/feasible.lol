@@ -28,7 +28,7 @@ Wix's own instructions open with a requirement: **"Make sure that your site is p
 
 **Changing your domain deletes your snippets.** Wix says so directly: assign a different domain to the site and your code snippets are removed. If you migrate a domain and your numbers go flat the same week, this is the first thing to check, not the last.
 
-**Wix routes the big trackers elsewhere.** Its help page notes that "tracking scripts such as Google Analytics, Google Tag Manager, and Facebook & TikTok pixels do not work through custom code" — those have their own dedicated slots in the Wix dashboard. Feasible isn't one of those, so Custom Code is the right place for it. But Wix tightened what custom code is allowed to do in December 2025, so don't assume it's live because you clicked Apply. Verify it, below.
+**Wix routes the big trackers elsewhere.** Its help page notes that "tracking scripts such as Google Analytics, Google Tag Manager, and Facebook & TikTok pixels do not work through custom code" — those have their own dedicated slots in the Wix dashboard. Feasible isn't one of those, so Custom Code is the right place for it. Wix has also tightened what custom code is allowed to do, so don't assume it's live because you clicked Apply. Verify it, below.
 
 **Wix pages navigate client-side.** Moving between pages on a Wix site often doesn't reload the document. Our script watches history changes itself and counts each route once, so there's nothing to configure — but it does mean you should test by *clicking links*, not by typing three URLs into the address bar.
 

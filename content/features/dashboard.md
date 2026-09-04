@@ -1,5 +1,6 @@
 ---
 title: "The one-page dashboard"
+seotitle: "Website analytics dashboard — everything on one page"
 description: "Six numbers, a graph and five reports on one screen. Click any row to filter everything else, and every filter lives in the URL."
 lede: "Everything Feasible collects is on one page. Click any row and it filters the rest of it."
 weight: 10
@@ -12,8 +13,9 @@ note: |
   the drawer's columns either; they're in the query engine and the API instead.
 ---
 
-Everything Feasible collects lives on one screen. Six numbers across the top, a
-graph under them, five report cards below that.
+A website analytics dashboard should be one screen, and this one is. Everything
+Feasible collects lives on it: six numbers across the top, a graph under them,
+four report cards and one full-width card below that.
 
 There's no menu, no report builder and no tab hiding the thing you came for.
 Click a row — a country, a page, a browser — and it becomes a filter on
@@ -89,7 +91,9 @@ sits in the top bar the rest of the time.
 
 ## Why it's fixed
 
-Because a dashboard you have to assemble is a dashboard nobody finishes.
+Because a dashboard you have to assemble is a dashboard nobody finishes. That's
+the whole argument for [simple web analytics](/simple-web-analytics/), and this
+page is where it shows.
 
 The layout is identical for every site and every account. That means the answer
 to "where do I find bounce rate" is the same answer for everybody, forever, and

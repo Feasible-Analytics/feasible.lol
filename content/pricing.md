@@ -22,7 +22,7 @@ faq:
   - q: "Do you charge per seat?"
     a: "No. Unlimited team members. There are five roles — owner, admin, editor, billing and viewer — plus per-site guest access, so a contractor can see one site and your accountant can see the invoices. None of them costs anything."
   - q: "Is there a free plan?"
-    a: "No. There are 30 free days with no credit card, and after that it's $9.99 a month. If you want a free copy forever, [self-host it](/open-source/) — that's free, unrestricted, and has every feature the hosted version has."
+    a: "No. There are 30 free days with no credit card, and after that it's $9.99 a month. If you want free website analytics forever, [self-host it](/open-source/) — that's free, unrestricted, and has every feature the hosted version has."
   - q: "Do you do non-profit or open-source discounts?"
     a: "There's no published program, but ask. Email [sales@feasible.lol](mailto:sales@feasible.lol) and tell us what the project is. We can hand out complimentary accounts and we do."
   - q: "Can I pay yearly?"
@@ -129,7 +129,10 @@ cheapest thing you can buy — we're the one whose price doesn't move when any o
 changes.
 
 The whole ladder, at 10k, 100k, 1M, 5M and 10M pageviews a month, is on
-[the pricing comparison page](/compare/pricing/).
+[the pricing comparison page](/compare/pricing/). One vendor at a time, there's
+[how this compares to Plausible](/compare/plausible/),
+[how this compares to Fathom](/compare/fathom/), and
+[every Google Analytics alternative, priced](/alternatives/google-analytics/).
 
 ## Why it costs this little
 
@@ -142,7 +145,7 @@ RAM and a gigabyte of disk.
 
 There's no cluster underneath this — one Go binary, one SQLite file per account, no
 Postgres, no ClickHouse, no Redis, no queue, no Docker. Nothing is running that we'd
-have to charge you for. [The whole thing is open source](/open-source/) if you'd
+have to charge you for. [The whole thing is open source](/open-source-web-analytics/) if you'd
 rather check that than take our word for it.
 
 ## Over a million pageviews? {#enterprise}
@@ -172,6 +175,10 @@ drop back under the limit, and the dashboard comes back.
 
 The trial is 30 days and takes no credit card. There's no payment record of you at all
 until somebody actually pays, so there's nothing to forget to cancel.
+
+Thirty days is also about the right length to switch properly:
+[moving your Google Analytics history across](/migrate/from-google-analytics/) is a
+CSV upload and two weeks of running both tags to see where the numbers disagree.
 
 **Refunds.** A yearly plan is refunded pro rata within 30 days of purchase, on request
 — no form, and nobody will try to talk you out of it. Monthly isn't refunded;

@@ -213,7 +213,7 @@ Nobody else in this comparison publishes a counted, reasoned drop log. If you've
 ever spent a morning working out why your numbers halved on Tuesday, that's the
 feature.
 
-## Where we'd tell you to pick us
+## When a Matomo alternative makes sense
 
 If what you look at is traffic, pages, sources, countries, devices, goals and
 funnels — and you'd like the bill to be $99 and the server to be one file — then

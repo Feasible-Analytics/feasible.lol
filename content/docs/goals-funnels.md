@@ -95,8 +95,6 @@ moves it.
 A funnel is an ordered list of goals — at least **two** steps and at most **eight** — and it counts
 visitors by how far they got.
 
-{{< shot src="app/goals.png" alt="The goals report: each goal with its unique conversions, total conversions and conversion rate." >}}
-
 Three rules follow from how it's walked, and all three matter:
 
 - **A funnel is scoped to one visit.** Somebody who signs up on Monday and buys on Thursday is two

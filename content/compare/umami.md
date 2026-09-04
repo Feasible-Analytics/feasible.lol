@@ -149,7 +149,7 @@ Feasible's self-hosted build is the build we host. Every feature, every release,
 no license key, no cut-down edition, and no directory in the repo you're not
 allowed to compile. Set `FEASIBLE_APP_HOSTED=false` and everything works —
 funnels, custom properties, the API, webhooks, MCP, raw export, teams. See
-[open source](/open-source/) for what that does and doesn't promise.
+[open source web analytics](/open-source-web-analytics/) for what that does and doesn't promise.
 
 ## Knowing when data goes missing
 

@@ -1,5 +1,6 @@
 ---
 title: "Install guides"
+seotitle: "Website analytics integrations — 18 platform guides"
 description: "Where the Feasible tracking script goes on WordPress, Ghost, Webflow, Squarespace, Shopify, Next.js, Hugo and a dozen more platforms."
 lede: "One line of HTML in your site's head. Here's exactly where that line lives on each platform."
 ---

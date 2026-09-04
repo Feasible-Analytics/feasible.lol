@@ -1,5 +1,6 @@
 ---
 title: "Help"
+seotitle: "Feasible help — answers on analytics, privacy and billing"
 description: "Short answers about Feasible — cookie banners, installing the script, goals and funnels, billing, self-hosting and what to do when the numbers look wrong."
 lede: "One question per page, answered in the first sentence. If yours isn't here, email us — a person reads it, and the good ones end up on this page."
 categories:

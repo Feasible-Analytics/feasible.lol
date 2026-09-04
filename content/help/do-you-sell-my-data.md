@@ -20,4 +20,4 @@ The people who *do* touch your data are named. Sub-processors are on a public li
 
 If the model ever changed, you'd see it in the terms and you could [take every raw event with you](/help/how-do-i-export-my-data/) the same afternoon. Export is a button, it works in every account state, and it includes the raw rows rather than just the summaries — which is the part that makes leaving actually possible.
 
-And if you'd rather not take our word for any of it, the source is [public](/open-source/) and you can [run it yourself](/help/can-i-run-feasible-myself/).
+And if you'd rather not take our word for any of it, the source is [public](/open-source-web-analytics/) and you can [run it yourself](/help/can-i-run-feasible-myself/).

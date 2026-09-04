@@ -106,7 +106,7 @@ carrying five properties, 30,000 signups each carrying two.
 | Feasible | 750,000 | Inside the $99 plan |
 | Plausible | 750,000 | Under 1M |
 | Umami | 910,000 | Under 1M, but a sixth property pushes it over |
-| Matomo (with downloads and outlinks tracked) | 1.4M–2M hits | Two tiers up, $3,990/yr |
+| Matomo (with downloads and outlinks tracked) | 1.4M–2M hits | A tier up, $3,990/yr |
 
 Same shop. Same traffic. Feasible and Plausible read the same number here,
 because the unit is the same — the difference between those two is the price,

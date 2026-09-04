@@ -35,6 +35,15 @@ visitor's device, never writes an IP address to disk, and has no advertising
 network anywhere in the loop. That doesn't make you compliant. It makes the
 question a great deal smaller.
 
+## What GDPR-compliant web analytics actually means
+
+It's a shopping term, not a status. No tool makes you compliant on its own — that
+depends on how you configure it, what else your site loads, and where you and your
+visitors are. What people are usually after when they go looking for
+GDPR-compliant web analytics is a tool that makes the question small: no cookie to
+consent to, no profile to hand over on request, no ad network in the loop. That
+part is describable, and the rest of this page describes it.
+
 ## Why collecting less changes the question
 
 Most of the work in a GDPR conversation about analytics comes from one place:

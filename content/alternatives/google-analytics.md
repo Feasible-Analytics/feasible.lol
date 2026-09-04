@@ -2,7 +2,7 @@
 title: "Google Analytics alternatives, compared"
 seotitle: "Google Analytics alternatives: what you give up"
 description: "Nine Google Analytics alternatives compared on price, limits and privacy — Plausible, Fathom, Matomo, Umami, GoatCounter and more. We make one of them."
-lede: "What people actually leave GA4 for, what each alternative costs at real traffic, and the things you give up when you go."
+lede: "Nine alternatives to Google Analytics compared on price and limits — the GA4 alternative shortlist, what each one costs at real traffic, and the things you give up when you go."
 kicker: "ROUNDUP"
 weight: 10
 wide: true
@@ -104,8 +104,7 @@ tier one or two steps above their pageview count.
 ### Matomo
 
 The deepest tool in the list and the oldest — shipping since 2007. Segments,
-custom dimensions, heatmaps, A/B testing, roll-up reporting, ecommerce, 962 help
-pages, and a real on-premise install where the core is free under GPL-3.0. Cloud
+custom dimensions, heatmaps, A/B testing, roll-up reporting, ecommerce, a very large documentation library, and a real on-premise install where the core is free under GPL-3.0. Cloud
 hosts in Europe.
 
 **Where it beats us:** feature depth, and the fact that a public-sector
@@ -187,14 +186,16 @@ A one-person project, EUPL-1.2, hosted free "for reasonable public usage" and
 funded by donations. Philosophically the closest thing here to us.
 
 **Where it beats us:** it's free, and its GDPR page is the most careful writing on
-the subject in this whole category — including "I am not a lawyer."
+the subject in this whole category — including "I am not a lawyer." Ours is at
+[GDPR-friendly analytics](/gdpr-compliant-analytics/), hedged for the same reason.
 
 **The cost:** it's explicitly not for millions of pageviews a day, and the feature
 set is deliberately small.
 
 ### Cloudflare Web Analytics
 
-Free, cookieless, trivial to switch on if you're already behind Cloudflare.
+Free, [cookieless](/cookieless-analytics/), trivial to switch on if you're already
+behind Cloudflare.
 
 **Where it beats us:** the price, and zero setup.
 
@@ -214,6 +215,17 @@ the API package has no plan check in it at all.
 replay, no heatmaps, no A/B testing, no cohort or retention report. Our script is
 3,377 bytes gzipped against Plausible's 1,291. And we launched in 2026, so we
 have no track record — which is a real risk and you should price it in.
+
+## Free Google Analytics alternatives
+
+There are several, and they're free for different reasons. Cloudflare Web
+Analytics is free and cookieless, and shallow. GoatCounter's hosted tier is free
+for reasonable public use, funded by donations. Umami, Matomo and Feasible are all
+free if you run them on your own server — which is a server, backups, upgrades and
+a pager, so it's free the way a puppy is free.
+
+GA4 itself is the other kind of free: your visitors' behavior goes to an
+advertising company, and you pay in a consent banner.
 
 ## Which to pick, by situation
 

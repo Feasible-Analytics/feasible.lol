@@ -32,6 +32,7 @@ class Page(HTMLParser):
         self.description = None
         self.h1s = []
         self.links = []
+        self.redirect = False
         self._in = None
 
     def handle_starttag(self, tag, attrs):
@@ -44,6 +45,10 @@ class Page(HTMLParser):
             self.h1s.append("")
         elif tag == "meta" and (a.get("name") or "").lower() == "description":
             self.description = a.get("content", "")
+        elif tag == "meta" and (a.get("http-equiv") or "").lower() == "refresh":
+            # A Hugo alias renders a meta-refresh stub. It has no content by
+            # design, so none of the content checks apply to it.
+            self.redirect = True
         elif tag == "a" and a.get("href"):
             self.links.append(a["href"])
 
@@ -91,7 +96,7 @@ def main():
     problems = defaultdict(list)
 
     for url, p in pages.items():
-        if url == "/404.html":
+        if url == "/404.html" or p.redirect:
             continue
 
         title = p.title.strip()

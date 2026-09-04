@@ -5,7 +5,7 @@ category: "self-hosting"
 weight: 10
 ---
 
-Yes. It's the [same build we run](/docs/self-hosting/), with everything switched on.
+Yes. It's the [same build we run](/docs/self-hosting/), with everything switched on. The full walkthrough is on [self-hosted analytics](/open-source/).
 
 ```bash
 cp .env.sample .env        # set FEASIBLE_APP_HOSTED=false

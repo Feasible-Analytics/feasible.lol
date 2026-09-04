@@ -19,7 +19,7 @@ feasible('Purchase', {
 
 Amounts are stored as integer minor units, so there's no floating-point drift on your totals. Any ISO-4217 currency works, and if you take money in several, cross-currency reporting uses stored exchange rates that refresh every 24 hours.
 
-You get [four numbers](/features/revenue/) out of it: total revenue, average revenue, revenue per visitor, and the conversion rate. Revenue shows as a sub-line under the goal in the **Goals** tab.
+You get [three revenue metrics](/features/revenue/) out of it — total revenue, average revenue and revenue per visitor — alongside the goal's own conversion rate. Revenue shows as a sub-line under the goal in the **Goals** tab.
 
 The part worth understanding is the attribution. **Revenue is credited to the source that started the visit**, not to whatever the referrer happened to be at the moment of payment. So a customer who arrives from your newsletter, browses, and gets bounced through a checkout provider on the way back has their money credited to the newsletter — [which is why payment providers never show up as your best marketing channel](/help/why-doesnt-stripe-show-up-as-a-source/).
 

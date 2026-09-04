@@ -1,6 +1,6 @@
 ---
 title: "Feasible vs Plausible"
-seotitle: "Feasible vs Plausible — price, limits, features"
+seotitle: "Plausible alternative — Feasible vs Plausible on price"
 description: "A million pageviews, unlimited sites and unlimited users for $99 a year. Here's how that lines up against Plausible's published pricing, tier by tier."
 lede: "Two published price lists, side by side, and an honest account of what Plausible does better."
 versus: "Plausible"
@@ -8,7 +8,8 @@ checked: 2026-09-03
 weight: 20
 verdict: |
   If your data has to sit in the EU, or you want the tool with the longest
-  track record and the biggest community in privacy-friendly analytics,
+  track record and the biggest community in
+  [privacy-friendly analytics](/privacy-friendly-analytics/),
   Plausible is the safer pick and we'd tell you so. If you run more than one
   site, have more than one person looking at it, or want funnels, custom
   properties, the API and raw export without moving up a tier, the arithmetic
@@ -194,6 +195,14 @@ ClickHouse, no queue. It starts on 1 core and 512 MB of RAM.
 We're not claiming SQLite stores data more efficiently than ClickHouse — it
 doesn't, by a wide margin. The claim is operational: there's one process and one
 file, and nothing to tune.
+
+## Looking for a Plausible alternative?
+
+Most people who go looking aren't unhappy with the product. They've run into the
+Starter plan being one site and no teammates, or they've priced Business at a
+million pageviews and gone quiet. Both of those are further up this page.
+
+If neither of those is your problem, the next section is the honest answer.
 
 ## Where Plausible wins
 

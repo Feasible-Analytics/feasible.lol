@@ -173,7 +173,7 @@ disableKinds = ["taxonomy", "term"]
     weight = 4
   [[menus.footer]]
     parent = "product"
-    name = "Open source"
+    name = "Self-hosting"
     url = "/open-source/"
     weight = 5
   [[menus.footer]]

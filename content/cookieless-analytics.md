@@ -8,7 +8,7 @@ weight: 20
 checked: 2026-09-03
 faq:
   - q: "What is cookieless analytics?"
-    a: "Website analytics that measures traffic without storing an identifier in the visitor's browser. No cookie, no persistent ID, nothing that can be read back on a later visit to recognize the same person."
+    a: "Website analytics that measures traffic without storing an identifier in the visitor's browser. Cookieless tracking means no cookie, no persistent ID, and nothing that can be read back on a later visit to recognize the same person."
   - q: "How do you count unique visitors without cookies?"
     a: "Each event gets a 64-bit hash of the user agent, the IP address and the site's domain, keyed with a salt derived from the current UTC day. The salt is never stored and changes at midnight, so the number is only good for one day."
   - q: "Are cookieless analytics accurate?"
@@ -20,7 +20,7 @@ faq:
   - q: "Does the Feasible script write anything to the browser?"
     a: "Two things, neither an identifier. A short-lived retry queue holding events that haven't been delivered yet, cleared as soon as the server accepts them, and a flag you set yourself if you want to exclude your own visits."
   - q: "Do ad blockers block cookieless analytics?"
-    a: "Some do. Blocking rates vary enormously by audience — low single digits on a mainstream consumer site, much higher on a developer audience. Serving the script from your own domain through a proxy cuts most of it."
+    a: "Some do. Blocking rates vary enormously by audience — under 10% on a mainstream consumer site, much higher on a developer audience. Serving the script from your own domain through a proxy cuts most of it."
 ---
 
 Feasible sets no cookie. Not "cookieless if you configure it that way" — there's
@@ -48,9 +48,9 @@ different number, and no way to connect the two.
 The raw IP is used for that calculation and for a coarse location lookup, then
 discarded. It never reaches disk.
 
-## Are the numbers any good?
+## Cookieless tracking, and what it can still tell you
 
-Within a day, yes. Pageviews, visits, bounce rate, top pages, sources, countries,
+Are the numbers any good? Within a day, yes. Pageviews, visits, bounce rate, top pages, sources, countries,
 devices — all of that is counted the way it would be with a cookie, because
 within a single day the hash does the same job.
 
@@ -167,7 +167,7 @@ the fix for a problem that mostly arrives with the analytics tool you chose.
 ## Ad blockers, honestly
 
 Some blocklists catch analytics endpoints, ours included. Blocking rates vary
-enormously by audience: low single digits on a mainstream consumer site, much
+enormously by audience: under 10% on a mainstream consumer site, much
 higher on a developer or tech audience. The most-cited number in this category
 comes from a vendor study on a single page that trended on Hacker News, and it
 was publicly rebutted; the same author's own site reports

@@ -21,6 +21,6 @@ Here's the whole list. It fits on a screen.
 
 **And one identifier:** a 64-bit hash of the user agent, the IP and your domain, keyed to today's salt. Tomorrow it's a different number and yesterday's salt is gone. [How that works](/help/how-do-you-count-unique-visitors-without-cookies/).
 
-That's it. Roughly 210 bytes per event on disk.
+That's it. Roughly 210 bytes per event on disk. The longer read is [what privacy-friendly analytics stores, field by field](/privacy-friendly-analytics/).
 
 The more interesting list is [what we don't collect](/help/what-do-you-not-collect/) — and please don't put an email address, a user ID or anything else that names a person into a custom property. The [DPA](/dpa/) forbids it, and there's no report that would be improved by it.

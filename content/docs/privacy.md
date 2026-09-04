@@ -8,8 +8,10 @@ weight: 160
 The short version: no cookies, no persistent identifier, no cross-site tracking, no data sold or used
 for advertising, and no IP address ever written to disk.
 
-This is the technical page. The legal one is the [privacy and data policy](/privacy/), and the
-processor contract is the [data processing addendum](/dpa/).
+This is the technical page. The argument is on
+[privacy-friendly analytics](/privacy-friendly-analytics/), the legal one is the
+[privacy and data policy](/privacy/), and the processor contract is the
+[data processing addendum](/dpa/).
 
 ## The visitor identifier is pseudonymous, not anonymous
 
