@@ -1,0 +1,315 @@
+{{/*
+  home.html
+  The landing page. Everything here is hand-laid rather than driven from
+  content, because the home page is the one page whose order and rhythm matter
+  more than its editability.
+
+  Created: 2026-09-03
+  Copyright (c) 2026 Cloudmanic Labs, LLC. All rights reserved.
+*/}}
+{{ define "main" }}
+  {{ $p := .Site.Params }}
+
+  {{/* ---------------------------------------------------------------
+       Hero. Two columns on desktop: the claim, and the arithmetic that
+       backs it. On a phone the bill chart moves below the buttons, because
+       the headline has to land before the evidence.
+       --------------------------------------------------------------- */}}
+  <section class="shell pt-16 pb-14 sm:pt-24 lg:pt-28 lg:pb-20">
+    <div class="grid items-end gap-12 lg:grid-cols-12 lg:gap-16">
+      <div class="lg:col-span-7">
+        <h1
+          class="optical-l font-display text-[2.75rem] font-extrabold leading-[1.02] tracking-[-0.028em] sm:text-[3.75rem] lg:text-[4.5rem]"
+        >
+          <span class="block">Your analytics</span>
+          <span class="block">bill is a joke.</span>
+          <span class="block text-flag">You're the</span>
+          <span class="block text-flag">punchline.</span>
+        </h1>
+
+        <p class="mt-8 max-w-[56ch] text-lg leading-relaxed text-neutral-800">
+          Feasible is website analytics that fits on one page. No cookies, no
+          consent banner, no forty-click funnel to find out how many people read
+          your blog post. Unlimited sites, unlimited people on your team, a
+          million pageviews a month — ${{ $p.pricing.yearly }} a year.
+        </p>
+
+        <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
+          <a href="{{ $p.signupURL }}" class="btn btn-primary">
+            Start free — {{ $p.pricing.trialDays }} days
+          </a>
+          <a href="#the-math" class="btn btn-secondary">See the math</a>
+        </div>
+        <p class="mt-4 text-sm text-neutral-700">
+          No credit card. Five minutes to your first pageview.
+        </p>
+      </div>
+
+      {{/* The bar chart is three divs wide, not a chart library. It has to be
+           readable at 320px, and a library would cost more than it's worth. */}}
+      <div id="the-math" class="lg:col-span-5">
+        <p class="kicker">
+          One million pageviews a month, billed yearly
+        </p>
+        <div class="mt-5 space-y-3">
+          {{ range hugo.Data.bill.rows }}
+            <div class="flex items-center gap-3 sm:gap-4">
+              <span
+                class="w-24 shrink-0 text-sm sm:w-28 {{ if .highlight }}font-display font-extrabold{{ end }}"
+                >{{ .name }}</span
+              >
+              <span
+                class="h-7 min-w-[3px] {{ if .highlight }}bg-flag{{ else }}bg-neutral-400{{ end }}"
+                style="width: {{ .width }}"
+                aria-hidden="true"
+              ></span>
+              <span
+                class="tnum ml-auto shrink-0 text-right font-display text-sm font-extrabold sm:text-base {{ if .highlight }}text-flag{{ end }}"
+                >{{ .price }}</span
+              >
+            </div>
+          {{ end }}
+        </div>
+        <p class="mt-5 text-sm leading-relaxed text-neutral-700">
+          Same visitors. Same pages. Same sources. The only thing that changes
+          is who's laughing.
+          <a
+            href="/compare/pricing/"
+            class="font-display font-extrabold text-flag-700 hover:text-flag"
+            >Where these numbers come from&nbsp;→</a
+          >
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <div class="shell"><hr class="rule" /></div>
+
+  {{/* ---------------------------------------------------------------
+       The dashboard.
+       --------------------------------------------------------------- */}}
+  <section class="shell pt-16 sm:pt-20">
+    <p class="kicker">The dashboard</p>
+    <h2
+      class="mt-4 max-w-[20ch] font-display text-[2rem] font-extrabold leading-tight tracking-tight sm:text-[2.5rem]"
+    >
+      One page. Every answer.
+    </h2>
+    <p class="mt-4 max-w-[60ch] text-base leading-relaxed text-neutral-700">
+      Visitors, sources, top pages, countries, devices, goals. All on one
+      screen, in one scroll, with no report builder in sight. Change the date
+      range and everything moves together.
+    </p>
+
+    {{ partial "shot.html" (dict
+      "src" "app/dashboard-light.png"
+      "alt" "The Feasible dashboard: visitors, visits, pageviews, views per visit, bounce rate and visit duration across the top, a visitors chart, then top sources and top pages side by side."
+      "class" "mt-10"
+      "eager" true
+      "sizes" "(min-width: 1024px) 1200px, 100vw"
+    ) }}
+
+    <div class="mt-6 grid gap-6 sm:grid-cols-3">
+      {{ range hugo.Data.home.dashboard_notes }}
+        <div class="border-t-2 border-rule pt-4">
+          <h3 class="font-display text-base font-extrabold">{{ .title }}</h3>
+          <p class="mt-1.5 text-sm leading-relaxed text-neutral-700">
+            {{ .body }}
+          </p>
+        </div>
+      {{ end }}
+    </div>
+  </section>
+
+  {{/* ---------------------------------------------------------------
+       Why .lol — the argument.
+       --------------------------------------------------------------- */}}
+  <section class="shell pt-20 pb-16 sm:pt-24">
+    <p class="kicker">Why .lol</p>
+    <div class="mt-5 grid gap-10 lg:grid-cols-12 lg:gap-16">
+      <h2
+        class="optical-l font-display text-[2rem] font-extrabold leading-[1.06] tracking-tight sm:text-[2.75rem] lg:col-span-5"
+      >
+        It costs pennies to serve you. So we don't charge like it doesn't.
+      </h2>
+      <div class="max-w-[56ch] text-[1.0625rem] leading-relaxed lg:col-span-7">
+        <p class="text-neutral-800">
+          Counting pageviews is cheap. A site doing a million visits a month
+          costs an analytics company a few dollars in servers, and they bill you
+          a hundred a month for it without blinking.
+        </p>
+        <p class="mt-5 text-neutral-800">
+          We were customers first. Every renewal felt like being laughed at. So
+          we built Feasible, priced it at what it costs to run plus a living,
+          and put the joke in the domain name.
+        </p>
+        <a
+          href="/why-feasible/"
+          class="mt-6 inline-block font-display font-extrabold text-flag-700 hover:text-flag"
+          >Why we built Feasible&nbsp;→</a
+        >
+      </div>
+    </div>
+  </section>
+
+  <div class="shell"><hr class="rule" /></div>
+
+  {{/* ---------------------------------------------------------------
+       What you get. A numbered list, not a card grid — cards make four
+       equal things; this is an argument with an order to it.
+       --------------------------------------------------------------- */}}
+  <section class="shell pt-16 sm:pt-20">
+    <p class="kicker">What you get</p>
+    <div class="mt-8">
+      {{ range $i, $row := hugo.Data.home.pillars }}
+        <div
+          class="grid gap-x-8 gap-y-2 border-rule py-7 lg:grid-cols-12 lg:gap-x-16 {{ if $i }}border-t-2{{ end }}"
+        >
+          <p
+            class="tnum font-display text-sm font-extrabold text-flag-700 lg:col-span-2"
+          >
+            {{ printf "%02d" (add $i 1) }}
+          </p>
+          <h3
+            class="font-display text-xl font-extrabold leading-snug lg:col-span-4"
+          >
+            {{ $row.title }}
+          </h3>
+          <p
+            class="max-w-[54ch] leading-relaxed text-neutral-700 lg:col-span-6"
+          >
+            {{ $row.body | safeHTML }}
+          </p>
+        </div>
+      {{ end }}
+    </div>
+  </section>
+
+  {{/* ---------------------------------------------------------------
+       A second screenshot, so the page has proof in two places.
+       --------------------------------------------------------------- */}}
+  <section class="shell pt-20 sm:pt-24">
+    <div class="grid gap-12 lg:grid-cols-12 lg:items-center lg:gap-16">
+      <div class="lg:col-span-5">
+        <p class="kicker">Goals and funnels</p>
+        <h2
+          class="mt-4 font-display text-[1.75rem] font-extrabold leading-tight tracking-tight sm:text-[2.25rem]"
+        >
+          The numbers that pay the bills.
+        </h2>
+        <p class="mt-4 leading-relaxed text-neutral-700">
+          Track signups, purchases, downloads and outbound clicks. Chain two to
+          eight of them into a funnel and see exactly where people leave. Attach
+          revenue in any currency and Feasible credits it to the source that
+          started the visit, so Stripe never shows up as your best marketing
+          channel.
+        </p>
+        <a
+          href="/features/goals-and-funnels/"
+          class="mt-6 inline-block font-display font-extrabold text-flag-700 hover:text-flag"
+          >How goals work&nbsp;→</a
+        >
+      </div>
+      <div class="lg:col-span-7">
+        {{ partial "shot.html" (dict
+          "src" "app/funnels.png"
+          "alt" "A Feasible conversion funnel showing the drop-off between each step."
+          "sizes" "(min-width: 1024px) 700px, 100vw"
+        ) }}
+      </div>
+    </div>
+  </section>
+
+  <div class="shell pt-20"><hr class="rule" /></div>
+
+  {{/* ---------------------------------------------------------------
+       Pricing.
+       --------------------------------------------------------------- */}}
+  <section class="shell pt-16 sm:pt-20">
+    <div class="grid gap-10 lg:grid-cols-12 lg:gap-16">
+      <div class="lg:col-span-5">
+        <p class="kicker">Pricing</p>
+        <h2
+          class="optical-l mt-4 font-display text-[2rem] font-extrabold leading-[1.06] tracking-tight sm:text-[2.75rem]"
+        >
+          One plan. That's the whole price list.
+        </h2>
+        <p class="mt-5 max-w-[44ch] leading-relaxed text-neutral-700">
+          No tier that punishes you for growing. No feature held back to make an
+          upgrade look attractive. Everything Feasible does is in the one plan,
+          including the API, the team seats and the raw data export.
+        </p>
+      </div>
+
+      <div class="lg:col-span-7">
+        <div class="border-2 border-ink p-7 sm:p-9">
+          <div class="grid gap-8 sm:grid-cols-2">
+            <div>
+              <p
+                class="tnum font-display text-[3.5rem] font-extrabold leading-none tracking-tight"
+              >
+                ${{ $p.pricing.yearly
+                }}<span class="text-lg font-normal tracking-normal text-neutral-700">
+                  / year</span
+                >
+              </p>
+              <p class="mt-3 text-sm text-neutral-700">
+                Or ${{ $p.pricing.monthly }} a month. Cancel any time.
+              </p>
+              <a
+                href="{{ $p.signupURL }}"
+                class="btn btn-primary mt-6 w-full !justify-start"
+                >Start free — {{ $p.pricing.trialDays }} days</a
+              >
+              <p class="mt-3 text-sm text-neutral-700">
+                More than {{ $p.pricing.pageviewsShort }} pageviews or longer
+                retention?
+                <a href="/pricing/#enterprise" class="text-flag-700 underline"
+                  >Talk to us</a
+                >.
+              </p>
+            </div>
+            <ul class="space-y-2.5 text-[0.9375rem]">
+              {{ range hugo.Data.home.plan }}
+                <li class="flex items-baseline gap-3">
+                  <span
+                    class="relative top-[-1px] size-2 shrink-0 bg-flag"
+                    aria-hidden="true"
+                  ></span>
+                  <span>{{ . }}</span>
+                </li>
+              {{ end }}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {{/* ---------------------------------------------------------------
+       Objection handling. Three short answers to the three things that
+       stop a signup.
+       --------------------------------------------------------------- */}}
+  <section class="shell pt-20 sm:pt-24">
+    <p class="kicker">The questions everyone asks</p>
+    <div class="mt-8 grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+      {{ range hugo.Data.home.objections }}
+        <div class="border-t-2 border-rule pt-5">
+          <h3 class="font-display text-lg font-extrabold leading-snug">
+            {{ .q }}
+          </h3>
+          <p class="mt-2.5 leading-relaxed text-neutral-700">
+            {{ .a | safeHTML }}
+          </p>
+        </div>
+      {{ end }}
+    </div>
+    <a
+      href="/help/"
+      class="mt-9 inline-block font-display font-extrabold text-flag-700 hover:text-flag"
+      >Everything else people ask&nbsp;→</a
+    >
+  </section>
+
+  {{ partial "cta.html" (dict "site" .Site) }}
+{{ end }}

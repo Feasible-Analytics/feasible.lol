@@ -1,0 +1,23 @@
+{{/*
+  breadcrumb.html
+  The trail back up. Hidden on top-level pages, where the only ancestor is home
+  and the header already offers that.
+
+  Created: 2026-09-03
+  Copyright (c) 2026 Cloudmanic Labs, LLC. All rights reserved.
+*/}}
+{{- $crumbs := slice -}}
+{{- range .Ancestors.Reverse -}}
+  {{- if not .IsHome -}}{{- $crumbs = $crumbs | append . -}}{{- end -}}
+{{- end -}}
+{{- with $crumbs }}
+  <nav aria-label="Breadcrumb" class="mb-6 text-sm text-neutral-700">
+    <ol class="flex flex-wrap items-center gap-x-2">
+      <li><a href="/" class="hover:text-flag">Home</a></li>
+      {{- range . }}
+        <li aria-hidden="true" class="text-neutral-500">/</li>
+        <li><a href="{{ .RelPermalink }}" class="hover:text-flag">{{ .Title }}</a></li>
+      {{- end }}
+    </ol>
+  </nav>
+{{- end }}

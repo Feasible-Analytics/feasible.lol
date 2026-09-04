@@ -1,0 +1,58 @@
+{{/*
+  shot.html
+  A product screenshot inside the hard 2px frame the rest of the site uses.
+  Resizes to WebP at three widths and hands the browser a srcset, so a phone
+  never downloads a 1440px-wide PNG.
+
+  Params:
+    src     — path under assets/images/, e.g. "app/dashboard-light.png" (required)
+    alt     — alt text (required)
+    sizes   — sizes attribute; defaults to full-width-of-container
+    class   — extra classes on the wrapper
+    caption — optional line under the frame
+    eager   — true to skip lazy loading (use for the one above the fold)
+
+  Created: 2026-09-03
+  Copyright (c) 2026 Cloudmanic Labs, LLC. All rights reserved.
+*/}}
+{{- $img := resources.Get (printf "images/%s" .src) -}}
+{{- if not $img -}}
+  {{- errorf "shot.html: no image at assets/images/%s" .src -}}
+{{- end -}}
+{{- $sizes := .sizes | default "(min-width: 1024px) 1200px, 100vw" -}}
+{{- $eager := .eager | default false -}}
+
+{{- /* Only build a variant when the source is actually that wide. Upscaling a
+       700px screenshot to 1800px ships blur, and claiming a 1200px file is
+       1800px wide makes the browser pick the wrong one. */ -}}
+{{- $widths := slice 700 -}}
+{{- range slice 1200 1800 -}}
+  {{- if ge $img.Width . -}}{{- $widths = $widths | append . -}}{{- end -}}
+{{- end -}}
+{{- $entries := slice -}}
+{{- $default := "" -}}
+{{- range $widths -}}
+  {{- $r := $img.Resize (printf "%dx webp q82" .) -}}
+  {{- $entries = $entries | append (printf "%s %dw" $r.RelPermalink .) -}}
+  {{- if or (eq $default "") (le . 1200) -}}{{- $default = $r.RelPermalink -}}{{- end -}}
+{{- end -}}
+{{- $srcset := delimit $entries ", " -}}
+
+<figure class="{{ .class }}">
+  <div class="frame overflow-hidden">
+    <img
+      src="{{ $default }}"
+      srcset="{{ $srcset }}"
+      sizes="{{ $sizes }}"
+      width="{{ $img.Width }}"
+      height="{{ $img.Height }}"
+      alt="{{ .alt }}"
+      class="block h-auto w-full"
+      {{ if $eager }}fetchpriority="high"{{ else }}loading="lazy"{{ end }}
+      decoding="async"
+    />
+  </div>
+  {{- with .caption }}
+    <figcaption class="mt-3 text-sm text-neutral-700">{{ . }}</figcaption>
+  {{- end }}
+</figure>

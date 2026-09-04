@@ -1,0 +1,29 @@
+# bill.yaml
+# The hero bar chart: what a million pageviews a month costs for a year, at
+# each vendor's published list price with annual billing.
+#
+# Every figure here is a competitor's own public price. Widths are percentages
+# of the largest bar, worked out by hand so the chart needs no JavaScript.
+# Re-check these before quoting them anywhere else — see /compare/pricing/,
+# which carries the source links and the date.
+#
+# Checked: 2026-09-03
+# Created: 2026-09-03
+# Copyright (c) 2026 Cloudmanic Labs, LLC. All rights reserved.
+
+checked: 2026-09-03
+
+rows:
+  - name: "Matomo Cloud"
+    price: "$2,040"
+    width: "100%"
+  - name: "Plausible"
+    price: "$1,390"
+    width: "68%"
+  - name: "Fathom"
+    price: "$600"
+    width: "29%"
+  - name: "Feasible"
+    price: "$99"
+    width: "4.9%"
+    highlight: true

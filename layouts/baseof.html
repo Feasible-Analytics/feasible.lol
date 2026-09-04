@@ -1,0 +1,22 @@
+{{/*
+  baseof.html
+  The shell every page on feasible.lol renders into.
+
+  Created: 2026-09-03
+  Copyright (c) 2026 Cloudmanic Labs, LLC. All rights reserved.
+*/}}
+<!doctype html>
+<html lang="en" class="scroll-pt-24">
+  <head>
+    {{ partial "head.html" . }}
+  </head>
+  <body class="min-h-screen flex flex-col antialiased">
+    <a href="#main" class="skip-link">Skip to content</a>
+    {{ partial "header.html" . }}
+    <main id="main" class="flex-1">
+      {{ block "main" . }}{{ end }}
+    </main>
+    {{ partial "footer.html" . }}
+    {{ partial "scripts.html" . }}
+  </body>
+</html>

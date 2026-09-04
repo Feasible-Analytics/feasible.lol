@@ -1,0 +1,72 @@
+{{/*
+  page.html
+  The default single-page layout: a headline, an optional standfirst, then the
+  content in a reading column. Used by /about, /support, /open-source, the legal
+  pages and anything else that is mostly words.
+
+  Front matter:
+    kicker   — the small uppercase label above the title
+    lede     — one paragraph under the title, set larger
+    toc      — true to render a table of contents beside the copy
+    wide     — true to drop the reading-width limit (comparison tables)
+    nocta    — true to suppress the closing red band
+
+  Created: 2026-09-03
+  Copyright (c) 2026 Cloudmanic Labs, LLC. All rights reserved.
+*/}}
+{{ define "main" }}
+  <article class="shell pt-12 sm:pt-16">
+    {{ partial "breadcrumb.html" . }}
+
+    <header class="{{ if not .Params.wide }}max-w-[46rem]{{ end }}">
+      {{ with .Params.kicker }}<p class="kicker mb-4">{{ . }}</p>{{ end }}
+      <h1
+        class="optical-l font-display text-[2.25rem] font-extrabold leading-[1.06] tracking-tight sm:text-[3rem]"
+      >
+        {{ .Title }}
+      </h1>
+      {{ with .Params.lede }}
+        <p class="mt-5 text-lg leading-relaxed text-neutral-700">{{ . | markdownify }}</p>
+      {{ end }}
+    </header>
+
+    <hr class="rule my-10" />
+
+    {{ if .Params.toc }}
+      <div class="grid gap-12 lg:grid-cols-12 lg:gap-16">
+        <div class="lg:order-2 lg:col-span-3">
+          <nav
+            aria-label="On this page"
+            class="lg:sticky lg:top-24 border-t-2 border-rule pt-4"
+          >
+            <p
+              class="font-display text-xs font-extrabold uppercase tracking-[0.08em] text-neutral-700"
+            >
+              On this page
+            </p>
+            <div class="mt-3 text-sm [&_a]:block [&_a]:py-1 [&_a]:text-neutral-700 [&_a:hover]:text-flag [&_ul]:space-y-0 [&_li>ul]:ml-3">
+              {{ .TableOfContents }}
+            </div>
+          </nav>
+        </div>
+        <div class="copy lg:order-1 lg:col-span-9 {{ if not .Params.wide }}max-w-[44rem]{{ end }}">
+          {{ .Content }}
+        </div>
+      </div>
+    {{ else }}
+      <div class="copy {{ if not .Params.wide }}max-w-[44rem]{{ end }}">
+        {{ .Content }}
+      </div>
+    {{ end }}
+
+    {{ partial "updated.html" . }}
+  </article>
+
+  {{ if not .Params.nocta }}
+    {{ partial "cta.html" (dict
+      "site" .Site
+      "line1" (.Params.ctaLine1 | default "Analytics you can afford.")
+      "line2" (.Params.ctaLine2 | default "And actually read.")
+    ) }}
+  {{ end }}
+{{ end }}

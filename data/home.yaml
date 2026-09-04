@@ -1,0 +1,89 @@
+# home.yaml
+# Copy blocks for the landing page. Kept out of the template so the words can
+# change without touching layout.
+#
+# Created: 2026-09-03
+# Copyright (c) 2026 Cloudmanic Labs, LLC. All rights reserved.
+
+# Three short notes under the dashboard screenshot.
+dashboard_notes:
+  - title: "It loads"
+    body: >-
+      Reports come off pre-built roll-ups, so twenty-eight days of top pages
+      answers in about a tenth of a second.
+
+  - title: "No report builder"
+    body: >-
+      Nothing to configure before you see a number. Add the script, and the
+      dashboard is the dashboard.
+
+  - title: "Filter anything"
+    body: >-
+      Click a country, a source, a page or a custom property and the whole
+      screen narrows to it. Stack as many as you like.
+
+# The numbered argument. Order matters: price, privacy, ownership, honesty,
+# weight.
+pillars:
+  - title: "Unlimited, actually"
+    body: >-
+      Unlimited websites. Unlimited people on your team. Unlimited custom
+      events, goals, funnels and properties. The only number we count is
+      pageviews, and you get a million a month.
+
+  - title: "No cookies. No banner."
+    body: >-
+      We don't set a cookie, don't store an IP address, and don't follow anyone
+      between sites. Most sites won't need a consent banner for Feasible —
+      <a href="/help/do-i-need-a-cookie-banner/" class="text-flag-700 underline">here's
+      why</a>, and check with your own lawyer if you're somewhere strict.
+
+  - title: "Your team, your data"
+    body: >-
+      Five roles plus per-site guests, so a contractor sees one site and your
+      accountant sees the invoices. Share a dashboard publicly, or behind a
+      password. Export everything, raw events included, whenever you want.
+
+  - title: "It tells you when it's broken"
+    body: >-
+      Every event we drop is counted and given a reason you can read — bot,
+      datacentre address, a shield you set, a hostname you haven't allowed.
+      Analytics that silently loses a third of your traffic is worse than no
+      analytics.
+
+  - title: "Built light on purpose"
+    body: >-
+      One binary and one SQLite file. No cluster, no queue, no column store to
+      feed. That's why a small site runs on a $4 server — and why the price can
+      be what it is. It's
+      <a href="/open-source/" class="text-flag-700 underline">open source</a>
+      if you'd rather run it yourself.
+
+# What's in the plan, on the pricing card.
+plan:
+  - "Unlimited websites"
+  - "Unlimited team members"
+  - "1,000,000 pageviews a month"
+  - "Unlimited events, goals and funnels"
+  - "5 years of data retention"
+  - "Full API, webhooks and data export"
+  - "Email and Slack reports"
+
+# The three objections that stop a signup, answered short.
+objections:
+  - q: "Will I lose my history?"
+    a: >-
+      No. Import a Google Analytics 4 property over OAuth, or upload a folder of
+      CSVs, and the old numbers sit on the same charts as the new ones.
+
+  - q: "Is a million pageviews really the limit?"
+    a: >-
+      It's the limit of this plan, and about 99% of sites never reach it. Go
+      over and we email you — nothing switches off mid-month.
+      <a href="/pricing/#enterprise" class="text-flag-700 underline">Talk to us</a>
+      if you need more.
+
+  - q: "What happens if you go away?"
+    a: >-
+      Take the code and run it yourself. It's open source, it's one binary, and
+      your data exports as plain CSV any time you ask for it.

@@ -1,0 +1,101 @@
+#
+# hugo.yml
+# Build feasible.lol with Hugo and publish it to GitHub Pages.
+#
+# Created: 2026-09-03
+# Copyright (c) 2026 Cloudmanic Labs, LLC. All rights reserved.
+#
+name: Deploy to Pages
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# One deployment at a time, and never cancel one that is already publishing.
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      HUGO_VERSION: 0.161.1
+      TZ: America/Los_Angeles
+    steps:
+      # Pinned, because a Hugo minor release has broken template lookup before.
+      - name: Install Hugo
+        run: |
+          wget -O "${{ runner.temp }}/hugo.deb" \
+            "https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb"
+          sudo dpkg -i "${{ runner.temp }}/hugo.deb"
+
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # Hugo shells out to the Tailwind v4 CLI, which needs Node on the runner.
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install npm dependencies
+        run: npm ci
+
+      # Resizing the screenshot library is about a minute cold and nothing when
+      # the cache hits. The key covers every input that can change a derivative,
+      # so a stale variant can never be restored.
+      - name: Cache processed images
+        uses: actions/cache@v4
+        with:
+          path: resources/_gen
+          key: hugo-resources-${{ hashFiles('assets/images/**', 'hugo.toml', 'layouts/_partials/shot.html') }}
+          restore-keys: |
+            hugo-resources-
+
+      - name: Setup Pages
+        id: pages
+        uses: actions/configure-pages@v5
+
+      - name: Build
+        env:
+          HUGO_ENVIRONMENT: production
+          HUGO_ENV: production
+        run: hugo --gc --minify --baseURL "https://feasible.lol/"
+
+      # A broken signup link costs more than a failed deploy. Catch the ones
+      # that come from an unfinished draft rather than from a typo.
+      - name: Guard against placeholder links
+        run: |
+          if grep -rlE "example\.com|TODO-LINK|localhost:8899" public/ >/dev/null 2>&1; then
+            echo "::error::Placeholder links found in the built site."
+            grep -rnE "example\.com|TODO-LINK|localhost:8899" public/ | head -20 || true
+            exit 1
+          fi
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./public
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

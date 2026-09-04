@@ -1,0 +1,8 @@
+{
+  "name": "Feasible",
+  "short_name": "Feasible",
+  "icons": [{ "src": "/favicon.svg", "type": "image/svg+xml", "sizes": "any" }],
+  "theme_color": "#ec3013",
+  "background_color": "#f3f2f2",
+  "display": "browser"
+}

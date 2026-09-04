@@ -1,0 +1,300 @@
+#
+# hugo.toml
+# Site configuration for feasible.lol.
+#
+# Created: 2026-09-03
+# Copyright (c) 2026 Cloudmanic Labs, LLC. All rights reserved.
+#
+
+baseURL = "https://feasible.lol/"
+locale = "en-us"
+defaultContentLanguage = "en"
+title = "Feasible"
+enableRobotsTXT = true
+enableGitInfo = false
+
+# Hugo lowercases and de-punctuates section titles unless told otherwise. Our
+# titles are written by hand in front matter, so leave them alone.
+capitalizeListTitles = false
+
+# Trailing-slash-free URLs everywhere, matching how the app serves its routes.
+disableKinds = ["taxonomy", "term"]
+
+[build]
+  # Tailwind v4 tree-shakes against this file. Without it every utility in the
+  # framework ships to the browser.
+  [build.buildStats]
+    enable = true
+
+  # Rebuild the stylesheet whenever the class list or a source file changes.
+  [[build.cachebusters]]
+    source = 'assets/notwatching/hugo_stats\.json'
+    target = 'css'
+  [[build.cachebusters]]
+    source = 'css/.*\.css'
+    target = 'css'
+
+# hugo_stats.json is written to the project root, which is outside the assets
+# filesystem Tailwind can see. Mounting it in lets the cachebuster above watch
+# it. Declaring any assets mount replaces Hugo's default one, so the standard
+# mount has to be re-added alongside.
+[module]
+  [[module.mounts]]
+    source = "assets"
+    target = "assets"
+  [[module.mounts]]
+    source = "hugo_stats.json"
+    target = "assets/notwatching/hugo_stats.json"
+    disableWatch = true
+
+[minify]
+  disableXML = true
+  minifyOutput = true
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      # Content files carry hand-written HTML for comparison tables and callouts.
+      unsafe = true
+    [markup.goldmark.parser]
+      [markup.goldmark.parser.attribute]
+        block = true
+        title = true
+  [markup.highlight]
+    noClasses = false
+    style = "github"
+    lineNos = false
+    tabWidth = 2
+  [markup.tableOfContents]
+    startLevel = 2
+    endLevel = 3
+    ordered = false
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+  section = ["HTML", "RSS"]
+  page = ["HTML"]
+
+# The JSON output at /index.json is the search index the help page reads.
+[outputFormats]
+  [outputFormats.JSON]
+    mediaType = "application/json"
+    baseName = "index"
+    isPlainText = true
+
+[permalinks]
+  [permalinks.page]
+    blog = "/blog/:slug/"
+
+[sitemap]
+  changefreq = "weekly"
+  filename = "sitemap.xml"
+  priority = 0.5
+
+[taxonomies]
+  # Help answers group into categories; nothing else on the site is taxonomised.
+  category = "categories"
+
+[imaging]
+  quality = 82
+  resampleFilter = "Lanczos"
+
+[services]
+  [services.rss]
+    limit = 20
+
+# ------------------------------------------------------------------
+# Menus
+# ------------------------------------------------------------------
+[menus]
+  [[menus.main]]
+    name = "Why Feasible"
+    url = "/why-feasible/"
+    weight = 10
+  [[menus.main]]
+    name = "Features"
+    url = "/features/"
+    weight = 20
+  [[menus.main]]
+    name = "Pricing"
+    url = "/pricing/"
+    weight = 30
+  [[menus.main]]
+    name = "Compare"
+    url = "/compare/"
+    weight = 40
+  [[menus.main]]
+    name = "Docs"
+    url = "/docs/"
+    weight = 50
+  [[menus.main]]
+    name = "Blog"
+    url = "/blog/"
+    weight = 60
+
+  # Footer columns. `parent` names the column heading.
+  [[menus.footer]]
+    identifier = "product"
+    name = "Product"
+    weight = 10
+  [[menus.footer]]
+    parent = "product"
+    name = "Features"
+    url = "/features/"
+    weight = 1
+  [[menus.footer]]
+    parent = "product"
+    name = "Pricing"
+    url = "/pricing/"
+    weight = 2
+  [[menus.footer]]
+    parent = "product"
+    name = "Live demo"
+    url = "/demo/"
+    weight = 3
+  [[menus.footer]]
+    parent = "product"
+    name = "Integrations"
+    url = "/integrations/"
+    weight = 4
+  [[menus.footer]]
+    parent = "product"
+    name = "Open source"
+    url = "/open-source/"
+    weight = 5
+  [[menus.footer]]
+    parent = "product"
+    name = "Changelog"
+    url = "/changelog/"
+    weight = 6
+
+  [[menus.footer]]
+    identifier = "compare"
+    name = "Compare"
+    weight = 20
+  [[menus.footer]]
+    parent = "compare"
+    name = "All comparisons"
+    url = "/compare/"
+    weight = 1
+  [[menus.footer]]
+    parent = "compare"
+    name = "vs Google Analytics"
+    url = "/compare/google-analytics/"
+    weight = 2
+  [[menus.footer]]
+    parent = "compare"
+    name = "vs Plausible"
+    url = "/compare/plausible/"
+    weight = 3
+  [[menus.footer]]
+    parent = "compare"
+    name = "vs Fathom"
+    url = "/compare/fathom/"
+    weight = 4
+  [[menus.footer]]
+    parent = "compare"
+    name = "vs Matomo"
+    url = "/compare/matomo/"
+    weight = 5
+  [[menus.footer]]
+    parent = "compare"
+    name = "vs Simple Analytics"
+    url = "/compare/simple-analytics/"
+    weight = 6
+
+  [[menus.footer]]
+    identifier = "learn"
+    name = "Learn"
+    weight = 30
+  [[menus.footer]]
+    parent = "learn"
+    name = "Docs"
+    url = "/docs/"
+    weight = 1
+  [[menus.footer]]
+    parent = "learn"
+    name = "Help"
+    url = "/help/"
+    weight = 2
+  [[menus.footer]]
+    parent = "learn"
+    name = "Blog"
+    url = "/blog/"
+    weight = 3
+  [[menus.footer]]
+    parent = "learn"
+    name = "Support"
+    url = "/support/"
+    weight = 4
+
+  [[menus.footer]]
+    identifier = "company"
+    name = "Company"
+    weight = 40
+  [[menus.footer]]
+    parent = "company"
+    name = "About"
+    url = "/about/"
+    weight = 1
+  [[menus.footer]]
+    parent = "company"
+    name = "Why Feasible"
+    url = "/why-feasible/"
+    weight = 2
+  [[menus.footer]]
+    parent = "company"
+    name = "Privacy"
+    url = "/privacy/"
+    weight = 3
+  [[menus.footer]]
+    parent = "company"
+    name = "Terms"
+    url = "/terms/"
+    weight = 4
+  [[menus.footer]]
+    parent = "company"
+    name = "DPA"
+    url = "/dpa/"
+    weight = 5
+  [[menus.footer]]
+    parent = "company"
+    name = "Security"
+    url = "/security/"
+    weight = 6
+
+# ------------------------------------------------------------------
+# Params
+#
+# Prices live here, in one place. The in-app pricing page and Stripe are the
+# real source of truth for what a card gets charged; when they change, change
+# these too. Nothing on a static site can read live Stripe prices.
+# ------------------------------------------------------------------
+[params]
+  description = "Simple, privacy-friendly website analytics. One page, no cookies, no consent banner. Unlimited sites and users, a million pageviews a month, $99 a year."
+  tagline = "Analytics that doesn't laugh at you."
+  company = "Cloudmanic Labs, LLC"
+  founded = 2026
+  email = "help@feasible.lol"
+  salesEmail = "sales@feasible.lol"
+  appURL = "https://app.feasible.lol"
+  loginURL = "https://app.feasible.lol/login"
+  signupURL = "https://app.feasible.lol/register"
+  demoURL = "https://app.feasible.lol/demo"
+  statusURL = "https://status.feasible.lol"
+  githubURL = "https://github.com/Feasible-Analytics/app.feasible.lol"
+  githubOrg = "https://github.com/Feasible-Analytics"
+  ogImage = "/images/og-default.png"
+
+  [params.pricing]
+    monthly = "9.99"
+    yearly = "99"
+    yearlyMonthlyEquivalent = "8.25"
+    trialDays = 30
+    pageviews = "1,000,000"
+    pageviewsShort = "1M"
+    retentionYears = 5
+
+  [params.social]
+    twitter = "feasiblelol"
+    github = "Feasible-Analytics"

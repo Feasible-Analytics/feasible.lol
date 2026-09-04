@@ -1,0 +1,91 @@
+{{/*
+  header.html
+  The site nav. One row on desktop; a disclosure panel under the bar on a phone.
+
+  Created: 2026-09-03
+  Copyright (c) 2026 Cloudmanic Labs, LLC. All rights reserved.
+*/}}
+<header
+  class="sticky top-0 z-50 border-b-2 border-rule bg-paper/95 backdrop-blur supports-[backdrop-filter]:bg-paper/85"
+>
+  <div class="shell flex h-16 items-center gap-6 lg:h-18">
+    {{ partial "logo.html" (dict "class" "shrink-0") }}
+
+    <nav aria-label="Main" class="ml-auto hidden items-center gap-6 lg:flex">
+      {{- range .Site.Menus.main -}}
+        {{- $active := or (eq $.RelPermalink .URL) (and (ne .URL "/") (hasPrefix $.RelPermalink .URL)) -}}
+        <a
+          href="{{ .URL }}"
+          class="text-[0.9375rem] font-medium transition-colors hover:text-flag {{ if $active }}text-flag{{ else }}text-neutral-800{{ end }}"
+          {{ if $active }}aria-current="page"{{ end }}
+          >{{ .Name }}</a
+        >
+      {{- end -}}
+    </nav>
+
+    <div class="hidden items-center gap-3 lg:flex">
+      <a
+        href="{{ .Site.Params.loginURL }}"
+        class="text-[0.9375rem] font-medium text-neutral-800 transition-colors hover:text-flag"
+        >Log in</a
+      >
+      <a href="{{ .Site.Params.signupURL }}" class="btn btn-primary !py-2.5">
+        Start free
+      </a>
+    </div>
+
+    <button
+      type="button"
+      id="nav-toggle"
+      class="ml-auto flex h-10 w-10 items-center justify-center border-2 border-rule lg:hidden"
+      aria-expanded="false"
+      aria-controls="nav-panel"
+      aria-label="Open menu"
+    >
+      <svg
+        class="h-5 w-5"
+        viewBox="0 0 20 20"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        aria-hidden="true"
+      >
+        <path d="M3 5h14M3 10h14M3 15h14" data-nav-open />
+        <path d="M5 5l10 10M15 5L5 15" data-nav-close class="hidden" />
+      </svg>
+    </button>
+  </div>
+
+  <div
+    id="nav-panel"
+    hidden
+    class="border-t-2 border-rule bg-paper lg:hidden"
+  >
+    <nav aria-label="Main" class="shell flex flex-col py-4">
+      {{- range .Site.Menus.main -}}
+        {{- $active := or (eq $.RelPermalink .URL) (and (ne .URL "/") (hasPrefix $.RelPermalink .URL)) -}}
+        <a
+          href="{{ .URL }}"
+          class="border-b border-rule-soft py-3 text-base font-medium {{ if $active }}text-flag{{ else }}text-neutral-800{{ end }}"
+          {{ if $active }}aria-current="page"{{ end }}
+          >{{ .Name }}</a
+        >
+      {{- end -}}
+      <a
+        href="/help/"
+        class="border-b border-rule-soft py-3 text-base font-medium text-neutral-800"
+        >Help</a
+      >
+      <a
+        href="{{ .Site.Params.loginURL }}"
+        class="border-b border-rule-soft py-3 text-base font-medium text-neutral-800"
+        >Log in</a
+      >
+      <a
+        href="{{ .Site.Params.signupURL }}"
+        class="btn btn-primary mt-4 w-full"
+        >Start free — {{ .Site.Params.pricing.trialDays }} days</a
+      >
+    </nav>
+  </div>
+</header>

@@ -1,0 +1,123 @@
+{{/*
+  head.html
+  Everything inside <head>: meta, Open Graph, structured data, and the compiled
+  stylesheet.
+
+  Created: 2026-09-03
+  Copyright (c) 2026 Cloudmanic Labs, LLC. All rights reserved.
+*/}}
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+{{/* Title. The home page owns its own full title; every other page gets the
+     brand appended, and a page may override the lot with `seotitle`. */}}
+{{- $title := "" -}}
+{{- if .Params.seotitle -}}
+  {{- $title = .Params.seotitle -}}
+{{- else if .IsHome -}}
+  {{- $title = printf "%s — %s" .Site.Title .Site.Params.tagline -}}
+{{- else -}}
+  {{- $title = printf "%s — %s" .Title .Site.Title -}}
+{{- end -}}
+<title>{{ $title }}</title>
+
+{{- $description := or .Params.description .Summary .Site.Params.description -}}
+{{- $description = $description | plainify | truncate 158 -}}
+<meta name="description" content="{{ $description }}" />
+<link rel="canonical" href="{{ .Permalink }}" />
+
+{{/* Draft and noindex pages stay out of the index but still build, so we can
+     review them on a preview URL. */}}
+{{- if or .Params.noindex .Params.private -}}
+  <meta name="robots" content="noindex, nofollow" />
+{{- else -}}
+  <meta
+    name="robots"
+    content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+  />
+{{- end }}
+
+{{/* Open Graph and Twitter. A page may set its own `image`; everything else
+     falls back to the site card. */}}
+{{- $ogImage := .Params.image | default .Site.Params.ogImage -}}
+{{- $ogImageURL := (urls.JoinPath .Site.BaseURL $ogImage) -}}
+<meta property="og:site_name" content="{{ .Site.Title }}" />
+<meta
+  property="og:type"
+  content="{{ if eq .Section `blog` }}article{{ else }}website{{ end }}"
+/>
+<meta property="og:title" content="{{ $title }}" />
+<meta property="og:description" content="{{ $description }}" />
+<meta property="og:url" content="{{ .Permalink }}" />
+<meta property="og:image" content="{{ $ogImageURL }}" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="{{ $title }}" />
+<meta name="twitter:description" content="{{ $description }}" />
+<meta name="twitter:image" content="{{ $ogImageURL }}" />
+{{- with .Site.Params.social.twitter }}
+  <meta name="twitter:site" content="@{{ . }}" />
+{{- end }}
+
+{{- if eq .Section "blog" }}
+  <meta
+    property="article:published_time"
+    content="{{ .Date.Format `2006-01-02T15:04:05Z07:00` }}"
+  />
+  {{- with .Lastmod }}
+    <meta
+      property="article:modified_time"
+      content="{{ .Format `2006-01-02T15:04:05Z07:00` }}"
+    />
+  {{- end }}
+{{- end }}
+
+{{/* The variable font is the one render-blocking asset worth preloading; the
+     page is unreadable in a fallback face at these weights. */}}
+<link
+  rel="preload"
+  href="/fonts/archivo-latin-wght-normal.woff2"
+  as="font"
+  type="font/woff2"
+  crossorigin
+/>
+
+{{/* templates.Defer runs this block after every page has rendered, so
+     hugo_stats.json holds the complete class list and Tailwind tree-shakes
+     against what the site really uses. Without the defer, the first build
+     produces a stylesheet missing half its classes. */}}
+{{ with (templates.Defer (dict "key" "global")) }}
+  {{ with resources.Get "css/main.css" }}
+    {{ $opts := dict "minify" (not hugo.IsDevelopment) }}
+    {{ with . | css.TailwindCSS $opts }}
+      {{ if hugo.IsDevelopment }}
+        <link rel="stylesheet" href="{{ .RelPermalink }}" />
+      {{ else }}
+        {{ with . | fingerprint }}
+          <link
+            rel="stylesheet"
+            href="{{ .RelPermalink }}"
+            integrity="{{ .Data.Integrity }}"
+            crossorigin="anonymous"
+          />
+        {{ end }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />
+<meta name="theme-color" content="#ec3013" />
+{{ with .OutputFormats.Get "rss" -}}
+  <link
+    rel="alternate"
+    type="application/rss+xml"
+    href="{{ .Permalink }}"
+    title="{{ $.Site.Title }}"
+  />
+{{- end }}
+
+{{ partial "schema.html" . }}

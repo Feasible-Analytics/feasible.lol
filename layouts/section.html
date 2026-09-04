@@ -1,0 +1,41 @@
+{{/*
+  section.html
+  The fallback section index: a heading, a lede, then the pages in it. Sections
+  with a shape of their own (blog, help, docs, compare, features) override this.
+
+  Created: 2026-09-03
+  Copyright (c) 2026 Cloudmanic Labs, LLC. All rights reserved.
+*/}}
+{{ define "main" }}
+  <section class="shell pt-12 sm:pt-16">
+    {{ partial "breadcrumb.html" . }}
+    <header class="max-w-[46rem]">
+      {{ with .Params.kicker }}<p class="kicker mb-4">{{ . }}</p>{{ end }}
+      <h1 class="optical-l font-display text-[2.25rem] font-extrabold leading-[1.06] tracking-tight sm:text-[3rem]">
+        {{ .Title }}
+      </h1>
+      {{ with .Params.lede }}
+        <p class="mt-5 text-lg leading-relaxed text-neutral-700">{{ . | markdownify }}</p>
+      {{ end }}
+    </header>
+
+    {{ with .Content }}<div class="copy mt-8 max-w-[44rem]">{{ . }}</div>{{ end }}
+
+    <hr class="rule my-10" />
+
+    <ul class="grid gap-x-10 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
+      {{ range .Pages.ByWeight }}
+        <li class="border-t-2 border-rule pt-4">
+          <h2 class="font-display text-lg font-extrabold leading-snug">
+            <a href="{{ .RelPermalink }}" class="hover:text-flag">{{ .Title }}</a>
+          </h2>
+          {{ with .Params.description }}
+            <p class="mt-2 text-sm leading-relaxed text-neutral-700">{{ . }}</p>
+          {{ end }}
+        </li>
+      {{ end }}
+    </ul>
+  </section>
+
+  {{ partial "cta.html" (dict "site" .Site) }}
+{{ end }}

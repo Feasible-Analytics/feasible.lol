@@ -1,0 +1,20 @@
+{{/*
+  home.json.json
+  The search index at /index.json. The help page filters it in the browser —
+  a few hundred short records is far cheaper to ship whole than to stand up a
+  search service for.
+
+  Created: 2026-09-03
+  Copyright (c) 2026 Cloudmanic Labs, LLC. All rights reserved.
+*/}}
+{{- $records := slice -}}
+{{- range where site.RegularPages "Params.noindex" "!=" true -}}
+  {{- $records = $records | append (dict
+    "t" .Title
+    "u" .RelPermalink
+    "s" (or .Params.description .Summary | plainify | truncate 180)
+    "c" (or .Params.category .Section)
+    "b" (.Plain | truncate 1200)
+  ) -}}
+{{- end -}}
+{{- $records | jsonify -}}

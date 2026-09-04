@@ -1,0 +1,21 @@
+{{/*
+  404.html
+  Created: 2026-09-03
+  Copyright (c) 2026 Cloudmanic Labs, LLC. All rights reserved.
+*/}}
+{{ define "main" }}
+  <section class="shell flex min-h-[55vh] flex-col justify-center py-20">
+    <p class="kicker">404</p>
+    <h1 class="optical-l mt-4 font-display text-[2.5rem] font-extrabold leading-[1.06] tracking-tight sm:text-[3.5rem]">
+      This page isn't here.
+    </h1>
+    <p class="mt-5 max-w-[46ch] text-lg leading-relaxed text-neutral-700">
+      Somebody moved it, or the link was wrong to begin with. Either way, the
+      404 is in your stats now.
+    </p>
+    <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+      <a href="/" class="btn btn-primary">Back to the start</a>
+      <a href="/help/" class="btn btn-secondary">Search the help</a>
+    </div>
+  </section>
+{{ end }}

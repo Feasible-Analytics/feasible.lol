@@ -1,0 +1,450 @@
+/*
+  main.css
+  The whole design system for feasible.lol: Tailwind v4 theme tokens plus the
+  handful of component classes the layouts lean on.
+
+  Created: 2026-09-03
+  Copyright (c) 2026 Cloudmanic Labs, LLC. All rights reserved.
+*/
+
+@import "tailwindcss";
+
+/* Hugo writes hugo_stats.json at the project root listing every class the
+   rendered HTML actually uses. Pointing Tailwind at it lets the compiler
+   tree-shake to only those utilities. */
+@source "hugo_stats.json";
+
+/* ------------------------------------------------------------------
+   Archivo, self-hosted.
+
+   We sell people a way to stop leaking their visitors to an ad company. Pulling
+   our own webfont from that same ad company's CDN would be a strange way to
+   open the argument, so the file ships from our own domain. One variable
+   weight axis covers 400 through 800, so it's a single 35 KB request.
+   ------------------------------------------------------------------ */
+@font-face {
+  font-family: "Archivo";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url("/fonts/archivo-latin-wght-normal.woff2") format("woff2-variations");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193,
+    U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Archivo";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url("/fonts/archivo-latin-ext-wght-normal.woff2")
+    format("woff2-variations");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7,
+    U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF,
+    U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* ------------------------------------------------------------------
+   Theme tokens.
+
+   The look is Swiss modernist: warm paper ground, near-black ink, one loud
+   red that only ever means "act on this", zero rounded corners, and heavy
+   2px rules doing the work that shadows do elsewhere.
+   ------------------------------------------------------------------ */
+@theme {
+  /* Archivo carries both display and body. One family, three weights, so the
+     page has a single voice and one font file to download. */
+  --font-sans: "Archivo", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    Roboto, Helvetica, Arial, sans-serif;
+  --font-display: "Archivo", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", "Menlo", "Cascadia Mono", monospace;
+
+  /* Surfaces — warm grey paper, not white. White reads as a web app; this
+     reads as printed matter. */
+  --color-paper: #f3f2f2;
+  --color-surface: #eae9e9;
+  --color-ink: #201e1d;
+
+  /* Action. One colour, used sparingly. */
+  --color-flag: #ec3013;
+  --color-flag-2: #e15b47;
+
+  /* Neutral ramp — one shared lightness scale with the accent ramp, so the
+     same step of either role matches in visual weight. */
+  --color-neutral-100: #f8f4f4;
+  --color-neutral-200: #eae7e7;
+  --color-neutral-300: #d7d3d3;
+  --color-neutral-400: #bab6b6;
+  --color-neutral-500: #9b9797;
+  --color-neutral-600: #7d7979;
+  --color-neutral-700: #605d5d;
+  --color-neutral-800: #444141;
+  --color-neutral-900: #2d2b2b;
+
+  --color-flag-100: #fff2ef;
+  --color-flag-200: #ffe0d9;
+  --color-flag-300: #ffc4b8;
+  --color-flag-400: #ff9783;
+  --color-flag-500: #ff563c;
+  --color-flag-600: #dd2b0f;
+  --color-flag-700: #ae1800;
+  --color-flag-800: #7c1405;
+  --color-flag-900: #4d170e;
+
+  /* Rules. 2px is the structural line; 1px is the incidental one. */
+  --color-rule: color-mix(in srgb, #201e1d 40%, transparent);
+  --color-rule-soft: color-mix(in srgb, #201e1d 16%, transparent);
+
+  /* Sharp corners everywhere. The one exception is the pill on a tag, which
+     sets its own radius inline. */
+  --radius-none: 0px;
+
+  /* Display sizes. Set here rather than inline so a headline is one class,
+     and so every headline on the site shares the same optical rhythm. */
+  --text-display: 4.5rem;
+  --text-display--line-height: 1.02;
+  --text-display--letter-spacing: -0.028em;
+  --text-display--font-weight: 800;
+}
+
+/* ------------------------------------------------------------------
+   Base.
+   ------------------------------------------------------------------ */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  /* Anyone who has asked their OS to stop animating things gets a page that
+     jumps rather than glides. */
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  body {
+    background-color: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    line-height: 1.6;
+    text-wrap: pretty;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-display);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.018em;
+    text-wrap: balance;
+  }
+
+  /* Numbers in tables and price blocks should line up in columns. */
+  table,
+  .tnum {
+    font-variant-numeric: tabular-nums;
+  }
+
+  a {
+    text-underline-offset: 3px;
+  }
+
+  /* A visible focus ring is not optional. The red is loud on purpose. */
+  :focus-visible {
+    outline: 2px solid var(--color-flag);
+    outline-offset: 2px;
+  }
+
+  ::selection {
+    background: color-mix(in srgb, var(--color-flag) 28%, transparent);
+  }
+
+  /* Anchor targets clear the sticky header instead of hiding under it. */
+  :target {
+    scroll-margin-top: 6rem;
+  }
+}
+
+/* ------------------------------------------------------------------
+   Components.
+
+   Deliberately few. Anything used once stays as utilities in the template;
+   these are the patterns repeated on every page.
+   ------------------------------------------------------------------ */
+@layer components {
+  /* The page gutter. Every full-width band uses this so the left edge of the
+     text lines up from the nav to the footer. */
+  .shell {
+    width: 100%;
+    max-width: 80rem;
+    margin-inline: auto;
+    padding-inline: 1.25rem;
+  }
+  @media (min-width: 640px) {
+    .shell {
+      padding-inline: 2rem;
+    }
+  }
+  @media (min-width: 1024px) {
+    .shell {
+      padding-inline: 3.5rem;
+    }
+  }
+
+  /* The small uppercase label that opens a section. */
+  .kicker {
+    font-size: 0.8125rem;
+    line-height: 1;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--color-flag-700);
+  }
+
+  /* Buttons. Square, bold, no gradients, no shadow. */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.375rem;
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 0.9375rem;
+    line-height: 1.2;
+    padding: 0.75rem 1.25rem;
+    border: 2px solid transparent;
+    white-space: nowrap;
+    cursor: pointer;
+    transition:
+      background-color 120ms ease,
+      color 120ms ease,
+      border-color 120ms ease;
+  }
+
+  .btn-primary {
+    background-color: var(--color-flag);
+    color: var(--color-paper);
+  }
+  .btn-primary:hover {
+    background-color: var(--color-flag-600);
+  }
+  .btn-primary:active {
+    background-color: var(--color-flag-700);
+  }
+
+  .btn-secondary {
+    border-color: var(--color-ink);
+    color: var(--color-ink);
+  }
+  .btn-secondary:hover {
+    background-color: var(--color-ink);
+    color: var(--color-paper);
+  }
+
+  /* On the red CTA band, buttons invert. */
+  .btn-inverse {
+    background-color: var(--color-paper);
+    color: var(--color-flag-700);
+  }
+  .btn-inverse:hover {
+    background-color: var(--color-neutral-200);
+  }
+
+  .btn-inverse-outline {
+    border-color: var(--color-paper);
+    color: var(--color-paper);
+  }
+  .btn-inverse-outline:hover {
+    background-color: var(--color-paper);
+    color: var(--color-flag-700);
+  }
+
+  /* The 2px structural rule. */
+  .rule {
+    height: 2px;
+    border: 0;
+    background-color: var(--color-rule);
+  }
+
+  /* A screenshot or diagram sits inside a hard 2px frame, never a soft card. */
+  .frame {
+    border: 2px solid var(--color-rule);
+    background-color: var(--color-surface);
+  }
+
+  /* Body copy inside prose blocks — help answers, blog posts, docs, legal.
+     Written by hand rather than with the typography plugin so the rules match
+     the rest of the system exactly. */
+  .copy {
+    font-size: 1.0625rem;
+    line-height: 1.75;
+    color: var(--color-neutral-800);
+  }
+  .copy > * + * {
+    margin-top: 1.25rem;
+  }
+  .copy h2 {
+    font-size: 1.75rem;
+    margin-top: 3rem;
+    color: var(--color-ink);
+  }
+  .copy h3 {
+    font-size: 1.3125rem;
+    margin-top: 2.25rem;
+    color: var(--color-ink);
+  }
+  .copy h4 {
+    font-size: 1.0625rem;
+    margin-top: 1.75rem;
+    color: var(--color-ink);
+  }
+  .copy a {
+    color: var(--color-flag-700);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+  }
+  .copy a:hover {
+    color: var(--color-flag);
+  }
+  .copy strong {
+    font-weight: 700;
+    color: var(--color-ink);
+  }
+  .copy ul,
+  .copy ol {
+    padding-left: 1.375rem;
+  }
+  .copy ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  .copy ul > li {
+    position: relative;
+    padding-left: 1.375rem;
+  }
+  .copy ul > li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.7em;
+    width: 7px;
+    height: 7px;
+    background-color: var(--color-flag);
+  }
+  .copy ol {
+    list-style: decimal;
+  }
+  .copy ol > li::marker {
+    font-family: var(--font-display);
+    font-weight: 800;
+    color: var(--color-flag-700);
+  }
+  .copy li + li {
+    margin-top: 0.5rem;
+  }
+  .copy blockquote {
+    border-left: 3px solid var(--color-flag);
+    padding-left: 1.25rem;
+    font-style: normal;
+    color: var(--color-neutral-700);
+  }
+  .copy code {
+    font-family: var(--font-mono);
+    font-size: 0.875em;
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-rule-soft);
+    padding: 0.1em 0.35em;
+    white-space: nowrap;
+  }
+  .copy pre {
+    background-color: var(--color-ink);
+    color: #f3f2f2;
+    padding: 1.125rem 1.25rem;
+    overflow-x: auto;
+    font-size: 0.875rem;
+    line-height: 1.65;
+  }
+  .copy pre code {
+    background: none;
+    border: 0;
+    padding: 0;
+    color: inherit;
+    font-size: inherit;
+    white-space: pre;
+  }
+  .copy img {
+    border: 2px solid var(--color-rule);
+  }
+  .copy hr {
+    height: 2px;
+    border: 0;
+    background-color: var(--color-rule);
+    margin-block: 2.5rem;
+  }
+  /* Wide tables scroll inside their own box rather than pushing the page
+     sideways on a phone. */
+  .copy table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9375rem;
+    display: block;
+    overflow-x: auto;
+  }
+  .copy th {
+    text-align: left;
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 0.75rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--color-neutral-700);
+    padding: 0.5rem 0.75rem 0.5rem 0;
+    border-bottom: 2px solid var(--color-rule);
+    white-space: nowrap;
+  }
+  .copy td {
+    padding: 0.625rem 0.75rem 0.625rem 0;
+    border-bottom: 1px solid var(--color-rule-soft);
+    vertical-align: top;
+  }
+
+  /* Skip link — hidden until a keyboard user tabs into it. */
+  .skip-link {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    z-index: 100;
+  }
+  .skip-link:focus {
+    left: 1rem;
+    top: 1rem;
+    padding: 0.75rem 1rem;
+    background: var(--color-ink);
+    color: var(--color-paper);
+    font-weight: 800;
+  }
+}
+
+/* ------------------------------------------------------------------
+   Utilities the templates use that Tailwind has no name for.
+   ------------------------------------------------------------------ */
+@utility optical-l {
+  /* Pulls a big headline's first character back so its left edge lines up
+     optically with the body text under it. */
+  margin-left: -0.058em;
+}

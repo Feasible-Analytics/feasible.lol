@@ -1,0 +1,17 @@
+{{/*
+  updated.html
+  The "last checked" line. Comparison and pricing pages quote other companies'
+  published prices, and a reader deserves to know how stale that is.
+
+  Created: 2026-09-03
+  Copyright (c) 2026 Cloudmanic Labs, LLC. All rights reserved.
+*/}}
+{{- with .Params.checked }}
+  <p class="mt-12 border-t-2 border-rule pt-4 text-sm text-neutral-700">
+    Prices and features on this page were checked on
+    {{ dateFormat "January 2, 2006" . }}. Companies change their pricing;
+    if something here is out of date,
+    <a href="mailto:{{ $.Site.Params.email }}" class="text-flag-700 underline">tell us</a>
+    and we'll fix it.
+  </p>
+{{- end }}

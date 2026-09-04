@@ -1,0 +1,20 @@
+{{/*
+  logo.html
+  The wordmark. Renders as a link everywhere except the home page, where it is
+  already the page you are on.
+
+  Params: class (optional extra classes), inverse (bool — for the red band).
+
+  Created: 2026-09-03
+  Copyright (c) 2026 Cloudmanic Labs, LLC. All rights reserved.
+*/}}
+{{- $inverse := .inverse | default false -}}
+{{- $ink := cond $inverse "text-paper" "text-ink" -}}
+{{- $dot := cond $inverse "text-paper/70" "text-flag" -}}
+<a
+  href="/"
+  class="{{ .class }} font-display text-xl font-extrabold tracking-tight {{ $ink }}"
+  aria-label="Feasible — home"
+>
+  Feasible<span class="{{ $dot }}">.lol</span>
+</a>

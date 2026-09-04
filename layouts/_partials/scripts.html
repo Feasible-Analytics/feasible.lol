@@ -1,0 +1,55 @@
+{{/*
+  scripts.html
+  The only JavaScript on the site: the mobile nav toggle, plus our own analytics
+  tag. Both are small enough to inline rather than cost a second request.
+
+  Created: 2026-09-03
+  Copyright (c) 2026 Cloudmanic Labs, LLC. All rights reserved.
+*/}}
+<script>
+  // Mobile nav disclosure. Written against `hidden` rather than a class so the
+  // panel is correctly hidden from assistive tech, not just from the eye.
+  (function () {
+    var btn = document.getElementById("nav-toggle");
+    var panel = document.getElementById("nav-panel");
+    if (!btn || !panel) return;
+
+    var openIcon = btn.querySelector("[data-nav-open]");
+    var closeIcon = btn.querySelector("[data-nav-close]");
+
+    function setOpen(open) {
+      panel.hidden = !open;
+      btn.setAttribute("aria-expanded", String(open));
+      btn.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+      if (openIcon) openIcon.classList.toggle("hidden", open);
+      if (closeIcon) closeIcon.classList.toggle("hidden", !open);
+    }
+
+    btn.addEventListener("click", function () {
+      setOpen(panel.hidden);
+    });
+
+    // Escape closes, and returns focus to the button that opened it.
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && !panel.hidden) {
+        setOpen(false);
+        btn.focus();
+      }
+    });
+
+    // Growing past the breakpoint leaves the panel stranded open otherwise.
+    window.matchMedia("(min-width: 1024px)").addEventListener("change", function (e) {
+      if (e.matches) setOpen(false);
+    });
+  })();
+</script>
+
+{{/* We run our own analytics on our own site. If this tag ever gets heavy or
+     slow, that is a product problem, not a website problem. */}}
+{{- if hugo.IsProduction }}
+  <script
+    defer
+    data-domain="feasible.lol"
+    src="{{ .Site.Params.appURL }}/js/script.js"
+  ></script>
+{{- end }}

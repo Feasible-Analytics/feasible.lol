@@ -1,0 +1,23 @@
+# Hugo build output and caches
+/public/
+/resources/_gen/
+/.hugo_build.lock
+hugo_stats.json
+
+# Node
+/node_modules/
+
+# Playwright — per-project browser profile and CLI scratch
+/.playwright/
+/.playwright-cli/
+
+# Private tooling that must not ship with the open-source site
+/.claude/skills/feasible-writing/
+/.research/
+
+# macOS
+.DS_Store
+
+# Local environment
+.env
+.env.local
