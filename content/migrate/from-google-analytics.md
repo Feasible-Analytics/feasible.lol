@@ -74,9 +74,10 @@ didn't.
 
 Every dropped event is counted with a named reason — bot, datacenter IP, referrer
 spam, outdated browser, automation, hostname not allowed, rate limited, and so on
-— so "why is my traffic low" has an answer instead of a shrug. The panel also
-shows which client address was resolved for the last request and which header it
-came from, and warns you if your proxy isn't forwarding visitor addresses, which
+— so "why is my traffic low" has an answer instead of a shrug.
+
+The panel also shows which client address was resolved for the last request and
+which header it came from, and warns you if your proxy isn't forwarding visitor addresses, which
 is the failure that collapses every visitor into one and geolocates your whole
 audience to a data center.
 

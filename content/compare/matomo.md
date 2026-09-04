@@ -200,13 +200,14 @@ Matomo has more reports than we do by a wide margin. It doesn't have this one.
 Feasible counts every event it drops and gives each drop a named reason — `bot`,
 `datacenter_ip`, `referrer_spam`, `outdated_browser`, `automation`,
 `hostname_not_allowed`, `shield_ip`, `rate_limited` and more — on a health screen
-per site, for the last 24 hours. It shows which client address it resolved for
-your last request and from which header. It warns you when your reverse proxy
-isn't forwarding visitor addresses, which is the misconfiguration that silently
-collapses every visitor into one and geolocates your whole audience to your
-datacenter. And a button fires a real test event through the public URL, so it
-exercises your proxy and headers the way a browser would instead of calling an
-internal function and reporting success.
+per site, for the last 24 hours.
+
+It shows which client address it resolved for your last request and from which
+header, and it warns you when your reverse proxy isn't forwarding visitor
+addresses. That's the misconfiguration that silently collapses every visitor into
+one and geolocates your whole audience to your datacenter. A button fires a real
+test event through the public URL, so it exercises your proxy and headers the way
+a browser would instead of calling an internal function and reporting success.
 
 Nobody else in this comparison publishes a counted, reasoned drop log. If you've
 ever spent a morning working out why your numbers halved on Tuesday, that's the

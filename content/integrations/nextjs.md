@@ -79,7 +79,9 @@ Next.js audiences skew technical, which means they skew blocked. If that matters
 
 Deploy — or run a production build locally, because `localhost` is deliberately not counted. Open the site, then click a link to a second route rather than reloading. Watch the network tab: you should see one `POST` to `/api/event` on load and one more per navigation.
 
-Then open Feasible. You should show up under Real-time visitors. If you don't, go to **Site settings → Ingestion health**. It counts every event that arrived and every one that was dropped, each with a named reason — `unknown_site` means `data-domain` doesn't match the site you registered, `hostname_not_allowed` means the page is on a hostname that isn't on your list, which is what a Vercel preview URL will do. The **send a test event** button there posts through the real public URL, so it exercises exactly what a browser does.
+Then open Feasible. You should show up under Real-time visitors. If you don't, go to **Site settings → Ingestion health**. It counts every event that arrived and every one that was dropped, each with a named reason — `unknown_site` means `data-domain` doesn't match the site you registered, `hostname_not_allowed` means the page is on a hostname that isn't on your list, which is what a Vercel preview URL will do.
+
+The **send a test event** button there posts through the real public URL, so it exercises exactly what a browser does.
 
 A brand-new site takes about fifteen seconds before its first event is accepted, so [give it that](/help/how-long-until-i-see-data/).
 

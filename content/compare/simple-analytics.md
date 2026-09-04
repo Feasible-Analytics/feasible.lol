@@ -144,14 +144,15 @@ right. The question is whether you can see it happen.
 Feasible has a health screen per site showing the last 24 hours of accepted and
 dropped events, with a named reason attached to every drop: `bot`,
 `datacenter_ip`, `referrer_spam`, `outdated_browser`, `automation`,
-`hostname_not_allowed`, `shield_ip`, `rate_limited` and more. It shows which
-client address it resolved for your last request and which header it came from.
-It warns you when your reverse proxy isn't forwarding visitor addresses — the
-misconfiguration that silently collapses every visitor into one and puts them
-all in your datacenter's city. And it has a button that sends a real test event
-through the public URL, so it tests your proxy and headers the way a browser
-would rather than calling an internal function and telling you everything's
-fine.
+`hostname_not_allowed`, `shield_ip`, `rate_limited` and more.
+
+It also shows which client address it resolved for your last request and which
+header it came from, and it warns you when your reverse proxy isn't forwarding
+visitor addresses — the misconfiguration that silently collapses every visitor
+into one and puts them all in your datacenter's city. A button sends a real test
+event through the public URL, so it tests your proxy and headers the way a
+browser would rather than calling an internal function and telling you
+everything's fine.
 
 That's the feature we'd point at if you asked what Feasible is actually for.
 Analytics that quietly loses part of your traffic is worse than analytics that

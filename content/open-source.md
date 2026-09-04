@@ -31,7 +31,9 @@ That's worth stating because open core is the normal arrangement in this categor
 it's usually documented in the vendor's own repo. Plausible's repository carries an
 [`extra/` directory with its own copyright notice](https://github.com/plausible/analytics/blob/master/extra/COPYING.txt)
 — "no rights to use, distribute or otherwise exploit this software are granted to you"
-— and their build excludes it from the Community Edition compile path. PostHog has an
+— and their build excludes it from the Community Edition compile path.
+
+PostHog has an
 [`ee/` directory](https://github.com/PostHog/posthog/blob/master/ee/LICENSE) under an
 enterprise license. Matomo's premium plugins, including Funnels, are
 [proprietary under InnoCraft's EULA](https://matomo.org/faq/general/matomo-analytics-licences-for-core-tracker-and-plugins/)

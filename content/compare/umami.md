@@ -160,12 +160,14 @@ behavior. The question is whether you find out.
 Feasible has a health screen per site: the last 24 hours of accepted and dropped
 events, each drop labeled with a reason — `bot`, `datacenter_ip`,
 `referrer_spam`, `outdated_browser`, `automation`, `hostname_not_allowed`,
-`shield_ip`, `rate_limited` and more. It reports which client address it resolved
-for your last request and from which header. It warns you when your reverse
-proxy isn't forwarding visitor addresses, which is the failure that collapses
-every visitor into one and puts your whole audience in your datacenter's city.
-And there's a button that sends a real test event through the public URL, so it
-exercises the proxy and the headers exactly as a browser would.
+`shield_ip`, `rate_limited` and more.
+
+It reports which client address it resolved for your last request and from which
+header, and warns you when your reverse proxy isn't forwarding visitor addresses
+— the failure that collapses every visitor into one and puts your whole audience
+in your datacenter's city. There's a button that sends a real test event through
+the public URL, so it exercises the proxy and the headers exactly as a browser
+would.
 
 We think that's the most useful thing in the product, and it's the one place
 where "we never fail silently" is a feature you can point at rather than a

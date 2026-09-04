@@ -118,7 +118,7 @@ $FEASIBLE_APP_DATA_DIR/geoip/dbip-city-lite.mmdb
 ```
 
 Put either, both or neither there. With the city file present it's used on its own, because it
-carries the country too. With neither, every visitor's country is simply unknown — a missing database
+carries the country too. With neither, every visitor's country is unknown — a missing database
 degrades the report and never fails an event or stops the process.
 
 A file that's present but unreadable is logged as a warning at start-up and then treated as a missing

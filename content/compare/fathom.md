@@ -166,12 +166,14 @@ The question is whether you can find out.
 Feasible has a health screen for every site that counts the last 24 hours of
 dropped events and gives each one a named reason: `bot`, `datacenter_ip`,
 `referrer_spam`, `outdated_browser`, `automation`, `hostname_not_allowed`,
-`shield_ip`, `rate_limited`, and a dozen more. It tells you which address it
-resolved for your last request and from which header. It warns you if your
-reverse proxy isn't forwarding visitor addresses — the failure that quietly
-collapses every visitor into one and geolocates them all to your datacenter. And
-there's a button that fires a real test event through the public URL, so it
-exercises your proxy and headers exactly the way a browser would.
+`shield_ip`, `rate_limited`, and a dozen more.
+
+It also tells you which address it resolved for your last request and from which
+header, and warns you if your reverse proxy isn't forwarding visitor addresses —
+the failure that quietly collapses every visitor into one and geolocates them all
+to your datacenter. There's a button that fires a real test event through the
+public URL, so it exercises your proxy and headers exactly the way a browser
+would.
 
 Nobody else in this comparison publishes a counted, reasoned drop log. It's the
 difference between "the numbers look low this week" and "347 events were

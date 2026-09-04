@@ -13,7 +13,7 @@ faq:
   - q: "What are the best free web analytics tools?"
     a: "Google Analytics 4 is the most capable free option and the one with real ad-platform integration. Cloudflare Web Analytics is free and cookieless but shallow. GoatCounter's hosted service is free for reasonable public use. Umami and Matomo are free if you run them on your own server. Free always costs something — usually a consent banner, a cap, or your visitors' data."
   - q: "How much do web analytics tools cost?"
-    a: "At a million pageviews a month, on published annual pricing checked 2026-09-03: Feasible $99, Pirsch Standard $540, Fathom $600, Simple Analytics $600, Plausible Starter $690, Plausible Business $1,390, Matomo Cloud $2,040. Umami Cloud Pro is $20 a month with no annual discount."
+    a: "At a million pageviews a month, on published annual pricing checked September 3, 2026: Feasible $99, Pirsch Standard $540, Fathom $600, Simple Analytics $600, Plausible Starter $690, Plausible Business $1,390, Matomo Cloud $2,040. Umami Cloud Pro is $20 a month with no annual discount."
   - q: "Which web analytics tools don't need a cookie banner?"
     a: "Feasible, Plausible, Fathom, Simple Analytics, Umami, Pirsch, GoatCounter and Cloudflare all avoid cookies, so most sites running them won't need a banner for analytics. It isn't a legal guarantee and the rules vary by country — check with your own lawyer if you're somewhere strict."
   - q: "Why do vendors count different things?"
@@ -93,7 +93,7 @@ reclassified as "Large" drops automatically to 2 months with older event-level
 data permanently deleted. Reports get thresholded — "Data thresholds are system
 defined. You can't adjust them" — and Google's own table marks sampling
 "Possible" for Reports, Insights and Explorations, with only the BigQuery export
-marked "No". And its `gtag.js` measured 148,451 bytes gzipped on 2026-09-03.
+marked "No". And its `gtag.js` measured 148,451 bytes gzipped on September 3, 2026.
 
 **Best for:** paid-media teams living inside Google's stack.
 

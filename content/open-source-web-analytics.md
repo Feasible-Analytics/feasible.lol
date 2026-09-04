@@ -57,7 +57,7 @@ every plan and every build: one ZIP with ten roll-up CSVs plus the raw events.
 
 ## How the field is licensed
 
-Read on 2026-09-03 by opening the `LICENSE` file in each repository, not by
+Read on September 3, 2026 by opening the `LICENSE` file in each repository, not by
 trusting a badge.
 
 | Tool | License | Self-host | The thing worth knowing |
@@ -125,7 +125,7 @@ file runs three services — the app, ClickHouse and Postgres — and their READ
 asks for at least 2 GB of RAM; ClickHouse's own documentation recommends 32 GB
 for ClickHouse itself. Matomo's own sizing table goes from 2 GB at 100,000 hits
 to 8 GB at a million. PostHog's self-host stack is 37 services and its installer
-asks for 8 GB minimum. All read 2026-09-03.
+asks for 8 GB minimum. All read September 3, 2026.
 
 That's not a knock on their engineering — those systems are built for different
 volumes and they're honest about the requirements. It's a statement about what

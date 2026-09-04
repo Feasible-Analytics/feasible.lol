@@ -16,7 +16,7 @@ faq:
   - q: "Do you offer a DPA?"
     a: "Yes, and no signature is needed. It forms part of the terms, names Cloudmanic Labs as processor and you as controller, covers 72-hour breach notice and sub-processors, and incorporates the standard contractual clauses plus the UK Addendum."
   - q: "Where is the data stored?"
-    a: "On the hosted service, in the United States. Cloudmanic Labs is an Oregon company and there is no EU-region option today. Transfers are handled by the standard contractual clauses in the DPA. If EU-only storage is a hard requirement, self-host it or pick a vendor that hosts in the EU."
+    a: "On the hosted service, in the United States. Cloudmanic Labs is an Oregon company and there's no EU-region option today. Transfers are handled by the standard contractual clauses in the DPA. If EU-only storage is a hard requirement, self-host it or pick a vendor that hosts in the EU."
   - q: "Is Google Analytics GDPR compliant?"
     a: "That question got a lot of attention in 2022, when regulators in Austria, France, Italy, Denmark and the Nordics ruled against EU-to-US transfers of Google Analytics data. The ground under those decisions changed on July 10, 2023, when the European Commission adopted the EU-US Data Privacy Framework and Google certified under it. The durable objections to GA4 are about the product — consent banners, data retention limits, thresholded reports — not about a live ban."
   - q: "What about CCPA and PECR?"
@@ -202,7 +202,7 @@ If EU-only storage is a hard requirement for you, there are two honest answers:
 [run it yourself](/open-source-web-analytics/) on a box in the EU, where every
 feature is free and unrestricted — or pick a vendor that hosts there. Plausible
 hosts in Falkenstein, Germany. Matomo Cloud hosts in Europe. Fathom offers EU
-isolation on every plan. All checked 2026-09-03. That's a real advantage and it
+isolation on every plan. All checked September 3, 2026. That's a real advantage and it
 would be silly to pretend otherwise.
 
 **The contract.** The [DPA](/dpa/) forms part of the terms and needs no

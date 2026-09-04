@@ -19,18 +19,18 @@ checked: 2026-09-03
 # ------------------------------------------------------------------
 # The hero chart on the home page.
 #
-# These are each vendor's cheapest plan that both reaches a million pageviews a
-# month AND includes what Feasible includes as standard: funnels, custom
-# properties and the API. That's a deliberate choice, and the caption says so —
-# Plausible's entry plan is cheaper and does less, and pretending otherwise
-# would be the same trick we're complaining about.
+# These are each vendor's cheapest plan that reaches a million pageviews a month.
+# Where a vendor tiers its features, the row names the tier and the footnote says
+# what the cheaper tier leaves out — quoting a competitor's entry price against
+# our full-featured one would be the same trick we're complaining about.
 # ------------------------------------------------------------------
 hero:
   caption: "One million pageviews a month, for a year"
   footnote: >-
-    Each vendor's cheapest plan that reaches a million pageviews and includes
-    funnels, custom properties and an API — the things Feasible includes as
-    standard. Plausible's entry plan is $690 and has none of them.
+    Each vendor's cheapest plan that reaches a million pageviews a month.
+    Plausible's Business tier is the first of theirs with funnels, custom
+    properties and the Stats API — its entry plan is $690 and has none of them.
+    Fathom has neither funnels nor custom properties at any price.
   rows:
     - name: "Matomo Cloud"
       price: "$2,040"

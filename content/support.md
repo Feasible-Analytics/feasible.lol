@@ -19,10 +19,11 @@ ones: installing the script, events and goals, the API, webhooks, self-hosting.
 And if the problem is *"my numbers look wrong"*, open the **ingestion health panel**
 for the site first. It counts every event we dropped and gives each one a reason —
 bot, datacenter address, a shield you set, a hostname you haven't allowed yet, a
-proxy that isn't forwarding the visitor's address. There's a "send a test event"
-button on the same page that goes through the real public URL, so you can see the
-whole path work end to end. Most "it isn't tracking" emails are answered by that
-screen in about a minute.
+proxy that isn't forwarding the visitor's address.
+
+There's a "send a test event" button on the same page that goes through the real
+public URL, so you can see the whole path work end to end. Most "it isn't
+tracking" emails are answered by that screen in about a minute.
 
 ## What to put in a bug report
 

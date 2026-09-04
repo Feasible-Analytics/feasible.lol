@@ -71,8 +71,9 @@ you've been reporting to somebody stops making sense.
 
 The stated rule in this codebase is **never fail silently** — every dropped
 event, every truncated field, every failed job has to be visible to the customer
-or to us. The health panel is that rule with a URL. It's why a rejected event
-still returns a `202` with the reason in a response header instead of a bare
+or to us. The health panel is that rule with a URL.
+
+It's why a rejected event still returns a `202` with the reason in a response header instead of a bare
 error, why the ingest endpoint's `400` responses name exactly what was missing,
 and why sending a 31st [custom property](/features/custom-properties/) increments
 a counter you can see rather than disappearing.

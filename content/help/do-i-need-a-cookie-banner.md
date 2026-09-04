@@ -14,7 +14,9 @@ The consent rules — GDPR Article 5(3) of the ePrivacy Directive, PECR in the U
 
 Two honest qualifications, because this is the part vendors skip.
 
-The script does write one short-lived key to `localStorage`: a retry queue holding the event that's currently in flight, deleted the moment our server acknowledges it. It's not an identifier, it doesn't survive being sent, and nothing reads it back. There's a second key only if you've explicitly told that browser to [ignore you](/help/how-do-i-exclude-my-own-visits/). The EDPB's Guidelines 2/2023, adopted in October 2024, read the technical scope of Article 5(3) more broadly than the usual "no cookies, no banner" slogan, so it's worth knowing that key exists rather than finding out later.
+The script does write one short-lived key to `localStorage`: a retry queue holding the event that's currently in flight, deleted the moment our server acknowledges it. It's not an identifier, it doesn't survive being sent, and nothing reads it back. There's a second key only if you've explicitly told that browser to [ignore you](/help/how-do-i-exclude-my-own-visits/).
+
+The EDPB's Guidelines 2/2023, adopted in October 2024, read the technical scope of Article 5(3) more broadly than the usual "no cookies, no banner" slogan, so it's worth knowing that key exists rather than finding out later.
 
 The UK now has a real statutory exemption for first-party analytics — PECR Schedule A1, paragraph 5, in force since February 5, 2026. It's genuine, and it has conditions: you have to give visitors clear information about the measurement and a simple, free way to opt out.
 

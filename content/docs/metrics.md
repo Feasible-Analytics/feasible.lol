@@ -77,7 +77,7 @@ Ana coming back on Tuesday is a different identifier from Ana on Monday:
 | Tuesday | Ana, Cara | 2 |
 | **Monday–Tuesday** | three people, four identifiers | **4** |
 
-So a month's figure is close to the sum of its days, and it is *not* the number of different human
+So a month's figure is close to the sum of its days, and it's *not* the number of different human
 beings who saw your site. It overstates that by however often people come back. Read it as "daily
 unique visitors, totalled".
 

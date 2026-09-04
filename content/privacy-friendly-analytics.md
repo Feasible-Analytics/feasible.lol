@@ -24,8 +24,8 @@ No cookies. No persistent ID. No profile that follows a person from one site to
 the next, and nothing handed to an advertising network. You get the numbers.
 Nobody gets a dossier.
 
-That's what privacy-friendly analytics counts as, and the rest of this page is
-ours in enough detail that you can hold it up against anyone else's.
+That's what privacy-friendly analytics means. The rest of this page is ours, in
+enough detail that you can hold it up against anyone else's.
 
 ## What we actually store
 
@@ -125,7 +125,7 @@ exclusion rule can be evaluated. That's why our IP shields live there.
 **Against Google Analytics 4.** GA4 sets cookies, needs a consent banner in the
 EU and UK, and sends your visitors' behavior to a company whose main business is
 advertising. Its script, `gtag.js`, measured 148,451 bytes gzipped on
-2026-09-03 — ours is 3,377 bytes gzipped, about 43× smaller. You can reproduce
+September 3, 2026 — ours is 3,377 bytes gzipped, about 43× smaller. You can reproduce
 both numbers with `curl -H 'Accept-Encoding: identity' <url> | gzip -9 | wc -c`.
 
 **Against the other privacy-friendly tools.** Honestly? On the privacy model
@@ -136,7 +136,7 @@ pretending otherwise would be a sales pitch rather than an answer.
 
 What still differs is the bill and the limits. At a million pageviews a month,
 Plausible's Business plan is $1,390 a year on their published pricing and Matomo
-Cloud is $2,040 a year on theirs, both checked 2026-09-03. Feasible is $99.
+Cloud is $2,040 a year on theirs, both checked September 3, 2026. Feasible is $99.
 That's the argument we'd actually make. The
 [full ladder is on the pricing page](/pricing/).
 
@@ -147,7 +147,7 @@ Labs is a US company in Newberg, Oregon. International transfers are handled
 through the standard contractual clauses in our DPA, which is fine for most
 buyers and not fine for some. Fathom publishes an EU-isolation feature on every
 plan, Plausible hosts in Germany, and Matomo Cloud hosts in Europe — all checked
-2026-09-03. If that's your hard requirement, take one of them seriously.
+September 3, 2026. If that's your hard requirement, take one of them seriously.
 
 The other honest limit: no SSO or SAML, no mobile SDKs, and no report that
 follows an individual person over time. The last one isn't a gap. It's the

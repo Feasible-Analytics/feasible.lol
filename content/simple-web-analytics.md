@@ -163,7 +163,7 @@ them, kept five years. One plan, no tiers to compare, nothing held back for a bi
 one.
 
 For contrast, at a million pageviews a month on published pricing checked
-2026-09-03: Plausible Business is $1,390 a year, Matomo Cloud is $2,040, Fathom is
+September 3, 2026: Plausible Business is $1,390 a year, Matomo Cloud is $2,040, Fathom is
 $600, Simple Analytics is $600. The
 [whole ladder is on the pricing page](/pricing/), with every number linked to the
 vendor's own page.

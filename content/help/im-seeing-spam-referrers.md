@@ -21,6 +21,6 @@ Two things worth knowing about how spam behaves here:
 
 **There's no separate Referrers card to pollute.** Referrer is a filter rather than a report, so junk shows up as a row in Sources rather than as a whole screen of noise.
 
-**Filtered events are counted, not deleted.** You can see exactly how much spam you got and when it started, which is more useful than a report that simply never mentions it. If your traffic looks strange, that count is often the explanation.
+**Filtered events are counted, not deleted.** You can see exactly how much spam you got and when it started, which is more useful than a report that never mentions it. If your traffic looks strange, that count is often the explanation.
 
 If you [self-host](/help/can-i-run-feasible-myself/), the spam and bot lists ship inside the binary and you can replace them with your own files on disk without rebuilding. They don't refresh themselves at runtime.

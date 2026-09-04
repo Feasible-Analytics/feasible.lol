@@ -183,7 +183,7 @@ a `data-api` attribute and a proxied script path, and
 {{< snippet domain="yourdomain.com" >}}
 
 3,377 bytes gzipped, 7,099 raw. GA4's `gtag.js` measured 148,451 bytes gzipped on
-2026-09-03 — about 43× larger — and that's only its first request. Reproduce both
+September 3, 2026 — about 43× larger — and that's only its first request. Reproduce both
 with `curl -H 'Accept-Encoding: identity' <url> | gzip -9 | wc -c`.
 
 ---

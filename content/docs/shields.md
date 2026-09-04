@@ -58,7 +58,7 @@ happen in different places, which matters if you're testing a rule with `curl`:
 - **Countries, pages and hostnames** are decided at the shard that holds your data, after the request
   has already been answered with its `202`. They're counted as `shield_country`, `shield_page` and
   `hostname_not_allowed`, and they can never appear in that header. A blocked page answers exactly
-  like an accepted one; the event simply doesn't arrive in your reports.
+  like an accepted one; the event doesn't arrive in your reports.
 
 Either way, the drop is on the ingestion health panel at `/settings/sites/<your domain>/health`, with
 its reason. Every reason is from a closed set — the list is on [the APIs](/docs/api/#why-it-always-answers-202).
