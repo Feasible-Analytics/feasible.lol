@@ -61,8 +61,8 @@ hard, unglamorous thing first.
 They demonstrated that you can measure a website without following anyone around
 the internet, and they made that argument in public, to regulators, while the rest of
 the industry shipped another consent banner. They were right. We build the same way
-because of it, and we'd rather say so plainly than pretend we arrived at [cookieless](/cookieless-analytics/)
-analytics alone.
+because of it, and we'd rather say so plainly than pretend we arrived at
+[cookieless](/cookieless-analytics/) analytics alone.
 
 None of that is fourteen times.
 

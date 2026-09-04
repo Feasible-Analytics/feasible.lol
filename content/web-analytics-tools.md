@@ -88,7 +88,9 @@ ad platform is real and nothing here replaces it. It's also free at any volume,
 with BigQuery export available for people who want the raw rows.
 
 The costs are elsewhere. It sets cookies and needs a consent banner in the EU and
-UK, which is the whole argument for [cookieless analytics](/cookieless-analytics/). Event-level retention is 2 or 14 months, and Google says a property
+UK, which is the whole argument for
+[cookieless analytics](/cookieless-analytics/). Event-level retention is 2 or 14
+months, and Google says a property
 reclassified as "Large" drops automatically to 2 months with older event-level
 data permanently deleted. Reports get thresholded — "Data thresholds are system
 defined. You can't adjust them" — and Google's own table marks sampling
@@ -238,7 +240,9 @@ forever for nothing.
 
 ## The best web analytics tools, by what you need
 
-The short version: Google Analytics 4 if you buy Google ads, Matomo if you need
+The best website analytics tools are the ones you'd actually open, which is a
+different list for every reader. The short version: Google Analytics 4 if you buy
+Google ads, Matomo if you need
 on-premise and every report, Plausible or Fathom if you want a mature hosted
 product, Feasible if the bill is the thing that's bothering you. Everything above
 is the arithmetic behind that.

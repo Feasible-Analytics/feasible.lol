@@ -50,9 +50,9 @@ discarded. It never reaches disk.
 
 ## Cookieless tracking, and what it can still tell you
 
-Are the numbers any good? Within a day, yes. Pageviews, visits, bounce rate, top pages, sources, countries,
-devices — all of that is counted the way it would be with a cookie, because
-within a single day the hash does the same job.
+Are the numbers any good? Within a day, yes. Pageviews, visits, bounce rate, top
+pages, sources, countries, devices — all of that is counted the way it would be
+with a cookie, because within a single day the hash does the same job.
 
 Here's where it's different, and we'd rather tell you now.
 

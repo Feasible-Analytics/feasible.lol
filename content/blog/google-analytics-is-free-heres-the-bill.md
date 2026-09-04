@@ -51,7 +51,7 @@ This is Google's sentence, not ours.
 
 From the Universal Analytics sunset page, last updated July 16, 2025: "Starting the week of July 1, 2024: You will not have access to any current or historical Universal Analytics data." The same page says the data would be "permanently deleted by Google and won't be recoverable" ([support.google.com/analytics/answer/11583528](https://support.google.com/analytics/answer/11583528), checked September 3, 2026).
 
-Standard UA properties had already stopped processing hits on July 1, 2023. Nothing migrated into GA4 — not goals, not configuration, not history. Anyone who didn't export in that window lost a decade of numbers.
+Standard UA properties had already stopped processing hits on July 1, 2023. Nothing migrated into GA4 — not goals, not configuration, not history. Anyone who didn't export in that window lost a decade of numbers. [Migrating off Google Analytics](/migrate/from-google-analytics/) to anything has the same shape: export first, switch second.
 
 You can't price that line. You can only notice that it happened, and ask what your current tool would do to you.
 
@@ -93,7 +93,7 @@ The last line item is the one nobody puts on a slide. From r/GoogleAnalytics, Ma
 
 You can find a thousand of those. What they have in common isn't privacy — it's that a small business owner wanting to know how many people read a page has to know which of several similar-looking metrics answers that question, and where the report lives.
 
-That's what [a one-page dashboard](/features/) is for, and why we built ours the way we did.
+That's what [a one-page dashboard](/features/dashboard/) is for, and why we built ours the way we did.
 
 ## What $99 buys instead
 

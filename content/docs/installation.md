@@ -43,6 +43,19 @@ problem, [proxy the script through your own domain](/docs/proxying/) — that's 
 
 Anywhere in `<head>` or `<body>`.
 
+Which field that is depends on the platform. On a hosted site it's a
+code-injection box: [WordPress](/integrations/wordpress/),
+[Shopify](/integrations/shopify/), [Webflow](/integrations/webflow/),
+[Squarespace](/integrations/squarespace/), [Ghost](/integrations/ghost/),
+[Wix](/integrations/wix/) and [Framer](/integrations/framer/). On a framework it's
+a template or a head component: [Next.js](/integrations/nextjs/),
+[Nuxt](/integrations/nuxt/), [Astro](/integrations/astro/),
+[React](/integrations/react/), [Vue](/integrations/vue/),
+[Svelte](/integrations/svelte/), [Gatsby](/integrations/gatsby/),
+[Hugo](/integrations/hugo/), [Jekyll](/integrations/jekyll/),
+[Django](/integrations/django/) and [Laravel](/integrations/laravel/). Each guide
+names the exact field and the one thing that platform hides.
+
 If your site is a single-page app, the script picks up route changes on its own — `pushState`,
 `replaceState`, back and forward, and hash changes. So don't also fire a pageview on navigation, or
 every route change gets counted twice.

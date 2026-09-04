@@ -8,7 +8,7 @@ weight: 10
 wide: true
 checked: 2026-09-03
 faq:
-  - q: "What is the best Google Analytics alternative?"
+  - q: "What's the best alternative to Google Analytics?"
     a: "It depends on what you're replacing. For depth and on-premise, Matomo. For a mature EU-hosted product, Plausible. For EU data isolation with a long track record, Fathom. For an MIT license, Umami. For a free personal site, GoatCounter. For unlimited sites and users on one price, Feasible — which we make."
   - q: "Is there a free Google Analytics alternative?"
     a: "Several. Cloudflare Web Analytics is free and cookieless but shallow. GoatCounter's hosted tier is free for reasonable public use. Umami, Matomo and Feasible are all free if you run them on your own server. What you pay instead is the server, the backups and the upgrades."

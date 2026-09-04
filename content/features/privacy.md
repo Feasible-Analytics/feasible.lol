@@ -83,8 +83,8 @@ check with your own lawyer.
 
 What we'll say plainly: Feasible is GDPR-, CCPA- and PECR-friendly, and most
 sites run it without a banner. The long version is on
-[GDPR-friendly analytics](/gdpr-compliant-analytics/). We're never going to tell you that *you* are
-compliant. That depends on everything else on your page, and we're not your
+[GDPR-friendly analytics](/gdpr-compliant-analytics/). We're never going to tell
+you that *you* are compliant. That depends on everything else on your page, and we're not your
 lawyer.
 
 What we can hand you is the paperwork. The [data processing
@@ -110,5 +110,5 @@ Honest to the end: the identifier is pseudonymous, not anonymous. Our technical
 [privacy doc](/docs/privacy/) explains why, and the legal one covers who
 controls what. Both are public, and neither requires an account to read.
 
-The whole product is [open source web analytics](/open-source-web-analytics/) under the AGPL, so none of
-the above is a claim you have to take on faith.
+The whole product is [open source web analytics](/open-source-web-analytics/)
+under the AGPL, so none of the above is a claim you have to take on faith.

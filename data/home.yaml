@@ -57,8 +57,8 @@ pillars:
       One binary and one SQLite file. No cluster, no queue, no column store to
       feed. That's why a small site runs on a $4 server — and why the price can
       be what it is. It's
-      <a href="/open-source/" class="text-flag-700 underline">open source</a>
-      if you'd rather run it yourself.
+      <a href="/open-source-web-analytics/" class="text-flag-700 underline">open
+      source web analytics</a> if you'd rather run it yourself.
 
 # What's in the plan, on the pricing card.
 plan:

@@ -40,8 +40,8 @@ faq:
 ---
 
 Fathom has been doing [privacy-friendly analytics](/privacy-friendly-analytics/)
-since 2018 and has the scars to prove it. Their EU isolation work is real engineering that most of this market
-hasn't bothered with. Start there, because it's the reason to buy theirs.
+since 2018 and has the scars to prove it. Their EU isolation work is real
+engineering that most of this market hasn't bothered with. Start there, because it's the reason to buy theirs.
 
 Now the prices.
 

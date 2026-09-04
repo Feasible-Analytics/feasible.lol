@@ -19,4 +19,6 @@ there's a real answer.
 
 Start with [the whole price ladder](/compare/pricing/) if you want every vendor
 at every volume in one table. Otherwise pick the product you're actually
-weighing us against.
+weighing us against — or, if you haven't got that far,
+[all the Google Analytics alternatives](/alternatives/google-analytics/) is the
+roundup that comes before these.
