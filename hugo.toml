@@ -11,7 +11,7 @@ locale = "en-us"
 defaultContentLanguage = "en"
 title = "Feasible"
 enableRobotsTXT = true
-enableGitInfo = false
+enableGitInfo = true
 
 # Hugo lowercases and de-punctuates section titles unless told otherwise. Our
 # titles are written by hand in front matter, so leave them alone.
@@ -19,6 +19,12 @@ capitalizeListTitles = false
 
 # Trailing-slash-free URLs everywhere, matching how the app serves its routes.
 disableKinds = ["taxonomy", "term"]
+
+# A page's "last modified" is the date it actually asserts — the `checked:` on a
+# comparison page, the `updated:` on a legal one — falling back to the commit
+# that last touched the file. Search engines and readers both key off it.
+[frontmatter]
+  lastmod = ["lastmod", "checked", "updated", ":git", "date"]
 
 [build]
   # Tailwind v4 tree-shakes against this file. Without it every utility in the
@@ -102,9 +108,7 @@ disableKinds = ["taxonomy", "term"]
     blog = "/blog/:slug/"
 
 [sitemap]
-  changefreq = "weekly"
   filename = "sitemap.xml"
-  priority = 0.5
 
 [taxonomies]
   # Help answers group into categories; nothing else on the site is taxonomised.

@@ -4,6 +4,9 @@
   noindex. Telling a search engine about a page and telling it not to index the
   page is a contradiction, so those are filtered out here.
 
+  changefreq and priority are deliberately absent. Identical values on all 153
+  URLs tell a crawler nothing; lastmod tells it something.
+
   Created: 2026-09-03
   Copyright (c) 2026 Cloudmanic Labs, LLC. All rights reserved.
 */}}
@@ -16,8 +19,6 @@
         {{- if not .Lastmod.IsZero }}
           <lastmod>{{ safeHTML (.Lastmod.Format "2006-01-02T15:04:05-07:00") }}</lastmod>
         {{- end }}
-        {{- with .Sitemap.ChangeFreq }}<changefreq>{{ . }}</changefreq>{{ end }}
-        {{- if ge .Sitemap.Priority 0.0 }}<priority>{{ .Sitemap.Priority }}</priority>{{ end }}
       </url>
     {{- end }}
   {{- end }}
