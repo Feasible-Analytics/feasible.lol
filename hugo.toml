@@ -316,7 +316,7 @@ disableKinds = ["taxonomy", "term"]
 # ------------------------------------------------------------------
 [params]
   description = "Simple, privacy-friendly website analytics. One page, no cookies, no consent banner. Unlimited sites and users, a million pageviews a month, $99 a year."
-  tagline = "Analytics that doesn't laugh at you."
+  tagline = "Simple, Privacy-Friendly Website Analytics"
   company = "Cloudmanic Labs, LLC"
   founded = 2026
   email = "help@feasible.lol"
@@ -337,6 +337,13 @@ disableKinds = ["taxonomy", "term"]
     pageviews = "1,000,000"
     pageviewsShort = "1M"
     retentionYears = 5
+
+  # A named human on the byline and the founder entity. For a domain with no
+  # links yet, this is the cheapest trust signal there is.
+  [params.author]
+    name = "Spicer Matthews"
+    jobTitle = "Founder"
+    sameAs = ["https://github.com/cloudmanic"]
 
   [params.social]
     twitter = "feasiblelol"

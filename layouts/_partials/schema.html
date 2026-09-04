@@ -6,12 +6,40 @@
   Created: 2026-09-03
   Copyright (c) 2026 Cloudmanic Labs, LLC. All rights reserved.
 */}}
+{{- $orgID := printf "%s#organization" .Site.BaseURL -}}
+{{- $personID := printf "%s#founder" .Site.BaseURL -}}
+{{- $ogImage := urls.JoinPath .Site.BaseURL (.Params.image | default .Site.Params.ogImage) -}}
+
+{{/* A named human is the cheapest trust signal a domain with no links has, so
+     the founder is a first-class entity rather than a byline. */}}
+{{- $person := dict
+  "@type" "Person"
+  "@id" $personID
+  "name" .Site.Params.author.name
+  "jobTitle" .Site.Params.author.jobTitle
+  "url" (urls.JoinPath .Site.BaseURL "/about/")
+  "worksFor" (dict "@id" $orgID)
+  "sameAs" .Site.Params.author.sameAs
+-}}
+
 {{- $org := dict
   "@type" "Organization"
-  "@id" (printf "%s#organization" .Site.BaseURL)
-  "name" "Cloudmanic Labs, LLC"
+  "@id" $orgID
+  "name" "Feasible"
+  "legalName" .Site.Params.company
   "url" .Site.BaseURL
   "logo" (urls.JoinPath .Site.BaseURL "/images/og-default.png")
+  "email" .Site.Params.email
+  "foundingDate" (printf "%d" .Site.Params.founded)
+  "founder" (dict "@id" $personID)
+  "address" (dict
+    "@type" "PostalAddress"
+    "streetAddress" "901 Brutscher Street, D112"
+    "addressLocality" "Newberg"
+    "addressRegion" "OR"
+    "postalCode" "97132"
+    "addressCountry" "US"
+  )
   "sameAs" (slice .Site.Params.githubOrg)
 -}}
 
@@ -20,14 +48,17 @@
   "@id" (printf "%s#website" .Site.BaseURL)
   "url" .Site.BaseURL
   "name" .Site.Title
-  "publisher" (dict "@id" (printf "%s#organization" .Site.BaseURL))
+  "inLanguage" "en-US"
+  "publisher" (dict "@id" $orgID)
 -}}
 
 {{- $graph := slice $org $website -}}
 
-{{/* The product itself, priced. Only on the pages where a buyer is deciding —
-     emitting an Offer on a help article would be noise. */}}
-{{- if or .IsHome (in (slice "/pricing/" "/features/") .RelPermalink) -}}
+{{/* The product itself, priced both ways. On every page where somebody is
+     deciding — home, pricing, and every feature and comparison page. */}}
+{{- if or .IsHome (eq .Section "features") (eq .Section "compare") (eq .RelPermalink "/pricing/") -}}
+  {{- $offerURL := urls.JoinPath .Site.BaseURL "/pricing/" -}}
+  {{- $validUntil := (now.AddDate 1 0 0).Format "2006-01-02" -}}
   {{- $graph = $graph | append (dict
     "@type" "SoftwareApplication"
     "@id" (printf "%s#software" .Site.BaseURL)
@@ -37,48 +68,81 @@
     "operatingSystem" "Web"
     "url" .Site.BaseURL
     "description" .Site.Params.description
-    "offers" (dict
-      "@type" "Offer"
-      "price" .Site.Params.pricing.yearly
-      "priceCurrency" "USD"
-      "url" (urls.JoinPath .Site.BaseURL "/pricing/")
-      "availability" "https://schema.org/InStock"
+    "publisher" (dict "@id" $orgID)
+    "offers" (slice
+      (dict "@type" "Offer" "name" "Yearly"
+        "price" .Site.Params.pricing.yearly "priceCurrency" "USD"
+        "url" $offerURL "availability" "https://schema.org/InStock"
+        "priceValidUntil" $validUntil)
+      (dict "@type" "Offer" "name" "Monthly"
+        "price" .Site.Params.pricing.monthly "priceCurrency" "USD"
+        "url" $offerURL "availability" "https://schema.org/InStock"
+        "priceValidUntil" $validUntil)
     )
   ) -}}
 {{- end -}}
 
-{{/* Blog posts and help answers are Articles. */}}
-{{- if and .IsPage (in (slice "blog") .Section) -}}
+{{/* Blog posts. A named author, and the share card as the article image. */}}
+{{- if and .IsPage (eq .Section "blog") -}}
   {{- $graph = $graph | append (dict
     "@type" "BlogPosting"
     "@id" (printf "%s#article" .Permalink)
     "headline" .Title
-    "description" (or .Params.description .Summary | plainify | truncate 200)
+    "description" (or .Params.description .Summary | plainify | htmlUnescape | truncate 200)
     "datePublished" (.Date.Format "2006-01-02T15:04:05Z07:00")
     "dateModified" (.Lastmod.Format "2006-01-02T15:04:05Z07:00")
     "url" .Permalink
     "mainEntityOfPage" (dict "@type" "WebPage" "@id" .Permalink)
     "wordCount" .WordCount
-    "author" (dict "@type" "Organization" "name" "Feasible" "url" .Site.BaseURL)
-    "publisher" (dict "@id" (printf "%s#organization" .Site.BaseURL))
+    "inLanguage" "en-US"
+    "image" (dict "@type" "ImageObject" "url" $ogImage "width" 1200 "height" 630)
+    "author" (dict "@id" $personID)
+    "publisher" (dict "@id" $orgID)
   ) -}}
 {{- end -}}
 
-{{/* A help answer is one question, so it is a genuine FAQPage of size one.
-     Pages that carry a `faq` list in front matter emit theirs too. */}}
+{{/* Documentation and install guides are technical articles. No rich result —
+     Google retired the HowTo one in 2023 — but it is the accurate type, and it
+     is what a crawler reading for an answer keys off. */}}
+{{- if and .IsPage (in (slice "docs" "integrations") .Section) -}}
+  {{- $graph = $graph | append (dict
+    "@type" "TechArticle"
+    "@id" (printf "%s#article" .Permalink)
+    "headline" .Title
+    "description" (or .Params.description .Summary | plainify | htmlUnescape | truncate 200)
+    "url" .Permalink
+    "mainEntityOfPage" (dict "@type" "WebPage" "@id" .Permalink)
+    "inLanguage" "en-US"
+    "author" (dict "@id" $orgID)
+    "publisher" (dict "@id" $orgID)
+  ) -}}
+{{- end -}}
+
+{{/* The founder, on the page that is about him. */}}
+{{- if eq .RelPermalink "/about/" -}}
+  {{- $graph = $graph | append $person -}}
+{{- end -}}
+
+{{/* A help answer is one question, so it is a genuine FAQPage of size one. The
+     answer comes from the page's description, which on every help page is the
+     complete one-sentence answer — using the page body instead truncated
+     mid-word and swallowed the navigation. Pages carrying a `faq` list in front
+     matter emit theirs too. */}}
 {{- $faqs := slice -}}
 {{- if and .IsPage (eq .Section "help") -}}
-  {{- $faqs = $faqs | append (dict
-    "@type" "Question"
-    "name" .Title
-    "acceptedAnswer" (dict "@type" "Answer" "text" (.Content | plainify | truncate 1200))
-  ) -}}
+  {{- with (or .Params.answer .Params.description) -}}
+    {{- $faqs = $faqs | append (dict
+      "@type" "Question"
+      "name" $.Title
+      "acceptedAnswer" (dict "@type" "Answer" "text" (. | plainify | htmlUnescape))
+    ) -}}
+  {{- end -}}
 {{- end -}}
 {{- range .Params.faq -}}
   {{- $faqs = $faqs | append (dict
     "@type" "Question"
-    "name" .q
-    "acceptedAnswer" (dict "@type" "Answer" "text" (.a | markdownify | plainify))
+    "name" (.q | plainify | htmlUnescape)
+    "acceptedAnswer" (dict "@type" "Answer" "text" (.a | markdownify | plainify | htmlUnescape))
   ) -}}
 {{- end -}}
 {{- with $faqs -}}
