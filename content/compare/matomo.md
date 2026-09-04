@@ -13,6 +13,30 @@ verdict: |
   amount of price difference substitutes for a report you actually need. If you
   open a dashboard to see traffic, sources and conversions, Matomo is a very
   large tool for that job and a very large bill.
+faq:
+  - q: "What is a hit in Matomo, and why does it matter?"
+    a: >-
+      Matomo's FAQ defines a hit as a single interaction sent to Matomo —
+      pageviews, events, downloads, outlinks, site searches, content tracking
+      and crashes. Since Matomo Cloud bills hits rather than pageviews, a site
+      with download and outbound-link tracking can generate two or three hits
+      per pageview and land a tier or two higher than its traffic suggests.
+  - q: "How much is Matomo Cloud at a million?"
+    a: >-
+      $2,040 a year at a million hits a month, from their pricing page on
+      September 3, 2026. Feasible is $99 at a million pageviews.
+  - q: "Is self-hosted Matomo free?"
+    a: >-
+      The core is, under GPL-3.0. Funnels, heatmaps, session recording, A/B
+      testing and form analytics are proprietary premium plugins sold as
+      On-Premise bundles starting at €2,750 a year. Feasible's self-hosted build
+      has every feature and no licence key.
+  - q: "What does Matomo do that Feasible doesn't?"
+    a: >-
+      A lot. Heatmaps, session recording, A/B testing, form analytics, a tag
+      manager, server-log import, custom dimensions, visitor profiles, cohort
+      analysis, SSO and mobile SDKs. We have none of those. If any of them is on
+      your list, Matomo is the answer.
 ---
 
 Matomo has been going since 2007 and does more than everything else in this

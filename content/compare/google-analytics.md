@@ -12,6 +12,32 @@ verdict: |
   free. If you mostly want to know which pages people read, where they came
   from and whether they did the thing you wanted, GA4 makes you work absurdly
   hard for it — and Feasible answers all three on one page for $99 a year.
+faq:
+  - q: "Is Google Analytics illegal in Europe?"
+    a: >-
+      No. Several data protection authorities ruled against EU-to-US transfers
+      of Google Analytics data between 2021 and 2023, but the EU-US Data Privacy
+      Framework adequacy decision of July 10, 2023 removed the ground those
+      decisions rested on, and Google is certified under it. An appeal is
+      pending at the Court of Justice and undecided. Anyone still telling you
+      it's illegal is running a stale page.
+  - q: "Can I keep my Google Analytics history if I switch?"
+    a: >-
+      Yes. Feasible imports GA4 over OAuth, and also takes CSV and ZIP uploads.
+      Universal Analytics data is a different story — Google cut off access to
+      it in July 2024 and said it would be permanently deleted, so if you never
+      exported it, it's gone.
+  - q: "Do I need a cookie banner with Feasible?"
+    a: >-
+      Most sites won't. Feasible sets no cookies on your visitors and stores no
+      personal data, which is the thing consent rules are aimed at. That's a
+      design consequence, not legal advice, and the rules vary by country —
+      check with your own lawyer if you're somewhere strict.
+  - q: "How much smaller is the Feasible script than Google's?"
+    a: >-
+      About 43 times. Measured September 3, 2026 with `gzip -9`: Feasible 3,377
+      bytes, Google's gtag.js 148,451 bytes. And gtag.js fetches more after it
+      loads.
 ---
 
 Google Analytics 4 is free. That part is true and it's the only reason most

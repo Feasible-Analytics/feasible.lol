@@ -13,6 +13,30 @@ verdict: |
   site, have more than one person looking at it, or want funnels, custom
   properties, the API and raw export without moving up a tier, the arithmetic
   goes the other way — hard.
+faq:
+  - q: "How much does Plausible cost at a million pageviews a month?"
+    a: >-
+      $690 a year on Starter, $1,040 on Growth and $1,390 on Business, from
+      their published pricing on September 3, 2026. Business is the first plan
+      with custom properties, funnels and the Stats API. Feasible is $99 with
+      all three included.
+  - q: "Is Feasible more permissively licensed than Plausible?"
+    a: >-
+      No. Both are AGPL-3.0-or-later — the same licence. The difference is
+      narrower: Plausible's repository has an `extra/` directory whose own
+      COPYING.txt grants no rights to use or distribute the code in it, and the
+      Community Edition build excludes it. Feasible has no such directory.
+  - q: "Does Plausible's Community Edition have the API?"
+    a: >-
+      It has the Stats API. The Sites API is the one that isn't in Community
+      Edition, along with marketing funnels, user journeys, ecommerce revenue
+      goals and SSO. Community Edition also isn't capped on sites or team
+      members — those caps are a Plausible Cloud pricing thing.
+  - q: "Can I export raw events from Plausible?"
+    a: >-
+      Scheduled raw event data export is listed as an Enterprise feature, so
+      there's no published self-serve price for it. Feasible exports raw events
+      as a ZIP from site settings, on the only plan there is.
 ---
 
 Plausible got the privacy model right before most people accepted there was a

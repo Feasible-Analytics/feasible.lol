@@ -1,0 +1,24 @@
+# plan.yaml
+# What's in the one plan. Rendered on the pricing page and, in a shorter form,
+# on the home page. Keep the two in step.
+#
+# Created: 2026-09-03
+# Copyright (c) 2026 Cloudmanic Labs, LLC. All rights reserved.
+
+included:
+  - "Unlimited websites"
+  - "Unlimited team members"
+  - "1,000,000 pageviews a month"
+  - "Unlimited custom events"
+  - "Unlimited custom properties"
+  - "Unlimited goals and funnels"
+  - "5 years of data retention"
+  - "Full stats and sites API"
+  - "Webhooks and the MCP server"
+  - "Raw data export, any time"
+  - "Google Analytics and CSV import"
+  - "Weekly and monthly email reports"
+  - "Spike and drop alerts"
+  - "Public and password-shared dashboards"
+  - "Two-factor authentication"
+  - "Email support from a person"

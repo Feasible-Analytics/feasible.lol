@@ -105,5 +105,5 @@ is a tax on the thing you want to encourage.
 
 So: invite the whole company, give the designer a viewer role, give the
 contractor a guest role on one site, and revoke it when they're done. It costs
-the same. Turn on the [team-wide two-factor policy](/help/) while you're there.
+the same. Turn on the [team-wide two-factor policy](/security/) while you're there.
 Details in [the docs](/docs/), and the price is on [one page](/pricing/).

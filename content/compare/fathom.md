@@ -12,6 +12,30 @@ verdict: |
   decide it. If you're a small site paying their 100,000-pageview minimum, or a
   big one paying $600 a year, or you want the source code, we're the cheaper and
   more open answer.
+faq:
+  - q: "How much does Fathom cost?"
+    a: >-
+      Their smallest plan is $15 a month, or $150 a year, and it starts at
+      100,000 pageviews a month — there's nothing below that. A million
+      pageviews is $600 a year. Read from their pricing page on September 3,
+      2026.
+  - q: "Do custom events count against Fathom's pageview limit?"
+    a: >-
+      Yes. Their FAQ says custom event and API requests "will be counted as if
+      they were pageviews." Feasible counts pageviews only — events, properties
+      and goal conversions don't touch the limit.
+  - q: "Is Fathom open source?"
+    a: >-
+      The hosted product is closed source. "Fathom Lite" on GitHub is
+      MIT-licensed and still online, and Fathom says it fixes bugs in it, but it
+      has had no code changes since January 2023 and it uses cookies. Feasible
+      is AGPL-3.0-or-later, and the build we host is the build you can run.
+  - q: "Does Feasible have EU data isolation like Fathom?"
+    a: >-
+      No. Cloudmanic Labs is in Oregon, and international transfers run on
+      standard contractual clauses through our DPA. Fathom routes EU visitors to
+      EU servers on every plan at no extra cost. If EU processing is a
+      requirement, buy theirs.
 ---
 
 Fathom has been doing privacy-friendly analytics since 2018 and has the scars to

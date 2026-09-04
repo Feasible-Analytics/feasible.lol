@@ -3,8 +3,8 @@ title: "Goals, funnels and conversions"
 description: "Three kinds of goal, funnels of 2 to 8 steps in sequential or strict order, and a journey report that shows where people went before and after a page."
 lede: "Say what counts as a win, then watch how many people get there and where the rest fall out."
 weight: 30
-shot: "app/funnels.png"
-shotAlt: "The Funnels tab of the Behavior card showing a two-step funnel called Topic to newsletter, with the steps Read a topic page and Newsletter signups, a Sequential steps label, and a notice reading 'Reporting starts Sep 1, 2026, when this configuration became measurable.'"
+shot: "app/goals.png"
+shotAlt: "The goals report: 404 pages, outbound link clicks, file downloads, form submissions, refunds requested, newsletter signups and a custom goal, each with unique conversions, total conversions and a conversion rate."
 note: |
   Goals don't backfill. A goal you create today starts counting today —
   conversions before that moment are not recovered, and the report tells you the
