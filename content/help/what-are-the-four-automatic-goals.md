@@ -14,6 +14,8 @@ Every new site gets four goals for free, created the moment you add it.
 
 The first three need nothing from you. The script watches for them automatically: outbound clicks including middle-clicks, downloads by file type, and form submissions. It never cancels the click or the submit, so nothing about your site's behavior changes.
 
+They do send real custom events, so they count toward [the monthly million](/help/what-happens-if-i-go-over-a-million-pageviews/) like anything else you fire. On most sites that's a rounding error. On a link directory it isn't, so it's worth knowing before you look at the number.
+
 **The 404 goal is the exception, and it's worth being straight about.** The base script doesn't detect a 404 — it can't, because a 404 page is just a page as far as the browser is concerned. The goal exists and will count, but something has to send it. The WordPress plugin does this for you. Anywhere else, fire it yourself from your error template:
 
 ```js

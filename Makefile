@@ -7,7 +7,7 @@
 #
 
 .DEFAULT_GOAL := help
-.PHONY: help install dev build clean check links seo serve
+.PHONY: help install dev build clean check links seo responsive serve
 
 ## help: list the targets
 help:
@@ -43,6 +43,11 @@ links:
 ## seo: check titles, descriptions, headings and orphan pages
 seo:
 	@python3 scripts/check-seo.py public
+
+## responsive: load every page at 390px and fail on any that scrolls sideways
+##             (needs `make serve` running in another shell — CI has no browser)
+responsive:
+	@python3 scripts/check-responsive.py 390
 
 ## clean: remove build output and caches
 clean:

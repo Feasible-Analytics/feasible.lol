@@ -51,7 +51,8 @@ Created with the site, ready to count:
 - `Form: Submission` — **Form submissions**
 
 Three of those four fill themselves in. The browser script sends outbound clicks, downloads and form
-submissions without being asked.
+submissions without being asked. The goal costs nothing; the events it counts are custom events like
+any other, and they do count toward your monthly volume.
 
 The 404 goal is the exception: the base script can't see a 404, because as far as the browser is
 concerned an error page is just a page. That event comes from the

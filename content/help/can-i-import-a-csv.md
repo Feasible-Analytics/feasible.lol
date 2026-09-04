@@ -7,7 +7,7 @@ weight: 20
 
 Yes. Loose CSV files or a ZIP of them, under **Site settings → [Imports](/docs/import-export/)**.
 
-The column headers are the interface. Give a file a recognized dimension column and one or more recognized metric columns and it imports; anything unrecognized is ignored rather than guessed at.
+The column headers are the interface. Give a file a recognized dimension column and one or more recognized metric columns and it imports. A column we don't recognize stops the import and names the column, rather than being dropped quietly and leaving you with numbers that are too small.
 
 **Dimension columns:** `page` (or `path`), `hostname`, `page_title`, `name` (or `event_name`), `entry_page`, `exit_page`, `referrer`, `source`, `channel`, `utm_source`, `utm_medium`, `utm_campaign`, `country`, `region`, `city`, `device`, `screen_size`, `browser`, `browser_version`, `operating_system`, `operating_system_version`, `language`.
 
