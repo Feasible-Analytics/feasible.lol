@@ -1,5 +1,6 @@
 ---
 title: "What's the difference between visitors, visits and pageviews?"
+seotitle: "Visitors vs visits vs pageviews — Feasible"
 description: "One person, one sitting, one page load. Three tiles on the dashboard, and they answer three different questions."
 category: "reports"
 weight: 5

@@ -1,5 +1,6 @@
 ---
 title: "What's the difference between event scope and session scope?"
+seotitle: "Event scope vs session scope — Feasible"
 description: "Event scope describes one hit. Session scope describes the whole visit. The choice decides your conversion-rate denominator."
 category: "goals-and-events"
 weight: 50

@@ -233,6 +233,46 @@ disableKinds = ["taxonomy", "term"]
     weight = 4
 
   [[menus.footer]]
+    identifier = "guides"
+    name = "Guides"
+    weight = 35
+  [[menus.footer]]
+    parent = "guides"
+    name = "Privacy-friendly analytics"
+    url = "/privacy-friendly-analytics/"
+    weight = 1
+  [[menus.footer]]
+    parent = "guides"
+    name = "Cookieless analytics"
+    url = "/cookieless-analytics/"
+    weight = 2
+  [[menus.footer]]
+    parent = "guides"
+    name = "GDPR-friendly analytics"
+    url = "/gdpr-compliant-analytics/"
+    weight = 3
+  [[menus.footer]]
+    parent = "guides"
+    name = "Simple web analytics"
+    url = "/simple-web-analytics/"
+    weight = 4
+  [[menus.footer]]
+    parent = "guides"
+    name = "Open source analytics"
+    url = "/open-source-web-analytics/"
+    weight = 5
+  [[menus.footer]]
+    parent = "guides"
+    name = "Analytics tools compared"
+    url = "/web-analytics-tools/"
+    weight = 6
+  [[menus.footer]]
+    parent = "guides"
+    name = "Leaving Google Analytics"
+    url = "/migrate/from-google-analytics/"
+    weight = 7
+
+  [[menus.footer]]
     identifier = "company"
     name = "Company"
     weight = 40

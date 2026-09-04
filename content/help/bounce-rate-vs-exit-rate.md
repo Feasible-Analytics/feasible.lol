@@ -1,5 +1,6 @@
 ---
 title: "What's the difference between bounce rate and exit rate?"
+seotitle: "Bounce rate vs exit rate — Feasible"
 description: "Bounce rate is about visits that went nowhere. Exit rate is about the page people left from. Same-looking numbers, different denominators."
 category: "reports"
 weight: 20

@@ -9,7 +9,7 @@ faq:
   - q: "How long does the migration take?"
     a: "About twenty minutes of actual work, spread over two weeks. Installing the script is one line. The waiting is deliberate — you run both tools side by side long enough to trust the new numbers before you remove the old tag."
   - q: "Can I import my Google Analytics history?"
-    a: "Yes, as CSV. Export your GA4 reports, upload the folder, and it lands on the same charts as your live traffic. A direct Google connection is on the way; today it's a CSV upload. Universal Analytics history is a different matter: Google cut off access to it from the week of 1 July 2024."
+    a: "Yes, as CSV. Export your GA4 reports, upload the folder, and it lands on the same charts as your live traffic. Universal Analytics history is a different matter: Google cut off access to it from the week of 1 July 2024."
   - q: "What data comes across from GA4?"
     a: "Whatever you export: daily totals, pages, sources, locations, devices and browsers. What doesn't come across: GA4's own goals and conversions, audiences, Explorations, and anything GA4 thresholded away before you hit download."
   - q: "Why don't the numbers match Google Analytics?"

@@ -23,8 +23,7 @@ every thread on the subject, and it's a fair one.
 
 Export your GA4 reports as CSV and upload the folder — pages, sources,
 locations, devices and browsers land on the same charts as your live traffic,
-dated where they belong. A direct Google connection is on the way. Today it's a
-CSV upload, and it's the same path any other tool's export takes.
+dated where they belong. It's the same path any other tool's export takes.
 
 Import takes a ZIP or loose files. Recognized dimension columns cover page,
 hostname, page title, event name, entry and exit page, referrer, source,
