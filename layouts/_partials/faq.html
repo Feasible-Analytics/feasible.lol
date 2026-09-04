@@ -1,0 +1,26 @@
+{{/*
+  faq.html
+  Renders a page's `faq` front-matter list. The same list is what schema.html
+  turns into FAQPage structured data, so the questions a search engine sees are
+  exactly the ones on the page.
+
+  Created: 2026-09-03
+  Copyright (c) 2026 Cloudmanic Labs, LLC. All rights reserved.
+*/}}
+{{- with .Params.faq }}
+  <section class="mt-16 max-w-[46rem]">
+    <h2 class="font-display text-2xl font-extrabold tracking-tight">
+      {{ $.Params.faqHeading | default "Questions" }}
+    </h2>
+    <dl class="mt-6 border-t-2 border-rule">
+      {{- range . }}
+        <div class="border-b border-rule-soft py-5">
+          <dt class="font-display text-lg font-extrabold leading-snug">
+            {{ .q }}
+          </dt>
+          <dd class="copy mt-2 !text-base">{{ .a | markdownify }}</dd>
+        </div>
+      {{- end }}
+    </dl>
+  </section>
+{{- end }}

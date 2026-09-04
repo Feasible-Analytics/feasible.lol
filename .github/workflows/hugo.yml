@@ -74,13 +74,19 @@ jobs:
           HUGO_ENV: production
         run: hugo --gc --minify --baseURL "https://feasible.lol/"
 
-      # A broken signup link costs more than a failed deploy. Catch the ones
-      # that come from an unfinished draft rather than from a typo.
-      - name: Guard against placeholder links
+      # A broken internal link costs more than a failed deploy. This walks every
+      # built page and resolves every internal href and fragment.
+      #
+      # example.com is deliberately not treated as a placeholder — RFC 2606
+      # reserves it for exactly this, and the docs use it in sample snippets.
+      - name: Check internal links
+        run: python3 scripts/check-links.py public
+
+      - name: Guard against unfinished drafts
         run: |
-          if grep -rlE "example\.com|TODO-LINK|localhost:8899" public/ >/dev/null 2>&1; then
-            echo "::error::Placeholder links found in the built site."
-            grep -rnE "example\.com|TODO-LINK|localhost:8899" public/ | head -20 || true
+          if grep -rlE "TODO-LINK|localhost:8899|127\.0\.0\.1:8899|app\.feasible\.lol/demo" public/ >/dev/null 2>&1; then
+            echo "::error::Draft placeholders or dead links found in the built site."
+            grep -rnE "TODO-LINK|localhost:8899|127\.0\.0\.1:8899|app\.feasible\.lol/demo" public/ | head -20 || true
             exit 1
           fi
 

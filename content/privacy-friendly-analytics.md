@@ -154,43 +154,6 @@ The other honest limit: no SSO or SAML, no mobile SDKs, and no report that
 follows an individual person over time. The last one isn't a gap. It's the
 design.
 
-## Questions people ask
-
-### What is privacy-friendly analytics?
-
-Website analytics that counts visits without identifying visitors. No cookies, no
-persistent ID, no profile that follows a person between sites, and no data handed
-to an advertising network. You get traffic numbers; nobody gets a dossier.
-
-### Does Feasible use cookies?
-
-No. The tracking script sets no cookie on your visitors, ever. The only cookies
-in the whole system belong to the Feasible app itself, for your own login
-session.
-
-### Do you store IP addresses?
-
-No. The address is used in the ingest tier to work out a country and a daily
-visitor hash, then it's discarded. It never reaches disk.
-
-### Is Feasible data anonymous?
-
-It's pseudonymous, not anonymous, and we'd rather say so. The daily visitor hash
-is derived from data that started out personal. It can't be reversed, and the key
-it was made with is gone the next day, but calling it anonymous would be
-overselling it.
-
-### Is this fingerprinting?
-
-No. Fingerprinting builds a stable identifier that survives across sites and
-across time so a person can be recognized later. Our hash includes the site
-domain and a key that changes every UTC day, which makes it useless for both.
-
-### Do you sell or share the data?
-
-No. Your numbers are yours. There is no ad network in the loop, no data broker,
-and no cross-customer pooling.
-
 ---
 
 Thirty days, no card. [Start a trial](https://app.feasible.lol/register), or read

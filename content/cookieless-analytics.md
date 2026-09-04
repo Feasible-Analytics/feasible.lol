@@ -186,52 +186,6 @@ a `data-api` attribute and a proxied script path, and
 2026-09-03 — about 43× larger — and that's only its first request. Reproduce both
 with `curl -H 'Accept-Encoding: identity' <url> | gzip -9 | wc -c`.
 
-## Questions people ask
-
-### What is cookieless analytics?
-
-Website analytics that measures traffic without storing an identifier in the
-visitor's browser. No cookie, no persistent ID, nothing that can be read back on a
-later visit to recognize the same person.
-
-### How do you count unique visitors without cookies?
-
-Each event gets a 64-bit hash of the user agent, the IP address and the site's
-domain, keyed with a salt derived from the current UTC day. The salt is never
-stored and changes at midnight, so the number is only good for one day.
-
-### Are cookieless analytics accurate?
-
-For daily and weekly traffic, yes — the counting method is the same one cookies
-would give you within a single day. Where it differs is anything that needs
-memory across days: returning visitors, multi-day journeys and lifetime value
-can't be measured this way.
-
-### Do I still need a cookie banner?
-
-Most sites running Feasible won't need one, because there's no cookie to consent
-to. That isn't a legal guarantee — consent rules cover more than cookies, and the
-answer depends on your jurisdiction and what else your site loads. Check with
-your own lawyer if you're somewhere strict.
-
-### Is cookieless the same as fingerprinting?
-
-No, and the distinction is the whole point. Fingerprinting builds an identifier
-meant to be stable across sites and across time. Our hash includes the site domain
-and a key that changes daily, so it can't do either.
-
-### Does the Feasible script write anything to the browser?
-
-Two things, neither an identifier. A short-lived retry queue holding events that
-haven't been delivered yet, cleared as soon as the server accepts them, and a flag
-you set yourself if you want to exclude your own visits.
-
-### Do ad blockers block cookieless analytics?
-
-Some do. Blocking rates vary enormously by audience — low single digits on a
-mainstream consumer site, much higher on a developer audience. Serving the script
-from your own domain through a proxy cuts most of it.
-
 ---
 
 Next: what this means for [GDPR, CCPA and PECR](/gdpr-compliant-analytics/), or
