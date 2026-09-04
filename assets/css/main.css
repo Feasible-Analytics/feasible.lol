@@ -178,6 +178,16 @@
   :target {
     scroll-margin-top: 6rem;
   }
+
+  /* Space between the last thing on a page and the footer. A page that ends in
+     the red CTA band already has it — the band runs edge to edge and sits
+     straight above the footer — so that case takes none. */
+  main {
+    padding-bottom: 6rem;
+  }
+  main:has(> .cta-band:last-child) {
+    padding-bottom: 0;
+  }
 }
 
 /* ------------------------------------------------------------------

@@ -16,7 +16,7 @@
 {{- $note := $ctx.note | default (printf
   "No credit card. $%s a month or $%s a year when the trial ends. Cancel any time."
   $site.Params.pricing.monthly $site.Params.pricing.yearly) -}}
-<section class="mt-24 bg-flag text-paper">
+<section class="cta-band mt-24 bg-flag text-paper">
   <div class="shell py-16 sm:py-20 lg:py-24">
     <h2
       class="optical-l font-display text-[2.25rem] font-extrabold leading-[1.06] tracking-tight sm:text-[3rem] lg:text-[3.5rem]"
