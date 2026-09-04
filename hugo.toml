@@ -75,7 +75,7 @@ disableKinds = ["taxonomy", "term"]
     ordered = false
 
 [outputs]
-  home = ["HTML", "RSS", "JSON"]
+  home = ["HTML", "RSS", "JSON", "LLMS"]
   section = ["HTML", "RSS"]
   page = ["HTML"]
 
@@ -90,6 +90,12 @@ disableKinds = ["taxonomy", "term"]
   [outputFormats.RSS]
     mediaType = "application/rss+xml"
     baseName = "feed"
+  # /llms.txt — a map of the site for the crawlers that read it to answer a
+  # question rather than to rank it.
+  [outputFormats.LLMS]
+    mediaType = "text/plain"
+    baseName = "llms"
+    isPlainText = true
 
 [permalinks]
   [permalinks.page]
@@ -315,7 +321,7 @@ disableKinds = ["taxonomy", "term"]
 # these too. Nothing on a static site can read live Stripe prices.
 # ------------------------------------------------------------------
 [params]
-  description = "Simple, privacy-friendly website analytics. One page, no cookies, no consent banner. Unlimited sites and users, a million pageviews a month, $99 a year."
+  description = "Simple, privacy-friendly website analytics. One page, no cookies, no consent banner. Unlimited sites and users, a million pageviews a month, $99 a year — not $1,390."
   tagline = "Simple, Privacy-Friendly Website Analytics"
   company = "Cloudmanic Labs, LLC"
   founded = 2026
