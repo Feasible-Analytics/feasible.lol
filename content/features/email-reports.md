@@ -1,6 +1,6 @@
 ---
 title: "Reports and alerts"
-description: "Weekly or monthly reports sent at your site's own local midnight, plus spike and drop alerts checked every 10 minutes. To email, up to 25 recipients, or a Slack channel."
+description: "Weekly or monthly reports at your site's own local midnight, plus spike and drop alerts every 10 minutes. To 25 email recipients or a Slack channel."
 lede: "Send the numbers to the people who are never going to open a dashboard."
 weight: 70
 shot: "app/email-reports.png"

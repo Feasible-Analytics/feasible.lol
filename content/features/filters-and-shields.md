@@ -1,6 +1,6 @@
 ---
 title: "Filtering, shields and path cleaning"
-description: "Six filter operators that live in the URL, shields that stop counting traffic you don't want, and regex path cleaning that merges a thousand URLs into one page."
+description: "Six filter operators that live in the URL, shields that stop counting traffic you don't want, and path cleaning that merges a thousand URLs into one."
 lede: "Narrow the report you're reading, stop counting what you never wanted, and merge the URLs that are really one page."
 weight: 90
 note: |

@@ -32,7 +32,7 @@ Block themes — Twenty Twenty-Four, Twenty Twenty-Five, anything built for the 
 
 There's also a WordPress plugin, feasible.lol Analytics. Install it, open **feasible.lol → Settings**, enter your domain exactly as you registered it, and save.
 
-It serves the script and the events endpoint from your own domain on randomised paths, which is the part that actually survives ad blockers. It also adds two measurements a theme can't give you: **404 hits and site-search terms**.
+It serves the script and the events endpoint from your own domain on randomized paths, which is the part that actually survives ad blockers. It also adds two measurements a theme can't give you: **404 hits and site-search terms**.
 
 {{< callout title="Those two are the plugin, not the script" >}}
 404 and site-search tracking come from the WordPress plugin. They are not in the base script tag, on WordPress or anywhere else. If you paste the snippet by hand, you get everything else — outbound clicks, file downloads, form submissions, scroll depth — but not those two.

@@ -5,7 +5,7 @@ category: "privacy-and-the-law"
 weight: 60
 ---
 
-With a hash that expires every night.
+With a hash that expires every night. The [technical privacy doc](/docs/privacy/) has the derivation in full.
 
 When an event arrives, we compute a SipHash of the visitor's user agent, their IP address and your domain, keyed by a salt derived from today's UTC date. The result is a 64-bit number. Two hits from the same browser on the same day produce the same number, which is what makes "unique visitors" mean anything. That's the whole mechanism.
 

@@ -29,11 +29,13 @@ don't pay.
 
 That's worth stating because open core is the normal arrangement in this category, and
 it's usually documented in the vendor's own repo. Plausible's repository carries an
-`extra/` directory with its own copyright notice — "no rights to use, distribute or
-otherwise exploit this software are granted to you" — and their build excludes it from
-the Community Edition compile path. PostHog has an `ee/` directory under an enterprise
-license. Matomo's premium plugins, including Funnels, are proprietary under InnoCraft's
-EULA rather than the GPL that covers the core.
+[`extra/` directory with its own copyright notice](https://github.com/plausible/analytics/blob/master/extra/COPYING.txt)
+— "no rights to use, distribute or otherwise exploit this software are granted to you"
+— and their build excludes it from the Community Edition compile path. PostHog has an
+[`ee/` directory](https://github.com/PostHog/posthog/blob/master/ee/LICENSE) under an
+enterprise license. Matomo's premium plugins, including Funnels, are
+[proprietary under InnoCraft's EULA](https://matomo.org/faq/general/matomo-analytics-licences-for-core-tracker-and-plugins/)
+rather than the GPL-3.0 that covers the core.
 
 None of that is dishonest and none of it is hidden; those companies wrote it down
 themselves. It just means the code you can run is not the code they run.
@@ -77,12 +79,15 @@ At a million pageviews a month, a year of data is a 294 MB database. One process
 accepts around 6,000 events a second.
 
 That number matters most next to the alternative. Column-store analytics stacks are
-excellent at what they do, and they are a different kind of operational commitment —
-ClickHouse's own documentation recommends 32 GB of RAM for a production server, and
-Plausible's Community Edition README asks for 2 GB before you've counted ClickHouse
-itself. We're not claiming SQLite stores bytes more efficiently, because it doesn't.
-We're claiming there's one file and one process, and that a person with a $4 VPS and no
-ops team can keep it running.
+excellent at what they do, and they're a different kind of operational commitment —
+[ClickHouse's own documentation](https://clickhouse.com/docs/en/operations/tips)
+recommends 32 GB of RAM for a production server, and Plausible's Community Edition
+README asks for 2 GB.
+
+To be clear about what we're not claiming: SQLite does not store bytes more
+efficiently than a column store. It doesn't. The claim is operational — one file, one
+process, nothing to tune, and a person with a $4 VPS and no ops team can keep it
+running.
 
 ## Getting it running
 

@@ -1,5 +1,6 @@
 ---
 title: "Google Analytics is free. Here's the bill"
+slug: "google-analytics-is-free-heres-the-bill"
 description: "GA4 costs $0. It also costs a consent banner, a 148 KB script, thresholded rows you can't unhide, and the history Google deleted in 2024."
 lede: "Nothing on the invoice, plenty on the bill. Here's each line item, with Google's own documentation next to it."
 date: 2026-08-25
@@ -77,7 +78,7 @@ Now the part where we correct a claim that would help us.
 
 **Google Analytics is not illegal in the EU.** Between 2021 and 2023, data protection authorities in Austria, France, Italy, Denmark, Finland, Norway and Sweden all found against GA in specific cases — most with reprimands and no fine, though Sweden's IMY fined Tele2 SEK 12 million in June 2023, upheld on appeal in October 2025 ([imy.se](https://www.imy.se/en/news/four-companies-must-stop-using-google-analytics/), checked September 3, 2026). Every one of those decisions turned on EU-to-US transfers after *Schrems II*.
 
-That ground moved on July 10, 2023, when the European Commission adopted the EU-US Data Privacy Framework adequacy decision. Google is certified under it. CNIL says so on its own live page. The General Court dismissed a challenge to the framework in September 2025, and an appeal is pending at the CJEU as Case C-703/25 P with no ruling yet.
+That ground moved on July 10, 2023, when the European Commission adopted the EU-US Data Privacy Framework adequacy decision. Google is certified under it, which removes the transfer basis every one of those decisions rested on. The General Court dismissed a challenge to the framework in September 2025, and an appeal is pending at the CJEU as Case C-703/25 P with no ruling yet.
 
 So the honest version: those rulings happened, they're worth knowing about, and they are not a live prohibition today. Anyone still telling you GA4 is banned in Europe is running a page they haven't updated since 2023.
 

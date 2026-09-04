@@ -369,9 +369,12 @@
     background-color: var(--color-surface);
     border: 1px solid var(--color-rule-soft);
     padding: 0.1em 0.35em;
-    white-space: nowrap;
+    /* A long identifier like visit:browser_version has to be allowed to break;
+       on a phone it would otherwise push the whole column sideways. */
+    overflow-wrap: anywhere;
   }
-  .copy pre {
+  .copy pre,
+  .copy .highlight pre {
     background-color: var(--color-ink);
     color: #f3f2f2;
     padding: 1.125rem 1.25rem;

@@ -7,7 +7,7 @@ weight: 110
 
 Yes. Press `X`.
 
-Comparison has three settings and it's on by default:
+Comparison is [built into the dashboard](/features/dashboard/), has three settings, and is on by default:
 
 - **No comparison**
 - **Previous period** — the same length of time immediately before. The default.
@@ -23,6 +23,6 @@ Two limits, said plainly:
 
 **Comparison is hidden on Realtime.** There's nothing sensible to compare five minutes to.
 
-**You can't pick an arbitrary custom range to compare against.** The dashboard offers previous period and year over year, and that's it. If you need "this launch week versus that launch week", the [API](/docs/) will do it — the query engine accepts an explicit comparison range even though the UI doesn't offer one.
+**You can't pick an arbitrary custom range to compare against.** The dashboard offers previous period and year over year, and that's it. If you need "this launch week versus that launch week", the [API](/docs/api/) will do it — the query engine accepts an explicit comparison range even though the UI doesn't offer one.
 
 When the earlier period had no traffic at all, the chip says so rather than printing an infinite percentage increase. And if you want to mark *why* something moved, [annotations](/help/what-is-an-annotation/) put a note on the chart where the change is.

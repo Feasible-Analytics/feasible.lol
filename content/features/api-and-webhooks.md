@@ -1,6 +1,6 @@
 ---
 title: "The API, webhooks and MCP"
-description: "One bearer key reads your stats, manages sites, goals and funnels, signs webhooks, and answers an AI assistant over the built-in MCP server. In every plan, with no plan check."
+description: "One bearer key reads your stats, manages sites, goals and funnels, signs webhooks, and answers an AI assistant over the built-in MCP server."
 lede: "One key. The stats API, the sites API, webhooks and an MCP server, all included."
 weight: 110
 note: |
@@ -94,7 +94,7 @@ Above roughly ten million estimated row reads, a query may be answered from a
 deterministic sample. The response says so, in `meta.sampling`, with the rate —
 and distinct-visitor counts are **refused rather than sampled**, returning
 `sampling_requires_exact` so you can decide, instead of quietly handing you an
-estimate labelled as a fact.
+estimate labeled as a fact.
 
 And the ingest side has a rule of its own: server-side events must carry the
 visitor's IP and user agent. All five SDKs — Node, Go, PHP, Python and Ruby —

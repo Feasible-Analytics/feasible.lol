@@ -30,7 +30,7 @@ faq:
       The core is, under GPL-3.0. Funnels, heatmaps, session recording, A/B
       testing and form analytics are proprietary premium plugins sold as
       On-Premise bundles starting at €2,750 a year. Feasible's self-hosted build
-      has every feature and no licence key.
+      has every feature and no license key.
   - q: "What does Matomo do that Feasible doesn't?"
     a: >-
       A lot. Heatmaps, session recording, A/B testing, form analytics, a tag
@@ -96,7 +96,7 @@ Two things follow that people miss.
 
 **The features that make Matomo Matomo are proprietary and sold separately.**
 Funnels, heatmaps, session recording, A/B testing and form analytics are premium
-plugins under the InnoCraft licence. Since 2025 they're sold as On-Premise
+plugins under the InnoCraft license. Since 2025 they're sold as On-Premise
 bundles, and the cheapest one — Team, up to 4 users and 5 million hits a month —
 is €2,750 a year on Matomo's pricing page. Business is €14,500.
 
@@ -111,7 +111,7 @@ archiving FAQ says your "most important job as an administrator will be to check
 weekly, or daily, for any messages which arise during the archiving process."
 
 Feasible self-hosted is one Go binary and one SQLite file, on 1 core and 512 MB
-of RAM. No PHP, no MySQL, no archiving cron, no plugin licences. Every feature
+of RAM. No PHP, no MySQL, no archiving cron, no plugin licenses. Every feature
 is in it, because there's only one build.
 
 We're not claiming SQLite is a better database than MySQL for analytics — that's
@@ -160,7 +160,7 @@ have to live somewhere. It's still 46 KB on every page load.
 | Webhooks | Yes | No |
 | MCP server | Built in | No |
 | Dropped-event log with reasons | Yes | No |
-| Licence | AGPL-3.0-or-later | GPL-3.0-or-later (core) |
+| License | AGPL-3.0-or-later | GPL-3.0-or-later (core) |
 | Self-host cost | Free, every feature | Free core, €2,750/yr for the premium bundle |
 
 ## Where Matomo wins
@@ -169,7 +169,7 @@ Almost everywhere on features, and it isn't close.
 
 **Depth.** Visitor logs, visitor profiles, custom dimensions, hundreds of
 segments, ecommerce reporting, goal attribution across dozens of models,
-roll-up reporting across properties. If someone in your organisation asks a
+roll-up reporting across properties. If someone in your organization asks a
 question you didn't anticipate, Matomo probably answers it. We probably don't.
 
 **The premium plugins.** Heatmaps, session recording, A/B testing and form
@@ -180,12 +180,31 @@ your list, this comparison is over.
 twenty years of compliance paperwork, and the fact that public-sector
 procurement in Europe already knows the name. We have none of that either.
 
-**A lighter copyleft licence.** Matomo's core is GPL-3.0. Ours is AGPL-3.0 —
+**A lighter copyleft license.** Matomo's core is GPL-3.0. Ours is AGPL-3.0 —
 same family, but AGPL adds a network clause GPL doesn't have. On that specific
 axis Matomo asks less of you than we do, and it's worth knowing if your
 company's policy cares.
 
 **Your data sits in Europe** on Matomo Cloud. We're in Oregon.
+
+## The one place we're ahead on features
+
+Matomo has more reports than we do by a wide margin. It doesn't have this one.
+
+Feasible counts every event it drops and gives each drop a named reason — `bot`,
+`datacenter_ip`, `referrer_spam`, `outdated_browser`, `automation`,
+`hostname_not_allowed`, `shield_ip`, `rate_limited` and more — on a health screen
+per site, for the last 24 hours. It shows which client address it resolved for
+your last request and from which header. It warns you when your reverse proxy
+isn't forwarding visitor addresses, which is the misconfiguration that silently
+collapses every visitor into one and geolocates your whole audience to your
+datacenter. And a button fires a real test event through the public URL, so it
+exercises your proxy and headers the way a browser would instead of calling an
+internal function and reporting success.
+
+Nobody else in this comparison publishes a counted, reasoned drop log. If you've
+ever spent a morning working out why your numbers halved on Tuesday, that's the
+feature.
 
 ## Where we'd tell you to pick us
 

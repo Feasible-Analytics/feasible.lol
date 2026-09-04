@@ -10,7 +10,7 @@ faq:
   - q: "What happens when the trial ends?"
     a: "Nothing gets charged, because we never took a card. You get an email a week before it ends and another the day before. If you don't pay, the dashboard locks 30 days after the trial ends, collection keeps running for another 30 days after that, and the account is deleted on day 90 — with nine warning emails along the way. Export works in every one of those states. Pay at any point before the end and everything comes back in about fifteen seconds."
   - q: "What if I go over a million pageviews?"
-    a: "We email you at 70%, 85% and 100% of the limit. One month over costs nothing and changes nothing. Two complete months over in a row and we email asking you to reply within 14 days. If nobody replies, the dashboard locks — but collection never stops, nothing is throttled, nothing is deleted, and there's no overage charge. Drop back under, or just reply to the email, and it unlocks."
+    a: "We email you at 70%, 85% and 100% of the limit. One month over costs nothing and changes nothing. Two complete months over in a row and we email asking you to reply within 14 days. If nobody replies, the dashboard locks — but collection never stops, nothing is throttled, nothing is deleted, and there's no overage charge. Drop back under, or reply to the email, and it unlocks."
   - q: "How do I cancel?"
     a: "From your own billing portal, any time, without emailing anyone first. Cancelling stops the next charge and you keep the dashboard until the period you already paid for runs out."
   - q: "Do you give refunds?"

@@ -1,6 +1,6 @@
 ---
 title: "The one-page dashboard"
-description: "Six numbers, a graph and five reports on one screen. Click any row to filter everything else. Filters live in the URL, so the view you're looking at is a link."
+description: "Six numbers, a graph and five reports on one screen. Click any row to filter everything else, and every filter lives in the URL."
 lede: "Everything Feasible collects is on one page. Click any row and it filters the rest of it."
 weight: 10
 shot: "app/dashboard-light.png"

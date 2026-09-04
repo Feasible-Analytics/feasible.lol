@@ -183,8 +183,8 @@ stay out of the way.
 
 ### Cloudflare Web Analytics — free, cookieless, shallow
 
-Free, explicitly cookieless, and trivially easy if your site is already behind
-Cloudflare. The limits are the point: shallow reporting, no meaningful goals or
+Free, explicitly cookieless, and a two-minute job if your site is already
+behind Cloudflare. The limits are the point: shallow reporting, no meaningful goals or
 custom events, no data export, retention not published, and no way to take your
 history elsewhere.
 

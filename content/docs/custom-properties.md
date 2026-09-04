@@ -8,6 +8,9 @@ weight: 80
 A custom property is a key and a value attached to an event, so you can break a report down by
 something only your application knows — a plan name, a category, a variant.
 
+They're in every plan, with no cap on how many you register and no "custom dimensions" allowance to
+buy. Send them with the [tracker's own API](/docs/script-options/#calling-it-yourself):
+
 ```
 feasible('Signup', {
   props: { plan: 'yearly', referred_by: 'partner' }
@@ -105,7 +108,11 @@ Funnels and Explore. Selecting a value adds the same URL filter the query API us
 ## A property isn't free, but it isn't billed either
 
 The custom event carrying it counts towards your monthly volume. The properties themselves add
-nothing — one event with thirty properties is one billable event.
+nothing — one event with thirty properties is one billable event. See
+[what isn't counted towards your bill](/docs/metrics/#what-isnt-counted-towards-your-bill).
+
+A [goal](/docs/goals-funnels/) can also be narrowed by up to three property constraints, which is how
+you turn "somebody bought" into "somebody on the yearly plan bought".
 
 ## Aggregating a numeric property
 

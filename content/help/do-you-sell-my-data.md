@@ -3,6 +3,7 @@ title: "Do you sell my data?"
 description: "No. There is no data broker, no ad network, no partner feed, and no plan to add one. We sell software for $9.99 a month."
 category: "privacy-and-the-law"
 weight: 110
+updated: 2026-09-03
 ---
 
 No. We sell software for $9.99 a month. That's the entire business model.

@@ -1,5 +1,6 @@
 ---
 title: "Why we don't charge per site"
+slug: "why-we-dont-charge-per-site"
 description: "Per-site and per-seat pricing tolls the moment you'd install a tool again. We count pageviews, and nothing else — here's what everyone else counts."
 lede: "A second site costs us almost nothing, so we don't charge for it. The harder question is what a pageview limit should actually count."
 date: 2026-09-02
@@ -26,7 +27,7 @@ Published list prices, annual billing, checked September 3, 2026.
 | [Umami Pro](https://umami.is/pricing) | $240 | 20 | 10 |
 | **Feasible** | **$99** | Unlimited | Unlimited |
 
-Some of those are generous. Pirsch gives you fifty sites and unlimited teammates on the cheap plan, and Fathom sells extra sites in packs of fifty for $100 a year, which is a fair price for a real thing. Umami's twenty sites for $240 is not a rip-off by any reading.
+Some of those are generous, and worth saying so. Pirsch gives you fifty sites and unlimited teammates on the cheap plan. Fathom sells extra sites in packs of fifty for $100 a year, which is a fair price for a real thing. Umami's twenty sites for $240 is good value by any reading.
 
 But look at the first three rows as a ladder rather than three products. One site. Three sites. Ten sites. The site count is the thing that moves you up it, and at Simple Analytics the same is true of people — one user is included and each additional seat is $240 a year.
 

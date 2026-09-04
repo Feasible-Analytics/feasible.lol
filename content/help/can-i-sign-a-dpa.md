@@ -3,6 +3,7 @@ title: "Can I sign a DPA?"
 description: "There's nothing to sign. The data processing addendum is already part of the terms you accepted, in full, on a public page."
 category: "privacy-and-the-law"
 weight: 80
+updated: 2026-09-03
 ---
 
 There's nothing to sign. You already have one.

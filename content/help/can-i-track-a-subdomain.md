@@ -16,6 +16,6 @@ To see the split, use the **Hostname** filter. It's in the filter menu under **P
 Two cases where you'd want something different:
 
 - **You want the app and the marketing site kept separate.** Register them as two sites — `example.com` and `app.example.com` — and give each its own snippet. Sites are unlimited, so this costs nothing. You lose the shared visitor, which is the trade.
-- **You're serving on a host outside the registered domain**, like a `pages.dev` preview or a vanity domain. That's refused by default with the reason `hostname_not_allowed`. Add it under **Site settings → Health** with the one-click allow, or in the shields hostname allow-list.
+- **You're serving on a host outside the registered domain**, like a `pages.dev` preview or a vanity domain. That's [refused by default](/help/why-are-my-events-being-dropped/) with the reason `hostname_not_allowed`. Add it under **Site settings → Health** with the one-click allow, or in the shields hostname allow-list.
 
 Tracking genuinely different domains is [a separate question](/help/can-i-track-more-than-one-website/), with a different answer.

@@ -13,6 +13,32 @@ verdict: |
   counting the same traffic. The number that decides your real bill isn't on
   any pricing page — it's what the vendor counts as one unit, so check that
   first.
+faq:
+  - q: "Which web analytics tool is cheapest?"
+    a: >-
+      It depends on your traffic. Below 100,000 pageviews a month, Google
+      Analytics and Umami Hobby are free, Pirsch Standard is $60 a year and
+      Plausible Starter is $90 — all cheaper than Feasible's $99. At a million
+      pageviews a month, Feasible is $99 and the rest of the field runs from
+      $240 to $2,040.
+  - q: "Why do analytics vendors charge such different prices for the same traffic?"
+    a: >-
+      Mostly because they count different things. Some bill pageviews, some bill
+      pageviews plus events, and some bill "datapoints" or "hits" that include
+      downloads, outbound clicks, site searches and each individual event
+      property. Two sites with identical traffic can land three tiers apart.
+  - q: "What does Feasible count against its million-pageview limit?"
+    a: >-
+      Pageviews. Custom events, custom properties, goal conversions and the
+      engagement pings behind scroll depth and time on page are all free and
+      uncounted.
+  - q: "What happens if I go over my limit?"
+    a: >-
+      On Feasible you get emails at 70%, 85% and 100%. One month over costs
+      nothing. Two consecutive full months over gets an email asking you to
+      reply within 14 days, and only then does the dashboard lock. Collection
+      never stops, nothing is deleted, and export works throughout.
+faqHeading: "Common questions about analytics pricing"
 ---
 
 Analytics pricing pages are hard to compare on purpose. Different units,
@@ -126,7 +152,7 @@ instead:
   26-, 38- and 50-month options are marked "360 only."
 - **Thresholded reports.** Google: "Data thresholds are system defined. You
   can't adjust them."
-- **Your visitors' behaviour going to an advertising company.**
+- **Your visitors' behavior going to an advertising company.**
 
 Google Analytics 360 is the paid tier, and Google publishes no price for it —
 their upgrade page tells you to contact an account representative. Any figure

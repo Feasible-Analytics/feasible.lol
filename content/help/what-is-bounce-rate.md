@@ -7,7 +7,7 @@ weight: 10
 
 The share of visits where somebody arrived, looked at one page, and left.
 
-If a hundred visits started this week and thirty-eight of them never went anywhere else, your bounce rate is 38%. It's one of the six tiles on the dashboard, and clicking it draws it on the graph.
+If a hundred visits started this week and thirty-eight of them never went anywhere else, your bounce rate is 38%. It's one of the six tiles on the dashboard, and clicking it draws it on the graph. Every metric is [defined here](/docs/metrics/).
 
 The thing to hold onto: **bounce rate describes the visit, not the page.** A single-page visit is a bounce regardless of how long the person stayed or how far down they read, and it's counted against the page they landed on.
 

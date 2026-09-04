@@ -126,6 +126,49 @@ Measured September 3, 2026 with `gzip -9`: Feasible 3,377 bytes, Simple
 Analytics 3,832. Close enough that neither of us should make a fuss about it,
 and both a rounding error next to Google's 148,451.
 
+## When the numbers look wrong
+
+Every analytics tool drops traffic — bots, scrapers, datacenter addresses,
+browsers too old to trust, requests from hostnames you never registered. That's
+right. The question is whether you can see it happen.
+
+Feasible has a health screen per site showing the last 24 hours of accepted and
+dropped events, with a named reason attached to every drop: `bot`,
+`datacenter_ip`, `referrer_spam`, `outdated_browser`, `automation`,
+`hostname_not_allowed`, `shield_ip`, `rate_limited` and more. It shows which
+client address it resolved for your last request and which header it came from.
+It warns you when your reverse proxy isn't forwarding visitor addresses — the
+misconfiguration that silently collapses every visitor into one and puts them
+all in your datacenter's city. And it has a button that sends a real test event
+through the public URL, so it tests your proxy and headers the way a browser
+would rather than calling an internal function and telling you everything's
+fine.
+
+That's the feature we'd point at if you asked what Feasible is actually for.
+Analytics that quietly loses part of your traffic is worse than analytics that
+tells you it did.
+
+## Going over the limit
+
+Worth checking on any vendor before you commit, because it's never on the
+pricing page.
+
+Feasible emails you at 70%, 85% and 100% of the million. One month over costs
+nothing at all. Two consecutive complete months over gets you an email asking
+you to reply within 14 days, and only if nobody replies does the dashboard lock.
+Collection never stops, nothing is deleted, and export keeps working the whole
+time. There's no overage charge, because there's no overage tier in the billing
+code.
+
+## Moving over
+
+Feasible imports Google Analytics 4 over OAuth, and takes CSV and ZIP uploads
+for everything else — so a Simple Analytics export comes across as CSV.
+
+Both are one tag in your `<head>`, so run them side by side for a week before
+you cancel anything. Two tools counting the same traffic never agree exactly,
+and it's better to see that on your own site than read about it.
+
 ## Where Simple Analytics wins
 
 **EU hosting.** Their data stays in the Netherlands. Cloudmanic Labs is in

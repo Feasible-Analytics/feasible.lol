@@ -11,7 +11,7 @@ In the `<head>`, on every page you want counted.
 
 The tag carries `defer`, so it doesn't block rendering wherever you put it. Head or end of body both work. Head is the habit worth keeping, because it means the tag is present before a fast clicker can leave.
 
-On most sites there's one file that wraps every page — a layout, a template, a theme header — and that's where this goes. WordPress, Ghost, Astro, Next.js, Hugo and the rest all have one. Our [integrations](/integrations/) pages name the exact file for each.
+On most sites there's [one file](/docs/installation/) that wraps every page — a layout, a template, a theme header — and that's where this goes. WordPress, Ghost, Astro, Next.js, Hugo and the rest all have one. Our [integrations](/integrations/) pages name the exact file for each.
 
 Three things to get right:
 

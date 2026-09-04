@@ -7,7 +7,7 @@ weight: 50
 
 Event scope describes one hit. Session scope describes the whole visit.
 
-Every custom property in Feasible is one or the other, and you pick when you enable it. This looks like a detail and it isn't — **the scope decides the denominator of every conversion rate you read off that property.**
+Every [custom property](/features/custom-properties/) in Feasible is one or the other, and you pick when you enable it. This looks like a detail and it isn't — **the scope decides the denominator of every conversion rate you read off that property.**
 
 **Event scope** is for things that are true of a single action. The `plan` a purchase was on. The `search_term` on a search. The `url` of an outbound click. It varies hit to hit within one visit, and it should.
 

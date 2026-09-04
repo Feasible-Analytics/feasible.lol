@@ -1,5 +1,6 @@
 ---
 title: "One page, no menus, on purpose"
+slug: "one-page-no-menus-on-purpose"
 description: "Fifteen metrics, six tiles, one screen and no report builder. What we left out of the dashboard, and why leaving it out was the hard part."
 lede: "The dashboard is one screen because we decided it would be, and then spent the rest of the time defending that."
 date: 2026-08-31

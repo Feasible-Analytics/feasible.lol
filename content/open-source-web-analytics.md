@@ -2,22 +2,22 @@
 title: "Open source web analytics you can actually read"
 seotitle: "Open Source Web Analytics You Can Read and Self-Host"
 description: "Feasible is AGPL-3.0-or-later. Read the code, run the same build we run on a 512 MB box, or let us host it for $9.99 a month. Go and SQLite."
-lede: "The licence, the repo, what self-hosting actually takes, and an honest look at how the other open-source options are put together."
+lede: "The license, the repo, what self-hosting actually takes, and an honest look at how the other open-source options are put together."
 kicker: "OPEN SOURCE"
 weight: 50
 wide: true
 checked: 2026-09-03
 faq:
-  - q: "What licence is Feasible under?"
+  - q: "What license is Feasible under?"
     a: "AGPL-3.0-or-later, for the app and the browser tracker. You can run it, modify it and self-host it. If you offer it to others as a network service, you have to make your source available to those users."
   - q: "Is the self-hosted version cut down?"
-    a: "No. It's the same build. Set `FEASIBLE_APP_HOSTED=false` and every feature is free and unrestricted — the API, funnels, custom properties, webhooks, the MCP server, raw event export, teams. There's no Community Edition and no licence-key module."
+    a: "No. It's the same build. Set `FEASIBLE_APP_HOSTED=false` and every feature is free and unrestricted — the API, funnels, custom properties, webhooks, the MCP server, raw event export, teams. There's no Community Edition and no license-key module."
   - q: "What does it take to run?"
     a: "One binary and one directory of SQLite files. The floor is 1 CPU core, 512 MB of RAM and 1 GB of disk; 2 cores and 2 GB is comfortable. No Docker, no Postgres, no ClickHouse, no Redis, no queue."
   - q: "Does AGPL mean I have to open-source my website?"
-    a: "No. The licence concerns the analytics software, not the site you point it at. It asks you to publish source if you modify Feasible and then offer it to other people over a network."
-  - q: "Is Feasible's licence more permissive than Plausible's?"
-    a: "No. Both are AGPL-3.0-or-later — the same licence. Anyone claiming otherwise is wrong, and you can check it in thirty seconds by opening both LICENSE files."
+    a: "No. The license concerns the analytics software, not the site you point it at. It asks you to publish source if you modify Feasible and then offer it to other people over a network."
+  - q: "Is Feasible's license more permissive than Plausible's?"
+    a: "No. Both are AGPL-3.0-or-later — the same license. Anyone claiming otherwise is wrong, and you can check it in thirty seconds by opening both LICENSE files."
   - q: "Why pay $99 a year if I can run it for free?"
     a: "Because you'd rather not. Self-hosting means a box, backups, upgrades and being the person who gets paged. The hosted service is us doing that. Both get the same features."
 ---
@@ -26,9 +26,9 @@ Feasible is open source under **AGPL-3.0-or-later**, app and browser tracker
 alike. The code is at
 [github.com/Feasible-Analytics/app.feasible.lol](https://github.com/Feasible-Analytics/app.feasible.lol).
 
-We're not going to claim a freer licence than the well-known alternatives,
+We're not going to claim a freer license than the well-known alternatives,
 because we don't have one. Plausible's Community Edition is AGPL-3.0-or-later
-too. That's the same licence, and you can check it by opening both `LICENSE`
+too. That's the same license, and you can check it by opening both `LICENSE`
 files.
 
 What's actually different is what you get when you run it.
@@ -46,7 +46,7 @@ long-term release branch that lags the hosted one.
 
 **There is no directory in the repo you aren't allowed to compile.** No `ee/`, no
 `extra/`, no all-rights-reserved corner. Search the repo for `enterprise`,
-`license_key` or `premium` and you get nothing, because there's no licence-key
+`license_key` or `premium` and you get nothing, because there's no license-key
 module to find.
 
 **No feature is behind a higher tier.** There is one plan. The API package
@@ -60,13 +60,13 @@ every plan and every build: one ZIP with ten roll-up CSVs plus the raw events.
 Read on 2026-09-03 by opening the `LICENSE` file in each repository, not by
 trusting a badge.
 
-| Tool | Licence | Self-host | The thing worth knowing |
+| Tool | License | Self-host | The thing worth knowing |
 |---|---|---|---|
 | **Feasible** | AGPL-3.0-or-later | Yes | Same build we host. No carve-out directory |
 | [Plausible](https://github.com/plausible/analytics/blob/master/LICENSE.md) | AGPL-3.0-or-later, except `extra/` | Yes, as Community Edition | `extra/` grants no rights and holds funnels, SSO, consolidated view and the Sites API. CE is a twice-yearly release. Sites and seats are unlimited in CE, and the Stats API **is** included |
 | [Matomo](https://github.com/matomo-org/matomo/blob/master/LICENSE) | GPL-3.0-or-later | Yes | GPL, not AGPL — no network-source clause. Premium plugins such as Funnels are proprietary under InnoCraft's EULA |
 | [Umami](https://github.com/umami-software/umami/blob/master/LICENSE) | MIT | Yes | **More permissive than ours**, and MIT since 2020. Their FAQ says Cloud has email reports and a streaming API the self-hosted build doesn't |
-| [PostHog](https://github.com/PostHog/posthog/blob/master/LICENSE) | MIT, except `ee/` | Yes | `ee/` needs an enterprise licence to run in production |
+| [PostHog](https://github.com/PostHog/posthog/blob/master/LICENSE) | MIT, except `ee/` | Yes | `ee/` needs an enterprise license to run in production |
 | [GoatCounter](https://github.com/arp242/goatcounter/blob/master/LICENSE) | EUPL-1.2 (modified) | Yes | Small, careful, philosophically close to us |
 | [Counter.dev](https://github.com/ihucos/counter.dev) | AGPL-3.0 | Yes | Tiny project, pay-what-you-want hosting |
 | [Fathom](https://github.com/usefathom/fathom) | Closed. "Fathom Lite" is MIT | Lite only | Lite isn't archived, but no code change since January 2023 |
@@ -83,7 +83,7 @@ Edition compile path. That's a normal open-core arrangement — PostHog and Mato
 do versions of the same thing — but it's the difference between their
 self-hosted build and ours.
 
-And Umami's MIT licence really is more permissive than our AGPL. If licence
+And Umami's MIT license really is more permissive than our AGPL. If license
 permissiveness is your first criterion, they win that row. We think "what's
 actually in the build" matters more, but that's an opinion and you're entitled
 to a different one.

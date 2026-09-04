@@ -23,4 +23,4 @@ If your app uses hash routing — `/#/settings` — add `data-hash="true"` to th
 
 If you'd rather drive it yourself, `data-manual="true"` suppresses the automatic pageview and the history listeners, and you call `feasible('pageview')` where you want it. Most people shouldn't; the automatic behaviour is right far more often than hand-rolled routing hooks are.
 
-Framework-specific instructions live in [integrations](/integrations/), and every attribute is listed in the [docs](/docs/).
+Framework-specific instructions live in [integrations](/integrations/), and every attribute is listed in the [script options](/docs/script-options/).

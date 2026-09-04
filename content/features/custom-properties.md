@@ -54,7 +54,7 @@ page.
 ## What's missing is a row, not a hole
 
 Break your traffic down by `plan` and some events won't carry it. Those land in
-a labelled `(none)` bucket instead of quietly disappearing.
+a labeled `(none)` bucket instead of quietly disappearing.
 
 It's a small thing that changes how much you trust the report. The column adds
 up to your actual total, so when 40% of your signups have no plan attached you

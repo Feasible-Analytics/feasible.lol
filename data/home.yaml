@@ -27,9 +27,10 @@ dashboard_notes:
 pillars:
   - title: "Unlimited, actually"
     body: >-
-      Unlimited websites. Unlimited people on your team. Unlimited custom
-      events, goals, funnels and properties. The only number we count is
-      pageviews, and you get a million a month.
+      Unlimited websites. Unlimited people on your team. Unlimited goals,
+      funnels and custom properties. We count pageviews and custom events —
+      a million a month between them — and nothing else. Not properties, not
+      sites, not seats.
 
   - title: "No cookies. No banner."
     body: >-
@@ -63,8 +64,8 @@ pillars:
 plan:
   - "Unlimited websites"
   - "Unlimited team members"
-  - "1,000,000 pageviews a month"
-  - "Unlimited events, goals and funnels"
+  - "1,000,000 pageviews and events a month"
+  - "Unlimited properties, goals and funnels"
   - "5 years of data retention"
   - "Full API, webhooks and data export"
   - "Email and Slack reports"
@@ -73,10 +74,11 @@ plan:
 objections:
   - q: "Will I lose my history?"
     a: >-
-      No. Import a Google Analytics 4 property over OAuth, or upload a folder of
-      CSVs, and the old numbers sit on the same charts as the new ones.
+      No. Export your old reports as CSV and upload the folder — pages, sources,
+      locations, devices and browsers all land on the same charts as the new
+      numbers.
 
-  - q: "Is a million pageviews really the limit?"
+  - q: "Is a million really the limit?"
     a: >-
       It's the limit of this plan, and about 99% of sites never reach it. Go
       over and we email you — nothing switches off mid-month.

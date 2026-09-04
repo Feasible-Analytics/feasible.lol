@@ -67,7 +67,8 @@ Eleven of them, all working:
 
 - `list_sites` — the sites this credential can read, with the time zone each one's days are counted
   in.
-- `query_stats` — the full query surface: metrics, dimensions, filters, sorting, pagination.
+- `query_stats` — the full query surface: [metrics, dimensions, filters](/docs/api/#reading-numbers-back),
+  sorting and pagination.
 - `get_realtime_visitors` — who's on the site now.
 - `compare_periods` — a period and the one before it, with the change. It's its own tool because both
   windows have to be resolved against one clock; two separate calls near midnight compare the wrong
@@ -75,8 +76,8 @@ Eleven of them, all working:
 - `explain_traffic_change` — breaks a movement in visitors, visits, pageviews or events down by
   source, channel, campaign, page, country, device, browser and operating system, so the answer is
   "paid social fell by a third" rather than "traffic is down".
-- `list_goals`, `create_goal` — read and create conversions, including revenue goals and property
-  constraints.
+- `list_goals`, `create_goal` — read and create [conversions](/docs/goals-funnels/), including revenue
+  goals and property constraints.
 - `list_funnels`, `get_funnel` — the saved funnels, and one funnel's per-step numbers.
 - `create_site`, `update_site` — register a site and get its snippet; change a domain, name, time
   zone or public setting.

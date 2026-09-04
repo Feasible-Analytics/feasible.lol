@@ -152,6 +152,41 @@ Fathom 2,092 bytes, Feasible 3,377. They win it.
 traffic spike. Neither do we — we email you, and nothing stops mid-month. We're
 not claiming an edge here; both approaches are humane.
 
+## The thing neither of you can see on a pricing page
+
+Every analytics tool drops traffic. Bots, scrapers, datacenter addresses,
+browsers too old to trust, requests from a hostname you never registered. That's
+correct behavior — you don't want a crawler in your visitor count.
+
+The question is whether you can find out.
+
+Feasible has a health screen for every site that counts the last 24 hours of
+dropped events and gives each one a named reason: `bot`, `datacenter_ip`,
+`referrer_spam`, `outdated_browser`, `automation`, `hostname_not_allowed`,
+`shield_ip`, `rate_limited`, and a dozen more. It tells you which address it
+resolved for your last request and from which header. It warns you if your
+reverse proxy isn't forwarding visitor addresses — the failure that quietly
+collapses every visitor into one and geolocates them all to your datacenter. And
+there's a button that fires a real test event through the public URL, so it
+exercises your proxy and headers exactly the way a browser would.
+
+Nobody else in this comparison publishes a counted, reasoned drop log. It's the
+difference between "the numbers look low this week" and "347 events were
+rejected because `staging.example.com` isn't on your hostname list, here's the
+button to allow it."
+
+## Moving over
+
+Feasible imports from Google Analytics 4 over OAuth, and takes CSV and ZIP
+uploads for everything else. There's no Fathom-specific importer — export your
+data from Fathom and bring it as CSV.
+
+Both scripts are a single tag in your `<head>`, so you can run them side by side
+for a week and compare the numbers before you cancel anything. We'd recommend
+it. Two tools counting the same traffic will never agree exactly — different bot
+filters, different session rules — and it's better to see that gap on your own
+site than to read about it.
+
 ## Where we'd tell you to pick us
 
 You're small and you don't want to pay a 100,000-pageview minimum. You're large

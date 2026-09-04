@@ -3,6 +3,7 @@ title: "How does Feasible handle CCPA?"
 description: "There's nothing to sell, share or opt out of. No cookies, no profiles, no cross-context advertising, no data leaving for anyone else's benefit."
 category: "privacy-and-the-law"
 weight: 90
+updated: 2026-09-03
 ---
 
 The CCPA questions mostly don't attach to us, because the things it regulates aren't happening.

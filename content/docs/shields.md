@@ -8,6 +8,9 @@ weight: 90
 Two settings decide what gets counted and what it's called. They live at
 `/settings/sites/<your domain>/shields` and `/settings/sites/<your domain>/paths`.
 
+If traffic you *do* want is missing rather than traffic you don't, start at
+[installation](/docs/installation/#if-nothing-arrives-at-all) instead.
+
 ## Shields — traffic you don't want counted
 
 ### Blocked addresses
@@ -58,7 +61,7 @@ happen in different places, which matters if you're testing a rule with `curl`:
   like an accepted one; the event simply doesn't arrive in your reports.
 
 Either way, the drop is on the ingestion health panel at `/settings/sites/<your domain>/health`, with
-its reason.
+its reason. Every reason is from a closed set — the list is on [the APIs](/docs/api/#why-it-always-answers-202).
 
 A change takes effect within about fifteen seconds, and saving from this screen pushes it
 immediately.

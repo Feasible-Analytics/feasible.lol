@@ -61,10 +61,14 @@ disableKinds = ["taxonomy", "term"]
         block = true
         title = true
   [markup.highlight]
-    noClasses = false
-    style = "github"
+    # Colors are inlined rather than emitted as classes, so there is no second
+    # stylesheet to keep in step with the theme. github-dark reads correctly on
+    # the dark background .copy pre sets.
+    noClasses = true
+    style = "github-dark"
     lineNos = false
     tabWidth = 2
+    wrapperClass = "highlight"
   [markup.tableOfContents]
     startLevel = 2
     endLevel = 3

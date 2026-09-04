@@ -188,7 +188,7 @@ company has no exposure to any of it either way.
 | Consent banner | Not needed for most sites | Yes, in the EU/UK |
 | Event-level retention | 5 years | 2 or 14 months (standard properties) |
 | Report thresholding | None | System defined, can't be turned off |
-| Sampling | Disclosed and labelled when it happens | Possible in Reports and Explorations |
+| Sampling | Disclosed and labeled when it happens | Possible in Reports and Explorations |
 | Raw data export | ZIP of raw events, any plan | BigQuery export |
 | Dropped events | Counted, with a named reason | Not surfaced |
 | Data goes to | Us, and nobody else | Google |
@@ -210,7 +210,7 @@ can replicate. If you spend meaningful money on Google traffic, GA4 is part of
 your ad tooling, not just your reporting.
 
 BigQuery export gives you every raw event, unsampled, for free, and lets you
-join web behaviour to your own warehouse. That is more than we offer.
+join web behavior to your own warehouse. That is more than we offer.
 
 It has cohort and retention analysis, mobile SDKs, audience building and
 cross-device modelling. We have none of those, and no plans we're announcing.
@@ -232,7 +232,7 @@ on it, and neither should you.
 
 The claim is narrower and easier to check. GA4 asks you to load 148 KB, show a
 banner, accept a 14-month wall on the analysis you care about, live with rows
-you can't see and can't unhide, and send your visitors' behaviour to a company
+you can't see and can't unhide, and send your visitors' behavior to a company
 whose business is advertising. Feasible asks for 3,377 bytes and $99 a year.
 
 If you're moving, we import GA4 over OAuth so your history comes with you — see

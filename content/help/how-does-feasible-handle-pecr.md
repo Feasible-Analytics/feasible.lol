@@ -3,6 +3,7 @@ title: "How does Feasible handle PECR?"
 description: "PECR is about storing and reading information on a device. We store no cookie and no identifier — plus the UK's new statutory analytics exemption."
 category: "privacy-and-the-law"
 weight: 100
+updated: 2026-09-03
 ---
 
 PECR is about what you put on somebody's device, and we don't put an identifier there.

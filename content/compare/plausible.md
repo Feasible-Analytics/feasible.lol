@@ -22,7 +22,7 @@ faq:
       all three included.
   - q: "Is Feasible more permissively licensed than Plausible?"
     a: >-
-      No. Both are AGPL-3.0-or-later — the same licence. The difference is
+      No. Both are AGPL-3.0-or-later — the same license. The difference is
       narrower: Plausible's repository has an `extra/` directory whose own
       COPYING.txt grants no rights to use or distribute the code in it, and the
       Community Edition build excludes it. Feasible has no such directory.
@@ -142,16 +142,16 @@ real, and it's the kind of thing you only find out about in month three.
 | Session replay, heatmaps, A/B tests | No | No |
 | Cohort / retention report | No | No |
 | Mobile SDKs | No | No |
-| Licence | AGPL-3.0-or-later | AGPL-3.0-or-later |
+| License | AGPL-3.0-or-later | AGPL-3.0-or-later |
 | Trial | 30 days, no card | 30 days, no card |
 
 ## The open-source part, precisely
 
-Both products are under the same licence: **AGPL-3.0-or-later**. Anyone telling
+Both products are under the same license: **AGPL-3.0-or-later**. Anyone telling
 you one of us is more permissively licensed than the other is wrong, and you can
 check it by opening two LICENSE files.
 
-The difference is narrower than a licence name and easier to verify. Plausible's
+The difference is narrower than a license name and easier to verify. Plausible's
 repository contains an `extra/` directory with its own
 [COPYING.txt](https://github.com/plausible/analytics/blob/master/extra/COPYING.txt),
 which says the code there is "provided for informational purposes only, and no
@@ -161,7 +161,7 @@ API, and the build excludes it from Community Edition.
 
 That's a completely normal open-core arrangement. Matomo and PostHog do the same
 thing. Feasible just doesn't have one — there's no `extra/`, no `ee/`, no
-licence-key check, no folder you're not allowed to compile. The thing we host is
+license-key check, no folder you're not allowed to compile. The thing we host is
 the thing you can run.
 
 Two more differences that follow from that, both from

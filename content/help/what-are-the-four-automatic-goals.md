@@ -22,6 +22,6 @@ feasible('404')
 
 Because these goals are created with the site, they've been counting since day one — which makes them the one exception to [goals not backfilling](/help/why-doesnt-my-goal-show-past-conversions/).
 
-You can rename them, delete them, or add property constraints, same as any goal. Two small things: you can force a link to count as a download by putting `download` on the `<a>`, and you can replace the recognised extension list with `data-file-types` on the script tag.
+You can rename them, delete them, or add property constraints, same as [any goal](/help/how-do-i-track-a-signup/). Two small things: you can force a link to count as a download by putting `download` on the `<a>`, and you can replace the recognised extension list with `data-file-types` on the script tag.
 
 Conversions show up in the **Goals** tab of the Behaviour card. Click a row to filter the whole dashboard by it.

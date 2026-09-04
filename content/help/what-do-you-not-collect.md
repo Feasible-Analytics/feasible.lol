@@ -5,7 +5,7 @@ category: "privacy-and-the-law"
 weight: 40
 ---
 
-The list that matters more than the other one.
+The list that matters more than [the other one](/features/privacy/).
 
 **No cookies.** None. Not for measurement, not for "functionality".
 

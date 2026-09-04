@@ -19,14 +19,14 @@ is a clever engineering result. It's what you get when the job is "add one to a
 number" and nobody has built a cluster to do it.
 
 Counting pageviews is cheap. It has always been cheap, and it got cheaper every year
-for twenty years while the price went the other way.
+for twenty years.
 
 ## What that costs to buy
 
 Here is what a million pageviews a month costs, per year, on the vendors' own
 published pricing pages, checked September 3, 2026:
 
-| | |
+| Plan | A year |
 |---|---|
 | [Umami Cloud — Pro](https://umami.is/pricing) | $240 |
 | [Pirsch — Standard](https://pirsch.io/pricing) | $540 |
@@ -40,9 +40,9 @@ properties, funnels and the Stats API, which is why it's the row that compares. 
 [full ladder is here](/compare/pricing/), with every figure linked to the page it
 came from.
 
-So: a 294 MB file on a server you could rent for the price of a sandwich, and the
-sticker runs from $240 to $2,040 a year. Somewhere between the storage and the
-invoice, three orders of magnitude went missing.
+So: a 294 MB file, on a server that rents for about $4 a month, and a sticker price
+that runs from $240 to $2,040 a year. The hardware got cheaper every year for two
+decades. The invoice went the other way.
 
 ## The part where we're fair
 

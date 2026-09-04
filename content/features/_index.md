@@ -1,6 +1,6 @@
 ---
 title: "Features"
-description: "Everything Feasible does — the one-page dashboard, goals, funnels, custom properties, revenue, teams, reports, the API, and the panel that tells you when data stops arriving."
+description: "Everything Feasible does: the one-page dashboard, goals, funnels, custom properties, revenue, teams, reports, the API, and a panel for when data stops."
 lede: "One plan, every feature. Nothing here is held back for a bigger tier and nothing is an add-on."
 ---
 

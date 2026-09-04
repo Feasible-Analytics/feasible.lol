@@ -1,18 +1,41 @@
 ---
 title: "Feasible vs Umami"
-seotitle: "Feasible vs Umami — Price, Event Counting, Licence"
+seotitle: "Feasible vs Umami — Price, Event Counting, License"
 description: "Umami is MIT-licensed and has a free tier — both genuinely better than ours. It also counts every stored event property as an event. Compared, honestly."
-lede: "Umami's licence is more permissive than ours and its free tier is real. Its meter counts every stored event property. Both of those are worth knowing."
+lede: "Umami's license is more permissive than ours and its free tier is real. Its meter counts every stored event property. Both of those are worth knowing."
 versus: "Umami"
 checked: 2026-09-03
 weight: 60
 verdict: |
-  If you're self-hosting and the licence matters to you, take Umami — MIT is
+  If you're self-hosting and the license matters to you, take Umami — MIT is
   more permissive than our AGPL and that isn't a close call. If you want a free
   tier for a hobby site, take Umami. If you're paying, want annual billing, more
   than two years of history, more than ten seats, or a limit that doesn't grow
   every time you attach a property to an event, we're the better deal at $99
   against $240.
+faq:
+  - q: "Is Umami's license more permissive than Feasible's?"
+    a: >-
+      Yes. Umami is MIT-licensed and has been since 2020. Feasible is
+      AGPL-3.0-or-later, which adds a network clause MIT doesn't have. If
+      license permissiveness is your deciding factor, Umami wins it outright.
+  - q: "How does Umami count events?"
+    a: >-
+      Their FAQ says usage counts pageviews plus custom events plus custom event
+      properties stored, and that "each data property stored counts as one
+      event." So one event carrying five properties is six events against your
+      limit. Feasible counts pageviews only.
+  - q: "How much does Umami cost per year?"
+    a: >-
+      Pro is $20 a month, and Umami has no annual billing — their FAQ says
+      billing is monthly — so it's $240 a year. Business is $200 a month, or
+      $2,400 a year. Feasible is $99 a year, or $9.99 a month.
+  - q: "Is the self-hosted Umami build the same as Umami Cloud?"
+    a: >-
+      Not quite. Their own FAQ says Cloud includes email reports and the
+      streaming API that "are not available in the self-hosted version."
+      Feasible's self-hosted build is the same build we host, with every feature
+      in it.
 ---
 
 Start with the two things Umami does better, because they're not small.
@@ -20,7 +43,7 @@ Start with the two things Umami does better, because they're not small.
 **Umami is MIT-licensed.** The whole repository, since 2020. Feasible is
 AGPL-3.0-or-later. MIT is more permissive than AGPL — you can modify Umami, run
 it as a service for other people and keep your changes to yourself, and our
-licence says you can't. If licence permissiveness is what you're optimising for,
+license says you can't. If license permissiveness is what you're optimizing for,
 this comparison is already over and Umami won it.
 
 **Umami has a free tier.** Hobby is $0, one website, 100,000 events a month, six
@@ -100,7 +123,7 @@ analytics never costs more.
 | MCP server | Built in | Not published |
 | Dropped-event log with reasons | Yes | No |
 | Data location | United States | United States and EU |
-| Licence | AGPL-3.0-or-later | **MIT** |
+| License | AGPL-3.0-or-later | **MIT** |
 | Self-hosted = hosted build | Yes | No — see below |
 | Trial | 30 days, no card | 14 days |
 
@@ -121,10 +144,30 @@ The difference that does matter is what's in the build. From
 > API that are **not available in the self-hosted version**."
 
 Feasible's self-hosted build is the build we host. Every feature, every release,
-no licence key, no cut-down edition, and no directory in the repo you're not
+no license key, no cut-down edition, and no directory in the repo you're not
 allowed to compile. Set `FEASIBLE_APP_HOSTED=false` and everything works —
 funnels, custom properties, the API, webhooks, MCP, raw export, teams. See
 [open source](/open-source/) for what that does and doesn't promise.
+
+## Knowing when data goes missing
+
+Every analytics tool drops traffic — bots, scrapers, datacenter addresses,
+browsers too old to trust, requests from hostnames that aren't yours. Correct
+behavior. The question is whether you find out.
+
+Feasible has a health screen per site: the last 24 hours of accepted and dropped
+events, each drop labeled with a reason — `bot`, `datacenter_ip`,
+`referrer_spam`, `outdated_browser`, `automation`, `hostname_not_allowed`,
+`shield_ip`, `rate_limited` and more. It reports which client address it resolved
+for your last request and from which header. It warns you when your reverse
+proxy isn't forwarding visitor addresses, which is the failure that collapses
+every visitor into one and puts your whole audience in your datacenter's city.
+And there's a button that sends a real test event through the public URL, so it
+exercises the proxy and the headers exactly as a browser would.
+
+We think that's the most useful thing in the product, and it's the one place
+where "we never fail silently" is a feature you can point at rather than a
+slogan.
 
 ## The script
 
@@ -134,7 +177,7 @@ either one — the number that matters in this category is Google's 148,451.
 
 ## Where Umami wins
 
-The MIT licence, plainly. A free tier we don't have. Session replay and heatmaps
+The MIT license, plainly. A free tier we don't have. Session replay and heatmaps
 on their Business plan, neither of which we offer at any price. A smaller
 script. A much bigger GitHub community and more years in the wild.
 

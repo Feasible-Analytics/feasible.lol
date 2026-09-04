@@ -3,6 +3,7 @@ title: "Where is my data stored?"
 description: "In the United States. Cloudmanic Labs is in Newberg, Oregon, and we don't offer an EU region. Here's how transfers are covered."
 category: "privacy-and-the-law"
 weight: 70
+updated: 2026-09-03
 ---
 
 In the United States.

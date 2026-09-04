@@ -3,6 +3,7 @@ title: "Do I need a cookie banner?"
 description: "Most sites won't need one for Feasible. We set no cookies and store no identifier on the visitor's device. Here's the honest, qualified version."
 category: "privacy-and-the-law"
 weight: 10
+updated: 2026-09-03
 ---
 
 Most sites won't need a consent banner for Feasible.
@@ -17,4 +18,4 @@ The script does write one short-lived key to `localStorage`: a retry queue holdi
 
 The UK now has a real statutory exemption for first-party analytics — PECR Schedule A1, paragraph 5, in force since February 5, 2026. It's genuine, and it has conditions: you have to give visitors clear information about the measurement and a simple, free way to opt out.
 
-**None of this is legal advice.** We're an analytics company, not your lawyer. If you're in a strict jurisdiction, in a regulated sector, or running other trackers alongside us — ads, session recording, a chat widget — check with somebody who is. And if you still keep a banner, [our consent gate](/docs/) will hold events until you say go.
+**None of this is legal advice.** We're an analytics company, not your lawyer. If you're in a strict jurisdiction, in a regulated sector, or running other trackers alongside us — ads, session recording, a chat widget — check with somebody who is. And if you still keep a banner, [our consent gate](/docs/script-options/) will hold events until you say go.

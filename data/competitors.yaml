@@ -59,7 +59,7 @@ plans:
     plan: ""
     us: true
     tiers: ["$99", "$99", "$99", "Talk to us", "Talk to us"]
-    unit: "pageviews — events and properties are unlimited and never counted"
+    unit: "pageviews + custom events — custom properties, goals, funnels, sites and seats are never counted"
     sites: "Unlimited"
     seats: "Unlimited"
     retention: "5 years"

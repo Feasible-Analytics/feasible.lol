@@ -3,6 +3,7 @@ title: "Why is my traffic lower than Google Analytics said?"
 description: "Usually four reasons: different bot filtering, different definitions, different blocking, and GA4's own thresholds. Here's how to check each."
 category: "reports"
 weight: 80
+checked: 2026-09-03
 ---
 
 Four reasons, and you can check three of them in about ten minutes.

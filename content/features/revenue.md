@@ -1,6 +1,6 @@
 ---
 title: "Revenue tracking"
-description: "Attach an amount and a currency to any goal. Feasible credits the money to the source that started the visit, so your payment provider never becomes your best channel."
+description: "Attach an amount and a currency to any goal. Feasible credits the money to the source that started the visit, not to your payment provider."
 lede: "Put money on a goal, and see which channel actually earned it."
 weight: 50
 note: |
@@ -71,7 +71,7 @@ to a spreadsheet.
 You don't get an ecommerce suite. There are no product events, no cart events,
 no line items, no average-order-value report built out of them. Feasible takes
 an amount and a currency and treats it as a number attached to a conversion.
-If you need per-SKU merchandising analysis, your store platform already does
+If you need per-SKU merchandising analysis, your store already does
 that better than a privacy-preserving analytics tool ever will, and it has the
 order data to do it with.
 

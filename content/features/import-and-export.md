@@ -1,6 +1,6 @@
 ---
 title: "Import your history, export everything"
-description: "Bring history in from Google Analytics 4 over OAuth or from CSV, and take everything out as one ZIP — ten roll-up sheets plus every raw event. Not a paid add-on."
+description: "Bring history in from Google Analytics 4 or CSV, and take everything out as one ZIP — ten roll-up sheets plus every raw event. Not a paid add-on."
 lede: "Your history comes with you, and so does everything you collect here."
 weight: 100
 note: |
@@ -53,7 +53,7 @@ Imported data arrives as roll-up rows carrying the full dimension block **plus a
 record of which dimensions the source actually reported**. So when you filter to
 Germany, imported traffic narrows exactly like native traffic. And when you
 filter by something the source never provided — screen size, say, from a tool
-that didn't export it — that period is reported as a labelled gap rather than
+that didn't export it — that period is reported as a labeled gap rather than
 silently rendering as zero.
 
 The difference matters when somebody looks at a two-year chart. A gap says "we

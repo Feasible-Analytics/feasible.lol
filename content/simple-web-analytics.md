@@ -5,6 +5,17 @@ description: "Every number you need on one screen. No reports to build, no explo
 lede: "One page. Six numbers across the top, a graph, four cards. That's the whole product, and leaving things out was the hard part."
 kicker: "SIMPLE"
 weight: 40
+faq:
+  - q: "What is simple web analytics?"
+    a: "Analytics you can read without training. One page that already shows visitors, pageviews, top pages, sources, countries and devices — no report to build, no query to write, no menu tree to learn first."
+  - q: "Why is Google Analytics 4 so complicated?"
+    a: "Because it's built for analysts. Everything in GA4 is an event, and the analysis most people want lives in Explorations — a canvas you assemble yourself out of dimensions and metrics. That's a real capability if analysis is your job, and a homework assignment if it isn't."
+  - q: "What numbers does Feasible show?"
+    a: "Fifteen metrics: visitors, visits, pageviews, events, bounce rate, visit duration, views per visit, time on page, scroll depth, exit rate, conversion rate, group conversion rate, total revenue, average revenue and revenue per visitor. Six of them sit across the top of the dashboard and all six are graphable with a click."
+  - q: "Is there a simple analytics tool that doesn't need a cookie banner?"
+    a: "Feasible sets no cookies and stores no identifier, so most sites running it won't need a banner for analytics. That isn't a legal guarantee — check what else your site loads, and check with your own lawyer if you're somewhere strict."
+  - q: "How long does it take to set up?"
+    a: "One script tag in your head, and data appears within seconds. Goals, funnels and traffic exclusions are optional and take about twenty minutes if you want them."
 ---
 
 Simple web analytics means you open one page and the numbers are already there.
@@ -69,6 +80,18 @@ went before and after a page.
 Click any row in any card and it becomes a filter. Filters live in the URL as
 readable parameters, so a filtered view is a link you can send someone. Escape
 clears them all.
+
+Want more than a card shows? Click its title and a drawer slides in from the
+right with a hundred rows a page, a search box, sortable columns for visitors,
+visits, views, bounce rate and average visit, and a **break down by** menu — top
+pages by country, sources by device, that sort of thing. It's the one place the
+product goes deeper, and it's one click from where you already were rather than a
+report you have to construct.
+
+Six filter operators exist and that's the whole set: is, is not, contains, does
+not contain, matches regex, does not match regex. Repeated filters combine with
+AND; multiple values inside one filter combine with OR. There is nothing else to
+learn.
 
 That's the product. Thirteen date-range presets with single-key shortcuts, a
 comparison toggle for previous period or year over year, light and dark themes,

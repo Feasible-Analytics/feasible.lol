@@ -3,6 +3,7 @@ title: "Is Feasible GDPR compliant?"
 description: "We're built to make GDPR easy: no cookies, no raw IP on disk, a DPA already in the terms. But nobody can hand you compliance."
 category: "privacy-and-the-law"
 weight: 20
+updated: 2026-09-03
 ---
 
 Nobody can sell you compliance, and we won't pretend to.

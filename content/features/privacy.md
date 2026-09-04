@@ -1,6 +1,6 @@
 ---
 title: "No cookies, no consent banner"
-description: "Feasible sets no cookies on your visitors and the raw IP address never reaches disk. Most sites don't need a consent banner to run it. Here's exactly what we store."
+description: "Feasible sets no cookies and the raw IP address never reaches disk. Most sites won't need a consent banner to run it. Here's exactly what we store."
 lede: "No cookie, no device identifier, no IP address on disk. Here's the whole derivation, so you can check it."
 weight: 20
 note: |
@@ -32,7 +32,7 @@ Geolocation is a DB-IP Lite database read from local disk. Country, first- and
 second-level region, English city name, and nothing finer. There is no network
 call per pageview, ever, so no third party learns that your reader exists. A
 missing database degrades to "unknown" rather than failing. Commercial VPN exits
-are bucketed as `Anonymous VPN Service` instead of being dropped or labelled
+are bucketed as `Anonymous VPN Service` instead of being dropped or labeled
 with the datacenter's country.
 
 The same instinct runs through the app. Source favicons on the dashboard are
@@ -91,7 +91,7 @@ covers transfers with standard contractual clauses plus the UK addendum. It also
 says plainly that you must not send us direct identifiers — don't put an email
 address in a [custom property](/features/custom-properties/).
 
-## Bot traffic gets labelled, not deleted
+## Bot traffic gets labeled, not deleted
 
 When Feasible decides a hit came from a crawler, a datacenter, an automated
 browser or a known referrer-spam domain, the event is still stored with the

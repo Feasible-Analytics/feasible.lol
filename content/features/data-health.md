@@ -1,6 +1,6 @@
 ---
 title: "The data health panel"
-description: "Every event Feasible didn't count in the last 24 hours, with a named reason. Plus the last request we received, a proxy warning, and a test-event button that uses the real endpoint."
+description: "Every event Feasible didn't count in the last 24 hours, with a named reason — plus the last request we received and a real test-event button."
 lede: "A screen that tells you what didn't get counted, and why. Never fail silently is the rule the whole product is built to."
 weight: 80
 shot: "app/health.png"
@@ -20,7 +20,7 @@ Under them, every drop with a named reason. Not "other" — a reason, from a
 closed list: `bot`, `datacenter_ip`, `referrer_spam`, `outdated_browser`,
 `automation`, `hostname_not_allowed`, `unknown_site`, `shield_ip`,
 `shield_country`, `shield_page`, `rate_limited`, `invalid_payload`, and a
-handful more. There is no bucket labelled miscellaneous, because a
+handful more. There is no bucket labeled miscellaneous, because a
 miscellaneous bucket is where the bug you're looking for goes to hide.
 
 ## The last request we received

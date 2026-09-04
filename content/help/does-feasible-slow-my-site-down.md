@@ -7,7 +7,7 @@ weight: 20
 
 Not by any amount you could measure.
 
-Four reasons, all structural rather than promises.
+Four reasons, all [structural](/features/speed/) rather than promises.
 
 **The tag is deferred.** It never blocks parsing or rendering, wherever you put it. Nothing on your page waits for us.
 

@@ -1,12 +1,12 @@
 ---
 title: "Why it's fast and small"
-description: "A 3,377-byte tracking script, reports built from roll-ups that answer in 81 to 111 ms, about 210 bytes stored per event, and one binary that runs on 512 MB of RAM."
+description: "A 3,377-byte tracking script, reports that answer in 81 to 111 ms, about 210 bytes stored per event, and one binary that runs on 512 MB of RAM."
 lede: "A 3,377-byte script on your pages, and reports that come back before you've finished looking at the screen."
 weight: 120
 checked: 2026-09-03
 note: |
   Above roughly ten million estimated row reads, a query can come back as a
-  labelled sample with a button to demand the exact number. And a filtered report
+  labeled sample with a button to demand the exact number. And a filtered report
   that has to touch raw rows still scans every session in the range — a heavily
   filtered all-time query is the slow case, and we know it.
 ---

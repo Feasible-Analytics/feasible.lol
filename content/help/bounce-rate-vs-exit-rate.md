@@ -7,7 +7,7 @@ weight: 20
 
 Bounce rate counts visits. Exit rate counts page views. The denominators are different, and that's the whole difference.
 
-**Bounce rate**: of the visits that *started* on this page, how many ended there without a second pageview.
+**[Bounce rate](/help/what-is-bounce-rate/)**: of the visits that *started* on this page, how many ended there without a second pageview.
 
 **Exit rate**: of everyone who *viewed* this page at any point in their visit, how many left the site from it.
 

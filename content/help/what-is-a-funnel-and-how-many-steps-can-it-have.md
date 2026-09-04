@@ -7,7 +7,7 @@ weight: 40
 
 An ordered sequence of goals, showing how many people made it to each step and how many fell out between.
 
-**Two steps minimum, eight maximum.** Every step is a goal you've already created, so build the goals first.
+**Two steps minimum, eight maximum.** Every step is a [goal](/features/goals-and-funnels/) you've already created, so build the goals first.
 
 A signup funnel usually looks like this:
 

@@ -83,8 +83,8 @@ pageview that never gets called is data nothing can recover.
 Expose the same function under a second name on `window`, for a site that already has its own
 `feasible` global or a house convention to follow.
 
-The tracker always installs `window.plausible` as a built-in migration alias, so existing calls keep
-working without this attribute.
+The tracker always installs `window.plausible` as a second name for the same function, so a site
+arriving with existing calls under that name keeps working without this attribute.
 
 ### data-capture-on-localhost
 
@@ -198,9 +198,9 @@ Put a class on the element. The script looks at the clicked element and up to th
 property. A class attribute can't hold a space, so `+` decodes as one:
 `feasible-event-name=Article+Saved` sends `Article Saved`.
 
-Existing `plausible-event-…` classes are read too, so a site moving over can leave them in place.
-Both the `=` form and the site-builder-friendly `--` separator are accepted, including event
-properties and tagged forms.
+Classes spelled `plausible-event-…` are read the same way, so a site arriving with those already in
+its markup can leave them alone. Both the `=` form and the site-builder-friendly `--` separator are
+accepted, including event properties and tagged forms.
 
 ## Calling it yourself
 
@@ -211,8 +211,8 @@ feasible('Heartbeat', { interactive: false })
 feasible('pageview', { u: '/checkout/step-2' })
 ```
 
-`plausible(…)` is an alias of `feasible(…)`. Queued calls made before the tracker loads are replayed
-through either name.
+`plausible(…)` is a second name for `feasible(…)`. Queued calls made before the tracker loads are
+replayed through either name.
 
 Two details that cost people an afternoon:
 

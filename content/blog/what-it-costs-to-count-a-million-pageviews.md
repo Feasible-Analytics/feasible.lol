@@ -1,5 +1,6 @@
 ---
 title: "What it costs to count a million pageviews"
+slug: "what-it-costs-to-count-a-million-pageviews"
 description: "A million pageviews a month is a 294 MB file and a $4 server. Here's the measured arithmetic, and the published price lists next to it."
 lede: "We measured what a million pageviews a month actually asks of a machine, then priced the machine. Then we put the invoices next to it."
 date: 2026-08-21
