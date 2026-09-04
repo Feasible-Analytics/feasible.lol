@@ -1,7 +1,7 @@
 ---
 title: "Sub-processors"
 description: "Every company that touches data on the hosted Feasible service, what each one does, and where it processes."
-lede: "Three companies touch your data. Here's what each one does, and where."
+lede: "Four companies touch your data. Here's what each one does, and where."
 toc: true
 nocta: true
 updated: 2026-09-03
@@ -29,6 +29,7 @@ sub-processors, not ours.
 | **DigitalOcean, LLC** | Runs the servers and the storage the service lives on | United States | Everything the service stores: your account, your sites, and the pseudonymous event data |
 | **Amazon Web Services, Inc.** (Simple Email Service) | Sends the mail we send you — verification, password resets, login notices, your weekly and monthly reports, and traffic alerts | United States (us-east-1) | Your email address, your name, and whatever figures are in the report being sent |
 | **Stripe, Inc.** | Takes the payment and runs the billing portal | United States | Your billing name, email, address and card details. **We never see or store a card number** — it goes to Stripe directly |
+| **Sold through Link, LLC** | Merchant of record on transactions labeled "Sold through Link" — collects the payment, issues the receipt and handles indirect tax | United States | Your billing name, email, address and the transaction. Never your visitors' data |
 
 That's the whole list.
 
