@@ -131,14 +131,14 @@ directly rather than being multiplied by ten. Sampling is never enabled silently
 every document and `data-vitals="0.1"` means one in ten. The earlier `data-vitals data-sample="0.1"`
 spelling still works as an alias; new installs should put the rate directly on `data-vitals`.
 
-The event counts towards your monthly volume like any other custom event, which is the other reason
+The event counts toward your monthly volume like any other custom event, which is the other reason
 it's opt-in. At a sample of one in ten, that's one extra event per ten measured navigation
 lifecycles.
 
 ## Consent and Do Not Track
 
 Set `window.__feasible = { consent: false }` before loading the script when your consent manager
-denies analytics. The tracker also honours a browser Do Not Track value of `1`.
+denies analytics. The tracker also honors a browser Do Not Track value of `1`.
 
 In either case it sends no pageview and no custom event, installs the callable API, and answers a
 supplied callback immediately with `{ status: null }`.
@@ -180,7 +180,7 @@ somebody forgets:
   least three more seconds. Time accrues only while the tab is both visible and focused, so a page
   left open behind another window doesn't bank hours.
 
-Outbound clicks, downloads and form submissions are custom events, so they count towards your
+Outbound clicks, downloads and form submissions are custom events, so they count toward your
 monthly volume. Engagement pings never do.
 
 404 tracking and site-search tracking aren't in this script. They come from the

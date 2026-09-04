@@ -22,6 +22,6 @@ The design detail worth knowing: **guests deliberately sit outside the role rank
 
 Guests are unlimited, like team members. There's no seat cost to giving every client their own login.
 
-**When you don't need a guest at all:** if somebody only ever looks and never signs in, a [shared link](/help/who-can-see-my-analytics/) is less work for both of you. Tokenised URL, optional password, optionally pinned to a segment the viewer can't remove, revocable in one click. That's usually the right answer for a monthly client report.
+**When you don't need a guest at all:** if somebody only ever looks and never signs in, a [shared link](/help/who-can-see-my-analytics/) is less work for both of you. Tokenized URL, optional password, optionally pinned to a segment the viewer can't remove, revocable in one click. That's usually the right answer for a monthly client report.
 
 To move a whole site to another team — an agency handing a client their own account — there's a site transfer workflow that carries the analytics with it rather than orphaning them.

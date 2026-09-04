@@ -5,7 +5,7 @@ category: "reports"
 weight: 70
 ---
 
-Five checks, in order — and the filtered events are labelled, not deleted.
+Five checks, in order — and the filtered events are labeled, not deleted.
 
 1. **User agent.** About seventy tokens covering crawlers, headless browsers, HTTP libraries, uptime monitors, SEO tools, social unfurlers, search engines, AI crawlers and scanners. An *empty* user agent is explicitly not treated as a bot.
 2. **Automation signals from the browser** — the flags a driven browser leaves behind. Checked before the IP, because that's what catches a scraper running on somebody's home connection.

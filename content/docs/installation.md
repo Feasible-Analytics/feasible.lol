@@ -35,7 +35,7 @@ would rather change one hostname than every tag, or if a tag manager is going to
 path.
 
 {{< callout title="Not an ad-blocker escape" >}}
-Randomised paths raise the cost of blocking us. They don't end the game. If blockers are your real
+Randomized paths raise the cost of blocking us. They don't end the game. If blockers are your real
 problem, [proxy the script through your own domain](/docs/proxying/) — that's the thing that works.
 {{< /callout >}}
 

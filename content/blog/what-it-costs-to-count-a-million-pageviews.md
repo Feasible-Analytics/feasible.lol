@@ -54,7 +54,7 @@ That's not a knock on either. ClickHouse is a column store, and column stores ar
 
 What SQLite buys us isn't bytes. It's that there's one file, one process, nothing to tune, no cluster to keep quorate, and a backup that's a file copy. On a machine this small, that's worth more than compression.
 
-And credit where it's due before we talk about money: the privacy-friendly analytics companies got the important thing right, and got it right first. No cookies, no cross-site identity, no selling behaviour to advertisers. They made that normal while everyone else was still arguing about it. The disagreement below is about a price, not about principles.
+And credit where it's due before we talk about money: the privacy-friendly analytics companies got the important thing right, and got it right first. No cookies, no cross-site identity, no selling behavior to advertisers. They made that normal while everyone else was still arguing about it. The disagreement below is about a price, not about principles.
 
 ## What a million pageviews a month costs at each vendor
 

@@ -69,7 +69,7 @@ $client->pageview(...$visitor->args(), url: 'https://example.com/pricing');
 
 Every one of these makes them required arguments rather than something you can forget.
 
-Without them, every server-side event is geolocated to your data centre and shares one visitor
+Without them, every server-side event is geolocated to your data center and shares one visitor
 identifier — one visitor, from one country, forever — and there's no way to repair that afterwards.
 Making it a compile error is the point.
 
@@ -87,7 +87,7 @@ An event with no browser has no referrer, so state it. `referrer`, `utm_source`,
 `utm_campaign`, `utm_content` and `utm_term` are all fields on the event. Left out, the visit is
 Direct. See [the APIs](/docs/api/#stating-attribution-for-a-server-side-event).
 
-### Shared behaviour
+### Shared behavior
 
 - **Defaults**: a five-second timeout and three attempts with exponential backoff. All of it is
   configurable in the constructor.
@@ -128,7 +128,7 @@ write actually happened.
 
 ## WordPress
 
-The plugin serves the script and the events endpoint from your own domain on randomised paths, which
+The plugin serves the script and the events endpoint from your own domain on randomized paths, which
 is what actually gets past ad blockers, and adds the site-search and 404 tracking a theme snippet
 can't do.
 

@@ -9,7 +9,7 @@ Only while the tab is actually visible and actually focused.
 
 Most tools infer time on page from the gap between two pageviews, which is why the last page of every visit gets zero seconds and why a tab left open overnight reports eight hours of rapt attention. Feasible measures it instead.
 
-The script accrues time only when the browser says the page is visible **and** the document has focus. Switch tabs, minimise the window, or click into another app and the clock stops. Come back and it starts again. There's no polling timer chewing CPU — the accrued time is flushed with the `engagement` event, along with [scroll depth](/help/what-is-scroll-depth/).
+The script accrues time only when the browser says the page is visible **and** the document has focus. Switch tabs, minimize the window, or click into another app and the clock stops. Come back and it starts again. There's no polling timer chewing CPU — the accrued time is flushed with the `engagement` event, along with [scroll depth](/help/what-is-scroll-depth/).
 
 What that buys you:
 

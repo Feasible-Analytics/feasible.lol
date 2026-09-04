@@ -105,10 +105,10 @@ of this page are what came back.
 funnels, no growth tier that adds three seats, no business tier that finally hands
 over the API. [Everything is in the one price](/pricing/).
 
-**One thing counted.** Pageviews. Custom events, goals, funnels, custom properties,
-sites and team members are unlimited and never counted. That's deliberate: it means
-the number you're billed on is a number you already know, rather than one that
-depends on how many properties you attached to a purchase event.
+**Two things counted.** Pageviews and custom events, a million a month between them.
+Custom properties never count, however many you attach, and neither do the engagement
+pings, sites, seats, goals or funnels. That's deliberate: the number you're billed on
+shouldn't depend on how carefully you described a purchase.
 
 **Nothing held back.** The API, raw event export, webhooks, the MCP server, funnels,
 teams — the same build whether we host it or you do. There's no enterprise directory
@@ -120,7 +120,7 @@ reason you can read: bot, datacenter address, a shield you set, a hostname you
 haven't allowed yet. Analytics that quietly loses a third of your traffic is worse
 than no analytics, because you'll trust it.
 
-**A limit that emails you instead of switching off.** Go over a million pageviews and
+**A limit that emails you instead of switching off.** Go over the million and
 we send a note. One month over costs nothing. Nothing is ever throttled, sampled away
 or deleted, and there is no overage charge, because that code doesn't exist.
 

@@ -49,9 +49,9 @@ Say you fire `signup` with a property `source=email`, and you want the conversio
 
 Same data. Same query. Two very different numbers, and only one of them is the question you asked.
 
-Most tools let you attach a property and figure this out later, usually in a meeting, usually loudly. We make you say which one it is at creation time and we show the scope next to the property name in the report, because a conversion rate with an unexamined denominator isn't a metric, it's a rumour.
+Most tools let you attach a property and figure this out later, usually in a meeting, usually loudly. We make you say which one it is at creation time and we show the scope next to the property name in the report, because a conversion rate with an unexamined denominator isn't a metric, it's a rumor.
 
-The same instinct shows up elsewhere. Ask for bounce rate broken down by page and Feasible refuses the query rather than answering it — bounce is a property of a visit, not of a page, and a number that quietly redefines itself to fit your breakdown is worse than an error message. And events that didn't carry a property land in a labelled `(none)` row instead of silently vanishing from the total, so the column adds up to what you think it adds up to.
+The same instinct shows up elsewhere. Ask for bounce rate broken down by page and Feasible refuses the query rather than answering it — bounce is a property of a visit, not of a page, and a number that quietly redefines itself to fit your breakdown is worse than an error message. And events that didn't carry a property land in a labeled `(none)` row instead of silently vanishing from the total, so the column adds up to what you think it adds up to.
 
 ## What you give up
 
@@ -59,7 +59,7 @@ Plainly, because you'll find out anyway.
 
 **You can't build an arbitrary custom report.** There's no report builder, no drag-and-drop dimension canvas, no saving a view and naming it. If your job is to answer a question nobody has asked before, in a shape nobody has used before, this is the wrong screen.
 
-**There's no saved segment list, no session replay, no heatmaps, no cohort or retention report, and no A/B testing.** Referrer is a filter, not its own report card. There's no search-terms report — Search Console data imports, but nothing reads it back out yet.
+**There's no saved segment list, no session replay, no heatmaps, no cohort or retention report, and no A/B testing.** Referrer is a filter, not its own report card. There's no search-terms report either — you can connect a Search Console account, but nothing pulls the data across and nothing would read it back if it did.
 
 Some of those are missing because we haven't built them. Some are missing because we don't think they belong in a tool this size, and session replay is the clearest case: a recording of one person's session is a different product with a different privacy story, and the UK's own analytics exemption draws the line in exactly that place.
 
@@ -67,7 +67,7 @@ The escape hatch is that we didn't lock the door. The [Stats API](/features/) is
 
 ## Who shouldn't use this
 
-If you're an analyst who lives in explorations, you'll be bored in an hour. If you need session recordings or heatmaps to do your job, we don't have them and won't pretend otherwise. If you have a genuine attribution modelling problem across paid channels, that's a different category of tool and you should buy it.
+If you're an analyst who lives in explorations, you'll be bored in an hour. If you need session recordings or heatmaps to do your job, we don't have them and won't pretend otherwise. If you have a genuine attribution modeling problem across paid channels, that's a different category of tool and you should buy it.
 
 If you run a site, and once a week you want to know which pages people read, where they came from, and whether the thing you changed worked — that's the whole design brief, and it fits on one screen.
 

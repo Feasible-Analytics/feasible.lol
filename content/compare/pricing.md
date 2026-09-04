@@ -27,11 +27,13 @@ faq:
       pageviews plus events, and some bill "datapoints" or "hits" that include
       downloads, outbound clicks, site searches and each individual event
       property. Two sites with identical traffic can land three tiers apart.
-  - q: "What does Feasible count against its million-pageview limit?"
+  - q: "What does Feasible count against its million-a-month limit?"
     a: >-
-      Pageviews. Custom events, custom properties, goal conversions and the
-      engagement pings behind scroll depth and time on page are all free and
-      uncounted.
+      Pageviews and custom events, between them — including the outbound
+      clicks, file downloads and form submissions the script fires on its own.
+      Custom properties never count, however many you attach. Neither do the
+      engagement pings behind scroll depth and time on page, or sites, seats,
+      goals and funnels.
   - q: "What happens if I go over my limit?"
     a: >-
       On Feasible you get emails at 70%, 85% and 100%. One month over costs
@@ -85,7 +87,7 @@ identical traffic land on different tiers.
 
 | Vendor | Billing unit | What that means for you |
 |---|---|---|
-| **Feasible** | **Pageviews** | Custom events, custom properties, goal conversions and engagement pings are all free and uncounted. |
+| **Feasible** | **Pageviews + custom events** | Same unit as Plausible and Fathom. Custom properties, goal conversions and engagement pings are free and uncounted. |
 | Plausible | Pageviews + custom events | Every custom event you fire eats a pageview. |
 | Fathom | Pageviews + custom events | Their FAQ: custom event and API requests "will be counted as if they were pageviews." |
 | Simple Analytics | **Datapoints** | Pageviews, plus events, plus stored event metadata. |
@@ -101,12 +103,16 @@ carrying five properties, 30,000 signups each carrying two.
 
 | | Counted | Which tier |
 |---|---:|---|
-| Feasible | 700,000 | Inside the $99 plan |
+| Feasible | 750,000 | Inside the $99 plan |
 | Plausible | 750,000 | Under 1M |
 | Umami | 910,000 | Under 1M, but a sixth property pushes it over |
 | Matomo (with downloads and outlinks tracked) | 1.4M–2M hits | Two tiers up, $3,990/yr |
 
-Same shop. Same traffic. The spread comes entirely from what the meter counts.
+Same shop. Same traffic. Feasible and Plausible read the same number here,
+because the unit is the same — the difference between those two is the price,
+not the meter. The rest of the spread comes entirely from what the meter counts:
+Umami bills the 160,000 stored properties, Matomo bills the downloads and
+outlinks and searches as hits of their own.
 
 If you take one thing from this page: **before you compare two prices, find the
 sentence on each pricing page that defines the unit.** It's usually in the FAQ,

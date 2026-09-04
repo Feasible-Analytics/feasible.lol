@@ -1,13 +1,13 @@
 ---
 title: "Can I import a CSV?"
-description: "Yes — loose CSVs or a ZIP of them. The column names are the interface, and there's a documented set we recognise."
+description: "Yes — loose CSVs or a ZIP of them. The column names are the interface, and there's a documented set we recognize."
 category: "importing-and-exporting"
 weight: 20
 ---
 
 Yes. Loose CSV files or a ZIP of them, under **Site settings → [Imports](/docs/import-export/)**.
 
-The column headers are the interface. Give a file a recognised dimension column and one or more recognised metric columns and it imports; anything unrecognised is ignored rather than guessed at.
+The column headers are the interface. Give a file a recognized dimension column and one or more recognized metric columns and it imports; anything unrecognized is ignored rather than guessed at.
 
 **Dimension columns:** `page` (or `path`), `hostname`, `page_title`, `name` (or `event_name`), `entry_page`, `exit_page`, `referrer`, `source`, `channel`, `utm_source`, `utm_medium`, `utm_campaign`, `country`, `region`, `city`, `device`, `screen_size`, `browser`, `browser_version`, `operating_system`, `operating_system_version`, `language`.
 

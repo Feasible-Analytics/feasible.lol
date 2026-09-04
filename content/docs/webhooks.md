@@ -87,7 +87,7 @@ def verify(secret, header, body, tolerance=300):
     return hmac.compare_digest(expected, parts["v1"])
 ```
 
-Verify against the **raw** body, before any JSON parsing — re-serialising changes the bytes and the
+Verify against the **raw** body, before any JSON parsing — re-serializing changes the bytes and the
 MAC with them. Reject anything more than five minutes old. Compare in constant time.
 
 Rotating a secret keeps the old one valid for an hour, so you have a window to deploy the new one

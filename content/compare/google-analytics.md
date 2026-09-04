@@ -23,10 +23,12 @@ faq:
       it's illegal is running a stale page.
   - q: "Can I keep my Google Analytics history if I switch?"
     a: >-
-      Yes. Feasible imports GA4 over OAuth, and also takes CSV and ZIP uploads.
-      Universal Analytics data is a different story — Google cut off access to
-      it in July 2024 and said it would be permanently deleted, so if you never
-      exported it, it's gone.
+      Yes, as CSV. Export your GA4 reports and upload the folder — pages,
+      sources, locations, devices and browsers land on the same charts as your
+      live traffic. A direct Google connection is on the way; today it's a CSV
+      upload. Universal Analytics data is a different story — Google cut off
+      access to it in July 2024 and said it would be permanently deleted, so if
+      you never exported it, it's gone.
   - q: "Do I need a cookie banner with Feasible?"
     a: >-
       Most sites won't. Feasible sets no cookies on your visitors and stores no
@@ -213,10 +215,10 @@ BigQuery export gives you every raw event, unsampled, for free, and lets you
 join web behavior to your own warehouse. That is more than we offer.
 
 It has cohort and retention analysis, mobile SDKs, audience building and
-cross-device modelling. We have none of those, and no plans we're announcing.
-Search Console is properly integrated in GA4 with a real keyword report; we
-import Search Console data but nothing reads it back yet, so we don't have that
-report at all.
+cross-device modeling. We have none of those, and no plans we're announcing.
+Search Console is properly integrated in GA4 with a real keyword report. We
+don't have one, and there's nothing in Feasible that answers "which queries
+brought people here".
 
 And every agency and consultant already knows it. Hiring for GA4 skill is easy.
 Hiring for ours is a five-minute conversation, but there's no ecosystem behind
@@ -235,7 +237,8 @@ banner, accept a 14-month wall on the analysis you care about, live with rows
 you can't see and can't unhide, and send your visitors' behavior to a company
 whose business is advertising. Feasible asks for 3,377 bytes and $99 a year.
 
-If you're moving, we import GA4 over OAuth so your history comes with you — see
+If you're moving, export your GA4 reports as CSV and upload the folder — your
+history comes with you. See
 [moving off Google Analytics](/migrate/from-google-analytics/). The
 [feature list](/features/) is the honest inventory of what you'd get, including
 what's missing.

@@ -1,6 +1,6 @@
 ---
 title: "Can I run Feasible myself?"
-description: "Yes. Same binary we run, every feature, no licence key, no charge. Three commands and it's up."
+description: "Yes. Same binary we run, every feature, no license key, no charge. Three commands and it's up."
 category: "self-hosting"
 weight: 10
 ---
@@ -16,7 +16,7 @@ cp .env.sample .env        # set FEASIBLE_APP_HOSTED=false
 
 `account create` prints a generated password once — generated rather than typed, so it never lands in your shell history or a process list.
 
-**There is no cut-down edition.** No Community build with the good parts removed, no licence key, no feature flag that turns off the API or funnels or raw export. [The API has no plan check in it at all](/docs/api/) — not one you could switch on, none written. Goals, funnels, custom properties, webhooks, the MCP server, teams, sharing, exports: all of it, free.
+**There is no cut-down edition.** No Community build with the good parts removed, no license key, no feature flag that turns off the API or funnels or raw export. [The API has no plan check in it at all](/docs/api/) — not one you could switch on, none written. Goals, funnels, custom properties, webhooks, the MCP server, teams, sharing, exports: all of it, free.
 
 Setting `FEASIBLE_APP_HOSTED=false` changes exactly two categories of thing, and neither is a feature:
 
@@ -27,4 +27,4 @@ It defaults to `true`, so a missing setting fails in the safe direction rather t
 
 Two things to be honest about. Migrations never run automatically — `db migrate` is a command you type, on purpose, because a binary that migrates your database on boot will eventually do it at the worst moment. And you're the operator now: backups, TLS, upgrades and the pager are yours.
 
-[What it costs to run](/help/what-does-it-cost-to-run-feasible-yourself/) · [the licence](/help/what-license-is-feasible-under/) · [hosted versus self-hosted](/help/whats-the-difference-between-hosted-and-self-hosted/)
+[What it costs to run](/help/what-does-it-cost-to-run-feasible-yourself/) · [the license](/help/what-license-is-feasible-under/) · [hosted versus self-hosted](/help/whats-the-difference-between-hosted-and-self-hosted/)

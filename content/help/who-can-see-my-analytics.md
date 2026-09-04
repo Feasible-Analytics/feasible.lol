@@ -14,7 +14,7 @@ Your [dashboards](/features/teams-and-sharing/) are private by default. There is
 **Outside your team**, there are exactly three ways data leaves, and all three are things you turn on:
 
 - **A public dashboard.** A stable URL anyone can open. Off unless you switch it on.
-- **A shared link.** A tokenised URL you can hand to a client. Optionally password-protected, optionally pinned to a segment so the viewer sees one country or one campaign and can't widen it. Revocable whenever you like.
+- **A shared link.** A tokenized URL you can hand to a client. Optionally password-protected, optionally pinned to a segment so the viewer sees one country or one campaign and can't widen it. Revocable whenever you like.
 - **An API key.** Whatever you build with it.
 
 **Us.** Cloudmanic Labs runs the servers, so the data sits on our infrastructure — one database file per account, encrypted volumes, and the constraint that [there's no IP address in it](/help/do-you-store-ip-addresses/) to begin with. We don't sell it, share it, or feed it to anyone. [Not ever](/help/do-you-sell-my-data/).

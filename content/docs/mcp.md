@@ -36,10 +36,10 @@ Discovery lives at `/.well-known/oauth-authorization-server` and
 `/.well-known/oauth-protected-resource`, client registration is open, and PKCE is required — `S256`
 only, never `plain`.
 
-Access tokens last an hour, refresh tokens thirty days, and an authorisation code is good for one
+Access tokens last an hour, refresh tokens thirty days, and an authorization code is good for one
 minute and one use. Replaying one revokes the whole grant.
 
-The consent screen asks for an API key rather than your password, so authorising an assistant never
+The consent screen asks for an API key rather than your password, so authorizing an assistant never
 puts your account credentials in front of it.
 
 ## Connecting over stdio
@@ -101,4 +101,4 @@ and correct itself instead of seeing a transport failure.
 Unknown arguments are refused rather than ignored.
 
 And a locked account is refused here exactly as it is on the API, with a code the client can
-recognise rather than an empty answer that reads as "you have no data".
+recognize rather than an empty answer that reads as "you have no data".

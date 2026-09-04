@@ -294,6 +294,9 @@
     font-size: 1.0625rem;
     line-height: 1.75;
     color: var(--color-neutral-800);
+    /* A source link written out in full is one unbreakable word. Without this
+       it pushes the whole page sideways on a phone. */
+    overflow-wrap: break-word;
   }
   .copy > * + * {
     margin-top: 1.25rem;
@@ -317,6 +320,7 @@
     color: var(--color-flag-700);
     text-decoration: underline;
     text-decoration-thickness: 1px;
+    overflow-wrap: anywhere;
   }
   .copy a:hover {
     color: var(--color-flag);
@@ -400,13 +404,18 @@
     margin-block: 2.5rem;
   }
   /* Wide tables scroll inside their own box rather than pushing the page
-     sideways on a phone. */
+     sideways on a phone. The scrolling lives on the wrapper the table render
+     hook emits — putting overflow on the table itself costs it table layout,
+     and the head and body then disagree about column widths. */
+  .copy .table-scroll {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
   .copy table {
     width: 100%;
+    min-width: max-content;
     border-collapse: collapse;
     font-size: 0.9375rem;
-    display: block;
-    overflow-x: auto;
   }
   .copy th {
     text-align: left;

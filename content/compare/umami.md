@@ -24,7 +24,8 @@ faq:
       Their FAQ says usage counts pageviews plus custom events plus custom event
       properties stored, and that "each data property stored counts as one
       event." So one event carrying five properties is six events against your
-      limit. Feasible counts pageviews only.
+      limit. Feasible counts that as one: pageviews and custom events count
+      here, properties never do.
   - q: "How much does Umami cost per year?"
     a: >-
       Pro is $20 a month, and Umami has no annual billing — their FAQ says
@@ -92,17 +93,18 @@ each carrying those five properties. 30,000 signups carrying two.
 | | Umami's meter | Feasible's meter |
 |---|---:|---:|
 | Pageviews | 700,000 | 700,000 |
-| Custom events | 50,000 | 0 |
+| Custom events | 50,000 | 50,000 |
 | Event properties | 160,000 | 0 |
-| **Total against the limit** | **910,000** | **700,000** |
+| **Total against the limit** | **910,000** | **750,000** |
 
-Add a sixth property to your purchase event and you're at 930,000. Add a
-seventh and you're closer to the Pro ceiling still, on identical traffic.
+Add a sixth property to your purchase event and Umami's number is 930,000. Ours
+doesn't move. Add a seventh and ours still doesn't move, on identical traffic.
 
-Feasible counts pageviews. That's it. Custom events, custom properties, goal
-conversions and the engagement pings behind scroll depth and time on page are
-all outside the limit, on purpose, so describing your business properly in your
-analytics never costs more.
+We count pageviews and custom events — the same two rows they do. The third row
+is the whole difference. Properties are free here, however many you attach, and
+so are the engagement pings behind scroll depth and time on page. Describing
+your business properly in your analytics shouldn't cost more, and here it
+doesn't.
 
 ## Side by side
 
@@ -110,7 +112,7 @@ analytics never costs more.
 |---|---|---|
 | Paid price | $9.99/mo · **$99/yr** | $20/mo · **$240/yr** (no annual discount) |
 | Free tier | No | Yes — 1 site, 100K events, 6 months |
-| Billing unit | **Pageviews only** | Events — pageviews + custom events + each stored property |
+| Billing unit | Pageviews + custom events | Events — pageviews + custom events + **each stored property** |
 | Sites | Unlimited | 20 on Pro |
 | Team members | Unlimited, 5 roles + guests | 10 on Pro |
 | Retention | 5 years | 2 years on Pro, 5 on Business |

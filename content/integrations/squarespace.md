@@ -27,7 +27,7 @@ That's the whole thing. The code lands in `<head>` on every page of the site.
 
 **Code Injection doesn't run in the editor.** Not in the editing view, not in the preview. Check on the live site, and check it in a private window — the editor session behaves differently from a visitor's.
 
-**There's a separate per-page injection box.** Page Settings → Advanced has its own header field. If a tag ends up in both places, that one page reports two pageviews per visit. If a single URL looks exactly twice as busy as its neighbours, look there.
+**There's a separate per-page injection box.** Page Settings → Advanced has its own header field. If a tag ends up in both places, that one page reports two pageviews per visit. If a single URL looks exactly twice as busy as its neighbors, look there.
 
 **Site-wide is the point.** People sometimes paste a tracker into a Code Block on the home page because that's the box they found first. That tracks the home page and nothing else, and your top-pages report ends up with exactly one row in it.
 

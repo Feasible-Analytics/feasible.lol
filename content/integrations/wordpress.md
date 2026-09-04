@@ -12,7 +12,7 @@ The tag goes in your theme's `header.php`, just before `</head>` — or, if you'
 ## The plugin route, which is the one we'd pick
 
 1. Install a header-scripts plugin. WPCode is the one most people already have.
-2. Open its header field — the one labelled for the `<head>` section, not the footer.
+2. Open its header field — the one labeled for the `<head>` section, not the footer.
 3. Paste the tag, save, and clear your cache.
 
 This survives theme updates, theme switches, and the day someone edits the theme files by hand.

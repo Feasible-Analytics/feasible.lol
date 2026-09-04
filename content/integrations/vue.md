@@ -59,7 +59,7 @@ One call, from anywhere in your app:
 window.feasible("Signup", { props: { plan: "annual" } });
 ```
 
-Properties are allow-listed per site before they show up in reports, and values that didn't carry the property land in a labelled `(none)` bucket rather than vanishing. See [custom properties](/docs/custom-properties/).
+Properties are allow-listed per site before they show up in reports, and values that didn't carry the property land in a labeled `(none)` bucket rather than vanishing. See [custom properties](/docs/custom-properties/).
 
 ## Check it worked
 

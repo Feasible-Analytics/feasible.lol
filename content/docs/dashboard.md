@@ -18,7 +18,7 @@ Six figures: **Unique visitors**, **Total visits**, **Total pageviews**, **Views
 Every one of them is a button. Click it and it becomes the line on the graph.
 
 Each one also carries its change against the comparison period. Rising isn't always good — for bounce
-rate the colours are inverted, so an increase is red.
+rate the colors are inverted, so an increase is red.
 
 ## The four report cards
 
@@ -46,7 +46,7 @@ It's drawn from country outlines compiled into the page. No mapping library, no 
 anybody, nothing that could report your visitors to a third party.
 
 Shading is on a logarithmic scale in five steps, because country traffic is never uniform and a
-linear ramp paints the whole world one pale colour.
+linear ramp paints the whole world one pale color.
 
 A country with no visitors is drawn in a distinctly different shade from a country with one: an empty
 map and a quiet map have to be different pictures. Click a country to filter by it. Tab order follows

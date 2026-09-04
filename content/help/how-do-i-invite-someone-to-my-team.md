@@ -23,6 +23,6 @@ Three things worth knowing:
 
 **For one site only, use a [guest role](/help/how-do-guest-roles-work/).** A client, a contractor or a freelancer gets the site they're working on and no evidence that the others exist. Same invite flow, from the site's own sharing settings.
 
-If they only need to *look* at numbers and never sign in — a client, a board, a Slack channel — you might not want a member at all. A [shared link](/help/who-can-see-my-analytics/) does that: a tokenised URL, optionally password-protected, optionally pinned to a segment so they see one campaign and can't widen it. Revoke it whenever.
+If they only need to *look* at numbers and never sign in — a client, a board, a Slack channel — you might not want a member at all. A [shared link](/help/who-can-see-my-analytics/) does that: a tokenized URL, optionally password-protected, optionally pinned to a segment so they see one campaign and can't widen it. Revoke it whenever.
 
 Doing this at scale? The API creates invitations too, and returns the same shape whether or not the address already has an account.

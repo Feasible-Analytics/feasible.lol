@@ -106,17 +106,20 @@ data is not a retention strategy.
 
 ## What each of you actually counts
 
-Plausible's limit counts pageviews plus custom events. Feasible's counts
-pageviews, and nothing else — custom events, custom properties and the
-engagement pings behind scroll depth and time on page don't touch it.
+The same two things. Plausible's limit counts pageviews plus custom events, and
+so does ours — including the outbound clicks, downloads and form submissions our
+script fires on its own. Same arithmetic on both sides.
 
-Concretely: a site doing 900,000 pageviews a month that fires a `Signup` event,
-a `Purchase` event and a `Download` event on 150,000 of those visits is at
-1,050,000 against a Plausible pageview limit, and 900,000 against ours. Same
-traffic, different tier.
+Neither of us bills for the properties attached to an event, which is the line
+that separates both of us from the vendors selling "datapoints" and "hits".
+Credit where it's due.
 
-It's a smaller gap than the vendors who bill per stored event property, but it's
-real, and it's the kind of thing you only find out about in month three.
+So there's no unit trick to point at here. A site at 900,000 pageviews a month
+firing `Signup`, `Purchase` and `Download` on 150,000 visits is 1,050,000
+against either limit. What differs is what happens next: $690 to $1,390 a year
+there depending on plan, $99 here, and
+[our version of going over](/help/what-happens-if-i-go-over-a-million-pageviews/)
+is an email rather than a tier.
 
 ## Side by side
 
@@ -127,7 +130,7 @@ real, and it's the kind of thing you only find out about in month three.
 | Sites | Unlimited | 1 / 3 / 10 by plan |
 | Team members | Unlimited | 0 / 3 / 10 by plan |
 | Retention | 5 years | 3 years, 5 on Business |
-| Billing unit | Pageviews | Pageviews + custom events |
+| Billing unit | Pageviews + custom events | Pageviews + custom events |
 | Funnels | Yes | Business plan |
 | Custom properties | Yes | Business plan |
 | Stats API | Yes, 10,000 req/hr | Business plan, 600 req/hr |

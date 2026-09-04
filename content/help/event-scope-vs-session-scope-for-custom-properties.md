@@ -22,6 +22,6 @@ Both numbers are computed correctly. Only one answers your question. Getting thi
 
 Rules of thumb: if the value could change between two pageviews in the same visit, it's event scope. If it describes the person, it's session scope.
 
-Properties are allow-listed per site — enable the ones you want under **Site settings → Properties**, or allow all of them. Events that didn't carry the property land in a [labelled `(none)` bucket](/help/what-does-none-mean-in-a-breakdown/) rather than vanishing from the total.
+Properties are allow-listed per site — enable the ones you want under **Site settings → Properties**, or allow all of them. Events that didn't carry the property land in a [labeled `(none)` bucket](/help/what-does-none-mean-in-a-breakdown/) rather than vanishing from the total.
 
 And keep personal data out of them. The [DPA](/dpa/) prohibits it, not just the docs.

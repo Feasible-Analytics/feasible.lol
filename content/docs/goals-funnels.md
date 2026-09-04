@@ -18,7 +18,7 @@ A goal is a page somebody reached, a custom event they sent, or a scroll depth r
 A **pageview goal** matches a path, optionally with wildcards: `/checkout/thank-you`, or `/blog/**`.
 `*` stays inside one path segment and `**` crosses them, so `/blog/*` is the posts directly under
 `/blog` and `/blog/**` is everything beneath it. The pattern is anchored at both ends, so `/pricing`
-doesn't match `/enterprise-pricing-guide`. It costs nothing towards your monthly volume, because the
+doesn't match `/enterprise-pricing-guide`. It costs nothing toward your monthly volume, because the
 pageview it matches was already counted.
 
 A **custom event goal** matches an event you send by name:
@@ -28,7 +28,7 @@ feasible('Signup')
 feasible('Purchase', { revenue: { amount: 49.00, currency: 'USD' } })
 ```
 
-Custom events do count towards your monthly volume, because each one is an event we received and
+Custom events do count toward your monthly volume, because each one is an event we received and
 stored.
 
 A **scroll goal** matches a percentage threshold reached on a page. The tracker sends scroll
@@ -126,7 +126,7 @@ led to a conversion. Dashboard filters apply to every step.
 
 Pages can be grouped by their first directory to surface patterns, then switched to exact paths for
 detail. Visits with no next or previous action stay visible as `No further action`, because drop-off
-is often the most useful result in the report. Trailing slashes aren't normalised: `/about/` and
+is often the most useful result in the report. Trailing slashes aren't normalized: `/about/` and
 `/about` stay distinct in exact mode, matching Top Pages.
 
 ## Revenue

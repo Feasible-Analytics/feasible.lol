@@ -92,7 +92,7 @@ underlying rule more broadly than the slogan does.
 So: here are the facts, and we're not your lawyers. If you're somewhere strict, hand this page to
 somebody who is.
 
-## Bot traffic is labelled, not deleted
+## Bot traffic is labeled, not deleted
 
 When we decide a request is a bot, a datacentre address or a known spam referrer, the event is still
 stored, with the reason attached, and excluded from your reports by default. You can turn it back on,

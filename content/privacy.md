@@ -34,7 +34,7 @@ status Stripe shares with us, and the sessions and API keys you created. We hold
 the service, provide your subscription, and email you about your account.
 
 **Your payment.** For transactions in jurisdictions where Managed Payments is
-available and labelled "Sold through Link," Stripe Managed Payments is provided by Sold
+available and labeled "Sold through Link," Stripe Managed Payments is provided by Sold
 through Link, LLC as merchant of record. Stripe and Link process the billing and transaction
 details you provide at checkout for payment, fraud prevention, indirect-tax compliance where
 Managed Payments supports it, receipts and transaction support under

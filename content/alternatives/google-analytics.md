@@ -17,7 +17,7 @@ faq:
   - q: "Will my numbers match Google Analytics after I switch?"
     a: "No, and no two analytics tools ever match. Bot filtering differs, ad blockers hit each tool differently, the definition of a session differs, and GA4 thresholds and can sample its own reports. Expect a gap in the tens of percent and compare trends rather than absolute numbers."
   - q: "Can I keep my Google Analytics history?"
-    a: "You can import GA4 history into Feasible over OAuth, day by day, into the same reports as your live traffic. Universal Analytics data is a different story — Google cut off access to it from the week of 1 July 2024, so if you didn't export it then, it's gone."
+    a: "You can. Export your GA4 reports as CSV and upload the folder into Feasible — pages, sources, locations, devices and browsers land on the same charts as your live traffic. Universal Analytics data is a different story — Google cut off access to it from the week of 1 July 2024, so if you didn't export it then, it's gone."
   - q: "Do Google Analytics alternatives need a cookie banner?"
     a: "The cookieless ones generally don't, for analytics. Feasible, Plausible, Fathom, Simple Analytics, Umami, Pirsch, GoatCounter and Cloudflare all set no cookies. That isn't a legal guarantee and the rest of your site may still need a banner — check with your own lawyer."
 ---
@@ -82,7 +82,7 @@ bill** — read it before comparing two prices.
 
 | Tool | 100k pv/mo | 1M pv/mo | Counts | Sites | Seats | Cookies | Source | Retention |
 |---|---|---|---|---|---|---|---|---|
-| **Feasible** | **$99** | **$99** | pageviews only | unlimited | unlimited | none | AGPL-3.0 | 5 years |
+| **Feasible** | **$99** | **$99** | pageviews + events | unlimited | unlimited | none | AGPL-3.0 | 5 years |
 | [Plausible Starter](https://plausible.io/#pricing) | $190 | $690 | pageviews + events | 1 | owner only | none | AGPL-3.0 (CE) | 3 years |
 | [Plausible Business](https://plausible.io/#pricing) | $390 | $1,390 | pageviews + events | 10 | 10 | none | AGPL-3.0 (CE) | 5 years |
 | [Fathom](https://usefathom.com/pricing) | $150 | $600 | pageviews + events | 75 | not published | none | closed | forever |
@@ -204,8 +204,8 @@ way to take your history anywhere.
 ### Feasible — us
 
 The flag we promised. $9.99 a month or $99 a year, one plan: unlimited sites,
-unlimited team members, unlimited events and custom properties, up to a million
-pageviews a month, five years of history. Cookieless, AGPL-3.0-or-later, one Go
+unlimited team members, unlimited custom properties, and a million pageviews and
+custom events a month between them, kept five years. Cookieless, AGPL-3.0-or-later, one Go
 binary on SQLite that runs on 512 MB of RAM. The API, funnels, custom properties,
 webhooks, the MCP server and raw event export are in every plan and every build —
 the API package has no plan check in it at all.
@@ -244,13 +244,14 @@ hosting and two decades of institutional presence.
 
 The blocker people name most often isn't price — it's "I'd lose all my history."
 
-You wouldn't, mostly. GA4 history imports over OAuth into the same reports as
-your live traffic, day by day. Universal Analytics history is a different matter:
-Google cut off access from the week of 1 July 2024, so if you didn't export then,
-it's gone.
+You wouldn't, mostly. Export your GA4 reports as CSV and upload the folder, and
+pages, sources, locations, devices and browsers land on the same charts as your
+live traffic. A direct Google connection is on the way; today it's an upload.
+Universal Analytics history is a different matter: Google cut off access from the
+week of 1 July 2024, so if you didn't export then, it's gone.
 
-The whole process — install alongside GA, run both for two weeks, import, verify,
-then remove the old tag — is written out step by step in
+The whole process — install alongside GA, run both for two weeks, upload the CSVs,
+verify, then remove the old tag — is written out step by step in
 [moving off Google Analytics](/migrate/from-google-analytics/).
 
 ---

@@ -1,8 +1,8 @@
 ---
 title: "Why we don't charge per site"
 slug: "why-we-dont-charge-per-site"
-description: "Per-site and per-seat pricing tolls the moment you'd install a tool again. We count pageviews, and nothing else — here's what everyone else counts."
-lede: "A second site costs us almost nothing, so we don't charge for it. The harder question is what a pageview limit should actually count."
+description: "Per-site and per-seat pricing tolls the moment you'd install a tool again. We count pageviews and custom events, and stop there — here's what everyone else counts."
+lede: "A second site costs us almost nothing, so we don't charge for it. The harder question is what a monthly limit should actually count."
 date: 2026-09-02
 checked: 2026-09-03
 ---
@@ -49,7 +49,7 @@ Those vendors don't all count the same thing. Sourced from each vendor's own pag
 | [Umami](https://umami.is/pricing) | **events** — pageviews, custom events, and each stored property |
 | [Pirsch](https://pirsch.io/pricing) | pageviews + custom events + 10% of session-extension events; deleted domains keep counting until the limit resets |
 | [Matomo](https://matomo.org/faq/general/what-is-a-hit/) | **hits** — "a tracked page view, an event tracking, a download, an outlink, an onsite search or a content tracking request" |
-| **Feasible** | pageviews |
+| **Feasible** | pageviews + custom events |
 
 Now put that next to a normal Tuesday afternoon decision: *let's start tracking outbound clicks.*
 
@@ -59,13 +59,17 @@ On the datapoint model it's finer-grained still. A pageview carrying five proper
 
 None of that is hidden — every one of those definitions is on the vendor's own site, which is why we can link it. It's just that it's on a FAQ page and the price is on a pricing page, and you make the decision looking at the second one.
 
-The practical effect is a slow tax on instrumentation. The tool asks you to think about your bill every time you consider measuring something, which is the opposite of what you bought it for.
+The practical effect is a slow tax on describing your business. Every extra field on an event is a line item somewhere, so the tool asks you to think about the bill every time you consider measuring something properly.
 
-**So we count pageviews, and nothing else.** Not events. Not custom properties. Not "datapoints" or "hits". Fire as many custom events as you like, hang as many properties on them as you like, track every outbound click on the site — the number on your usage page doesn't move. There's one unit, it's the one you already understand, and it's the one you'd have guessed.
+**So here's ours, plainly. We count pageviews and custom events.** That's the same unit Plausible and Fathom use, and it includes the outbound clicks, file downloads and form submissions our script fires on its own. Turn on outbound-click tracking and our number moves too. We're not going to run a page that pretends otherwise.
 
-## The one thing we do count
+**What we don't count is the describing.** Properties are free, however many you hang on an event. So are the engagement and scroll pings behind time-on-page and scroll depth, because you can't switch those off. So are sites, seats, goals and funnels. A sixth field on your purchase event costs nothing here and a tier somewhere else.
 
-A million pageviews a month, per account, per calendar month, UTC. Unlimited sites, unlimited teammates, unlimited events, unlimited properties, five years of retention. $9.99 a month or $99 a year.
+Two units, both of which you can count yourself before you buy. That's as simple as we could make it and still be telling the truth.
+
+## What the limit actually is
+
+A million pageviews and custom events a month, between them. Per account, per calendar month, UTC. Unlimited sites, unlimited teammates, unlimited properties, five years of retention. $9.99 a month or $99 a year.
 
 A limit has to exist somewhere. Storage is real, CPU is real, and a plan with no number on it is a plan that gets repriced the first time someone points a firehose at it — usually by adding a tier and moving everyone up one. We'd rather publish the number now.
 

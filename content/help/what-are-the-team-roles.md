@@ -27,7 +27,7 @@ Some notes on the edges, because that's where role systems break:
 
 **Billing exists for the person who pays and doesn't care.** Finance gets the invoices and the plan, and doesn't have to be an admin of everything to get them.
 
-**An unrecognised role fails closed.** No access, rather than some.
+**An unrecognized role fails closed.** No access, rather than some.
 
 Change someone's role under **Settings → Members**. To [invite somebody new](/help/how-do-i-invite-someone-to-my-team/), it's the same screen.
 

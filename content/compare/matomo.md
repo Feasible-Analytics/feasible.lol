@@ -78,14 +78,20 @@ views, events, downloads, outlinks, site searches, content tracking and crashes.
 So turn on download tracking and outbound-link tracking, which most sites do,
 and one pageview can send two or three hits.
 
-Work it through. A documentation site doing 400,000 pageviews a month with
-outbound links and file downloads tracked, plus site search, can comfortably
-generate a million hits. That site is on Matomo's $2,040 tier. On Feasible it's
-400,000 pageviews against a million-pageview limit, and every one of those
-events, downloads and searches is free. $99.
+Our unit is narrower, though not as much narrower as we'd like to claim. We
+count pageviews and custom events, and downloads and outbound clicks *are*
+custom events, so they land on our meter too. Site searches and content-tracking
+requests don't, because our script never sends them.
 
-That's the trap worth checking before you compare any two prices in this market:
-**find out what the number on the pricing page actually counts.**
+Work it through. A documentation site doing 400,000 pageviews a month, with
+150,000 outbound clicks, 50,000 file downloads and 400,000 site-search and
+content-tracking requests, is at a million hits. That site is on Matomo's $2,040
+tier. On our meter it's 600,000 — pageviews, clicks and downloads — against a
+million. $99.
+
+The lesson isn't that our number is always the small one. It's the check worth
+running on any two prices in this market: **find out what the number on the
+pricing page actually counts.**
 
 ## Self-hosting: free core, paid plugins, real servers
 
@@ -137,8 +143,8 @@ have to live somewhere. It's still 46 KB on every page load.
 
 | | Feasible | Matomo Cloud |
 |---|---|---|
-| At 1M/month | $99/yr (pageviews) | $2,040/yr (hits) |
-| Billing unit | Pageviews only | Hits — views, events, downloads, outlinks, searches |
+| At 1M/month | $99/yr (pageviews + events) | $2,040/yr (hits) |
+| Billing unit | Pageviews + custom events | Hits — views, events, downloads, outlinks, searches |
 | Sites | Unlimited | 30 on mid tiers |
 | Team members | Unlimited | 30 on mid tiers |
 | Segments | Filters, not saved | 100 |

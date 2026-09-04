@@ -12,7 +12,7 @@ the same instructions with your own snippet already filled in.
 ## WordPress
 
 There's a plugin, **feasible.lol Analytics**. It does more than paste the snippet: it serves the
-script and the events endpoint from your own domain on randomised paths, which is the part that
+script and the events endpoint from your own domain on randomized paths, which is the part that
 actually survives ad blockers, and it adds the two measurements a theme can't give you — site-search
 terms and 404s.
 

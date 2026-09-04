@@ -8,7 +8,7 @@ updated: 2026-09-03
 
 No. We sell software for $9.99 a month. That's the entire business model.
 
-There's no ad network, no data broker, no "anonymised industry benchmark" product, no partner feed, no audience segment, no lookalike anything. The terms of service say plainly what we will never do with your data, and this is it.
+There's no ad network, no data broker, no "anonymized industry benchmark" product, no partner feed, no audience segment, no lookalike anything. The terms of service say plainly what we will never do with your data, and this is it.
 
 Two structural facts make the promise more than a promise.
 

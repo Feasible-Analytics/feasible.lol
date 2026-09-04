@@ -86,7 +86,7 @@ that claims to is either keeping an identifier for longer than a day or estimati
 
 The two figures differ by a handful either way for visitors whose identifier straddles one of your
 local day boundaries — the salt rotates at UTC midnight and your days probably don't. We subtract
-those rather than counting them twice, so the summarised and the raw answer agree.
+those rather than counting them twice, so the summarized and the raw answer agree.
 
 ### Unique visitors can exceed pageviews
 
@@ -146,7 +146,7 @@ than quietly showing you a smaller number.
 
 Create the goal before the campaign, not after it.
 
-## What isn't counted towards your bill
+## What isn't counted toward your bill
 
 Pageviews and your own custom events count.
 

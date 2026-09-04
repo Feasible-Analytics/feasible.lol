@@ -34,7 +34,7 @@
 
     {{ if .Params.toc }}
       <div class="grid gap-12 lg:grid-cols-12 lg:gap-16">
-        <div class="lg:order-2 lg:col-span-3">
+        <div class="min-w-0 lg:order-2 lg:col-span-3">
           <nav
             aria-label="On this page"
             class="lg:sticky lg:top-24 border-t-2 border-rule pt-4"
@@ -49,7 +49,7 @@
             </div>
           </nav>
         </div>
-        <div class="copy lg:order-1 lg:col-span-9 {{ if not .Params.wide }}max-w-[44rem]{{ end }}">
+        <div class="copy min-w-0 lg:order-1 lg:col-span-9 {{ if not .Params.wide }}max-w-[44rem]{{ end }}">
           {{ .Content }}
         </div>
       </div>

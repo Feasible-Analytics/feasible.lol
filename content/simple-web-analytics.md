@@ -158,8 +158,8 @@ isn't, we'd rather you found out from this page than from an invoice.
 ## What it costs
 
 $9.99 a month, or $99 a year. Unlimited sites, unlimited team members, unlimited
-events, unlimited custom properties, up to a million pageviews a month, five
-years of history. One plan, no tiers to compare, nothing held back for a bigger
+custom properties, and a million pageviews and custom events a month between
+them, kept five years. One plan, no tiers to compare, nothing held back for a bigger
 one.
 
 For contrast, at a million pageviews a month on published pricing checked

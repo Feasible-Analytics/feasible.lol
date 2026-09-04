@@ -70,7 +70,7 @@ Reproduce it yourself. Scripts change; that's why we date ours.
 
 While we're being straight about measurements: our script is not the smallest in the category. Plausible's is 1,291 bytes gzipped, comfortably under half of ours. The 43× is against Google, and that's the only script comparison we'll make.
 
-## Line six: an advertising company holds your visitors' behaviour
+## Line six: an advertising company holds your visitors' behavior
 
 Google's revenue is advertising. GA4 data flows into Google Ads, Search Ads 360 and Display & Video 360 — that's not an accusation, it's the reason the Consent Mode v2 requirement above is written the way it is.
 

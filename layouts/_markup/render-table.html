@@ -1,0 +1,42 @@
+{{/*
+  render-table.html
+  Wraps every markdown table in its own scroll container.
+
+  The alternative — display:block plus overflow-x on the table itself — makes
+  the browser drop table layout, so the head and body stop agreeing on column
+  widths and the whole thing spills out of the page on a phone. A wrapper keeps
+  the table a table.
+
+  Created: 2026-09-03
+  Copyright (c) 2026 Cloudmanic Labs, LLC. All rights reserved.
+*/}}
+<div class="table-scroll">
+  <table>
+    <thead>
+      {{- range .THead }}
+        <tr>
+          {{- range . }}
+            <th
+              {{- with .Alignment }} style="text-align: {{ . }}"{{ end -}}
+            >
+              {{- .Text -}}
+            </th>
+          {{- end }}
+        </tr>
+      {{- end }}
+    </thead>
+    <tbody>
+      {{- range .TBody }}
+        <tr>
+          {{- range . }}
+            <td
+              {{- with .Alignment }} style="text-align: {{ . }}"{{ end -}}
+            >
+              {{- .Text -}}
+            </td>
+          {{- end }}
+        </tr>
+      {{- end }}
+    </tbody>
+  </table>
+</div>

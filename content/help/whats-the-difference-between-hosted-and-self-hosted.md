@@ -9,7 +9,7 @@ Who runs the server. That's genuinely the whole difference.
 
 It's the same binary. Not a stripped Community build — the thing we host is the thing you can compile.
 
-**Identical in both:** every metric and dimension, goals, funnels, custom properties, revenue tracking, shields, path cleaning, the ingestion health panel, teams and roles, public dashboards and shared links, email reports and alerts, annotations, imports, raw event export, the full API, webhooks, the MCP server, two-factor. No licence key, no feature flag, no plan check.
+**Identical in both:** every metric and dimension, goals, funnels, custom properties, revenue tracking, shields, path cleaning, the ingestion health panel, teams and roles, public dashboards and shared links, email reports and alerts, annotations, imports, raw event export, the full API, webhooks, the MCP server, two-factor. No license key, no feature flag, no plan check.
 
 **Only on hosted:** the bill, and the parts that exist to support it — usage metering, the account lifecycle, public signup, the pricing and billing screens.
 

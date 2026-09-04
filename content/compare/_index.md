@@ -7,9 +7,10 @@ checked: 2026-09-03
 ---
 
 Analytics pricing is hard to compare because almost nobody bills for the same
-thing. One vendor counts pageviews. Another counts "datapoints." Another counts
-"hits," which include downloads and outbound clicks. Put three headline prices
-side by side and you've compared nothing.
+thing. Some vendors count pageviews and custom events, the way we do. Another
+counts "datapoints," where every property you store on an event is its own unit.
+Another counts "hits," which add site searches and content tracking on top. Put
+three headline prices side by side and you've compared nothing.
 
 So these pages do the boring work. Each one takes a competitor's published
 ladder, says what their unit actually measures, and shows what you get at the

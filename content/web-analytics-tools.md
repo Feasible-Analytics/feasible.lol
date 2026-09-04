@@ -201,8 +201,8 @@ event property** all count, and seats are $240 a year each beyond the first.
 ### Feasible — us
 
 Here's the flag we promised. $9.99 a month or $99 a year, one plan: unlimited
-sites, unlimited team members, unlimited events and custom properties, up to a
-million pageviews a month, five years of history. Cookieless, AGPL-3.0-or-later,
+sites, unlimited team members, unlimited custom properties, and a million
+pageviews and custom events a month between them, kept five years. Cookieless, AGPL-3.0-or-later,
 one Go binary on SQLite that runs on 512 MB of RAM. The API, funnels, custom
 properties, webhooks and raw event export are in every plan and every build.
 

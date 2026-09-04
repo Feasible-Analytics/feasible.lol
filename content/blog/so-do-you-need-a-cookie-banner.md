@@ -76,7 +76,7 @@ CNIL's audience-measurement exemption under Article 82 of the *loi Informatique 
 
 Their self-assessment tool is unusually specific: referrer limited to host or domain; no CRM or campaign IDs imported from URLs; browser and OS reduced to major version; and if a fingerprint is used at all, the hash must carry a site-specific component *and* a time component, so it can't follow anyone anywhere or for long.
 
-**Nobody can say "CNIL-approved" any more.** CNIL retired its published list of evaluated tools in July 2025 and replaced it with self-assessment, and it forbids the phrasing outright — you may not present a solution as *« certifiée »* or *« validée par la CNIL »*. A vendor claiming it is describing a programme that no longer exists.
+**Nobody can say "CNIL-approved" any more.** CNIL retired its published list of evaluated tools in July 2025 and replaced it with self-assessment, and it forbids the phrasing outright — you may not present a solution as *« certifiée »* or *« validée par la CNIL »*. A vendor claiming it is describing a program that no longer exists.
 
 ## GDPR doesn't go away either
 

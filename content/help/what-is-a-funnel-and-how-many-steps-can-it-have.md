@@ -25,6 +25,6 @@ You get numbered horizontal bars, visitors at each step, the conversion rate, an
 
 Choose Sequential unless you have a specific reason. Strict on a normal website will show you a near-zero completion rate and it won't be telling you anything.
 
-Set them up under **Site settings → Funnels**, then read them in the **Funnels** tab of the Behaviour card.
+Set them up under **Site settings → Funnels**, then read them in the **Funnels** tab of the Behavior card.
 
 Two limits worth knowing. Funnels inherit the [no-backfill rule](/help/why-doesnt-my-goal-show-past-conversions/) from their goals — a funnel is only as old as its youngest step. And if you want to know where people went *instead*, the **Explore** tab does that: pick a page and walk forwards or backwards through where visitors actually came from and left to, with explicit entry and exit rows.

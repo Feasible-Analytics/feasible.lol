@@ -24,7 +24,7 @@ Two things beyond the basics:
 
 Some other [security](/security/) bits on the same screens, while you're there:
 
-- **Session list with per-session revoke.** See every signed-in device and kill the ones you don't recognise.
+- **Session list with per-session revoke.** See every signed-in device and kill the ones you don't recognize.
 - **New-login email.** You get told when a new sign-in happens.
 - **Password-changed email**, the same way.
 

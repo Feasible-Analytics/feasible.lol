@@ -51,7 +51,7 @@ Dates have to be `2026-08-31`, `2026/08/31` or full RFC 3339. An ambiguous `03/0
 rather than guessed at, because guessing wrong moves a quarter of your history by nine months and
 nothing tells you.
 
-**A column we don't recognise stops the import and names the column.** The alternative — dropping it
+**A column we don't recognize stops the import and names the column.** The alternative — dropping it
 quietly — gives you numbers that are too small and no way to know it.
 
 ### What imported history actually becomes
@@ -62,7 +62,7 @@ Imported data is stored as roll-up rows that carry *every dimension the source r
 record of which dimensions it reported at all. Two consequences:
 
 - A filter on a dimension your imported data has narrows it exactly like native traffic.
-- A filter on a dimension the source never reported shows a **labelled gap** — not zero. "We don't
+- A filter on a dimension the source never reported shows a **labeled gap** — not zero. "We don't
   know" and "there was none" are different answers, and a report that conflates them is worse than
   one that refuses.
 
@@ -76,23 +76,23 @@ Nothing is merged or de-duplicated — uploading the same file twice creates two
 twice. Deleting an import removes exactly the history it brought in, and nothing else, which is also
 how you undo that.
 
-## The hosted-analytics and search connectors
+## The Google connectors
 
 {{< callout type="warn" title="Connecting works. The import doesn't run yet." >}}
-Authorising Google Analytics 4 or Search Console stores a grant and does nothing further in this
-build. Use the CSV path in the meantime.
+Authorizing Google Analytics 4 or Search Console stores a grant and does nothing further in this
+build. No data is pulled across. Use the CSV path in the meantime — export your GA4 reports and
+upload the folder.
 
 We'd rather say that than let you connect an account and wait for data that isn't coming.
 {{< /callout >}}
 
-The authorisation is **per site**: connecting a second site with the same provider account creates a
+The authorization is **per site**: connecting a second site with the same provider account creates a
 second, independent grant, so revoking one can never silently disconnect the other. The section only
 appears on an install that has provider credentials configured.
 
-Two things to expect rather than report as bugs once the import does run. **Search-performance data
-arrives about 24 to 36 hours late**, so today and usually yesterday will be empty — that's the
-source's reporting delay, not a gap in your tracking. And there's **no search-terms report** on this
-end: Search Console data lands in its own table and nothing reads it back yet.
+There's also **no search-terms report** on this end, and won't be one just because the import starts
+running. Nothing in Feasible answers "which queries brought people here" — if that's the report you
+need, keep Search Console open in another tab.
 
 ## A locked or dormant account
 

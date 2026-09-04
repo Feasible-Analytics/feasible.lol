@@ -1,21 +1,19 @@
 ---
 title: "Import your history, export everything"
-description: "Bring history in from Google Analytics 4 or CSV, and take everything out as one ZIP — ten roll-up sheets plus every raw event. Not a paid add-on."
+description: "Bring history in as CSV, and take everything out as one ZIP — ten roll-up sheets plus every raw event. Not a paid add-on."
 lede: "Your history comes with you, and so does everything you collect here."
 weight: 100
 note: |
-  Search Console data imports, but nothing reads it back yet. There's no
-  search-terms report, no keywords card, no query dimension — the clicks,
-  impressions and positions land in a table and wait for a report that hasn't
-  been built. Connect it if you want the history banked; don't connect it
-  expecting a report this month.
+  Import is CSV today. You can authorize a Google Analytics or Search Console
+  account, but nothing pulls data across yet and there's no search-terms report
+  on this end. A direct Google connection is on the way; until it lands, export
+  from Google and upload the files.
 ---
 
 Two directions, both of them a button.
 
-**In:** Google Analytics 4 over OAuth, Google Search Console over OAuth, or a
-ZIP of CSVs. **Out:** one ZIP containing ten roll-up sheets and every raw event
-Feasible has stored for the site.
+**In:** loose CSVs, or a ZIP of them. **Out:** one ZIP containing ten roll-up
+sheets and every raw event Feasible has stored for the site.
 
 ## Bringing history in
 
@@ -23,12 +21,12 @@ The single biggest reason people stay on analytics they've stopped liking is
 that leaving means abandoning years of numbers. It's the first objection in
 every thread on the subject, and it's a fair one.
 
-Connect a Google Analytics 4 property and Feasible walks it a day at a time,
-resumably, pulling totals, pages, sources, locations, devices, browsers and
-operating systems. A long history takes a while and survives being interrupted
-— it picks up where it stopped rather than starting over.
+Export your GA4 reports as CSV and upload the folder — pages, sources,
+locations, devices and browsers land on the same charts as your live traffic,
+dated where they belong. A direct Google connection is on the way. Today it's a
+CSV upload, and it's the same path any other tool's export takes.
 
-CSV import takes a ZIP or loose files. Recognized dimension columns cover page,
+Import takes a ZIP or loose files. Recognized dimension columns cover page,
 hostname, page title, event name, entry and exit page, referrer, source,
 channel, the three UTM fields, country, region, city, device, screen size,
 browser and version, operating system and version, and language. Metric columns

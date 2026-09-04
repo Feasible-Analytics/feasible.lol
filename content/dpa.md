@@ -62,7 +62,7 @@ affected site data.
 - We process only on your documented instructions, which are these terms and your use of
   the product.
 - Everyone with access is under a duty of confidence.
-- We keep appropriate technical and organisational measures, set out in section 8.
+- We keep appropriate technical and organizational measures, set out in section 8.
 - We help you respond to data-subject requests, and with your impact assessments.
 - We notify you without undue delay, and in any case within 72 hours, if we become aware
   of a personal data breach affecting your data.
@@ -75,7 +75,7 @@ affected site data.
 
 ## 6. Sub-processors
 
-You give a general authorisation for the legal entities on the current
+You give a general authorization for the legal entities on the current
 [hosted-service subprocessor list](/legal/subprocessors/). That public list states
 each entity, service, data category and processing region. We give notice before adding or
 replacing a hosted-service subprocessor, and you may object.

@@ -10,7 +10,7 @@ PECR is about what you put on somebody's device, and we don't put an identifier 
 
 The UK's Privacy and Electronic Communications Regulations — regulation 6 — govern storing information on, or reading information from, a visitor's terminal equipment. That's why cookie banners exist. It isn't a rule about analytics as a category.
 
-Feasible sets no cookie and stores no identifier. The visitor is recognised for the day by [a hash computed on our server](/help/how-do-you-count-unique-visitors-without-cookies/), never written to the browser. That's the substance of it.
+Feasible sets no cookie and stores no identifier. The visitor is recognized for the day by [a hash computed on our server](/help/how-do-you-count-unique-visitors-without-cookies/), never written to the browser. That's the substance of it.
 
 The honest caveat: the script does write one short-lived `localStorage` key, a retry queue holding the event currently in flight, deleted as soon as our server takes it. It isn't an identifier and nothing reads it back, but it is technically storage on the device, and you should know it's there rather than discover it. There's a second key only if you've told that browser to [ignore you](/help/how-do-i-exclude-my-own-visits/).
 

@@ -42,7 +42,7 @@ Nothing is lost quietly. Every one of those counters is kept per site and shown 
 health panel, and the whole event's tally comes back on an
 [`X-Debug-Request`](/docs/api/#debugging-one-request).
 
-Numbers are normalised, so `1` and `1.0` are one value rather than two rows that look identical and
+Numbers are normalized, so `1` and `1.0` are one value rather than two rows that look identical and
 never add up.
 
 ## Scope: a property of one hit, or of a whole visit
@@ -107,9 +107,9 @@ Funnels and Explore. Selecting a value adds the same URL filter the query API us
 
 ## A property isn't free, but it isn't billed either
 
-The custom event carrying it counts towards your monthly volume. The properties themselves add
+The custom event carrying it counts toward your monthly volume. The properties themselves add
 nothing — one event with thirty properties is one billable event. See
-[what isn't counted towards your bill](/docs/metrics/#what-isnt-counted-towards-your-bill).
+[what isn't counted toward your bill](/docs/metrics/#what-isnt-counted-toward-your-bill).
 
 A [goal](/docs/goals-funnels/) can also be narrowed by up to three property constraints, which is how
 you turn "somebody bought" into "somebody on the yearly plan bought".

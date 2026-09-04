@@ -12,11 +12,11 @@ updated: 2026-09-03
      identity for self-hosted installs. Change both together. -->
 
 {{< callout title="Which service this covers" >}}
-These are the terms for the hosted service at feasible.lol, run by Cloudmanic Labs, LLC. If you run [your own copy of Feasible](/open-source/), you are the operator of that install and set your own terms for it — the AGPL-3.0-or-later licence, not this page, is what governs the software you run.
+These are the terms for the hosted service at feasible.lol, run by Cloudmanic Labs, LLC. If you run [your own copy of Feasible](/open-source/), you are the operator of that install and set your own terms for it — the AGPL-3.0-or-later license, not this page, is what governs the software you run.
 {{< /callout >}}
 
 These terms govern the hosted service at feasible.lol. The software itself is separately
-licensed under AGPL-3.0-or-later, and nothing here restricts what that licence grants you.
+licensed under AGPL-3.0-or-later, and nothing here restricts what that license grants you.
 
 **Cloudmanic Labs, LLC**\
 901 Brutscher Street, D112\
@@ -40,12 +40,12 @@ not put personal data into a custom property or a page path where it does not be
 
 $9.99 per month or $99 per year, exclusive of tax. Tax is calculated at checkout from
 your billing address. For a transaction in a jurisdiction where Managed Payments is available
-and labelled "Sold through Link," Stripe Managed Payments is provided by Sold through Link,
+and labeled "Sold through Link," Stripe Managed Payments is provided by Sold through Link,
 LLC, which is the merchant of record. It calculates, collects, reports and remits indirect tax
 in the countries and transactions Managed Payments supports. Cloudmanic Labs, LLC remains the
 seller of the feasible.lol service and is responsible for domestic or other seller taxes where
 Managed Payments does not handle them. Link provides receipts and transaction support.
-Subscriptions renew automatically until cancelled, and you can cancel at any time from your
+Subscriptions renew automatically until canceled, and you can cancel at any time from your
 own billing portal without asking us.
 
 Switching monthly to yearly prorates immediately. Switching yearly to monthly takes effect
@@ -55,9 +55,9 @@ at renewal.
 
 Under our refund policy, yearly plans are refunded pro rata within 30 days of purchase, on
 request, with no retention flow and no form. Monthly plans are not refunded under our policy,
-because cancelling stops the next one and there is at most a month at stake.
+because canceling stops the next one and there is at most a month at stake.
 
-For a transaction labelled "Sold through Link," you may also request a refund through
+For a transaction labeled "Sold through Link," you may also request a refund through
 [Link support](https://support.link.com/topics/sold-through-link). Sold through
 Link, LLC's refund policy controls where it gives you broader rights than ours, and it may
 issue refunds in circumstances covered by that policy. Nothing in this section limits rights

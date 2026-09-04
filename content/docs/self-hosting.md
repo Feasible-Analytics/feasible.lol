@@ -125,12 +125,12 @@ A file that's present but unreadable is logged as a warning at start-up and then
 one. The process comes up and collects, and every country reads as unknown until you fix the file, so
 check the first lines of the log after you drop one in.
 
-Nothing is downloaded automatically, and no licence key is read from anywhere. If you want
+Nothing is downloaded automatically, and no license key is read from anywhere. If you want
 geolocation, fetch the files and drop them in. City-level data is never a paid feature here; it's
 just a bigger file.
 
 A lookup never makes a network call. Private, loopback and link-local addresses are skipped without
-one. Traffic classified as coming from a data centre isn't geolocated at all and is bucketed as
+one. Traffic classified as coming from a data center isn't geolocated at all and is bucketed as
 *Anonymous VPN Service*, because a commercial VPN exit would otherwise report its own country with
 total confidence.
 

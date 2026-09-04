@@ -83,7 +83,7 @@ can still become one of these:
   is the only place you'll ever see it.
 
 A genuine `400` is reserved for a body we couldn't read at all, a payload missing `n` or `d`, a
-malformed `k`, and a request arriving straight from a data centre with no forwarded address or user
+malformed `k`, and a request arriving straight from a data center with no forwarded address or user
 agent — each with a sentence naming what's missing.
 
 ### Stating attribution for a server-side event

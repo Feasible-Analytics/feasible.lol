@@ -73,7 +73,7 @@ The script loads, the requests 404, and the site looks installed.
 
 Your proxy has to pass the visitor's address on.
 
-Without it, every visitor geolocates to your data centre and shares one fingerprint — one visitor,
+Without it, every visitor geolocates to your data center and shares one fingerprint — one visitor,
 from one country, forever — and there's no way to repair that afterwards.
 
 We resolve the address in this order:
@@ -115,7 +115,7 @@ never written to disk and never leaves the ingestion tier — see [privacy](/doc
 
 ## WordPress does this for you
 
-The WordPress plugin proxies both routes on randomised paths under your own domain, rotates those
+The WordPress plugin proxies both routes on randomized paths under your own domain, rotates those
 paths on request, and forwards the visitor's address. If you run WordPress, that's less work than
 either block above. See [integrations](/docs/integrations/).
 

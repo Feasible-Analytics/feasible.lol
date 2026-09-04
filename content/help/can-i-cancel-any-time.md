@@ -13,7 +13,7 @@ There's no notice period, no minimum term, no "are you sure" maze, and nobody wi
 
 What happens next:
 
-**Your access runs to the end of the period you've paid for.** Cancelling on the 3rd doesn't cut you off on the 3rd.
+**Your access runs to the end of the period you've paid for.** Canceling on the 3rd doesn't cut you off on the 3rd.
 
 **After that, the standard timetable starts** — the same one a [lapsed trial](/help/what-happens-after-the-trial/) follows. Day 30 the dashboard locks and collection keeps running. Day 60 collection stops. Day 90 the data is deleted. Nine warning emails before that last one.
 
@@ -21,6 +21,6 @@ What happens next:
 
 **Coming back re-activates everything** if you pay before day 90. After that it's a new account.
 
-On refunds: yearly is refunded pro rata within 30 days of purchase, on request, no form. Monthly isn't — cancelling stops the next charge and there's at most a month at stake. [The longer version](/help/do-you-give-refunds/).
+On refunds: yearly is refunded pro rata within 30 days of purchase, on request, no form. Monthly isn't — canceling stops the next charge and there's at most a month at stake. [The longer version](/help/do-you-give-refunds/).
 
 Switching plans instead of leaving? Monthly to yearly prorates immediately. Yearly to monthly takes effect at renewal. Both from the same portal.

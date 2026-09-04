@@ -7,7 +7,7 @@ weight: 20
 
 We email you. Nothing else happens.
 
-The [allowance](/pricing/) is 1,000,000 pageviews a month, per account, pooled across every site you've added. You get emails at 70%, 85% and 100%. There is no overage rate in the system, no automatic upgrade, and no tier above 100% — those numbers are the entire ladder.
+The [allowance](/pricing/) is 1,000,000 pageviews and custom events a month between them, per account, pooled across every site you've added. You get emails at 70%, 85% and 100%. There is no overage rate in the system, no automatic upgrade, and no tier above 100% — those numbers are the entire ladder.
 
 **One full month over the limit costs nothing at all.** Not a charge, not a warning beyond the emails, not a lost row of data.
 
@@ -22,6 +22,6 @@ Only if nobody replies in 14 days does the dashboard lock — the same lock [a l
 
 The month in progress never counts toward "consecutive months", so nobody gets locked on the 3rd for a month that's barely started.
 
-What counts toward the million is pageviews. Engagement pings — the time-on-page and scroll-depth heartbeats — don't. Custom events, goals, funnels and custom properties are unlimited and don't eat the allowance.
+What counts toward the million is pageviews and custom events, including the outbound clicks, file downloads and form submissions the script fires on its own. What doesn't: the custom properties you attach, however many; the engagement pings behind time-on-page and scroll depth, because you can't turn those off; and goals, funnels, sites and seats.
 
 Consistently past a million? [Email sales](mailto:sales@feasible.lol) and we'll sort out something that fits. We'd rather do that than invent a surprise invoice.

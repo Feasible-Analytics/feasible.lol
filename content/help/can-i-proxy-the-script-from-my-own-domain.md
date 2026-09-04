@@ -22,6 +22,6 @@ You proxy two things — the script and the endpoint that receives events — th
 Two more:
 
 - **Content Security Policy.** Allow the origin in **both** `script-src` and `connect-src`. Getting one and missing the other means the script loads and then silently can't send anything. There's no `nonce` support.
-- **On WordPress, don't do this by hand.** The plugin proxies the script and the endpoint from your own domain automatically, on randomised path segments generated at activation, and forwards the address and agent for you.
+- **On WordPress, don't do this by hand.** The plugin proxies the script and the endpoint from your own domain automatically, on randomized path segments generated at activation, and forwards the address and agent for you.
 
-What this buys you is [fewer blocked requests](/help/do-ad-blockers-block-feasible/) — and it's a real improvement, not a permanent one. Randomised paths raise the cost of blocking; they don't end it. Anyone selling proxying as a guaranteed escape from blocklists is overselling it.
+What this buys you is [fewer blocked requests](/help/do-ad-blockers-block-feasible/) — and it's a real improvement, not a permanent one. Randomized paths raise the cost of blocking; they don't end it. Anyone selling proxying as a guaranteed escape from blocklists is overselling it.
