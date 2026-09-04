@@ -7,7 +7,7 @@
 #
 
 .DEFAULT_GOAL := help
-.PHONY: help install dev build clean check links serve
+.PHONY: help install dev build clean check links seo serve
 
 ## help: list the targets
 help:
@@ -33,12 +33,16 @@ serve: build
 	@cd public && python3 -m http.server 8899
 
 ## check: build and run every pre-publish check
-check: build links
+check: build links seo
 	@echo "All checks passed."
 
 ## links: check internal links and anchors in the built site
 links:
 	@python3 scripts/check-links.py public
+
+## seo: check titles, descriptions, headings and orphan pages
+seo:
+	@python3 scripts/check-seo.py public
 
 ## clean: remove build output and caches
 clean:

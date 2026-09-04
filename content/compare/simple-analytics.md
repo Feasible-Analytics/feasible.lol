@@ -16,9 +16,10 @@ faq:
   - q: "What is a datapoint in Simple Analytics?"
     a: >-
       Their meter counts datapoints rather than pageviews — pageviews plus
-      events plus stored event metadata. So a site that instruments its
-      conversions well burns through the tier faster than its traffic suggests.
-      Feasible counts pageviews and nothing else.
+      events plus stored event metadata. Feasible counts pageviews and custom
+      events, and stops there. The metadata you attach to an event is free here
+      and billable there, so a well-instrumented site burns through their tier
+      faster than its traffic suggests.
   - q: "How much does Simple Analytics cost for a team?"
     a: >-
       The plan includes one user, and their pricing page lists extra seats at
@@ -83,22 +84,30 @@ which is the point.
 This is the part that catches people. Their meter counts datapoints: pageviews,
 plus events, plus stored event metadata — not pageviews alone.
 
-The arithmetic, on events alone: a site doing 800,000 pageviews a month that
-tracks signups, downloads and outbound clicks on 250,000 visits is at 1,050,000
-datapoints. That's over the $600 band and into the $800 one. On Feasible it's
-800,000 pageviews, and the events are free — they don't count at all.
+We count pageviews and custom events, so the first two match. The third is where
+it splits. Take a site doing 800,000 pageviews a month that fires 50,000 events
+— signups, downloads, outbound clicks — and attaches three fields to each one:
+plan, source and value.
 
-Feasible's limit counts pageviews and nothing else. Custom events, custom
-properties, goal conversions and the engagement pings behind scroll depth and
-time on page are all outside it, deliberately, so instrumenting your site
-properly never raises your bill.
+| | Counted | Which band |
+|---|---:|---|
+| Simple Analytics | 1,000,000 | The top of the $600 band. A fourth field is $800. |
+| Feasible | 850,000 | Inside the $99 plan |
+
+The 150,000 in the gap is entirely metadata. We never count it. Three fields on
+an event or thirty, it's one event on our meter. Neither do the engagement pings
+behind scroll depth and time on page, because you can't turn those off and
+billing you for them would be a trick.
+
+So describing your conversions properly costs you a tier there. Here it costs
+nothing.
 
 ## Side by side
 
 | | Feasible | Simple Analytics |
 |---|---|---|
 | At 1M/month | $99/yr | $600/yr (one user) |
-| Billing unit | Pageviews only | Datapoints — pageviews, events, metadata |
+| Billing unit | Pageviews + custom events | Datapoints — pageviews, events, metadata |
 | Users included | Unlimited | 1 |
 | Extra seats | $0 | $240/yr each |
 | Sites | Unlimited | 10 on the paid plan |
@@ -162,8 +171,8 @@ code.
 
 ## Moving over
 
-Feasible imports Google Analytics 4 over OAuth, and takes CSV and ZIP uploads
-for everything else — so a Simple Analytics export comes across as CSV.
+Feasible imports CSV and ZIP uploads, so a Simple Analytics export comes across
+as CSV and lands on the same charts as your live traffic.
 
 Both are one tag in your `<head>`, so run them side by side for a week before
 you cancel anything. Two tools counting the same traffic never agree exactly,

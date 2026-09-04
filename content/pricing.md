@@ -12,11 +12,11 @@ faq:
   - q: "What if I go over a million pageviews?"
     a: "We email you at 70%, 85% and 100% of the limit. One month over costs nothing and changes nothing. Two complete months over in a row and we email asking you to reply within 14 days. If nobody replies, the dashboard locks — but collection never stops, nothing is throttled, nothing is deleted, and there's no overage charge. Drop back under, or reply to the email, and it unlocks."
   - q: "How do I cancel?"
-    a: "From your own billing portal, any time, without emailing anyone first. Cancelling stops the next charge and you keep the dashboard until the period you already paid for runs out."
+    a: "From your own billing portal, any time, without emailing anyone first. Canceling stops the next charge and you keep the dashboard until the period you already paid for runs out."
   - q: "Do you give refunds?"
-    a: "A yearly plan is refunded pro rata within 30 days of purchase, on request — no form, and nobody will try to talk you out of it. Monthly isn't refunded, because cancelling stops the next charge and there's at most one month at stake."
+    a: "A yearly plan is refunded pro rata within 30 days of purchase, on request — no form, and nobody will try to talk you out of it. Monthly isn't refunded, because canceling stops the next charge and there's at most one month at stake."
   - q: "Do you count events?"
-    a: "No. We count pageviews. Custom events, goals, funnels and custom properties are unlimited and never counted against your limit — including the properties attached to every event. So are the engagement pings the script sends for time-on-page and scroll depth."
+    a: "Yes. The limit is a million pageviews and custom events a month, between them — and that includes the three the script fires on its own: outbound link clicks, file downloads and form submissions. What never counts: the custom properties you attach to an event, however many; the engagement and scroll pings, because you can't turn those off; and sites, seats, goals and funnels."
   - q: "Do you charge per site?"
     a: "No. Unlimited sites on one account for one price. The million pageviews is the total across every site you track, not a cap on each one, so ten small sites cost exactly what one does."
   - q: "Do you charge per seat?"
@@ -28,7 +28,7 @@ faq:
   - q: "Can I pay yearly?"
     a: "Yes — $99 a year, which is twelve months for the price of ten. Switching from monthly to yearly prorates immediately. Switching back to monthly takes effect at your next renewal. Both happen in your own billing portal."
   - q: "What if I self-host?"
-    a: "Then you pay nothing and you get everything. Feasible is AGPL-3.0-or-later, and there's no licence key, no plan check and no cut-down community build — the whole product is one binary and a SQLite file. [Here's how to run it](/open-source/)."
+    a: "Then you pay nothing and you get everything. Feasible is AGPL-3.0-or-later, and there's no license key, no plan check and no cut-down community build — the whole product is one binary and a SQLite file. [Here's how to run it](/open-source/)."
   - q: "Will the price go up?"
     a: "It's $9.99 a month or $99 a year today, and we have no plan to raise it. If that ever changes we'll announce it here before it happens, and a year you've already paid for stays at the price you paid."
 ---
@@ -39,16 +39,24 @@ API.
 
 ## What counts, and what doesn't
 
-We count pageviews. That's the only number on your account with a ceiling, and the
-ceiling is a million a month across every site you track.
+We count pageviews and custom events. A million a month between them, across every
+site you track. That's the only number on your account with a ceiling.
 
-This matters more than the sticker price, because the industry doesn't agree on what a
-"pageview" is. Several vendors bill for a broader unit, and the multiplier isn't
-always small:
+Custom events means the ones you fire yourself, plus the three the script fires on its
+own: outbound link clicks, file downloads and form submissions. Instrument heavily and
+you'll get through the million faster. That's honest, and it's how most of this
+industry works.
+
+Here's what we don't count. The custom properties on an event — attach five, attach
+thirty, still one. The engagement and scroll pings behind time-on-page and scroll
+depth, because you can't switch those off and it would be rude to bill you for them.
+Sites, seats, goals, funnels. None of those has a meter.
+
+That second list is where the units stop agreeing:
 
 | Vendor | What they bill for | Source |
 |---|---|---|
-| **Feasible** | **Pageviews. Nothing else.** | — |
+| **Feasible** | **Pageviews + custom events** | — |
 | Plausible | Pageviews + custom events | [plausible.io](https://plausible.io/#pricing) |
 | Fathom | Pageviews + custom events | [usefathom.com](https://usefathom.com/pricing) |
 | Simple Analytics | Datapoints — pageviews, events, and **each stored event property** | [simpleanalytics.com](https://www.simpleanalytics.com/pricing) |
@@ -60,19 +68,25 @@ Read the second column before you compare the first. None of it is a trick — e
 of those units is published and documented — but it means the tier you need is often
 bigger than your traffic looks.
 
-Here's one shop on three meters. Say you do 400,000 pageviews a month, you track
-outbound clicks and PDF downloads, and every purchase event carries five properties:
-order value, currency, plan, coupon and country.
+Plausible and Fathom count the same two things we do. Against them the unit isn't the
+argument; the price is, and it's in the next table. The rows below theirs are where
+the meter gets wider than your traffic.
 
-- **Counting pageviews**, that's 400,000. The events and the properties are free.
+Here's one shop on three meters. Say you do 400,000 pageviews a month, 60,000 outbound
+clicks and PDF downloads between them, and every purchase event carries five
+properties: order value, currency, plan, coupon and country.
+
+- **Here** that's 460,000 — the pageviews and the events. The properties are free, and
+  so are the pings.
 - **On a datapoint meter** where each stored property counts, one purchase with five
-  properties bills as six datapoints instead of one.
-- **On a hit meter**, every outbound click and every download is its own hit on top of
-  the pageview, so the number you're billed on isn't the number in your traffic
-  report.
+  properties bills as six datapoints instead of one. Same shop, same month, six times
+  the meter on every sale.
+- **On a hit meter**, the downloads and outbound clicks count like they do here, and so
+  do site searches and content-tracking requests. Turn all of it on and a site can
+  generate two or three hits per pageview.
 
-You end up shopping for a tier based on a number you can't predict. We'd rather you
-shopped on the number you already know.
+Two of those three are a number you can't predict from your traffic report. We'd rather
+the meter was something you can count yourself.
 
 All of the above checked on the vendors' own published pages, September 3, 2026.
 
@@ -154,16 +168,16 @@ nothing is sampled away, nothing is deleted, and there's no overage charge — t
 doesn't exist in the code. Export keeps working the whole time. Reply to the email, or
 drop back under the limit, and the dashboard comes back.
 
-## The trial, refunds and cancelling
+## The trial, refunds and canceling
 
 The trial is 30 days and takes no credit card. There's no payment record of you at all
 until somebody actually pays, so there's nothing to forget to cancel.
 
 **Refunds.** A yearly plan is refunded pro rata within 30 days of purchase, on request
 — no form, and nobody will try to talk you out of it. Monthly isn't refunded;
-cancelling stops the next charge and there's at most one month at stake.
+canceling stops the next charge and there's at most one month at stake.
 
-**Cancelling** happens in your own billing portal, any time, without emailing us first.
+**Canceling** happens in your own billing portal, any time, without emailing us first.
 Switching monthly to yearly prorates immediately. Switching back to monthly takes
 effect at renewal.
 

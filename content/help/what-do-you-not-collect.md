@@ -5,7 +5,7 @@ category: "privacy-and-the-law"
 weight: 40
 ---
 
-The list that matters more than [the other one](/features/privacy/).
+The list that matters more than [the one about what we do collect](/help/what-data-do-you-collect/).
 
 **No cookies.** None. Not for measurement, not for "functionality".
 
@@ -23,6 +23,6 @@ The list that matters more than [the other one](/features/privacy/).
 
 **No third-party requests from the script.** It talks to one endpoint. Even the little source icons in the dashboard are proxied through our own origin, so the site that referred your visitor never hears about it.
 
-**No advertising anything.** We don't sell it, share it, or hand it to a data broker. [Ever](/help/do-you-sell-my-data/).
+**No advertising anything.** We don't sell it, share it, or hand it to a data broker. [Ever](/help/do-you-sell-my-data/). The whole [privacy model](/features/privacy/) is built on there being nothing worth taking.
 
 The one thing we can't promise not to collect is what you send us yourself. If you put a customer's email into a [custom property](/help/event-scope-vs-session-scope-for-custom-properties/), it lands in the database. Don't.

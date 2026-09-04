@@ -22,8 +22,9 @@ faq:
   - q: "Do custom events count against Fathom's pageview limit?"
     a: >-
       Yes. Their FAQ says custom event and API requests "will be counted as if
-      they were pageviews." Feasible counts pageviews only — events, properties
-      and goal conversions don't touch the limit.
+      they were pageviews." Ours works the same way — a million pageviews and
+      custom events a month, between them. The unit is the same on both sides;
+      the price is $600 a year there and $99 here.
   - q: "Is Fathom open source?"
     a: >-
       The hosted product is closed source. "Fathom Lite" on GitHub is
@@ -67,24 +68,26 @@ somebody else.
 
 At a million pageviews a month it's $600 against $99. Six times.
 
-## Custom events count as pageviews
+## The unit is the same. The price isn't.
 
-Fathom is direct about this, which we appreciate. From their pricing FAQ:
+Fathom is direct about what counts, which we appreciate. From their pricing FAQ:
 
 > "If you decide to use our custom event tracking system on your website or use
 > our API, those requests will be counted as if they were pageviews."
 
-Feasible counts pageviews only. Custom events, custom properties, goal
-conversions and the engagement pings behind scroll depth and time on page don't
-count against the million.
+We count the same way. A million pageviews and custom events a month, between
+them — including the outbound clicks, downloads and form submissions our script
+fires on its own. There's no unit argument to make here, and we're not going to
+invent one.
 
-Say you run a SaaS marketing site at 90,000 pageviews a month and you track
-signups, trial starts, plan changes and doc searches — 20,000 events. On
-Fathom's meter that's 110,000, and you've crossed into the 200,000 tier at $250
-a year. On ours it's 90,000, and it was never going to matter anyway.
+So it comes down to the tier you land on. Say you run a SaaS marketing site at
+90,000 pageviews a month and you track signups, trial starts, plan changes and
+doc searches — 20,000 events. That's 110,000 on both meters. On Fathom it puts
+you in the 200,000 tier at $250 a year. On ours it's 110,000 against a million,
+and the bill is $99 either way.
 
-The more you instrument, the wider that gap gets. Which is a strange incentive
-to put on an analytics product.
+Instrument harder and Fathom's number moves up the ladder. Ours doesn't move
+until you're ten times busier than that.
 
 ## Side by side
 
@@ -92,7 +95,7 @@ to put on an analytics product.
 |---|---|---|
 | Smallest plan | $99/yr, any traffic | $150/yr, 100k pageviews |
 | At 1M pageviews/mo | $99/yr | $600/yr |
-| Billing unit | Pageviews | Pageviews + custom events |
+| Billing unit | Pageviews + custom events | Pageviews + custom events |
 | Sites | Unlimited | 50 included, 75 at the 1M tier |
 | Extra sites | n/a | $100/yr per pack of 50 |
 | Team members | Unlimited, 5 roles + guests | Not published on the pricing page |
@@ -177,9 +180,9 @@ button to allow it."
 
 ## Moving over
 
-Feasible imports from Google Analytics 4 over OAuth, and takes CSV and ZIP
-uploads for everything else. There's no Fathom-specific importer — export your
-data from Fathom and bring it as CSV.
+Feasible imports CSV and ZIP uploads. There's no Fathom-specific importer —
+export your data from Fathom and bring it as CSV, and pages, sources, locations,
+devices and browsers land on the same charts as your live traffic.
 
 Both scripts are a single tag in your `<head>`, so you can run them side by side
 for a week and compare the numbers before you cancel anything. We'd recommend

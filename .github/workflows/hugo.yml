@@ -82,6 +82,9 @@ jobs:
       - name: Check internal links
         run: python3 scripts/check-links.py public
 
+      - name: Check titles, descriptions and orphan pages
+        run: python3 scripts/check-seo.py public
+
       - name: Guard against unfinished drafts
         run: |
           if grep -rlE "TODO-LINK|localhost:8899|127\.0\.0\.1:8899|app\.feasible\.lol/demo" public/ >/dev/null 2>&1; then
