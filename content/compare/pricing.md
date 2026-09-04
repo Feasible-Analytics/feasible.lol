@@ -52,11 +52,15 @@ page, read on September 3, 2026.
 
 ## The whole ladder
 
-Annual cost in USD, on annual billing where the vendor offers it, before tax.
-The column headings say pageviews — but read the units section below, because
-five of these vendors don't bill pageviews.
+**Every figure below is a year's cost in USD**, on annual billing where the
+vendor offers it, before tax. The columns are traffic tiers — that's how these
+companies sell — so "100k a month" is the size of site, not the price you pay
+each month.
 
-| Vendor / plan | 10k/mo | 100k/mo | 1M/mo | 5M/mo | 10M/mo |
+Read the units section below before you compare two numbers, because five of
+these vendors don't bill pageviews.
+
+| Vendor / plan | 10k a month | 100k a month | 1M a month | 5M a month | 10M a month |
 |---|---:|---:|---:|---:|---:|
 | **Feasible** | **$99** | **$99** | **$99** | Talk to us | Talk to us |
 | Google Analytics 4 | $0 | $0 | $0 | $0 | $0 |
