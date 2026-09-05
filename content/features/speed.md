@@ -7,22 +7,21 @@ checked: 2026-09-03
 note: |
   Above roughly ten million estimated row reads, a query can come back as a
   labeled sample with a button to demand the exact number. And a filtered report
-  that has to touch raw rows still scans every session in the range — a heavily
+  that has to touch raw rows still scans every session in the range - a heavily
   filtered all-time query is the slow case, and we know it.
 ---
 
-**3,377 bytes gzipped.** That's the whole tracking script — 7,099 bytes before
+**3,377 bytes gzipped.** That's the whole tracking script - 7,099 bytes before
 compression, one request, cached for an hour.
 
-Measured against Google's `gtag.js`, both gzipped, in September 2026, that's
-about 43 times smaller. We're not going to dress that up as a revolution; it's
-a few hundred milliseconds on a phone on a bad connection, once. But it's a few
-hundred milliseconds you're currently spending to count pageviews.
+Measured against Google's `gtag.js` in September 2026, that's about 43 times
+smaller. The difference is a few hundred milliseconds on a slow phone. We'll
+take it.
 
-## The size is a build failure, not a goal
+## A hard size limit
 
 There's a byte budget of 3,584 for the base script. Go over it and the build
-exits 1 — enforced twice, once in the bundler and again in a Go test that reads
+exits 1 - enforced twice, once in the bundler and again in a Go test that reads
 the shipped file.
 
 That's the only way script weight stays small. A performance target that lives
@@ -35,7 +34,7 @@ The optional Web Vitals module is a separate 3,946 gzipped bytes, dynamically
 imported only if you turn it on, so people who don't want it don't carry it.
 
 The transport is `fetch` with `keepalive` sending `text/plain`, which avoids a
-CORS preflight — one request per event, not two. Every event is written to a
+CORS preflight - one request per event, not two. Every event is written to a
 local outbox before the request starts and replayed with the same idempotency key
 until a `2xx` clears it, so a flaky connection loses nothing and double-counts
 nothing.
@@ -51,14 +50,13 @@ roll-ups are clever, but that a 28-day report is something you open forty times
 a day and eleven seconds is the difference between a tool you use and a tool you
 avoid.
 
-Today's numbers come from raw events instead — under 25 ms, and always current,
+Today's numbers come from raw events instead - under 25 ms, and always current,
 because a roll-up that lags is worse than no roll-up when you're watching a
 launch.
 
-## About 210 bytes an event
+## 210 bytes per event
 
-A million pageviews, stored for a year, is a measured **293.8 MB** database. At a million a month, a year is about **3.5 GB**. All in —
-events, sessions, roll-ups, the lot.
+A million pageviews, stored for a year, is a measured **293.8 MB** database. At a million a month, a year is about **3.5 GB**. All in - events, sessions, roll-ups, the lot.
 
 Ingest handles about **6,000 events a second per process**, and accepting one
 takes around **13 microseconds** at the median, flat regardless of write load.
@@ -66,21 +64,21 @@ The minimum machine is 1 CPU core, 512 MB of RAM and 1 GB of disk. Two cores and
 2 GB is comfortable.
 
 The dashboard is held to the same standard. React and `react-dom` are its only
-two runtime dependencies — no charting library, no map library, no router, no
+two runtime dependencies - no charting library, no map library, no router, no
 state library. The line chart is hand-drawn SVG. The world map is generated
 country outlines. The flags are Unicode characters rather than 250 images. The
 page fetches no fonts from anywhere, and source favicons are proxied through our
 own origin so opening your reports doesn't tell anyone else you did.
 
-## Why one binary and one file
+## One binary and one file
 
 Go 1.26, SQLite with a pure-Go driver so there's no cgo, compiled into a single
 executable. No Docker, no Postgres, no ClickHouse, no Redis, no message queue.
 `feasible serve` is the whole product.
 
-This isn't a claim about storage density — a column store beats SQLite on disk,
+This isn't a claim about storage density - a column store beats SQLite on disk,
 and we're not going to pretend otherwise. The claim is operational, and it's the
-one that decides whether you can actually run this.
+one that decides whether you can run this.
 
 A column-store analytics stack is a different sport. ClickHouse's own
 documentation recommends 32 GB of RAM for ClickHouse alone, before you add the
@@ -92,7 +90,7 @@ that's the disaster recovery plan.
 For us that means the hosted service costs little enough that $9.99 a month
 works with room to spare. For you it means [self-hosting](/open-source/) is a
 weekend afternoon and a small VPS, not a cluster and an on-call rotation. Same
-binary either way — there's no cut-down build.
+binary either way - there's no cut-down build.
 
 The measurements above come from the benchmark suite in the repository, on an
 Apple M4 laptop. You can [run them yourself](/open-source/), which is the only

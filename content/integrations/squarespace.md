@@ -1,7 +1,7 @@
 ---
 title: "Add website analytics to Squarespace"
 platform: "Squarespace"
-description: "Paste one script tag into Squarespace's Code Injection header. Needs a Core, Plus or Advanced plan — check that first."
+description: "Paste one script tag into Squarespace's Code Injection header. Needs a Core, Plus or Advanced plan - check that first."
 lede: "Code Injection, Header, paste, save. The catch is which plan you're on."
 ---
 
@@ -25,30 +25,30 @@ That's the whole thing. The code lands in `<head>` on every page of the site.
 
 ## What Squarespace hides
 
-**Code Injection doesn't run in the editor.** Not in the editing view, not in the preview. Check on the live site, and check it in a private window — the editor session behaves differently from a visitor's.
+**Code Injection doesn't run in the editor.** Not in the editing view, not in the preview. Check on the live site, and check it in a private window - the editor session behaves differently from a visitor's.
 
-**There's a separate per-page injection box.** Page Settings → Advanced has its own header field. If a tag ends up in both places, that one page reports two pageviews per visit. If a single URL looks exactly twice as busy as its neighbors, look there.
+**There's a separate per-page injection box.** Page Settings → Advanced has its own header field. If a tag ends up in both places, that one page reports two pageviews per visit. If a single URL looks twice as busy as its neighbors, look there.
 
-**Site-wide is the point.** People sometimes paste a tracker into a Code Block on the home page because that's the box they found first. That tracks the home page and nothing else, and your top-pages report ends up with exactly one row in it.
+**Site-wide is the point.** People sometimes paste a tracker into a Code Block on the home page because that's the box they found first. That tracks the home page and nothing else, and your top-pages report ends up with one row in it.
 
 {{< callout title="You can drop the cookie banner" >}}
-If Squarespace's cookie banner is on solely because of your old analytics, you can turn it off once that tag is gone. Feasible sets no cookies and stores nothing in the browser to identify anyone. [Do I need a cookie banner?](/help/do-i-need-a-cookie-banner/) has the detail — and if you're somewhere strict, ask your own lawyer rather than us.
+If Squarespace's cookie banner is on solely because of your old analytics, you can turn it off once that tag is gone. Feasible sets no cookies and stores nothing in the browser to identify anyone. [Do I need a cookie banner?](/help/do-i-need-a-cookie-banner/) has the detail - and if you're somewhere strict, ask your own lawyer rather than us.
 {{< /callout >}}
 
 ## Squarespace's own analytics
 
-You can leave it on. Two scripts count independently and neither breaks the other. The numbers won't match, because no two analytics tools ever match — different bot filtering, different session rules. Pick one to make decisions from and treat the other as a sanity check.
+You can leave it on. Two scripts count independently and neither breaks the other. The numbers won't match, because no two analytics tools ever match - different bot filtering, different session rules. Pick one to make decisions from and treat the other as a sanity check.
 
 ## Check it worked
 
 Open your live site in a private browser window and click through two or three pages. Then open Feasible.
 
-You should show up under Real-time visitors. If you don't, go to **Site settings → Ingestion health**. It counts every event that arrived and every one that was dropped, each with a named reason — `unknown_site` means `data-domain` doesn't match the site you registered, `hostname_not_allowed` means the page is on a hostname that isn't on your list.
+You should show up under Real-time visitors. If you don't, go to **Site settings → Ingestion health**. It counts every event that arrived and every one that was dropped, each with a named reason - `unknown_site` means `data-domain` doesn't match the site you registered, `hostname_not_allowed` means the page is on a hostname that isn't on your list.
 
-The **send a test event** button there posts through the real public URL, so it exercises exactly what a browser does.
+The **send a test event** button there posts through the real public URL, so it exercises what a browser does.
 
 A brand-new site takes about fifteen seconds before its first event is accepted. If nothing lands immediately, [that's normal](/help/how-long-until-i-see-data/).
 
 Same one-field job on [Wix](/integrations/wix/) and [Webflow](/integrations/webflow/). The general case is in the [install docs](/docs/installation/).
 
-Sources: [Squarespace — Using code injection](https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection), checked September 3, 2026.
+Sources: [Squarespace - Using code injection](https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection), checked September 3, 2026.

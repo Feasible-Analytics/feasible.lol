@@ -1,23 +1,22 @@
 ---
 title: "Feasible vs Matomo"
-seotitle: "Feasible vs Matomo — price, hits vs pageviews, features"
-description: "Matomo Cloud is $2,040 a year at a million hits — and hits aren't pageviews. Feasible is $99. Matomo also does far more than we do. Both, explained."
+seotitle: "Feasible vs Matomo - price, hits vs pageviews, features"
+description: "Matomo Cloud is $2,040 a year at a million hits - and hits aren't pageviews. Feasible is $99. Matomo also does far more than we do. Both, explained."
 lede: "Matomo does much more than Feasible, and charges about twenty times as much. Whether that's a good trade depends entirely on which reports you open."
 versus: "Matomo"
 checked: 2026-09-03
 weight: 40
 verdict: |
-  Matomo is the right answer if you need depth — heatmaps, session recording,
+  Matomo is the right answer if you need depth - heatmaps, session recording,
   A/B testing, custom dimensions, hundreds of segments, server-log import, an
   on-premise deployment with a support contract. We have none of that, and no
-  amount of price difference substitutes for a report you actually need. If you
+  amount of price difference substitutes for a report you need. If you
   open a dashboard to see traffic, sources and conversions, Matomo is a very
   large tool for that job and a very large bill.
 faq:
   - q: "What is a hit in Matomo, and why does it matter?"
     a: >-
-      Matomo's FAQ defines a hit as a single interaction sent to Matomo —
-      pageviews, events, downloads, outlinks, site searches, content tracking
+      Matomo's FAQ defines a hit as a single interaction sent to Matomo - pageviews, events, downloads, outlinks, site searches, content tracking
       and crashes. Since Matomo Cloud bills hits rather than pageviews, a site
       with download and outbound-link tracking can generate two or three hits
       per pageview and land a tier or two higher than its traffic suggests.
@@ -47,7 +46,7 @@ plugin marketplace, on-premise deployments with real support contracts.
 We do none of that. Read the concession section before you read the prices,
 because on features this isn't close.
 
-## The price, at every volume
+## Price
 
 From [Matomo's pricing page](https://matomo.org/pricing/), read September 3,
 2026. Matomo publishes in euros; the USD figures are theirs, from the same page.
@@ -71,7 +70,7 @@ times. But that comparison is unfair to us, and here's why.
 
 Matomo doesn't bill for pageviews. It bills for hits, and its
 [own FAQ](https://matomo.org/faq/general/what-is-a-hit/) defines one as "a single
-interaction sent to Matomo and processed for reporting or analysis" — page
+interaction sent to Matomo and processed for reporting or analysis" - page
 views, events, downloads, outlinks, site searches, content tracking and crashes.
 (Heartbeat timers used to measure time on page don't count, which is fair.)
 
@@ -86,14 +85,14 @@ requests don't, because our script never sends them.
 Work it through. A documentation site doing 400,000 pageviews a month, with
 150,000 outbound clicks, 50,000 file downloads and 400,000 site-search and
 content-tracking requests, is at a million hits. That site is on Matomo's $2,040
-tier. On our meter it's 600,000 — pageviews, clicks and downloads — against a
+tier. On our meter it's 600,000 - pageviews, clicks and downloads - against a
 million. $99.
 
 The lesson isn't that our number is always the small one. It's the check worth
 running on any two prices in this market: **find out what the number on the
-pricing page actually counts.**
+pricing page counts.**
 
-## Free core, paid plugins, real servers
+## Self-hosting
 
 Matomo's core is GPL-3.0 and free to self-host. That's genuine, and it's the
 reason Matomo runs on a large share of the privacy-conscious web.
@@ -103,8 +102,7 @@ Two things follow that people miss.
 **The features that make Matomo Matomo are proprietary and sold separately.**
 Funnels, heatmaps, session recording, A/B testing and form analytics are premium
 plugins under the InnoCraft license. Since 2025 they're sold as On-Premise
-bundles, and the cheapest one — Team, up to 4 users and 5 million hits a month —
-is €2,750 a year on Matomo's pricing page. Business is €14,500.
+bundles, and the cheapest one - Team, up to 4 users and 5 million hits a month - is €2,750 a year on Matomo's pricing page. Business is €14,500.
 
 **It needs a real server, and a cron job you have to watch.** Matomo's own
 [requirements page](https://matomo.org/faq/on-premise/matomo-requirements/)
@@ -120,7 +118,7 @@ Feasible self-hosted is one Go binary and one SQLite file, on 1 core and 512 MB
 of RAM. No PHP, no MySQL, no archiving cron, no plugin licenses. Every feature
 is in it, because there's only one build.
 
-We're not claiming SQLite is a better database than MySQL for analytics — that's
+We're not claiming SQLite is a better database than MySQL for analytics - that's
 not the argument. The argument is that there's one process and one file, and
 nothing to tune.
 
@@ -136,7 +134,7 @@ Measured September 3, 2026 with `gzip -9`:
 About fourteen times. Reproduce with
 `curl -H 'Accept-Encoding: identity' <url> | gzip -9 | wc -c`.
 
-Some of that weight is Matomo doing more — heatmap and session-recording capture
+Some of that weight is Matomo doing more - heatmap and session-recording capture
 have to live somewhere. It's still 46 KB on every page load.
 
 ## Side by side
@@ -144,7 +142,7 @@ have to live somewhere. It's still 46 KB on every page load.
 | | Feasible | Matomo Cloud |
 |---|---|---|
 | At 1M/month | $99/yr (pageviews + events) | $2,040/yr (hits) |
-| Billing unit | Pageviews + custom events | Hits — views, events, downloads, outlinks, searches |
+| Billing unit | Pageviews + custom events | Hits - views, events, downloads, outlinks, searches |
 | Sites | Unlimited | 30 on mid tiers |
 | Team members | Unlimited | 30 on mid tiers |
 | Segments | Filters, not saved | 100 |
@@ -186,20 +184,19 @@ your list, this comparison is over.
 twenty years of compliance paperwork, and the fact that public-sector
 procurement in Europe already knows the name. We have none of that either.
 
-**A lighter copyleft license.** Matomo's core is GPL-3.0. Ours is AGPL-3.0 —
-same family, but AGPL adds a network clause GPL doesn't have. On that specific
+**A lighter copyleft license.** Matomo's core is GPL-3.0. Ours is AGPL-3.0 - same family, but AGPL adds a network clause GPL doesn't have. On that specific
 axis Matomo asks less of you than we do, and it's worth knowing if your
 company's policy cares.
 
 **Your data sits in Europe** on Matomo Cloud. We're in Oregon.
 
-## The one place we're ahead on features
+## Where Feasible wins
 
 Matomo has more reports than we do by a wide margin. It doesn't have this one.
 
-Feasible counts every event it drops and gives each drop a named reason — `bot`,
+Feasible counts every event it drops and gives each drop a named reason - `bot`,
 `datacenter_ip`, `referrer_spam`, `outdated_browser`, `automation`,
-`hostname_not_allowed`, `shield_ip`, `rate_limited` and more — on a health screen
+`hostname_not_allowed`, `shield_ip`, `rate_limited` and more - on a health screen
 per site, for the last 24 hours.
 
 It shows which client address it resolved for your last request and from which
@@ -213,10 +210,10 @@ Nobody else in this comparison publishes a counted, reasoned drop log. If you've
 ever spent a morning working out why your numbers halved on Tuesday, that's the
 feature.
 
-## When a Matomo alternative makes sense
+## Which one to pick
 
 If what you look at is traffic, pages, sources, countries, devices, goals and
-funnels — and you'd like the bill to be $99 and the server to be one file — then
+funnels - and you'd like the bill to be $99 and the server to be one file - then
 the twenty-times difference is buying you reports you don't open.
 
 That's the whole pitch. Matomo is a bigger tool. Some people need a bigger tool.

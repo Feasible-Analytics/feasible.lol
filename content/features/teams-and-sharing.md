@@ -12,98 +12,57 @@ note: |
   tool, Feasible won't pass that review.
 ---
 
-Every plan has unlimited team members. Not ten, not "contact us" — unlimited,
-because the number is zero in the code and there's nowhere to put a cap.
-
-Five team roles, plus two guest roles scoped to a single site.
+Every plan has unlimited teammates. Five roles cover the team. Two more cover
+guests on one site.
 
 ## Who can do what
 
-**Owner** — everything, including deleting the team and transferring ownership.
-There's exactly one, always.
+**Owner** - everything, including deleting the team and transferring ownership.
+There's one, always.
 
-**Admin** — sites, settings, members and billing. Everything except ending the
+**Admin** - sites, settings, members and billing. Everything except ending the
 team or handing it on.
 
-**Editor** — sites and site settings, no access to members or money.
+**Editor** - sites and site settings, no access to members or money.
 
-**Billing** — the dashboard and the billing screens. For the person who pays the
+**Billing** - the dashboard and the billing screens. For the person who pays the
 invoice and shouldn't be able to delete a site.
 
-**Viewer** — the dashboard. Nothing else.
+**Viewer** - the dashboard. Nothing else.
 
-Then **guest editor** and **guest viewer**, invited to one site and seeing
-nothing else about the team — not the other sites, not the member list. That's
-the role for a client or a contractor.
+**Guest editor** and **guest viewer** see one site. They can't see the rest of
+the team.
 
-Guests sit deliberately outside the ranking the other roles use, so an internal
-check for "at least an admin" can never accidentally let one through. An
-unrecognized role fails closed.
-
-A few rules the interface enforces so you don't have to think about them: nobody
-can change the role of somebody who outranks them, the last owner can't be
-removed or demoted, and handing over ownership promotes the other person and
-demotes you to admin in the same move. Two people who can each delete the
-account and neither of whom can stop the other isn't a state anyone can reason
-about.
+Nobody can change the role of someone above them. The last owner can't be
+removed. Transferring ownership makes the old owner an admin.
 
 {{< shot src="app/team.png" alt="The team settings screen showing members Ada Reyes as Owner and Jonah Six as Editor, a guests section, two pending invitations expiring in 47 hours, an API keys list, an ownership transfer control, and a single sign-on panel stating SAML 2.0 is not built yet." caption="Invitations expire after 48 hours. An expired one can be resent." >}}
 
-Invitations go to any address, whether or not it already has an account here,
-and expire **48 hours** after they're sent. That's short on purpose — an
-invitation link is a credential sitting in an inbox, and most of them are
-accepted within the hour.
+Invitations expire after **48 hours**.
 
-[API keys](/features/api-and-webhooks/) belong to the team they were created
-against, not to the person. A key reads that team's sites and no others even if
-its creator belongs to five teams, and it stops working the moment they leave.
-Viewers and guests can't create keys at all.
+[API keys](/features/api-and-webhooks/) belong to the team. They stop working
+when their creator leaves. Viewers and guests can't create them.
 
 ## Three ways to show somebody the numbers
 
-**A public dashboard.** Flip it on and the site's traffic is readable by anyone
-with the URL — no token, no login, at an address that still works next year.
-Good for an open startup, a nonprofit, or anyone who's decided their numbers
-aren't a secret.
+**A public dashboard.** Anyone with the URL can read it. No login.
 
-**A shared link.** A 128-bit token in a URL, revocable from the settings screen.
-Give it to someone once and take it back later without touching anybody's
-account.
+**A shared link.** Send a private URL and revoke it later.
 
-**An embed.** Any shared or public link takes `embed=true`, a `theme` of light,
-dark or system, and a `background` color, and drops into an iframe on your own
-page. The signed-in dashboard refuses to be framed at all — an authenticated
-dashboard inside somebody else's iframe is how you click a delete button you
-never saw.
+**An embed.** Put any public or shared dashboard in an iframe. Pick a light,
+dark, or system theme.
 
-A shared link can carry a password, hashed with PBKDF2-SHA256 at 200,000
-iterations, with two brute-force budgets: six attempts from one source and sixty
-across all sources per link, over fifteen minutes.
+A shared link can use a password. Attempts are rate-limited.
 
-It can also be **pinned to a segment**. The filters are baked into the link and
-the viewer can't remove them, so an agency client sees their campaign and only
-their campaign — not the whole account with a filter they could clear by
-pressing Escape.
+You can also **pin filters** so a client sees one campaign, country, or page.
 
-Two honest limits on embedding. A password-protected link can't be embedded, and
-that isn't a setting we forgot: serving a password form that any site may frame
-is a form an attacker can hide under a button on their own page. Make a second
-link without a password. And some ad-blocker filter lists block embedded
-analytics dashboards, so a visitor running one may see an empty space where the
-iframe should be. If that matters, link to the dashboard instead of embedding it.
+Password-protected links can't be embedded. Some ad blockers also hide embedded
+analytics. Use a normal link when either matters.
 
 ## Why seats aren't a product
 
-Because per-seat pricing doesn't reduce the number of people looking at your
-analytics. It reduces the number of *accounts*.
+Per-seat pricing creates shared logins. Shared logins make access harder to
+revoke and remove the audit trail. So invite everyone. Give each person the
+right role. It costs the same.
 
-What actually happens is one login in a password manager, shared by six people,
-which nobody revokes when one of them leaves. The pricing model that was meant
-to capture more value quietly deleted your audit trail and your ability to
-remove access. Charging for seats on a tool whose entire job is to be looked at
-is a tax on the thing you want to encourage.
-
-So: invite the whole company, give the designer a viewer role, give the
-contractor a guest role on one site, and revoke it when they're done. It costs
-the same. Turn on the [team-wide two-factor policy](/security/) while you're there.
-Details in [the docs](/docs/), and the price is on [one page](/pricing/).
+Turn on [team-wide two-factor authentication](/security/) while you're there.

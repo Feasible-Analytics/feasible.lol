@@ -23,7 +23,7 @@ every self-hoster should run. The other commands are `ingest`, `db backup`, `rol
 `api-key`, `mcp`, `billing`, `comp` and `account`.
 
 It runs on 1 core, 512 MB of RAM and 1 GB of disk. Two cores and 2 GB is comfortable. There's nothing
-to tune, no column store to size, and no cluster to keep in quorum — the operational claim here is
+to tune, no column store to size, and no cluster to keep in quorum - the operational claim here is
 simplicity, not that SQLite beats a column store at anything.
 
 ## Turn off hosted mode
@@ -55,7 +55,7 @@ Because public signup is off, accounts are created by the operator, from the mac
 ./feasible account create --email owner@example.com --name "Account owner"
 ```
 
-It makes a verified owner with no trial dates and prints a generated password once — generated rather
+It makes a verified owner with no trial dates and prints a generated password once - generated rather
 than accepted on the command line, so it's never in your shell history or the process list. Everyone
 else joins by invitation from inside the app.
 
@@ -78,7 +78,7 @@ A binary newer than its databases refuses to start and tells you to run `db migr
 ## Configuration
 
 Every variable is documented in `.env.sample`, with a comment and a default. A variable that isn't in
-that file doesn't exist — the build fails if the source reads one that's missing.
+that file doesn't exist - the build fails if the source reads one that's missing.
 
 Values resolve from `$CONFIG_DIR/<NAME>` (for Docker and systemd secrets), then the environment, then
 `.env` outside production.
@@ -87,7 +87,7 @@ Values resolve from `$CONFIG_DIR/<NAME>` (for Docker and systemd secrets), then 
 
 Set the same `FEASIBLE_INGEST_SALT` on every ingester. Each process combines it with the UTC date
 locally, so daily visitor identifiers agree without contacting an app shard. It's a modest protection
-for visitor hashes, not an encryption key and not a replacement for network security — see
+for visitor hashes, not an encryption key and not a replacement for network security - see
 [privacy](/docs/privacy/).
 
 `FEASIBLE_APP_SECRET_KEY` encrypts two-factor secrets and signs short-lived cookies. Leave it unset
@@ -118,7 +118,7 @@ $FEASIBLE_APP_DATA_DIR/geoip/dbip-city-lite.mmdb
 ```
 
 Put either, both or neither there. With the city file present it's used on its own, because it
-carries the country too. With neither, every visitor's country is unknown — a missing database
+carries the country too. With neither, every visitor's country is unknown - a missing database
 degrades the report and never fails an event or stops the process.
 
 A file that's present but unreadable is logged as a warning at start-up and then treated as a missing
@@ -151,7 +151,7 @@ than adding to it.
 
 {{< callout type="warn" title="The lists don't refresh themselves" >}}
 They're read once at start-up. Change one and restart. There's no background fetcher and no automatic
-update — if you want fresher lists than the binary ships with, that's a cron job and a restart on
+update - if you want fresher lists than the binary ships with, that's a cron job and a restart on
 your side.
 {{< /callout >}}
 
@@ -186,11 +186,11 @@ site's ingestion health panel for per-customer accepted, dropped and truncated e
 Three on each process listener, because public monitoring, process liveness and traffic readiness
 answer different questions.
 
-- `GET /health` — can customers use the service. This is the small public response an external uptime
+- `GET /health` - can customers use the service. This is the small public response an external uptime
   monitor checks.
-- `GET /health/live` — is this process alive. True from the moment the listener is up until it exits.
+- `GET /health/live` - is this process alive. True from the moment the listener is up until it exits.
   This is what a supervisor restarts on.
-- `GET /health/ready` — may this process take traffic. It goes false the instant a shutdown begins,
+- `GET /health/ready` - may this process take traffic. It goes false the instant a shutdown begins,
   so a load balancer drains the process before the listener closes. It answers a
   component-by-component report, and a 503 when it isn't ready, so "not ready" always says which
   part.
@@ -214,7 +214,7 @@ no account is ever locked or deleted for non-payment. The account lifecycle exis
 hosted service's own subscriptions, not to enforce anything on you.
 
 Everything that's in the hosted product is in this build. There's no cut-down community edition, and
-no feature held back for a paid plan — the API has no plan check in it at all. More on that on
+no feature held back for a paid plan - the API has no plan check in it at all. More on that on
 [open source web analytics](/open-source-web-analytics/).
 
 ## API keys

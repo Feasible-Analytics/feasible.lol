@@ -1,110 +1,81 @@
 ---
 title: "Analytics that makes GDPR simpler"
 seotitle: "GDPR-compliant analytics without a consent banner"
-description: "Feasible is GDPR-friendly by design: no cookies, no stored identifiers, no ad network. Most sites won't need a banner. Not legal advice — here's why."
-lede: "We won't tell you you're compliant. What we'll do is show you exactly what gets collected, what the rules actually ask for, and where the hard cases are."
+description: "No cookies, stored identifiers, or ad network. See what Feasible collects and what GDPR still asks of you."
+lede: "No tool makes you compliant. Collecting less makes the work smaller."
 kicker: "GDPR"
 weight: 30
 checked: 2026-09-03
 faq:
   - q: "Is Feasible GDPR compliant?"
-    a: "We describe Feasible as GDPR-friendly, not GDPR-compliant, because compliance is a property of how *you* run your site, not of a tool you installed. What we can tell you is exactly what Feasible collects, what it never collects, and what contracts we offer. The rest is your call, with your own lawyer."
+    a: "We call Feasible GDPR-friendly. Compliance depends on your whole site, configuration, and location. Ask your lawyer."
   - q: "Do I need a cookie banner for Feasible?"
-    a: "Most sites won't. Feasible sets no cookies and stores no identifier in the browser, so the classic cookie-consent trigger isn't there. It isn't a guarantee — the rules cover more than cookies and vary by country, and the rest of your site may need one anyway."
+    a: "Most sites won't need one for Feasible. Rules vary by country, and other parts of your site may still need consent."
   - q: "Does Feasible process personal data?"
-    a: "Briefly. An IP address reaches the ingest tier, gets used for a coarse location lookup and a daily visitor hash, and is discarded before anything is written to disk. The stored visitor number is pseudonymous, not anonymous, and we won't pretend otherwise."
+    a: "Briefly. We use an IP address for a rough location and daily visitor hash, then discard it before writing to disk. The stored hash is pseudonymous."
   - q: "Do you offer a DPA?"
-    a: "Yes, and no signature is needed. It forms part of the terms, names Cloudmanic Labs as processor and you as controller, covers 72-hour breach notice and sub-processors, and incorporates the standard contractual clauses plus the UK Addendum."
+    a: "Yes. It's part of the terms and needs no signature. It includes sub-processors, a 72-hour breach notice, standard contractual clauses, and the UK Addendum."
   - q: "Where is the data stored?"
-    a: "On the hosted service, in the United States. Cloudmanic Labs is an Oregon company and there's no EU-region option today. Transfers are handled by the standard contractual clauses in the DPA. If EU-only storage is a hard requirement, self-host it or pick a vendor that hosts in the EU."
+    a: "The hosted service is in the United States. There's no EU region. Use self-hosting or another vendor if EU-only storage is required."
   - q: "Is Google Analytics GDPR compliant?"
-    a: "That question got a lot of attention in 2022, when regulators in Austria, France, Italy, Denmark and the Nordics ruled against EU-to-US transfers of Google Analytics data. The ground under those decisions changed on July 10, 2023, when the European Commission adopted the EU-US Data Privacy Framework and Google certified under it. The durable objections to GA4 are about the product — consent banners, data retention limits, thresholded reports — not about a live ban."
+    a: "There's no current EU-wide ban on Google Analytics. The practical drawbacks are consent banners, retention limits, thresholded reports, and possible sampling."
   - q: "What about CCPA and PECR?"
     a: "The same facts help with both. CCPA turns on selling or sharing personal information, and we do neither. PECR turns on storing or accessing information on a device, and since February 2026 UK law carries an express statistical-purposes exception with conditions attached."
 ---
 
 {{< callout title="Read this first" >}}
-We never tell anyone they're compliant, and nothing here is legal advice.
-Compliance depends on how you configure and use any tool, what else your site
-loads, and where you and your visitors are. What we can do is describe Feasible
-precisely enough that you or your lawyer can make the call.
+This isn't legal advice. Compliance depends on your whole site, configuration,
+and location. We can only tell you how Feasible works.
 {{< /callout >}}
 
-Feasible is **GDPR-friendly**. It sets no cookies, stores no identifier on the
-visitor's device, never writes an IP address to disk, and has no advertising
-network anywhere in the loop. That doesn't make you compliant. It makes the
-question a great deal smaller.
+Feasible sets no cookies, stores no visitor ID on the device, never writes an IP
+address to disk, and connects to no advertising network.
 
-## What GDPR-compliant web analytics actually means
+## What GDPR-compliant web analytics means
 
-It's a shopping term, not a status. No tool makes you compliant on its own — that
-depends on how you configure it, what else your site loads, and where you and your
-visitors are. What people are usually after when they go looking for
-GDPR-compliant web analytics is a tool that makes the question small: no cookie to
-consent to, no profile to hand over on request, no ad network in the loop. That
-part is describable, and the rest of this page describes it.
+"GDPR-compliant analytics" is a shopping term, not a legal status. A good tool
+reduces the data you must account for. It can't make the rest of your site
+compliant.
 
 ## Why collecting less changes the question
 
-Most of the work in a GDPR conversation about analytics comes from one place:
-the tool built a persistent record of an identifiable person and then sent it
-somewhere.
+No persistent profile means less data to disclose, export, delete, and secure.
+No advertising network means no behavioral data is sent for ads. The remaining
+work is smaller, not zero.
 
-Take those two things away and most of the paperwork goes with them. There's no
-profile to give someone access to. There's no cross-site identity to explain.
-There's no third country receiving behavioral data for advertising, because there's
-no advertising.
+## What's processed
 
-What's left is small, and we'd rather describe it accurately than round it down
-to zero.
-
-## What's actually processed
-
-**Briefly, an IP address.** It reaches the ingest tier, gets used for exactly two
-things — a coarse location lookup against a database on our own disk, and the
-day's visitor hash — and is discarded before anything is written. It never
-reaches storage.
+**An IP address, briefly.** We use it for a rough location and daily visitor
+hash, then discard it before writing to disk.
 
 **Then, a pseudonymous number.** A 64-bit SipHash of the user agent, the IP and
 the site domain, keyed with a salt derived from the current UTC day. The salt is
 never stored in a database and changes at midnight.
 
-That number is **pseudonymous, not anonymous**. It came from data that started
-out personal. It can't be reversed, and the key that made it is gone within a
-day, but calling it anonymous would be a claim we couldn't defend — and several
-tools in this category make it anyway.
+That number is **pseudonymous, not anonymous**. It can't be reversed, and its
+key is gone within a day. It still started with personal data.
 
-**Then, the ordinary stuff.** Page path, page title, referrer, UTM parameters,
+**Ordinary traffic data.** Page path, page title, referrer, UTM parameters,
 country, region, city, device type, screen bucket, browser, OS, language, and any
 custom properties you choose to send. About 210 bytes a row.
 
-There's no field for a name, an email or a user ID, because we didn't build one.
-Our DPA says explicitly that you must not send direct identifiers.
+There's no field for a name, email, or user ID. The DPA forbids sending direct
+identifiers.
 
-## What each rule actually asks for
+## What each rule asks for
 
-**GDPR** governs processing of personal data and wants a lawful basis under
-Article 6. If IPs or IP-derived hashes are processed even briefly, that's
-processing, and legitimate interest under Article 6(1)(f) is the standard answer
-for audience measurement — with a documented balancing test and a right to object.
-The CJEU's *Breyer* judgment (Case C-582/14, October 19, 2016) is the reason this
-is careful rather than obvious: it held a dynamic IP is personal data to a site
-operator *if* that operator has legal means to identify the visitor with the
-ISP's help ([the Court's press
-release](https://curia.europa.eu/jcms/upload/docs/application/pdf/2016-10/cp160112en.pdf)).
-Conditional, not blanket.
+**GDPR** requires a lawful basis for processing personal data. Audience
+measurement often relies on legitimate interest under Article 6(1)(f), with a
+balancing test and right to object. The CJEU's *Breyer* judgment explains when a
+dynamic IP is personal data ([Court summary](https://curia.europa.eu/jcms/upload/docs/application/pdf/2016-10/cp160112en.pdf)).
 
-**ePrivacy / PECR** is a separate stack, and escaping one doesn't end the other.
-It governs storing information on, or reading information from, a device.
-Article 5(3) of Directive 2002/58/EC says "information", not "personal data", and
-never says the word "cookie" — so it's technology-neutral by design.
+**ePrivacy and PECR** separately govern storing information on or reading it from
+a device. The rules cover more than cookies.
 
 **CCPA** turns on selling or sharing personal information. We do neither, and
 there's no ad network to share with.
 
 ## The UK has a real exemption now
-
-This is the biggest change in the area and most pages haven't caught up.
 
 Since **February 5, 2026**, UK law carries an express consent exception for
 analytics. The Data (Use and Access) Act 2025 inserted a new Schedule A1 into
@@ -117,66 +88,33 @@ information isn't shared onward, and two further conditions hold:
 - the visitor gets **clear and comprehensive information** about it, and
 - the visitor gets a **simple means of objecting, free of charge**.
 
-The ICO calls it the "statistical purposes" or "analytics" exception, and draws
-the line precisely: it's "about how your service is used, not about who uses it."
-Traffic by page, journeys, scroll depth, device and browser mix, referrers,
-bounce rates and city-level geolocation are all on the exempt side of the ICO's
-own table. Recordings of individual visitors, ad clicks, linking a visitor ID to
-conversions shared with ad partners, and anything for advertising are not
+The ICO's table includes traffic by page, paths, scroll depth, devices, browsers,
+referrers, bounce rates, and city-level location. It excludes visitor recordings,
+ad clicks, ad conversion IDs, and advertising
 ([ICO guidance, updated April 29, 2026](https://ico.org.uk/for-organisations/direct-marketing-and-privacy-and-electronic-communications/guidance-on-the-use-of-storage-and-access-technologies/what-are-the-exceptions/)).
 
-Two things vendors skip. The exception is conditional on that disclosure and that
-opt-out — running "exempt" analytics with neither doesn't clear the bar. And the
-ICO says PECR covers `localStorage` too, not only cookies, which is why we
-[spell out the two keys our script uses](/cookieless-analytics/) rather than
-claiming it writes nothing.
+The disclosure and opt-out are required. PECR also covers `localStorage`, so we
+[list the two keys Feasible uses](/cookieless-analytics/).
 
 ## In the EU it's a strong position, not a settled one
 
-The EDPB adopted Guidelines 2/2023 on the technical scope of Article 5(3) on
-**October 7, 2024**, and they read that article more broadly than the industry
-slogan does — including instructing a browser to send information, and hashed
-identifiers ([the
-guidelines](https://www.edpb.europa.eu/system/files/2024-10/edpb_guidelines_202302_technical_scope_art_53_eprivacydirective_v2_en_0.pdf)).
-The same document also says applicability doesn't automatically mean consent is
-needed, and that exemptions have to be assessed case by case against each member
-state's transposition.
+EDPB Guidelines 2/2023 read Article 5(3) broadly enough to include some hashed
+identifiers and browser instructions ([guidelines](https://www.edpb.europa.eu/system/files/2024-10/edpb_guidelines_202302_technical_scope_art_53_eprivacydirective_v2_en_0.pdf)).
+They also say consent must be assessed under each country's rules. Ask your
+lawyer about your site.
 
-So the honest framing is this. A tool that stores no identifier and reads nothing
-back has a much stronger case that Article 5(3) isn't engaged, and a much stronger
-case that a national audience-measurement exemption applies. Whether your
-particular site clears the bar is a question for your lawyer, not for our
-marketing page.
-
-**On France specifically:** CNIL replaced its published list of approved
-audience-measurement tools with a self-assessment tool in July 2025, and
-explicitly forbids anyone describing a product as "certified" or "validated by
-the CNIL". So nobody in this category can honestly claim that badge, us included —
-and if you see a vendor claiming it, that tells you something. CNIL's criteria are
-demanding and worth reading: statistics for the publisher's sole account, no
-cross-site identifier, referrer limited to the domain, city-level geolocation at
-most, no session replay
+**In France,** CNIL uses self-assessment rather than product certification. Its
+criteria include publisher-only statistics, no cross-site ID, limited referrers,
+city-level location at most, and no session replay
 ([CNIL, July 4, 2025](https://www.cnil.fr/fr/cookies-et-autres-traceurs/regles/cookies-solutions-pour-les-outils-de-mesure-daudience)).
 
 ## Why Google Analytics is the hard case
 
-Between December 2021 and July 2023, regulators in Austria, France, Italy,
-Denmark, Finland, Norway and Sweden all ruled against EU-to-US transfers of
-Google Analytics data. Those
-decisions were real, and mostly ended in warnings and orders rather than fines.
+Several European regulators ruled against Google Analytics transfers from 2021
+to 2023. The EU-US Data Privacy Framework changed that legal basis in July 2023,
+and Google is certified under it. There's no current EU-wide ban.
 
-**They aren't a live prohibition today, and we're not going to pretend they
-are.** Every one of them turned on transfers after *Schrems II*, and the ground
-under them changed on **July 10, 2023**, when the European Commission adopted the
-EU-US Data Privacy Framework adequacy decision. Google LLC is certified under it.
-The General Court dismissed the challenge to the framework on September 3, 2025;
-an appeal is pending at the CJEU and undecided.
-
-Anyone still telling you Google Analytics is illegal in the EU is running a stale
-page.
-
-The durable objections to GA4 have nothing to do with transfers, which is exactly
-why they're the better argument:
+The practical drawbacks are simpler:
 
 - **It sets cookies and needs a consent banner** in the EU and UK. Everyone who
   declines is missing from your numbers.
@@ -202,25 +140,15 @@ why they're the better argument:
 
 ## What we store, where, and under what contract
 
-**Where.** The hosted service runs in the United States. Cloudmanic Labs, LLC is
-at 901 Brutscher Street, D112, Newberg, OR 97132, and Oregon law governs. There's
-no EU region today and we're not going to imply there is. International transfers
-are handled by the standard contractual clauses incorporated in our DPA, together
-with the UK Addendum.
+**Where.** The hosted service runs in the United States. There's no EU region.
+The DPA uses standard contractual clauses and the UK Addendum.
 
-If EU-only storage is a hard requirement for you, there are two honest answers:
-[run it yourself](/open-source-web-analytics/) on a box in the EU, where every
-feature is free and unrestricted — or pick a vendor that hosts there. Plausible
-hosts in Falkenstein, Germany. Matomo Cloud hosts in Europe. Fathom offers EU
-isolation on every plan. All checked September 3, 2026. That's a real advantage and it
-would be silly to pretend otherwise.
+For EU-only storage, [self-host Feasible](/open-source-web-analytics/) in the EU
+or pick an EU-hosted vendor.
 
-**The contract.** The [DPA](/dpa/) forms part of the terms and needs no
-signature. Ten numbered sections: subject matter and duration, categories of data
-subject and personal data, an explicit prohibition on sending direct identifiers,
-72-hour breach notice, sub-processors by general authorization to a public list,
-SCCs module two plus the UK Addendum, and a security-measures list. If you
-self-host, the DPA says plainly that your own providers aren't our sub-processors.
+**The contract.** The [DPA](/dpa/) needs no signature. It covers the data,
+security measures, sub-processors, breach notice, standard clauses, and UK
+Addendum.
 
 **Retention.** Five years on the hosted plan. Account records are deleted 90 days
 after cancellation, and invoices are kept as long as tax law requires.

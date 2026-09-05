@@ -1,27 +1,20 @@
 ---
 title: "The data health panel"
-description: "Every event Feasible didn't count in the last 24 hours, with a named reason — plus the last request we received and a real test-event button."
-lede: "A screen that tells you what didn't get counted, and why. Never fail silently is the rule the whole product is built to."
+description: "Every event Feasible didn't count in the last 24 hours, with a named reason - plus the last request we received and a real test-event button."
+lede: "See every event Feasible dropped in the last 24 hours, and why."
 weight: 80
 shot: "app/health.png"
 shotAlt: "The ingestion health screen for northwind.example showing counters for accepted, dropped, classified as bot and fields cut short, a warning that events are arriving from an unknown hostname with an Allow button, a table of the last request received with resolved client IP and the header it came from, and a Send a test event button."
 note: |
-  The panel covers the last 24 hours. It's a debugging surface, not a history —
-  if something went wrong last Tuesday and fixed itself, the panel won't tell you
+  The panel covers the last 24 hours. It's a debugging surface, not a history - if something went wrong last Tuesday and fixed itself, the panel won't tell you
   about it. Evidence about rejected hostnames is the one exception; that's kept
   for 30 days.
 ---
 
-Open the health panel and you see four numbers for the last 24 hours: events
-accepted, events dropped, events classified as bot traffic, and fields cut
-short.
-
-Under them, every drop with a named reason. Not "other" — a reason, from a
-closed list: `bot`, `datacenter_ip`, `referrer_spam`, `outdated_browser`,
-`automation`, `hostname_not_allowed`, `unknown_site`, `shield_ip`,
-`shield_country`, `shield_page`, `rate_limited`, `invalid_payload`, and a
-handful more. There's no bucket labeled miscellaneous, because a
-miscellaneous bucket is where the bug you're looking for goes to hide.
+The health panel shows accepted, dropped, bot, and shortened events from the
+last 24 hours. Every drop has a reason, such as `bot`, `datacenter_ip`,
+`unknown_site`, `hostname_not_allowed`, `shield_page`, or `invalid_payload`.
+There's no miscellaneous bucket.
 
 ## The last request we received
 
@@ -32,7 +25,7 @@ with it.
 
 That second one is the whole game. If your reverse proxy isn't forwarding the
 visitor's address, every visitor collapses into one person located at your
-datacenter — and nothing anywhere raises an error. Your dashboard keeps working.
+datacenter - and nothing anywhere raises an error. Your dashboard keeps working.
 The numbers are just wrong, in a way that looks plausible for months.
 
 So there's a warning for it. When more than half of at least twenty requests
@@ -43,7 +36,7 @@ old version of the tracking script.
 ## Send a test event
 
 The button posts a real event to the real public endpoint, through your proxy,
-through the whole pipeline, with a debug header set — so it returns everything
+through the whole pipeline, with a debug header set - so it returns everything
 we derived from it and writes nothing.
 
 The design detail that makes it worth anything: it goes out over the public URL
@@ -51,8 +44,8 @@ like a browser would, rather than calling an internal function and reporting
 success. A self-test that skips your proxy, your DNS and your headers is a test
 of the parts that were never broken.
 
-If events are arriving from a hostname you haven't allowed — a staging copy,
-somebody else's page running your snippet — the panel names the hostname and
+If events are arriving from a hostname you haven't allowed - a staging copy,
+somebody else's page running your snippet - the panel names the hostname and
 offers a one-click button to allow it. An empty allow-list accepts everything,
 which is what almost every site wants; the first hostname you add brings your own
 domain along with it, so turning it on can't accidentally switch you off.
@@ -69,12 +62,12 @@ reorganized itself, or your CDN began caching the page for logged-in users. None
 of that raises an exception anywhere. You find out weeks later, when a number
 you've been reporting to somebody stops making sense.
 
-The stated rule in this codebase is **never fail silently** — every dropped
+The stated rule in this codebase is **never fail silently** - every dropped
 event, every truncated field, every failed job has to be visible to the customer
 or to us. The health panel is that rule with a URL.
 
 It's why a rejected event still returns a `202` with the reason in a response header instead of a bare
-error, why the ingest endpoint's `400` responses name exactly what was missing,
+error, why the ingest endpoint's `400` responses name what was missing,
 and why sending a 31st [custom property](/features/custom-properties/) increments
 a counter you can see rather than disappearing.
 

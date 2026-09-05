@@ -1,6 +1,6 @@
 ---
 title: "Feasible vs Fathom"
-seotitle: "Fathom Analytics alternative — Feasible vs Fathom"
+seotitle: "Fathom Analytics alternative - Feasible vs Fathom"
 description: "Fathom's smallest plan is $150 a year and starts at 100,000 pageviews. Feasible is $99 for ten times that. Prices, limits and where Fathom wins."
 lede: "Fathom's smallest plan is bigger than most sites need. Here's what that costs, and the two things they do that we can't."
 versus: "Fathom"
@@ -8,7 +8,7 @@ checked: 2026-09-03
 weight: 30
 verdict: |
   If your visitors are in Europe and you want their data to stay there, Fathom's
-  EU isolation is free on every plan and we have no equivalent — that alone can
+  EU isolation is free on every plan and we have no equivalent - that alone can
   decide it. If you're a small site paying their 100,000-pageview minimum, or a
   big one paying $600 a year, or you want the source code, we're the cheaper and
   more open answer.
@@ -16,13 +16,13 @@ faq:
   - q: "How much does Fathom cost?"
     a: >-
       Their smallest plan is $15 a month, or $150 a year, and it starts at
-      100,000 pageviews a month — there's nothing below that. A million
+      100,000 pageviews a month - there's nothing below that. A million
       pageviews is $600 a year. Read from their pricing page on September 3,
       2026.
   - q: "Do custom events count against Fathom's pageview limit?"
     a: >-
       Yes. Their FAQ says custom event and API requests "will be counted as if
-      they were pageviews." Ours works the same way — a million pageviews and
+      they were pageviews." Ours works the same way - a million pageviews and
       custom events a month, between them. The unit is the same on both sides;
       the price is $600 a year there and $99 here.
   - q: "Is Fathom open source?"
@@ -45,7 +45,7 @@ engineering that most of this market hasn't bothered with. Start there, because 
 
 Now the prices.
 
-## The price, at every volume
+## Price
 
 From [Fathom's pricing page](https://usefathom.com/pricing), read September 3,
 2026. Annual is ten times monthly.
@@ -76,13 +76,13 @@ Fathom is direct about what counts, which we appreciate. From their pricing FAQ:
 > our API, those requests will be counted as if they were pageviews."
 
 We count the same way. A million pageviews and custom events a month, between
-them — including the outbound clicks, downloads and form submissions our script
+them - including the outbound clicks, downloads and form submissions our script
 fires on its own. There's no unit argument to make here, and we're not going to
 invent one.
 
 So it comes down to the tier you land on. Say you run a SaaS marketing site at
 90,000 pageviews a month and you track signups, trial starts, plan changes and
-doc searches — 20,000 events. That's 110,000 on both meters. On Fathom it puts
+doc searches - 20,000 events. That's 110,000 on both meters. On Fathom it puts
 you in the 200,000 tier at $250 a year. On ours it's 110,000 against a million,
 and the bill is $99 either way.
 
@@ -115,22 +115,21 @@ until you're ten times busier than that.
 | Mobile SDKs | No | No |
 | Trial | 30 days, no card | 7 days |
 
-## The open-source difference, stated carefully
+## Open source
 
-Fathom's hosted product is closed source. That's a business model, not a flaw —
-plenty of good software is closed.
+Fathom's hosted product is closed source. That's a business model, not a flaw - plenty of good software is closed.
 
 But it does mean there's no version of Fathom you can run yourself if they ever
 stop, get acquired, or price you out. "Fathom Lite" on GitHub is MIT-licensed
 and still up, and Fathom says they'll keep fixing bugs in it, but it has had **no
-code changes since January 2023**, and it uses cookies — the hosted product
+code changes since January 2023**, and it uses cookies - the hosted product
 doesn't. It isn't the product.
 
 Feasible is AGPL-3.0-or-later, and the build we host is the build you can run.
 There's no cut-down edition and no feature held back for the paid plan. One Go
 binary, one SQLite file, 512 MB of RAM. If we disappear, you keep running it.
-That's the point of it being there — see [open source web analytics](/open-source-web-analytics/) for the
-whole argument, including what AGPL actually asks of you.
+That's the point of it being there - see [open source web analytics](/open-source-web-analytics/) for the
+whole argument, including what AGPL asks of you.
 
 ## Where Fathom wins
 
@@ -152,14 +151,14 @@ argument.
 Fathom 2,092 bytes, Feasible 3,377. They win it.
 
 **Their over-limit policy is good.** They don't switch your analytics off over a
-traffic spike. Neither do we — we email you, and nothing stops mid-month. We're
+traffic spike. Neither do we - we email you, and nothing stops mid-month. We're
 not claiming an edge here; both approaches are humane.
 
-## The thing neither of you can see on a pricing page
+## Data health
 
 Every analytics tool drops traffic. Bots, scrapers, datacenter addresses,
 browsers too old to trust, requests from a hostname you never registered. That's
-correct behavior — you don't want a crawler in your visitor count.
+correct behavior - you don't want a crawler in your visitor count.
 
 The question is whether you can find out.
 
@@ -169,10 +168,9 @@ dropped events and gives each one a named reason: `bot`, `datacenter_ip`,
 `shield_ip`, `rate_limited`, and a dozen more.
 
 It also tells you which address it resolved for your last request and from which
-header, and warns you if your reverse proxy isn't forwarding visitor addresses —
-the failure that quietly collapses every visitor into one and geolocates them all
+header, and warns you if your reverse proxy isn't forwarding visitor addresses - the failure that quietly collapses every visitor into one and geolocates them all
 to your datacenter. There's a button that fires a real test event through the
-public URL, so it exercises your proxy and headers exactly the way a browser
+public URL, so it exercises your proxy and headers the way a browser
 would.
 
 Nobody else in this comparison publishes a counted, reasoned drop log. It's the
@@ -182,24 +180,23 @@ button to allow it."
 
 ## Moving over
 
-Feasible imports CSV and ZIP uploads. There's no Fathom-specific importer —
-export your data from Fathom and bring it as CSV, and pages, sources, locations,
+Feasible imports CSV and ZIP uploads. There's no Fathom-specific importer - export your data from Fathom and bring it as CSV, and pages, sources, locations,
 devices and browsers land on the same charts as your live traffic.
 
 Both scripts are a single tag in your `<head>`, so you can run them side by side
 for a week and compare the numbers before you cancel anything. We'd recommend
-it. Two tools counting the same traffic will never agree exactly — different bot
-filters, different session rules — and it's better to see that gap on your own
+it. Two tools counting the same traffic will never agree - different bot
+filters, different session rules - and it's better to see that gap on your own
 site than to read about it.
 
-## Looking for a Fathom Analytics alternative?
+## Which one to pick
 
 Then the useful question is which part of Fathom you're replacing. If it's the EU
-isolation, don't — nothing here replaces it, and we've said so twice already. If
+isolation, don't - nothing here replaces it, and we've said so twice already. If
 it's the 100,000-pageview minimum on a site that's nowhere near 100,000, or $600
 a year at a million, that's what the table at the top has been measuring.
 
-## Where we'd tell you to pick us
+## Where Feasible wins
 
 You're small and you don't want to pay a 100,000-pageview minimum. You're large
 and $600 a year for counting pageviews looks like a lot. You run more sites than

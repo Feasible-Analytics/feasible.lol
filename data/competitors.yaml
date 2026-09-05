@@ -8,7 +8,7 @@
 #      tax, on annual billing where they offer it.
 #   2. Every entry carries the URL it came from and the date it was read.
 #   3. Vendors do not all bill for the same thing. `unit` says what each one
-#      actually counts. Never compare two numbers without it.
+#      counts. Never compare two numbers without it.
 #   4. If you can't source it, don't publish it.
 #
 # Created: 2026-09-03
@@ -21,7 +21,7 @@ checked: 2026-09-03
 #
 # These are each vendor's cheapest plan that reaches a million pageviews a month.
 # Where a vendor tiers its features, the row names the tier and the footnote says
-# what the cheaper tier leaves out — quoting a competitor's entry price against
+# what the cheaper tier leaves out - quoting a competitor's entry price against
 # our full-featured one would be the same trick we're complaining about.
 # ------------------------------------------------------------------
 hero:
@@ -29,7 +29,7 @@ hero:
   footnote: >-
     Each vendor's cheapest plan that reaches a million pageviews a month.
     Plausible's Business tier is the first of theirs with funnels, custom
-    properties and the Stats API — its entry plan is $690 and has none of them.
+    properties and the Stats API - its entry plan is $690 and has none of them.
     Fathom has neither funnels nor custom properties at any price.
   rows:
     - name: "Matomo Cloud"
@@ -59,7 +59,7 @@ plans:
     plan: ""
     us: true
     tiers: ["$99", "$99", "$99", "Talk to us", "Talk to us"]
-    unit: "pageviews + custom events — custom properties, goals, funnels, sites and seats are never counted"
+    unit: "pageviews + custom events - custom properties, goals, funnels, sites and seats are never counted"
     sites: "Unlimited"
     seats: "Unlimited"
     retention: "5 years"
@@ -107,7 +107,7 @@ plans:
   - vendor: "Simple Analytics"
     plan: "Simple"
     tiers: ["$150", "$200", "$600", "$1,200", "$1,600"]
-    unit: "datapoints — pageviews, events, and each stored event property"
+    unit: "datapoints - pageviews, events, and each stored event property"
     sites: "10"
     seats: "1 (+$240/yr each)"
     retention: "3 years"
@@ -117,7 +117,7 @@ plans:
   - vendor: "Matomo Cloud"
     plan: ""
     tiers: ["$260", "$420", "$2,040", "$9,750", "$19,000"]
-    unit: "hits — pageviews, events, downloads, outbound clicks and site searches"
+    unit: "hits - pageviews, events, downloads, outbound clicks and site searches"
     sites: "30"
     seats: "30"
     retention: "Configurable"
@@ -140,7 +140,7 @@ plans:
   - vendor: "Umami Cloud"
     plan: "Hobby"
     tiers: ["$0", "$0", null, null, null]
-    unit: "events — pageviews, custom events, and each stored event property"
+    unit: "events - pageviews, custom events, and each stored event property"
     sites: "1"
     seats: "1"
     retention: "6 months"
@@ -152,11 +152,11 @@ plans:
   - vendor: "Umami Cloud"
     plan: "Pro"
     tiers: ["$240", "$240", "$240", "$1,680", null]
-    unit: "events — pageviews, custom events, and each stored event property"
+    unit: "events - pageviews, custom events, and each stored event property"
     sites: "20"
     seats: "10"
     retention: "2 years"
-    note: "Monthly billing only — there is no annual discount."
+    note: "Monthly billing only - there is no annual discount."
     source: "https://umami.is/pricing"
 
   - vendor: "Google Analytics 4"

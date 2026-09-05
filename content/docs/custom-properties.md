@@ -6,7 +6,7 @@ weight: 80
 ---
 
 A custom property is a key and a value attached to an event, so you can break a report down by
-something only your application knows — a plan name, a category, a variant.
+something only your application knows - a plan name, a category, a variant.
 
 They're in every plan, with no cap on how many you register and no "custom dimensions" allowance to
 buy. Send them with the [tracker's own API](/docs/script-options/#calling-it-yourself):
@@ -32,7 +32,7 @@ feasible('pageview', { p: { variant: 'b' } })
   survive isn't luck: names are sorted and the first thirty kept, so the same event always loses the
   same properties.
 - **300 bytes per name, 2,000 per value.** Longer ones are cut to the limit and counted as
-  `prop_name_too_long` or `prop_value_too_long`. The property is still stored — truncated, not
+  `prop_name_too_long` or `prop_value_too_long`. The property is still stored - truncated, not
   rejected.
 - **Strings, numbers and booleans only.** An object, an array or a `null` is dropped and counted as
   `prop_value_unsupported`. It's as lost as a thirty-first property would be.
@@ -49,15 +49,15 @@ never add up.
 
 Every property has a scope, and it's worth thinking about for ten seconds when you add one.
 
-- **Event scope** — a fact about one hit. The product in an *Add to cart*. The file in a download.
-- **Session scope** — a fact about the whole visit. The A/B variant. The plan tier the visitor is
+- **Event scope** - a fact about one hit. The product in an *Add to cart*. The file in a download.
+- **Session scope** - a fact about the whole visit. The A/B variant. The plan tier the visitor is
   signed in as.
 
 The scope decides a **denominator**, which is the only reason it exists.
 
 A conversion rate filtered by an event-scoped property divides by everybody, because the property
 only exists on the conversion itself. Filtered by a session-scoped one it has to divide by the
-visitors who had that value — the visitors in that variant — or the variant with fewer visitors
+visitors who had that value - the visitors in that variant - or the variant with fewer visitors
 always looks worse than it is, for arithmetic reasons that have nothing to do with your test.
 
 A property nobody has scoped is treated as event-scoped, which is the conservative answer. The scope
@@ -73,12 +73,12 @@ allow it.
 
 Email addresses, names, user ids, session tokens.
 
-A property is stored and returned exactly as your site sent it, and shown on a dashboard, and we
+A property is stored and returned as your site sent it, and shown on a dashboard, and we
 can't un-store it for you afterwards. If you need to segment by user, send a value that identifies a
 *group* rather than a person.
 
-The same goes for query strings. Every parameter except the seven acquisition ones — `ref`, `source`,
-`utm_source`, `utm_medium`, `utm_campaign`, `utm_content` and `utm_term` — is stripped from the
+The same goes for query strings. Every parameter except the seven acquisition ones - `ref`, `source`,
+`utm_source`, `utm_medium`, `utm_campaign`, `utm_content` and `utm_term` - is stripped from the
 stored path before anything is written, precisely because sites do put tokens and addresses in them.
 
 ## Reading them back
@@ -108,7 +108,7 @@ Funnels and Explore. Selecting a value adds the same URL filter the query API us
 ## A property isn't free, but it isn't billed either
 
 The custom event carrying it counts toward your monthly volume. The properties themselves add
-nothing — one event with thirty properties is one billable event. See
+nothing - one event with thirty properties is one billable event. See
 [what isn't counted toward your bill](/docs/metrics/#what-isnt-counted-toward-your-bill).
 
 A [goal](/docs/goals-funnels/) can also be narrowed by up to three property constraints, which is how
@@ -126,8 +126,8 @@ The metric names are the aggregate wrapped around the property:
 The aggregates are `sum`, `avg`, `min`, `max`, `p50`, `p75`, `p90`, `p95` and `p99`. They combine
 with every filter and every breakdown, so the 95th percentile of a load time per page is one query.
 
-The percentiles are nearest-rank: the answer is always a value somebody actually sent, never a number
-interpolated between two real ones. For a load time that matters — an interpolated 95th percentile is
+The percentiles are nearest-rank: the answer is always a value somebody sent, never a number
+interpolated between two real ones. For a load time that matters - an interpolated 95th percentile is
 a duration no visitor experienced.
 
 ### When the values aren't all numbers
@@ -136,11 +136,11 @@ Properties are stored as text, because a property is a filter value on a dashboa
 that's sometimes a number and sometimes a word is a column nothing can index.
 
 So a property holding `19.99` on most events and `free` on a few is a real possibility, and the
-honest thing to do with the word is leave it out. Counting it as zero would drag an average down with
+thing to do with the word is leave it out. Counting it as zero would drag an average down with
 nothing on the screen to say why.
 
 That's what happens, and the response says so. Any aggregate that had to skip a value comes back with
-a `not_numeric` warning naming both counts: "measured over 412 of the 431 values of price — the other
+a `not_numeric` warning naming both counts: "measured over 412 of the 431 values of price - the other
 19 are text and were left out rather than counted as zero". A property that turned out to hold no
 numbers at all says that too, rather than answering zero and letting you read it as a real zero.
 
@@ -150,6 +150,6 @@ A property registered as **event**-scoped describes one hit, so a sum adds up ev
 carried it. A property registered as **session**-scoped has one value per visit by declaration, so
 it's counted once per visit however many pages that visit touched.
 
-Get that the wrong way round and an order value repeated on six pageviews is summed as six orders — a
+Get that the wrong way round and an order value repeated on six pageviews is summed as six orders - a
 number six times too large that looks perfectly reasonable. That's the whole reason a property
 carries a declared scope.

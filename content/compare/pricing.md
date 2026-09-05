@@ -1,8 +1,8 @@
 ---
-title: "What analytics actually costs"
-seotitle: "What web analytics actually costs — the whole price ladder"
-description: "Every privacy-friendly analytics vendor's published price at 10k, 100k, 1M, 5M and 10M pageviews a month — with what each one actually counts."
-lede: "Ten vendors, five traffic levels, one table. Plus the thing that makes most of these numbers wrong: almost nobody bills for the same unit."
+title: "What analytics costs"
+seotitle: "What web analytics costs: the price table"
+description: "Every privacy-friendly analytics vendor's published price at 10k, 100k, 1M, 5M and 10M pageviews a month - with what each one counts."
+lede: "Ten vendors. Five traffic levels. One table that shows what each vendor counts."
 versus: "everyone else"
 checked: 2026-09-03
 weight: 5
@@ -11,14 +11,14 @@ verdict: |
   Below about 100,000 pageviews a month, several of these are cheaper than we
   are and you should take one. Above that, the spread is $99 to $2,040 for
   counting the same traffic. The number that decides your real bill isn't on
-  any pricing page — it's what the vendor counts as one unit, so check that
+  any pricing page - it's what the vendor counts as one unit, so check that
   first.
 faq:
   - q: "Which web analytics tool is cheapest?"
     a: >-
       It depends on your traffic. Below 100,000 pageviews a month, Google
       Analytics and Umami Hobby are free, Pirsch Standard is $60 a year and
-      Plausible Starter is $90 — all cheaper than Feasible's $99. At a million
+      Plausible Starter is $90 - all cheaper than Feasible's $99. At a million
       pageviews a month, Feasible is $99 and the rest of the field runs from
       $240 to $2,040.
   - q: "Why do analytics vendors charge such different prices for the same traffic?"
@@ -29,7 +29,7 @@ faq:
       property. Two sites with identical traffic can land three tiers apart.
   - q: "What does Feasible count against its million-a-month limit?"
     a: >-
-      Pageviews and custom events, between them — including the outbound
+      Pageviews and custom events, between them - including the outbound
       clicks, file downloads and form submissions the script fires on its own.
       Custom properties never count, however many you attach. Neither do the
       engagement pings behind scroll depth and time on page, or sites, seats,
@@ -50,7 +50,7 @@ top of the ladder.
 So here's all of it in one table, at list price, from each vendor's own pricing
 page, read on September 3, 2026.
 
-## The whole ladder
+## The price table
 
 The columns are traffic tiers, because that's how these companies sell. "100k
 a month" is the size of the site, not the price. Read the units section below
@@ -64,14 +64,14 @@ it, before tax.
 |---|---:|---:|---:|---:|---:|
 | **Feasible** | **$99** | **$99** | **$99** | Talk to us | Talk to us |
 | Google Analytics 4 | $0 | $0 | $0 | $0 | $0 |
-| Umami Cloud — Hobby | $0 | $0 | — | — | — |
-| Pirsch — Standard | $60 | $120 | $540 | $990 | $1,590 |
-| Plausible — Starter | $90 | $190 | $690 | $1,290 | $1,690 |
-| Plausible — Growth | $140 | $290 | $1,040 | $1,940 | $2,540 |
-| Plausible — Business | $190 | $390 | $1,390 | $2,590 | $3,390 |
+| Umami Cloud - Hobby | $0 | $0 | - | - | - |
+| Pirsch - Standard | $60 | $120 | $540 | $990 | $1,590 |
+| Plausible - Starter | $90 | $190 | $690 | $1,290 | $1,690 |
+| Plausible - Growth | $140 | $290 | $1,040 | $1,940 | $2,540 |
+| Plausible - Business | $190 | $390 | $1,390 | $2,590 | $3,390 |
 | Fathom | $150 | $150 | $600 | $1,400 | $2,000 |
-| Simple Analytics — Simple | $150 | $200 | $600 | $1,200 | $1,600 |
-| Umami Cloud — Pro | $240 | $240 | $240 | $1,680 | — |
+| Simple Analytics - Simple | $150 | $200 | $600 | $1,200 | $1,600 |
+| Umami Cloud - Pro | $240 | $240 | $240 | $1,680 | - |
 | Matomo Cloud | $260 | $420 | $2,040 | $9,750 | $19,000 |
 
 A dash means the vendor doesn't offer that volume on that plan.
@@ -84,7 +84,7 @@ of those is a better deal and you should take it.
 At a million pageviews a month, the same list runs $99 to $2,040. That's the
 part we built a company around.
 
-## What each vendor actually counts
+## What each vendor counts
 
 This matters more than the headline price, and it's the reason two sites with
 identical traffic land on different tiers.
@@ -100,7 +100,7 @@ identical traffic land on different tiers.
 | Matomo | **Hits** | Their FAQ: pageviews, events, downloads, outlinks, site searches, content tracking and crashes. |
 | Google Analytics 4 | Events | Everything is an event, but the quota is free. |
 
-### The multiplier, worked through
+### One example
 
 Take one real-ish shop: 700,000 pageviews a month, 20,000 purchases each
 carrying five properties, 30,000 signups each carrying two.
@@ -113,7 +113,7 @@ carrying five properties, 30,000 signups each carrying two.
 | Matomo (with downloads and outlinks tracked) | 1.4M–2M hits | A tier up, $3,990/yr |
 
 Same shop. Same traffic. Feasible and Plausible read the same number here,
-because the unit is the same — the difference between those two is the price,
+because the unit is the same - the difference between those two is the price,
 not the meter. The rest of the spread comes entirely from what the meter counts:
 Umami bills the 160,000 stored properties, Matomo bills the downloads and
 outlinks and searches as hits of their own.
@@ -122,7 +122,7 @@ If you take one thing from this page: **before you compare two prices, find the
 sentence on each pricing page that defines the unit.** It's usually in the FAQ,
 usually short, and usually the most expensive sentence on the page.
 
-## What you actually get at a million a month
+## What one million pageviews buys
 
 Price alone is still misleading, because the cheap plan on most of these isn't
 the plan with the features.
@@ -143,14 +143,14 @@ Two numbers to notice.
 
 **Plausible's advertised entry price is a single site with no teammates.** Custom
 properties, funnels, ecommerce revenue attribution and the Stats API all start
-on Business — $1,390 a year at a million pageviews. And scheduled raw event
+on Business - $1,390 a year at a million pageviews. And scheduled raw event
 export is Enterprise-only, so there's no published self-serve price at which
 you can get your own raw events out.
 
 **Simple Analytics bills per seat.** One user included, $20 a month for each
 extra. Five people at a million datapoints is $1,560 a year.
 
-## Google Analytics is free. Here's the bill anyway
+## The cost of free analytics
 
 GA4 costs $0 at every volume on this table, and that's real. What it costs
 instead:
@@ -164,8 +164,7 @@ instead:
   can't adjust them."
 - **Your visitors' behavior going to an advertising company.**
 
-Google Analytics 360 is the paid tier, and Google publishes no price for it —
-their upgrade page tells you to contact an account representative. Any figure
+Google Analytics 360 is the paid tier, and Google publishes no price for it - their upgrade page tells you to contact an account representative. Any figure
 you see quoted for 360 comes from a reseller or an analyst, not from Google.
 We're not going to put a number on it.
 
@@ -187,12 +186,12 @@ you reach the usage limit before the end of your billing period, your access
 will be limited to the day you reached the limit," with five days to upgrade
 before you get gaps.
 
-**Fathom** deserves credit here — they say they won't switch your analytics off
+**Fathom** deserves credit here - they say they won't switch your analytics off
 over an occasional spike, and if you're over two months running they'll tell you
 they're upgrading you. That's a decent policy and we're not claiming an edge
 over it.
 
-## Self-hosting, if that's the plan
+## Self-hosting
 
 Free isn't free when it needs a bigger box.
 
@@ -208,7 +207,7 @@ Two footnotes on that table. ClickHouse's own operations docs recommend "32 GB
 or more" and warn about memory exceptions under 16 GB, which is a separate point
 from what Plausible's README asks for. And Matomo's developer docs say that
 above 500 page views a day you should turn off browser archiving and run
-archiving from cron — which then becomes something you check weekly.
+archiving from cron - which then becomes something you check weekly.
 
 We're not claiming SQLite stores data more efficiently than a column store. It
 doesn't. The claim is operational: one process, one file, nothing to tune.
@@ -220,8 +219,8 @@ doesn't. The claim is operational: one process, one file, nothing to tune.
 3. If the vendor counts event properties, multiply those events by the number of
    properties on each.
 4. If it counts hits, add downloads, outbound clicks and site searches.
-5. Now read the ladder at that number — not at your pageview count.
-6. Then check the plan actually has the features you need at that tier. On
+5. Now read the ladder at that number - not at your pageview count.
+6. Then check the plan has the features you need at that tier. On
    several of these, it doesn't.
 
 For Feasible, step 1 is the whole calculation. That's the design.
@@ -231,20 +230,19 @@ For Feasible, step 1 is the whole calculation. That's the design.
 Every figure above was read from the vendor's own page on **September 3, 2026**.
 Prices change; if something here is stale, tell us and we'll fix it.
 
-- Plausible — <https://plausible.io/#pricing>
-- Fathom — <https://usefathom.com/pricing>
-- Simple Analytics — <https://www.simpleanalytics.com/pricing>
-- Matomo — <https://matomo.org/pricing/> · hits defined at
+- Plausible - <https://plausible.io/#pricing>
+- Fathom - <https://usefathom.com/pricing>
+- Simple Analytics - <https://www.simpleanalytics.com/pricing>
+- Matomo - <https://matomo.org/pricing/> · hits defined at
   <https://matomo.org/faq/general/what-is-a-hit/>
-- Pirsch — <https://pirsch.io/pricing>
-- Umami — <https://umami.is/pricing>
-- Google Analytics 4 — retention:
+- Pirsch - <https://pirsch.io/pricing>
+- Umami - <https://umami.is/pricing>
+- Google Analytics 4 - retention:
   <https://support.google.com/analytics/answer/7667196> · thresholding:
   <https://support.google.com/analytics/answer/9383630>
-- Matomo self-hosting requirements —
-  <https://matomo.org/faq/on-premise/matomo-requirements/>
-- ClickHouse operations tips — <https://clickhouse.com/docs/operations/tips>
-- Feasible — [our pricing page](/pricing/), which is the same $99 whether you
+- Matomo self-hosting requirements - <https://matomo.org/faq/on-premise/matomo-requirements/>
+- ClickHouse operations tips - <https://clickhouse.com/docs/operations/tips>
+- Feasible - [our pricing page](/pricing/), which is the same $99 whether you
   read it here or there.
 
 Script sizes were measured the same day with

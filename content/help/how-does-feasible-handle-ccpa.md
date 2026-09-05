@@ -16,8 +16,8 @@ California's rules turn on a handful of specific behaviors. Here's where Feasibl
 
 **Profiles and automated decision-making.** Neither exists. There are no user-level records, no per-person timelines, and no screen anywhere that shows you an individual.
 
-**Sensitive personal information.** We don't collect any — unless you send it yourself in a custom property, which the [DPA](/dpa/) prohibits.
+**Sensitive personal information.** We don't collect any - unless you send it yourself in a custom property, which the [DPA](/dpa/) prohibits.
 
-**Consumer requests — access, deletion, correction.** Because [the visitor hash rotates every day](/help/how-do-you-count-unique-visitors-without-cookies/) and [the IP is never written down](/help/do-you-store-ip-addresses/), there's usually no way to find a given person's rows in the first place. That's a limitation and a feature at once, and it's the honest answer to give a requester. Your own account data is different: you can export it or delete it whenever you like.
+**Consumer requests - access, deletion, correction.** Because [the visitor hash rotates every day](/help/how-do-you-count-unique-visitors-without-cookies/) and [the IP is never written down](/help/do-you-store-ip-addresses/), there's usually no way to find a given person's rows in the first place. That's a limitation and a feature at once, and it's the answer to give a requester. Your own account data is different: you can export it or delete it whenever you like.
 
-Do you still need a "Do Not Sell or Share My Personal Information" link because of something else on your site? Possibly. **This isn't legal advice** — it's a description of what our software does. Read [the privacy policy](/privacy/), and ask a lawyer about the rest of your stack.
+Do you still need a "Do Not Sell or Share My Personal Information" link because of something else on your site? Possibly. **This isn't legal advice** - it's a description of what our software does. Read [the privacy policy](/privacy/), and ask a lawyer about the rest of your stack.

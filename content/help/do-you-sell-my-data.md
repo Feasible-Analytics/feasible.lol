@@ -12,12 +12,12 @@ There's no ad network, no data broker, no "anonymized industry benchmark" produc
 
 Two structural facts make the promise more than a promise.
 
-**Aggregating across customers is impossible by design.** Your domain is an input to [the visitor hash](/help/how-do-you-count-unique-visitors-without-cookies/), so the same human on two of our customers' sites is two unrelated 64-bit numbers. There's no key to join on. A cross-site audience isn't something we've decided not to build — it's something the data shape doesn't support.
+**Aggregating across customers is impossible by design.** Your domain is an input to [the visitor hash](/help/how-do-you-count-unique-visitors-without-cookies/), so the same human on two of our customers' sites is two unrelated 64-bit numbers. There's no key to join on. A cross-site audience isn't something we've decided not to build - it's something the data shape doesn't support.
 
 **There's nothing valuable to sell.** No IP addresses, no emails, no user IDs, no persistent identifiers, no per-person timelines. What we hold is counts of paths, referrers, coarse locations and device strings, keyed to a number that expires overnight. That's a bad product to be a data broker with.
 
-The people who *do* touch your data are named. Sub-processors are on a public list — the hosting provider, the mail sender, the payment processor — and they're bound by the [DPA](/dpa/). That's it.
+The people who *do* touch your data are named. Sub-processors are on a public list - the hosting provider, the mail sender, the payment processor - and they're bound by the [DPA](/dpa/). That's it.
 
-If the model ever changed, you'd see it in the terms and you could [take every raw event with you](/help/how-do-i-export-my-data/) the same afternoon. Export is a button, it works in every account state, and it includes the raw rows rather than just the summaries — which is the part that makes leaving actually possible.
+If the model ever changed, you'd see it in the terms and you could [take every raw event with you](/help/how-do-i-export-my-data/) the same afternoon. Export is a button, it works in every account state, and it includes the raw rows rather than just the summaries - which is the part that makes leaving possible.
 
 And if you'd rather not take our word for any of it, the source is [public](/open-source-web-analytics/) and you can [run it yourself](/help/can-i-run-feasible-myself/).

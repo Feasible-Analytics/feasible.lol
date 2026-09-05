@@ -11,13 +11,13 @@ If a hundred visits started this week and thirty-eight of them never went anywhe
 
 The thing to hold onto: **bounce rate describes the visit, not the page.** A single-page visit is a bounce regardless of how long the person stayed or how far down they read, and it's counted against the page they landed on.
 
-Which is why a high bounce rate isn't automatically bad. On a documentation page, a recipe, a phone number, an "is the office open on Monday" answer — a bounce is the site working perfectly. Somebody arrived, got the thing, left. A high bounce rate on a pricing page is a different story.
+Which is why a high bounce rate isn't automatically bad. On a documentation page, a recipe, a phone number, an "is the office open on Monday" answer - a bounce is the site working perfectly. Somebody arrived, got the thing, left. A high bounce rate on a pricing page is a different story.
 
-If you want to know whether people are actually reading, bounce rate is the wrong number. Look at [visit duration](/help/what-is-a-visit-and-when-does-it-end/) next to it, or set a [scroll-depth goal](/help/what-is-scroll-depth/) and measure the thing you actually care about.
+If you want to know whether people are reading, bounce rate is the wrong number. Look at [visit duration](/help/what-is-a-visit-and-when-does-it-end/) next to it, or set a [scroll-depth goal](/help/what-is-scroll-depth/) and measure the thing you care about.
 
 Two more notes:
 
-- **An interaction rescues a bounce, an engagement ping doesn't.** A second pageview ends a bounce, and so does any interactive event — an outbound click, a download, a form submission, a `feasible('Signup')`. The engagement ping that carries time on page and scroll depth is deliberately excluded, because that's the script talking rather than the visitor.
+- **An interaction rescues a bounce, an engagement ping doesn't.** A second pageview ends a bounce, and so does any interactive event - an outbound click, a download, a form submission, a `feasible('Signup')`. The engagement ping that carries time on page and scroll depth is excluded, because that's the script talking rather than the visitor.
 - **A bounce still has a duration** here, because engagement is measured continuously rather than only from one pageview to the next. Plenty of tools report zero seconds for every bounce; that's an artifact of how they measure, not a fact about the visitor.
 
 [Bounce rate and exit rate get confused constantly](/help/bounce-rate-vs-exit-rate/), and they answer different questions.

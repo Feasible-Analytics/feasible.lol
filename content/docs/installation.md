@@ -1,6 +1,6 @@
 ---
 title: "Installation"
-description: "One script tag on every page you want counted, and four ways to tell whether it's actually working."
+description: "One script tag on every page you want counted, and four ways to tell whether it's working."
 lede: "One script tag, and how to tell whether it's working."
 weight: 10
 ---
@@ -13,9 +13,9 @@ That's 3,377 bytes gzipped, and it's deferred, so it never blocks rendering.
 
 There are no cookies and nothing stored in the browser to identify anyone, which is why most sites
 won't need a consent banner for it. [Privacy and GDPR](/docs/privacy/) has the facts to hand your
-lawyer — and if you're somewhere strict, ask them rather than us.
+lawyer - and if you're somewhere strict, ask them rather than us.
 
-`data-domain` has to match the site exactly as you registered it. It's how an event gets routed to
+`data-domain` has to match the site as you registered it. It's how an event gets routed to
 your account, and an event for a domain we don't hold is dropped with the reason `unknown_site`.
 
 ## The per-site script path
@@ -36,7 +36,7 @@ path.
 
 {{< callout title="Not an ad-blocker escape" >}}
 Randomized paths raise the cost of blocking us. They don't end the game. If blockers are your real
-problem, [proxy the script through your own domain](/docs/proxying/) — that's the thing that works.
+problem, [proxy the script through your own domain](/docs/proxying/) - that's the thing that works.
 {{< /callout >}}
 
 ## Where to put it
@@ -56,7 +56,7 @@ a template or a head component: [Next.js](/integrations/nextjs/),
 [Django](/integrations/django/) and [Laravel](/integrations/laravel/). Each guide
 names the exact field and the one thing that platform hides.
 
-If your site is a single-page app, the script picks up route changes on its own — `pushState`,
+If your site is a single-page app, the script picks up route changes on its own - `pushState`,
 `replaceState`, back and forward, and hash changes. So don't also fire a pageview on navigation, or
 every route change gets counted twice.
 
@@ -113,7 +113,7 @@ design, so a person moving between them is one visitor rather than two.
 
 ## Visitors with JavaScript disabled
 
-A no-script pixel goes through the identical pipeline — same derivation, same session rules, same
+A no-script pixel goes through the identical pipeline - same derivation, same session rules, same
 storage:
 
 ```
@@ -123,13 +123,13 @@ storage:
 ```
 
 It takes the page URL from the browser's own `Referer` header, which is what makes it a one-liner you
-can paste into a template. The consequence is that the real referrer is unknowable — a no-script
+can paste into a template. The consequence is that the real referrer is unknowable - a no-script
 visitor is Direct unless you add `&r=…` yourself. It also can't measure time on page or scroll depth,
 because nothing is running to measure them.
 
 ## Server-side events
 
-Anything that happens away from a browser — a webhook, a background job, an offline conversion — can
+Anything that happens away from a browser - a webhook, a background job, an offline conversion - can
 be posted straight to the events endpoint, or sent with one of the
 [server-side SDKs](/docs/sdks/).
 
@@ -143,5 +143,5 @@ has no referrer of its own.
 - A content security policy that allows our origin in `script-src` but not in `connect-src`. The
   script loads and then silently sends nothing, which is the hardest version of this to spot.
 - You're on `localhost`. That's deliberate; see [script options](/docs/script-options/).
-- A [shield](/docs/shields/) of your own is excluding the traffic — your address, your country, that
+- A [shield](/docs/shields/) of your own is excluding the traffic - your address, your country, that
   page, or a hostname allow-list that doesn't include this one.

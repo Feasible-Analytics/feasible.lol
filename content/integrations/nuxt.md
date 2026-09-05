@@ -23,7 +23,7 @@ export default defineNuxtConfig({
 });
 ```
 
-Which produces exactly this:
+Which produces this:
 
 {{< snippet domain="yourdomain.com" >}}
 
@@ -33,7 +33,7 @@ Which produces exactly this:
 2. Add the `app.head.script` entry above, with your own domain.
 3. Restart the dev server so the config reloads, then deploy.
 
-`data-domain` has to match the site as you registered it — no `https://`, no `www.` unless you registered it that way. A mismatch is dropped with the reason `unknown_site`, which the ingestion health panel names for you.
+`data-domain` has to match the site as you registered it - no `https://`, no `www.` unless you registered it that way. A mismatch is dropped with the reason `unknown_site`, which the ingestion health panel names for you.
 
 ## Don't also add it with useHead
 
@@ -45,12 +45,12 @@ Pick the config. It's declared once, it's server-rendered, and it can't accident
 
 ## Route changes are already counted
 
-Vue Router's client-side navigations fire `pushState`, and the script listens for that — along with `replaceState`, `popstate` and `hashchange` — and counts one pageview each. Two changes in one tick collapse to a single event at the final URL, so a middleware redirect doesn't count twice.
+Vue Router's client-side navigations fire `pushState`, and the script listens for that - along with `replaceState`, `popstate` and `hashchange` - and counts one pageview each. Two changes in one tick collapse to a single event at the final URL, so a middleware redirect doesn't count twice.
 
 So there's nothing to write in a `router.afterEach()` or a `page:finish` hook. Adding one doubles your numbers.
 
 {{< callout title="SSR and the first pageview" >}}
-Because the tag is in the server-rendered HTML, it's present before hydration and the first pageview fires without waiting for your bundle. That's the reason to prefer the config over any runtime approach — a visitor who reads one page and leaves still gets counted.
+Because the tag is in the server-rendered HTML, it's present before hydration and the first pageview fires without waiting for your bundle. That's the reason to prefer the config over any runtime approach - a visitor who reads one page and leaves still gets counted.
 {{< /callout >}}
 
 ## Custom events
@@ -65,13 +65,13 @@ Wrap it in `if (import.meta.client)` or call it from an event handler. On the se
 
 ## Check it worked
 
-Deploy, or run `nuxt build` and `nuxt preview` on a real hostname. `localhost` is deliberately not counted, so `nuxt dev` shows nothing no matter how correct the config is.
+Deploy, or run `nuxt build` and `nuxt preview` on a real hostname. `localhost` is not counted, so `nuxt dev` shows nothing no matter how correct the config is.
 
 Open the site, click a link to a second route rather than reloading, and watch the network tab: one `POST` to `/api/event` on load, one more per navigation. Then open Feasible.
 
-You should show up under Real-time visitors. If you don't, go to **Site settings → Ingestion health**. It counts every event that arrived and every one that was dropped, each with a named reason — `unknown_site` means `data-domain` doesn't match the site you registered, `hostname_not_allowed` means the page is on a hostname that isn't on your list, which is what a preview deployment URL will do.
+You should show up under Real-time visitors. If you don't, go to **Site settings → Ingestion health**. It counts every event that arrived and every one that was dropped, each with a named reason - `unknown_site` means `data-domain` doesn't match the site you registered, `hostname_not_allowed` means the page is on a hostname that isn't on your list, which is what a preview deployment URL will do.
 
-The **send a test event** button there posts through the real public URL, so it exercises exactly what a browser does.
+The **send a test event** button there posts through the real public URL, so it exercises what a browser does.
 
 A brand-new site takes about fifteen seconds before its first event is accepted. [Give it that](/help/how-long-until-i-see-data/) before you change anything.
 

@@ -1,6 +1,6 @@
 ---
 title: "Integrations"
-description: "WordPress, Shopify, Next.js, Nuxt, Astro, Webflow, Squarespace and Tag Manager — plus the one step each platform hides."
+description: "WordPress, Shopify, Next.js, Nuxt, Astro, Webflow, Squarespace and Tag Manager - plus the one step each platform hides."
 lede: "WordPress, Shopify, the frameworks, and why we'd rather you didn't use a tag manager."
 weight: 20
 ---
@@ -13,10 +13,10 @@ the same instructions with your own snippet already filled in.
 
 There's a plugin, **feasible.lol Analytics**. It does more than paste the snippet: it serves the
 script and the events endpoint from your own domain on randomized paths, which is the part that
-actually survives ad blockers, and it adds the two measurements a theme can't give you — site-search
+survives ad blockers, and it adds the two measurements a theme can't give you - site-search
 terms and 404s.
 
-Install it, then *feasible.lol → Settings*, enter your domain exactly as registered, and save.
+Install it, then *feasible.lol → Settings*, enter your domain as registered, and save.
 Everything else has a working default.
 
 Without the plugin, paste the snippet into your theme's `header.php` before `</head>`, or into any
@@ -76,7 +76,7 @@ init({ domain: "example.com" });
 await track("Signup", { props: { plan: "annual" } });
 ```
 
-It doesn't bundle the tracker — it loads the same file from the same host. What it adds is the things
+It doesn't bundle the tracker - it loads the same file from the same host. What it adds is the things
 a hand-rolled tag gets wrong in a modern app: it's safe to import in a server render and does nothing
 there, it installs the queue stub synchronously so an event fired during hydration is replayed rather
 than throwing, `init` is idempotent so a hot reload can't double-count, and `track` always settles
@@ -105,7 +105,7 @@ manual pageviews and counting localhost. The other sends an event, with a table 
 fields for a revenue amount and currency.
 
 A Custom HTML tag with the plain snippet on an *All Pages* trigger also works. Use the `data-domain`
-form there rather than the per-site path — tag managers rewrite opaque paths.
+form there rather than the per-site path - tag managers rewrite opaque paths.
 
 We'd still rather you didn't. A tag manager is itself among the most-blocked scripts on the web, so
 loading us through it turns one blockable request into two, and the one you added is the one more
@@ -114,7 +114,7 @@ likely to be blocked.
 ## Looker Studio
 
 There's a community connector that reads the query API. You deploy it into your own Apps Script
-project — it isn't in Google's gallery — and connect it with an API key carrying `stats:read` and
+project - it isn't in Google's gallery - and connect it with an API key carrying `stats:read` and
 `sites:read`.
 
 It exposes 23 dimensions and 11 metrics, pushes equality and contains filters down to us, and caches
@@ -126,7 +126,7 @@ number that looks right and isn't. Details on [SDKs and plugins](/docs/sdks/).
 Mobile apps, background jobs, offline conversions: post to the events endpoint, or use one of the
 five server-side SDKs. See [SDKs and plugins](/docs/sdks/).
 
-There are no mobile SDKs yet — iOS, Android and React Native are scoped and not built. Post to the
+There are no mobile SDKs yet - iOS, Android and React Native are scoped and not built. Post to the
 endpoint directly in the meantime.
 
 ## Visitors with JavaScript disabled

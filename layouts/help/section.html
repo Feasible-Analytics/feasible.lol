@@ -34,7 +34,7 @@
         <input
           type="search"
           id="help-filter"
-          placeholder="Type a word — cookies, import, funnels…"
+          placeholder="Type a word - cookies, import, funnels…"
           autocomplete="off"
           class="w-full border-2 border-rule bg-surface px-4 py-3 text-base placeholder:text-neutral-700 focus-visible:border-flag focus-visible:outline-none"
         />
@@ -117,7 +117,7 @@
         <a href="mailto:{{ .Site.Params.email }}" class="text-flag-700 underline"
           >Ask us instead</a
         >
-        — a real person answers, and the good questions end up on this page.
+        . A real person answers, and the good questions end up on this page.
       </p>
     </div>
 
@@ -137,7 +137,7 @@
 
   <script>
     // Filter the question list in place. Everything is already on the page, so
-    // this is a substring match over the rendered titles — no index to fetch
+    // this is a substring match over the rendered titles - no index to fetch
     // and nothing to keep in sync.
     (function () {
       var input = document.getElementById("help-filter");

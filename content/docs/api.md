@@ -29,7 +29,7 @@ dropped.
 
 | Field | Meaning |
 |---|---|
-| `n` | **Required.** Event name — `pageview`, `engagement`, or your own. |
+| `n` | **Required.** Event name - `pageview`, `engagement`, or your own. |
 | `d` | **Required.** Domain, matching a registered site. |
 | `u` | The page URL. Strongly recommended: without it there's no page to report against. |
 | `r` | The referrer. |
@@ -44,7 +44,7 @@ dropped.
 | `v` | Tracker version. |
 
 `application/json`, `text/plain`, `application/x-www-form-urlencoded` and a missing content type are
-all accepted, and the body is parsed as JSON regardless — the browser script sends `text/plain`
+all accepted, and the body is parsed as JSON regardless - the browser script sends `text/plain`
 deliberately, to avoid a CORS preflight on every pageview. The body is capped at 64 KiB.
 
 ### Why it always answers 202
@@ -61,14 +61,14 @@ For decisions made before the response, the reason travels in the `x-feasible-dr
 header. CORS exposes that header, and the browser tracker's callback returns it as `dropped`. Every
 reason comes from a closed set, so it can be counted rather than read:
 
-- `unknown_site` — the domain isn't one we hold.
-- `account_dormant` — collection has stopped for this account.
-- `site_deleted` — the site is gone.
-- `shield_ip` — an address one of your [shields](/docs/shields/) excludes.
-- `rate_limited` — too many requests from one source address.
-- `invalid_payload` — properties or revenue that aren't the shape the field is for.
-- `internal_error` — our failure, not yours, and counted as such.
-- `bot`, `datacenter_ip`, `referrer_spam`, `outdated_browser`, `automation` — these are
+- `unknown_site` - the domain isn't one we hold.
+- `account_dormant` - collection has stopped for this account.
+- `site_deleted` - the site is gone.
+- `shield_ip` - an address one of your [shields](/docs/shields/) excludes.
+- `rate_limited` - too many requests from one source address.
+- `invalid_payload` - properties or revenue that aren't the shape the field is for.
+- `internal_error` - our failure, not yours, and counted as such.
+- `bot`, `datacenter_ip`, `referrer_spam`, `outdated_browser`, `automation` - these are
   **classifications, not deletions**. The event is stored with the reason attached and left out of
   your reports by default, so you can put it back.
 
@@ -76,15 +76,15 @@ Four more reasons are decided after the response has already gone out. They're c
 ingestion health panel but can never appear in that header or the browser callback, so a bare `202`
 can still become one of these:
 
-- `shield_country`, `shield_page` and `hostname_not_allowed` — applied at the shard that holds your
+- `shield_country`, `shield_page` and `hostname_not_allowed` - applied at the shard that holds your
   data. See [excluding traffic](/docs/shields/).
-- `no_session_for_engagement` — a measurement whose pageview never arrived. It's only established
+- `no_session_for_engagement` - a measurement whose pageview never arrived. It's only established
   when the orphaned measurement expires, half an hour after we answered it, which is why the counter
   is the only place you'll ever see it.
 
 A genuine `400` is reserved for a body we couldn't read at all, a payload missing `n` or `d`, a
 malformed `k`, and a request arriving straight from a data center with no forwarded address or user
-agent — each with a sentence naming what's missing.
+agent - each with a sentence naming what's missing.
 
 ### Stating attribution for a server-side event
 
@@ -101,7 +101,7 @@ Send the attribution explicitly, as full-length top-level fields, and it's used 
 
 ### Debugging one request
 
-Send `X-Debug-Request: true` with any event — the value has to be `true`, not `1` — and the response
+Send `X-Debug-Request: true` with any event - the value has to be `true`, not `1` - and the response
 is `200` with the fully derived event as JSON: the address we resolved and which header it came from,
 whether a trusted proxy is configured, the visitor identifier and the salt day, the geolocation, the
 channel, every field we'd store, the drop or bot reason, and the tally of anything truncated.
@@ -158,8 +158,7 @@ question you didn't ask.
 `total_revenue`, `average_revenue`, `revenue_per_visitor`.
 
 What each one means is on [metric definitions](/docs/metrics/). Numeric
-[custom properties](/docs/custom-properties/) can also be aggregated —
-`sum(event:props:price)`, `p95(event:props:load_ms)` and the rest.
+[custom properties](/docs/custom-properties/) can also be aggregated - `sum(event:props:price)`, `p95(event:props:load_ms)` and the rest.
 
 ### Dimensions
 
@@ -189,14 +188,14 @@ Positional arrays. Filters AND together; the values inside one filter OR togethe
 Operators: `is`, `is_not`, `contains`, `contains_not`, `matches`, `matches_not`, and `has_done`,
 which takes an inner filter and selects the visits that did that thing at some point.
 
-A time dimension can't be filtered — narrow the date range instead.
+A time dimension can't be filtered - narrow the date range instead.
 
 ### Date ranges
 
 A preset: `day`, `24h`, `7d`, `28d`, `91d`, `month`, `last_month`, `year`, `12mo`, `all`, `realtime`
 (30 minutes), `5m`.
 
-Or a pair of dates, **with the end inclusive** — `["2026-08-01", "2026-08-31"]` covers all of the
+Or a pair of dates, **with the end inclusive** - `["2026-08-01", "2026-08-31"]` covers all of the
 31st.
 
 Buckets are cut in the site's own time zone unless you override `timezone` with an IANA name. Set
@@ -229,7 +228,7 @@ percentage change from nothing.
 And `meta.sources` tells you whether an answer came from raw events, from pre-computed summaries, or
 from both, so "this number moved and nothing changed" has somewhere to start.
 
-`meta.metric_warnings` is where a metric says it isn't telling you the whole truth — money left out
+`meta.metric_warnings` is where a metric says it isn't telling you the whole truth - money left out
 for want of an exchange rate, groups truncated, a bucket still filling. It's attached per metric
 rather than to the whole query.
 
@@ -254,7 +253,7 @@ send and are answered by the same engine:
 - `GET /api/v1/stats/aggregate`
 - `GET /api/v1/stats/timeseries`
 - `GET /api/v1/stats/breakdown`
-- `GET /api/v1/stats/realtime/visitors` — answers a bare integer, as that shape does
+- `GET /api/v1/stats/realtime/visitors` - answers a bare integer, as that shape does
 
 They take `site_id`, `metrics`, `period`, `date`, `filters`, `compare`, `with_bots` and
 `with_imported`, with `property`, `limit` and `page` on breakdown, and `interval` on timeseries.
@@ -275,13 +274,12 @@ snippet are managed under `/api/v1/sites/…` and `/api/v1/teams/…`. [Webhooks
 under `/api/v1/webhooks`.
 
 A site is addressed by its domain, not a number. Goal, property and funnel definitions created
-through the API are immediately available in settings and dashboard reports — see
+through the API are immediately available in settings and dashboard reports - see
 [goals and funnels](/docs/goals-funnels/).
 
 One thing to expect: `PUT /api/v1/teams/memberships` and `PUT /api/v1/sites/guests` never insert a
 membership directly. They create a revocable invitation that expires in 48 hours, and return the same
-shape whether or not the address already has an account. `owner` isn't an invitational role —
-ownership moves only through the transfer workflow.
+shape whether or not the address already has an account. `owner` isn't an invitational role - ownership moves only through the transfer workflow.
 
 ## API keys
 
@@ -296,10 +294,10 @@ feasible api-key list --team 1
 feasible api-key revoke --team 1 --id <key id>
 ```
 
-Revoking keeps the row and marks it revoked; a revoked key then behaves exactly as though it never
+Revoking keeps the row and marks it revoked; a revoked key then behaves as though it never
 existed.
 
-Four scopes exist — `stats:read`, `sites:read`, `sites:provision` and `webhooks:write` — and a key
+Four scopes exist - `stats:read`, `sites:read`, `sites:provision` and `webhooks:write` - and a key
 created with no scopes carries all of them. Using a route your key doesn't cover is a `403` naming
 the scope you need.
 
@@ -314,7 +312,7 @@ The same key works for the Stats API, the Sites API, webhooks and [the MCP serve
 than per account, so one runaway script can't starve your dashboard.
 
 Every authenticated response carries `X-RateLimit-Limit`, `X-RateLimit-Remaining` and
-`X-RateLimit-Reset` (Unix seconds) — not only the ones that were refused, so you can back off before
+`X-RateLimit-Reset` (Unix seconds) - not only the ones that were refused, so you can back off before
 you're told to. Over the limit is a `429` with `Retry-After` in seconds.
 
 The window is a fixed hour rather than a sliding one, which is worth knowing if you're pacing a batch

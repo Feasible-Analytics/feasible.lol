@@ -1,6 +1,6 @@
 ---
 title: "Privacy and GDPR"
-description: "No cookies, no IP written to disk, and a daily-rotating visitor hash — plus why we call it pseudonymous rather than anonymous."
+description: "No cookies, no IP written to disk, and a daily-rotating visitor hash - plus why we call it pseudonymous rather than anonymous."
 lede: "What we store, what we never store, and why pseudonymous isn't the same as anonymous."
 weight: 160
 ---
@@ -34,7 +34,7 @@ Three consequences are worth stating outright:
   [visitors aren't additive across days](/docs/metrics/#visitors-arent-additive-and-arent-quite-what-you-think).
 - **The site's domain is in the message.** The same person on two of your sites is two unrelated
   numbers, and there's nothing to join across customers. The registrable domain is in there too,
-  which is why `app.example.com` and `example.com` are the same visitor — subdomains share a visitor
+  which is why `app.example.com` and `example.com` are the same visitor - subdomains share a visitor
   by design.
 - **Two day values are derived in memory.** Today's computes identifiers; yesterday's exists solely
   so a visit that began before midnight can still be matched to its own session. They're derived from
@@ -42,7 +42,7 @@ Three consequences are worth stating outright:
 
 ### Why we call it pseudonymous
 
-That design is a genuinely strong one, and it's still *pseudonymous* under the GDPR rather than
+That design is a strong one, and it's still *pseudonymous* under the GDPR rather than
 anonymous.
 
 The identifier is derived from personal data. An IP address is personal data, and a user agent is
@@ -74,8 +74,8 @@ That's about 210 bytes an event.
   nowhere to put one.
 - **The raw user agent string.** It's parsed into a browser, an operating system and a device type,
   and the string itself is dropped.
-- **Click identifiers.** We record that `gclid` or `msclkid` was *present* — which is how a paid
-  click is told from an organic one when somebody forgot their campaign tags — and never its value,
+- **Click identifiers.** We record that `gclid` or `msclkid` was *present* - which is how a paid
+  click is told from an organic one when somebody forgot their campaign tags - and never its value,
   because a click id identifies one click by one person.
 - Anything in a query string other than the seven acquisition parameters.
 
@@ -87,7 +87,7 @@ third party learns your visitor's address either.
 The tracking script sets none and reads none, and uses no local storage for identification.
 
 Most sites won't need a consent banner for this design. But "no banner required" is a vendor's legal
-position rather than a regulator's holding, and rules differ by country and keep moving — the UK now
+position rather than a regulator's holding, and rules differ by country and keep moving - the UK now
 has a statutory analytics exemption with its own conditions attached, and the EDPB reads the
 underlying rule more broadly than the slogan does.
 
@@ -104,7 +104,7 @@ Deleting suspected bot traffic before storing it is the more common choice in th
 means a wrongly-classified human visitor is gone with no way to get them back.
 
 The lists themselves ship inside the binary and can be replaced on disk. They don't refresh
-themselves at runtime — see [self-hosting](/docs/self-hosting/#bot-and-spam-lists).
+themselves at runtime - see [self-hosting](/docs/self-hosting/#bot-and-spam-lists).
 
 ## Who processes your data
 
@@ -131,7 +131,7 @@ or account deletion to erase the affected analytics data, and write to us for he
 erasure request.
 
 A pseudonymous fingerprint on its own usually gives no reliable way to match a named requester to one
-stored row — which is the flip side of the design working.
+stored row - which is the flip side of the design working.
 
 ## Deleting an account
 
@@ -144,7 +144,7 @@ keep only the provider identifier needed to retry it on every hourly sweep until
 send the deletion confirmation after it does. Once the mail relay's acceptance is recorded, the
 destination email and team name are erased from the deletion record.
 
-A minimal tombstone — internal id, timestamps, generic state — plus invoices retained for tax
+A minimal tombstone - internal id, timestamps, generic state - plus invoices retained for tax
 obligations, is what remains. The timetable is on the [pricing page](/pricing/).
 
 ## Where the data lives

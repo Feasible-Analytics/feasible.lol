@@ -1,8 +1,8 @@
 ---
-title: "Cookieless analytics, and what it actually buys you"
-seotitle: "Cookieless analytics — no cookies, no banner"
+title: "Cookieless analytics, and what it buys you"
+seotitle: "Cookieless analytics: no cookies, no banner"
 description: "Feasible sets no cookies and no persistent identifiers. For most sites that means no consent banner, and no data lost to the people who decline."
-lede: "What cookieless really means, how visitors get counted without one, whether the numbers hold up, and the honest answer on consent banners."
+lede: "No cookie. No persistent ID. Here is what you gain and give up."
 kicker: "COOKIELESS"
 weight: 20
 checked: 2026-09-03
@@ -12,77 +12,49 @@ faq:
   - q: "How do you count unique visitors without cookies?"
     a: "Each event gets a 64-bit hash of the user agent, the IP address and the site's domain, keyed with a salt derived from the current UTC day. The salt is never stored and changes at midnight, so the number is only good for one day."
   - q: "Are cookieless analytics accurate?"
-    a: "For daily and weekly traffic, yes — the counting method is the same one cookies would give you within a single day. Where it differs is anything that needs memory across days: returning visitors, multi-day journeys and lifetime value can't be measured this way."
+    a: "For daily and weekly traffic, yes - the counting method is the same one cookies would give you within a single day. Where it differs is anything that needs memory across days: returning visitors, multi-day journeys and lifetime value can't be measured this way."
   - q: "Do I still need a cookie banner?"
-    a: "Most sites running Feasible won't need one, because there's no cookie to consent to. That isn't a legal guarantee — consent rules cover more than cookies, and the answer depends on your jurisdiction and what else your site loads. Check with your own lawyer if you're somewhere strict."
+    a: "Most sites running Feasible won't need one, because there's no cookie to consent to. That isn't a legal guarantee - consent rules cover more than cookies, and the answer depends on your jurisdiction and what else your site loads. Check with your own lawyer if you're somewhere strict."
   - q: "Is cookieless the same as fingerprinting?"
     a: "No, and the distinction is the whole point. Fingerprinting builds an identifier meant to be stable across sites and across time. Our hash includes the site domain and a key that changes daily, so it can't do either."
   - q: "Does the Feasible script write anything to the browser?"
     a: "Two things, neither an identifier. A short-lived retry queue holding events that haven't been delivered yet, cleared as soon as the server accepts them, and a flag you set yourself if you want to exclude your own visits."
   - q: "Do ad blockers block cookieless analytics?"
-    a: "Some do. Blocking rates vary enormously by audience — under 10% on a mainstream consumer site, much higher on a developer audience. Serving the script from your own domain through a proxy cuts most of it."
+    a: "Some do. Blocking rates vary enormously by audience - under 10% on a mainstream consumer site, much higher on a developer audience. Serving the script from your own domain through a proxy cuts most of it."
 ---
 
-Feasible sets no cookie. Not "cookieless if you configure it that way" — there's
-no cookie code in the tracker to turn on.
-
-Which is what cookieless analytics means: nothing stored in the visitor's
-browser, no persistent ID, nothing that can be read back on a later visit to
-recognize the same person.
+Feasible sets no cookie. There's no cookie code to turn on.
 
 ## How you count visitors when nothing is stored
 
-A cookie is just a way of handing the browser a number and asking for it back
-later. Take the cookie away and you need the number to come from somewhere else.
-
-Here's ours. When an event arrives, the ingest tier computes a 64-bit SipHash-2-4
-over three things: the user-agent string, the client IP address, and the site's
-own domain. The key for that hash is a salt derived from the current UTC day
-number. It isn't stored in a database anywhere, and it changes at midnight UTC.
-Yesterday's is held briefly so an open visit doesn't split in two, then it's gone
-as well.
+When an event arrives, Feasible makes a 64-bit hash from the user agent, client
+IP address, and site domain. Its key changes at midnight UTC and is never stored.
 
 Same browser, same network, same site, same day, same number. Different day,
 different number, and no way to connect the two.
 
-The raw IP is used for that calculation and for a coarse location lookup, then
-discarded. It never reaches disk.
+The raw IP is also used for a rough location, then discarded. It never reaches
+disk.
 
 ## Cookieless tracking, and what it can still tell you
 
-Are the numbers any good? Within a day, yes. Pageviews, visits, bounce rate, top
-pages, sources, countries, devices — all of that is counted the way it would be
-with a cookie, because within a single day the hash does the same job.
+Daily pageviews, visits, bounce rate, pages, sources, countries, and devices work
+as expected. Here is what changes.
 
-Here's where it's different, and we'd rather tell you now.
+**No returning visitors.** Someone who visits Monday and Thursday counts twice.
 
-**Returning visitors aren't a thing here.** Someone who reads you Monday and
-Thursday is two visitors, because Monday's key no longer exists on Thursday. If
-"returning vs new" is a number your business runs on, this model can't give it to
-you.
+**No cross-device tracking.** A phone and laptop count as two visitors.
 
-**Cross-device isn't tracked.** Phone in the morning, laptop at lunch, two
-visitors. Every cookieless tool has this property. Most don't say so plainly.
+**Sites stay separate.** The same person on two sites counts twice.
 
-**Two of your own sites count separately.** The domain is inside the hash on
-purpose — it's what makes cross-site tracking impossible.
+**Shared networks can blur.** People on one IP with the same browser may collapse
+into one visitor.
 
-**Shared networks blur a little.** An office behind one IP running the same
-browser version collapses toward one visitor. In practice this is small, and it
-is the direction we'd rather err in.
-
-Everything else — funnels, goals, custom properties, revenue, scroll depth, time
-on page, the journey report — works fine, because none of it needs to remember
-anyone past midnight.
+Funnels, goals, properties, revenue, scroll depth, and time on page still work.
 
 ## Cookieless isn't fingerprinting
 
-This is where the category gets sloppy, so let's be exact.
-
-Fingerprinting means assembling enough signals — fonts, canvas, audio, GPU,
-plugins, timezone — to build an identifier that's **stable across sites and
-across time**, so a person can be recognized later without ever being handed a
-cookie. It's the workaround that made cookie rules feel pointless.
+Fingerprinting makes an identifier that stays stable across sites and time.
 
 Two design decisions make our hash useless for that:
 
@@ -92,56 +64,20 @@ Two design decisions make our hash useless for that:
   stable across time. Tomorrow's can't be derived from today's, by us or by
   anyone who took the database.
 
-We also don't read canvas, audio, fonts, GPU, battery or installed plugins. The
-inputs are the user agent, the IP and the domain. That's the list.
+Feasible doesn't read canvas, audio, fonts, GPU, battery, or installed plugins.
 
 ## Does the script write anything to the device?
 
-Yes, two things, and neither is an identifier. We'd rather you read this from us
-than find it in devtools.
-
-The tracker keeps a small **outbox** in `localStorage`. Every event is written
-there before the request starts and removed as soon as the server accepts it,
-which is how a pageview survives a flaky connection or a tab closing mid-request.
-It holds pending events and an idempotency UUID per event. It doesn't hold
-anything that persists after delivery.
-
-There's also a **self-exclusion flag** you set yourself, by hand, so your own
-visits stop being counted.
-
-That's the honest, complete answer. It matters because some rules — the UK's, for
-instance — cover local storage and not just cookies. Anyone claiming their script
-"writes nothing at all" is either doing something different or hasn't looked.
+Yes. An **outbox** holds undelivered events in `localStorage` and clears them
+after delivery. A **self-exclusion flag** lets you stop counting your own visits.
+Neither identifies a visitor.
 
 ## So do you need a consent banner?
 
-**Most sites running Feasible won't need one.** That's the honest version, and
-we're going to keep the qualifier.
-
-The reasoning has two steps. There's no cookie and no stored identifier to
-consent to, so the classic cookie-consent trigger isn't there. And any personal
-data still in play — a transient IP — is a much smaller, much shorter-lived set
-than an ad-linked analytics tool creates.
-
-Where it gets more interesting:
-
-**The UK now has a statutory analytics exemption.** The Data (Use and Access) Act
-2025 inserted a new Schedule A1 into PECR, in force since February 5, 2026. It
-permits storage or access whose sole purpose is collecting statistics about how
-your service is used, with a view to making improvements
-([the text](https://www.legislation.gov.uk/ukpga/2025/18/schedule/12/enacted)).
-It comes with two conditions people skip: you must give clear information about
-it, and you must offer a **simple, free way to object**. The ICO's own guidance
-frames the boundary as "about how your service is used, not about who uses it"
-([ICO, updated April 29, 2026](https://ico.org.uk/for-organisations/direct-marketing-and-privacy-and-electronic-communications/guidance-on-the-use-of-storage-and-access-technologies/what-are-the-exceptions/)).
-
-**In the EU it's less settled than the marketing suggests.** The EDPB's
-Guidelines 2/2023 on the technical scope of Article 5(3), adopted October 7, 2024,
-read that article more broadly than "cookies" —
-[the guidelines](https://www.edpb.europa.eu/system/files/2024-10/edpb_guidelines_202302_technical_scope_art_53_eprivacydirective_v2_en_0.pdf).
-The same document also says applicability doesn't automatically mean consent is
-required; it has to be assessed case by case, and national audience-measurement
-exemptions exist. So: a strong position, not a settled one.
+**Most sites running Feasible won't need one for analytics.** There's no
+cookie or persistent identifier to accept. The answer still depends on your
+country and everything else your site loads. [Read the legal details and
+sources](/gdpr-compliant-analytics/).
 
 {{< callout title="Not legal advice" >}}
 We're an analytics company, not your lawyer, and nothing on this page is legal
@@ -152,39 +88,18 @@ strict, ask someone qualified.
 
 ## What a banner costs you
 
-Two things, and only one of them is measurable.
+A declined banner means a missing visitor. The banner also costs money and gets
+between people and your site. Removing it improves the data and the page.
 
-The first is data. Every visitor who declines, or who closes the tab rather than
-deal with the box, is missing from your numbers. We've seen figures thrown around
-for how many people decline; none of them trace back to a study we could read, so
-we're not going to quote one at you. What we'll say is the direction: a declined
-banner is a lost measurement, and you don't get to see how many.
-
-The second is the banner itself — the consent tool, the review, the thing every
-visitor has to dismiss before reading a word. There's an entire industry selling
-the fix for a problem that mostly arrives with the analytics tool you chose.
-
-## Ad blockers, honestly
-
-Some blocklists catch analytics endpoints, ours included. Blocking rates vary
-enormously by audience: under 10% on a mainstream consumer site, much
-higher on a developer or tech audience. The most-cited number in this category
-comes from a vendor study on a single page that trended on Hacker News, and it
-was publicly rebutted; the same author's own site reports
-[13% of visitors blocking Google Analytics](https://markosaric.com/google-analytics-blocking/).
-Take the range, not the headline.
-
-If it matters to you, serve the script from your own domain. The tracker supports
-a `data-api` attribute and a proxied script path, and
-[the install docs walk through it](/docs/).
+## Ad blockers
+Some blocklists catch Feasible. Technical audiences block more than mainstream
+audiences. If it matters, [serve the script from your own domain](/docs/proxying/).
 
 ## The script
 
 {{< snippet domain="yourdomain.com" >}}
 
-3,377 bytes gzipped, 7,099 raw. GA4's `gtag.js` measured 148,451 bytes gzipped on
-September 3, 2026 — about 43× larger — and that's only its first request. Reproduce both
-with `curl -H 'Accept-Encoding: identity' <url> | gzip -9 | wc -c`.
+3,377 bytes gzipped. It sets no cookie and loads no second script.
 
 ---
 

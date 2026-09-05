@@ -7,14 +7,14 @@ weight: 10
 
 Open **Site settings → Health**. It will tell you the reason by name.
 
-The panel covers the last 24 hours and counts accepted events against refused ones — with a specific reason attached to every refusal. Never failing silently is the thing this product is actually built around, and [the health panel](/features/data-health/) is where that shows up.
+The panel covers the last 24 hours and counts accepted events against refused ones - with a specific reason attached to every refusal. Never failing silently is the thing this product is built around, and [the health panel](/features/data-health/) is where that shows up.
 
 Here's what each reason means:
 
 | Reason | What happened |
 |---|---|
 | `bot` | The user agent matched a known crawler or tool |
-| `automation` | The browser carried driver flags — Playwright, Puppeteer, Selenium |
+| `automation` | The browser carried driver flags - Playwright, Puppeteer, Selenium |
 | `datacenter_ip` | The request came from a cloud or hosting range |
 | `outdated_browser` | A browser more than 18 major versions behind on an auto-updating OS |
 | `referrer_spam` | A known junk referrer domain |
@@ -23,7 +23,7 @@ Here's what each reason means:
 | `shield_ip` · `shield_country` · `shield_page` | One of [your own rules](/help/how-do-i-exclude-a-country-or-a-page/) |
 | `rate_limited` | Too many requests from one address, too fast |
 | `invalid_payload` | The request was malformed |
-| `no_session_for_engagement` | An engagement ping with no open visit — usually harmless |
+| `no_session_for_engagement` | An engagement ping with no open visit - usually harmless |
 | `account_dormant` · `site_deleted` | The account or site isn't collecting |
 
 The first five are [normal bot filtering](/help/how-do-you-handle-bots/) and usually the largest number on the page. That's the system working.

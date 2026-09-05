@@ -1,6 +1,6 @@
 ---
 title: "Import your history, export everything"
-description: "Bring history in as CSV, and take everything out as one ZIP — ten roll-up sheets plus every raw event. Not a paid add-on."
+description: "Bring history in as CSV, and take everything out as one ZIP - ten roll-up sheets plus every raw event. Not a paid add-on."
 lede: "Your history comes with you, and so does everything you collect here."
 weight: 100
 note: |
@@ -10,18 +10,11 @@ note: |
   from Google and upload the files.
 ---
 
-Two directions, both of them a button.
-
-**In:** loose CSVs, or a ZIP of them. **Out:** one ZIP containing ten roll-up
-sheets and every raw event Feasible has stored for the site.
+Import loose CSVs or a ZIP. Export one ZIP with ten reports and every raw event.
 
 ## Bringing history in
 
-The single biggest reason people stay on analytics they've stopped liking is
-that leaving means abandoning years of numbers. It's the first objection in
-every thread on the subject, and it's a fair one.
-
-Export your GA4 reports as CSV and upload the folder — pages, sources,
+Export your GA4 reports as CSV and upload the folder - pages, sources,
 locations, devices and browsers land on the same charts as your live traffic,
 dated where they belong. It's the same path any other tool's export takes.
 
@@ -33,7 +26,7 @@ are visitors, visits, pageviews, events, bounces, exits, visit duration and time
 on page. If your previous tool exports daily roll-up CSVs with columns named
 like that, they come straight in.
 
-Dates have to be unambiguous — `2026-01-02`, `2026/01/02`, or RFC 3339. We won't
+Dates have to be unambiguous - `2026-01-02`, `2026/01/02`, or RFC 3339. We won't
 guess whether `01/02` is January 2nd or February 1st, because guessing wrong
 puts a month of traffic on the wrong days and nothing about the result looks
 broken.
@@ -42,15 +35,15 @@ The guards are generous and finite: 5,000,000 rows per file, 100 files per
 archive, 1 GiB uncompressed, and a compression-ratio limit that stops a zip
 bomb from being an interesting afternoon.
 
-## Imported history behaves like history
+## Imported history
 
 Here's the part most importers get wrong.
 
 Imported data arrives as roll-up rows carrying the full dimension block **plus a
-record of which dimensions the source actually reported**. So when you filter to
-Germany, imported traffic narrows exactly like native traffic. And when you
-filter by something the source never provided — screen size, say, from a tool
-that didn't export it — that period is reported as a labeled gap rather than
+record of which dimensions the source reported**. So when you filter to
+Germany, imported traffic narrows like native traffic. And when you
+filter by something the source never provided - screen size, say, from a tool
+that didn't export it - that period is reported as a labeled gap rather than
 silently rendering as zero.
 
 The difference matters when somebody looks at a two-year chart. A gap says "we
@@ -59,9 +52,8 @@ wrong one turns into a business decision.
 
 ## Taking everything out
 
-Ask for an export and a background job builds a ZIP: ten roll-up sheets —
-visitors, sources, pages, entry pages, exit pages, locations, devices, browsers,
-operating systems, custom events — plus **the raw events**. Not a summary of
+Ask for an export and a background job builds a ZIP: ten roll-up sheets - visitors, sources, pages, entry pages, exit pages, locations, devices, browsers,
+operating systems, custom events - plus **the raw events**. Not a summary of
 them. The rows.
 
 The download link is good for 24 hours.
@@ -71,10 +63,10 @@ ticket. It's a button on your settings screen, in every copy of Feasible,
 including the [self-hosted](/open-source/) one. Elsewhere in this category,
 getting your own raw events out is the thing you have to call sales about.
 
-## Why export works even when your account doesn't
+## Export stays available
 
 If your card fails, Feasible locks the dashboard after 30 days. Collection keeps
-running. Export keeps working — in every phase, without exception, right up to
+running. Export keeps working - in every phase, without exception, right up to
 deletion.
 
 That's a deliberate decision written into the access rules rather than a

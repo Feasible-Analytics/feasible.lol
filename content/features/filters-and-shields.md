@@ -4,8 +4,7 @@ description: "Six filter operators that live in the URL, shields that stop count
 lede: "Narrow the report you're reading, stop counting what you never wanted, and merge the URLs that are really one page."
 weight: 90
 note: |
-  There are no saved segments. A filter set lives in the URL and nowhere else —
-  no naming it, no picking it from a list. And a shield only applies to events
+  There are no saved segments. A filter set lives in the URL and nowhere else - no naming it, no picking it from a list. And a shield only applies to events
   that arrive after it's live; it never removes traffic you already counted.
 ---
 
@@ -20,7 +19,7 @@ contain, matches regex, does not match regex.
 
 Repeated filters AND together. Several values inside one filter OR. You get up
 to 32 filters at once, 1,000 values in any one of them, and five dimensions in a
-single query — limits nobody has ever hit by clicking, and which exist so
+single query - limits nobody has ever hit by clicking, and which exist so
 [the API](/features/api-and-webhooks/) can't be handed something that takes a
 minute to answer.
 
@@ -38,12 +37,12 @@ Every filter ends up in the address bar, readable:
 ```
 
 That's deliberate, and it's why there's no "save segment" button. The URL *is*
-the saved segment. Bookmark it, paste it into Slack, put it in a runbook — it'll
+the saved segment. Bookmark it, paste it into Slack, put it in a runbook - it'll
 still resolve next year, it works for somebody with no account through a
 [shared link](/features/teams-and-sharing/), and there's no saved-object schema
 to migrate the next time we change something.
 
-The honest cost: if you apply the same six filters every morning, you'll be
+The cost: if you apply the same six filters every morning, you'll be
 keeping a bookmark, and you won't get a tidy dropdown of named views. We think
 the trade is worth it. You may not.
 
@@ -51,24 +50,24 @@ the trade is worth it. You may not.
 
 A shield stops an event being counted. Four kinds, 30 rules each per site:
 
-**IP** — a single address or a CIDR block. This is how you stop counting your
+**IP** - a single address or a CIDR block. This is how you stop counting your
 own office.
 
-**Country** — an ISO country code.
+**Country** - an ISO country code.
 
-**Page** — a path, or everything beneath it with a trailing `*`.
+**Page** - a path, or everything beneath it with a trailing `*`.
 
-**Hostname** — an allow-list. Leave it empty and every hostname is accepted,
+**Hostname** - an allow-list. Leave it empty and every hostname is accepted,
 which is what nearly every site wants. Add one and only listed hostnames count,
 so a staging copy running your snippet stops polluting production.
 
-Rules take effect within 15 seconds. A shielded event isn't erased quietly — it
+Rules take effect within 15 seconds. A shielded event isn't erased quietly - it
 shows up on [the health panel](/features/data-health/) as a drop with reason
 `shield_ip`, `shield_country` or `shield_page`, so you can prove your rule is
 working instead of hoping.
 
 IP shields can only be evaluated in the ingest tier, because that's the only
-place the address exists — it's discarded before anything is written to disk.
+place the address exists - it's discarded before anything is written to disk.
 That's a consequence of the [privacy design](/features/privacy/), and it's also
 why no shield is retroactive. There's nothing stored to go back and match
 against.
@@ -101,8 +100,8 @@ from a preview is better than finding out from a week of missing data.
 ## What's already excluded
 
 Before any of this, Feasible drops known crawlers, datacenter ranges, automated
-browsers and referrer-spam domains — around seventy bot signatures and 11,842
-merged datacenter ranges, with Cloudflare, Fastly and Akamai deliberately left
+browsers and referrer-spam domains - around seventy bot signatures and 11,842
+merged datacenter ranges, with Cloudflare, Fastly and Akamai left
 out because their address space carries real people using WARP and iCloud
 Private Relay.
 

@@ -32,7 +32,7 @@ export const onRenderBody = ({ setHeadComponents }) => {
 3. Restart the dev server. Gatsby reads `gatsby-ssr.js` at startup and won't pick up an edit while it's running.
 4. Build and deploy.
 
-The `key` isn't decoration — React needs it on every element in an array, and Gatsby will warn at build time if it's missing.
+The `key` isn't decoration - React needs it on every element in an array, and Gatsby will warn at build time if it's missing.
 
 ## Not the Head API
 
@@ -44,10 +44,10 @@ It also says data-block scripts belong there but "dynamic scripts are better loa
 
 Gatsby's `<Link>` navigates client-side through `pushState`. The script listens for `pushState`, `replaceState`, `popstate` and `hashchange`, and reports one pageview each. Consecutive changes inside one tick collapse to a single event at the final URL, so a redirect doesn't count twice.
 
-So there's nothing to add to `onRouteUpdate` in `gatsby-browser.js`. If you've inherited that pattern from a Google Analytics plugin, take it out — leaving it doubles every number on the site.
+So there's nothing to add to `onRouteUpdate` in `gatsby-browser.js`. If you've inherited that pattern from a Google Analytics plugin, take it out - leaving it doubles every number on the site.
 
 {{< callout title="gatsby develop won't show you anything" >}}
-`localhost` is deliberately not counted, so the dev server is the one place you can't verify this. Run `gatsby build && gatsby serve` behind a real hostname, or check the deployed site. Don't spend an hour debugging a config that's already correct.
+`localhost` is not counted, so the dev server is the one place you can't verify this. Run `gatsby build && gatsby serve` behind a real hostname, or check the deployed site. Don't spend an hour debugging a config that's already correct.
 {{< /callout >}}
 
 ## Custom events
@@ -62,12 +62,12 @@ window.feasible("Signup", { props: { plan: "annual" } });
 
 Deploy, open the site in a normal browser window, and click through two or three pages using Gatsby's own links. Watch the network tab: one `POST` to `/api/event` on load, one more per navigation.
 
-Then open Feasible. You should show up under Real-time visitors. If you don't, go to **Site settings → Ingestion health**. It counts every event that arrived and every one that was dropped, each with a named reason — `unknown_site` means `data-domain` doesn't match the site you registered, `hostname_not_allowed` means the page is on a hostname that isn't on your list, which is what a preview deployment URL will do.
+Then open Feasible. You should show up under Real-time visitors. If you don't, go to **Site settings → Ingestion health**. It counts every event that arrived and every one that was dropped, each with a named reason - `unknown_site` means `data-domain` doesn't match the site you registered, `hostname_not_allowed` means the page is on a hostname that isn't on your list, which is what a preview deployment URL will do.
 
-The **send a test event** button there posts through the real public URL, so it exercises exactly what a browser does.
+The **send a test event** button there posts through the real public URL, so it exercises what a browser does.
 
 A brand-new site takes about fifteen seconds before its first event is accepted, so [wait that out](/help/how-long-until-i-see-data/) before you go looking for a cause.
 
 Related: [React](/integrations/react/), [Next.js](/integrations/nextjs/), the [install docs](/docs/installation/), and [script options](/docs/script-options/).
 
-Sources: [Gatsby — Gatsby Head API](https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-head/), checked September 3, 2026.
+Sources: [Gatsby - Gatsby Head API](https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-head/), checked September 3, 2026.

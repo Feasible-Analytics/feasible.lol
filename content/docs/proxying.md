@@ -13,9 +13,9 @@ connection their browser has open.
 
 ## What to proxy
 
-- **The script** — a static file, cacheable. It's served at `/js/script.js`, or at your site's own
+- **The script** - a static file, cacheable. It's served at `/js/script.js`, or at your site's own
   `/js/fs-<token>.js`.
-- **The events endpoint** — `POST /api/event`, never cached. Proxy the whole prefix rather than the
+- **The events endpoint** - `POST /api/event`, never cached. Proxy the whole prefix rather than the
   exact path, so the no-script pixel at `/api/event/pixel.gif` is covered too.
 
 ## Caddy
@@ -62,7 +62,7 @@ location /stats/js/ {
 ```
 
 {{< callout type="warn" title="data-api is not optional here" >}}
-Left out, the script derives the endpoint from the *origin* of its own `src` — not the directory — so
+Left out, the script derives the endpoint from the *origin* of its own `src` - not the directory - so
 a script served from `/stats/js/script.js` would post to `https://example.com/api/event`, which is a
 path you aren't proxying.
 
@@ -73,8 +73,8 @@ The script loads, the requests 404, and the site looks installed.
 
 Your proxy has to pass the visitor's address on.
 
-Without it, every visitor geolocates to your data center and shares one fingerprint — one visitor,
-from one country, forever — and there's no way to repair that afterwards.
+Without it, every visitor geolocates to your data center and shares one fingerprint - one visitor,
+from one country, forever - and there's no way to repair that afterwards.
 
 We resolve the address in this order:
 
@@ -90,7 +90,7 @@ fingerprint, geolocation or IP shields.
 
 On the hosted service that list is already set to our own edge, so there's nothing for you to
 configure. If you're [self-hosting](/docs/self-hosting/), set `FEASIBLE_INGEST_TRUSTED_PROXIES` to
-your load balancer or edge proxy — never to a public client range. That trusted edge has to strip or
+your load balancer or edge proxy - never to a public client range. That trusted edge has to strip or
 overwrite client-supplied `X-Feasible-IP` and `CF-Connecting-IP`, because those take precedence. It
 may append to `X-Forwarded-For`; the right-to-left walk rejects a spoofed value placed before the
 address the edge observed.
@@ -111,7 +111,7 @@ If the source says `socket` and the address is your server's, either the proxy i
 header isn't arriving.
 
 The address itself is used for geolocation and the visitor identifier and is then discarded. It's
-never written to disk and never leaves the ingestion tier — see [privacy](/docs/privacy/).
+never written to disk and never leaves the ingestion tier - see [privacy](/docs/privacy/).
 
 ## WordPress does this for you
 
