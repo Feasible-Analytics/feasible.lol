@@ -6,14 +6,14 @@ lede: "An independent software company in Newberg, Oregon."
 ---
 
 We're [Cloudmanic Labs](https://cloudmanic.com?utm_source=feasible.lol), founded
-and run by [Spicer Matthews](https://spicermatthews.com/). We've been building
+and run by [Spicer Matthews](https://spicermatthews.com/?utm_source=feasible.lol). We've been building
 software for more than twenty years.
 
-We make **[Harbor](https://harbor.my)**, a private notes app, and **Feasible**,
+We make **[Harbor](https://harbor.my?utm_source=feasible.lol)**, a private notes app, and **Feasible**,
 website analytics on one page. We built both because we wanted to buy them.
 
-We also make **[Skyclerk](https://skyclerk.com/)** and
-**[Options Cafe](https://options.cafe/)**.
+We also make **[Skyclerk](https://skyclerk.com/?utm_source=feasible.lol)** and
+**[Options Cafe](https://options.cafe/?utm_source=feasible.lol)**.
 
 ## How we make money
 
