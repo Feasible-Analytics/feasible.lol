@@ -5,7 +5,7 @@ description: "Feasible is made by Cloudmanic Labs, an independent software compa
 lede: "A small software company in Newberg, Oregon."
 ---
 
-Cloudmanic Labs has shipped software for more than twenty years. **Spicer
+[Cloudmanic Labs](https://cloudmanic.com?utm_source=feasible.lol) has shipped software for more than twenty years. **Spicer
 Matthews** writes the code, answers support, and signs the invoices. That's the
 org chart.
 
