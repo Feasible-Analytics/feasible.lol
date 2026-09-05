@@ -10,7 +10,7 @@ and run by [Spicer Matthews](https://spicermatthews.com/?utm_source=feasible.lol
 software for more than twenty years.
 
 We make **[Harbor](https://harbor.my?utm_source=feasible.lol)**, a private notes app, and **Feasible**,
-website analytics on one page. We built both because we wanted to buy them.
+website analytics on one page. We built both because we needed them ourselves.
 
 We also make **[Skyclerk](https://skyclerk.com/?utm_source=feasible.lol)** and
 **[Options Cafe](https://options.cafe/?utm_source=feasible.lol)**.
