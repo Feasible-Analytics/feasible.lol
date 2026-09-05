@@ -18,7 +18,7 @@ Authorization: Bearer feas_…
 }
 ```
 
-The response carries the signing secret — `whsec_` followed by 43 characters — and that's the only
+The response carries the signing secret - `whsec_` followed by 43 characters - and that's the only
 time you'll see it. Listing or fetching a webhook never returns it. An empty `event_types` means
 every type.
 
@@ -87,23 +87,23 @@ def verify(secret, header, body, tolerance=300):
     return hmac.compare_digest(expected, parts["v1"])
 ```
 
-Verify against the **raw** body, before any JSON parsing — re-serializing changes the bytes and the
+Verify against the **raw** body, before any JSON parsing - re-serializing changes the bytes and the
 MAC with them. Reject anything more than five minutes old. Compare in constant time.
 
 Rotating a secret keeps the old one valid for an hour, so you have a window to deploy the new one
-without dropping a delivery. The rotate response tells you exactly how long is left.
+without dropping a delivery. The rotate response tells you how long is left.
 
 ## Retries
 
 Anything in the 2xx range is success. Anything else is retried up to **12 times**, backing off from
-30 seconds by a factor of three to a ceiling of six hours — more than a day of attempts in total.
+30 seconds by a factor of three to a ceiling of six hours - more than a day of attempts in total.
 Each attempt has ten seconds to answer and reuses the same `Feasible-Delivery` value.
 
 Redirects are refused rather than followed. A 302 would send a payload signed for you to somewhere
 you didn't register.
 
 After **5** consecutive failures we tell you the endpoint looks broken. After **15** we stop sending
-to it, and re-enabling it clears the count. That isn't a punishment — an endpoint that has failed
+to it, and re-enabling it clears the count. That isn't a punishment - an endpoint that has failed
 fifteen times in a row is a queue that will never drain.
 
 Every attempt is logged with its status and the first 2 KB of your response, readable at

@@ -1,6 +1,6 @@
 ---
 title: "Feasible vs Simple Analytics"
-seotitle: "Feasible vs Simple Analytics — price, datapoints, seats"
+seotitle: "Feasible vs Simple Analytics - price, datapoints, seats"
 description: "Simple Analytics bills datapoints, not pageviews, and charges $240 a year per extra seat. Feasible is $99 flat with unlimited users. Compared."
 lede: "Simple Analytics keeps your data in the Netherlands, which we can't. It also bills for datapoints and charges per seat, which adds up faster than the sticker suggests."
 versus: "Simple Analytics"
@@ -8,14 +8,14 @@ checked: 2026-09-03
 weight: 50
 verdict: |
   If your data has to stay in the EU, Simple Analytics hosts in the Netherlands
-  and we host in the United States — that's the whole decision, and price
+  and we host in the United States - that's the whole decision, and price
   shouldn't move you. If you're a team, the per-seat pricing is where this gets
   expensive: five people at a million a month is $1,560 a year there and $99
   here.
 faq:
   - q: "What is a datapoint in Simple Analytics?"
     a: >-
-      Their meter counts datapoints rather than pageviews — pageviews plus
+      Their meter counts datapoints rather than pageviews - pageviews plus
       events plus stored event metadata. Feasible counts pageviews and custom
       events, and stops there. The metadata you attach to an event is free here
       and billable there, so a well-instrumented site burns through their tier
@@ -23,7 +23,7 @@ faq:
   - q: "How much does Simple Analytics cost for a team?"
     a: >-
       The plan includes one user, and their pricing page lists extra seats at
-      $20 a month each — $240 a year. Five people at a million datapoints a
+      $20 a month each - $240 a year. Five people at a million datapoints a
       month works out at $1,560 a year. Feasible has no seat pricing at all.
   - q: "Where is Simple Analytics data stored?"
     a: >-
@@ -33,22 +33,21 @@ faq:
       requirement, that decides it.
   - q: "Does Simple Analytics have a free plan?"
     a: >-
-      Yes — five websites, one user, 30 days of retention, and a badge on your
+      Yes - five websites, one user, 30 days of retention, and a badge on your
       site. We don't have a free plan; we have a 30-day trial that takes no
       card.
 ---
 
 Simple Analytics has been at this since 2018, keeps everything in the
-Netherlands, and has a free plan that's genuinely usable if you don't mind the
+Netherlands, and has a free plan that's usable if you don't mind the
 badge. Two of those three are things we can't offer.
 
 Here's the rest of it.
 
-## The price, at every volume
+## Price
 
 From [their pricing page](https://www.simpleanalytics.com/pricing), read
-September 3, 2026. Their ladder is measured in **datapoints**, not pageviews —
-more on that in a second. Annual is ten times monthly.
+September 3, 2026. Their ladder is measured in **datapoints**, not pageviews - more on that in a second. Annual is ten times monthly.
 
 | Datapoints / month | Simple Analytics | Feasible |
 |---|---:|---:|
@@ -61,10 +60,10 @@ more on that in a second. Annual is ten times monthly.
 
 Annual USD, list price, before tax. Those figures are for one user.
 
-## Then add the people
+## Seats
 
 Simple Analytics' paid plan includes **one user**. Their pricing page puts extra
-seats at "+$20/mo per extra user" — $240 a year each.
+seats at "+$20/mo per extra user" - $240 a year each.
 
 So a five-person team at a million datapoints a month:
 
@@ -74,19 +73,19 @@ So a five-person team at a million datapoints a month:
 | 4 extra seats | $960 | $0 |
 | **Total per year** | **$1,560** | **$99** |
 
-Feasible has no seat pricing at all. Unlimited team members, five roles — owner,
-admin, editor, billing, viewer — plus per-site guest editors and guest viewers.
-Adding your designer to look at one site costs nothing, so you actually do it,
+Feasible has no seat pricing at all. Unlimited team members, five roles - owner,
+admin, editor, billing, viewer - plus per-site guest editors and guest viewers.
+Adding your designer to look at one site costs nothing, so you do it,
 which is the point.
 
-## Datapoints aren't pageviews
+## What counts
 
 This is the part that catches people. Their meter counts datapoints: pageviews,
-plus events, plus stored event metadata — not pageviews alone.
+plus events, plus stored event metadata - not pageviews alone.
 
 We count pageviews and custom events, so the first two match. The third is where
 it splits. Take a site doing 800,000 pageviews a month that fires 50,000 events
-— signups, downloads, outbound clicks — and attaches three fields to each one:
+- signups, downloads, outbound clicks - and attaches three fields to each one:
 plan, source and value.
 
 | | Counted | Which band |
@@ -107,12 +106,12 @@ nothing.
 | | Feasible | Simple Analytics |
 |---|---|---|
 | At 1M/month | $99/yr | $600/yr (one user) |
-| Billing unit | Pageviews + custom events | Datapoints — pageviews, events, metadata |
+| Billing unit | Pageviews + custom events | Datapoints - pageviews, events, metadata |
 | Users included | Unlimited | 1 |
 | Extra seats | $0 | $240/yr each |
 | Sites | Unlimited | 10 on the paid plan |
 | Retention | 5 years | 3 years |
-| Free plan | No — 30-day trial, no card | Yes, with a badge and 30-day retention |
+| Free plan | No - 30-day trial, no card | Yes, with a badge and 30-day retention |
 | Data location | United States | Netherlands |
 | Cookies on visitors | None | None |
 | Funnels | Yes | No |
@@ -137,7 +136,7 @@ and both a rounding error next to Google's 148,451.
 
 ## When the numbers look wrong
 
-Every analytics tool drops traffic — bots, scrapers, datacenter addresses,
+Every analytics tool drops traffic - bots, scrapers, datacenter addresses,
 browsers too old to trust, requests from hostnames you never registered. That's
 right. The question is whether you can see it happen.
 
@@ -148,13 +147,13 @@ dropped events, with a named reason attached to every drop: `bot`,
 
 It also shows which client address it resolved for your last request and which
 header it came from, and it warns you when your reverse proxy isn't forwarding
-visitor addresses — the misconfiguration that silently collapses every visitor
+visitor addresses - the misconfiguration that silently collapses every visitor
 into one and puts them all in your datacenter's city. A button sends a real test
 event through the public URL, so it tests your proxy and headers the way a
 browser would rather than calling an internal function and telling you
 everything's fine.
 
-That's the feature we'd point at if you asked what Feasible is actually for.
+That's the feature we'd point at if you asked what Feasible is for.
 Analytics that quietly loses part of your traffic is worse than analytics that
 tells you it did.
 
@@ -197,7 +196,7 @@ a few years of other people's edge cases, that's a fair reason.
 **They take Bitcoin.** We don't. Small thing, but if it matters to you it
 matters.
 
-## Where we'd tell you to pick us
+## Where Feasible wins
 
 You have more than one person. You have more than ten sites. You want funnels
 and webhooks. You'd rather your event tracking didn't raise your bill. Or you

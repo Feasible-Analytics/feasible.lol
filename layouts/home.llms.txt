@@ -1,6 +1,6 @@
 {{/*
   home.llms.txt
-  /llms.txt — a plain-text map of the site, for crawlers reading it to answer a
+  /llms.txt - a plain-text map of the site, for crawlers reading it to answer a
   question rather than to rank it. Generated, so it can't drift from the pages.
 
   Created: 2026-09-03

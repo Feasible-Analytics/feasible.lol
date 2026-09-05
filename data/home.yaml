@@ -9,54 +9,46 @@
 dashboard_notes:
   - title: "It loads"
     body: >-
-      Reports come off pre-built roll-ups, so twenty-eight days of top pages
-      answers in about a tenth of a second.
+      A month of top pages loads in about a tenth of a second.
 
   - title: "No report builder"
     body: >-
-      Nothing to configure before you see a number. Add the script, and the
-      dashboard is the dashboard.
+      Add the script. Your numbers show up. Nothing to configure.
 
   - title: "Filter anything"
     body: >-
-      Click a country, a source, a page or a custom property and the whole
-      screen narrows to it. Stack as many as you like.
+      Click any row to filter the whole dashboard. Add more filters if you need
+      them.
 
 # The numbered argument. Order matters: price, privacy, ownership, honesty,
 # weight.
 pillars:
-  - title: "Unlimited, actually"
+  - title: "Unlimited means unlimited"
     body: >-
-      Unlimited websites. Unlimited people on your team. Unlimited goals,
-      funnels and custom properties. We count pageviews and custom events —
-      a million a month between them — and nothing else. Not properties, not
-      sites, not seats.
+      Add every site, teammate, goal, funnel, and property you need. We only
+      count pageviews and custom events. You get one million a month.
 
   - title: "No cookies. No banner."
     body: >-
-      We don't set a cookie, don't store an IP address, and don't follow anyone
-      between sites. Most sites won't need a consent banner for Feasible —
-      <a href="/help/do-i-need-a-cookie-banner/" class="text-flag-700 underline">here's
-      why</a>, and check with your own lawyer if you're somewhere strict.
+      We set no cookies, store no IP addresses, and never follow people between
+      sites. Most sites won't need a consent banner for Feasible.
+      <a href="/help/do-i-need-a-cookie-banner/" class="text-flag-700 underline">Read
+      why</a>.
 
   - title: "Your team, your data"
     body: >-
-      Five roles plus per-site guests, so a contractor sees one site and your
-      accountant sees the invoices. Share a dashboard publicly, or behind a
-      password. Export everything, raw events included, whenever you want.
+      Give people only the access they need. Share a dashboard publicly or
+      behind a password. Export every raw event whenever you want.
 
   - title: "It tells you when it's broken"
     body: >-
-      Every event we drop is counted and given a reason you can read — bot,
-      datacentre address, a shield you set, a hostname you haven't allowed.
-      Analytics that silently loses a third of your traffic is worse than no
-      analytics.
+      Every dropped event comes with a reason: bot, datacenter address, shield,
+      or blocked hostname. You can see what went missing and why.
 
   - title: "Built light on purpose"
     body: >-
-      One binary and one SQLite file. No cluster, no queue, no column store to
-      feed. That's why a small site runs on a $4 server — and why the price can
-      be what it is. It's
+      One binary. One SQLite file. No cluster or queue. Run it on a $4 server,
+      or let us host it for $99 a year. It's
       <a href="/open-source-web-analytics/" class="text-flag-700 underline">open
       source web analytics</a> if you'd rather run it yourself.
 
@@ -74,18 +66,17 @@ plan:
 objections:
   - q: "Will I lose my history?"
     a: >-
-      No. Export your old reports as CSV and upload the folder — pages, sources,
-      locations, devices and browsers all land on the same charts as the new
-      numbers.
+      No. Upload your old CSV reports. Their pages, sources, locations, devices,
+      and browsers appear beside your new numbers.
 
   - q: "Is a million really the limit?"
     a: >-
-      It's the limit of this plan, and about 99% of sites never reach it. Go
-      over and we email you — nothing switches off mid-month.
+      Yes. Most sites never reach it. If you do, we email you. Nothing switches
+      off mid-month.
       <a href="/pricing/#enterprise" class="text-flag-700 underline">Talk to us</a>
       if you need more.
 
   - q: "What happens if you go away?"
     a: >-
-      Take the code and run it yourself. It's open source, it's one binary, and
-      your data exports as plain CSV any time you ask for it.
+      Take the code and run it yourself. Feasible is open source, and your data
+      exports as plain CSV.

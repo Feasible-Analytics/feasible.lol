@@ -1,12 +1,12 @@
 ---
 title: "Changelog"
-seotitle: "Changelog — what's shipped in Feasible"
-description: "What's changed in Feasible, newest first. We just launched, so this page is short and honest about it."
+seotitle: "Changelog - what's shipped in Feasible"
+description: "What changed in Feasible, newest first. We just launched, so the list is short."
 lede: "What's changed, newest first. There isn't much here yet, and inventing a back catalog would be a strange way to start."
 updated: 2026-09-03
 ---
 
-## September 2026 — launch
+## September 2026 - launch
 
 Feasible is live. The whole product shipped at once: the one-page dashboard, goals,
 funnels, custom properties, teams and roles, shared dashboards, email reports and

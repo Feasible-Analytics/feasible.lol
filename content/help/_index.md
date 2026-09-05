@@ -1,8 +1,8 @@
 ---
 title: "Help"
-seotitle: "Feasible help — answers on analytics, privacy and billing"
-description: "Short answers about Feasible — cookie banners, installing the script, goals and funnels, billing, self-hosting and what to do when the numbers look wrong."
-lede: "One question per page, answered in the first sentence. If yours isn't here, email us — a person reads it, and the good ones end up on this page."
+seotitle: "Feasible help - answers on analytics, privacy and billing"
+description: "Short answers about Feasible - cookie banners, installing the script, goals and funnels, billing, self-hosting and what to do when the numbers look wrong."
+lede: "One question per page, answered in the first sentence. If yours isn't here, email us - a person reads it, and the good ones end up on this page."
 categories:
   - slug: "getting-started"
     name: "Getting started"
@@ -12,7 +12,7 @@ categories:
     blurb: "Cookies, GDPR, IP addresses, the DPA, and what we do and don't keep. None of it is legal advice."
   - slug: "reports"
     name: "The dashboard and reports"
-    blurb: "What every number on the page actually means, and the ones that surprise people."
+    blurb: "What every number on the page means, and the ones that surprise people."
   - slug: "goals-and-events"
     name: "Goals, funnels and events"
     blurb: "Counting the things that matter more than a pageview."

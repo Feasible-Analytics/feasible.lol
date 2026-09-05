@@ -1,7 +1,7 @@
 {{/*
   schema.html
   JSON-LD structured data. Every page gets Organization and WebSite; the rest is
-  chosen by page kind so a search engine is told what it's actually looking at.
+  chosen by page kind so a search engine is told what it's looking at.
 
   Created: 2026-09-03
   Copyright (c) 2026 Cloudmanic Labs, LLC. All rights reserved.
@@ -54,7 +54,7 @@
 
 {{- $graph := slice $org $website -}}
 
-{{/* Every page carries a date it was last verified — the `checked:` on a
+{{/* Every page carries a date it was last verified - the `checked:` on a
      comparison, the `updated:` on a legal document, otherwise the commit that
      last touched it. A machine-readable recent date is what the pages holding
      these results all have. */}}
@@ -77,7 +77,7 @@
 {{- end -}}
 
 {{/* The product itself, priced both ways. On every page where somebody is
-     deciding — home, pricing, and every feature and comparison page. */}}
+     deciding - home, pricing, and every feature and comparison page. */}}
 {{- if or .IsHome (eq .Section "features") (eq .Section "compare") (eq .RelPermalink "/pricing/") -}}
   {{- $offerURL := urls.JoinPath .Site.BaseURL "/pricing/" -}}
   {{- $validUntil := (now.AddDate 1 0 0).Format "2006-01-02" -}}
@@ -123,8 +123,7 @@
   ) -}}
 {{- end -}}
 
-{{/* Documentation and install guides are technical articles. No rich result —
-     Google retired the HowTo one in 2023 — but it is the accurate type, and it
+{{/* Documentation and install guides are technical articles. No rich result - Google retired the HowTo one in 2023 - but it is the accurate type, and it
      is what a crawler reading for an answer keys off. */}}
 {{- if and .IsPage (in (slice "docs" "integrations") .Section) -}}
   {{- $graph = $graph | append (dict
@@ -147,7 +146,7 @@
 
 {{/* A help answer is one question, so it is a genuine FAQPage of size one. The
      answer comes from the page's description, which on every help page is the
-     complete one-sentence answer — using the page body instead truncated
+     complete one-sentence answer - using the page body instead truncated
      mid-word and swallowed the navigation. Pages carrying a `faq` list in front
      matter emit theirs too. */}}
 {{- $faqs := slice -}}

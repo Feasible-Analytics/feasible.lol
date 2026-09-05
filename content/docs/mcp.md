@@ -33,7 +33,7 @@ long-poll it won't use would be a socket held open for nothing.
 ## Connecting a client that speaks OAuth
 
 Discovery lives at `/.well-known/oauth-authorization-server` and
-`/.well-known/oauth-protected-resource`, client registration is open, and PKCE is required — `S256`
+`/.well-known/oauth-protected-resource`, client registration is open, and PKCE is required - `S256`
 only, never `plain`.
 
 Access tokens last an hour, refresh tokens thirty days, and an authorization code is good for one
@@ -65,27 +65,27 @@ in the process list to everyone on the machine.
 
 Eleven of them, all working:
 
-- `list_sites` — the sites this credential can read, with the time zone each one's days are counted
+- `list_sites` - the sites this credential can read, with the time zone each one's days are counted
   in.
-- `query_stats` — the full query surface: [metrics, dimensions, filters](/docs/api/#reading-numbers-back),
+- `query_stats` - the full query surface: [metrics, dimensions, filters](/docs/api/#reading-numbers-back),
   sorting and pagination.
-- `get_realtime_visitors` — who's on the site now.
-- `compare_periods` — a period and the one before it, with the change. It's its own tool because both
+- `get_realtime_visitors` - who's on the site now.
+- `compare_periods` - a period and the one before it, with the change. It's its own tool because both
   windows have to be resolved against one clock; two separate calls near midnight compare the wrong
   days.
-- `explain_traffic_change` — breaks a movement in visitors, visits, pageviews or events down by
+- `explain_traffic_change` - breaks a movement in visitors, visits, pageviews or events down by
   source, channel, campaign, page, country, device, browser and operating system, so the answer is
   "paid social fell by a third" rather than "traffic is down".
-- `list_goals`, `create_goal` — read and create [conversions](/docs/goals-funnels/), including revenue
+- `list_goals`, `create_goal` - read and create [conversions](/docs/goals-funnels/), including revenue
   goals and property constraints.
-- `list_funnels`, `get_funnel` — the saved funnels, and one funnel's per-step numbers.
-- `create_site`, `update_site` — register a site and get its snippet; change a domain, name, time
+- `list_funnels`, `get_funnel` - the saved funnels, and one funnel's per-step numbers.
+- `create_site`, `update_site` - register a site and get its snippet; change a domain, name, time
   zone or public setting.
 
 ## Resources and prompts
 
 Reading `feasible://site/{domain}/schema` gives an assistant the whole vocabulary for one site in a
-single call: its metrics, its dimensions, the custom properties that actually exist on it, its goals,
+single call: its metrics, its dimensions, the custom properties that exist on it, its goals,
 the date-range presets and the filter operators.
 
 That's what stops a model guessing a dimension name and getting a 400.
@@ -100,5 +100,5 @@ and correct itself instead of seeing a transport failure.
 
 Unknown arguments are refused rather than ignored.
 
-And a locked account is refused here exactly as it is on the API, with a code the client can
+And a locked account is refused here as it is on the API, with a code the client can
 recognize rather than an empty answer that reads as "you have no data".

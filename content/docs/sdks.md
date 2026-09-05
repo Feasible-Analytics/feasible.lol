@@ -18,7 +18,7 @@ it.
 They exist for events that happen away from a browser: a payment webhook, a background job, an
 offline conversion, an API-only product with no pages at all.
 
-All five are deliberately dependency-free. Nothing in this list pulls an HTTP library into your
+All five are dependency-free. Nothing in this list pulls an HTTP library into your
 application.
 
 | Language | Install |
@@ -70,7 +70,7 @@ $client->pageview(...$visitor->args(), url: 'https://example.com/pricing');
 Every one of these makes them required arguments rather than something you can forget.
 
 Without them, every server-side event is geolocated to your data center and shares one visitor
-identifier — one visitor, from one country, forever — and there's no way to repair that afterwards.
+identifier - one visitor, from one country, forever - and there's no way to repair that afterwards.
 Making it a compile error is the point.
 
 Each SDK has a helper that pulls both off an incoming application request. Unlike the ingest service,
@@ -99,10 +99,10 @@ Direct. See [the APIs](/docs/api/#stating-attribution-for-a-server-side-event).
   header if there was one, so a job can log why an event didn't count instead of assuming it did.
 - **A debug call** that returns the fully derived event without writing anything.
 
-There are no mobile SDKs. iOS, Android and React Native are scoped and not built — post to
+There are no mobile SDKs. iOS, Android and React Native are scoped and not built - post to
 [the events endpoint](/docs/api/#sending-events) directly.
 
-## @feasible/tracker — the browser loader
+## @feasible/tracker - the browser loader
 
 ```
 npm install @feasible/tracker
@@ -124,12 +124,12 @@ is idempotent, so a hot reload can't double-count pageviews; and `track` always 
 hanging forever when a blocker eats the request.
 
 `enable()`, `disable()` and `isEnabled()` drive the per-browser opt-out, and tell you whether the
-write actually happened.
+write happened.
 
 ## WordPress
 
 The plugin serves the script and the events endpoint from your own domain on randomized paths, which
-is what actually gets past ad blockers, and adds the site-search and 404 tracking a theme snippet
+is what gets past ad blockers, and adds the site-search and 404 tracking a theme snippet
 can't do.
 
 Settings, proxy routes, path rotation and an embedded dashboard all live under one *feasible.lol*
@@ -137,7 +137,7 @@ menu. See [integrations](/docs/integrations/).
 
 ## Google Tag Manager
 
-A tag template with two tag types — load the script, or send an event — and fields for the domain,
+A tag template with two tag types - load the script, or send an event - and fields for the domain,
 host, hash routing, manual pageviews, counting localhost, a properties table and a revenue amount and
 currency.
 

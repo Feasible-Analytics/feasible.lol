@@ -1,12 +1,12 @@
 ---
 title: "Revenue tracking"
 description: "Attach an amount and a currency to any goal. Feasible credits the money to the source that started the visit, not to your payment provider."
-lede: "Put money on a goal, and see which channel actually earned it."
+lede: "Put money on a goal, and see which channel earned it."
 weight: 50
 note: |
   The revenue metrics don't appear in the dashboard's six tiles or the drawer's
-  columns. Money shows up as a sub-line on goal rows, and the totals — total
-  revenue, average revenue, revenue per visitor — come back through the query
+  columns. Money shows up as a sub-line on goal rows, and the totals - total
+  revenue, average revenue, revenue per visitor - come back through the query
   API. There are also no dedicated ecommerce events: no cart, no products, no
   line items. Just an amount and a currency.
 ---
@@ -18,11 +18,10 @@ goal, pick a currency, and send the amount with the event:
 feasible('Purchase', { revenue: { amount: 49.99, currency: 'USD' } })
 ```
 
-That's the whole integration. Three metrics come out of it — total revenue,
-average revenue, and revenue per visitor — and every one of them can be broken
-down by any dimension Feasible has, which is the point.
+You get total revenue, average revenue, and revenue per visitor. Break each one
+down by any dimension.
 
-## The money goes to the source that started the visit
+## First-touch attribution
 
 This is the decision that makes the report worth reading.
 
@@ -32,8 +31,7 @@ checkout page. Payment succeeds, they land back on your thank-you page, and the
 referrer on that final pageview is your payment provider.
 
 Credit the last referrer and your best marketing channel is Stripe. It'll sit
-at the top of the table looking authoritative, and it's not merely useless —
-it's actively misleading, because you can't buy more Stripe. Every dollar you
+at the top of the table looking authoritative, and it's not merely useless - it's actively misleading, because you can't buy more Stripe. Every dollar you
 earned gets attributed to the company that moved it.
 
 Feasible freezes attribution at the start of the visit. The source, channel and
@@ -46,7 +44,7 @@ through a different door. It's listed in [the metric docs](/docs/metrics/) under
 things that look like bugs and aren't, because the first time you see it, it
 does.
 
-## Currencies, and integers
+## Currencies
 
 Amounts are stored as integer minor units. $49.99 is 4999, not a float.
 
@@ -60,10 +58,10 @@ sell in dollars, euros and yen, each goal keeps its own currency and reports
 that span more than one convert using stored exchange rates refreshed every 24
 hours. The original amount is never overwritten by the converted one.
 
-## What you get, and what you don't
+## What it covers
 
 You get money on a dimension. Revenue by channel, by campaign, by country, by
-device, by [custom property](/features/custom-properties/) — revenue per visitor
+device, by [custom property](/features/custom-properties/) - revenue per visitor
 for people who arrived on mobile from your newsletter, if that's the question.
 That's a real question, and most analytics tools answer it by making you export
 to a spreadsheet.
@@ -84,4 +82,4 @@ merchandising question badly.
 Revenue reads back through [the API](/features/api-and-webhooks/) like any other
 metric, so a weekly revenue-by-channel figure in your own dashboard is one
 `POST /api/v2/query` away. It's included at $9.99 a month, like everything else
-— see [the price](/pricing/).
+- see [the price](/pricing/).

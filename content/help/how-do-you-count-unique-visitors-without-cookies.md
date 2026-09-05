@@ -11,7 +11,7 @@ When an event arrives, we compute a SipHash of the visitor's user agent, their I
 
 Three properties fall out of it:
 
-- **It expires.** Tomorrow the salt is different, so the same person is a different number. Old salts aren't stored anywhere and can't be reconstructed. Nobody can join Tuesday's visitors to Monday's — not you, not us, not somebody with our database.
+- **It expires.** Tomorrow the salt is different, so the same person is a different number. Old salts aren't stored anywhere and can't be reconstructed. Nobody can join Tuesday's visitors to Monday's - not you, not us, not somebody with our database.
 - **It doesn't cross sites.** Your domain is an input, so the same person visiting two customers of ours produces two unrelated numbers.
 - **It never lands on the visitor's device.** No cookie, no localStorage identifier, nothing to consent to. [Which is why most sites don't need a banner](/help/do-i-need-a-cookie-banner/).
 

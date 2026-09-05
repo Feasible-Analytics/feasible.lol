@@ -35,8 +35,7 @@ A **scroll goal** matches a percentage threshold reached on a page. The tracker 
 measurements automatically, and the goal definition decides which page and depth count as a
 conversion.
 
-Any goal can be narrowed by up to **three property constraints**, and those are plain equality —
-`plan = yearly`, not `plan contains y`. If you find yourself wanting an operator there, the thing you
+Any goal can be narrowed by up to **three property constraints**, and those are plain equality - `plan = yearly`, not `plan contains y`. If you find yourself wanting an operator there, the thing you
 want is a filter on the report, not a different goal.
 
 {{< shot src="app/goals.png" alt="The goals report, showing unique and total conversions with a conversion rate" >}}
@@ -45,10 +44,10 @@ want is a filter on the report, not a different goal.
 
 Created with the site, ready to count:
 
-- `404` — **404 pages**
-- `Outbound Link: Click` — **Outbound link clicks**
-- `File Download` — **File downloads**
-- `Form: Submission` — **Form submissions**
+- `404` - **404 pages**
+- `Outbound Link: Click` - **Outbound link clicks**
+- `File Download` - **File downloads**
+- `Form: Submission` - **Form submissions**
 
 Three of those four fill themselves in. The browser script sends outbound clicks, downloads and form
 submissions without being asked. The goal costs nothing; the events it counts are custom events like
@@ -74,25 +73,24 @@ A goal is evaluated as events arrive, not retroactively over your history. The h
 never tested against a rule that didn't exist. Creating a goal today gives you a number that starts
 at zero today.
 
-A report over a range that begins before the goal did says so, and gives you the date it actually
-starts from, rather than quietly showing a smaller number. There's a
+A report over a range that begins before the goal did says so, and gives you the date it starts from, rather than quietly showing a smaller number. There's a
 [worked example](/docs/metrics/#goals-dont-backfill) on the metrics page.
 
-Creating the same goal twice is a no-op that hands you back the one you already had — including its
+Creating the same goal twice is a no-op that hands you back the one you already had - including its
 original creation date. You can't restart a goal's history by recreating it, and renaming one never
 moves it.
 
 ## What a goal report shows
 
-- **Unique conversions** — once per visitor, however many times it happened.
-- **Total conversions** — every matching event.
+- **Unique conversions** - once per visitor, however many times it happened.
+- **Total conversions** - every matching event.
 - **Converted visitors**, and the **conversion rate**: converted visitors over all visitors in the
   period.
 - **Revenue**, **average revenue** and **revenue per visitor**, when the goal carries money.
 
 ## Funnels
 
-A funnel is an ordered list of goals — at least **two** steps and at most **eight** — and it counts
+A funnel is an ordered list of goals - at least **two** steps and at most **eight** - and it counts
 visitors by how far they got.
 
 Three rules follow from how it's walked, and all three matter:
@@ -136,7 +134,7 @@ Revenue rides on a custom event, as an amount and an ISO 4217 currency:
 feasible('Purchase', { revenue: { amount: 49.00, currency: 'USD' } })
 ```
 
-It's stored in minor units — cents, pence — and never converted when it's written, so a change in
+It's stored in minor units - cents, pence - and never converted when it's written, so a change in
 exchange rates can't rewrite a past quarter. Conversion happens at read time.
 
 Three consequences worth knowing:
@@ -146,7 +144,7 @@ Three consequences worth knowing:
   and calling it a total is worse than an error.
 - Money we couldn't convert for want of a rate is reported as a warning naming how much was left out,
   rather than being silently dropped from the total.
-- Rounding happens once, on the total — not on every event and then again on the sum.
+- Rounding happens once, on the total - not on every event and then again on the sum.
 
 {{< callout title="Stripe will never be your best marketing channel" >}}
 Revenue is credited to the source that started the visit, not to the last page before payment. So

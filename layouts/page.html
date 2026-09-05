@@ -5,11 +5,11 @@
   pages and anything else that is mostly words.
 
   Front matter:
-    kicker   — the small uppercase label above the title
-    lede     — one paragraph under the title, set larger
-    toc      — true to render a table of contents beside the copy
-    wide     — true to drop the reading-width limit (comparison tables)
-    nocta    — true to suppress the closing red band
+    kicker: the small uppercase label above the title
+    lede: one paragraph under the title, set larger
+    toc: true to render a table of contents beside the copy
+    wide: true to drop the reading-width limit (comparison tables)
+    nocta: true to suppress the closing red band
 
   Created: 2026-09-03
   Copyright (c) 2026 Cloudmanic Labs, LLC. All rights reserved.
@@ -67,8 +67,8 @@
   {{ if not .Params.nocta }}
     {{ partial "cta.html" (dict
       "site" .Site
-      "line1" (.Params.ctaLine1 | default "Analytics you can afford.")
-      "line2" (.Params.ctaLine2 | default "And actually read.")
+      "line1" (.Params.ctaLine1 | default "Your numbers. One page.")
+      "line2" (.Params.ctaLine2 | default "Free for 30 days.")
     ) }}
   {{ end }}
 {{ end }}

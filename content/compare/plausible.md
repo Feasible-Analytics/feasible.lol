@@ -1,8 +1,8 @@
 ---
 title: "Feasible vs Plausible"
-seotitle: "Plausible alternative — Feasible vs Plausible on price"
+seotitle: "Plausible alternative - Feasible vs Plausible on price"
 description: "A million pageviews, unlimited sites and unlimited users for $99 a year. Here's how that lines up against Plausible's published pricing, tier by tier."
-lede: "Two published price lists, side by side, and an honest account of what Plausible does better."
+lede: "Two published price lists, side by side, and an account of what Plausible does better."
 versus: "Plausible"
 checked: 2026-09-03
 weight: 20
@@ -13,7 +13,7 @@ verdict: |
   Plausible is the safer pick and we'd tell you so. If you run more than one
   site, have more than one person looking at it, or want funnels, custom
   properties, the API and raw export without moving up a tier, the arithmetic
-  goes the other way — hard.
+  goes the other way - hard.
 faq:
   - q: "How much does Plausible cost at a million pageviews a month?"
     a: >-
@@ -23,7 +23,7 @@ faq:
       all three included.
   - q: "Is Feasible more permissively licensed than Plausible?"
     a: >-
-      No. Both are AGPL-3.0-or-later — the same license. The difference is
+      No. Both are AGPL-3.0-or-later - the same license. The difference is
       narrower: Plausible's repository has an `extra/` directory whose own
       COPYING.txt grants no rights to use or distribute the code in it, and the
       Community Edition build excludes it. Feasible has no such directory.
@@ -32,7 +32,7 @@ faq:
       It has the Stats API. The Sites API is the one that isn't in Community
       Edition, along with marketing funnels, user journeys, ecommerce revenue
       goals and SSO. Community Edition also isn't capped on sites or team
-      members — those caps are a Plausible Cloud pricing thing.
+      members - those caps are a Plausible Cloud pricing thing.
   - q: "Can I export raw events from Plausible?"
     a: >-
       Scheduled raw event data export is listed as an Enterprise feature, so
@@ -45,13 +45,13 @@ model to get right. No cookies, no cross-site identity, a small script, numbers
 a human can read. We're building in the space they helped define, and it would
 be strange to pretend otherwise.
 
-So let's do the part that's actually checkable: two price lists, next to each
+So let's do the part that's checkable: two price lists, next to each
 other.
 
-## The price, at every volume
+## Price
 
 Plausible's ladder is on [their pricing page](https://plausible.io/#pricing),
-read September 3, 2026. Annual is ten times monthly — two months free, their
+read September 3, 2026. Annual is ten times monthly - two months free, their
 words. Feasible is $99 a year, or $9.99 a month, up to a million pageviews.
 
 | Pageviews / month | Plausible Starter | Plausible Growth | Plausible Business | Feasible |
@@ -72,20 +72,20 @@ The gap opens at scale and at inclusions. At a million pageviews a month,
 Plausible Business is $1,390 a year. Feasible is $99. That's fourteen times, and
 it's the whole reason this company exists.
 
-## The cheap plan is one site and no teammates
+## What Starter includes
 
 Comparing headline prices only works if the plans contain the same things. They
 don't.
 
 From Plausible's own pricing cards, read September 3, 2026:
 
-- **Starter** — one site. Three years of retention. No team members at all.
-- **Growth** — up to 3 sites, up to 3 team members.
-- **Business** — up to 10 sites, up to 10 team members, five years of
+- **Starter** - one site. Three years of retention. No team members at all.
+- **Growth** - up to 3 sites, up to 3 team members.
+- **Business** - up to 10 sites, up to 10 team members, five years of
   retention, and the first plan with **custom properties, funnels and user
   journeys, ecommerce revenue attribution and the Stats API** (600 requests an
   hour).
-- **Enterprise** — custom pricing. More sites, more seats, SSO, the Sites API,
+- **Enterprise** - custom pricing. More sites, more seats, SSO, the Sites API,
   and scheduled raw event data exports.
 
 Feasible has one plan. Unlimited sites, unlimited team members, five roles plus
@@ -93,10 +93,10 @@ per-site guests, funnels, custom properties, revenue goals, the full API at
 10,000 requests an hour, webhooks, an MCP server, and five years of retention.
 $99 a year.
 
-## Raw export is a button here
+## Raw export
 
 This is the difference that surprises people most. On Plausible, **scheduled raw
-event data export is an Enterprise feature** — it's listed on the Enterprise
+event data export is an Enterprise feature** - it's listed on the Enterprise
 card and nowhere else. There's no published self-serve price at which you can
 get your own raw events out.
 
@@ -105,10 +105,10 @@ get one ZIP: ten roll-up CSVs plus the raw events. It works during a trial, and
 it keeps working if your payment fails, because locking someone out of their own
 data isn't a retention strategy.
 
-## What each of you actually counts
+## What counts
 
 The same two things. Plausible's limit counts pageviews plus custom events, and
-so does ours — including the outbound clicks, downloads and form submissions our
+so does ours - including the outbound clicks, downloads and form submissions our
 script fires on its own. Same arithmetic on both sides.
 
 Neither of us bills for the properties attached to an event, which is the line
@@ -149,7 +149,7 @@ is an email rather than a tier.
 | License | AGPL-3.0-or-later | AGPL-3.0-or-later |
 | Trial | 30 days, no card | 30 days, no card |
 
-## The open-source part, precisely
+## Open source
 
 Both products are under the same license: **AGPL-3.0-or-later**. Anyone telling
 you one of us is more permissively licensed than the other is wrong, and you can
@@ -164,7 +164,7 @@ you." That directory holds funnels, SSO, the consolidated view and the Sites
 API, and the build excludes it from Community Edition.
 
 That's a completely normal open-core arrangement. Matomo and PostHog do the same
-thing. Feasible just doesn't have one — there's no `extra/`, no `ee/`, no
+thing. Feasible just doesn't have one - there's no `extra/`, no `ee/`, no
 license-key check, no folder you're not allowed to compile. The thing we host is
 the thing you can run.
 
@@ -177,7 +177,7 @@ it.
 
 Two corrections while we're here, because they get repeated wrongly: **the Stats
 API is in Community Edition** (it's the Sites API that isn't), and **Community
-Edition isn't capped on sites or team members** — those caps are a Cloud pricing
+Edition isn't capped on sites or team members** - those caps are a Cloud pricing
 thing.
 
 ## Running it yourself
@@ -186,23 +186,23 @@ Plausible Community Edition is three containers: the app, ClickHouse and
 PostgreSQL. Their README recommends at least 2 GB of RAM. ClickHouse's own
 [operations docs](https://clickhouse.com/docs/operations/tips) recommend "32 GB
 or more" and warn that under 16 GB "you may experience various memory
-exceptions." Both things can be true — it runs on 2 GB, and the column store
+exceptions." Both things can be true - it runs on 2 GB, and the column store
 underneath it was built for machines an order of magnitude larger.
 
 Feasible is one Go binary and one SQLite file. No Docker, no Postgres, no
 ClickHouse, no queue. It starts on 1 core and 512 MB of RAM.
 
-We're not claiming SQLite stores data more efficiently than ClickHouse — it
+We're not claiming SQLite stores data more efficiently than ClickHouse - it
 doesn't, by a wide margin. The claim is operational: there's one process and one
 file, and nothing to tune.
 
-## Looking for a Plausible alternative?
+## Which one to pick
 
 Most people who go looking aren't unhappy with the product. They've run into the
 Starter plan being one site and no teammates, or they've priced Business at a
 million pageviews and gone quiet. Both of those are further up this page.
 
-If neither of those is your problem, the next section is the honest answer.
+If neither of those is your problem, the next section is the answer.
 
 ## Where Plausible wins
 
@@ -220,12 +220,12 @@ community, more people who've already hit the edge case you're about to hit, an
 official Looker Studio connector, and a documented Enterprise tier with SSO if
 your company requires it.
 
-**Saved segments.** They have them. We don't — our filters are per-session, and
+**Saved segments.** They have them. We don't - our filters are per-session, and
 segments only exist server-side behind a shared link.
 
-If any of those is the thing you actually need, buy theirs. If what you need is
+If any of those is the thing you need, buy theirs. If what you need is
 several sites, several people, funnels and the API without a tier change, and
 five years of history for $99, that's what we built.
 
 Next: [the whole price ladder](/compare/pricing/) across every vendor, or
-[what's in Feasible](/features/) with the gaps listed honestly.
+[what's in Feasible](/features/) with the gaps listed .

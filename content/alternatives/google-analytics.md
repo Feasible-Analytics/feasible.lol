@@ -1,15 +1,15 @@
 ---
 title: "Google Analytics alternatives, compared"
 seotitle: "Google Analytics alternatives: what you give up"
-description: "Nine Google Analytics alternatives compared on price, limits and privacy — Plausible, Fathom, Matomo, Umami, GoatCounter and more. We make one of them."
-lede: "Nine alternatives to Google Analytics compared on price and limits — the GA4 alternative shortlist, what each one costs at real traffic, and the things you give up when you go."
+description: "Nine Google Analytics alternatives compared on price, limits and privacy - Plausible, Fathom, Matomo, Umami, GoatCounter and more. We make one of them."
+lede: "Nine Google Analytics alternatives. What they cost, where they win, and what you give up."
 kicker: "ROUNDUP"
 weight: 10
 wide: true
 checked: 2026-09-03
 faq:
   - q: "What's the best alternative to Google Analytics?"
-    a: "It depends on what you're replacing. For depth and on-premise, Matomo. For a mature EU-hosted product, Plausible. For EU data isolation with a long track record, Fathom. For an MIT license, Umami. For a free personal site, GoatCounter. For unlimited sites and users on one price, Feasible — which we make."
+    a: "It depends on what you're replacing. For depth and on-premise, Matomo. For a mature EU-hosted product, Plausible. For EU data isolation with a long track record, Fathom. For an MIT license, Umami. For a free personal site, GoatCounter. For unlimited sites and users on one price, Feasible - which we make."
   - q: "Is there a free Google Analytics alternative?"
     a: "Several. Cloudflare Web Analytics is free and cookieless but shallow. GoatCounter's hosted tier is free for reasonable public use. Umami, Matomo and Feasible are all free if you run them on your own server. What you pay instead is the server, the backups and the upgrades."
   - q: "Why are people leaving GA4?"
@@ -17,9 +17,9 @@ faq:
   - q: "Will my numbers match Google Analytics after I switch?"
     a: "No, and no two analytics tools ever match. Bot filtering differs, ad blockers hit each tool differently, the definition of a session differs, and GA4 thresholds and can sample its own reports. Expect a gap in the tens of percent and compare trends rather than absolute numbers."
   - q: "Can I keep my Google Analytics history?"
-    a: "You can. Export your GA4 reports as CSV and upload the folder into Feasible — pages, sources, locations, devices and browsers land on the same charts as your live traffic. Universal Analytics data is a different story — Google cut off access to it from the week of July 1, 2024, so if you didn't export it then, it's gone."
+    a: "You can. Export your GA4 reports as CSV and upload the folder into Feasible - pages, sources, locations, devices and browsers land on the same charts as your live traffic. Universal Analytics data is a different story - Google cut off access to it from the week of July 1, 2024, so if you didn't export it then, it's gone."
   - q: "Do Google Analytics alternatives need a cookie banner?"
-    a: "The cookieless ones generally don't, for analytics. Feasible, Plausible, Fathom, Simple Analytics, Umami, Pirsch, GoatCounter and Cloudflare all set no cookies. That isn't a legal guarantee and the rest of your site may still need a banner — check with your own lawyer."
+    a: "The cookieless ones generally don't, for analytics. Feasible, Plausible, Fathom, Simple Analytics, Umami, Pirsch, GoatCounter and Cloudflare all set no cookies. That isn't a legal guarantee and the rest of your site may still need a banner - check with your own lawyer."
 ---
 
 {{< callout title="A word about us before the table" >}}
@@ -37,7 +37,7 @@ opened it to answer a simple question and couldn't.
 The specific complaints, because "it's bad" isn't an argument.
 
 **The reports you want are now yours to build.** Everything in GA4 is an event,
-and the analysis most people actually do lives in Explorations — a canvas you
+and the analysis most people do lives in Explorations - a canvas you
 assemble from dimensions and metrics. A real capability if that's your job. A
 homework assignment if you publish a newsletter.
 
@@ -78,7 +78,7 @@ line are stale.
 ## The alternatives, side by side
 
 Annual USD, on annual billing where offered. **The "counts" column decides the
-bill** — read it before comparing two prices.
+bill** - read it before comparing two prices.
 
 | Tool | 100k pv/mo | 1M pv/mo | Counts | Sites | Seats | Cookies | Source | Retention |
 |---|---|---|---|---|---|---|---|---|
@@ -90,20 +90,20 @@ bill** — read it before comparing two prices.
 | [Pirsch Standard](https://pirsch.io/pricing) | $120 | $540 | pageviews + events + 10% extensions | 50 | unlimited | none | closed | unlimited |
 | [Umami Cloud Pro](https://umami.is/pricing) | $240 | $240 | events, incl. each property | 20 | 10 | none | MIT | 2 years |
 | [Matomo Cloud](https://matomo.org/pricing/) | $420 | $2,040 | **hits** | 30 | 30 | configurable | GPL-3.0 | configurable |
-| [GoatCounter](https://www.goatcounter.com/) | $0 | n/a | pageviews | — | — | none | EUPL-1.2 | — |
-| [Cloudflare](https://www.cloudflare.com/web-analytics/) | $0 | $0 | pageviews | — | — | none | closed | not published |
+| [GoatCounter](https://www.goatcounter.com/) | $0 | n/a | pageviews | - | - | none | EUPL-1.2 | - |
+| [Cloudflare](https://www.cloudflare.com/web-analytics/) | $0 | $0 | pageviews | - | - | none | closed | not published |
 | [Google Analytics 4](https://support.google.com/analytics/answer/11202874) | $0 | $0 | events | unlimited | unlimited | yes | closed | 14 months |
 
 Matomo's unit is worth repeating: a hit "can be either a tracked page view, an
 event tracking, a download, an outlink, an onsite search or a content tracking
-request" — their FAQ. Sites with download and outbound-link tracking often need a
+request" - their FAQ. Sites with download and outbound-link tracking often need a
 tier one or two steps above their pageview count.
 
 ## Each one, and where it beats us
 
 ### Matomo
 
-The deepest tool in the list and the oldest — shipping since 2007. Segments,
+The deepest tool in the list and the oldest - shipping since 2007. Segments,
 custom dimensions, heatmaps, A/B testing, roll-up reporting, ecommerce, a very large documentation library, and a real on-premise install where the core is free under GPL-3.0. Cloud
 hosts in Europe.
 
@@ -119,7 +119,7 @@ from 2 GB of RAM at 100,000 hits to 8 GB at a million.
 
 The product that made this category mainstream, and the most polished thing in
 it. Hosted in Falkenstein, Germany, with the company in Estonia. Their tracker
-measured 1,291 bytes gzipped — smaller than ours. Community Edition is
+measured 1,291 bytes gzipped - smaller than ours. Community Edition is
 AGPL-3.0-or-later with unlimited sites and seats, and it includes the Stats API.
 
 **Where it beats us:** maturity and EU hosting, plainly. Years of production, a
@@ -127,7 +127,7 @@ big customer base, and a straightforward answer for a European buyer who wants
 data in Europe. We're a US company and can't match that.
 
 **The cost:** the ladder. Custom properties, funnels, ecommerce revenue and the
-Stats API on Cloud start at Business — $1,390 a year at a million pageviews.
+Stats API on Cloud start at Business - $1,390 a year at a million pageviews.
 Scheduled raw event export is Enterprise-only, so no self-serve plan gets your
 own raw events out. Community Edition ships twice a year and excludes funnels,
 ecommerce revenue goals, SSO and the Sites API.
@@ -141,16 +141,16 @@ the IP is stripped before anything reaches US infrastructure. Retention is
 
 **Where it beats us:** track record and EU isolation. They've been doing this for
 years, they've been audited by buyers with real requirements, and the EU routing
-is a genuinely thoughtful piece of engineering that we don't have.
+is a thoughtful piece of engineering that we don't have.
 
 **The cost:** $600 a year at a million, no plan below 100,000 pageviews (so a
-small blog pays $150), and the product is closed — "Fathom Lite" on GitHub is MIT
+small blog pays $150), and the product is closed - "Fathom Lite" on GitHub is MIT
 but has had no code change since January 2023.
 
 ### Umami
 
 Free, MIT since 2020, self-hostable in two containers, and $20 a month on Cloud
-Pro with no annual discount — which stays $20 all the way to a million events.
+Pro with no annual discount - which stays $20 all the way to a million events.
 
 **Where it beats us:** the license. MIT is more permissive than our AGPL, full
 stop. If you want to embed, fork or resell without the network-source obligation,
@@ -167,7 +167,7 @@ sites, German company.
 
 **Where it beats us:** unlimited retention and a German vendor at a low price.
 
-**The cost:** Standard has no funnels and no teams — those start on Plus at
+**The cost:** Standard has no funnels and no teams - those start on Plus at
 $1,590 at a million. Product is closed; the Go tracking library is AGPL.
 
 ### Simple Analytics
@@ -175,7 +175,7 @@ $1,590 at a million. Product is closed; the Go tracking library is AGPL.
 Dutch, EU-hosted, one of the tidier dashboards in the category. $600 a year at a
 million.
 
-**Where it beats us:** EU hosting and a genuinely calm interface.
+**Where it beats us:** EU hosting and a calm interface.
 
 **The cost:** the datapoint unit counts pageviews, events **and** each stored
 event property, and extra seats are $240 a year each.
@@ -186,11 +186,11 @@ A one-person project, EUPL-1.2, hosted free "for reasonable public usage" and
 funded by donations. Philosophically the closest thing here to us.
 
 **Where it beats us:** it's free, and its GDPR page is the most careful writing on
-the subject in this whole category — including "I am not a lawyer." Ours is at
+the subject in this whole category - including "I am not a lawyer." Ours is at
 [GDPR-friendly analytics](/gdpr-compliant-analytics/), hedged for the same reason.
 
 **The cost:** it's explicitly not for millions of pageviews a day, and the feature
-set is deliberately small.
+set is small.
 
 ### Cloudflare Web Analytics
 
@@ -202,26 +202,25 @@ behind Cloudflare.
 **The cost:** shallow reporting, no real goals or custom events, no export, and no
 way to take your history anywhere.
 
-### Feasible — us
+### Feasible - us
 
 The flag we promised. $9.99 a month or $99 a year, one plan: unlimited sites,
 unlimited team members, unlimited custom properties, and a million pageviews and
 custom events a month between them, kept five years. Cookieless, AGPL-3.0-or-later, one Go
 binary on SQLite that runs on 512 MB of RAM. The API, funnels, custom properties,
-webhooks, the MCP server and raw event export are in every plan and every build —
-the API package has no plan check in it at all.
+webhooks, the MCP server and raw event export are in every plan and every build - the API package has no plan check in it at all.
 
 **Where we lose:** no EU hosting, no SSO or SAML, no mobile SDKs, no session
 replay, no heatmaps, no A/B testing, no cohort or retention report. Our script is
 3,377 bytes gzipped against Plausible's 1,291. And we launched in 2026, so we
-have no track record — which is a real risk and you should price it in.
+have no track record - which is a real risk and you should price it in.
 
 ## Free Google Analytics alternatives
 
 There are several, and they're free for different reasons. Cloudflare Web
 Analytics is free and cookieless, and shallow. GoatCounter's hosted tier is free
 for reasonable public use, funded by donations. Umami, Matomo and Feasible are all
-free if you run them on your own server — which is a server, backups, upgrades and
+free if you run them on your own server - which is a server, backups, upgrades and
 a pager, so it's free the way a puppy is free.
 
 GA4 itself is the other kind of free: your visitors' behavior goes to an
@@ -254,7 +253,7 @@ hosting and two decades of institutional presence.
 
 ## Moving off GA4
 
-The blocker people name most often isn't price — it's "I'd lose all my history."
+The blocker people name most often isn't price - it's "I'd lose all my history."
 
 You wouldn't, mostly. Export your GA4 reports as CSV and upload the folder, and
 pages, sources, locations, devices and browsers land on the same charts as your
@@ -262,8 +261,8 @@ live traffic. A direct Google connection is on the way; today it's an upload.
 Universal Analytics history is a different matter: Google cut off access from the
 week of July 1, 2024, so if you didn't export then, it's gone.
 
-The whole process — install alongside GA, run both for two weeks, upload the CSVs,
-verify, then remove the old tag — is written out step by step in
+The whole process - install alongside GA, run both for two weeks, upload the CSVs,
+verify, then remove the old tag - is written out step by step in
 [moving off Google Analytics](/migrate/from-google-analytics/).
 
 ---

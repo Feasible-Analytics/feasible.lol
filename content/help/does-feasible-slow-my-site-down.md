@@ -17,9 +17,9 @@ Four reasons, all [structural](/features/speed/) rather than promises.
 
 **Sends are fire-and-forget.** Events go out with `fetch` and `keepalive`, so nothing waits on a response and a slow network never holds up navigation.
 
-Two things it does that actually help the numbers:
+Two things it does that help the numbers:
 
-It **defers everything until the page is visible**, so a prerendered page or a tab opened in the background doesn't do tracking work while you're trying to hit a Largest Contentful Paint target. And it never calls `preventDefault` on an outbound link or a form submit — some analytics scripts delay the navigation to squeeze a request in, which is a real, felt slowdown. This one uses a hold-open fallback instead and gets out of the way.
+It **defers everything until the page is visible**, so a prerendered page or a tab opened in the background doesn't do tracking work while you're trying to hit a Largest Contentful Paint target. And it never calls `preventDefault` on an outbound link or a form submit - some analytics scripts delay the navigation to squeeze a request in, which is a real, felt slowdown. This one uses a hold-open fallback instead and gets out of the way.
 
 If you want to put a number on it, load your site with the tag and without it in a lab tool and look at the diff. It'll be inside the noise.
 

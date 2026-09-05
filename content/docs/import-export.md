@@ -1,7 +1,7 @@
 ---
 title: "Import and export"
-description: "Bring history in from CSV, and take everything out in one ZIP — including every raw event, in every plan."
-lede: "Bringing history in, and taking everything out — including every raw event."
+description: "Bring history in from CSV, and take everything out in one ZIP - including every raw event, in every plan."
+lede: "Bringing history in, and taking everything out - including every raw event."
 weight: 100
 ---
 
@@ -12,9 +12,9 @@ Bring history in from wherever you were before, and take everything out at any t
 
 Press **Prepare an export** and a background job builds a ZIP containing:
 
-- the ten roll-up tables as CSV — visitors, sources, pages, entry pages, exit pages, locations,
+- the ten roll-up tables as CSV - visitors, sources, pages, entry pages, exit pages, locations,
   devices, browsers, operating systems and custom events;
-- `raw_events.csv` — **every event, one row each**.
+- `raw_events.csv` - **every event, one row each**.
 
 The raw file is in every plan. Data you generated on your own site is yours, and putting the only
 complete copy of it behind a plan is how a customer finds out they can't leave.
@@ -33,7 +33,7 @@ The download link is good for **24 hours**, and it only exists in the process th
 the server restarts before you use it, the export shows as built by an earlier run with no link, and
 you prepare another. That takes seconds.
 
-Every figure in the export is a **total** — bounces and seconds, never rates and averages. A rate
+Every figure in the export is a **total** - bounces and seconds, never rates and averages. A rate
 can't be added to another rate, so an export of averages is one you can look at and never re-import.
 
 ## Import
@@ -42,7 +42,7 @@ Upload one CSV, or a ZIP of them. The same ten formats, with the column spelling
 analytics export already uses, so a directory of files from your old product imports here without
 editing.
 
-A ZIP's `raw_events.csv` is deliberately skipped, so re-importing one of our own exports doesn't
+A ZIP's `raw_events.csv` is skipped, so re-importing one of our own exports doesn't
 count everything twice.
 
 The limits: **200 MB** an upload, **5,000,000 rows** a file, and 100 CSVs in one ZIP.
@@ -51,18 +51,18 @@ Dates have to be `2026-08-31`, `2026/08/31` or full RFC 3339. An ambiguous `03/0
 rather than guessed at, because guessing wrong moves a quarter of your history by nine months and
 nothing tells you.
 
-**A column we don't recognize stops the import and names the column.** The alternative — dropping it
-quietly — gives you numbers that are too small and no way to know it.
+**A column we don't recognize stops the import and names the column.** The alternative - dropping it
+quietly - gives you numbers that are too small and no way to know it.
 
-### What imported history actually becomes
+### What imported history becomes
 
 This is the part that decides whether the feature is worth anything.
 
 Imported data is stored as roll-up rows that carry *every dimension the source reported*, plus a
 record of which dimensions it reported at all. Two consequences:
 
-- A filter on a dimension your imported data has narrows it exactly like native traffic.
-- A filter on a dimension the source never reported shows a **labeled gap** — not zero. "We don't
+- A filter on a dimension your imported data has narrows it like native traffic.
+- A filter on a dimension the source never reported shows a **labeled gap** - not zero. "We don't
   know" and "there was none" are different answers, and a report that conflates them is worse than
   one that refuses.
 
@@ -71,18 +71,18 @@ imported data elsewhere makes it vanish.
 
 Imported history behaves differently in the two places you read it. **The dashboard folds it into
 every non-realtime query**, so your charts show one continuous history. **The query API leaves it
-out unless you ask** — send `"include": {"imports": true}` — so an integration's number can never
+out unless you ask** - send `"include": {"imports": true}` - so an integration's number can never
 change the day an import finishes.
 
-Nothing is merged or de-duplicated — uploading the same file twice creates two imports and counts it
-twice. Deleting an import removes exactly the history it brought in, and nothing else, which is also
+Nothing is merged or de-duplicated - uploading the same file twice creates two imports and counts it
+twice. Deleting an import removes the history it brought in, and nothing else, which is also
 how you undo that.
 
 ## The Google connectors
 
 {{< callout type="warn" title="Connecting works. The import doesn't run yet." >}}
 Authorizing Google Analytics 4 or Search Console stores a grant and does nothing further in this
-build. No data is pulled across. Use the CSV path in the meantime — export your GA4 reports and
+build. No data is pulled across. Use the CSV path in the meantime - export your GA4 reports and
 upload the folder.
 
 We'd rather say that than let you connect an account and wait for data that isn't coming.
@@ -93,7 +93,7 @@ second, independent grant, so revoking one can never silently disconnect the oth
 appears on an install that has provider credentials configured.
 
 There's also **no search-terms report** on this end, and won't be one just because the import starts
-running. Nothing in Feasible answers "which queries brought people here" — if that's the report you
+running. Nothing in Feasible answers "which queries brought people here" - if that's the report you
 need, keep Search Console open in another tab.
 
 ## A locked or dormant account

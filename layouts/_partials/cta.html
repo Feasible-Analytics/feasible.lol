@@ -4,15 +4,15 @@
   headline so the same block can end a comparison page and a help answer
   without sounding identical.
 
-  Params: line1, line2, note (all optional — sensible defaults below).
+  Params: line1, line2, note (all optional; sensible defaults below).
 
   Created: 2026-09-03
   Copyright (c) 2026 Cloudmanic Labs, LLC. All rights reserved.
 */}}
 {{- $ctx := . -}}
 {{- $site := $ctx.site | default site -}}
-{{- $line1 := $ctx.line1 | default "Stop being the punchline." -}}
-{{- $line2 := $ctx.line2 | default "Start free today." -}}
+{{- $line1 := $ctx.line1 | default "See what your site is doing." -}}
+{{- $line2 := $ctx.line2 | default "Start free for 30 days." -}}
 {{- $note := $ctx.note | default (printf
   "No credit card. $%s a month or $%s a year when the trial ends. Cancel any time."
   $site.Params.pricing.monthly $site.Params.pricing.yearly) -}}
@@ -29,7 +29,7 @@
         href="{{ $site.Params.signupURL }}"
         class="btn btn-inverse feasible-event-name=Signup feasible-event-location=cta+band"
       >
-        Start free — {{ $site.Params.pricing.trialDays }} days
+        Start your free trial
       </a>
       <a href="/pricing/" class="btn btn-inverse-outline"> See the price </a>
     </div>

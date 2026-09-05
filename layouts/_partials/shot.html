@@ -5,12 +5,12 @@
   never downloads a 1440px-wide PNG.
 
   Params:
-    src     — path under assets/images/, e.g. "app/dashboard-light.png" (required)
-    alt     — alt text (required)
-    sizes   — sizes attribute; defaults to full-width-of-container
-    class   — extra classes on the wrapper
-    caption — optional line under the frame
-    eager   — true to skip lazy loading (use for the one above the fold)
+    src - path under assets/images/, e.g. "app/dashboard-light.png" (required)
+    alt - alt text (required)
+    sizes - sizes attribute; defaults to full-width-of-container
+    class - extra classes on the wrapper
+    caption - optional line under the frame
+    eager - true to skip lazy loading (use for the one above the fold)
 
   Created: 2026-09-03
   Copyright (c) 2026 Cloudmanic Labs, LLC. All rights reserved.
@@ -22,7 +22,7 @@
 {{- $sizes := .sizes | default "(min-width: 1024px) 1200px, 100vw" -}}
 {{- $eager := .eager | default false -}}
 
-{{- /* Only build a variant when the source is actually that wide. Upscaling a
+{{- /* Only build a variant when the source is that wide. Upscaling a
        700px screenshot to 1800px ships blur, and claiming a 1200px file is
        1800px wide makes the browser pick the wrong one. */ -}}
 {{- $widths := slice 700 -}}

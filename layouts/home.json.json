@@ -3,7 +3,7 @@
   A lightweight index of every indexable page at /index.json.
 
   Titles and descriptions only. Including page bodies made it 220 KB, and
-  nothing on the site searches full text — the help page filters its own
+  nothing on the site searches full text - the help page filters its own
   rendered list in place, which needs no index at all.
 
   Created: 2026-09-03

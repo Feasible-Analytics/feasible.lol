@@ -37,11 +37,11 @@ If your project keeps head material in Svelte rather than in `app.html`, use `<s
 </svelte:head>
 ```
 
-Both work. `app.html` is simpler to reason about, because there's exactly one of it.
+Both work. `app.html` is simpler to reason about, because there's one of it.
 
 ## The nested-layout trap
 
-SvelteKit lets you have a `+layout.svelte` at any depth. Put the tag in `src/routes/(marketing)/+layout.svelte` and you track the marketing pages and nothing else — the app section reports no visitors at all, which reads as a traffic problem rather than a tracking one.
+SvelteKit lets you have a `+layout.svelte` at any depth. Put the tag in `src/routes/(marketing)/+layout.svelte` and you track the marketing pages and nothing else - the app section reports no visitors at all, which reads as a traffic problem rather than a tracking one.
 
 It belongs in the root: `src/routes/+layout.svelte`, or `src/app.html`. Never in both, or every visit counts twice.
 
@@ -52,7 +52,7 @@ SvelteKit's client-side router uses `pushState`, and the script listens for `pus
 So there's nothing to subscribe to. No `afterNavigate`, no `$page` store effect, no `navigating` watcher. If you add one on top, every number doubles.
 
 {{< callout title="Prerendered pages are fine" >}}
-`export const prerender = true` bakes the tag into the static HTML like everything else in `app.html`. Static adapters, edge adapters, Node — same tag, no difference.
+`export const prerender = true` bakes the tag into the static HTML like everything else in `app.html`. Static adapters, edge adapters, Node - same tag, no difference.
 {{< /callout >}}
 
 ## Custom events
@@ -67,13 +67,13 @@ Guard it with `if (browser)` from `$app/environment` if it might run during SSR.
 
 ## Check it worked
 
-Deploy, or run `vite build` and `vite preview` on a real hostname. `localhost` is deliberately not counted, so `npm run dev` shows nothing however correct the tag is.
+Deploy, or run `vite build` and `vite preview` on a real hostname. `localhost` is not counted, so `npm run dev` shows nothing however correct the tag is.
 
 Open the site, click a link to a second route rather than reloading, and watch the network tab: one `POST` to `/api/event` per route. Then open Feasible.
 
-You should show up under Real-time visitors. If you don't, go to **Site settings → Ingestion health**. It counts every event that arrived and every one that was dropped, each with a named reason — `unknown_site` means `data-domain` doesn't match the site you registered, `hostname_not_allowed` means the page is on a hostname that isn't on your list, which is what a preview deployment URL will do.
+You should show up under Real-time visitors. If you don't, go to **Site settings → Ingestion health**. It counts every event that arrived and every one that was dropped, each with a named reason - `unknown_site` means `data-domain` doesn't match the site you registered, `hostname_not_allowed` means the page is on a hostname that isn't on your list, which is what a preview deployment URL will do.
 
-The **send a test event** button there posts through the real public URL, so it exercises exactly what a browser does.
+The **send a test event** button there posts through the real public URL, so it exercises what a browser does.
 
 A brand-new site takes about fifteen seconds before its first event is accepted, so [wait for that](/help/how-long-until-i-see-data/) before assuming the worst.
 

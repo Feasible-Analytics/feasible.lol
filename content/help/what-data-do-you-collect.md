@@ -13,9 +13,9 @@ Here's the whole list. It fits on a screen.
 
 **About the visitor's setup:** browser and version, operating system and version, device type, screen-size bucket (four buckets, not pixel dimensions), and browser language.
 
-**About where they are:** country, region and city, looked up from a database on our own disk. The lookup is deliberately coarse and there's no network call — no third party learns anything about your visitor.
+**About where they are:** country, region and city, looked up from a database on our own disk. The lookup is coarse and there's no network call - no third party learns anything about your visitor.
 
-**About engagement:** time on the page and how far down it was scrolled, both accrued only while the tab is actually visible and focused.
+**About engagement:** time on the page and how far down it was scrolled, both accrued only while the tab is visible and focused.
 
 **Anything you send us:** custom event names, custom properties, and a revenue amount and currency if you're tracking that.
 
@@ -23,4 +23,4 @@ Here's the whole list. It fits on a screen.
 
 That's it. Roughly 210 bytes per event on disk. The longer read is [what privacy-friendly analytics stores, field by field](/privacy-friendly-analytics/).
 
-The more interesting list is [what we don't collect](/help/what-do-you-not-collect/) — and please don't put an email address, a user ID or anything else that names a person into a custom property. The [DPA](/dpa/) forbids it, and there's no report that would be improved by it.
+The more interesting list is [what we don't collect](/help/what-do-you-not-collect/) - and please don't put an email address, a user ID or anything else that names a person into a custom property. The [DPA](/dpa/) forbids it, and there's no report that would be improved by it.
