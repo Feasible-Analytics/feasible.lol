@@ -34,13 +34,19 @@ fit. [See what we do have](/security/).
 Support runs on Pacific time. Most email gets an answer in a day or two. [Here's
 how support works](/support/).
 
-## The obvious question
+## We're here for the long run
 
-What happens to your data if we disappear?
+We've been in business for more than twenty years. We've never shut down a
+product and left customers hanging. We've never raised prices on existing
+customers, either. When our prices change, yours stays put.
 
-Feasible is [open source](/open-source-web-analytics/). You can run the same
-product yourself. You can also export every raw event as CSV, even after you
-stop paying. Leaving shouldn't be a project.
+We plan to keep showing up, improving the software, and looking after the
+people who count on it.
+
+If we ever fall short of that promise, Feasible is
+[open source](/open-source-web-analytics/). You can run the same product
+yourself. Your data is yours, too: you can export every raw event as CSV,
+even after you stop paying.
 
 ## The name
 
