@@ -20,7 +20,7 @@ faq:
 
 Open the dashboard. Your numbers are there. No report builder. No setup course.
 
-{{< shot src="app/dashboard-light.png" alt="The Feasible dashboard: six stat tiles, a graph, and four report cards" caption="The whole product. There's no second screen." >}}
+{{< shot src="app/dashboard-light.png" alt="The Feasible dashboard: six stat tiles, a graph, and the first two report cards" caption="The whole product. There's no second screen." >}}
 
 ## What went wrong with the tool most people have
 

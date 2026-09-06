@@ -4,7 +4,7 @@ description: "Send events from your own code with up to 30 properties each, even
 lede: "Attach what your application knows to the events it sends, then segment by it."
 weight: 40
 shot: "app/properties.png"
-shotAlt: "The Properties tab of the Behavior card with the property 'plan · event' selected, listing starter, growth and scale with columns for visitors, visits and events."
+shotAlt: "The Properties tab of the Behavior card with the property 'signup_source · event' selected, listing docs, footer, inline, pricing, popup, calculator and comparison with columns for visitors, visits and events."
 note: |
   You have to allow-list each property, per site, before it's collected. Send a
   property nobody enabled and it's ignored - deliberately, so a stray debug field
