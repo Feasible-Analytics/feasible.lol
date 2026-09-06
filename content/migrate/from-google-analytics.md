@@ -49,7 +49,7 @@ first event.
 
 One tag in your `<head>`. Leave the GA4 tag where it is.
 
-{{< snippet domain="yourdomain.com" >}}
+{{< snippet >}}
 
 3,377 bytes gzipped. There's no second script file to choose between and no
 plugin variants - outbound link clicks, file downloads, form submissions, scroll

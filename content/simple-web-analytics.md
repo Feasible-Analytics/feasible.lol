@@ -111,7 +111,7 @@ price](/pricing/).
 
 One tag in your `<head>`:
 
-{{< snippet domain="yourdomain.com" >}}
+{{< snippet >}}
 
 It's 3,377 bytes gzipped. It automatically counts outbound clicks, downloads,
 forms, scroll depth, and single-page-app routes. The health panel tells you when

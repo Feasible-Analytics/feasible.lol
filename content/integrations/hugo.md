@@ -7,7 +7,7 @@ lede: "layouts/_partials/head.html - and don't edit the file inside themes/."
 
 The tag goes in your head partial: `layouts/_partials/head.html` on Hugo 0.146 and later, or `layouts/partials/head.html` on a project built before that.
 
-{{< snippet domain="yourdomain.com" >}}
+{{< snippet >}}
 
 This site runs on Hugo, so this page is written from the same problem you're having.
 
@@ -43,13 +43,13 @@ The dev server runs on `localhost`, and `localhost` is not counted. That's not a
 
 ## Multilingual sites
 
-One tag, one site, one `data-domain`. Language variants are paths - `/de/pricing/` - so they show up as separate rows in your pages report, and the visitor's browser language is a dimension you can filter on. Nothing extra to configure.
+One tag, one site, one snippet. Language variants are paths - `/de/pricing/` - so they show up as separate rows in your pages report, and the visitor's browser language is a dimension you can filter on. Nothing extra to configure.
 
 ## Check it worked
 
 Deploy, open the site in a normal browser window, and click through two or three pages. Then open Feasible.
 
-You should show up under Real-time visitors. If you don't, go to **Site settings → Ingestion health**. It counts every event that arrived and every one that was dropped, each with a named reason - `unknown_site` means `data-domain` doesn't match the site you registered, `hostname_not_allowed` means the page is on a hostname that isn't on your list.
+You should show up under Real-time visitors. If you don't, go to **Site settings → Ingestion health**. It counts every event that arrived and every one that was dropped, each with a named reason - `unknown_site` means the snippet is for a site you haven't registered, `hostname_not_allowed` means the page is on a hostname that isn't on your list.
 
 The **send a test event** button there posts through the real public URL, so it exercises what a browser does.
 

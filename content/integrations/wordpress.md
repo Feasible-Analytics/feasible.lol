@@ -7,7 +7,7 @@ lede: "One tag in your theme header, or one plugin. Both take about a minute."
 
 The tag goes in your theme's `header.php`, just before `</head>` - or, if you'd rather never think about it again, into a header-scripts plugin so a theme update can't wipe it.
 
-{{< snippet domain="yourdomain.com" >}}
+{{< snippet >}}
 
 ## The plugin route, which is the one we'd pick
 
@@ -46,13 +46,13 @@ This is where WordPress installs go wrong.
 
 **Purge the cache after you paste it.** Otherwise you're testing a page that was rendered before the tag existed, and you'll spend twenty minutes debugging a file that's already correct.
 
-If you use a minifier, exclude the tag or check the rendered source afterwards. Some minifiers strip `data-` attributes, and without `data-domain` the script loads and does nothing.
+If you use a minifier, exclude the tag or check the rendered source afterwards. Some of them rewrite or drop script tags they don't recognise, and the tag then loads nothing.
 
 ## Check it worked
 
 Clear your cache, open your site in a normal browser window, and click through two or three pages. Then open Feasible.
 
-You should show up under Real-time visitors. If you don't, go to **Site settings → Ingestion health**. It counts every event that arrived and every one that was dropped, each with a named reason - `unknown_site` means `data-domain` doesn't match the site you registered, `hostname_not_allowed` means the page is on a hostname that isn't on your list.
+You should show up under Real-time visitors. If you don't, go to **Site settings → Ingestion health**. It counts every event that arrived and every one that was dropped, each with a named reason - `unknown_site` means the snippet is for a site you haven't registered, `hostname_not_allowed` means the page is on a hostname that isn't on your list.
 
 The **send a test event** button there posts through the real public URL, so it exercises what a browser does.
 

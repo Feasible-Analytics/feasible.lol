@@ -18,7 +18,7 @@ Here's what each reason means:
 | `datacenter_ip` | The request came from a cloud or hosting range |
 | `outdated_browser` | A browser more than 18 major versions behind on an auto-updating OS |
 | `referrer_spam` | A known junk referrer domain |
-| `unknown_site` | `data-domain` doesn't match a site you've registered |
+| `unknown_site` | The snippet is for a site you haven't registered |
 | `hostname_not_allowed` | Served from a host outside your registered domain |
 | `shield_ip` · `shield_country` · `shield_page` | One of [your own rules](/help/how-do-i-exclude-a-country-or-a-page/) |
 | `rate_limited` | Too many requests from one address, too fast |

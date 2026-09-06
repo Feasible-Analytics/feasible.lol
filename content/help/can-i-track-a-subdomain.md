@@ -7,7 +7,7 @@ weight: 50
 
 Yes - and you don't have to do anything.
 
-Register `example.com` and the same snippet works on `www.example.com`, `blog.example.com`, `app.example.com` and `docs.example.com`. All of it lands in one site. Keep `data-domain="example.com"` on every page; don't change it per subdomain.
+Register `example.com` and the same snippet works on `www.example.com`, `blog.example.com`, `app.example.com` and `docs.example.com`. All of it lands in one site. Use the same snippet on every page; don't give a subdomain one of its own.
 
 Visitors are shared across them, deliberately. Somebody who reads your blog and then signs up in your app is one visitor and one visit, not two of each, because the visitor identifier is built from the registrable domain rather than the host. That's the whole point - otherwise every marketing-site-to-app journey would look like two strangers.
 

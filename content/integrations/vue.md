@@ -7,7 +7,7 @@ lede: "index.html, in the head. Hash-mode routers need one more attribute."
 
 The tag goes in `index.html`, in `<head>` - the HTML file Vite serves, not a component.
 
-{{< snippet domain="yourdomain.com" >}}
+{{< snippet >}}
 
 ## Steps
 
@@ -33,8 +33,8 @@ Fragments aren't part of the reported URL by default, so every one of those page
 Fix it with one attribute:
 
 ```html
-<script defer data-domain="yourdomain.com" data-hash="true"
-        src="https://app.feasible.lol/js/script.js"></script>
+<script defer data-hash="true"
+        src="https://app.feasible.lol/js/fs-k7m2q4x5r3n6t2v5.js"></script>
 ```
 
 A bare `data-hash` does nothing - it needs a value. Any non-empty value counts as on, including the string `"false"`, which is a trap worth knowing about. [Script options](/docs/script-options/) has the full list.
@@ -67,7 +67,7 @@ Build and deploy, or run a production preview. `localhost` is not counted, so `n
 
 Open the site, click a link to a second route rather than reloading, and watch the network tab for one `POST` to `/api/event` per route. Then open Feasible.
 
-You should show up under Real-time visitors. If you don't, go to **Site settings → Ingestion health**. It counts every event that arrived and every one that was dropped, each with a named reason - `unknown_site` means `data-domain` doesn't match the site you registered, `hostname_not_allowed` means the page is on a hostname that isn't on your list.
+You should show up under Real-time visitors. If you don't, go to **Site settings → Ingestion health**. It counts every event that arrived and every one that was dropped, each with a named reason - `unknown_site` means the snippet is for a site you haven't registered, `hostname_not_allowed` means the page is on a hostname that isn't on your list.
 
 The **send a test event** button there posts through the real public URL, so it exercises what a browser does.
 

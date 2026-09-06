@@ -10,9 +10,8 @@ Yes, and on a site with a technical audience it's worth doing.
 You proxy two things - the script and the endpoint that receives events - through paths on your own domain. Then you tell the tag where they are:
 
 ```html
-<script defer data-domain="example.com"
-        data-api="/stats/api/event"
-        src="/stats/js/script.js"></script>
+<script defer data-api="/stats/api/event"
+        src="/stats/js/fs-k7m2q4x5r3n6t2v5.js"></script>
 ```
 
 `data-api` is used verbatim, and a relative path is fine. Full Caddy and nginx configurations are in the [proxying docs](/docs/proxying/).

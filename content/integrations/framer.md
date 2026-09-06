@@ -7,7 +7,7 @@ lede: "Project settings, Custom Code, add the script, publish."
 
 The tag goes in **Project settings → Custom Code**, in the head, on all pages - and it only runs once you publish.
 
-{{< snippet domain="yourdomain.com" >}}
+{{< snippet >}}
 
 ## Steps
 
@@ -46,7 +46,7 @@ Leave it on if you like it. Two scripts count independently. The totals won't ma
 
 Publish, open your published site in a normal browser window, and click through two or three pages using the site's own navigation. Then open Feasible.
 
-You should show up under Real-time visitors. If you don't, go to **Site settings → Ingestion health**. It counts every event that arrived and every one that was dropped, each with a named reason - `unknown_site` means `data-domain` doesn't match the site you registered, `hostname_not_allowed` means the page is on a hostname that isn't on your list.
+You should show up under Real-time visitors. If you don't, go to **Site settings → Ingestion health**. It counts every event that arrived and every one that was dropped, each with a named reason - `unknown_site` means the snippet is for a site you haven't registered, `hostname_not_allowed` means the page is on a hostname that isn't on your list.
 
 The **send a test event** button there posts through the real public URL, so it exercises what a browser does.
 

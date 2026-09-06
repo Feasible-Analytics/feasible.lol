@@ -56,15 +56,14 @@ location /stats/js/ {
 ## Then point the script at your proxy
 
 ```
-<script defer data-domain="example.com"
-        data-api="/stats/api/event"
-        src="/stats/js/script.js"></script>
+<script defer data-api="/stats/api/event"
+        src="/stats/js/fs-k7m2q4x5r3n6t2v5.js"></script>
 ```
 
 {{< callout type="warn" title="data-api is not optional here" >}}
 Left out, the script derives the endpoint from the *origin* of its own `src` - not the directory - so
-a script served from `/stats/js/script.js` would post to `https://example.com/api/event`, which is a
-path you aren't proxying.
+a script served from `/stats/js/fs-k7m2q4x5r3n6t2v5.js` would post to
+`https://example.com/api/event`, which is a path you aren't proxying.
 
 The script loads, the requests 404, and the site looks installed.
 {{< /callout >}}

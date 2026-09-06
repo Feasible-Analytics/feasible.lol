@@ -5,16 +5,17 @@ lede: "Every data- attribute, and what happens at each limit."
 weight: 30
 ---
 
-Every option is a `data-` attribute on the script tag. There's one script file and one bundle - no
-build flags, no feature variants to choose between, and nothing you can forget to turn on.
+Every option is a `data-` attribute on the script tag, and they all work on either form of the
+snippet. It's the same bundle whichever filename you load - no build flags, no feature variants to
+choose between, and nothing you can forget to turn on.
 
 ## A value is required, not just the attribute
 
 This trips people up, so it goes first. A bare attribute does nothing:
 
 ```
-<script defer data-domain="example.com" data-hash src="…"></script>          <!-- ignored -->
-<script defer data-domain="example.com" data-hash="true" src="…"></script>   <!-- on -->
+<script defer data-hash src="…"></script>          <!-- ignored -->
+<script defer data-hash="true" src="…"></script>   <!-- on -->
 ```
 
 Any non-empty value switches a flag on, including the string `"false"`. To turn something off, leave
@@ -22,16 +23,19 @@ the attribute out.
 
 ## The attributes
 
-### data-domain (required)
+### data-domain
 
 The site this page belongs to, as registered. It's the routing key for the whole system.
 
-A page whose `data-domain` doesn't match a registered site is dropped with the reason `unknown_site`,
-which comes back on the response - see
-[checking what happened to an event](/docs/api/).
+Your per-site script file carries that value inside it, so on the snippet the setup screen gives you
+there's no attribute to set and this one is ignored. It's required on the shared `script.js`, and
+that's the only place it does anything.
 
-With no `data-domain` at all, the script installs a working but inert `window.feasible` and logs
-`feasible: not tracking - no data-domain`.
+A page whose domain doesn't match a registered site is dropped with the reason `unknown_site`, which
+comes back on the response - see [checking what happened to an event](/docs/api/).
+
+Load the shared `script.js` with no `data-domain` at all and the script installs a working but inert
+`window.feasible` and logs `feasible: not tracking - no data-domain`.
 
 ### data-api
 
@@ -109,7 +113,7 @@ Enable Web Vitals as an optional mode of the same tracker script. A bare attribu
 page; a decimal value between 0 and 1 samples that fraction of documents:
 
 ```
-<script defer data-domain="example.com" data-vitals="0.1" src="https://app.feasible.lol/js/script.js"></script>
+<script defer data-vitals="0.1" src="https://app.feasible.lol/js/fs-k7m2q4x5r3n6t2v5.js"></script>
 ```
 
 It reports LCP, CLS, INP and TTFB as an event called **Web Vitals**, with one numeric property per
@@ -224,16 +228,20 @@ Two details that cost people an afternoon:
   missing domain, or a client-side path exclusion produces `{ status: null }`. The callback does
   **not** fire when the request failed or an ad blocker ate it, so gate forms with your own timeout.
 
-## If you load the script asynchronously
+## Calling it before the script loads
 
-Install the queue stub before the tag, and calls made before the script arrives get replayed rather
-than throwing:
+The tag is deferred, so your own code can run first and find no `window.feasible` to call. The same
+goes for `async`. Put the queue stub above the tag and those calls are replayed in order when the
+script arrives, rather than throwing:
 
 ```
 window.feasible = window.feasible || function () {
   (window.feasible.q = window.feasible.q || []).push(arguments);
 };
 ```
+
+It's 103 bytes minified, and it does nothing if you only tag elements with classes - those clicks are
+handled by the script itself, after it loads. Leave it out unless you call `feasible()` yourself.
 
 ## Content security policy
 

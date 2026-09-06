@@ -7,7 +7,7 @@ lede: "gatsby-ssr.js, using onRenderBody. That's the site-wide one."
 
 The tag goes in `gatsby-ssr.js`, in the project root, through `onRenderBody`. That's the API that puts something in the head of every page Gatsby builds.
 
-{{< snippet domain="yourdomain.com" >}}
+{{< snippet >}}
 
 ## Steps
 
@@ -19,12 +19,7 @@ import React from "react";
 
 export const onRenderBody = ({ setHeadComponents }) => {
   setHeadComponents([
-    <script
-      key="feasible"
-      defer
-      data-domain="yourdomain.com"
-      src="https://app.feasible.lol/js/script.js"
-    />,
+    <script key="feasible" defer src="https://app.feasible.lol/js/fs-k7m2q4x5r3n6t2v5.js" />,
   ]);
 };
 ```
@@ -62,7 +57,7 @@ window.feasible("Signup", { props: { plan: "annual" } });
 
 Deploy, open the site in a normal browser window, and click through two or three pages using Gatsby's own links. Watch the network tab: one `POST` to `/api/event` on load, one more per navigation.
 
-Then open Feasible. You should show up under Real-time visitors. If you don't, go to **Site settings → Ingestion health**. It counts every event that arrived and every one that was dropped, each with a named reason - `unknown_site` means `data-domain` doesn't match the site you registered, `hostname_not_allowed` means the page is on a hostname that isn't on your list, which is what a preview deployment URL will do.
+Then open Feasible. You should show up under Real-time visitors. If you don't, go to **Site settings → Ingestion health**. It counts every event that arrived and every one that was dropped, each with a named reason - `unknown_site` means the snippet is for a site you haven't registered, `hostname_not_allowed` means the page is on a hostname that isn't on your list, which is what a preview deployment URL will do.
 
 The **send a test event** button there posts through the real public URL, so it exercises what a browser does.
 
