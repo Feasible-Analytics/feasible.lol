@@ -4,7 +4,7 @@ description: "Unlimited team members on every plan, five roles plus two per-site
 lede: "Invite everyone. There's no per-seat price, so nobody has to share a login."
 weight: 60
 shot: "app/sharing.png"
-shotAlt: "The Sharing settings screen for northwind.example, showing a public dashboard URL with a 'Make it private' button, two shared links named Board pack and Agency client with password and embeddable columns, and an embedding section with an iframe snippet."
+shotAlt: "The Visibility settings screen, showing the public dashboard marked private with a button to publish it, and one shared link named Marketing team listed with its URL, password and embeddable columns and a Revoke button."
 note: |
   There's no SSO and no SAML. It isn't built, and the team settings page says so
   on screen rather than in a footnote. When it lands it'll be in the one plan

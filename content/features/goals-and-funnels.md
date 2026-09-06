@@ -4,7 +4,7 @@ description: "Three kinds of goal, funnels of 2 to 8 steps in sequential or stri
 lede: "Say what counts as a win, then watch how many people get there and where the rest fall out."
 weight: 30
 shot: "app/goals.png"
-shotAlt: "The goals report: 404 pages, outbound link clicks, file downloads, form submissions, refunds requested, newsletter signups and a custom goal, each with unique conversions, total conversions and a conversion rate."
+shotAlt: "The Goals tab of the Behavior card, showing 8 of 12 goals - visits to pricing and signup, reading a comparison, using the calculator, newsletter signups, trials started, signups and purchases - each with unique conversions, total conversions and a conversion rate, and revenue under the Purchase row."
 note: |
   Goals don't backfill. A goal you create today starts counting today - conversions before that moment aren't recovered, and the report tells you the
   date it started rather than showing a flat line and letting you assume.

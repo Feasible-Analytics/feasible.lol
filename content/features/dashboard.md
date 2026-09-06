@@ -5,7 +5,7 @@ description: "Six numbers, a graph and five reports on one screen. Click any row
 lede: "Everything Feasible collects is on one page. Click any row and it filters the rest of it."
 weight: 10
 shot: "app/dashboard-light.png"
-shotAlt: "The Feasible dashboard for northwind.example: six metric tiles reading 19k unique visitors, 20k total visits, 47k total pageviews, 2.34 views per visit, 57% bounce rate and 2m 49s visit duration, a line graph of the last 28 days above Top Sources and Top Pages cards."
+shotAlt: "The Feasible dashboard: six metric tiles reading 298.8k unique visitors, 450.6k total visits, 1.7M total pageviews, 3.77 views per visit, 43% bounce rate and 6m 59s visit duration, a line graph of four weeks with a dashed previous-period line, above Top Sources and Top Pages cards."
 note: |
   You can't rearrange it. There's no widget grid, no saved layouts and no
   custom-metric builder - every account sees the same dashboard. Scroll depth,

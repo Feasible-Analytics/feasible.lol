@@ -4,7 +4,7 @@ description: "Weekly or monthly reports at your site's own local midnight, plus 
 lede: "Send the numbers to the people who are never going to open a dashboard."
 weight: 70
 shot: "app/email-reports.png"
-shotAlt: "The Reports and alerts settings screen for northwind.example, showing weekly and monthly scheduled reports with recipient and Slack webhook fields, a spike alert set to 10 current visitors, and a drop alert set to fire below 1 unique visitor in 12 hours."
+shotAlt: "The email reports settings screen, showing a weekly report enabled with two recipients, a monthly one switched off, a spike alert set to 10 current visitors and a drop alert set to fire below 1 unique visitor in 12 hours, each with its own Slack webhook field."
 note: |
   Alerts are checked every 10 minutes and capped at two per site per day, so
   this is a heads-up, not a pager. Delivery is email or a Slack incoming

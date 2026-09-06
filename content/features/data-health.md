@@ -4,7 +4,7 @@ description: "Every event Feasible didn't count in the last 24 hours, with a nam
 lede: "See every event Feasible dropped in the last 24 hours, and why."
 weight: 80
 shot: "app/health.png"
-shotAlt: "The ingestion health screen for northwind.example showing counters for accepted, dropped, classified as bot and fields cut short, a warning that events are arriving from an unknown hostname with an Allow button, a table of the last request received with resolved client IP and the header it came from, and a Send a test event button."
+shotAlt: "The ingestion health screen showing 316 accepted, 2 dropped, 85 classified as bot and 0 fields cut short, a warning that events are being dropped by the hostname allow-list, a Send a test event button, and tables naming each dropped and each classified event by reason."
 note: |
   The panel covers the last 24 hours. It's a debugging surface, not a history - if something went wrong last Tuesday and fixed itself, the panel won't tell you
   about it. Evidence about rejected hostnames is the one exception; that's kept
