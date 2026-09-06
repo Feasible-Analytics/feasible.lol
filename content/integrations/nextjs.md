@@ -7,7 +7,7 @@ lede: "app/layout.tsx on the App Router. pages/_document.tsx on the Pages Router
 
 The tag goes in your root layout - `app/layout.tsx` - so it loads once for every route in the application.
 
-{{< snippet domain="yourdomain.com" >}}
+{{< snippet >}}
 
 ## App Router
 
@@ -20,10 +20,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body>{children}</body>
-      <Script
-        data-domain="yourdomain.com"
-        src="https://app.feasible.lol/js/script.js"
-      />
+      <Script src="https://app.feasible.lol/js/fs-k7m2q4x5r3n6t2v5.js" />
     </html>
   );
 }
@@ -42,11 +39,7 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
-        <script
-          defer
-          data-domain="yourdomain.com"
-          src="https://app.feasible.lol/js/script.js"
-        />
+        <script defer src="https://app.feasible.lol/js/fs-k7m2q4x5r3n6t2v5.js" />
       </Head>
       <body>
         <Main />
@@ -79,7 +72,7 @@ Next.js audiences skew technical, which means they skew blocked. If that matters
 
 Deploy - or run a production build locally, because `localhost` is not counted. Open the site, then click a link to a second route rather than reloading. Watch the network tab: you should see one `POST` to `/api/event` on load and one more per navigation.
 
-Then open Feasible. You should show up under Real-time visitors. If you don't, go to **Site settings → Ingestion health**. It counts every event that arrived and every one that was dropped, each with a named reason - `unknown_site` means `data-domain` doesn't match the site you registered, `hostname_not_allowed` means the page is on a hostname that isn't on your list, which is what a Vercel preview URL will do.
+Then open Feasible. You should show up under Real-time visitors. If you don't, go to **Site settings → Ingestion health**. It counts every event that arrived and every one that was dropped, each with a named reason - `unknown_site` means the snippet is for a site you haven't registered, `hostname_not_allowed` means the page is on a hostname that isn't on your list, which is what a Vercel preview URL will do.
 
 The **send a test event** button there posts through the real public URL, so it exercises what a browser does.
 

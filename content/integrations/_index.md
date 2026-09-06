@@ -7,7 +7,7 @@ lede: "One line of HTML in your site's head. Here's where that line lives on eac
 
 Feasible is one script tag. If your site lets you add one, it works.
 
-{{< snippet domain="yourdomain.com" >}}
+{{< snippet >}}
 
 It's 3,377 bytes gzipped, never blocks the page, and sets no cookies.
 

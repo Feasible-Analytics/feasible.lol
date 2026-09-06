@@ -11,8 +11,8 @@ It's under **Site settings → Health**, it covers the last 24 hours, and it cou
 
 If the panel shows nothing arriving at all, work down this list.
 
-1. **View source on your live site and search for `script.js`.** If it isn't there, the tag didn't deploy. Cache, staging branch, theme setting that silently strips scripts - it happens constantly.
-2. **Check `data-domain` against the site you registered.** A mismatch is refused as `unknown_site`, and the health panel will show it.
+1. **View source on your live site and search for `feasible.lol/js/`.** If it isn't there, the tag didn't deploy. Cache, staging branch, theme setting that silently strips scripts - it happens constantly.
+2. **Check the script filename against the one on your setup screen.** Another site's snippet is refused as `unknown_site`, and the health panel will show it.
 3. **Turn off your own ad blocker and reload.** Yours is blocking the request, and [some of your visitors' are too](/help/do-ad-blockers-block-feasible/).
 4. **Check you're not excluding yourself.** If you've set the browser-level opt-out or an IP shield, you won't count. [Here's how to check](/help/how-do-i-exclude-my-own-visits/).
 

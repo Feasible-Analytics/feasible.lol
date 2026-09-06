@@ -7,7 +7,7 @@ lede: "Settings, Custom Code, Head, all pages. The requirement is a connected do
 
 The tag goes in **Settings → Custom Code**, placed in the **Head** on **All pages**.
 
-{{< snippet domain="yourdomain.com" >}}
+{{< snippet >}}
 
 ## Check this first
 
@@ -40,7 +40,7 @@ Custom code doesn't run in the Wix editor or in preview. It runs on the publishe
 
 Publish, open your live site in a private browser window, and click through two or three pages using the site's own navigation. Then open Feasible.
 
-You should show up under Real-time visitors. If you don't, go to **Site settings → Ingestion health**. It counts every event that arrived and every one that was dropped, each with a named reason - `unknown_site` means `data-domain` doesn't match the site you registered, `hostname_not_allowed` means the page is on a hostname that isn't on your list.
+You should show up under Real-time visitors. If you don't, go to **Site settings → Ingestion health**. It counts every event that arrived and every one that was dropped, each with a named reason - `unknown_site` means the snippet is for a site you haven't registered, `hostname_not_allowed` means the page is on a hostname that isn't on your list.
 
 The **send a test event** button there posts through the real public URL, so it exercises what a browser does.
 

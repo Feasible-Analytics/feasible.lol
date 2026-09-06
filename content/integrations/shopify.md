@@ -7,7 +7,7 @@ lede: "One tag in theme.liquid. Checkout is the part worth reading about."
 
 The tag goes in `layout/theme.liquid`, just before `</head>`.
 
-{{< snippet domain="yourdomain.com" >}}
+{{< snippet >}}
 
 ## Steps
 
@@ -43,7 +43,7 @@ If your store is still behind Shopify's password page, the password page isn't y
 
 Open your live storefront in a normal browser window - not the theme editor - and click through two or three products. Then open Feasible.
 
-You should show up under Real-time visitors. If you don't, go to **Site settings → Ingestion health**. It counts every event that arrived and every one that was dropped, each with a named reason - `unknown_site` means `data-domain` doesn't match the site you registered, `hostname_not_allowed` means the page is on a hostname that isn't on your list. That last one is worth knowing about here: `yourstore.myshopify.com` and `yourstore.com` are different hostnames, and the health panel has a one-click action to allow whichever one you're testing on.
+You should show up under Real-time visitors. If you don't, go to **Site settings → Ingestion health**. It counts every event that arrived and every one that was dropped, each with a named reason - `unknown_site` means the snippet is for a site you haven't registered, `hostname_not_allowed` means the page is on a hostname that isn't on your list. That last one is worth knowing about here: `yourstore.myshopify.com` and `yourstore.com` are different hostnames, and the health panel has a one-click action to allow whichever one you're testing on.
 
 The **send a test event** button posts through the real public URL, so it exercises what a browser does. A brand-new site takes about fifteen seconds before its first event is accepted, so [give it that](/help/how-long-until-i-see-data/).
 

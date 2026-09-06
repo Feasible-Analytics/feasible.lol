@@ -97,7 +97,7 @@ audiences. If it matters, [serve the script from your own domain](/docs/proxying
 
 ## The script
 
-{{< snippet domain="yourdomain.com" >}}
+{{< snippet >}}
 
 3,377 bytes gzipped. It sets no cookie and loads no second script.
 

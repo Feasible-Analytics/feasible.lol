@@ -13,9 +13,8 @@ export default defineNuxtConfig({
     head: {
       script: [
         {
-          src: "https://app.feasible.lol/js/script.js",
+          src: "https://app.feasible.lol/js/fs-k7m2q4x5r3n6t2v5.js",
           defer: true,
-          "data-domain": "yourdomain.com",
         },
       ],
     },
@@ -25,15 +24,15 @@ export default defineNuxtConfig({
 
 Which produces this:
 
-{{< snippet domain="yourdomain.com" >}}
+{{< snippet >}}
 
 ## Steps
 
 1. Open `nuxt.config.ts`.
-2. Add the `app.head.script` entry above, with your own domain.
+2. Add the `app.head.script` entry above, with your own script filename.
 3. Restart the dev server so the config reloads, then deploy.
 
-`data-domain` has to match the site as you registered it - no `https://`, no `www.` unless you registered it that way. A mismatch is dropped with the reason `unknown_site`, which the ingestion health panel names for you.
+The filename is the one your setup screen shows, and it carries the domain inside the file. A snippet for a site you haven't registered is dropped with the reason `unknown_site`, which the ingestion health panel names for you.
 
 ## Don't also add it with useHead
 
@@ -69,7 +68,7 @@ Deploy, or run `nuxt build` and `nuxt preview` on a real hostname. `localhost` i
 
 Open the site, click a link to a second route rather than reloading, and watch the network tab: one `POST` to `/api/event` on load, one more per navigation. Then open Feasible.
 
-You should show up under Real-time visitors. If you don't, go to **Site settings → Ingestion health**. It counts every event that arrived and every one that was dropped, each with a named reason - `unknown_site` means `data-domain` doesn't match the site you registered, `hostname_not_allowed` means the page is on a hostname that isn't on your list, which is what a preview deployment URL will do.
+You should show up under Real-time visitors. If you don't, go to **Site settings → Ingestion health**. It counts every event that arrived and every one that was dropped, each with a named reason - `unknown_site` means the snippet is for a site you haven't registered, `hostname_not_allowed` means the page is on a hostname that isn't on your list, which is what a preview deployment URL will do.
 
 The **send a test event** button there posts through the real public URL, so it exercises what a browser does.
 

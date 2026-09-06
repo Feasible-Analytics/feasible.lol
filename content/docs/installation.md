@@ -7,32 +7,45 @@ weight: 10
 
 One script tag, on every page you want counted. No build step, no consent gate to wire up first.
 
-{{< snippet domain="example.com" >}}
+{{< snippet >}}
 
-That's 3,377 bytes gzipped, and it's deferred, so it never blocks rendering.
+That's 3,377 bytes gzipped - a handful more for your copy, which has your domain baked into it -
+and it's deferred, so it never blocks rendering.
 
 There are no cookies and nothing stored in the browser to identify anyone, which is why most sites
 won't need a consent banner for it. [Privacy and GDPR](/docs/privacy/) has the facts to hand your
 lawyer - and if you're somewhere strict, ask them rather than us.
 
-`data-domain` has to match the site as you registered it. It's how an event gets routed to
-your account, and an event for a domain we don't hold is dropped with the reason `unknown_site`.
+Copy it from the setup screen rather than typing it. The filename is different for every site and
+carries your domain inside the file, so there's no attribute to get wrong.
 
-## The per-site script path
+The different filename matters more than it sounds. Blocklists name files one at a time, so a
+shared filename that gets listed costs everybody their traffic, while a per-site one costs one
+site.
 
-Every site also gets its own script URL, which is what the setup screen hands you:
+## The attribute form
+
+There's a second form that names your domain in an attribute and loads a script every site
+shares:
 
 ```
-<script defer src="https://app.feasible.lol/js/fs-k7m2q4x5r3n6t2v5.js"></script>
+<script defer data-domain="example.com" src="https://app.feasible.lol/js/script.js"></script>
 ```
 
-It carries your domain inside the file, so there's no attribute to get wrong, and the filename is
-different for every site. That last part matters. Blocklists name files one at a time, so a shared
-filename that gets listed costs everybody their traffic, while a per-site one costs one site.
+Both forms behave identically. Use this one if you're migrating an existing install and would
+rather change one hostname than every tag, or if a tag manager is going to mangle an opaque path.
+`data-domain` has to match the site as you registered it, and an event for a domain we don't hold
+is dropped with the reason `unknown_site`.
 
-Both forms behave identically. Use the attribute form if you're migrating an existing install and
-would rather change one hostname than every tag, or if a tag manager is going to mangle an opaque
-path.
+## Firing events from your own code
+
+Tagging a link or button with a class needs nothing extra - the script watches for those clicks once
+it loads.
+
+Calling `feasible()` from your own JavaScript is the one case that wants a second line. The tag is
+deferred, so your code can run first and find nothing to call. A 103-byte stub above the tag queues
+those calls instead: see
+[calling it before the script loads](/docs/script-options/#calling-it-before-the-script-loads).
 
 {{< callout title="Not an ad-blocker escape" >}}
 Randomized paths raise the cost of blocking us. They don't end the game. If blockers are your real
@@ -102,7 +115,7 @@ named reason for each drop.
 
 ## Multiple domains
 
-Give each site its own snippet with its own `data-domain`.
+Give each site its own snippet. The filename is what routes the events.
 
 A staging copy pointed at your production domain mixes staging traffic into your real numbers, and
 there's no way to unpick it afterwards. Register a separate site, or
@@ -138,7 +151,7 @@ has no referrer of its own.
 
 ## If nothing arrives at all
 
-- A `data-domain` that doesn't match a registered site.
+- A snippet for a site you haven't registered.
 - An ad blocker. See [proxying](/docs/proxying/).
 - A content security policy that allows our origin in `script-src` but not in `connect-src`. The
   script loads and then silently sends nothing, which is the hardest version of this to spot.

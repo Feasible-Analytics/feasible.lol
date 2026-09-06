@@ -12,7 +12,7 @@ Three fields, then one script tag.
 3. Pick the site's time zone. Every day, week and month in your reports is drawn on that clock, and email reports go out at that site's own midnight. You can change it later.
 4. Copy the snippet and paste it into the `<head>` of every page.
 
-{{< snippet domain="example.com" >}}
+{{< snippet >}}
 
 That's it. There's no verification file to upload and no DNS record to add.
 

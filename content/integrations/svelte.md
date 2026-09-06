@@ -7,7 +7,7 @@ lede: "src/app.html is the simplest place. The root layout works too."
 
 The tag goes in `src/app.html`, inside `<head>`. That file wraps every page SvelteKit renders, server-side and client-side both.
 
-{{< snippet domain="yourdomain.com" >}}
+{{< snippet >}}
 
 ## Steps
 
@@ -20,8 +20,8 @@ The tag goes in `src/app.html`, inside `<head>`. That file wraps every page Svel
   <meta charset="utf-8" />
   <link rel="icon" href="%sveltekit.assets%/favicon.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <script defer data-domain="yourdomain.com"
-          src="https://app.feasible.lol/js/script.js"></script>
+  <script defer
+          src="https://app.feasible.lol/js/fs-k7m2q4x5r3n6t2v5.js"></script>
   %sveltekit.head%
 </head>
 ```
@@ -32,8 +32,8 @@ If your project keeps head material in Svelte rather than in `app.html`, use `<s
 
 ```svelte
 <svelte:head>
-  <script defer data-domain="yourdomain.com"
-          src="https://app.feasible.lol/js/script.js"></script>
+  <script defer
+          src="https://app.feasible.lol/js/fs-k7m2q4x5r3n6t2v5.js"></script>
 </svelte:head>
 ```
 
@@ -71,7 +71,7 @@ Deploy, or run `vite build` and `vite preview` on a real hostname. `localhost` i
 
 Open the site, click a link to a second route rather than reloading, and watch the network tab: one `POST` to `/api/event` per route. Then open Feasible.
 
-You should show up under Real-time visitors. If you don't, go to **Site settings → Ingestion health**. It counts every event that arrived and every one that was dropped, each with a named reason - `unknown_site` means `data-domain` doesn't match the site you registered, `hostname_not_allowed` means the page is on a hostname that isn't on your list, which is what a preview deployment URL will do.
+You should show up under Real-time visitors. If you don't, go to **Site settings → Ingestion health**. It counts every event that arrived and every one that was dropped, each with a named reason - `unknown_site` means the snippet is for a site you haven't registered, `hostname_not_allowed` means the page is on a hostname that isn't on your list, which is what a preview deployment URL will do.
 
 The **send a test event** button there posts through the real public URL, so it exercises what a browser does.
 

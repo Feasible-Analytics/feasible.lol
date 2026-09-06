@@ -21,9 +21,8 @@ The hostname one works backwards from the others and catches people out. Subdoma
 **There's a second way to exclude pages, on the script side.** `data-exclude` takes comma-separated glob patterns, matched against the path and hash:
 
 ```html
-<script defer data-domain="example.com"
-        data-exclude="/admin/**,/preview/*"
-        src="https://app.feasible.lol/js/script.js"></script>
+<script defer data-exclude="/admin/**,/preview/*"
+        src="https://app.feasible.lol/js/fs-k7m2q4x5r3n6t2v5.js"></script>
 ```
 
 `*` matches within a path segment, `**` across segments. Use this when you'd rather the event never leave the browser at all. Use a page shield when you want it stopped centrally without a deploy.

@@ -7,7 +7,7 @@ lede: "It goes in index.html, not in a component. Here's why that matters."
 
 The tag goes in `index.html` - the real HTML file your bundler serves - inside `<head>`.
 
-{{< snippet domain="yourdomain.com" >}}
+{{< snippet >}}
 
 ## Steps
 
@@ -51,7 +51,7 @@ window.feasible("Signup", { props: { plan: "annual" } });
 
 Build and deploy, or run a production preview - `localhost` is not counted, so `npm run dev` will show you nothing no matter how correct the tag is. Open the site, then click a link to a second route rather than reloading. In the network tab you should see one `POST` to `/api/event` per route.
 
-Then open Feasible. You should show up under Real-time visitors. If you don't, go to **Site settings → Ingestion health**. It counts every event that arrived and every one that was dropped, each with a named reason - `unknown_site` means `data-domain` doesn't match the site you registered, `hostname_not_allowed` means the page is on a hostname that isn't on your list, which is what a preview deployment URL will do.
+Then open Feasible. You should show up under Real-time visitors. If you don't, go to **Site settings → Ingestion health**. It counts every event that arrived and every one that was dropped, each with a named reason - `unknown_site` means the snippet is for a site you haven't registered, `hostname_not_allowed` means the page is on a hostname that isn't on your list, which is what a preview deployment URL will do.
 
 The **send a test event** button there posts through the real public URL, so it exercises what a browser does.
 

@@ -11,18 +11,18 @@ The tag goes in the layout every page uses - usually `src/layouts/Layout.astro` 
 <head>
   <meta charset="utf-8" />
   <title>{title}</title>
-  <script is:inline defer data-domain="yourdomain.com"
-          src="https://app.feasible.lol/js/script.js"></script>
+  <script is:inline defer
+          src="https://app.feasible.lol/js/fs-k7m2q4x5r3n6t2v5.js"></script>
 </head>
 ```
 
 Which is the same tag as everywhere else:
 
-{{< snippet domain="yourdomain.com" >}}
+{{< snippet >}}
 
 ## Why is:inline
 
-Astro takes ownership of `<script>` tags it finds in components - bundling them, moving them, processing them through Vite. `is:inline` tells it to leave this one as written, with its `src` and its `data-domain` intact, in the place you put it.
+Astro takes ownership of `<script>` tags it finds in components - bundling them, moving them, processing them through Vite. `is:inline` tells it to leave this one as written, with its `src` intact, in the place you put it.
 
 Without it, the tag may still work, and may not survive the next build. `is:inline` is the form that's reliably still there in the output HTML.
 
@@ -59,7 +59,7 @@ Deploy, or run `astro build` and `astro preview` on a real hostname. `localhost`
 
 Open the site, click through two or three pages using its own links, then open Feasible.
 
-You should show up under Real-time visitors. If you don't, go to **Site settings → Ingestion health**. It counts every event that arrived and every one that was dropped, each with a named reason - `unknown_site` means `data-domain` doesn't match the site you registered, `hostname_not_allowed` means the page is on a hostname that isn't on your list, which is what a preview deployment URL will do.
+You should show up under Real-time visitors. If you don't, go to **Site settings → Ingestion health**. It counts every event that arrived and every one that was dropped, each with a named reason - `unknown_site` means the snippet is for a site you haven't registered, `hostname_not_allowed` means the page is on a hostname that isn't on your list, which is what a preview deployment URL will do.
 
 The **send a test event** button there posts through the real public URL, so it exercises what a browser does.
 

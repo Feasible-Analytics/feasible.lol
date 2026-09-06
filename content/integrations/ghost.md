@@ -7,7 +7,7 @@ lede: "Settings, Advanced, Code injection, Site Header. Paste and save."
 
 The tag goes in Ghost's site-wide code injection field, under **Site Header**. Nothing in your theme has to change.
 
-{{< snippet domain="yourdomain.com" >}}
+{{< snippet >}}
 
 ## Steps
 
@@ -42,7 +42,7 @@ If you're running Ghost behind a reverse proxy and want the script served from y
 
 Open your live site in a normal browser window - not the admin preview - and click through two or three posts. Then open Feasible.
 
-You should show up under Real-time visitors. If you don't, go to **Site settings → Ingestion health**. It counts every event that arrived and every one that was dropped, each with a named reason - `unknown_site` means `data-domain` doesn't match the site you registered, `hostname_not_allowed` means the page is on a hostname that isn't on your list.
+You should show up under Real-time visitors. If you don't, go to **Site settings → Ingestion health**. It counts every event that arrived and every one that was dropped, each with a named reason - `unknown_site` means the snippet is for a site you haven't registered, `hostname_not_allowed` means the page is on a hostname that isn't on your list.
 
 The **send a test event** button there posts through the real public URL, so it exercises what a browser does.
 

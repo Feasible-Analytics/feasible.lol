@@ -9,7 +9,7 @@ Yes. As many as you like, on every plan.
 
 There's no site cap anywhere in Feasible. Add a hundred. The $9.99 a month covers all of them, and so does the million pageviews a month - that allowance is per account, pooled across every site you've added, not divided up per site.
 
-Each site gets its own snippet with its own `data-domain`, its own dashboard, its own goals, its own shields and its own time zone. Nothing is shared between them except the account, the team and the bill.
+Each site gets its own snippet, its own dashboard, its own goals, its own shields and its own time zone. Nothing is shared between them except the account, the team and the bill.
 
 To add one, go to **Sites → Add a site** and [walk through the three fields](/help/how-do-i-add-a-site/). To move between them once you're in the dashboard, press `0`.
 

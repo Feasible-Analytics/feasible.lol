@@ -9,7 +9,7 @@ Yes, and there's nothing to switch on.
 
 The script listens for `pushState`, `replaceState`, `popstate` and `hashchange`, and records a pageview when the route changes. Drop the standard tag in your app shell and client-side navigation counts the same as a full page load.
 
-{{< snippet domain="example.com" >}}
+{{< snippet >}}
 
 There's no `script.spa.js` variant to choose, no router integration to install, and no `trackPageview()` you have to remember to call on every route. It works out of the box in React, Vue, Svelte, Angular, Next.js, Nuxt, SvelteKit, Astro and anything else that drives the History API.
 
