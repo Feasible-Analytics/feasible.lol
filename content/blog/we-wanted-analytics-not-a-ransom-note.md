@@ -15,7 +15,7 @@ That's a strange way to thank a paying customer.
 
 It's also how we ended up building an analytics company. Which wasn't on the list of things I wanted to do.
 
-At Cloudmanic Labs, we'd spent years looking for analytics we liked. We started with Google Analytics, where checking a few numbers always seemed to require more work than it should. We moved to <a href="https://clicky.com/" rel="nofollow">Clicky</a> and happily paid for it. It was great for a while, then became less of a fit. After that, we hosted Matomo ourselves.
+At [Cloudmanic Labs](https://cloudmanic.com?utm_source=feasible.lol), we'd spent years looking for analytics we liked. We started with Google Analytics, where checking a few numbers always seemed to require more work than it should. We moved to <a href="https://clicky.com/" rel="nofollow">Clicky</a> and happily paid for it. It was great for a while, then became less of a fit. After that, we hosted Matomo ourselves.
 
 Self-hosting gave us another piece of software to maintain. We already had enough of those.
 
