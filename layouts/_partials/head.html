@@ -125,8 +125,12 @@
      filename is ours alone - a blocklist entry for the shared script name
      costs every site using it; one for this name costs one site.
 
+     The inline stub queues any feasible() call made before the deferred
+     script finishes loading, so a click early in the page still counts.
+
      Production only, so a local `hugo server` never writes to real stats. */}}
 {{- if hugo.IsProduction }}
+  <script>window.feasible=window.feasible||function(){(window.feasible.q=window.feasible.q||[]).push(arguments)};</script>
   <script defer src="{{ .Site.Params.trackerURL }}"></script>
 {{- end }}
 
