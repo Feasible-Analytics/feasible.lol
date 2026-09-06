@@ -8,7 +8,7 @@ weight: 50
 One screen. No report picker, no menu of saved views to get lost in. Everything is on it, and
 everything is filterable by clicking.
 
-{{< shot src="app/dashboard-light.png" alt="The Feasible dashboard: six top-line numbers, a graph, and four report cards" >}}
+{{< shot src="app/dashboard-light.png" alt="The Feasible dashboard: six top-line numbers, a graph, and the first two report cards" >}}
 
 ## The numbers along the top
 
@@ -40,7 +40,7 @@ channel or source.
 
 ## The map
 
-{{< shot src="app/locations.png" alt="The locations report, with a shaded world map above a country list" >}}
+{{< shot src="app/locations.png" alt="The locations report, showing a world map shaded by visitor count" >}}
 
 It's drawn from country outlines compiled into the page. No mapping library, no tiles fetched from
 anybody, nothing that could report your visitors to a third party.

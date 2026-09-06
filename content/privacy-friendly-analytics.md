@@ -75,7 +75,7 @@ The address is used for a rough location and the daily visitor hash, then
 discarded. It never reaches disk. Location comes from a local database and stops
 at country, region, and city.
 
-{{< shot src="app/locations.png" alt="The locations report showing countries, regions and cities" caption="Country, region and city. Nothing finer, and no network call to get it." >}}
+{{< shot src="app/locations.png" alt="The locations report, showing a world map shaded by visitor count, with tabs for countries, regions and cities" caption="Country, region and city. Nothing finer, and no network call to get it." >}}
 
 ## How this compares
 

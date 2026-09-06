@@ -1,0 +1,460 @@
+- generic [ref=e2]:
+  - banner [ref=e3]:
+    - generic [ref=e4]:
+      - link "Feasible.lol" [ref=e5] [cursor=pointer]:
+        - /url: /
+      - button "Site" [ref=e7]:
+        - generic [ref=e8]: stopoverpayingforanalytics.com
+        - img [ref=e9]
+      - button "126 current visitors" [ref=e157]:
+        - generic [ref=e161]: "126"
+        - generic [ref=e162]: current visitors
+      - generic [ref=e11]:
+        - button "Comparison" [ref=e13]:
+          - text: Previous period
+          - img [ref=e14]
+        - generic [ref=e17]:
+          - button "Previous period" [ref=e18]:
+            - generic [ref=e19]: ‹
+          - button "Last 28 days" [ref=e20]:
+            - text: Last 28 days
+            - img [ref=e21]
+          - button "Next period" [disabled] [ref=e23]:
+            - generic [ref=e24]: ›
+        - button "Keyboard shortcuts (?)" [ref=e25]: "?"
+        - button "Open display settings" [ref=e27]:
+          - img [ref=e28]
+  - main [ref=e30]:
+    - button "Filter" [ref=e33]:
+      - generic [ref=e34]: +
+      - text: Filter
+    - generic [ref=e35]:
+      - generic [ref=e36]:
+        - button "Unique visitors 284.9k ↓ 3%" [pressed] [ref=e163] [cursor=pointer]:
+          - generic [ref=e165]: Unique visitors
+          - generic [ref=e166]:
+            - generic "284,869" [ref=e167]: 284.9k
+            - generic [ref=e168]: ↓ 3%
+        - button "Total visits 454.5k ↑ 3%" [ref=e169] [cursor=pointer]:
+          - generic [ref=e170]: Total visits
+          - generic [ref=e171]:
+            - generic "454,492" [ref=e172]: 454.5k
+            - generic [ref=e173]: ↑ 3%
+        - button "Total pageviews 1.7M ↑ 5%" [ref=e174] [cursor=pointer]:
+          - generic [ref=e175]: Total pageviews
+          - generic [ref=e176]:
+            - generic "1,719,158" [ref=e177]: 1.7M
+            - generic [ref=e178]: ↑ 5%
+        - button "Views per visit 3.78 ↑ 2%" [ref=e179] [cursor=pointer]:
+          - generic [ref=e180]: Views per visit
+          - generic [ref=e181]:
+            - generic "3.78" [ref=e182]
+            - generic [ref=e183]: ↑ 2%
+        - button "Bounce rate 42% ↓ 2%" [ref=e184] [cursor=pointer]:
+          - generic [ref=e185]: Bounce rate
+          - generic [ref=e186]:
+            - generic "42.3%" [ref=e187]: 42%
+            - generic [ref=e188]: ↓ 2%
+        - button "Visit duration 6m 56s ↓ 1%" [ref=e189] [cursor=pointer]:
+          - generic [ref=e190]: Visit duration
+          - generic [ref=e191]:
+            - generic "416 seconds" [ref=e192]: 6m 56s
+            - generic [ref=e193]: ↓ 1%
+      - generic [ref=e70]:
+        - group "Unique visitors over time" [ref=e194]:
+          - generic [ref=e196]: "0"
+          - generic [ref=e198]: 5k
+          - generic [ref=e200]: 10k
+          - generic [ref=e202]: 15k
+          - generic [ref=e204]: 20k
+          - generic [ref=e205]: 10 Aug
+          - generic [ref=e206]: 13 Aug
+          - generic [ref=e207]: 16 Aug
+          - generic [ref=e208]: 19 Aug
+          - generic [ref=e209]: 22 Aug
+          - generic [ref=e210]: 25 Aug
+          - generic [ref=e211]: 28 Aug
+          - generic [ref=e212]: 31 Aug
+          - generic [ref=e213]: 3 Sep
+          - generic [ref=e214]: 6 Sep
+        - paragraph:
+          - img
+          - text: Jul 13, 2026 – Aug 9, 2026
+    - generic [ref=e74]:
+      - generic [ref=e75]:
+        - generic [ref=e76]:
+          - heading "Top Sources Why this number looks wrong" [level=2] [ref=e77]:
+            - text: Top Sources
+            - button "Why this number looks wrong" [ref=e79]: "?"
+          - generic [ref=e80]:
+            - button "Channels" [pressed] [ref=e81]
+            - button "Sources" [ref=e82]
+            - button "Campaigns" [ref=e83]
+        - generic [ref=e84]:
+          - generic [ref=e220]:
+            - generic [ref=e221]: Channel
+            - generic [ref=e222]: Visitors
+          - list [ref=e223]:
+            - listitem [ref=e224]:
+              - button "Filter the dashboard by Organic Search" [ref=e226]:
+                - generic [ref=e227]: Filter the dashboard by Organic Search
+              - generic:
+                - generic:
+                  - generic "Organic Search"
+              - generic:
+                - generic "117,295":
+                  - generic: 117,295
+                  - text: 117.3k
+                - generic: 41%
+            - listitem [ref=e228]:
+              - button "Filter the dashboard by Direct" [ref=e230]:
+                - generic [ref=e231]: Filter the dashboard by Direct
+              - generic:
+                - generic:
+                  - generic "Direct"
+              - generic:
+                - generic "84,997":
+                  - generic: 84,997
+                  - text: 85k
+                - generic: 30%
+            - listitem [ref=e232]:
+              - button "Filter the dashboard by Referral" [ref=e234]:
+                - generic [ref=e235]: Filter the dashboard by Referral
+              - generic:
+                - generic:
+                  - generic "Referral"
+              - generic:
+                - generic "51,563":
+                  - generic: 51,563
+                  - text: 51.6k
+                - generic: 18%
+            - listitem [ref=e236]:
+              - button "Filter the dashboard by Organic Social" [ref=e238]:
+                - generic [ref=e239]: Filter the dashboard by Organic Social
+              - generic:
+                - generic:
+                  - generic "Organic Social"
+              - generic:
+                - generic "45,829":
+                  - generic: 45,829
+                  - text: 45.8k
+                - generic: 16%
+            - listitem [ref=e240]:
+              - button "Filter the dashboard by AI Assistants" [ref=e242]:
+                - generic [ref=e243]: Filter the dashboard by AI Assistants
+              - generic:
+                - generic:
+                  - generic "AI Assistants"
+              - generic:
+                - generic "14,796":
+                  - generic: 14,796
+                  - text: 14.8k
+                - generic: 5%
+            - listitem [ref=e244]:
+              - button "Filter the dashboard by Organic Video" [ref=e246]:
+                - generic [ref=e247]: Filter the dashboard by Organic Video
+              - generic:
+                - generic:
+                  - generic "Organic Video"
+              - generic:
+                - generic "4,547":
+                  - generic: 4,547
+                  - text: 4.5k
+                - generic: 2%
+            - listitem [ref=e248]:
+              - button "Filter the dashboard by Email" [ref=e250]:
+                - generic [ref=e251]: Filter the dashboard by Email
+              - generic:
+                - generic:
+                  - generic "Email"
+              - generic:
+                - generic "4,054":
+                  - generic: 4,054
+                  - text: 4.1k
+                - generic: 1%
+            - listitem [ref=e252]:
+              - button "Filter the dashboard by Paid Search" [ref=e254]:
+                - generic [ref=e255]: Filter the dashboard by Paid Search
+              - generic:
+                - generic:
+                  - generic "Paid Search"
+              - generic:
+                - generic "1,853":
+                  - generic: 1,853
+                  - text: 1.9k
+                - generic: <1%
+            - listitem [ref=e256]:
+              - button "Filter the dashboard by Paid Social" [ref=e258]:
+                - generic [ref=e259]: Filter the dashboard by Paid Social
+              - generic:
+                - generic:
+                  - generic "Paid Social"
+              - generic:
+                - generic "1,026":
+                  - generic: 1,026
+                  - text: 1k
+                - generic: <1%
+        - button "Details →" [ref=e89]
+      - generic [ref=e90]:
+        - generic [ref=e91]:
+          - heading "Top Pages Why this number looks wrong" [level=2] [ref=e92]:
+            - text: Top Pages
+            - button "Why this number looks wrong" [ref=e94]: "?"
+          - generic [ref=e95]:
+            - button "Top Pages" [pressed] [ref=e96]
+            - button "Entry Pages" [ref=e97]
+            - button "Exit Pages" [ref=e98]
+        - generic [ref=e99]:
+          - generic [ref=e260]:
+            - generic [ref=e261]: Page
+            - generic [ref=e262]: Visitors
+          - list [ref=e263]:
+            - listitem [ref=e264]:
+              - button "Filter the dashboard by /" [ref=e266]:
+                - generic [ref=e267]: Filter the dashboard by /
+              - generic:
+                - generic:
+                  - generic "Stop Overpaying For Analytics"
+                  - generic /
+              - generic:
+                - generic "71,030":
+                  - generic: 71,030
+                  - text: 71k
+                - generic: 25%
+            - listitem [ref=e268]:
+              - button "Filter the dashboard by /pricing" [ref=e270]:
+                - generic [ref=e271]: Filter the dashboard by /pricing
+              - generic:
+                - generic:
+                  - generic "Pricing — Stop Overpaying For Analytics"
+                  - generic "/pricing"
+              - generic:
+                - generic "41,875":
+                  - generic: 41,875
+                  - text: 41.9k
+                - generic: 15%
+            - listitem [ref=e272]:
+              - button "Filter the dashboard by /calculator" [ref=e274]:
+                - generic [ref=e275]: Filter the dashboard by /calculator
+              - generic:
+                - generic:
+                  - generic "Analytics Cost Calculator"
+                  - generic "/calculator"
+              - generic:
+                - generic "40,646":
+                  - generic: 40,646
+                  - text: 40.6k
+                - generic: 14%
+            - listitem [ref=e276]:
+              - button "Filter the dashboard by /vs/google-analytics" [ref=e278]:
+                - generic [ref=e279]: Filter the dashboard by /vs/google-analytics
+              - generic:
+                - generic:
+                  - generic "Compared To Google Analytics"
+                  - generic "/vs/google-analytics"
+              - generic:
+                - generic "34,938":
+                  - generic: 34,938
+                  - text: 34.9k
+                - generic: 12%
+            - listitem [ref=e280]:
+              - button "Filter the dashboard by /blog" [ref=e282]:
+                - generic [ref=e283]: Filter the dashboard by /blog
+              - generic:
+                - generic:
+                  - generic "Blog — Stop Overpaying For Analytics"
+                  - generic "/blog"
+              - generic:
+                - generic "27,017":
+                  - generic: 27,017
+                  - text: 27k
+                - generic: 9%
+            - listitem [ref=e284]:
+              - button "Filter the dashboard by /guides/analytics-pricing-explained" [ref=e286]:
+                - generic [ref=e287]: Filter the dashboard by /guides/analytics-pricing-explained
+              - generic:
+                - generic:
+                  - generic "Analytics Pricing, Explained"
+                  - generic "/guides/analytics-pricing-explained"
+              - generic:
+                - generic "26,747":
+                  - generic: 26,747
+                  - text: 26.7k
+                - generic: 9%
+            - listitem [ref=e288]:
+              - button "Filter the dashboard by /guides/how-to-cut-your-analytics-bill" [ref=e290]:
+                - generic [ref=e291]: Filter the dashboard by /guides/how-to-cut-your-analytics-bill
+              - generic:
+                - generic:
+                  - generic "How To Cut Your Analytics Bill"
+                  - generic "/guides/how-to-cut-your-analytics-bill"
+              - generic:
+                - generic "23,860":
+                  - generic: 23,860
+                  - text: 23.9k
+                - generic: 8%
+            - listitem [ref=e292]:
+              - button "Filter the dashboard by /blog/google-analytics-what-it-really-costs" [ref=e294]:
+                - generic [ref=e295]: Filter the dashboard by /blog/google-analytics-what-it-really-costs
+              - generic:
+                - generic:
+                  - generic "What Google Analytics Really Costs"
+                  - generic "/blog/google-analytics-what-it-really-costs"
+              - generic:
+                - generic "23,837":
+                  - generic: 23,837
+                  - text: 23.8k
+                - generic: 8%
+            - listitem [ref=e296]:
+              - button "Filter the dashboard by /guides/event-based-pricing" [ref=e298]:
+                - generic [ref=e299]: Filter the dashboard by /guides/event-based-pricing
+              - generic:
+                - generic:
+                  - generic "The Trouble With Event-Based Pricing"
+                  - generic "/guides/event-based-pricing"
+              - generic:
+                - generic "20,384":
+                  - generic: 20,384
+                  - text: 20.4k
+                - generic: 7%
+        - button "Details →" [ref=e104]
+      - generic [ref=e105]:
+        - generic [ref=e106]:
+          - heading "Locations Why this number looks wrong" [level=2] [ref=e107]:
+            - text: Locations
+            - button "Why this number looks wrong" [ref=e109]: "?"
+          - generic [ref=e110]:
+            - button "Map" [pressed] [ref=e111]
+            - button "Countries" [ref=e112]
+            - button "Regions" [ref=e113]
+            - button "Cities" [ref=e114]
+        - generic [ref=e300]:
+          - group "Visitors by country" [ref=e301]:
+            - button "United States, 137,270 visitors" [ref=e456] [cursor=pointer]
+            - button "United Kingdom, 32,495 visitors" [ref=e457] [cursor=pointer]
+            - button "Germany, 23,488 visitors" [ref=e458] [cursor=pointer]
+            - button "Canada, 20,397 visitors" [ref=e459] [cursor=pointer]
+            - button "India, 18,942 visitors" [ref=e460] [cursor=pointer]
+            - button "Australia, 13,978 visitors" [ref=e461] [cursor=pointer]
+            - button "Netherlands, 10,561 visitors" [ref=e462] [cursor=pointer]
+            - button "France, 10,346 visitors" [ref=e463] [cursor=pointer]
+            - button "Brazil, 8,887 visitors" [ref=e464] [cursor=pointer]
+            - button "Sweden, 6,162 visitors" [ref=e465] [cursor=pointer]
+            - button "Poland, 6,055 visitors" [ref=e466] [cursor=pointer]
+            - button "Spain, 5,967 visitors" [ref=e467] [cursor=pointer]
+            - button "Japan, 5,716 visitors" [ref=e468] [cursor=pointer]
+            - button "Ireland, 3,981 visitors" [ref=e469] [cursor=pointer]
+            - button "Switzerland, 3,863 visitors" [ref=e470] [cursor=pointer]
+            - button "Norway, 3,279 visitors" [ref=e471] [cursor=pointer]
+            - button "Denmark, 3,148 visitors" [ref=e472] [cursor=pointer]
+            - button "New Zealand, 2,698 visitors" [ref=e473] [cursor=pointer]
+            - button "South Africa, 2,350 visitors" [ref=e474] [cursor=pointer]
+            - button "Mexico, 2,326 visitors" [ref=e475] [cursor=pointer]
+          - generic [ref=e476]:
+            - generic [ref=e477]: No visitors
+            - generic [ref=e480]:
+              - text: "1"
+              - generic [ref=e486]: 137.3k
+            - generic "One more country had traffic but is too small to draw at this scale — the Countries tab lists every one." [ref=e487]:
+              - text: 20 on the map
+              - generic [ref=e488]: · 1 too small to draw
+        - generic [ref=e119]:
+          - button "Details →" [ref=e120]
+          - link "IP geolocation by DB-IP" [ref=e121] [cursor=pointer]:
+            - /url: https://db-ip.com
+      - generic [ref=e122]:
+        - generic [ref=e123]:
+          - heading "Devices Why this number looks wrong" [level=2] [ref=e124]:
+            - text: Devices
+            - button "Why this number looks wrong" [ref=e126]: "?"
+          - generic [ref=e127]:
+            - button "Browsers" [pressed] [ref=e128]
+            - button "Systems" [ref=e129]
+            - button "Devices" [ref=e130]
+            - button "Languages" [ref=e131]
+            - button "Browser" [pressed] [ref=e133]
+            - button "Version" [ref=e134]
+        - generic [ref=e135]:
+          - generic [ref=e489]:
+            - generic [ref=e490]: Browser
+            - generic [ref=e491]: Visitors
+          - list [ref=e492]:
+            - listitem [ref=e493]:
+              - button "Filter the dashboard by Chrome" [ref=e495]:
+                - generic [ref=e496]: Filter the dashboard by Chrome
+              - generic:
+                - generic:
+                  - generic "Chrome"
+              - generic:
+                - generic "169,473":
+                  - generic: 169,473
+                  - text: 169.5k
+                - generic: 59%
+            - listitem [ref=e497]:
+              - button "Filter the dashboard by Safari" [ref=e499]:
+                - generic [ref=e500]: Filter the dashboard by Safari
+              - generic:
+                - generic:
+                  - generic "Safari"
+              - generic:
+                - generic "81,228":
+                  - generic: 81,228
+                  - text: 81.2k
+                - generic: 29%
+            - listitem [ref=e501]:
+              - button "Filter the dashboard by Firefox" [ref=e503]:
+                - generic [ref=e504]: Filter the dashboard by Firefox
+              - generic:
+                - generic:
+                  - generic "Firefox"
+              - generic:
+                - generic "29,286":
+                  - generic: 29,286
+                  - text: 29.3k
+                - generic: 10%
+            - listitem [ref=e505]:
+              - button "Filter the dashboard by Edge" [ref=e507]:
+                - generic [ref=e508]: Filter the dashboard by Edge
+              - generic:
+                - generic:
+                  - generic "Edge"
+              - generic:
+                - generic "23,862":
+                  - generic: 23,862
+                  - text: 23.9k
+                - generic: 8%
+            - listitem [ref=e509]:
+              - button "Filter the dashboard by Samsung Internet" [ref=e511]:
+                - generic [ref=e512]: Filter the dashboard by Samsung Internet
+              - generic:
+                - generic:
+                  - generic "Samsung Internet"
+              - generic:
+                - generic "7,100":
+                  - generic: 7,100
+                  - text: 7.1k
+                - generic: 2%
+            - listitem [ref=e513]:
+              - button "Filter the dashboard by Opera" [ref=e515]:
+                - generic [ref=e516]: Filter the dashboard by Opera
+              - generic:
+                - generic:
+                  - generic "Opera"
+              - generic:
+                - generic "4,509":
+                  - generic: 4,509
+                  - text: 4.5k
+                - generic: 2%
+        - button "Details →" [ref=e140]
+      - generic [ref=e141]:
+        - generic [ref=e142]:
+          - navigation "Behavior analysis" [ref=e143]:
+            - button "Goals" [pressed] [ref=e144]
+            - button "Properties" [ref=e145]
+            - button "Funnels" [ref=e146]
+            - button "Explore" [ref=e147]
+          - button "Why this number looks wrong" [ref=e149]: "?"
+          - button "Give this report more room" [ref=e150]:
+            - generic [ref=e151]: ↗
+        - status [ref=e154]:
+          - generic [ref=e156]: Loading goals
