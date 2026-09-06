@@ -100,5 +100,3 @@ The name? Yes, Feasible is a poke at Plausible. The .lol makes it a little less 
 I wanted analytics at a price I felt good about paying, from a company I felt good about paying. We couldn't find that combination anymore.
 
 Now it's our job to be that company.
-
-— Spicer Matthews, Cloudmanic Labs
