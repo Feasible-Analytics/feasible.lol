@@ -34,6 +34,58 @@ most here:
 
 - `notes update` **replaces the whole body**. Never patch by guessing. Fetch,
   edit, write back.
+- **A campaign note with reminders on it will lose them.** Tasks live inside the
+  note body as blocks that a Markdown read-back silently drops, so the ordinary
+  fetch-edit-write cycle deletes every reminder attached to the note. Harbor
+  refuses the write and names them; pass `--keep-tasks` and re-run. Never pass
+  `--allow-task-loss` to get past that message.
+
+### The note has two authors, and you are the one who overwrites
+
+The campaign owner edits the note whenever they like: a target changes, a
+decision gets recorded, a paragraph gets rewritten. They will not announce it.
+
+`harbor notes update` has no conflict guard. It is last-write-wins, and a run
+that reads at the start and writes at the end will silently destroy anything
+edited in between. Over a six-month campaign that is not a question of if.
+
+**So never call `harbor notes update` on a campaign note directly.** Use
+`note-write.sh` beside this file:
+
+```bash
+./note-write.sh read  "$NOTE_ID" /tmp/plan.md   # fetch, and remember the version
+# ... edit /tmp/plan.md ...
+./note-write.sh write "$NOTE_ID" /tmp/plan.md   # write only if it has not moved
+./note-write.sh check "$NOTE_ID"                # has it moved?
+```
+
+It records the note's `usn` on read and refuses the write if it has changed,
+which shrinks the window from the length of a whole run to the moment between
+check and write. It also passes `--keep-tasks` every time, so reminders survive.
+
+**When it refuses, do not re-read and overwrite.** That gets past the check and
+destroys the edit anyway, which is the exact thing being prevented. Re-read, find
+what changed, apply your change on top of theirs, and write again.
+
+### Whose sections are whose
+
+The guard closes a race. This closes the rest.
+
+**Yours to edit freely:** the actuals tables, the weekly readings, the run log,
+the work-shipped log, and the open-asks list. These are records of what happened
+and you are the one it happened to.
+
+**Theirs, and not yours to rewrite:** the commitment and its number, the goal,
+the plan, the strategy, the reasoning, anything phrased as their decision.
+
+You may *propose* a change to their half by adding a line saying what you would
+change and why. Changing it outright, even when the data says they were wrong,
+takes their document away from them. Say it in the run summary and let them
+decide.
+
+The one exception is a factual error you can prove, such as a figure that was
+mis-recorded. Correct it, and say plainly in the revision log that you did and
+what it was.
 - Campaign notes are plain Markdown with GFM tables on purpose, so they survive
   round-trips. Keep them that way. Do not introduce coloured HTML.
 
