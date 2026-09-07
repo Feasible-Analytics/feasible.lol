@@ -126,6 +126,9 @@ AGPL-3.0-or-later with unlimited sites and seats, and it includes the Stats API.
 big customer base, and a straightforward answer for a European buyer who wants
 data in Europe. We're a US company and can't match that.
 
+If Plausible is what you're actually weighing, [seven alternatives to it,
+compared](/alternatives/plausible/) goes deeper than this entry does.
+
 **The cost:** the ladder. Custom properties, funnels, ecommerce revenue and the
 Stats API on Cloud start at Business - $1,390 a year at a million pageviews.
 Scheduled raw event export is Enterprise-only, so no self-serve plan gets your
@@ -270,5 +273,6 @@ verify, then remove the old tag - is written out step by step in
 Prices move. If something here is out of date,
 [tell us](mailto:help@feasible.lol) and we'll fix it. Also worth reading:
 [the wider tool roundup](/web-analytics-tools/), our
-[head-to-head with Google Analytics](/compare/google-analytics/), and
+[head-to-head with Google Analytics](/compare/google-analytics/),
+[Plausible alternatives](/alternatives/plausible/), and
 [what Feasible costs](/pricing/).

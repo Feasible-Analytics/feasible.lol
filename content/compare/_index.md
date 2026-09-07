@@ -12,3 +12,6 @@ the real price, and where each product wins.
 
 Start with [the whole price ladder](/compare/pricing/) if you want every vendor
 at every volume in one table. Or pick the product you're weighing us against.
+
+If you haven't narrowed it to one product yet, the [alternatives
+roundups](/alternatives/) cover several tools at once rather than two.
