@@ -1,7 +1,7 @@
 ---
 title: "Why we don't charge per site"
 slug: "why-we-dont-charge-per-site"
-description: "Per-site and per-seat pricing tolls the moment you'd install a tool again. We count pageviews and custom events, and stop there - here's what everyone else counts."
+description: "Per-site and per-seat pricing tolls the moment you'd install a tool again. We count pageviews and custom events - here's what everyone else counts."
 lede: "A second site costs us almost nothing, so we don't charge for it. The harder question is what a monthly limit should count."
 date: 2026-09-02
 checked: 2026-09-03

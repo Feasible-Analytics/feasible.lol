@@ -325,7 +325,7 @@ disableKinds = ["taxonomy", "term"]
 # these too. Nothing on a static site can read live Stripe prices.
 # ------------------------------------------------------------------
 [params]
-  description = "Simple, privacy-friendly website analytics. One page, no cookies, no consent banner. Unlimited sites and users, a million pageviews a month, $99 a year — not $1,390."
+  description = "Simple, privacy-friendly website analytics. One page, no cookies, no banner. Unlimited sites and users, a million pageviews a month, $99 a year — not $1,390."
   tagline = "Simple, Privacy-Friendly Website Analytics"
   company = "Cloudmanic Labs, LLC"
   founded = 2026
