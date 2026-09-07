@@ -96,11 +96,53 @@ Also check the OpenSEO project research log before spending, for the same reason
 
 ## Step 3. Measure
 
-Take the free readings on every run:
+Two sources, and they answer different questions. Read both.
 
-- **Search Console**: impressions, clicks, average position, indexed page count,
-  new queries, and anything sitting in striking distance (average position
-  roughly 5 to 20). Free, first-party, and the most honest signal available.
+**Search Console tells you what Google is doing** — impressions, average
+position, indexed page count, and which queries are close to breaking through.
+It is the leading indicator. It is also the only place to see a query that has
+not earned a click yet.
+
+**The analytics platform tells you what actually happened** — real people, real
+sessions, real conversions. It is the lagging indicator and the one the target is
+written in. A number reported to a stakeholder comes from here.
+
+Never report a Search Console click count as traffic. They disagree, always, and
+the analytics number is the one that was measured on the site.
+
+### Reading the analytics
+
+Use `analytics.sh` beside this file rather than hand-writing queries. A six-month
+log is only worth keeping if week 3 and week 19 were counted the same way, and
+one script is how that stays true.
+
+```bash
+export FEASIBLE_SITE=<site>                    # the site id in the platform
+export FEASIBLE_API_KEY_REF=<op:// reference>  # named in the campaign note
+export FEASIBLE_GOAL=<conversion event>        # optional, the note names it
+
+./analytics.sh weekly 7d      # the full reading, ready to paste into the note
+./analytics.sh organic 28d    # the committed metric, with period-over-period change
+./analytics.sh channels all   # where everything is coming from
+./analytics.sh entry 28d      # which pages organic visitors actually land on
+./analytics.sh goals 28d      # conversions, split by channel
+./analytics.sh pages 28d      # top pages overall
+./analytics.sh raw '<json>'   # anything else the API supports
+```
+
+The credential is never written into this repository. The campaign note names
+which secret reference to use; the script reads it at call time, keeps it out of
+the process list, and suppresses tracing around it.
+
+Two behaviours of the API worth knowing before you interpret a result:
+
+- A period-over-period `change` is **null**, not zero, when the earlier period was
+  zero. Report "no prior data", never "0% growth".
+- `event:goal` can only be filtered on, never grouped by. Break the conversion
+  event down across channels instead. `analytics.sh goals` already does this.
+
+### The rest of the free readings, every run
+
 - **Indexing**: did pages published since the last run get indexed? Chase the
   ones that did not.
 - **The site itself**: fetch anything you are about to make a claim about.
@@ -188,8 +230,14 @@ and what it found, so the gap is visible later.
 Update three things in the note, by read-modify-write:
 
 **1. The actuals table.** Fill in the real number for the current period beside
-the target. Never leave a period blank once it has closed, and never overwrite a
+the target, taken from `analytics.sh`, not from Search Console and not from
+memory. Never leave a period blank once it has closed, and never overwrite a
 target to make an actual look better.
+
+This table is the whole case for the work. A plan with targets and no actuals is
+a wish. Six months of both, honestly filled in, is the only thing that proves the
+campaign either worked or did not — so fill it in on the run the period closes,
+including the runs where the number is bad.
 
 **2. The run log.** Append one row per run. Keep it to one line unless something
 genuinely warrants more:
