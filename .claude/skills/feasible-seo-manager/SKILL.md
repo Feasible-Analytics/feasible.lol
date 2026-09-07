@@ -332,6 +332,10 @@ quiet consolidation month is fine at two or three runs a week.
   the run summary.
 - **Do not publish anything outward-facing** — a public post, an email, a shared
   link — unless the campaign note authorises it. Drafting is always fine.
+- **Merge only what the campaign note says you may merge.** Where a standing
+  permission exists it is recorded there, with its boundary. Everything outside
+  that boundary gets a pull request and a human. Permission to merge content is
+  not permission to merge the templates, config or scripts that render it.
 - **Report failure plainly.** A missed target gets stated and explained, never
   reframed. Inherited framing from an old note is not evidence; re-check before
   repeating it.
