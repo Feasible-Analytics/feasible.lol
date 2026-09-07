@@ -20,4 +20,6 @@ The EDPB's Guidelines 2/2023, adopted in October 2024, read the technical scope 
 
 The UK now has a real statutory exemption for first-party analytics - PECR Schedule A1, paragraph 5, in force since February 5, 2026. It's genuine, and it has conditions: you have to give visitors clear information about the measurement and a simple, free way to opt out.
 
+Either way, your privacy policy should still say what you measure. Banner and disclosure are separate obligations, and [here's a paragraph for the second one](/help/what-should-my-privacy-policy-say/).
+
 **None of this is legal advice.** We're an analytics company, not your lawyer. If you're in a strict jurisdiction, in a regulated sector, or running other trackers alongside us - ads, session recording, a chat widget - check with somebody who is. And if you still keep a banner, [our consent gate](/docs/script-options/) will hold events until you say go.

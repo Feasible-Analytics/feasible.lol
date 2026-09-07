@@ -21,4 +21,4 @@ Feasible is GDPR-**friendly** by construction:
 
 Two things worth knowing before you decide. Our servers are in the United States, not the EU - [where your data lives](/help/where-is-my-data-stored/) covers how transfers are handled. And Feasible can carry custom properties you send it, so if you push an email address into one, you've put personal data in yourself. The DPA prohibits it and the docs say don't.
 
-That's the picture. **It isn't legal advice.** Read [the privacy policy](/privacy/) and [the DPA](/dpa/), and if your risk is real, ask a lawyer who knows your jurisdiction.
+That's the picture. **It isn't legal advice.** Read [the privacy policy](/privacy/) and [the DPA](/dpa/), take [a paragraph for your own policy](/help/what-should-my-privacy-policy-say/), and if your risk is real, ask a lawyer who knows your jurisdiction.
