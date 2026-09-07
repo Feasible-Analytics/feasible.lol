@@ -36,7 +36,7 @@ Commands
   sources     Referrer sources, largest first
   pages       Top 20 landing pages by pageviews
   entry       Top 20 entry pages for organic visitors only
-  goals       Conversion events, by channel
+  goals       Intent and conversion events, by channel
   weekly      The full weekly reading, formatted for the Harbor note
   raw '<json>'  Send an arbitrary query body
 
@@ -48,6 +48,9 @@ Environment
   FEASIBLE_API_KEY       the key, or
   FEASIBLE_API_KEY_REF   a 1Password reference such as op://Vault/Item/credential
   FEASIBLE_API_BASE      defaults to https://app.feasible.lol
+  FEASIBLE_INTENT_EVENT      click-through event, defaults to register-click
+  FEASIBLE_CONVERSION_EVENT  completed-signup event; unset means not yet built,
+                             and the weekly reading reports NOT_INSTRUMENTED
 USAGE
 }
 
@@ -117,7 +120,13 @@ check() {
 
 CMD="$1"
 R="$(range_json)"
-GOAL="${FEASIBLE_GOAL:-register-click}"
+# Intent and conversion are different events and must never be conflated. An
+# event named after a click ("went to the register page") counts intent; the
+# conversion event fires only when the account actually exists. Reporting the
+# first as the second overstates results, which is the whole reason the naming
+# convention exists.
+INTENT="${FEASIBLE_INTENT_EVENT:-register-click}"
+CONVERSION="${FEASIBLE_CONVERSION_EVENT:-}"
 ORGANIC='["is","visit:channel",["Organic Search"]]'
 
 case "$CMD" in
@@ -154,26 +163,36 @@ case "$CMD" in
     ;;
 
   goals)
-    # event:goal can only be filtered on, never grouped by, so break the
-    # conversion event down across channels instead.
-    BODY="{\"site_id\":\"$SITE\",\"metrics\":[\"visitors\",\"events\"],\"date_range\":$R,\"dimensions\":[\"visit:channel\"],\"filters\":[[\"is\",\"event:name\",[\"$GOAL\"]]],\"order_by\":[[\"events\",\"desc\"]]}"
-    check "$(query "$BODY")" | jq -r '.results[] | [.dimensions[0], .metrics[1], .metrics[0]] | @tsv'
+    # event:goal can only be filtered on, never grouped by, so break each event
+    # down across channels instead.
+    for EV in "$INTENT" ${CONVERSION:+"$CONVERSION"}; do
+      BODY="{\"site_id\":\"$SITE\",\"metrics\":[\"visitors\",\"events\"],\"date_range\":$R,\"dimensions\":[\"visit:channel\"],\"filters\":[[\"is\",\"event:name\",[\"$EV\"]]],\"order_by\":[[\"events\",\"desc\"]]}"
+      check "$(query "$BODY")" | jq -r --arg ev "$EV" '.results[] | [$ev, .dimensions[0], .metrics[1], .metrics[0]] | @tsv'
+    done
+    [[ -z "$CONVERSION" ]] && echo "note: no conversion event configured; the numbers above are intent only" >&2
     ;;
 
   weekly)
     B1="{\"site_id\":\"$SITE\",\"metrics\":[\"visitors\",\"pageviews\"],\"date_range\":$R}"
     B2="{\"site_id\":\"$SITE\",\"metrics\":[\"visitors\",\"visits\",\"pageviews\"],\"date_range\":$R,\"filters\":[$ORGANIC]}"
-    B3="{\"site_id\":\"$SITE\",\"metrics\":[\"visitors\",\"events\"],\"date_range\":$R,\"filters\":[$ORGANIC,[\"is\",\"event:name\",[\"$GOAL\"]]]}"
+    B3="{\"site_id\":\"$SITE\",\"metrics\":[\"visitors\",\"events\"],\"date_range\":$R,\"filters\":[$ORGANIC,[\"is\",\"event:name\",[\"$INTENT\"]]]}"
     ALL="$(check "$(query "$B1")")"
     ORG="$(check "$(query "$B2")")"
-    CNV="$(check "$(query "$B3")")"
+    INT="$(check "$(query "$B3")")"
     printf 'range\t%s\n'             "$RANGE"
     printf 'all_visitors\t%s\n'      "$(jq -r '.results[0].metrics[0]' <<<"$ALL")"
     printf 'all_pageviews\t%s\n'     "$(jq -r '.results[0].metrics[1]' <<<"$ALL")"
     printf 'organic_visitors\t%s\n'  "$(jq -r '.results[0].metrics[0]' <<<"$ORG")"
     printf 'organic_visits\t%s\n'    "$(jq -r '.results[0].metrics[1]' <<<"$ORG")"
     printf 'organic_pageviews\t%s\n' "$(jq -r '.results[0].metrics[2]' <<<"$ORG")"
-    printf 'organic_%s\t%s\n' "$GOAL" "$(jq -r '.results[0].metrics[1]' <<<"$CNV")"
+    printf 'organic_intent_%s\t%s\n' "$INTENT" "$(jq -r '.results[0].metrics[1]' <<<"$INT")"
+    if [[ -n "$CONVERSION" ]]; then
+      B4="{\"site_id\":\"$SITE\",\"metrics\":[\"visitors\",\"events\"],\"date_range\":$R,\"filters\":[$ORGANIC,[\"is\",\"event:name\",[\"$CONVERSION\"]]]}"
+      CNV="$(check "$(query "$B4")")"
+      printf 'organic_conversion_%s\t%s\n' "$CONVERSION" "$(jq -r '.results[0].metrics[1]' <<<"$CNV")"
+    else
+      printf 'organic_conversion\tNOT_INSTRUMENTED\n'
+    fi
     ;;
 
   raw)
