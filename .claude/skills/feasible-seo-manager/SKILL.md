@@ -34,6 +34,11 @@ most here:
 
 - `notes update` **replaces the whole body**. Never patch by guessing. Fetch,
   edit, write back.
+- **A campaign note with reminders on it will lose them.** Tasks live inside the
+  note body as blocks that a Markdown read-back silently drops, so the ordinary
+  fetch-edit-write cycle deletes every reminder attached to the note. Harbor
+  refuses the write and names them; pass `--keep-tasks` and re-run. Never pass
+  `--allow-task-loss` to get past that message.
 - Campaign notes are plain Markdown with GFM tables on purpose, so they survive
   round-trips. Keep them that way. Do not introduce coloured HTML.
 
