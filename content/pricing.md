@@ -133,3 +133,5 @@ Yearly to monthly switches at renewal.
 
 Prices are USD and before tax. Sales tax, VAT or GST is worked out at checkout from
 your billing address and shown before you pay.
+
+<a href="https://app.feasible.lol/public/stopoverpayingforanalytics.com" class="feasible-event-name=demo-click feasible-event-location=pricing">See the live demo</a> before you decide. It is a real account with real traffic, and it needs no signup.
