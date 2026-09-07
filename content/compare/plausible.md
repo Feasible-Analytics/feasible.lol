@@ -1,7 +1,7 @@
 ---
 title: "Feasible vs Plausible"
-seotitle: "Plausible alternative - Feasible vs Plausible on price"
-description: "A million pageviews, unlimited sites and unlimited users for $99 a year. Here's how that lines up against Plausible's published pricing, tier by tier."
+seotitle: "Feasible vs Plausible: the two price lists"
+description: "A million pageviews, unlimited sites and unlimited users for $99 a year, lined up against Plausible's published pricing, tier by tier."
 lede: "Two published price lists, side by side, and an account of what Plausible does better."
 versus: "Plausible"
 checked: 2026-09-03
@@ -203,6 +203,8 @@ Starter plan being one site and no teammates, or they've priced Business at a
 million pageviews and gone quiet. Both of those are further up this page.
 
 If neither of those is your problem, the next section is the answer.
+
+Want the wider list rather than the head-to-head? [Plausible alternatives, compared](/alternatives/plausible/) covers seven of them.
 
 ## Where Plausible wins
 
