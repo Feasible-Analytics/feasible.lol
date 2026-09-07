@@ -134,12 +134,35 @@ The credential is never written into this repository. The campaign note names
 which secret reference to use; the script reads it at call time, keeps it out of
 the process list, and suppresses tracing around it.
 
-Two behaviours of the API worth knowing before you interpret a result:
+### Intent is not conversion
+
+This is the easiest number on the page to get wrong, and getting it wrong makes
+the whole log dishonest.
+
+An event named after a click — someone pressed the button that goes to the
+signup page — measures **intent**. It says a visitor was interested. It does not
+say an account exists. The conversion event fires later, from the application,
+when the thing actually happened.
+
+Report them as separate numbers, always. Never total them. Never describe an
+intent count as signups, trials, or conversions.
+
+`analytics.sh` enforces the split: `FEASIBLE_INTENT_EVENT` and
+`FEASIBLE_CONVERSION_EVENT` are different settings. When no conversion event is
+configured, the weekly reading prints `NOT_INSTRUMENTED` rather than a zero,
+because "nobody converted" and "nothing is measuring conversions" are different
+facts and a zero would hide the difference.
+
+If a campaign's target is written in conversions and the conversion event does
+not exist yet, **say so on every run** until it does. A target that cannot be
+measured is a target that cannot be met.
+
+### Two API behaviours worth knowing
 
 - A period-over-period `change` is **null**, not zero, when the earlier period was
   zero. Report "no prior data", never "0% growth".
-- `event:goal` can only be filtered on, never grouped by. Break the conversion
-  event down across channels instead. `analytics.sh goals` already does this.
+- `event:goal` can only be filtered on, never grouped by. Break events down
+  across channels instead. `analytics.sh goals` already does this.
 
 ### The rest of the free readings, every run
 
