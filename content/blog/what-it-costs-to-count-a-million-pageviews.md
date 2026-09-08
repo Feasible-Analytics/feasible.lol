@@ -17,7 +17,9 @@ A million pageviews isn't a million rows. Scroll and engagement pings ride along
 
 The write rate is the part people get wrong. A million pageviews a month *sounds* like load. Spread over a month it's about 0.4 writes a second.
 
-One Feasible process accepts around 6,000 events a second through the whole path - parse, geolocate, hash, drop the IP, commit. Median time to accept one is 13 microseconds, and it stays there regardless of what else is writing. So the machine is doing roughly one fifteen-thousandth of what it could.
+One Feasible process accepts around 4,700 events a second through the whole path - parse, geolocate, hash, drop the IP, commit. So the machine is doing roughly one eleven-thousandth of what it could.
+
+Median time to accept one is about 50 milliseconds. We used to print 13 microseconds here. Both numbers were real; they measured different promises. The old one timed an event landing in a buffer, and a `202` now means the event is on disk, fsynced, before we answer. That's the number worth having, so it's the one we publish - and it costs your visitors nothing, because the script sends with `keepalive` and never reads the reply.
 
 Reads are the same story, for a boring reason: the reports are built when the events arrive, not when you open the page. Twenty-eight days of top pages comes back in 81 to 111 milliseconds. Twelve months takes 0.4 to 0.7 seconds.
 
@@ -38,7 +40,7 @@ This part is just shopping. Prices below are list, checked September 3, 2026.
 
 One note on that last row, because stale numbers circulate: Hetzner raised prices on June 15, 2026 - the CX23 went from €3.99 to €5.49, and their ARM boxes are now *more* expensive than the Intel ones. Any Hetzner figure from an older blog post is wrong, including the ones we used to quote at each other.
 
-Then bandwidth. Our tracking script is 3,377 bytes gzipped, 7,099 raw. Assume a pessimistic 30% of pageviews fetch it fresh rather than from cache: 300,000 × 3,377 bytes is about 1 GB a month, against the 500 GiB that $4 droplet includes. It's a rounding error, and it would still be a rounding error if we were ten times worse at caching.
+Then bandwidth. Our tracking script is 3,569 bytes gzipped, 7,490 raw. Assume a pessimistic 30% of pageviews fetch it fresh rather than from cache: 300,000 × 3,569 bytes is about 1 GB a month, against the 500 GiB that $4 droplet includes. It's a rounding error, and it would still be a rounding error if we were ten times worse at caching.
 
 Storage fits on the $6 box. CPU is asleep. Bandwidth doesn't register. The box is $48 to $72 a year.
 

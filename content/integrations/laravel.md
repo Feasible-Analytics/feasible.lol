@@ -1,7 +1,7 @@
 ---
 title: "Add website analytics to Laravel"
 platform: "Laravel"
-description: "One script tag in your Blade layout, wrapped in @production so local and staging never reach your numbers."
+description: "One snippet in your Blade layout, wrapped in @production so local and staging never reach your numbers."
 lede: "resources/views/layouts/app.blade.php, wrapped in @production."
 ---
 

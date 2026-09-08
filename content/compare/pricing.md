@@ -155,7 +155,7 @@ extra. Five people at a million datapoints is $1,560 a year.
 GA4 costs $0 at every volume on this table, and that's real. What it costs
 instead:
 
-- **148,451 bytes of script**, gzipped, versus our 3,377. Measured the same day,
+- **148,590 bytes of script**, gzipped, versus our 3,569. Measured September 8, 2026,
   same method.
 - **A consent banner**, because GA4 sets cookies.
 - **2 or 14 months** of event-level retention on standard properties. The
@@ -245,7 +245,7 @@ Prices change; if something here is stale, tell us and we'll fix it.
 - Feasible - [our pricing page](/pricing/), which is the same $99 whether you
   read it here or there.
 
-Script sizes were measured the same day with
+Script sizes were measured September 8, 2026 with
 `curl -H 'Accept-Encoding: identity' <url> | gzip -9 | wc -c`.
 
 Head-to-heads with the detail: [Google Analytics](/compare/google-analytics/) ·

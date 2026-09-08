@@ -1,6 +1,6 @@
 ---
 title: "Where do I put the tracking script?"
-description: "In the head of every page you want counted. It's one tag, it's deferred, and the position barely matters."
+description: "In the head of every page you want counted. It's deferred, and the position barely matters."
 category: "getting-started"
 weight: 20
 ---
@@ -15,7 +15,7 @@ On most sites there's [one file](/docs/installation/) that wraps every page - a 
 
 Three things to get right:
 
-- **One tag per page.** Two copies means two pageviews for one visit. If you've added it in a theme setting *and* a template, remove one.
+- **One copy per page.** Two copies means two pageviews for one visit. If you've added it in a theme setting *and* a template, remove one.
 - **The snippet is the one for this site.** Each site has its own script filename. Copying another site's snippet across sends the events to that site.
 - **Every page, not just the home page.** A tag on the home page only means your top-pages report will have one row in it.
 

@@ -1,7 +1,7 @@
 ---
 title: "Add website analytics to Shopify"
 platform: "Shopify"
-description: "Paste one script tag into theme.liquid before the closing head tag. Works on every Shopify plan, with one limit around checkout."
+description: "Paste the snippet into theme.liquid before the closing head tag. Works on every Shopify plan, with one limit around checkout."
 lede: "One tag in theme.liquid. Checkout is the part worth reading about."
 ---
 

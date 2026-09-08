@@ -115,7 +115,7 @@ $99 a year, flat, to a million pageviews and custom events. Unlimited sites, unl
 
 **Where we beat the list:** nothing is metered except pageviews and events, and nothing is held back from the open-source build. No cut-down community edition, no feature behind a higher tier.
 
-**The cost:** we are new. Launched in 2026, US-hosted, with none of the track record Plausible, Fathom or Matomo have earned. Our tracker is 3,377 bytes gzipped, about 2.7 times bigger on the wire than Plausible's. And if you want data in the EU, we do not have an answer yet.
+**The cost:** we are new. Launched in 2026, US-hosted, with none of the track record Plausible, Fathom or Matomo have earned. Our tracker is 3,569 bytes gzipped, about 2.8 times bigger on the wire than Plausible's. And if you want data in the EU, we do not have an answer yet.
 
 ## Tools that show up in these lists but are not alternatives
 
@@ -134,7 +134,7 @@ Roundups for this query often include [PostHog](https://posthog.com/) and simila
 
 Maturity and hosting, and neither is close.
 
-Plausible has run in production for years with a large customer base, hosts in Falkenstein, Germany, with the company in Estonia, and has a straightforward answer for a European buyer who wants their data in Europe. Their tracker is 1,291 bytes gzipped, smaller than ours. Community Edition is AGPL-3.0-or-later with unlimited sites and seats and includes the Stats API.
+Plausible has run in production for years with a large customer base, hosts in Falkenstein, Germany, with the company in Estonia, and has a straightforward answer for a European buyer who wants their data in Europe. Their tracker is 1,285 bytes gzipped, smaller than ours. Community Edition is AGPL-3.0-or-later with unlimited sites and seats and includes the Stats API.
 
 If those things matter more to you than the price ladder, the honest advice is to stay where you are.
 

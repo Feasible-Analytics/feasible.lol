@@ -1,7 +1,7 @@
 ---
 title: "Add website analytics to Webflow"
 platform: "Webflow"
-description: "Paste one script tag into Webflow's Head code field in Site settings, then publish. Works on any Webflow site with an active Site plan."
+description: "Paste the snippet into Webflow's Head code field in Site settings, then publish. Works on any Webflow site with an active Site plan."
 lede: "Site settings, Custom code, Head code. Then publish - that last part matters."
 ---
 

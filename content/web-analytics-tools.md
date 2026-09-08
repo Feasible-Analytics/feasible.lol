@@ -75,8 +75,8 @@ Use GA4 when Google Ads drives your business. The integration has no match here.
 GA4 is free at any volume and offers BigQuery export.
 
 It sets cookies. Event-level retention lasts 2 or 14 months. Reports can be
-thresholded or sampled. Its `gtag.js` measured 148,451 bytes gzipped on September
-3, 2026.
+thresholded or sampled. Its `gtag.js` measured 148,590 bytes gzipped on September
+8, 2026.
 
 **Best for:** paid-media teams living inside Google's stack.
 
@@ -93,7 +93,7 @@ install, and have someone to run it.
 
 ### Plausible - the mature one, hosted in Germany
 
-Plausible is a mature product hosted in Germany. Its 1,291-byte tracker is the
+Plausible is a mature product hosted in Germany. Its 1,285-byte tracker is the
 smallest we measured. Community Edition uses AGPL-3.0-or-later and includes the
 Stats API.
 
@@ -172,7 +172,7 @@ properties, webhooks and raw event export are in every plan and every build.
 
 Where we lose: no EU hosting, SSO, or SAML. No
 mobile SDKs, no session replay, no heatmaps, no A/B testing, no cohort report.
-Our script is 3,377 bytes gzipped against Plausible's 1,291. We're also new.
+Our script is 3,569 bytes gzipped against Plausible's 1,285. We're also new.
 
 **Best for:** people running more than one site, or more than one person, who
 want everything included and don't want a plan ladder.

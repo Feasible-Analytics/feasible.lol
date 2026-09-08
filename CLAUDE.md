@@ -107,9 +107,9 @@ make a page factually incorrect.
   AGPL-3.0-or-later. The honest argument is "nothing is held back": no cut-down
   Community Edition, no feature gated to the paid plan, raw export and the full
   API in every copy.
-- **Our tracking script is not smaller than Plausible's** — it is roughly 2.7×
-  bigger on the wire. Ours is 3,377 bytes gzipped. The one true, reproducible
-  comparison is "about 43× smaller than Google Analytics".
+- **Our tracking script is not smaller than Plausible's** — it is roughly 2.8×
+  bigger on the wire. Ours is 3,569 bytes gzipped. The one true, reproducible
+  comparison is "about 42× smaller than Google Analytics".
 - **Google Analytics is not illegal in the EU.** The 2022 rulings were real, but
   the EU–US Data Privacy Framework adequacy decision of 2023-07-10 removed the
   transfer ground they rested on.

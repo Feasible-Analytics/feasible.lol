@@ -174,9 +174,9 @@ slogan.
 
 ## The script
 
-Measured September 3, 2026 with `gzip -9`: Umami 2,307 bytes, Feasible 3,377.
+Measured September 8, 2026 with `gzip -9`: Umami 2,301 bytes, Feasible 3,569.
 Theirs is smaller. Both are small enough that it isn't the reason to choose
-either one - the number that matters in this category is Google's 148,451.
+either one - the number that matters in this category is Google's 148,590.
 
 ## Where Umami wins
 

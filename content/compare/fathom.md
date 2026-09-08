@@ -147,8 +147,8 @@ base, and a company that has publicly worked through the compliance questions in
 detail. If you want the boring, proven option in this category, that's a real
 argument.
 
-**Their script is smaller than ours.** Measured the same day with `gzip -9`:
-Fathom 2,092 bytes, Feasible 3,377. They win it.
+**Their script is smaller than ours.** Measured September 8, 2026 with `gzip -9`:
+Fathom 2,086 bytes, Feasible 3,569. They win it.
 
 **Their over-limit policy is good.** They don't switch your analytics off over a
 traffic spike. Neither do we - we email you, and nothing stops mid-month. We're

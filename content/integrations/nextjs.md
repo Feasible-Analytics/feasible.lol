@@ -1,7 +1,7 @@
 ---
 title: "Add website analytics to Next.js"
 platform: "Next.js"
-description: "One script tag in the App Router's root layout, or pages/_document.tsx on the Pages Router. Client-side route changes are counted automatically."
+description: "One snippet in the App Router's root layout, or pages/_document.tsx on the Pages Router. Client-side route changes are counted automatically."
 lede: "app/layout.tsx on the App Router. pages/_document.tsx on the Pages Router."
 ---
 

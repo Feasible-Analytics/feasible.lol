@@ -37,8 +37,9 @@ to be healthy.
 | OS | Linux, macOS or BSD - x86-64 or arm64 | |
 
 At a million pageviews a month, a year of data is about 3.5 GB. One process
-accepts around 6,000 events a second and takes about 13 microseconds to decide on
-one. A stored event is about 210 bytes.
+accepts around 4,700 events a second for a single account, and takes about 50
+milliseconds to answer - that answer means the event is committed to disk, not
+queued. A stored event is about 210 bytes.
 
 That number matters most next to the alternative. Column-store analytics stacks
 are excellent at what they do, and they're a different kind of operational

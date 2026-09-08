@@ -15,7 +15,7 @@ faq:
   - q: "Is there a simple analytics tool that doesn't need a cookie banner?"
     a: "Feasible sets no cookies and stores no identifier, so most sites running it won't need a banner for analytics. That isn't a legal guarantee - check what else your site loads, and check with your own lawyer if you're somewhere strict."
   - q: "How long does it take to set up?"
-    a: "One script tag in your head, and data appears within seconds. Goals, funnels and traffic exclusions are optional and take about twenty minutes if you want them."
+    a: "One snippet in your head, and data appears within seconds. Goals, funnels and traffic exclusions are optional and take about twenty minutes if you want them."
 ---
 
 Open the dashboard. Your numbers are there. No report builder. No setup course.
@@ -43,9 +43,9 @@ Six tiles show **visitors**, **visits**, **pageviews**, **views per visit**,
 
 Under the graph, four cards:
 
-- **Top sources** - channels, sources with favicons, and campaign tabs for UTM
+- **Sources** - channels, sources with favicons, and campaign tabs for UTM
   source, medium and campaign.
-- **Top pages** - pages, entry pages, exit pages.
+- **Pages** - pages, entry pages, exit pages.
 - **Locations** - a world map, then countries, regions and cities.
 - **Devices** - browsers and versions, systems and versions, device type and
   screen size, plus languages.
@@ -109,11 +109,11 @@ price](/pricing/).
 
 ## Installing it
 
-One tag in your `<head>`:
+One snippet in your `<head>`:
 
 {{< snippet >}}
 
-It's 3,377 bytes gzipped. It automatically counts outbound clicks, downloads,
+It's 3,569 bytes gzipped. It automatically counts outbound clicks, downloads,
 forms, scroll depth, and single-page-app routes. The health panel tells you when
 an event fails and why.
 

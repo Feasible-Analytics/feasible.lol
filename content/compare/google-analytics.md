@@ -1,7 +1,7 @@
 ---
 title: "Feasible vs Google Analytics"
 seotitle: "Feasible vs Google Analytics 4 - side by side"
-description: "Google Analytics is free, 148 KB of script, and needs a consent banner. Feasible is $99 a year, 3,377 bytes, and no banner for most sites."
+description: "Google Analytics is free, 148 KB of script, and needs a consent banner. Feasible is $99 a year, 3,569 bytes, and no banner for most sites."
 lede: "Google Analytics costs nothing and takes everything. Here's the trade, itemized, with Google's own documentation as the source."
 versus: "Google Analytics 4"
 checked: 2026-09-03
@@ -36,8 +36,8 @@ faq:
       design consequence, not legal advice, and the rules vary by country - check with your own lawyer if you're somewhere strict.
   - q: "How much smaller is the Feasible script than Google's?"
     a: >-
-      About 43 times. Measured September 3, 2026 with `gzip -9`: Feasible 3,377
-      bytes, Google's gtag.js 148,451 bytes. And gtag.js fetches more after it
+      About 42 times. Measured September 8, 2026 with `gzip -9`: Feasible 3,569
+      bytes, Google's gtag.js 148,590 bytes. And gtag.js fetches more after it
       loads.
 ---
 
@@ -50,14 +50,14 @@ one is dated.
 
 ## The script
 
-We measured both on September 3, 2026, with `gzip -9`:
+We measured both on September 8, 2026, with `gzip -9`:
 
 | | Raw bytes | Gzipped |
 |---|---:|---:|
-| Feasible - `app.feasible.lol/js/script.js` | 7,099 | **3,377** |
-| Google Analytics 4 - `gtag.js` | 427,563 | **148,451** |
+| Feasible - `app.feasible.lol/js/script.js` | 7,490 | **3,569** |
+| Google Analytics 4 - `gtag.js` | 427,812 | **148,590** |
 
-That's about 43 times bigger. Reproduce it yourself:
+That's about 42 times bigger. Reproduce it yourself:
 
 ```
 curl -H 'Accept-Encoding: identity' <url> | gzip -9 | wc -c
@@ -182,7 +182,7 @@ company has no exposure to any of it either way.
 | | Feasible | Google Analytics 4 |
 |---|---|---|
 | Price | $9.99/mo, $99/yr | Free |
-| Tracking script (gzipped) | 3,377 bytes | 148,451 bytes |
+| Tracking script (gzipped) | 3,569 bytes | 148,590 bytes |
 | Cookies on your visitors | None | Yes |
 | Consent banner | Not needed for most sites | Yes, in the EU/UK |
 | Event-level retention | 5 years | 2 or 14 months (standard properties) |
@@ -232,7 +232,7 @@ on it, and neither should you.
 The claim is narrower and easier to check. GA4 asks you to load 148 KB, show a
 banner, accept a 14-month wall on the analysis you care about, live with rows
 you can't see and can't unhide, and send your visitors' behavior to a company
-whose business is advertising. Feasible asks for 3,377 bytes and $99 a year.
+whose business is advertising. Feasible asks for 3,569 bytes and $99 a year.
 
 If you're moving, export your GA4 reports as CSV and upload the folder - your
 history comes with you. See

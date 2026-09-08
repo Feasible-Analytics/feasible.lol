@@ -62,7 +62,7 @@ is the form that reliably survives a build.
 
 ## React, Vue, SvelteKit and other single-page apps
 
-One tag in the root document. The script listens for history changes itself, so there's nothing to
+One snippet in the root document. The script listens for history changes itself, so there's nothing to
 call on navigation.
 
 ## npm, for a framework that hates raw script tags

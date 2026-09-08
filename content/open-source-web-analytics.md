@@ -82,8 +82,10 @@ Postgres, no ClickHouse, no Redis, no message queue.
 **Storage:** about 210 bytes an event. A million pageviews a month for a year is
 roughly 3.5 GB.
 
-**Throughput:** about 6,000 events per second per process, with accept latency
-around 13 µs at the median. Reports read from pre-built roll-ups: 28 days of top
+**Throughput:** about 4,700 events a second per process for one account, falling
+to roughly 1,700 at sixteen accounts, because each one is its own database and
+its own commit. Accept latency is around 50 ms at the median - we answer only
+once the event is on disk. Reports read from pre-built roll-ups: 28 days of top
 pages comes back in 81–111 ms; twelve months in 0.4–0.7 s.
 
 SQLite isn't denser than a column store. It's easier to run: one file, one

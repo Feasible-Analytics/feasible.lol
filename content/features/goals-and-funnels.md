@@ -1,6 +1,6 @@
 ---
 title: "Goals, funnels and conversions"
-description: "Three kinds of goal, funnels of 2 to 8 steps in sequential or strict order, and a journey report that shows where people went before and after a page."
+description: "Three kinds of goal, funnels of 2 to 8 steps that can allow detours or demand back-to-back actions, and a journey report that shows where people went before and after a page."
 lede: "Say what counts as a win, then watch how many people get there and where the rest fall out."
 weight: 30
 shot: "app/goals.png"
@@ -41,23 +41,25 @@ still behaves like a link, and a middle-click counts too. The 404 goal is the
 exception: it's created for you, but the base script doesn't detect 404s. That
 one comes from the WordPress plugin.
 
-## Two funnel modes
+## Whether detours are allowed
 
-A funnel is 2 to 8 steps, each step a goal you already defined. Two ways to
-match them, and the difference matters more than it looks:
+A funnel is 2 to 8 steps, each step a goal you already defined. Steps always
+happen in order. One switch decides how much can happen between them:
 
-**Sequential** - the steps happen in order, and unrelated activity in between is
-fine. Somebody who views the pricing page, wanders off to the blog, then signs
-up still completed the funnel. This is what you want almost always.
+**Allow other activity between funnel steps.** Leave it on and somebody who
+views the pricing page, wanders off to the blog, then signs up has still
+completed the funnel. This is the default and it's what you want almost always,
+because real people browse.
 
-**Strict** - the steps must be consecutive events, with nothing in between. Use
-it when the detour *is* the finding: a checkout where anyone who bounces to the
-help center has, for your purposes, failed.
+Turn it off and the steps must be back to back, with nothing in between. Use it
+when the detour *is* the finding: a checkout where anyone who bounces to the help
+center has, for your purposes, failed. Our own measurements of how long a page
+was read don't count as activity either way.
 
-The report is numbered horizontal bars, one per step, each showing visitors, the
-conversion rate to that point, and how many dropped. The header tells you which
-matching mode is running and what share completed the whole thing, so nobody
-reads a strict funnel as though it were sequential.
+The report is proportional columns, one per step, each showing visitors, the
+conversion rate to that point, and how many dropped. The header repeats the
+setting in the same words as the form, so nobody reads a back-to-back funnel as
+though detours were allowed.
 
 ## Page paths
 

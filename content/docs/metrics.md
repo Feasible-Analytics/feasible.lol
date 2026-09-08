@@ -139,7 +139,7 @@ Worked example. You ran a campaign 1–14 March. On 20 March you create a goal f
 | 1–14 March | 318 | 0 |
 | 20–31 March | 44 | 44 |
 
-The 318 pageviews are still in your data and still visible in Top Pages. They just aren't conversions
+The 318 pageviews are still in your data and still visible in Pages. They just aren't conversions
 of a goal that didn't exist. Any report over a range that starts before the goal does says so, rather
 than quietly showing you a smaller number.
 
