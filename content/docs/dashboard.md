@@ -22,10 +22,10 @@ rate the colors are inverted, so an increase is red.
 
 ## The four report cards
 
-- **Top Sources** - Channels, Sources, and Campaigns broken down by source, medium or campaign. The
+- **Sources** - Channels, Sources, and Campaigns broken down by source, medium or campaign. The
   campaign tabs exclude untagged traffic, so the numbers there are about campaigns rather than mostly
   about Direct.
-- **Top Pages** - Top Pages, Entry Pages, Exit Pages.
+- **Pages** - Pages, Entry Pages, Exit Pages.
 - **Locations** - a world map, then Countries, Regions and Cities.
 - **Devices** - Browsers and Systems, each with a version tab, Devices by type or screen size, and
   Languages.

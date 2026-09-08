@@ -1,11 +1,11 @@
 ---
 title: "How do I add a site?"
-description: "Three fields and one script tag. Here's the whole process, including the one field people get wrong."
+description: "Three fields and one snippet. Here's the whole process, including the one field people get wrong."
 category: "getting-started"
 weight: 10
 ---
 
-Three fields, then one script tag.
+Three fields, then one snippet.
 
 1. Sign in and open **Sites**, then **Add a site**.
 2. Enter the domain - `example.com`. No `https://`, no `www.`, no trailing slash.

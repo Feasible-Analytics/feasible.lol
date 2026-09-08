@@ -1,7 +1,7 @@
 ---
 title: "Moving off Google Analytics"
 seotitle: "Google Analytics 4 migration - move to Feasible"
-description: "Upload your Google Analytics history as CSV, add one script tag, and remove the old one. Here's the whole process, step by step."
+description: "Upload your Google Analytics history as CSV, add our snippet, and remove the old one. Here's the whole process, step by step."
 lede: "Seven steps, about twenty minutes of work and two weeks of waiting. Including why the two tools will never show you the same number."
 kicker: "MIGRATING"
 weight: 10
@@ -47,11 +47,11 @@ first event.
 
 ## 3. Install the script next to Google Analytics
 
-One tag in your `<head>`. Leave the GA4 tag where it is.
+One snippet in your `<head>`. Leave the GA4 tag where it is.
 
 {{< snippet >}}
 
-3,377 bytes gzipped. There's no second script file to choose between and no
+3,569 bytes gzipped. There's no second script file to choose between and no
 plugin variants - outbound link clicks, file downloads, form submissions, scroll
 depth, time on page and single-page-app route changes are all counted with no
 extra configuration.
@@ -127,7 +127,7 @@ Twenty minutes, once.
 - **Goals.** Page pattern, custom event or scroll depth. Note that goals don't
   backfill - conversions count from the moment you create the goal, so make them
   early.
-- **Funnels**, if you use them. Two to eight steps, sequential or strict order.
+- **Funnels**, if you use them. Two to eight steps, with detours between them allowed or not.
 - **Exclude your own traffic.** Shields take an IP or CIDR, a country, a page
   pattern, or a hostname allow-list. Rules take effect within 15 seconds. Or set
   the self-exclusion flag in your own browser.

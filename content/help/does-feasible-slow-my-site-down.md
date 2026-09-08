@@ -1,6 +1,6 @@
 ---
 title: "Does Feasible slow my site down?"
-description: "No measurable amount. One deferred 3,377-byte request, no render blocking, no polling timer, no third-party chain."
+description: "No measurable amount. One deferred 3,569-byte request, no render blocking, no polling timer, no third-party chain."
 category: "installing"
 weight: 20
 ---
@@ -11,7 +11,7 @@ Four reasons, all [structural](/features/speed/) rather than promises.
 
 **The tag is deferred.** It never blocks parsing or rendering, wherever you put it. Nothing on your page waits for us.
 
-**It's one request of [3,377 bytes gzipped](/help/how-big-is-the-tracking-script/)**, cached for an hour with an ETag, so most loads are a 304 with no body. There's no second file, no config fetch, no vendor chain pulling in three more domains.
+**It's one request of [3,569 bytes gzipped](/help/how-big-is-the-tracking-script/)**, cached for an hour with an ETag, so most loads are a 304 with no body. There's no second file, no config fetch, no vendor chain pulling in three more domains.
 
 **There's no polling timer.** Time on page and scroll depth accrue from browser events, not from something waking up every second to check. A tab sitting open costs nothing.
 

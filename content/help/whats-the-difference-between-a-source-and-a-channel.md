@@ -9,7 +9,7 @@ A source is the specific place. A channel is the category it belongs to.
 
 `google` is a source. `duckduckgo` is a source. Both sit inside the **Organic Search** channel. `twitter.com` and `reddit.com` are sources inside a social channel. Same traffic, two zoom levels.
 
-Both are tabs on the **Top Sources** card, and they're the first two.
+Both are tabs on the **Sources** card, and they're the first two.
 
 **Use channels for the weekly question** - is search up, is social carrying us, did the email do anything. Five or six rows make last month quick to compare.
 

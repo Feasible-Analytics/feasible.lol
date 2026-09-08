@@ -97,10 +97,11 @@ Three rules follow from how it's walked, and all three matter:
 
 - **A funnel is scoped to one visit.** Somebody who signs up on Monday and buys on Thursday is two
   visits and completes nothing. Measure that with a pair of goals rather than a funnel.
-- **Order has two modes.** A sequential funnel wants the steps in order but allows unrelated pages
-  and events between them. Strict order wants the configured steps as exact consecutive actions. Pick
-  deliberately: most acquisition funnels are sequential, while a tightly controlled checkout may be
-  worth strict order.
+- **Steps are always in order; detours are a choice.** *Allow other activity between funnel steps* is
+  on by default and lets unrelated pages and events happen in between. Turn it off and the configured
+  steps have to be consecutive actions. Pick deliberately: most acquisition funnels want it on, while
+  a tightly controlled checkout may be worth turning off. The API field is `strict_order`, and
+  `true` there is the switch turned off.
 - **One event advances at most one step.** A wildcard goal and the exact page beneath it can't both
   be satisfied by the same pageview, which is what stops a funnel completing itself on a single load.
 
@@ -124,7 +125,7 @@ led to a conversion. Dashboard filters apply to every step.
 Pages can be grouped by their first directory to surface patterns, then switched to exact paths for
 detail. Visits with no next or previous action stay visible as `No further action`, because drop-off
 is often the most useful result in the report. Trailing slashes aren't normalized: `/about/` and
-`/about` stay distinct in exact mode, matching Top Pages.
+`/about` stay distinct in exact mode, matching Pages.
 
 ## Revenue
 

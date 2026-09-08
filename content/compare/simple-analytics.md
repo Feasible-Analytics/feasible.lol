@@ -130,9 +130,9 @@ nothing.
 
 ## The script
 
-Measured September 3, 2026 with `gzip -9`: Feasible 3,377 bytes, Simple
-Analytics 3,832. Close enough that neither of us should make a fuss about it,
-and both a rounding error next to Google's 148,451.
+Measured September 8, 2026 with `gzip -9`: Feasible 3,569 bytes, Simple
+Analytics 3,826. Close enough that neither of us should make a fuss about it,
+and both a rounding error next to Google's 148,590.
 
 ## When the numbers look wrong
 
@@ -174,7 +174,7 @@ code.
 Feasible imports CSV and ZIP uploads, so a Simple Analytics export comes across
 as CSV and lands on the same charts as your live traffic.
 
-Both are one tag in your `<head>`, so run them side by side for a week before
+Both are one paste into your `<head>`, so run them side by side for a week before
 you cancel anything. Two tools counting the same traffic never agree exactly,
 and it's better to see that on your own site than read about it.
 

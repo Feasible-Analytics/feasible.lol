@@ -1,7 +1,7 @@
 ---
 title: "Add website analytics to Hugo"
 platform: "Hugo"
-description: "One script tag in your head partial. Override the theme's copy rather than editing it, and remember that hugo server runs on localhost."
+description: "One snippet in your head partial. Override the theme's copy rather than editing it, and remember that hugo server runs on localhost."
 lede: "layouts/_partials/head.html - and don't edit the file inside themes/."
 ---
 

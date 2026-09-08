@@ -1,7 +1,7 @@
 ---
 title: "Add website analytics to Astro"
 platform: "Astro"
-description: "One script tag in your shared layout, with is:inline so Astro leaves it alone. Works with static output, SSR and view transitions."
+description: "One snippet in your shared layout, with is:inline so Astro leaves it alone. Works with static output, SSR and view transitions."
 lede: "src/layouts/Layout.astro, in the head, with is:inline."
 ---
 

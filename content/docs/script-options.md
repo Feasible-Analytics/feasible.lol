@@ -121,7 +121,7 @@ measurement - so every one of them is a [custom property](/docs/custom-propertie
 aggregate, filter and break down by page like any other. Nothing in it reads layout: every number
 comes from the maintained Web Vitals implementation over the browser's Performance API.
 
-The one script tag is still the entire installation. The base tracker stays at 3,377 bytes gzipped, under its 3,584-byte build budget, and downloads the Web Vitals module only when this option is on, so sites that leave it off
+The snippet is still the entire installation. The base tracker stays at 3,569 bytes gzipped, under its 3,584-byte build budget, and downloads the Web Vitals module only when this option is on, so sites that leave it off
 don't pay for the optional collector.
 
 It sends final values when a navigation is hidden. A supported single-page navigation starts a fresh
@@ -212,7 +212,11 @@ feasible('Signup', { props: { plan: 'yearly' } })
 feasible('Purchase', { revenue: { amount: 49.00, currency: 'USD' } })
 feasible('Heartbeat', { interactive: false })
 feasible('pageview', { u: '/checkout/step-2' })
+feasible('init', { props: { plan: 'yearly' } })
 ```
+
+`init` is the odd one out: it sends nothing. It declares properties that every later event carries -
+see [putting the same properties on everything](/docs/custom-properties/#putting-the-same-properties-on-everything).
 
 `plausible(…)` is a second name for `feasible(…)`. Queued calls made before the tracker loads are
 replayed through either name.
@@ -231,8 +235,12 @@ Two details that cost people an afternoon:
 ## Calling it before the script loads
 
 The tag is deferred, so your own code can run first and find no `window.feasible` to call. The same
-goes for `async`. Put the queue stub above the tag and those calls are replayed in order when the
-script arrives, rather than throwing:
+goes for `async`. The queue stub catches those calls, and the script replays them in order when it
+arrives, rather than throwing.
+
+**It's the first line of the snippet already** - copy the snippet from the setup screen and there's
+nothing to add. Here it is unminified, for anyone with an older single-tag install to paste above
+their script:
 
 ```
 window.feasible = window.feasible || function () {
@@ -240,15 +248,28 @@ window.feasible = window.feasible || function () {
 };
 ```
 
-It's 103 bytes minified, and it does nothing if you only tag elements with classes - those clicks are
-handled by the script itself, after it loads. Leave it out unless you call `feasible()` yourself.
+It's 103 bytes minified. It does nothing if you only tag elements with classes - those clicks are
+handled by the script itself, after it loads.
+
+If you renamed the global with `data-alias`, the shipped stub only claims `feasible`. Stub the second
+name yourself in the same line.
 
 ## Content security policy
 
 A strict CSP needs the analytics origin in **two** directives: `script-src` to load the file, and
 `connect-src` for the request that carries the events.
 
-Allowing only `script-src` gives you a script that loads and then sends nothing, which looks like a broken install. There's no `nonce` support - allow the origin.
+Allowing only `script-src` gives you a script that loads and then sends nothing, which looks like a broken install. There's no `nonce` support for the script file - allow the origin.
+
+The queue stub is inline, so a strict policy needs to permit that one line too. Allow it by its hash
+rather than turning on `unsafe-inline`, which would weaken the whole page on our account:
+
+```
+script-src 'sha256-5k+O5YWs4lh0hHline+iuhh2erHUUv207J4/v8brHT0=' https://app.feasible.lol
+```
+
+The hash covers the stub exactly as the snippet ships it. Retype a character of it and the hash stops
+matching, so paste rather than reformat. Your site's setup screen shows the same value.
 
 [Proxying](/docs/proxying/) makes this go away entirely: once both requests are same-origin, a strict
 CSP needs no analytics host at all.
@@ -256,8 +277,14 @@ CSP needs no analytics host at all.
 ## Failed requests are retried
 
 Every event is written to the browser's local outbox before its request starts, and replayed on the
-next pageview with the same permanent event id until a successful response removes it. There's no
-arbitrary event-count eviction.
+next pageview with the same event id until a successful response removes it. There's no arbitrary
+event-count eviction - the hundredth failure is as real as the first.
+
+**A stashed event is given up on after seven days.** Somebody whose request failed today and who
+doesn't come back until next month loses that one event. That's deliberate. The server keeps a
+receipt for every event it accepts so a replay can't be counted twice, and it can only stop keeping
+those receipts if the browser stops replaying for ever. We'd rather under-count by one pageview than
+double-count one, so the window is bounded on our side too.
 
 Current consent, Do Not Track, self-exclusion and route-exclusion rules are all applied again before
 replay. If storage is unavailable, the tracker keeps an in-page queue and logs that durability is

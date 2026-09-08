@@ -111,7 +111,7 @@ hosts in Europe.
 procurement office has heard of it. If you need on-premise with an audit trail
 and a support contract, this is the answer and we're not close.
 
-**The cost:** $2,040 a year at a million hits on Cloud, a 46,303-byte gzipped
+**The cost:** $2,040 a year at a million hits on Cloud, a 46,323-byte gzipped
 tracker, premium plugins under a proprietary EULA, and a sizing table that goes
 from 2 GB of RAM at 100,000 hits to 8 GB at a million.
 
@@ -119,7 +119,7 @@ from 2 GB of RAM at 100,000 hits to 8 GB at a million.
 
 The product that made this category mainstream, and the most polished thing in
 it. Hosted in Falkenstein, Germany, with the company in Estonia. Their tracker
-measured 1,291 bytes gzipped - smaller than ours. Community Edition is
+measured 1,285 bytes gzipped - smaller than ours. Community Edition is
 AGPL-3.0-or-later with unlimited sites and seats, and it includes the Stats API.
 
 **Where it beats us:** maturity and EU hosting, plainly. Years of production, a
@@ -215,7 +215,7 @@ webhooks, the MCP server and raw event export are in every plan and every build 
 
 **Where we lose:** no EU hosting, no SSO or SAML, no mobile SDKs, no session
 replay, no heatmaps, no A/B testing, no cohort or retention report. Our script is
-3,377 bytes gzipped against Plausible's 1,291. And we launched in 2026, so we
+3,569 bytes gzipped against Plausible's 1,285. And we launched in 2026, so we
 have no track record - which is a real risk and you should price it in.
 
 ## Free Google Analytics alternatives

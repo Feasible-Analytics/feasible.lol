@@ -3,11 +3,13 @@
   The tracking snippet, rendered from one place so a change to the script path
   or the placeholder filename never has to be found in twenty content files.
 
-  One tag. The queue stub is documented separately, because it only matters to
-  sites that call feasible() from their own code.
+  Two tags, matching what the app's setup screen hands out. The first is the
+  queue stub: it catches feasible() calls made before the deferred bundle has
+  run, which would otherwise be a ReferenceError in the customer's page.
 
   Created: 2026-09-03
   Copyright (c) 2026 Cloudmanic Labs, LLC. All rights reserved.
 */}}
 {{- $id := .Get "id" | default "fs-k7m2q4x5r3n6t2v5" -}}
-<pre><code>&lt;script defer src="{{ site.Params.appURL }}/js/{{ $id }}.js"&gt;&lt;/script&gt;</code></pre>
+<pre><code>&lt;script&gt;window.feasible=window.feasible||function(){(window.feasible.q=window.feasible.q||[]).push(arguments)};&lt;/script&gt;
+&lt;script defer src="{{ site.Params.appURL }}/js/{{ $id }}.js"&gt;&lt;/script&gt;</code></pre>

@@ -1,7 +1,7 @@
 ---
 title: "Add website analytics to Jekyll"
 platform: "Jekyll"
-description: "One script tag in _includes/head.html. If your theme is a gem, copy the file into your repo first - here's the command."
+description: "One snippet in _includes/head.html. If your theme is a gem, copy the file into your repo first - here's the command."
 lede: "_includes/head.html. On a gem-based theme you have to copy it out first."
 ---
 

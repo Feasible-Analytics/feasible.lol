@@ -33,6 +33,21 @@ delivery log of every message sent for the site - so a report that didn't arrive
 can be told apart from a report that was never sent. Those two problems have
 completely different fixes and nobody should have to guess which one they have.
 
+## Recipients can take themselves off
+
+A report goes to an address somebody else typed in. So every report and every
+alert carries a one-click unsubscribe - the link in the footer, and the
+`List-Unsubscribe` header that puts an Unsubscribe button in Gmail and Outlook
+next to the sender's name.
+
+It needs no account and no password, and the link keeps working months later.
+The alternative is that people mark the mail as spam instead, which is worse for
+them and worse for us.
+
+Times in every email follow the reader, not the sender. Set a 12-hour clock in
+your own settings and your copy of the report says `3:04 PM` while your
+colleague's says `15:04`.
+
 If the machine sending them was down, the scheduler looks back up to 32 days and
 sends what it missed rather than pretending the period didn't happen.
 

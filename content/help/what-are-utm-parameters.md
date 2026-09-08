@@ -21,7 +21,7 @@ Feasible reads five:
 - **`utm_content`** - which variant, when you're running two versions of the same ad.
 - **`utm_term`** - the paid keyword.
 
-The first three each get a tab in the **[Top Sources](/features/dashboard/)** card, under **Campaigns**. Those tabs exclude untagged traffic, so a campaign report is only ever campaigns - no giant "(none)" row swamping the thing you're trying to read.
+The first three each get a tab in the **[Sources](/features/dashboard/)** card, under **Campaigns**. Those tabs exclude untagged traffic, so a campaign report is only ever campaigns - no giant "(none)" row swamping the thing you're trying to read.
 
 Three rules that will save you a mess later:
 

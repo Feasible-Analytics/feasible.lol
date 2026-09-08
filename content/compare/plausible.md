@@ -214,8 +214,8 @@ transfers run on standard contractual clauses through our DPA. If EU residency
 is a requirement rather than a preference, that decides it, and no amount of
 price difference should change your mind.
 
-**Their script is smaller than ours.** Measured the same day, the same way:
-Plausible 1,291 bytes gzipped, Feasible 3,377. They win that one, comfortably.
+**Their script is smaller than ours.** Measured September 8, 2026, the same way:
+Plausible 1,285 bytes gzipped, Feasible 3,569. They win that one, comfortably.
 
 **They've been at it longer.** More years in production, a much bigger
 community, more people who've already hit the edge case you're about to hit, an

@@ -1,7 +1,7 @@
 ---
 title: "Add website analytics to SvelteKit"
 platform: "SvelteKit"
-description: "One script tag in src/app.html, or in a svelte:head block in the root layout. SvelteKit's client-side navigations count themselves."
+description: "One snippet in src/app.html, or in a svelte:head block in the root layout. SvelteKit's client-side navigations count themselves."
 lede: "src/app.html is the simplest place. The root layout works too."
 ---
 

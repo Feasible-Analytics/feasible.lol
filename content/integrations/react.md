@@ -1,7 +1,7 @@
 ---
 title: "Add website analytics to React"
 platform: "React"
-description: "One script tag in index.html. React Router navigations are counted automatically - no hook, no effect, no provider component."
+description: "One snippet in index.html. React Router navigations are counted automatically - no hook, no effect, no provider component."
 lede: "It goes in index.html, not in a component. Here's why that matters."
 ---
 

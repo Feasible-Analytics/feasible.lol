@@ -1,7 +1,7 @@
 ---
 title: "Add website analytics to Wix"
 platform: "Wix"
-description: "Add one script tag through Wix's Custom Code panel, set to Head on all pages. Your site needs to be published with a connected domain."
+description: "Add the snippet through Wix's Custom Code panel, set to Head on all pages. Your site needs to be published with a connected domain."
 lede: "Settings, Custom Code, Head, all pages. The requirement is a connected domain."
 ---
 

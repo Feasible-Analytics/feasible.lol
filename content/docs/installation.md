@@ -1,16 +1,21 @@
 ---
 title: "Installation"
-description: "One script tag on every page you want counted, and four ways to tell whether it's working."
-lede: "One script tag, and how to tell whether it's working."
+description: "One snippet on every page you want counted, and four ways to tell whether it's working."
+lede: "One snippet, and how to tell whether it's working."
 weight: 10
 ---
 
-One script tag, on every page you want counted. No build step, no consent gate to wire up first.
+One snippet, on every page you want counted. No build step, no consent gate to wire up first.
 
 {{< snippet >}}
 
-That's 3,377 bytes gzipped - a handful more for your copy, which has your domain baked into it -
-and it's deferred, so it never blocks rendering.
+The second tag is the tracker: 3,569 bytes gzipped - a handful more for your copy, which has your
+domain baked into it - and it's deferred, so it never blocks rendering.
+
+The first is a 103-byte queue stub. The tracker is deferred, so your own code can run before it
+exists; the stub catches those `feasible()` calls and the tracker replays them when it arrives.
+Without it they'd throw. It does nothing if you never call `feasible()` yourself, and a page that
+only has the second tag still counts pageviews exactly as it always did.
 
 There are no cookies and nothing stored in the browser to identify anyone, which is why most sites
 won't need a consent banner for it. [Privacy and GDPR](/docs/privacy/) has the facts to hand your
@@ -29,6 +34,7 @@ There's a second form that names your domain in an attribute and loads a script 
 shares:
 
 ```
+<script>window.feasible=window.feasible||function(){(window.feasible.q=window.feasible.q||[]).push(arguments)};</script>
 <script defer data-domain="example.com" src="https://app.feasible.lol/js/script.js"></script>
 ```
 
@@ -42,10 +48,9 @@ is dropped with the reason `unknown_site`.
 Tagging a link or button with a class needs nothing extra - the script watches for those clicks once
 it loads.
 
-Calling `feasible()` from your own JavaScript is the one case that wants a second line. The tag is
-deferred, so your code can run first and find nothing to call. A 103-byte stub above the tag queues
-those calls instead: see
-[calling it before the script loads](/docs/script-options/#calling-it-before-the-script-loads).
+Calling `feasible()` from your own JavaScript already works, because the queue stub is the first
+line of the snippet. If you're running an older install that's a single tag, add the stub above it:
+see [calling it before the script loads](/docs/script-options/#calling-it-before-the-script-loads).
 
 {{< callout title="Not an ad-blocker escape" >}}
 Randomized paths raise the cost of blocking us. They don't end the game. If blockers are your real

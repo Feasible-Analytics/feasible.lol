@@ -1,7 +1,7 @@
 ---
 title: "Add website analytics to Django"
 platform: "Django"
-description: "One script tag in your base template, behind a flag you control - because Django's built-in debug template variable doesn't do what most people assume."
+description: "One snippet in your base template, behind a flag you control - because Django's built-in debug template variable doesn't do what most people assume."
 lede: "templates/base.html, behind a settings flag you define yourself."
 ---
 

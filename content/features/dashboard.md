@@ -5,7 +5,7 @@ description: "Six numbers, a graph and five reports on one screen. Click any row
 lede: "Everything Feasible collects is on one page. Click any row and it filters the rest of it."
 weight: 10
 shot: "app/dashboard-light.png"
-shotAlt: "The Feasible dashboard: six metric tiles reading 298.8k unique visitors, 450.6k total visits, 1.7M total pageviews, 3.77 views per visit, 43% bounce rate and 6m 59s visit duration, a line graph of four weeks with a dashed previous-period line, above Top Sources and Top Pages cards."
+shotAlt: "The Feasible dashboard: six metric tiles reading 298.8k unique visitors, 450.6k total visits, 1.7M total pageviews, 3.77 views per visit, 43% bounce rate and 6m 59s visit duration, a line graph of four weeks with a dashed previous-period line, above Sources and Pages cards."
 note: |
   You can't rearrange it. There's no widget grid, no saved layouts and no
   custom-metric builder - every account sees the same dashboard. Scroll depth,
@@ -28,9 +28,9 @@ six tiles.
 
 ## Five cards
 
-**Top sources** - channels, sources, and UTM campaigns.
+**Sources** - channels, sources, and UTM campaigns.
 
-**Top pages** - pages with their titles on a companion line, entry pages, exit
+**Pages** - pages with their titles on a companion line, entry pages, exit
 pages.
 
 **Locations** - a map, countries, regions, and cities.

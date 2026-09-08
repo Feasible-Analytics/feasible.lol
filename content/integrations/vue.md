@@ -1,7 +1,7 @@
 ---
 title: "Add website analytics to Vue"
 platform: "Vue"
-description: "One script tag in index.html. Vue Router navigations count automatically - unless you use hash mode, which needs one extra attribute."
+description: "One snippet in index.html. Vue Router navigations count automatically - unless you use hash mode, which needs one extra attribute."
 lede: "index.html, in the head. Hash-mode routers need one more attribute."
 ---
 

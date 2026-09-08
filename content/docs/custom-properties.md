@@ -26,6 +26,42 @@ feasible('pageview', { p: { variant: 'b' } })
 
 {{< shot src="app/properties.png" alt="The properties report, breaking a custom property into its values" >}}
 
+## Putting the same properties on everything
+
+Naming a property on every call gets old fast, and it can't reach the pageview the script sends by
+itself. Declare them once instead.
+
+Set `window.__fsp` above the snippet and they ride on everything, starting with that first pageview:
+
+```
+<script>window.__fsp = { plan: 'yearly', logged_in: 'true' };</script>
+```
+
+Or set them after the script has loaded, which is what you want when the values arrive with a
+session:
+
+```
+feasible('init', { props: { plan: 'yearly', logged_in: 'true' } })
+```
+
+The difference matters. `__fsp` is read before the first pageview, so that pageview carries them -
+and it's the entry pageview that decides how a whole visit gets attributed. `init` can't reach a
+pageview that's already gone.
+
+They ride on every event after that: your own `feasible()` calls, outbound clicks, downloads, form
+submissions and tagged elements. Engagement isn't one of these - time on page and scroll depth are
+measurements we take, not things you did, and they carry no properties.
+
+A property named on a single call beats the global of the same name. The specific statement wins.
+
+The same caps apply here, applied in the browser before anything is sent: the first 30 names, and
+values cut at 2,000 characters. Your object is copied when you declare it, so editing it afterwards
+doesn't rewrite what earlier events said. Calling `init` again replaces the whole set rather than
+merging into it.
+
+Nothing is written to the browser's storage. A plan cached on disk would outlive the login it
+describes.
+
 ## The limits, and what happens at each one
 
 - **30 properties per event.** The rest are dropped and counted as `props_over_limit`. Which thirty

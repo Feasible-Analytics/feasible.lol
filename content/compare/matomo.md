@@ -124,14 +124,14 @@ nothing to tune.
 
 ## The script
 
-Measured September 3, 2026 with `gzip -9`:
+Measured September 8, 2026 with `gzip -9`:
 
 | | Gzipped |
 |---|---:|
-| Feasible | **3,377 bytes** |
-| Matomo (`matomo.js`) | 46,303 bytes |
+| Feasible | **3,569 bytes** |
+| Matomo (`matomo.js`) | 46,323 bytes |
 
-About fourteen times. Reproduce with
+About thirteen times. Reproduce with
 `curl -H 'Accept-Encoding: identity' <url> | gzip -9 | wc -c`.
 
 Some of that weight is Matomo doing more - heatmap and session-recording capture
@@ -149,7 +149,7 @@ have to live somewhere. It's still 46 KB on every page load.
 | Goals | Unlimited | 150 |
 | Custom dimensions | Custom properties, unlimited | 30 |
 | Data location | United States | Europe |
-| Tracking script (gzipped) | 3,377 bytes | 46,303 bytes |
+| Tracking script (gzipped) | 3,569 bytes | 46,323 bytes |
 | Cookies on visitors | None | Yes by default, can be disabled |
 | Funnels | Yes, in the plan | Yes (premium plugin on-premise) |
 | Heatmaps | **No** | Yes (premium) |

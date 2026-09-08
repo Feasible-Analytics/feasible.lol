@@ -1,9 +1,9 @@
 ---
 title: "Why it's fast and small"
-description: "A 3,377-byte tracking script, reports that answer in 81 to 111 ms, about 210 bytes stored per event, and one binary that runs on 512 MB of RAM."
-lede: "A 3,377-byte script on your pages, and reports that come back before you've finished looking at the screen."
+description: "A 3,569-byte tracking script, reports that answer in 81 to 111 ms, about 210 bytes stored per event, and one binary that runs on 512 MB of RAM."
+lede: "A 3,569-byte script on your pages, and reports that come back before you've finished looking at the screen."
 weight: 120
-checked: 2026-09-03
+checked: 2026-09-08
 note: |
   Above roughly ten million estimated row reads, a query can come back as a
   labeled sample with a button to demand the exact number. And a filtered report
@@ -11,10 +11,10 @@ note: |
   filtered all-time query is the slow case, and we know it.
 ---
 
-**3,377 bytes gzipped.** That's the whole tracking script - 7,099 bytes before
+**3,569 bytes gzipped.** That's the whole tracking script - 7,490 bytes before
 compression, one request, cached for an hour.
 
-Measured against Google's `gtag.js` in September 2026, that's about 43 times
+Measured against Google's `gtag.js` in September 2026, that's about 42 times
 smaller. The difference is a few hundred milliseconds on a slow phone. We'll
 take it.
 
@@ -41,8 +41,8 @@ nothing.
 
 ## Reports read from roll-ups
 
-Top pages over the last 28 days: **81 to 111 ms**. Over twelve months: 0.4 to
-0.7 seconds.
+The pages report over the last 28 days: **81 to 111 ms**. Over twelve
+months: 0.4 to 0.7 seconds.
 
 The same reports computed from raw rows take 2.1 to 2.5 seconds and 7.6 to 13.1
 seconds. That gap is the entire argument for pre-aggregating: not that
@@ -58,8 +58,20 @@ launch.
 
 A million pageviews, stored for a year, is a measured **293.8 MB** database. At a million a month, a year is about **3.5 GB**. All in - events, sessions, roll-ups, the lot.
 
-Ingest handles about **6,000 events a second per process**, and accepting one
-takes around **13 microseconds** at the median, flat regardless of write load.
+Ingest handles about **4,700 events a second** for a single account, measured
+September 6, 2026 on an M4 laptop under sustained load. That falls as one process
+carries more accounts - about 1,700 a second at sixteen - because each account is
+its own database file and its own commit.
+
+Accepting one event takes around **50 milliseconds** at the median. That's slow
+for a number in a benchmark table and it's the right one: we answer `202` only
+once the event is written to disk, not once it's sitting in a buffer. An earlier
+version of this page said 13 microseconds. That was a real measurement of a
+weaker promise, and we've replaced it rather than kept the flattering number.
+
+It costs your visitors nothing either way. The script sends with `keepalive` and
+never waits for the answer.
+
 The minimum machine is 1 CPU core, 512 MB of RAM and 1 GB of disk. Two cores and
 2 GB is comfortable.
 

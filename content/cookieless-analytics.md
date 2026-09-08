@@ -69,8 +69,9 @@ Feasible doesn't read canvas, audio, fonts, GPU, battery, or installed plugins.
 ## Does the script write anything to the device?
 
 Yes. An **outbox** holds undelivered events in `localStorage` and clears them
-after delivery. A **self-exclusion flag** lets you stop counting your own visits.
-Neither identifies a visitor.
+after delivery. An event that never gets delivered is dropped after seven days,
+so nothing sits there indefinitely. A **self-exclusion flag** lets you stop
+counting your own visits. Neither identifies a visitor.
 
 ## So do you need a consent banner?
 
@@ -99,7 +100,7 @@ audiences. If it matters, [serve the script from your own domain](/docs/proxying
 
 {{< snippet >}}
 
-3,377 bytes gzipped. It sets no cookie and loads no second script.
+3,569 bytes gzipped. It sets no cookie and loads no second script.
 
 ---
 

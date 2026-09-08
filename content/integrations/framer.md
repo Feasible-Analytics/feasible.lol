@@ -1,7 +1,7 @@
 ---
 title: "Add website analytics to Framer"
 platform: "Framer"
-description: "Add one script tag through Framer's Custom Code panel in project settings, then publish. Runs on the published site, never on the canvas."
+description: "Add the snippet through Framer's Custom Code panel in project settings, then publish. Runs on the published site, never on the canvas."
 lede: "Project settings, Custom Code, add the script, publish."
 ---
 

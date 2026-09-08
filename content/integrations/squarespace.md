@@ -1,7 +1,7 @@
 ---
 title: "Add website analytics to Squarespace"
 platform: "Squarespace"
-description: "Paste one script tag into Squarespace's Code Injection header. Needs a Core, Plus or Advanced plan - check that first."
+description: "Paste the snippet into Squarespace's Code Injection header. Needs a Core, Plus or Advanced plan - check that first."
 lede: "Code Injection, Header, paste, save. The catch is which plan you're on."
 ---
 
