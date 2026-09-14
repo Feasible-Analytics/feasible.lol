@@ -1,6 +1,6 @@
 ---
 title: "The API, webhooks and MCP"
-description: "One bearer key reads your stats, manages sites, goals and funnels, signs webhooks, and answers an AI assistant over the built-in MCP server."
+description: "One bearer key reads your stats, manages sites, goals and funnels, and signs webhooks. An AI assistant connects to the built-in MCP server with a sign-in."
 lede: "One key. The stats API, the sites API, webhooks and an MCP server, all included."
 weight: 110
 note: |
@@ -56,10 +56,15 @@ manual redelivery button - because the useful question after an outage isn't
 
 ## The MCP server is built in
 
-Feasible speaks the Model Context Protocol natively. Streamable HTTP at
-`POST /mcp`, or stdio via `feasible mcp` for a local client. Authentication is
-the same `feas_` key, and clients that speak OAuth 2.1 - including dynamic
-client registration - can get one that way instead.
+Feasible speaks the Model Context Protocol, the standard way AI assistants
+connect to other apps. Paste `https://app.feasible.lol/mcp` into Claude,
+ChatGPT, Cursor or VS Code, sign in to Feasible, and click Allow. There's no
+key to create or copy.
+
+Allowing it adds a key named after the assistant to your team settings, listed
+with every other key. Revoke it there and the assistant is disconnected. A
+script, or an app that can't do the sign-in, can still send a `feas_` key.
+[Setup for each app is in the docs](/docs/mcp/).
 
 Eleven tools and three prompts. The tools cover listing sites, running a query,
 reading realtime visitors, comparing two periods, explaining a traffic change,
