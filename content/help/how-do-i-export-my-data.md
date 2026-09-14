@@ -20,7 +20,7 @@ That's the part that matters, and it's worth saying why. An analytics tool that 
 Two more ways out, if a ZIP isn't the shape you want:
 
 - **The [API](/docs/api/)** reads any report programmatically, on one bearer key, in every plan. There's no plan check in it.
-- **The MCP server** is built in, so you can point an assistant at your own numbers over HTTP or stdio with the same key.
+- **The MCP server** is built in. Paste its URL into an AI assistant, sign in, and it can read your numbers. [Here's how](/docs/mcp/).
 
 Coming back the other way - restoring, or moving a site between accounts - the export's CSVs [import file-for-file](/help/can-i-import-a-csv/).
 

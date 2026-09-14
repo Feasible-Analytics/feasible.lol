@@ -219,7 +219,7 @@ no feature held back for a paid plan - the API has no plan check in it at all. M
 
 ## API keys
 
-Create them under *Settings → Team and members → API keys*, or from the command line:
+Create them under *Settings → People → API keys*, or from the command line:
 
 ```
 ./feasible api-key create --team 1 --user 1 --name "Reporting"
@@ -228,3 +228,27 @@ Create them under *Settings → Team and members → API keys*, or from the comm
 The per-key hourly limit defaults to `FEASIBLE_API_RATE_LIMIT`, which is 10,000. It's a setting
 rather than a constant precisely because a limit you can't change on your own hardware isn't a limit,
 it's an inconvenience.
+
+## Connecting an AI assistant
+
+The sign-in setup on [the MCP page](/docs/mcp/) works on your install too. Use your own address in
+place of `app.feasible.lol`. Set `FEASIBLE_APP_BASE_URL` to the address people actually reach, because
+the sign-in links an assistant follows are built from it.
+
+For an assistant that starts a local program instead of connecting to a URL, run `feasible mcp`. It
+talks over stdio and reads an API key from the environment:
+
+```
+{
+  "mcpServers": {
+    "feasible": {
+      "command": "feasible",
+      "args": ["mcp"],
+      "env": { "FEASIBLE_MCP_API_KEY": "feas_…" }
+    }
+  }
+}
+```
+
+The key is an environment variable rather than a flag, because a secret on a command line is visible
+in the process list to everyone on the machine.

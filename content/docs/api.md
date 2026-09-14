@@ -286,7 +286,7 @@ shape whether or not the address already has an account. `owner` isn't an invita
 A key looks like `feas_` followed by 43 characters. It's shown once, at creation, and stored only as
 a hash. We can't recover it for you and wouldn't want to be able to.
 
-Create one under *Settings → Team and members → API keys*, or from the command line:
+Create one under *Settings → People → API keys*, or from the command line:
 
 ```
 feasible api-key create --team 1 --user 1 --name "Looker Studio"
@@ -304,7 +304,8 @@ the scope you need.
 The key goes in `Authorization: Bearer …` and nowhere else. A key in a query string ends up in every
 proxy log between you and us, so it isn't accepted there.
 
-The same key works for the Stats API, the Sites API, webhooks and [the MCP server](/docs/mcp/).
+The same key works for the Stats API, the Sites API, webhooks and [the MCP server](/docs/mcp/). An AI
+assistant doesn't need one, though. It connects with a sign-in.
 
 ## Rate limits
 

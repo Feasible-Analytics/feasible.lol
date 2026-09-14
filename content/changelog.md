@@ -3,8 +3,19 @@ title: "Changelog"
 seotitle: "Changelog - what's shipped in Feasible"
 description: "What changed in Feasible, newest first. We just launched, so the list is short."
 lede: "What's changed, newest first. There isn't much here yet, and inventing a back catalog would be a strange way to start."
-updated: 2026-09-03
+updated: 2026-09-13
 ---
+
+## September 9, 2026 - connect an assistant with a sign-in
+
+Connecting an AI assistant used to mean making an API key, copying it, and pasting it into a form.
+Now you paste `https://app.feasible.lol/mcp` into Claude, ChatGPT, Cursor or VS Code, sign in, and
+click Allow.
+
+The connection shows up as a key in team settings, and revoking it there disconnects the assistant.
+Sending an API key in a header still works. Self-hosters get it in v0.0.26.
+
+[Set up your assistant](/docs/mcp/)
 
 ## September 2026 - launch
 
