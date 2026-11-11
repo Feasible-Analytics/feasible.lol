@@ -7,7 +7,7 @@
 #
 
 .DEFAULT_GOAL := help
-.PHONY: help install dev tailscale build clean check links seo xml responsive indexnow serve
+.PHONY: help install dev tailscale build clean check test links seo xml responsive indexnow serve
 
 # The port `make tailscale` binds. High and arbitrary so it never collides with
 # another project's dev server.
@@ -55,8 +55,12 @@ serve: build
 	@cd public && python3 -m http.server 8899
 
 ## check: build and run every pre-publish check
-check: build links seo xml
+check: build test links seo xml
 	@echo "All checks passed."
+
+## test: check campaign handoff behavior
+test:
+	npm test
 
 ## links: check internal links and anchors in the built site
 links:

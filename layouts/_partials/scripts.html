@@ -1,7 +1,7 @@
 {{/*
   scripts.html
-  The only JavaScript on the site: the mobile nav toggle, plus our own analytics
-  tag. Both are small enough to inline rather than cost a second request.
+  The mobile nav toggle and the campaign handoff. Both are small enough to
+  inline rather than cost another request. The analytics tag lives in head.html.
 
   Created: 2026-09-03
   Copyright (c) 2026 Cloudmanic Labs, LLC. All rights reserved.
@@ -43,3 +43,8 @@
     });
   })();
 </script>
+
+{{/* Use the same source in the browser and the regression tests. */}}
+{{ with resources.Get "js/signup-attribution.js" }}
+  <script>{{ .Content | safeJS }}</script>
+{{ end }}

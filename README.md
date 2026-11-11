@@ -47,6 +47,23 @@ Competitors' prices are their published list prices, each carrying the date it
 was checked. If one is stale, fix it — an out-of-date comparison is worse than
 no comparison.
 
+## Signup attribution
+
+Signup links carry `utm_source`, `utm_medium`, and `utm_campaign` from the
+current page to `https://app.feasible.lol/register`. Each value must be a single
+label of 1–80 letters, digits, underscores, or hyphens, starting with a letter
+or digit. Use campaign labels, never personal information. An already-tagged
+signup link keeps its own attribution.
+
+Clean links stay clean. This doesn't add tags to social links, read the
+referrer, set cookies, use browser storage, or copy other query parameters.
+It doesn't retain a campaign when someone browses to another marketing page.
+The app's existing first-touch handling takes over at registration.
+
+A `register-click` is still a click, not a completed signup. Completed accounts
+come from the app's account records; this script doesn't emit a signup event.
+Run `npm test` for the handoff tests, or `make check` for all pre-publish checks.
+
 ## License
 
 [MIT](LICENSE). The Feasible name and logo are trademarks of Cloudmanic Labs, LLC.

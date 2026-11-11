@@ -90,6 +90,9 @@ jobs:
         id: pages
         uses: actions/configure-pages@v5
 
+      - name: Check campaign handoff
+        run: npm test
+
       - name: Build
         env:
           HUGO_ENVIRONMENT: production
