@@ -38,9 +38,10 @@ can't be added to another rate, so an export of averages is one you can look at 
 
 ## Import
 
-Upload one CSV, or a ZIP of them. The same ten formats, with the column spellings an established
-analytics export already uses, so a directory of files from your old product imports here without
-editing.
+Upload one CSV, or a ZIP of them. Use the [documented column names](/help/can-i-import-a-csv/)
+and include a `date` column. The ten formats match Feasible's own roll-up exports.
+Another tool's download may need conversion. In particular, don't assume an unchanged GA4 report
+CSV will import: its headers, date layout and metrics may differ.
 
 A ZIP's `raw_events.csv` is skipped, so re-importing one of our own exports doesn't
 count everything twice.
@@ -80,21 +81,25 @@ how you undo that.
 
 ## The Google connectors
 
-{{< callout type="warn" title="Connecting works. The import doesn't run yet." >}}
-Authorizing Google Analytics 4 or Search Console stores a grant and does nothing further in this
-build. No data is pulled across. Use the CSV path in the meantime - export your GA4 reports and
-upload the folder.
+### Google Analytics 4
 
-We'd rather say that than let you connect an account and wait for data that isn't coming.
-{{< /callout >}}
+Connect Google Analytics from the site's Imports screen, choose a property, then select a
+historical date range and press **Import Analytics history**. The job runs in the background and
+reports progress or failure on that screen. Connecting alone doesn't start an import.
 
-The authorization is **per site**: connecting a second site with the same provider account creates a
-second, independent grant, so revoking one can never silently disconnect the other. The section only
-appears on an install that has provider credentials configured.
+Dates must end before today and before this site's collected traffic, without overlapping earlier
+traffic imports. The importer brings in daily totals and breakdowns for pages, sources, locations,
+devices, browsers, operating systems and landing pages. It doesn't recreate raw events, goals,
+audiences or saved reports. Visitor totals over multiple days are summed daily counts.
 
-There's also **no search-terms report** on this end, and won't be one just because the import starts
-running. Nothing in Feasible answers "which queries brought people here" - if that's the report you
-need, keep Search Console open in another tab.
+[Follow the GA4 import guide](/help/can-i-import-my-google-analytics-history/) and verify a few dates
+before you remove the old tracker. Google may withhold report data, and metric definitions differ.
+
+### Connection scope
+
+Google authorization is **per site**. Connecting a second site creates a separate grant, so revoking
+one doesn't disconnect the other. Self-hosted installs only show this section when Google provider
+credentials are configured. Search Console uses its own connection; it doesn't import GA4 traffic.
 
 ## A locked or dormant account
 

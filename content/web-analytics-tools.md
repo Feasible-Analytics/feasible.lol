@@ -46,8 +46,8 @@ numbers.
 | Tool | 100k pv/mo | 1M pv/mo | Counts | Sites | Seats | Retention | Source |
 |---|---|---|---|---|---|---|---|
 | **Feasible** | **$99** | **$99** | pageviews + custom events; properties free | unlimited | unlimited | 5 years | [pricing](/pricing/) |
-| Plausible Starter | $190 | $690 | pageviews + custom events | 1 | owner only | 3 years | [plausible.io](https://plausible.io/#pricing) |
-| Plausible Business | $390 | $1,390 | pageviews + custom events | 10 | 10 | 5 years | [plausible.io](https://plausible.io/#pricing) |
+| Plausible Starter | $190 | $690 | pageviews + custom events | 1 | owner only | No limit while subscribed | [plausible.io](https://plausible.io/#pricing) |
+| Plausible Business | $390 | $1,390 | pageviews + custom events | 10 | 10 | No limit while subscribed | [plausible.io](https://plausible.io/#pricing) |
 | Fathom | $150 | $600 | pageviews + custom events | 75 | not published | "forever" | [usefathom.com](https://usefathom.com/pricing) |
 | Simple Analytics | $200 | $600 | datapoints - pageviews, events **and each stored property** | 10 | 1 (+$240/yr each) | 3 years | [simpleanalytics.com](https://www.simpleanalytics.com/pricing) |
 | Pirsch Standard | $120 | $540 | pageviews + events + 10% of session extensions | 50 | unlimited | unlimited | [pirsch.io](https://pirsch.io/pricing) |
@@ -55,6 +55,8 @@ numbers.
 | Matomo Cloud | $420 | $2,040 | **hits** - views, events, downloads, outbound clicks, site searches | 30 | 30 | configurable | [matomo.org](https://matomo.org/pricing/) |
 | Google Analytics 4 | $0 | $0 | events | unlimited | unlimited | 2 or 14 months (event-level) | [Google](https://support.google.com/analytics/answer/11202874) |
 | Cloudflare Web Analytics | $0 | $0 | pageviews | - | - | not published | [cloudflare.com](https://www.cloudflare.com/web-analytics/) |
+
+Plausible retention rechecked November 11, 2026: [no retention limit while subscribed](https://plausible.io/#pricing) on every plan. The price-check dates elsewhere on this page are unchanged.
 
 Three billing details change the answer:
 

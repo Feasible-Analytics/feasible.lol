@@ -77,12 +77,13 @@ it's the whole reason this company exists.
 Comparing headline prices only works if the plans contain the same things. They
 don't.
 
-From Plausible's own pricing cards, read September 3, 2026:
+Plan sizes and features below were read from Plausible's pricing cards on September 3, 2026.
+Retention was rechecked on November 11, 2026: [all plans now have no retention limit
+while subscribed](https://plausible.io/#pricing).
 
-- **Starter** - one site. Three years of retention. No team members at all.
+- **Starter** - one site. No team members.
 - **Growth** - up to 3 sites, up to 3 team members.
-- **Business** - up to 10 sites, up to 10 team members, five years of
-  retention, and the first plan with **custom properties, funnels and user
+- **Business** - up to 10 sites, up to 10 team members, and the first plan with **custom properties, funnels and user
   journeys, ecommerce revenue attribution and the Stats API** (600 requests an
   hour).
 - **Enterprise** - custom pricing. More sites, more seats, SSO, the Sites API,
@@ -130,14 +131,14 @@ is an email rather than a tier.
 | At 1M pageviews/mo | $99/yr | $690–$1,390/yr depending on plan |
 | Sites | Unlimited | 1 / 3 / 10 by plan |
 | Team members | Unlimited | 0 / 3 / 10 by plan |
-| Retention | 5 years | 3 years, 5 on Business |
+| Retention | 5 years guaranteed | No limit while subscribed |
 | Billing unit | Pageviews + custom events | Pageviews + custom events |
 | Funnels | Yes | Business plan |
 | Custom properties | Yes | Business plan |
 | Stats API | Yes, 10,000 req/hr | Business plan, 600 req/hr |
 | Raw event export | Yes, in the plan | Enterprise |
 | Webhooks | Yes | No |
-| MCP server | Built in | No |
+| MCP server | Built in | Community-built; Stats API key required |
 | Dropped-event log with reasons | Yes | No |
 | Data location | United States | Germany |
 | Saved segments | **No** | Yes |
@@ -148,6 +149,10 @@ is an email rather than a tier.
 | Mobile SDKs | No | No |
 | License | AGPL-3.0-or-later | AGPL-3.0-or-later |
 | Trial | 30 days, no card | 30 days, no card |
+
+Retention and MCP support rechecked November 11, 2026. [Plausible's pricing page](https://plausible.io/#pricing)
+lists no retention limit. Its [data-access documentation](https://plausible.io/docs/data-access#mcp-server)
+links to a community MCP server built by Sentry. It isn't an official Plausible integration.
 
 ## Open source
 
@@ -207,6 +212,10 @@ If neither of those is your problem, the next section is the answer.
 Want the wider list rather than the head-to-head? [Plausible alternatives, compared](/alternatives/plausible/) covers seven of them.
 
 ## Where Plausible wins
+
+**No retention limit while subscribed.** That's now on every plan, according to
+[their pricing page](https://plausible.io/#pricing), checked November 11, 2026.
+Feasible guarantees five years. If a longer guaranteed history matters, compare that policy too.
 
 **Your data sits in Germany.** Plausible hosts in Falkenstein on Hetzner, and
 the company is in the EU. Cloudmanic Labs is in Oregon, and our international

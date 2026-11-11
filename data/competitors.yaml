@@ -70,7 +70,8 @@ plans:
     unit: "pageviews + custom events"
     sites: "1"
     seats: "Owner only"
-    retention: "3 years"
+    retention: "No limit while subscribed"
+    retention_checked: 2026-11-11
     note: "No custom properties, no funnels, no Stats API."
     source: "https://plausible.io/#pricing"
 
@@ -80,7 +81,8 @@ plans:
     unit: "pageviews + custom events"
     sites: "3"
     seats: "3"
-    retention: "3 years"
+    retention: "No limit while subscribed"
+    retention_checked: 2026-11-11
     note: "Still no custom properties, funnels or Stats API."
     source: "https://plausible.io/#pricing"
 
@@ -90,7 +92,8 @@ plans:
     unit: "pageviews + custom events"
     sites: "10"
     seats: "10"
-    retention: "5 years"
+    retention: "No limit while subscribed"
+    retention_checked: 2026-11-11
     note: "The first plan with custom properties, funnels and the Stats API."
     source: "https://plausible.io/#pricing"
 

@@ -43,9 +43,9 @@ Annual USD, on annual billing where offered. **The "counts" column decides the b
 | Tool | 100k pv/mo | 1M pv/mo | Counts | Sites | Seats | Source | Retention |
 |---|---|---|---|---|---|---|---|
 | **Feasible** | **$99** | **$99** | pageviews + events | unlimited | unlimited | AGPL-3.0 | 5 years |
-| [Plausible Starter](https://plausible.io/#pricing) | $190 | $690 | pageviews + events | 1 | owner only | AGPL-3.0 (CE) | 3 years |
-| [Plausible Growth](https://plausible.io/#pricing) | $290 | $1,040 | pageviews + events | 3 | 3 | AGPL-3.0 (CE) | 3 years |
-| [Plausible Business](https://plausible.io/#pricing) | $390 | $1,390 | pageviews + events | 10 | 10 | AGPL-3.0 (CE) | 5 years |
+| [Plausible Starter](https://plausible.io/#pricing) | $190 | $690 | pageviews + events | 1 | owner only | AGPL-3.0 (CE) | No limit while subscribed |
+| [Plausible Growth](https://plausible.io/#pricing) | $290 | $1,040 | pageviews + events | 3 | 3 | AGPL-3.0 (CE) | No limit while subscribed |
+| [Plausible Business](https://plausible.io/#pricing) | $390 | $1,390 | pageviews + events | 10 | 10 | AGPL-3.0 (CE) | No limit while subscribed |
 | [Umami Cloud Pro](https://umami.is/pricing) | $240 | $240 | events, incl. each property | 20 | 10 | MIT | 2 years |
 | [Pirsch Standard](https://pirsch.io/pricing) | $120 | $540 | pageviews + events + 10% extensions | 50 | unlimited | closed | unlimited |
 | [Fathom](https://usefathom.com/pricing) | $150 | $600 | pageviews + events | 75 | not published | closed | forever |
@@ -53,9 +53,11 @@ Annual USD, on annual billing where offered. **The "counts" column decides the b
 | [Matomo Cloud](https://matomo.org/pricing/) | $420 | $2,040 | **hits** | 30 | 30 | GPL-3.0 | configurable |
 | [GoatCounter](https://www.goatcounter.com/) | $0 | n/a | pageviews | - | - | EUPL-1.2 | - |
 
+Plausible retention rechecked November 11, 2026: [no retention limit while subscribed](https://plausible.io/#pricing) on every plan. The price-check dates elsewhere on this page are unchanged.
+
 All three Plausible tiers are listed because leaving the middle one out would flatter us. Growth is $1,040 at a million and still has no custom properties, funnels or Stats API, which is why Business is the tier this page compares against: it is the first one with them.
 
-Every figure read from the vendor's own pricing page on September 3, 2026. Prices change; the links are there so you can check.
+Prices read from the vendor's own pricing page on September 3, 2026. Prices change; the links are there so you can check.
 
 ## Each one, and where it beats us
 
@@ -71,7 +73,7 @@ Cloud Pro is flat to a million events at $240 a year, which is the second-cheape
 
 ### Pirsch
 
-$540 a year at a million, unlimited seats, fifty sites, and **unlimited retention** - the only tool here that keeps everything forever without charging extra for it.
+$540 a year at a million, unlimited seats, fifty sites, and **unlimited retention**. Fathom also advertises unlimited history, and Plausible now has no retention limit while subscribed.
 
 **Where it beats us:** retention, plainly. If you need five-year-old data in ten years, Pirsch says yes and we say five years.
 

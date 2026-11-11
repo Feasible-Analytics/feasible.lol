@@ -74,6 +74,8 @@ it, before tax.
 | Umami Cloud - Pro | $240 | $240 | $240 | $1,680 | - |
 | Matomo Cloud | $260 | $420 | $2,040 | $9,750 | $19,000 |
 
+Plausible retention rechecked November 11, 2026: [no retention limit while subscribed](https://plausible.io/#pricing) on every plan. The price-check dates elsewhere on this page are unchanged.
+
 A dash means the vendor doesn't offer that volume on that plan.
 
 **We're not the cheapest at the bottom.** At 10,000 pageviews a month, Pirsch
@@ -130,9 +132,9 @@ the plan with the features.
 | Vendor / plan | Annual | Sites | Team seats | Retention | Notable gaps at this price |
 |---|---:|---|---|---|---|
 | **Feasible** | **$99** | **Unlimited** | **Unlimited** | **5 years** | No SSO, session replay, heatmaps, A/B testing, cohort report or mobile SDKs |
-| Plausible Starter | $690 | 1 | Owner only | 3 years | No custom properties, funnels or Stats API |
-| Plausible Growth | $1,040 | 3 | 3 | 3 years | Still no custom properties, funnels or Stats API |
-| Plausible Business | $1,390 | 10 | 10 | 5 years | Raw event export is Enterprise-only |
+| Plausible Starter | $690 | 1 | Owner only | No limit while subscribed | No custom properties, funnels or Stats API |
+| Plausible Growth | $1,040 | 3 | 3 | No limit while subscribed | Still no custom properties, funnels or Stats API |
+| Plausible Business | $1,390 | 10 | 10 | No limit while subscribed | Raw event export is Enterprise-only |
 | Fathom | $600 | 75 | Not published | "Forever" | No funnels or custom properties |
 | Simple Analytics | $600 | 10 | 1 (+$240/yr each) | 3 years | No funnels; seats are billed |
 | Matomo Cloud | $2,040 | 30 | 30 | Configurable | Funnels, heatmaps, replay and A/B tests are premium plugins |

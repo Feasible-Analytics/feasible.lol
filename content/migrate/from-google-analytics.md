@@ -1,17 +1,17 @@
 ---
 title: "Moving off Google Analytics"
 seotitle: "Google Analytics 4 migration - move to Feasible"
-description: "Upload your Google Analytics history as CSV, add our snippet, and remove the old one. Here's the whole process, step by step."
-lede: "Seven steps, about twenty minutes of work and two weeks of waiting. Including why the two tools will never show you the same number."
+description: "Move from GA4 to Feasible: add the tracker, import a historical date range from your Google property, check your data, then remove the old tag."
+lede: "Seven steps, with two weeks of side-by-side data before you remove the old tag. Including what imports and why the numbers differ."
 kicker: "MIGRATING"
 weight: 10
 faq:
   - q: "How long does the migration take?"
-    a: "About twenty minutes of actual work, spread over two weeks. Installing the script is one line. The waiting is deliberate - you run both tools side by side long enough to trust the new numbers before you remove the old tag."
+    a: "Allow time to connect your property and check the imported reports, plus two weeks running both trackers. Installing the script is one line. The waiting is deliberate - you run both tools side by side long enough to trust the new numbers before you remove the old tag."
   - q: "Can I import my Google Analytics history?"
-    a: "Yes, as CSV. Export your GA4 reports, upload the folder, and it lands on the same charts as your live traffic. Universal Analytics history is a different matter: Google cut off access to it from the week of July 1, 2024."
+    a: "Yes. Connect your GA4 property in Site settings → Imports and select historical dates before Feasible started collecting traffic. A raw GA4 CSV download may need conversion before the separate CSV importer can read it. Universal Analytics history is a different matter: Google cut off access to it from the week of July 1, 2024."
   - q: "What data comes across from GA4?"
-    a: "Whatever you export: daily totals, pages, sources, locations, devices and browsers. What doesn't come across: GA4's own goals and conversions, audiences, Explorations, and anything GA4 thresholded away before you hit download."
+    a: "Daily totals and breakdowns for pages, sources, locations, devices, browsers, operating systems and landing pages. What doesn't come across: GA4's own goals and conversions, audiences, Explorations, and any report data Google withholds."
   - q: "Why don't the numbers match Google Analytics?"
     a: "Four reasons, all structural: the two tools filter bots differently, ad blockers hit them differently, they define a session differently, and GA4 thresholds and can sample its own reports. Expect a gap in the tens of percent and compare trends, not absolute numbers."
   - q: "Can I remove my cookie banner after switching?"
@@ -20,11 +20,11 @@ faq:
     a: "You can. The two scripts don't conflict, and some people keep GA4 purely for the Google Ads integration while doing their day-to-day reading elsewhere. If you keep GA4, you keep its consent banner."
 ---
 
-A Google Analytics 4 migration is seven steps here. About twenty minutes of work,
-and two weeks of waiting in the middle while both tools run side by side.
+A Google Analytics 4 migration is seven steps here. Run both tools side by side
+for two weeks, and check the imported history before you remove the old tag.
 
-Before you start, the one thing worth knowing: **GA4 history can come across as
-CSV. Universal Analytics history probably can't.** Google cut off access to current
+Before you start, the one thing worth knowing: **GA4 history can come across from a
+connected property. Universal Analytics history probably can't.** Google cut off access to current
 and historical Universal Analytics data from the week of July 1, 2024
 ([Google's own page](https://support.google.com/analytics/answer/11583528)). If
 you didn't export it then, it isn't there to import. Nobody can get it back for
@@ -87,23 +87,28 @@ headers as a browser would.
 
 {{< shot src="app/health.png" alt="The ingestion health panel showing accepted and dropped events with reasons" caption="Never fail silently. Every dropped event gets a reason." >}}
 
-## 5. Bring your GA4 history across as CSV
+## 5. Import your GA4 history {#5-bring-your-ga4-history-across-as-csv}
 
-In GA4, export the reports you want to keep - pages, traffic acquisition,
-locations, devices, browsers. Each one downloads as a CSV. In Feasible, go to
-site settings → imports and upload the folder, or zip the lot and upload that.
-The ceilings are 200 MB an upload, 5,000,000 rows a file and 100 CSVs in one
-archive, which is more history than most sites have.
+In Feasible, open **Site settings → Imports → Google Analytics**. Connect the
+Google account with access to the property, choose that property, then select a
+historical date range and press **Import Analytics history**.
 
-It lands on the same charts as your live traffic, dated where it belongs, so
-your history sits behind the day you installed the script instead of the charts
-starting from zero.
+The last day must be before today and before Feasible started collecting traffic
+for this site. Dates must not overlap earlier traffic imports. This keeps the
+same period from being counted twice. Follow the job's progress on Imports.
 
-A direct Google connection is on the way. Today it's a CSV upload.
+The imported daily totals and breakdowns appear beside your new traffic. They
+aren't raw events. Visitor totals across several days are summed daily counts,
+not a deduplicated count of people across the whole period.
 
-**A column we don't recognize stops the import and names the column.** The
-alternative is dropping it quietly and handing you a number that's wrong in a
-way you can't see, and we'd rather make you fix the header.
+**A GA4 CSV download isn't a ready-made Feasible import.** The separate CSV
+uploader requires [supported column names, a date column and daily totals](/help/can-i-import-a-csv/).
+Rates and averages need proper conversion, not a new header. Use the direct
+connection when available. For a prepared CSV, test a small range first.
+
+Check several dates and reports before calling the migration finished. The
+[GA4 import guide](/help/can-i-import-my-google-analytics-history/) covers the
+steps and limits.
 
 **What doesn't come across**, so nothing is a surprise later:
 
@@ -112,7 +117,7 @@ way you can't see, and we'd rather make you fix the header.
   site: 404, outbound link click, file download and form submission.
 - **Audiences, Explorations and saved reports.** They don't have an equivalent.
 - **Anything GA4 thresholded away.** If Google hid a row from you, it isn't in
-  the CSV either.
+  imported reports either.
 
 Imported history is stored as roll-up rows that also record **which dimensions
 the source reported**. So a filter on a dimension the imported data has

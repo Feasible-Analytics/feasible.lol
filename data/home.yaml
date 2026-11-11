@@ -66,8 +66,9 @@ plan:
 objections:
   - q: "Will I lose my history?"
     a: >-
-      No. Upload your old CSV reports. Their pages, sources, locations, devices,
-      and browsers appear beside your new numbers.
+      You can import history from a connected GA4 property or prepared CSV files.
+      Check the <a href="/docs/import-export/" class="text-flag-700 underline">formats and limits</a>
+      before switching, then verify the imported reports.
 
   - q: "Is a million really the limit?"
     a: >-

@@ -4,19 +4,22 @@ description: "Bring history in as CSV, and take everything out as one ZIP - ten 
 lede: "Your history comes with you, and so does everything you collect here."
 weight: 100
 note: |
-  Import is CSV today. You can authorize a Google Analytics or Search Console
-  account, but nothing pulls data across yet and there's no search-terms report
-  on this end. A direct Google connection is on the way; until it lands, export
-  from Google and upload the files.
+  GA4 imports run from a connected property and a selected historical date range.
+  CSV imports need supported columns and daily totals. A report downloaded from
+  another tool may need conversion before it can be uploaded.
 ---
 
 Import loose CSVs or a ZIP. Export one ZIP with ten reports and every raw event.
 
 ## Bringing history in
 
-Export your GA4 reports as CSV and upload the folder - pages, sources,
-locations, devices and browsers land on the same charts as your live traffic,
-dated where they belong. It's the same path any other tool's export takes.
+Connect your GA4 property in Site settings → Imports and choose historical
+dates before Feasible started tracking the site. Daily totals and breakdowns
+appear alongside your new traffic. [The steps and limits are here](/help/can-i-import-my-google-analytics-history/).
+
+For CSV, prepare files with the [supported columns](/help/can-i-import-a-csv/).
+A raw report download isn't guaranteed to match. Every row needs a date, and
+metrics need totals rather than rates or averages.
 
 Import takes a ZIP or loose files. Recognized dimension columns cover page,
 hostname, page title, event name, entry and exit page, referrer, source,

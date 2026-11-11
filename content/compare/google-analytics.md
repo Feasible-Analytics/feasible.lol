@@ -23,12 +23,11 @@ faq:
       it's illegal is running a stale page.
   - q: "Can I keep my Google Analytics history if I switch?"
     a: >-
-      Yes, as CSV. Export your GA4 reports and upload the folder - pages,
-      sources, locations, devices and browsers land on the same charts as your
-      live traffic. A direct Google connection is on the way; today it's a CSV
-      upload. Universal Analytics data is a different story - Google cut off
-      access to it in July 2024 and said it would be permanently deleted, so if
-      you never exported it, it's gone.
+      Yes. Connect a GA4 property from Site settings → Imports and select
+      historical dates before Feasible started collecting traffic. Imported data
+      is daily totals and breakdowns, not raw events. CSV uploads are separate
+      and require Feasible's documented format; a raw GA4 report download may
+      need conversion. Universal Analytics data stopped being accessible in July 2024.
   - q: "Do I need a cookie banner with Feasible?"
     a: >-
       Most sites won't. Feasible sets no cookies on your visitors and stores no
@@ -234,8 +233,8 @@ banner, accept a 14-month wall on the analysis you care about, live with rows
 you can't see and can't unhide, and send your visitors' behavior to a company
 whose business is advertising. Feasible asks for 3,569 bytes and $99 a year.
 
-If you're moving, export your GA4 reports as CSV and upload the folder - your
-history comes with you. See
+If you're moving, connect your GA4 property and import a historical date range.
+Check the imported reports before removing the old tracker. See
 [moving off Google Analytics](/migrate/from-google-analytics/). The
 [feature list](/features/) is the inventory of what you'd get, including
 what's missing.

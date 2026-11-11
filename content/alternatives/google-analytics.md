@@ -17,7 +17,7 @@ faq:
   - q: "Will my numbers match Google Analytics after I switch?"
     a: "No, and no two analytics tools ever match. Bot filtering differs, ad blockers hit each tool differently, the definition of a session differs, and GA4 thresholds and can sample its own reports. Expect a gap in the tens of percent and compare trends rather than absolute numbers."
   - q: "Can I keep my Google Analytics history?"
-    a: "You can. Export your GA4 reports as CSV and upload the folder into Feasible - pages, sources, locations, devices and browsers land on the same charts as your live traffic. Universal Analytics data is a different story - Google cut off access to it from the week of July 1, 2024, so if you didn't export it then, it's gone."
+    a: "You can import daily totals and breakdowns from a connected GA4 property. Select historical dates before Feasible started collecting traffic. CSV uploads need the documented format; raw GA4 downloads may need conversion. Universal Analytics data is a different story - Google cut off access to it from the week of July 1, 2024, so if you didn't export it then, it's gone."
   - q: "Do Google Analytics alternatives need a cookie banner?"
     a: "The cookieless ones generally don't, for analytics. Feasible, Plausible, Fathom, Simple Analytics, Umami, Pirsch, GoatCounter and Cloudflare all set no cookies. That isn't a legal guarantee and the rest of your site may still need a banner - check with your own lawyer."
 ---
@@ -83,8 +83,8 @@ bill** - read it before comparing two prices.
 | Tool | 100k pv/mo | 1M pv/mo | Counts | Sites | Seats | Cookies | Source | Retention |
 |---|---|---|---|---|---|---|---|---|
 | **Feasible** | **$99** | **$99** | pageviews + events | unlimited | unlimited | none | AGPL-3.0 | 5 years |
-| [Plausible Starter](https://plausible.io/#pricing) | $190 | $690 | pageviews + events | 1 | owner only | none | AGPL-3.0 (CE) | 3 years |
-| [Plausible Business](https://plausible.io/#pricing) | $390 | $1,390 | pageviews + events | 10 | 10 | none | AGPL-3.0 (CE) | 5 years |
+| [Plausible Starter](https://plausible.io/#pricing) | $190 | $690 | pageviews + events | 1 | owner only | none | AGPL-3.0 (CE) | No limit while subscribed |
+| [Plausible Business](https://plausible.io/#pricing) | $390 | $1,390 | pageviews + events | 10 | 10 | none | AGPL-3.0 (CE) | No limit while subscribed |
 | [Fathom](https://usefathom.com/pricing) | $150 | $600 | pageviews + events | 75 | not published | none | closed | forever |
 | [Simple Analytics](https://www.simpleanalytics.com/pricing) | $200 | $600 | datapoints, incl. each property | 10 | 1 (+$240/yr) | none | closed | 3 years |
 | [Pirsch Standard](https://pirsch.io/pricing) | $120 | $540 | pageviews + events + 10% extensions | 50 | unlimited | none | closed | unlimited |
@@ -93,6 +93,8 @@ bill** - read it before comparing two prices.
 | [GoatCounter](https://www.goatcounter.com/) | $0 | n/a | pageviews | - | - | none | EUPL-1.2 | - |
 | [Cloudflare](https://www.cloudflare.com/web-analytics/) | $0 | $0 | pageviews | - | - | none | closed | not published |
 | [Google Analytics 4](https://support.google.com/analytics/answer/11202874) | $0 | $0 | events | unlimited | unlimited | yes | closed | 14 months |
+
+Plausible retention rechecked November 11, 2026: [no retention limit while subscribed](https://plausible.io/#pricing) on every plan. The price-check dates elsewhere on this page are unchanged.
 
 Matomo's unit is worth repeating: a hit "can be either a tracked page view, an
 event tracking, a download, an outlink, an onsite search or a content tracking
@@ -258,13 +260,14 @@ hosting and two decades of institutional presence.
 
 The blocker people name most often isn't price - it's "I'd lose all my history."
 
-You wouldn't, mostly. Export your GA4 reports as CSV and upload the folder, and
-pages, sources, locations, devices and browsers land on the same charts as your
-live traffic. A direct Google connection is on the way; today it's an upload.
+Connect a GA4 property in Site settings → Imports, then choose a historical
+date range. Daily totals and breakdowns appear alongside your new traffic.
+Check a few dates before switching. CSV uploads are a separate route with a
+documented format, not a promise that every GA4 download imports unchanged.
 Universal Analytics history is a different matter: Google cut off access from the
 week of July 1, 2024, so if you didn't export then, it's gone.
 
-The whole process - install alongside GA, run both for two weeks, upload the CSVs,
+The whole process - install alongside GA, run both for two weeks, import the history,
 verify, then remove the old tag - is written out step by step in
 [moving off Google Analytics](/migrate/from-google-analytics/).
 

@@ -1,30 +1,38 @@
 ---
 title: "Can I import my Google Analytics history?"
-description: "Yes. Export your GA4 reports as CSV and upload the folder. Imported history appears beside your new data."
+description: "Connect your GA4 property and import a historical date range. Learn which reports move, what stays behind, and why CSV exports need preparation."
 category: "importing-and-exporting"
 weight: 10
+updated: 2026-11-11
 ---
 
-Yes, as CSV.
+Yes. Connect Google Analytics 4 from **Site settings → Imports**, then choose a property and a date range.
 
-1. In GA4, open the reports you want to keep - pages, traffic acquisition, locations, devices, browsers - and download each one as CSV.
-2. In Feasible, go to **Site settings → Imports**.
-3. Upload the files, or zip the folder and upload that.
+1. Open **Site settings → Imports → Google Analytics** and connect the Google account that can read the property.
+2. Choose the GA4 property. Check that it contains the website you want to import.
+3. Choose historical dates ending before today and before Feasible started collecting traffic for this site. The range must not overlap an earlier traffic import.
+4. Press **Import Analytics history**. Follow the job's progress and any error on the Imports screen.
 
-It runs as a background job and emails you when it's done. Pages, sources, locations, devices and browsers land on the same charts as your live traffic, dated where they belong, so your history sits behind the day you installed the script.
+The import brings in daily totals and breakdowns for pages, sources, locations, devices, browsers, operating systems and landing pages. These are aggregated reports, not individual events.
 
-A direct Google connection is on the way. Today it's a CSV upload.
+**Connecting isn't the import.** You still need to select the property and dates, then start the job. Self-hosted installs need Google provider credentials configured before this section appears.
 
-**The imported history is roll-ups, not raw events**, because that's all a report export gives us. Which raises the obvious question - what happens when you filter on something the import didn't carry?
+## What to expect
 
-Most tools quietly zero it out, which is how a chart ends up showing a cliff on the day you switched tools. Feasible records *which dimensions the source reported*, alongside the data. So a filter on a dimension the import has narrows the imported history like it narrows native traffic, and a filter on a dimension it lacks is reported as a labeled gap rather than a zero. You can tell the difference between "nobody" and "we don't know".
+**Visitors across several days are summed daily counts.** They aren't a deduplicated count of people across the whole date range. Google may also withhold some report data.
 
-Two things to expect:
+**The numbers won't match exactly.** Bot filtering and session definitions differ. [Compare trends rather than treating the two tools as a reconciled ledger](/help/why-is-my-traffic-lower-than-google-analytics/).
 
-**The numbers won't match GA exactly**, and they shouldn't - different bot filtering, different session definitions, [different everything](/help/why-is-my-traffic-lower-than-google-analytics/). Treat imported history as the shape of the past, not a reconciled ledger.
+**Goals, audiences and saved reports don't move.** Recreate the goals you need. Imported reports don't recreate individual visits or the sequence of events for a funnel.
 
-**Goals don't come across.** They're evaluated as events arrive and [don't backfill](/help/why-doesnt-my-goal-show-past-conversions/), imported or not.
+**Check the result before removing your old tag.** Pick several dates and compare the imported totals and breakdowns. Keep your own export of the old data too.
 
-**Universal Analytics history probably isn't there to export.** Google cut off access to it in July 2024. If you didn't take a copy then, nobody can get it back for you.
+## Can I upload a GA4 CSV instead?
 
-The column names the parser accepts are listed under [can I import a CSV](/help/can-i-import-a-csv/) - the same set works for a GA4 export or any other tool's.
+Feasible accepts [documented CSV columns](/help/can-i-import-a-csv/), not every report a tool can export. A GA4 report download isn't guaranteed to match that format.
+
+A CSV needs a `date` column, supported dimension and metric names, and daily totals rather than rates or averages. Map the fields carefully and check their meaning. Renaming an average to a total doesn't convert the data. Unknown columns stop the import.
+
+Use the direct GA4 connection when available. If you need the CSV route, [read the format first](/docs/import-export/#import) and test a small historical range before uploading the rest.
+
+**Universal Analytics is different.** Google [ended access to its data in July 2024](https://support.google.com/analytics/answer/11583528). If you didn't export it then, there's no history left there to retrieve.
