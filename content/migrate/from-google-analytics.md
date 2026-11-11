@@ -93,6 +93,10 @@ In Feasible, open **Site settings → Imports → Google Analytics**. Connect th
 Google account with access to the property, choose that property, then select a
 historical date range and press **Import Analytics history**.
 
+The import reads the selected property without filtering by hostname or data
+stream. If that property combines several sites or apps, its totals won't
+represent this website alone. Check that before importing.
+
 The last day must be before today and before Feasible started collecting traffic
 for this site. Dates must not overlap earlier traffic imports. This keeps the
 same period from being counted twice. Follow the job's progress on Imports.

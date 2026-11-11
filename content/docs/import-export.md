@@ -87,6 +87,10 @@ Connect Google Analytics from the site's Imports screen, choose a property, then
 historical date range and press **Import Analytics history**. The job runs in the background and
 reports progress or failure on that screen. Connecting alone doesn't start an import.
 
+Reports cover the selected property, without a hostname or data-stream filter. A property
+containing several websites or apps can therefore include traffic beyond this Feasible site.
+Check the property's scope before importing.
+
 Dates must end before today and before this site's collected traffic, without overlapping earlier
 traffic imports. The importer brings in daily totals and breakdowns for pages, sources, locations,
 devices, browsers, operating systems and landing pages. It doesn't recreate raw events, goals,

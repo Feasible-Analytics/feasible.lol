@@ -9,7 +9,7 @@ updated: 2026-11-11
 Yes. Connect Google Analytics 4 from **Site settings → Imports**, then choose a property and a date range.
 
 1. Open **Site settings → Imports → Google Analytics** and connect the Google account that can read the property.
-2. Choose the GA4 property. Check that it contains the website you want to import.
+2. Choose the GA4 property. The import reads property-level reports, without a hostname or data-stream filter. If it combines several websites or apps, don't treat those totals as one website's history.
 3. Choose historical dates ending before today and before Feasible started collecting traffic for this site. The range must not overlap an earlier traffic import.
 4. Press **Import Analytics history**. Follow the job's progress and any error on the Imports screen.
 
