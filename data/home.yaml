@@ -72,10 +72,10 @@ objections:
 
   - q: "Is a million really the limit?"
     a: >-
-      Yes. Most sites never reach it. If you do, we email you. Nothing switches
-      off mid-month.
-      <a href="/pricing/#enterprise" class="text-flag-700 underline">Talk to us</a>
-      if you need more.
+      The million covers pageviews and custom events across all your sites.
+      Going over doesn't stop collection or trigger overage charges. Sustained
+      overuse can lock the dashboard, so
+      <a href="/pricing/#enterprise" class="text-flag-700 underline">read the warning and grace-period policy</a>.
 
   - q: "What happens if you go away?"
     a: >-
