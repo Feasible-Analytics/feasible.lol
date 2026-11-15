@@ -13,10 +13,9 @@ The symptom is unmistakable: one country with everything in it, usually where yo
 
 **The fix** is to make your proxy forward the visitor's real address and user agent. Every reverse proxy has a one-line way to do it: nginx sets `X-Forwarded-For`, Caddy does it by default, and the [proxying docs](/docs/proxying/) have complete configurations for both.
 
-Three other places this happens:
+Two other places this happens:
 
-- **A server-side SDK.** The IP and user agent are required arguments in every one of ours, deliberately, and each ships a helper to lift them off the incoming request. A call missing them looks like a datacenter bot.
+- **A server-side call** to the events endpoint that doesn't carry the visitor's IP and user agent. It looks like a datacenter bot.
 - **A serverless function or edge worker** relaying events without forwarding the original request headers.
-- **The WordPress plugin** does all of this for you, so if you're on WordPress and seeing this, something else is in the path.
 
 If a big share of your events are also being refused as `datacenter_ip`, that's the same root cause wearing a different hat - [the health panel names it](/help/why-are-my-events-being-dropped/).

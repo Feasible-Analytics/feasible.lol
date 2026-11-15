@@ -112,12 +112,6 @@ header isn't arriving.
 The address itself is used for geolocation and the visitor identifier and is then discarded. It's
 never written to disk and never leaves the ingestion tier - see [privacy](/docs/privacy/).
 
-## WordPress does this for you
-
-The WordPress plugin proxies both routes on randomized paths under your own domain, rotates those
-paths on request, and forwards the visitor's address. If you run WordPress, that's less work than
-either block above. See [integrations](/docs/integrations/).
-
 ## Content security policy
 
 Proxying makes this easier rather than harder. Once both requests are same-origin, a strict CSP needs

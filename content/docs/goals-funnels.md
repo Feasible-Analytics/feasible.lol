@@ -54,9 +54,8 @@ submissions without being asked. The goal costs nothing; the events it counts ar
 any other, and they do count toward your monthly volume.
 
 The 404 goal is the exception: the base script can't see a 404, because as far as the browser is
-concerned an error page is just a page. That event comes from the
-[WordPress plugin](/docs/integrations/), which sees the response code server-side, or from your own
-`feasible('404')` call on your error template.
+concerned an error page is just a page. That event comes from your own `feasible('404')` call on
+your error template.
 
 The earlier `Form: Submit` event name is still accepted for existing integrations.
 

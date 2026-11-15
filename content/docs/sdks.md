@@ -1,155 +1,55 @@
 ---
 title: "SDKs and plugins"
-description: "Five dependency-free server-side SDKs, an npm browser loader, a WordPress plugin, a GTM template and a Looker Studio connector."
-lede: "Five server-side SDKs, an npm loader, WordPress, Tag Manager and Looker Studio."
+description: "Which add-ons are published, which aren't yet, and what to use today: the script tag, WPCode, a Custom HTML tag, and two you can set up from the source."
+lede: "What's published, what isn't yet, and what to use today."
 weight: 140
 ---
 
-Five server-side SDKs, a browser loader, a WordPress plugin, a Tag Manager template and a Looker
-Studio connector.
+None of our add-ons is in a package registry or the WordPress directory yet. Checked November 15,
+2026: the WordPress plugin, the npm browser loader `@feasible/tracker`, and the server-side SDKs for
+Go, Node, PHP, Python and Ruby are all written, and their source is in the product's
+[repository](https://github.com/Feasible-Analytics/app.feasible.lol) under `ecosystem/`, but none of
+them can be installed with a package manager today. They're on the way.
 
-The source for every one of them is in the product's
-[repository](https://github.com/Feasible-Analytics/app.feasible.lol) under `ecosystem/`, each with
-its own README and its own tests. If your package manager doesn't have one yet, that's where to get
-it.
+Here's what to use instead:
 
-## The server-side SDKs
-
-They exist for events that happen away from a browser: a payment webhook, a background job, an
-offline conversion, an API-only product with no pages at all.
-
-All five are dependency-free. Nothing in this list pulls an HTTP library into your
-application.
-
-| Language | Install |
+| Add-on | What works today |
 |---|---|
-| Go | `go get github.com/Feasible-Analytics/feasible-go` |
-| Node | `npm install @feasible/node` |
-| PHP | `composer require feasible/feasible-php` |
-| Python | `pip install feasible` |
-| Ruby | `gem "feasible"` |
-
-```
-// Go
-client, _ := feasible.New(feasible.Options{Domain: "example.com"})
-client.Pageview(ctx, feasible.FromRequest(r), "https://example.com/pricing")
-client.Track(ctx, feasible.FromRequest(r), "Signup", "https://example.com/signup")
-```
-
-```
-// Node
-const analytics = createClient({ domain: "example.com" });
-await analytics.pageview({ url: "https://example.com/pricing", ...visitorFromNodeRequest(req) });
-await analytics.track("Signup", { url: "…", ...visitorFromNodeRequest(req) });
-```
-
-```
-# Python
-client  = Client(domain="example.com")
-visitor = Visitor.from_request(headers=request.headers, remote_addr=request.remote_addr)
-client.pageview(url="https://example.com/pricing", **visitor.as_kwargs())
-client.event("Signup", url="…", **visitor.as_kwargs())
-```
-
-```
-# Ruby
-client  = Feasible.client(domain: "example.com")
-visitor = Feasible::Visitor.from_request(request.env)
-client.pageview(url: request.url, **visitor.to_h)
-```
-
-```
-// PHP
-$client  = new Client(domain: 'example.com');
-$visitor = Visitor::fromRequest();
-$client->pageview(...$visitor->args(), url: 'https://example.com/pricing');
-```
-
-### The visitor's address and user agent aren't optional
-
-Every one of these makes them required arguments rather than something you can forget.
-
-Without them, every server-side event is geolocated to your data center and shares one visitor
-identifier - one visitor, from one country, forever - and there's no way to repair that afterwards.
-Making it a compile error is the point.
-
-Each SDK has a helper that pulls both off an incoming application request. Unlike the ingest service,
-an SDK helper has no trusted-proxy list; it assumes your application edge has already stripped
-client-supplied forwarding headers and written its own. It takes `CF-Connecting-IP`, then the first
-entry of `X-Forwarded-For`, then the socket address.
-
-Don't use that helper on a directly exposed app that accepts those headers from clients. Build the
-visitor from the socket address instead.
-
-### Attribution
-
-An event with no browser has no referrer, so state it. `referrer`, `utm_source`, `utm_medium`,
-`utm_campaign`, `utm_content` and `utm_term` are all fields on the event. Left out, the visit is
-Direct. See [the APIs](/docs/api/#stating-attribution-for-a-server-side-event).
-
-### Shared behavior
-
-- **Defaults**: a five-second timeout and three attempts with exponential backoff. All of it is
-  configurable in the constructor.
-- **A test mode that records instead of sending.** Construct with `disabled`, or set
-  `FEASIBLE_DISABLED=1`, and every event is kept in memory where your test can assert on it. An
-  explicit `false` in code beats the environment variable, so a test suite can't be silenced by a
-  stray variable on a build machine.
-- **The drop reason comes back.** Each call returns the result, including the `x-feasible-dropped`
-  header if there was one, so a job can log why an event didn't count instead of assuming it did.
-- **A debug call** that returns the fully derived event without writing anything.
-
-There are no mobile SDKs. iOS, Android and React Native are scoped and not built - post to
-[the events endpoint](/docs/api/#sending-events) directly.
-
-## @feasible/tracker - the browser loader
-
-```
-npm install @feasible/tracker
-```
-
-```
-import { init, track } from "@feasible/tracker";
-init({ domain: "example.com" });
-await track("Signup", { props: { plan: "annual" } });
-```
-
-It loads the same script from the same host rather than bundling it, so you're never running a stale
-copy.
-
-What it adds is everything a hand-rolled tag gets wrong in a modern framework: it touches no browser
-global at module scope, so importing it in a server render is safe and does nothing; it installs the
-queue stub synchronously, so an event fired during hydration is replayed instead of throwing; `init`
-is idempotent, so a hot reload can't double-count pageviews; and `track` always settles rather than
-hanging forever when a blocker eats the request.
-
-`enable()`, `disable()` and `isEnabled()` drive the per-browser opt-out, and tell you whether the
-write happened.
-
-## WordPress
-
-The plugin serves the script and the events endpoint from your own domain on randomized paths, which
-is what gets past ad blockers, and adds the site-search and 404 tracking a theme snippet
-can't do.
-
-Settings, proxy routes, path rotation and an embedded dashboard all live under one *feasible.lol*
-menu. See [integrations](/docs/integrations/).
+| WordPress plugin | WPCode or your theme's header - [WordPress](/integrations/wordpress/) |
+| npm loader | The script tag in your root layout - [installation](/docs/installation/) |
+| Server-side SDKs | The [events API](/docs/api/#sending-events) they wrap |
+| Google Tag Manager template | A Custom HTML tag, or [import the template](#google-tag-manager) yourself |
+| Looker Studio connector | [Deploy it](#looker-studio) from the repository |
 
 ## Google Tag Manager
 
-A tag template with two tag types - load the script, or send an event - and fields for the domain,
-host, hash routing, manual pageviews, counting localhost, a properties table and a revenue amount and
-currency.
+A **Custom HTML** tag on an *All Pages* trigger works today. Use the `data-domain` form of the
+snippet there rather than the per-site path, because tag managers rewrite opaque paths:
 
-It isn't in Google's gallery yet, so import `template.tpl` yourself under
-*Templates → Tag Templates → New → Import*.
+```
+<script>window.feasible=window.feasible||function(){(window.feasible.q=window.feasible.q||[]).push(arguments)};</script>
+<script defer data-domain="example.com" src="https://app.feasible.lol/js/script.js"></script>
+```
 
-The template declares permission to inject a script from one host only. If you proxy through your own
-domain, edit that permission in your own copy.
+There's also a tag template. It isn't in Google's Community Template Gallery yet, so you import it
+yourself:
+
+1. Download
+   [`template.tpl`](https://raw.githubusercontent.com/Feasible-Analytics/app.feasible.lol/main/ecosystem/gtm-template/template.tpl)
+   from the repository.
+2. In Tag Manager, open *Templates → Tag Templates → New*.
+3. In the template editor's ⋮ menu, choose *Import* and pick the file, then save.
+
+It gives you two tag types - load the script, or send an event - with fields for the domain, host,
+hash routing, manual pageviews, counting localhost, a properties table and a revenue amount and
+currency. The template declares permission to inject a script from one host only. If you proxy
+through your own domain, edit that permission in your own copy.
 
 ## Looker Studio
 
-A community connector you deploy into your own Apps Script project with `clasp`, then open through a
+A community connector you deploy into your own Apps Script project with `clasp`, from
+[`ecosystem/looker-studio-connector/`](https://github.com/Feasible-Analytics/app.feasible.lol/tree/main/ecosystem/looker-studio-connector)
+in the repository. Its README has the exact steps. You then open it through a
 `datasources/create?connectorId=…` link. It isn't in Google's gallery.
 
 It authenticates with an API key carrying `stats:read` and `sites:read`. Self-hosters paste their
@@ -161,3 +61,16 @@ for realtime, and errors are never cached.
 
 A chart with two dimensions isn't supported and says so, rather than returning a number that looks
 right and isn't.
+
+## On the way
+
+- **The WordPress plugin.** Until it's in the directory, paste the snippet with WPCode or into a
+  child theme. [The steps](/integrations/wordpress/).
+- **The npm loader.** Every framework takes the script tag in its root layout, and the script
+  follows client-side navigation itself. `window.feasible()` works from your own code as soon as the
+  snippet's first line has run.
+- **The server-side SDKs.** Dependency-free clients for Go, Node, PHP, Python and Ruby. Each makes
+  the visitor's IP address and user agent required arguments, because a server-side event without
+  them looks like a datacenter bot.
+
+There are no mobile SDKs. iOS, Android and React Native are scoped and not built.

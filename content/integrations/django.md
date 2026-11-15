@@ -63,7 +63,7 @@ Multi-app projects often grow a second base - `admin/base.html`, `dashboard/base
 
 If Django runs behind nginx, a load balancer or Cloudflare, make sure the visitor's address is being forwarded. The ingestion health panel warns you when it isn't - otherwise every visitor collapses into one and geolocates to your datacenter.
 
-Server-side events - a webhook, a Celery task, an offline conversion - go through the Python SDK, which takes the visitor's IP and user agent as required arguments, because a call without them looks like a datacenter bot.
+Server-side events - a webhook, a Celery task, an offline conversion - are what our Python SDK is for, and it isn't published yet. Until it is, send what you can from the browser: a purchase from the page that confirms it, a signup from the page that follows it.
 
 ## Check it worked
 

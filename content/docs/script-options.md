@@ -186,8 +186,8 @@ somebody forgets:
 Outbound clicks, downloads and form submissions are custom events, so they count toward your
 monthly volume. Engagement pings never do.
 
-404 tracking and site-search tracking aren't in this script. They come from the
-[WordPress plugin](/docs/integrations/), which can see both server-side.
+404 tracking isn't in this script, because a browser can't tell an error page from any other page.
+Send it with `feasible('404')` from your error template. Site-search tracking isn't in it either.
 
 ## Tagging an element without writing JavaScript
 

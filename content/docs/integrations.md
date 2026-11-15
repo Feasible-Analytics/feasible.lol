@@ -11,16 +11,9 @@ the same instructions with your own snippet already filled in.
 
 ## WordPress
 
-There's a plugin, **feasible.lol Analytics**. It does more than paste the snippet: it serves the
-script and the events endpoint from your own domain on randomized paths, which is the part that
-survives ad blockers, and it adds the two measurements a theme can't give you - site-search
-terms and 404s.
-
-Install it, then *feasible.lol → Settings*, enter your domain as registered, and save.
-Everything else has a working default.
-
-Without the plugin, paste the snippet into your theme's `header.php` before `</head>`, or into any
-header-scripts plugin.
+Paste the snippet with a header-scripts plugin such as WPCode (*Code Snippets → Header & Footer*,
+the **Header** box), or into your child theme's `header.php` before `</head>`.
+[Step by step](/integrations/wordpress/). Our own plugin isn't in the WordPress directory yet.
 
 {{< callout title="Use a child theme" >}}
 A snippet pasted into a parent theme is erased by the next theme update, and the traffic stops with
@@ -65,22 +58,18 @@ is the form that reliably survives a build.
 One snippet in the root document. The script listens for history changes itself, so there's nothing to
 call on navigation.
 
-## npm, for a framework that hates raw script tags
+## npm
 
-Install `@feasible/tracker` and call `init` once:
+Our npm loader, `@feasible/tracker`, isn't published yet. You don't need it: every framework above
+takes the script tag in its root layout, and the script follows client-side navigation itself.
+
+To send an event from your own code, call `window.feasible()` in the browser. The snippet's first
+line is a queue stub, so a call made before the script has loaded is kept and replayed rather than
+throwing:
 
 ```
-import { init, track } from "@feasible/tracker";
-
-init({ domain: "example.com" });
-await track("Signup", { props: { plan: "annual" } });
+window.feasible("Signup", { props: { plan: "annual" } });
 ```
-
-It doesn't bundle the tracker - it loads the same file from the same host. What it adds is the things
-a hand-rolled tag gets wrong in a modern app: it's safe to import in a server render and does nothing
-there, it installs the queue stub synchronously so an event fired during hydration is replayed rather
-than throwing, `init` is idempotent so a hot reload can't double-count, and `track` always settles
-rather than hanging forever when a blocker eats the request.
 
 ## Webflow, Squarespace, Framer, Ghost
 
@@ -96,16 +85,12 @@ Three things to know:
 
 ## Google Tag Manager
 
-There's a tag template. It isn't in Google's gallery yet, so you import the file:
-*Templates → Tag Templates → New → Import*, and pick `template.tpl` from
-[the repository](https://github.com/Feasible-Analytics/app.feasible.lol) under `ecosystem/`.
-
-It gives you two tag types. One loads the script, with fields for the domain, the host, hash routing,
-manual pageviews and counting localhost. The other sends an event, with a table for properties and
-fields for a revenue amount and currency.
-
-A Custom HTML tag with the plain snippet on an *All Pages* trigger also works. Use the `data-domain`
+A Custom HTML tag with the plain snippet on an *All Pages* trigger works. Use the `data-domain`
 form there rather than the per-site path - tag managers rewrite opaque paths.
+
+There's also a tag template, with one tag type that loads the script and one that sends an event. It
+isn't in Google's gallery yet, so you import the file yourself.
+[How](/docs/sdks/#google-tag-manager).
 
 We'd still rather you didn't. A tag manager is itself among the most-blocked scripts on the web, so
 loading us through it turns one blockable request into two, and the one you added is the one more
@@ -114,8 +99,9 @@ likely to be blocked.
 ## Looker Studio
 
 There's a community connector that reads the query API. You deploy it into your own Apps Script
-project - it isn't in Google's gallery - and connect it with an API key carrying `stats:read` and
-`sites:read`.
+project from `ecosystem/looker-studio-connector/` in
+[the repository](https://github.com/Feasible-Analytics/app.feasible.lol) - it isn't in Google's
+gallery - and connect it with an API key carrying `stats:read` and `sites:read`.
 
 It exposes 23 dimensions and 11 metrics, pushes equality and contains filters down to us, and caches
 for five minutes. A chart with two dimensions isn't supported and says so, rather than returning a
@@ -123,8 +109,8 @@ number that looks right and isn't. Details on [SDKs and plugins](/docs/sdks/).
 
 ## Anything without a browser
 
-Mobile apps, background jobs, offline conversions: post to the events endpoint, or use one of the
-five server-side SDKs. See [SDKs and plugins](/docs/sdks/).
+Mobile apps, background jobs, offline conversions: post to the [events endpoint](/docs/api/#sending-events).
+Our server-side SDKs aren't published yet. See [SDKs and plugins](/docs/sdks/).
 
 There are no mobile SDKs yet - iOS, Android and React Native are scoped and not built. Post to the
 endpoint directly in the meantime.
