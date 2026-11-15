@@ -127,7 +127,7 @@ doesn't. It isn't the product.
 
 Feasible is AGPL-3.0-or-later, and the build we host is the build you can run.
 There's no cut-down edition and no feature held back for the paid plan. One Go
-binary, one SQLite file, 512 MB of RAM. If we disappear, you keep running it.
+binary, one SQLite file, nothing to tune. If we disappear, you keep running it.
 That's the point of it being there - see [open source web analytics](/open-source-web-analytics/) for the
 whole argument, including what AGPL asks of you.
 

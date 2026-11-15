@@ -1,7 +1,7 @@
 ---
 title: "Self-hosted analytics on one binary"
 seotitle: "Self-hosted analytics - run Feasible on your own server"
-description: "Self-hosted web analytics: one Go binary, one SQLite file, every feature, on a 512 MB box. AGPL-3.0-or-later, or let us host it for $9.99 a month."
+description: "Self-hosted web analytics: one Go binary, one SQLite file, every feature, on your own server. AGPL-3.0-or-later, or let us host it for $9.99 a month."
 lede: "The same build we run at app.feasible.lol, on a server you own. What it needs, what you type, and what you're taking on when you become the operator."
 aliases:
   - "/self-hosted-analytics/"
@@ -25,23 +25,21 @@ The rest of this page is about running it.
 
 ## What it takes to run
 
-No Postgres, no ClickHouse, no Redis, no queue, no Docker, no reverse proxy
-required. Nothing to tune, nothing to shard, nothing that needs a second machine
-to be healthy.
+No Postgres, no ClickHouse, no Redis, no queue, no Docker. Nothing to tune,
+nothing to shard, nothing that needs a second machine to be healthy. The one
+thing in front of it is a TLS proxy, because `serve` speaks plain HTTP.
 
-| | Minimum | Comfortable |
-|---|---|---|
-| CPU | 1 core | 2 cores |
-| Memory | **512 MB** | 2 GB |
-| Disk | 1 GB, plus your data | SSD |
-| OS | Linux, macOS or BSD - x86-64 or arm64 | |
+We haven't measured a minimum machine, so we don't publish one. The benchmarks
+in [`internal/bench/RESULTS.md`](https://github.com/Feasible-Analytics/app.feasible.lol/blob/main/internal/bench/RESULTS.md),
+taken on a 10-core laptop, measure the load instead. There are builds for Linux,
+macOS and Windows, on amd64 and arm64.
 
 At a million pageviews a month, a year of data is about 3.5 GB. One process
 accepts around 4,700 events a second for a single account, and takes about 50
 milliseconds to answer - that answer means the event is committed to disk, not
 queued. A stored event is about 210 bytes.
 
-That number matters most next to the alternative. Column-store analytics stacks
+The difference that matters is operational. Column-store analytics stacks
 are excellent at what they do, and they're a different kind of operational
 commitment - [ClickHouse's own
 documentation](https://clickhouse.com/docs/en/operations/tips) recommends 32 GB
@@ -50,7 +48,7 @@ for 2 GB.
 
 To be clear about what we're not claiming: SQLite doesn't store bytes more
 efficiently than a column store. It doesn't. The claim is operational - one file,
-one process, nothing to tune, and a person with a $4 VPS and no ops team can keep
+one process, nothing to tune, and a person with a small VPS and no ops team can keep
 it running.
 
 ## Getting it running
@@ -59,15 +57,24 @@ Grab a release binary - Linux, macOS and Windows, on amd64 and arm64, each with 
 `SHA256SUMS` file - or build from source with Go 1.26.
 
 ```bash
-cp .env.sample .env
-# set FEASIBLE_APP_HOSTED=false
+cat > feasible.env <<EOF
+FEASIBLE_ENV=production
+FEASIBLE_APP_HOSTED=false
+FEASIBLE_APP_BASE_URL=https://stats.example.com
+FEASIBLE_APP_LISTEN=127.0.0.1:19301
+FEASIBLE_APP_DATA_DIR=./data
+FEASIBLE_INGEST_SALT=$(openssl rand -hex 32)
+FEASIBLE_INGEST_TRUSTED_PROXIES=127.0.0.1
+FEASIBLE_OPERATOR_EMAIL=you@example.com
+EOF
 
-feasible db migrate
-feasible account create --email owner@example.com --name "Account owner"
-feasible serve
+set -a; . ./feasible.env; set +a
+./feasible db migrate
+./feasible account create --email you@example.com --name "Your name"
+./feasible serve
 ```
 
-That's the whole install. Four things worth knowing about it:
+That's the whole install. Five things worth knowing about it:
 
 - **Migrations never run on their own.** `feasible db migrate` is an explicit
   command, so a restart can't rewrite your schema while you're asleep.
@@ -78,13 +85,15 @@ That's the whole install. Four things worth knowing about it:
   the login page to the internet doesn't let strangers create accounts. You create
   them from the machine that holds the database. Invited teammates can still
   accept invitations, and existing users can still sign in and reset passwords.
-- **In production, three operator values are required** - `FEASIBLE_OPERATOR_NAME`, `FEASIBLE_OPERATOR_ADDRESS` and
-  `FEASIBLE_OPERATOR_EMAIL` - and the process refuses to start without them,
-  listing what's missing. They're what the legal and privacy pages show your
-  users, since on your install the operator is you, not us.
+- **In production, `FEASIBLE_OPERATOR_EMAIL` is required**, and the process
+  refuses to start without it. It's the support address the people using your
+  install write to, since on your install the operator is you, not us.
+- **`FEASIBLE_INGEST_TRUSTED_PROXIES` names your TLS proxy.** The example
+  assumes one on the same machine. Leave it out and every visitor arrives as the
+  proxy, which breaks countries and unique visitors.
 
-Every environment variable is documented in `.env.sample`, and `make check-env`
-fails the build if one isn't. The full reference - the data directory, the shared
+Every environment variable is documented in `.env.sample`, and CI fails if the
+source reads one that isn't. The full reference - the data directory, the shared
 ingest salt, email, geolocation, reverse proxies, health probes and running the
 ingest tier on its own box - is in [the self-hosting
 docs](/docs/self-hosting/).

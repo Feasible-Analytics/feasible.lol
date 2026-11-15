@@ -1,7 +1,7 @@
 ---
 title: "Open source web analytics you can read"
 seotitle: "Open source web analytics you can read and self-host"
-description: "Feasible is AGPL-3.0-or-later. Read the code, run the same build we run on a 512 MB box, or let us host it for $9.99 a month. Go and SQLite."
+description: "Feasible is AGPL-3.0-or-later. Read the code, run the same build we run on your own server, or let us host it for $9.99 a month. Go and SQLite."
 lede: "The license, the code, what self-hosting takes, and how other open-source tools compare."
 kicker: "OPEN SOURCE"
 weight: 50
@@ -13,7 +13,7 @@ faq:
   - q: "Is the self-hosted version cut down?"
     a: "No. It's the same build. Set `FEASIBLE_APP_HOSTED=false` and every feature is free and unrestricted - the API, funnels, custom properties, webhooks, the MCP server, raw event export, teams. There's no Community Edition and no license-key module."
   - q: "What does it take to run?"
-    a: "One binary and one directory of SQLite files. The floor is 1 CPU core, 512 MB of RAM and 1 GB of disk; 2 cores and 2 GB is comfortable. No Docker, no Postgres, no ClickHouse, no Redis, no queue."
+    a: "One binary and one directory of SQLite files, on a small VPS. We haven't measured a minimum machine, so we don't publish one; [the self-hosting docs](/docs/self-hosting/#how-big-a-server) have what we have measured. No Docker, no Postgres, no ClickHouse, no Redis, no queue."
   - q: "Does AGPL mean I have to open-source my website?"
     a: "No. The license concerns the analytics software, not the site you point it at. It asks you to publish source if you modify Feasible and then offer it to other people over a network."
   - q: "Is Feasible's license more permissive than Plausible's?"
@@ -62,20 +62,32 @@ the hosted and self-hosted builds to match.
 
 ## What self-hosting takes
 
-One binary. One directory of SQLite files. That's the deployment.
+One binary, one directory of SQLite files, and a TLS proxy in front. Write the settings to a file,
+then three commands:
 
 ```bash
-cp .env.sample .env          # set FEASIBLE_APP_HOSTED=false
-feasible db migrate
-feasible account create --email owner@example.com --name "Account owner"
-feasible serve
+cat > feasible.env <<EOF
+FEASIBLE_ENV=production
+FEASIBLE_APP_HOSTED=false
+FEASIBLE_APP_BASE_URL=https://stats.example.com
+FEASIBLE_APP_LISTEN=127.0.0.1:19301
+FEASIBLE_APP_DATA_DIR=./data
+FEASIBLE_INGEST_SALT=$(openssl rand -hex 32)
+FEASIBLE_INGEST_TRUSTED_PROXIES=127.0.0.1
+FEASIBLE_OPERATOR_EMAIL=you@example.com
+EOF
+
+set -a; . ./feasible.env; set +a
+./feasible db migrate
+./feasible account create --email you@example.com --name "Your name"
+./feasible serve
 ```
 
 `account create` prints a password once. Public signup is off in self-hosted
 mode. The operator creates accounts.
 
-**Requirements:** 1 CPU core, 512 MB of RAM, 1 GB of disk at the floor. Two cores
-and 2 GB is comfortable. Written in Go 1.26, pure-Go SQLite with no cgo, one
+**Requirements:** a small VPS. We haven't measured a minimum machine, so we don't
+publish one; [the self-hosting docs](/docs/self-hosting/#how-big-a-server) have what we have measured. Written in Go 1.26, pure-Go SQLite with no cgo, one
 binary, no Docker file in the repo because there's nothing to orchestrate. No
 Postgres, no ClickHouse, no Redis, no message queue.
 

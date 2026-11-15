@@ -199,7 +199,7 @@ Free isn't free when it needs a bigger box.
 
 | | What it runs on | Documented requirement |
 |---|---|---|
-| **Feasible** | One Go binary, one SQLite file | 1 core, 512 MB RAM, 1 GB disk |
+| **Feasible** | One Go binary, one SQLite file | None published. [What we've measured](/docs/self-hosting/#how-big-a-server) |
 | Umami | Node.js + PostgreSQL, 2 containers | None published |
 | Matomo | PHP + MySQL/MariaDB | Their own table: 2 CPU / 2 GB at 100k pageviews, **4 CPU / 8 GB at 1M** |
 | Plausible CE | App + ClickHouse + PostgreSQL, 3 containers | README recommends at least 2 GB |

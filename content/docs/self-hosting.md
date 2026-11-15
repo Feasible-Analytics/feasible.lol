@@ -48,8 +48,8 @@ EOF
 ```
 
 `FEASIBLE_INGEST_TRUSTED_PROXIES=127.0.0.1` assumes a TLS proxy on the same machine, which is what the
-listen address above is for. Leave it out and every visitor arrives from the proxy's address. See
-[behind a reverse proxy](#behind-a-reverse-proxy).
+listen address above is for. Leave it out and every visitor arrives from the proxy's address, which
+breaks countries and unique visitors. See [behind a reverse proxy](#behind-a-reverse-proxy).
 
 Then create the databases, make your account and start it:
 
@@ -82,7 +82,8 @@ the development salt, and the process refuses to start and names the variable.
 | `FEASIBLE_APP_BASE_URL` | The public address people type. It goes into the snippet, every email link and the sign-in redirects, so it has to be a full URL. It defaults to `http://localhost:19300`. |
 
 Everything else has a working default. `FEASIBLE_APP_LISTEN` is `127.0.0.1:19301` and
-`FEASIBLE_APP_DATA_DIR` is `./data`.
+`FEASIBLE_APP_DATA_DIR` is `./data`. The one default to change behind a proxy is
+`FEASIBLE_INGEST_TRUSTED_PROXIES`, which is empty and trusts nobody.
 
 ## How big a server
 
@@ -248,10 +249,21 @@ of reports by default, so a wrongly-classified human visitor can be recovered.
 `serve` speaks plain HTTP. Put a TLS proxy such as Caddy or nginx in front of it, and set
 `FEASIBLE_APP_BASE_URL` to the public `https://` address.
 
-Set `FEASIBLE_INGEST_TRUSTED_PROXIES` to the addresses or CIDR ranges of your load balancer and edge
-proxies. A proxy on the same machine is `127.0.0.1`. Only connections from that list may supply `X-Feasible-IP`, `CF-Connecting-IP` or
-`X-Forwarded-For`. The list is empty by default, so direct clients can't forge the address used for
-fingerprints, geolocation and IP shields.
+Set `FEASIBLE_INGEST_TRUSTED_PROXIES` to your proxy's address, comma-separated if there's more than
+one. Bare addresses and CIDR blocks both work, IPv4 or IPv6, and a proxy on the same machine is
+`127.0.0.1`:
+
+```
+FEASIBLE_INGEST_TRUSTED_PROXIES=127.0.0.1
+FEASIBLE_INGEST_TRUSTED_PROXIES=10.0.0.0/8,127.0.0.1
+```
+
+Leave it out and every visitor arrives as the proxy's address, which breaks countries and unique
+visitors. A malformed entry stops the process at start-up rather than being skipped.
+
+Only connections from that list may supply `X-Feasible-IP`, `CF-Connecting-IP` or `X-Forwarded-For`.
+The list is empty by default, so direct clients can't forge the address used for fingerprints,
+geolocation and IP shields.
 
 `X-Feasible-IP` takes precedence, followed by `CF-Connecting-IP`. An `X-Forwarded-For` chain is read
 from right to left and the nearest untrusted address is the visitor. That handles proxies which

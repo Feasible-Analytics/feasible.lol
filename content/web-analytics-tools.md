@@ -169,7 +169,7 @@ event property** all count, and seats are $240 a year each beyond the first.
 Feasible costs $9.99 a month or $99 a year: unlimited
 sites, unlimited team members, unlimited custom properties, and a million
 pageviews and custom events a month between them, kept with no time limit. Cookieless, AGPL-3.0-or-later,
-one Go binary on SQLite that runs on 512 MB of RAM. The API, funnels, custom
+one Go binary on SQLite that runs on [a small VPS](/docs/self-hosting/#how-big-a-server). The API, funnels, custom
 properties, webhooks and raw event export are in every plan and every build.
 
 Where we lose: no EU hosting, SSO, or SAML. No
