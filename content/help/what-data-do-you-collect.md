@@ -19,7 +19,7 @@ Here's the whole list. It fits on a screen.
 
 **Anything you send us:** custom event names, custom properties, and a revenue amount and currency if you're tracking that.
 
-**And one identifier:** a 64-bit hash of the user agent, the IP and your domain, keyed to today's salt. Tomorrow it's a different number and yesterday's salt is gone. [How that works](/help/how-do-you-count-unique-visitors-without-cookies/).
+**And one identifier:** a 64-bit hash of the user agent, the IP and your domain, keyed to today's salt. Tomorrow it's a different number, and no report joins the two. [How that works](/help/how-do-you-count-unique-visitors-without-cookies/).
 
 That's it. Roughly 210 bytes per event on disk. The longer read is [what privacy-friendly analytics stores, field by field](/privacy-friendly-analytics/).
 

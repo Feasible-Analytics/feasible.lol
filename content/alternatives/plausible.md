@@ -117,7 +117,7 @@ $99 a year, flat, to a million pageviews and custom events. Unlimited sites, unl
 
 **Where we beat the list:** nothing is metered except pageviews and events, and nothing is held back from the open-source build. No cut-down community edition, no feature behind a higher tier.
 
-**The cost:** we are new. Launched in 2026, US-hosted, with none of the track record Plausible, Fathom or Matomo have earned. Our tracker is 3,569 bytes gzipped, about 2.8 times bigger on the wire than Plausible's. And if you want data in the EU, we do not have an answer yet.
+**The cost:** we are new. Launched in 2026, hosted in Montreal, Canada, with none of the track record Plausible, Fathom or Matomo have earned. Our tracker is 3,629 bytes gzipped, about 2.8 times bigger on the wire than Plausible's. And if you want data in the EU, we do not have an answer yet.
 
 ## Tools that show up in these lists but are not alternatives
 

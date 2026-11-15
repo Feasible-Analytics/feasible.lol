@@ -57,7 +57,8 @@ When an event arrives, the ingest tier computes a 64-bit SipHash-2-4 of the
 user-agent string, the client IP and the site's domain. The key for that hash is
 a salt that changes at midnight UTC and is never stored.
 
-**A visitor who comes back tomorrow is new.** Yesterday's key is gone.
+**A visitor who comes back tomorrow is new.** No report joins one day's numbers
+to the next.
 
 **The same person on two sites counts twice.** The domain is part of the hash.
 
@@ -81,14 +82,15 @@ at country, region, and city.
 
 **Google Analytics 4** sets cookies and connects analytics to an advertising
 business. Its script measured 148,590 bytes gzipped on September 8, 2026.
-Feasible measured 3,569 bytes.
+Feasible's measured 3,629 on November 15, 2026.
 
 **Other privacy-friendly tools** also avoid cookies and cross-site identity. The
 main differences are price and limits. [Compare them](/compare/pricing/).
 
 ## Where we're not the best answer
 
-Feasible is a US service. If EU-only hosting is required, self-host it or choose
+Feasible is run from Oregon on a server in Montreal, Canada, with no EU region.
+If EU-only hosting is required, self-host it or choose
 an EU-hosted product. We also have no SSO, SAML, mobile SDKs, or report that
 follows one person over time.
 

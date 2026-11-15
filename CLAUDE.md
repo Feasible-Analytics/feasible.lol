@@ -108,11 +108,20 @@ make a page factually incorrect.
   Community Edition, no feature gated to the paid plan, raw export and the full
   API in every copy.
 - **Our tracking script is not smaller than Plausible's** — it is roughly 2.8×
-  bigger on the wire. Ours is 3,569 bytes gzipped. The one true, reproducible
-  comparison is "about 42× smaller than Google Analytics".
+  bigger on the wire. Ours is 3,629 bytes gzipped (November 15, 2026). The one
+  true, reproducible comparison is "about 40× smaller than Google Analytics".
+  Where the exact count isn't needed, say "about 3.6 KB".
 - **Google Analytics is not illegal in the EU.** The 2022 rulings were real, but
   the EU–US Data Privacy Framework adequacy decision of 2023-07-10 removed the
   transfer ground they rested on.
+- **The hosted service is not in the United States.** It runs on a server in
+  Montreal, Canada. Cloudmanic Labs, the company, is in Oregon. There's no EU
+  region. Don't add legal claims about Canada.
+- **Old salts are not unrecoverable.** Each day's salt is an HMAC-SHA256 of
+  one deployment secret and the UTC day number, so whoever holds the secret can
+  derive any past day's salt. Say the daily salts are never stored and reports
+  never join days; someone holding the secret and the database could test
+  guesses, and someone holding only the database can't.
 - **Retention is not five years.** Nothing in the app ages analytics data out.
   It's kept while the account is open and deleted 90 days after a subscription
   stops paying. Say "unlimited data retention".

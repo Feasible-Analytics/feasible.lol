@@ -8,7 +8,7 @@ checked: 2026-09-03
 weight: 50
 verdict: |
   If your data has to stay in the EU, Simple Analytics hosts in the Netherlands
-  and we host in the United States - that's the whole decision, and price
+  and we host in Montreal, Canada - that's the whole decision, and price
   shouldn't move you. If you're a team, the per-seat pricing is where this gets
   expensive: five people at a million a month is $1,560 a year there and $99
   here.
@@ -27,8 +27,8 @@ faq:
       month works out at $1,560 a year. Feasible has no seat pricing at all.
   - q: "Where is Simple Analytics data stored?"
     a: >-
-      In the Netherlands, so inside the EU. Feasible is hosted in the United
-      States by Cloudmanic Labs, with international transfers handled by
+      In the Netherlands, so inside the EU. Feasible is hosted in Montreal,
+      Canada, by Cloudmanic Labs, a company in Oregon, with international transfers handled by
       standard contractual clauses through our DPA. If EU residency is a hard
       requirement, that decides it.
   - q: "Does Simple Analytics have a free plan?"
@@ -112,7 +112,7 @@ nothing.
 | Sites | Unlimited | 10 on the paid plan |
 | Retention | Unlimited | 3 years |
 | Free plan | No - 30-day trial, no card | Yes, with a badge and 30-day retention |
-| Data location | United States | Netherlands |
+| Data location | Montreal, Canada | Netherlands |
 | Cookies on visitors | None | None |
 | Funnels | Yes | No |
 | Custom properties | Yes | Metadata on events |
@@ -130,8 +130,8 @@ nothing.
 
 ## The script
 
-Measured September 8, 2026 with `gzip -9`: Feasible 3,569 bytes, Simple
-Analytics 3,826. Close enough that neither of us should make a fuss about it,
+Measured with `gzip -9`: Simple Analytics 3,826 bytes on September 8, 2026,
+Feasible 3,629 on November 15, 2026. Close enough that neither of us should make a fuss about it,
 and both a rounding error next to Google's 148,590.
 
 ## When the numbers look wrong
@@ -180,8 +180,8 @@ and it's better to see that on your own site than read about it.
 
 ## Where Simple Analytics wins
 
-**EU hosting.** Their data stays in the Netherlands. Cloudmanic Labs is in
-Oregon, and our international transfers run on standard contractual clauses
+**EU hosting.** Their data stays in the Netherlands. Ours is in Montreal,
+Canada, Cloudmanic Labs is in Oregon, and our international transfers run on standard contractual clauses
 through our DPA. If EU residency is a requirement, that's the end of the
 conversation and you should buy theirs.
 

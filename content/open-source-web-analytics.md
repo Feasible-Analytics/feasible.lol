@@ -119,7 +119,7 @@ calls for 2 GB at 100,000 monthly pageviews and 8 GB at one million.
 | Raw event export | Yes | Yes |
 | Monthly limit | Whatever your box does | 1,000,000 pageviews and events, then talk to us |
 | Retention | Your disk, your rules | Unlimited while your account is open |
-| Data location | Wherever you run it | United States |
+| Data location | Wherever you run it | Montreal, Canada |
 | Upgrades, backups, being paged at 3 a.m. | You | Us |
 
 We sell the hosted service. The public source is your way out if we disappear.

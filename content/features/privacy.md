@@ -6,7 +6,7 @@ weight: 20
 note: |
   The visitor identifier is pseudonymous, not anonymous, and our own privacy doc
   says so - somebody holding the shared salt and the stored hashes could
-  brute-force candidates. We're also in Oregon, not the EU. There's no EU region
+  brute-force candidates. We're also in Oregon, with our server in Montreal, Canada. There's no EU region
   to pick, and international transfers run on standard contractual clauses
   through the DPA.
 ---
@@ -51,11 +51,13 @@ The salt is the key, not a prefix. Each ingester derives the day's salt locally
 as an HMAC-SHA256 of a shared secret and the UTC day number. **No salt is ever
 written to a database.** Today's and yesterday's are held in memory - yesterday's
 only so a visit that started at 23:58 doesn't split in two - and when the day
-rolls over, the old one is gone and unrecoverable.
+rolls over, the old one is dropped from memory. Anyone holding the shared secret
+could derive it again, and with the database could test guesses against the
+stored hashes. Somebody holding only the database can't.
 
-So a returning visitor is a new person tomorrow. That's the trade: we can't
-build a profile across days because we've thrown away the only thing that would
-let us. It's also why Feasible has no user-level report, no cross-site
+So a returning visitor is a new person tomorrow. That's the trade: nothing in
+Feasible joins one day's identifiers to the next, so there's no profile across
+days. It's also why Feasible has no user-level report, no cross-site
 identity and no cohort analysis. Those need a durable identifier, and there
 isn't one.
 

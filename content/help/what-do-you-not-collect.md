@@ -11,7 +11,7 @@ The list that matters more than [the one about what we do collect](/help/what-da
 
 **No IP address on disk.** The address is used in memory for the country lookup and the daily hash, then dropped. The stored event has nowhere to put one - [there's no field for it](/help/do-you-store-ip-addresses/).
 
-**No identifier that survives the day.** The visitor hash is rebuilt from a new salt every UTC day, and the old salt is unrecoverable. Nobody can join Tuesday's visitors to Monday's, including us.
+**No identifier that survives the day.** The visitor hash is rebuilt from a new salt every UTC day, daily salts are never stored, and no report joins Tuesday's visitors to Monday's. [Who could, and how](/help/how-do-you-count-unique-visitors-without-cookies/#we-call-it-pseudonymous-not-anonymous).
 
 **No cross-site tracking.** Your domain is part of the hash input, so the same person on two customers' sites is two unrelated numbers. There's no network, no shared audience, no lookalike anything.
 

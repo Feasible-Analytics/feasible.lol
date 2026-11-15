@@ -61,8 +61,9 @@ Two design decisions make our hash useless for that:
 - **The site's domain is an input.** The same browser on two different sites
   produces two unrelated numbers. There's nothing to join on.
 - **The key changes every UTC day and is never stored.** The number isn't
-  stable across time. Tomorrow's can't be derived from today's, by us or by
-  anyone who took the database.
+  stable across time, and no report joins one day to the next. Each day's key
+  comes from a deployment secret and the date, so somebody who took only the
+  database can't rebuild it.
 
 Feasible doesn't read canvas, audio, fonts, GPU, battery, or installed plugins.
 
@@ -100,7 +101,7 @@ audiences. If it matters, [serve the script from your own domain](/docs/proxying
 
 {{< snippet >}}
 
-3,569 bytes gzipped. It sets no cookie and loads no second script.
+About 3.6 KB gzipped. It sets no cookie and loads no second script.
 
 ---
 

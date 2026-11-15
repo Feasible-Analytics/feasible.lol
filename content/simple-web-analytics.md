@@ -98,7 +98,8 @@ paths by account, or feature-adoption cohorts. That's a different tool. PostHog
 and Matomo both go deeper there.
 
 **You need EU-only data residency as a hard requirement.** We're a US company in
-Oregon. [Self-hosting](/open-source-web-analytics/) solves it; our hosted service
+Oregon, our server is in Montreal, Canada, and there's no EU region.
+[Self-hosting](/open-source-web-analytics/) solves it; our hosted service
 doesn't.
 
 If any of those describe you, choose another tool.
@@ -115,7 +116,7 @@ One snippet in your `<head>`:
 
 {{< snippet >}}
 
-It's 3,569 bytes gzipped. It automatically counts outbound clicks, downloads,
+It's about 3.6 KB gzipped. It automatically counts outbound clicks, downloads,
 forms, scroll depth, and single-page-app routes. The health panel tells you when
 an event fails and why.
 

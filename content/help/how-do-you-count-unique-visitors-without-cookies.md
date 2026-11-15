@@ -4,7 +4,7 @@ seotitle: "Cookieless tracking: how it works, and what it costs"
 description: "How cookieless tracking works, which methods are worse than the cookie they replaced, and what a daily-rotating hash gives up in exchange."
 category: "privacy-and-the-law"
 weight: 60
-updated: 2026-09-06
+updated: 2026-11-15
 ---
 
 With a hash that expires every night. The [technical privacy doc](/docs/privacy/) has the derivation in full.
@@ -29,11 +29,11 @@ There are three answers in common use, and they are not equally good.
 
 ## How ours works
 
-When an event arrives we compute a SipHash of the visitor's user agent, their IP address and your domain, keyed by a salt derived from today's UTC date. The result is a 64-bit number. Two hits from the same browser on the same day produce the same number, which is what makes "unique visitors" mean anything. That's the whole mechanism.
+When an event arrives we compute a SipHash of the visitor's user agent, their IP address and your domain, keyed by a salt derived from one deployment secret and today's UTC date. The result is a 64-bit number. Two hits from the same browser on the same day produce the same number, which is what makes "unique visitors" mean anything. That's the whole mechanism.
 
 Three properties fall out of it:
 
-- **It expires.** Tomorrow the salt is different, so the same person is a different number. Old salts aren't stored anywhere and can't be reconstructed. Nobody can join Tuesday's visitors to Monday's - not you, not us, not somebody holding our database.
+- **It expires.** Tomorrow the salt is different, so the same person is a different number, and no report joins Tuesday's visitors to Monday's. Daily salts are never stored. Each one is worked out in memory from the deployment secret and the date, and yesterday's is derived too, only so a visit that crosses midnight stays one visit.
 - **It doesn't cross sites.** Your domain is an input, so the same person visiting two customers of ours produces two unrelated numbers.
 - **It never lands on the visitor's device.** No cookie, no localStorage identifier, nothing to consent to. [Which is why most sites don't need a banner](/help/do-i-need-a-cookie-banner/).
 
@@ -43,7 +43,7 @@ The IP address is used in memory to compute that hash and a rough location, then
 
 The distinction is deliberate.
 
-Somebody holding both the current salt and the stored hashes could test candidate user-agent-and-IP combinations against them. That's a real, if narrow, attack, and it means the data is pseudonymous personal data under GDPR rather than truly anonymous.
+Somebody holding both our deployment secret and the database could work out any day's salt and test candidate user-agent-and-IP combinations against the stored hashes. Somebody holding only the database can't. That's a real, if narrow, attack, and it means the data is pseudonymous personal data under GDPR rather than truly anonymous.
 
 Plenty of vendors write "anonymous" here. We won't, because it isn't true, and a privacy claim that doesn't survive scrutiny is worse than none. If you're writing your own policy, [we've drafted the paragraph](/help/what-should-my-privacy-policy-say/) with that wording already right.
 

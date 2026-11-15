@@ -1,7 +1,7 @@
 ---
 title: "Feasible vs Google Analytics"
 seotitle: "Feasible vs Google Analytics 4 - side by side"
-description: "Google Analytics is free, 148 KB of script, and needs a consent banner. Feasible is $99 a year, 3,569 bytes, and no banner for most sites."
+description: "Google Analytics is free, 148 KB of script, and needs a consent banner. Feasible is $99 a year, 3.6 KB, and no banner for most sites."
 lede: "Google Analytics costs nothing and takes everything. Here's the trade, itemized, with Google's own documentation as the source."
 versus: "Google Analytics 4"
 checked: 2026-09-03
@@ -35,8 +35,8 @@ faq:
       design consequence, not legal advice, and the rules vary by country - check with your own lawyer if you're somewhere strict.
   - q: "How much smaller is the Feasible script than Google's?"
     a: >-
-      About 42 times. Measured September 8, 2026 with `gzip -9`: Feasible 3,569
-      bytes, Google's gtag.js 148,590 bytes. And gtag.js fetches more after it
+      About 40 times. Measured with `gzip -9`: Google's gtag.js 148,590 bytes on
+      September 8, 2026, Feasible 3,629 bytes on November 15, 2026. And gtag.js fetches more after it
       loads.
 ---
 
@@ -49,14 +49,14 @@ one is dated.
 
 ## The script
 
-We measured both on September 8, 2026, with `gzip -9`:
+Measured with `gzip -9`, Google's on September 8, 2026 and ours on November 15, 2026:
 
 | | Raw bytes | Gzipped |
 |---|---:|---:|
-| Feasible - `app.feasible.lol/js/script.js` | 7,490 | **3,569** |
+| Feasible - `app.feasible.lol/js/script.js` | 7,598 | **3,629** |
 | Google Analytics 4 - `gtag.js` | 427,812 | **148,590** |
 
-That's about 42 times bigger. Reproduce it yourself:
+That's about 40 times bigger. Reproduce it yourself:
 
 ```
 curl -H 'Accept-Encoding: identity' <url> | gzip -9 | wc -c
@@ -77,8 +77,8 @@ may lead to loss in data."
 
 Feasible sets no cookie on your visitors, ever. It doesn't fingerprint them
 either - the identifier is a SipHash of user agent, address and domain, keyed to
-a salt that changes every UTC day and is then unrecoverable. Nothing is stored
-that can be turned back into a person.
+a salt that changes every UTC day. Daily salts are never stored, and no report
+joins one day's visitors to the next.
 
 **Most sites won't need a consent banner for Feasible.** That's a design
 consequence, not a legal opinion, and the rules vary by country - the details
@@ -181,7 +181,7 @@ company has no exposure to any of it either way.
 | | Feasible | Google Analytics 4 |
 |---|---|---|
 | Price | $9.99/mo, $99/yr | Free |
-| Tracking script (gzipped) | 3,569 bytes | 148,590 bytes |
+| Tracking script (gzipped) | 3,629 bytes | 148,590 bytes |
 | Cookies on your visitors | None | Yes |
 | Consent banner | Not needed for most sites | Yes, in the EU/UK |
 | Event-level retention | Unlimited | 2 or 14 months (standard properties) |
@@ -228,7 +228,7 @@ on it, and neither should you.
 The claim is narrower and easier to check. GA4 asks you to load 148 KB, show a
 banner, accept a 14-month wall on the analysis you care about, live with rows
 you can't see and can't unhide, and send your visitors' behavior to a company
-whose business is advertising. Feasible asks for 3,569 bytes and $99 a year.
+whose business is advertising. Feasible asks for about 3.6 KB and $99 a year.
 
 If you're moving, connect your GA4 property and import a historical date range.
 Check the imported reports before removing the old tracker. See

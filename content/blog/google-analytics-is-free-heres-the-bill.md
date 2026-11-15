@@ -57,18 +57,18 @@ You can't price that line. You can only notice that it happened, and ask what yo
 
 ## A 148 KB script
 
-Measured on September 8, 2026, with `curl -H 'Accept-Encoding: identity' <url> | gzip -9 | wc -c`:
+Measured with `curl -H 'Accept-Encoding: identity' <url> | gzip -9 | wc -c`, Google's on September 8, 2026 and ours again on November 15, 2026:
 
 | Script | Raw | gzip -9 |
 |---|---|---|
 | Google `gtag.js` | 427,812 B | 148,590 B |
-| Feasible | 7,490 B | 3,569 B |
+| Feasible | 7,598 B | 3,629 B |
 
-Over the wire on the day we measured, `gtag.js` came in at 147,171 bytes against our roughly 3.5 KB. About 42 times. And `gtag.js` is only the first request - it pulls more payloads once it loads, so the real figure is worse than the table.
+Over the wire on September 8, `gtag.js` came in at 147,171 bytes. Ours is about 3.6 KB. About 40 times. And `gtag.js` is only the first request - it pulls more payloads once it loads, so the real figure is worse than the table.
 
 Reproduce it yourself. Scripts change; that's why we date ours.
 
-While we're being straight about measurements: our script isn't the smallest in the category. Plausible's is 1,285 bytes gzipped, comfortably under half of ours. The 42× is against Google, and that's the only script comparison we'll make.
+While we're being straight about measurements: our script isn't the smallest in the category. Plausible's is 1,285 bytes gzipped, comfortably under half of ours. The 40× is against Google, and that's the only script comparison we'll make.
 
 ## Your visitors' behavior funds advertising
 
@@ -97,7 +97,7 @@ That's what [a one-page dashboard](/features/dashboard/) is for, and why we buil
 
 ## What $99 buys instead
 
-No banner for most sites. No thresholding, ever - if a row exists we show it. No time limit on your data. A 3,569-byte script. Raw event export as a button, not a plan tier. Unlimited sites and unlimited teammates. A [health panel](/features/) that names every dropped event and why, because failing silently is the actual sin here.
+No banner for most sites. No thresholding, ever - if a row exists we show it. No time limit on your data. A 3.6 KB script. Raw event export as a button, not a plan tier. Unlimited sites and unlimited teammates. A [health panel](/features/) that names every dropped event and why, because failing silently is the actual sin here.
 
 And a company whose revenue is your subscription, which is a shorter sentence than any privacy policy.
 

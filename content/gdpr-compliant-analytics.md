@@ -16,7 +16,7 @@ faq:
   - q: "Do you offer a DPA?"
     a: "Yes. It's part of the terms and needs no signature. It includes sub-processors, a 72-hour breach notice, standard contractual clauses, and the UK Addendum."
   - q: "Where is the data stored?"
-    a: "The hosted service is in the United States. There's no EU region. Use self-hosting or another vendor if EU-only storage is required."
+    a: "The hosted service runs on a server in Montreal, Canada, and the company is in Oregon. There's no EU region. Use self-hosting or another vendor if EU-only storage is required."
   - q: "Is Google Analytics GDPR compliant?"
     a: "There's no current EU-wide ban on Google Analytics. The practical drawbacks are consent banners, retention limits, thresholded reports, and possible sampling."
   - q: "What about CCPA and PECR?"
@@ -49,11 +49,13 @@ work is smaller, not zero.
 hash, then discard it before writing to disk.
 
 **Then, a pseudonymous number.** A 64-bit SipHash of the user agent, the IP and
-the site domain, keyed with a salt derived from the current UTC day. The salt is
-never stored in a database and changes at midnight.
+the site domain, keyed with a salt derived from a deployment secret and the current UTC day.
+The daily salt is never stored and changes at midnight UTC.
 
-That number is **pseudonymous, not anonymous**. It can't be reversed, and its
-key is gone within a day. It still started with personal data.
+That number is **pseudonymous, not anonymous**. Reports never join one day's
+numbers to the next, and somebody holding only the database can't reverse it.
+Somebody who also held the deployment secret could test guesses, and it started
+with personal data either way.
 
 **Ordinary traffic data.** Page path, page title, referrer, UTM parameters,
 country, region, city, device type, screen bucket, browser, OS, language, and any
@@ -140,7 +142,8 @@ The practical drawbacks are simpler:
 
 ## What we store, where, and under what contract
 
-**Where.** The hosted service runs in the United States. There's no EU region.
+**Where.** The hosted service runs on a server in Montreal, Canada. Cloudmanic
+Labs is in Oregon. There's no EU region.
 The DPA uses standard contractual clauses and the UK Addendum.
 
 For EU-only storage, [self-host Feasible](/open-source-web-analytics/) in the EU

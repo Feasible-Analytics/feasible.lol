@@ -117,7 +117,8 @@ storage and disaster recovery. Their categories and responsibilities are listed 
 We don't sell or rent visitor data, disclose it to billing or email providers, or use it for
 advertising.
 
-Cloudmanic Labs is in Oregon, USA. International transfers are handled by standard contractual
+Cloudmanic Labs is in Oregon, USA, and the hosted service runs on a server in Montreal, Canada.
+International transfers are handled by standard contractual
 clauses incorporated through the DPA. If you [run it yourself](/docs/self-hosting/), the data is
 wherever you put it and none of our providers are involved.
 
@@ -149,7 +150,7 @@ obligations, is what remains. The timetable is on the [pricing page](/pricing/).
 
 ## Where the data lives
 
-For the hosted service, in one SQLite database per account on encrypted volumes supplied by our
+For the hosted service, on a server in Montreal, Canada, in one SQLite database per account on encrypted volumes supplied by our
 compute host. Infrastructure providers are sub-processors and are named with their data and region on
 the [current sub-processor list](https://feasible.lol/legal/subprocessors).
 
