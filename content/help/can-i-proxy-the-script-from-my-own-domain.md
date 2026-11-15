@@ -16,7 +16,7 @@ You proxy two things - the script and the endpoint that receives events - throug
 
 `data-api` is used verbatim, and a relative path is fine. Full Caddy and nginx configurations are in the [proxying docs](/docs/proxying/).
 
-**The one thing to get right: your proxy has to forward the visitor's real IP address and user agent.** If it doesn't, every event arrives looking like it came from your server, and you get one country, one visitor and no geography at all. It's the single most common way a proxy setup goes wrong, and the [health panel](/help/why-are-my-events-being-dropped/) watches for that pattern - it tells you which header the address was read from, and warns when it's reading the socket instead. [What that looks like when it happens](/help/why-is-everyone-showing-up-in-one-country/).
+**The one thing to get right: your proxy has to forward the visitor's real IP address and user agent.** If it doesn't, every event arrives looking like it came from your server: one visitor and no geography, and if your server is at a hosting provider, events filed as `datacenter_ip` and left out of your reports. It's the single most common way a proxy setup goes wrong, and the [health panel](/help/why-are-my-events-being-dropped/) watches for that pattern - it tells you which header the address was read from, and warns when it's reading the socket instead. [What that looks like when it happens](/help/why-is-everyone-showing-up-in-one-country/).
 
 One more: **Content Security Policy.** Allow the origin in **both** `script-src` and `connect-src`. Getting one and missing the other means the script loads and then silently can't send anything. There's no `nonce` support.
 

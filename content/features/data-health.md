@@ -30,7 +30,11 @@ The numbers are just wrong, in a way that looks plausible for months.
 
 So there's a warning for it. When more than half of at least twenty requests
 resolve straight from the socket rather than a forwarded header, the panel says
-so in plain words. There's a second warning when your pages are still running an
+so in plain words. On the hosted service, that's a request from a hosting
+provider's address that names no visitor, which is what a proxy or server
+passing events on without the address looks like. A browser doesn't name one
+either, but a visitor's own connection isn't a hosting provider's, so ordinary
+visits don't count toward it. There's a second warning when your pages are still running an
 old version of the tracking script.
 
 ## Send a test event
