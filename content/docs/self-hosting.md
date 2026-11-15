@@ -11,20 +11,92 @@ exists in the hosted version.
 The software is **AGPL-3.0-or-later**. You can run, modify and self-host it freely. If you offer it
 to others as a network service, you have to make your source available to those users.
 
+## Get the binary
+
+Download the archive for your platform from the
+[latest release](https://github.com/Feasible-Analytics/app.feasible.lol/releases/latest). There are
+builds for Linux, macOS and Windows, on amd64 and arm64, and a `SHA256SUMS` file to check them
+against.
+
 ```
+tar -xzf feasible_*_linux_amd64.tar.gz
+./feasible --version
+```
+
+Or build it from source with Go 1.26 or newer:
+
+```
+go build -o feasible ./cmd/feasible
+```
+
+## Start it
+
+Write the configuration to a file, with your own hostname and email. The salt is generated once here
+and has to stay the same afterwards, because it's part of how visitors are counted each day.
+
+```
+cat > feasible.env <<EOF
+FEASIBLE_ENV=production
+FEASIBLE_APP_HOSTED=false
+FEASIBLE_APP_BASE_URL=https://stats.example.com
+FEASIBLE_APP_LISTEN=127.0.0.1:19301
+FEASIBLE_APP_DATA_DIR=./data
+FEASIBLE_INGEST_SALT=$(openssl rand -hex 32)
+FEASIBLE_INGEST_TRUSTED_PROXIES=127.0.0.1
+FEASIBLE_OPERATOR_EMAIL=you@example.com
+EOF
+```
+
+`FEASIBLE_INGEST_TRUSTED_PROXIES=127.0.0.1` assumes a TLS proxy on the same machine, which is what the
+listen address above is for. Leave it out and every visitor arrives from the proxy's address. See
+[behind a reverse proxy](#behind-a-reverse-proxy).
+
+Then create the databases, make your account and start it:
+
+```
+set -a; . ./feasible.env; set +a
 ./feasible db migrate
+./feasible account create --email you@example.com --name "Your Name"
 ./feasible serve
 ```
 
-That's the whole deployment.
+`account create` prints a generated password once. Sign in at your base URL, add a site, and
+[install the snippet](/docs/installation/).
 
 `serve` runs the dashboard, the API, the tracker and ingestion in one process, which is what almost
-every self-hoster should run. The other commands are `ingest`, `db backup`, `rollup`, `seed`,
-`api-key`, `mcp`, `billing`, `comp` and `account`.
+every self-hoster should run. The other commands are `ingest`, `db migrate`, `db backup`, `rollup`,
+`imports`, `seed`, `api-key`, `mcp`, `billing`, `comp`, `account`, `avatar` and `mail`.
+`./feasible help` describes each one.
 
-It runs on 1 core, 512 MB of RAM and 1 GB of disk. Two cores and 2 GB is comfortable. There's nothing
-to tune, no column store to size, and no cluster to keep in quorum - the operational claim here is
-simplicity, not that SQLite beats a column store at anything.
+## Required settings
+
+A production install with hosted mode off needs these five. Leave out the operator email, or keep
+the development salt, and the process refuses to start and names the variable.
+
+| Variable | What it does |
+|---|---|
+| `FEASIBLE_ENV=production` | Production mode. It defaults to `development`, which reads `.env` and accepts the development salt. |
+| `FEASIBLE_APP_HOSTED=false` | Turns hosted mode off. It defaults to `true`. [What changes](#turn-off-hosted-mode). |
+| `FEASIBLE_INGEST_SALT` | At least 32 characters, and not the development default. Set it once and don't change it. |
+| `FEASIBLE_OPERATOR_EMAIL` | The support address the people using your install write to. It's the only `FEASIBLE_OPERATOR_*` setting. |
+| `FEASIBLE_APP_BASE_URL` | The public address people type. It goes into the snippet, every email link and the sign-in redirects, so it has to be a full URL. It defaults to `http://localhost:19300`. |
+
+Everything else has a working default. `FEASIBLE_APP_LISTEN` is `127.0.0.1:19301` and
+`FEASIBLE_APP_DATA_DIR` is `./data`.
+
+## How big a server
+
+We haven't measured a minimum machine, so we don't publish one. The benchmarks we have are in
+[`internal/bench/RESULTS.md`](https://github.com/Feasible-Analytics/app.feasible.lol/blob/main/internal/bench/RESULTS.md),
+taken on a 10-core laptop:
+
+- Under sustained load, one account takes about 4,700 events a second, each committed to disk before
+  it's acknowledged. A site doing a million pageviews a month averages under half an event a second.
+- A million pageviews, with every index and roll-up built, is about 300 MB on disk.
+- A 12-month report on that data answers in 0.4 to 0.7 seconds from the roll-ups.
+
+There's nothing to tune, no column store to size, and no cluster to keep in quorum. The operational
+claim here is simplicity, not that SQLite beats a column store at anything.
 
 ## Turn off hosted mode
 
@@ -41,10 +113,7 @@ and:
 - public password signup and Google signup are **disabled**, so exposing the login page to the
   internet doesn't let strangers create accounts. Invited team members can still accept, and existing
   users can sign in and reset passwords;
-- the legal pages substitute your own operator identity.
-
-In production with hosted mode off, all three `FEASIBLE_OPERATOR_*` values are required, and the
-process refuses to start while any is missing, naming the ones it wants.
+- the app's support link points at `FEASIBLE_OPERATOR_EMAIL` instead of us.
 
 ## Creating the first account
 
@@ -56,17 +125,19 @@ Because public signup is off, accounts are created by the operator, from the mac
 ```
 
 It makes a verified owner with no trial dates and prints a generated password once - generated rather
-than accepted on the command line, so it's never in your shell history or the process list. Everyone
-else joins by invitation from inside the app.
+than accepted on the command line, so it's never in your shell history or the process list. Run it
+again for each separate account. Teammates join by invitation from inside the app.
 
 ## The data directory
 
 Everything lives under `FEASIBLE_APP_DATA_DIR`: `system.db`, one SQLite database per account, the
-geolocation files, the bot and spam lists, and the two keys. Back up that directory and you've backed
-up the entire install.
+geolocation files, the bot and spam lists, and two keys, `app.key` and `script.key`. Back up that
+directory and you've backed up the entire install.
 
-Use `./feasible db backup` rather than copying files. It takes a proper consistent snapshot; copying
-a SQLite file that's being written to gives you a file that looks fine and isn't.
+Use `./feasible db backup` rather than copying database files. It writes a consistent snapshot of
+every database to `backups/` in the data directory, or wherever `--out` points. Copying a SQLite file
+that's being written to gives you a file that looks fine and isn't. The two key files are safe to
+copy as they are.
 
 ## Migrations never run on boot
 
@@ -77,8 +148,10 @@ A binary newer than its databases refuses to start and tells you to run `db migr
 
 ## Configuration
 
-Every variable is documented in `.env.sample`, with a comment and a default. A variable that isn't in
-that file doesn't exist - the build fails if the source reads one that's missing.
+Every variable is documented in
+[`.env.sample`](https://github.com/Feasible-Analytics/app.feasible.lol/blob/main/.env.sample), with a
+comment and a default. A variable that isn't in that file doesn't exist: CI fails if the source reads
+one that's missing.
 
 Values resolve from `$CONFIG_DIR/<NAME>` (for Docker and systemd secrets), then the environment, then
 `.env` outside production.
@@ -97,15 +170,27 @@ Lose the app key and every enrolled authenticator app stops working.
 
 ## Email
 
-Set `FEASIBLE_APP_MAIL_TRANSPORT=smtp` and point it at a relay. The default `log` transport writes
-rendered messages to `tmp/mail/` and sends nothing, which is what makes local development need no
-mail service at all.
+Set `FEASIBLE_APP_MAIL_TRANSPORT=smtp` and `FEASIBLE_SMTP_HOST` to your relay, plus
+`FEASIBLE_SMTP_USERNAME` and `FEASIBLE_SMTP_PASSWORD` if it needs them. The port defaults to 587 with
+STARTTLS. Or set the transport to `ses` to send through the Amazon SES API with the `FEASIBLE_AWS_*`
+variables.
 
-An unknown transport name is an error rather than a silent fallback. A box that quietly stopped
-sending would look healthy while nobody could reset a password.
+The default `log` transport writes rendered messages to `tmp/mail/` and sends nothing, which is what
+makes local development need no mail service at all. Leave it on in production and password resets
+and reports never arrive.
+
+An unknown transport name is an error rather than a silent fallback, and so is `smtp` with no host. A
+box that quietly stopped sending would look healthy while nobody could reset a password.
 
 Set `FEASIBLE_APP_MAIL_FROM` to an address your relay is allowed to send as. A relay rejecting a From
 address it doesn't own is the most common reason a self-hoster's mail silently stops arriving.
+
+## Google
+
+Sign-in with Google, the [GA4 import](/docs/import-export/#google-analytics-4) and
+[Search Console](/docs/import-export/#google-search-console) all use one OAuth client:
+`FEASIBLE_GOOGLE_CLIENT_ID` and `FEASIBLE_GOOGLE_CLIENT_SECRET`. Set both or neither. Leave them
+unset and those features hide themselves.
 
 ## Geolocation
 
@@ -160,8 +245,11 @@ of reports by default, so a wrongly-classified human visitor can be recovered.
 
 ## Behind a reverse proxy
 
+`serve` speaks plain HTTP. Put a TLS proxy such as Caddy or nginx in front of it, and set
+`FEASIBLE_APP_BASE_URL` to the public `https://` address.
+
 Set `FEASIBLE_INGEST_TRUSTED_PROXIES` to the addresses or CIDR ranges of your load balancer and edge
-proxies. Only connections from that list may supply `X-Feasible-IP`, `CF-Connecting-IP` or
+proxies. A proxy on the same machine is `127.0.0.1`. Only connections from that list may supply `X-Feasible-IP`, `CF-Connecting-IP` or
 `X-Forwarded-For`. The list is empty by default, so direct clients can't forge the address used for
 fingerprints, geolocation and IP shields.
 
@@ -225,7 +313,8 @@ Create them under *Settings → People → API keys*, or from the command line:
 ./feasible api-key create --team 1 --user 1 --name "Reporting"
 ```
 
-The per-key hourly limit defaults to `FEASIBLE_API_RATE_LIMIT`, which is 10,000. It's a setting
+The per-key hourly limit defaults to `FEASIBLE_API_RATE_LIMIT`, which is 10,000. `--limit` sets a
+different one for a single key. It's a setting
 rather than a constant precisely because a limit you can't change on your own hardware isn't a limit,
 it's an inconvenience.
 
