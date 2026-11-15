@@ -11,8 +11,11 @@ hugo_stats.json
 /.playwright/
 /.playwright-cli/
 
-# Private tooling that must not ship with the open-source site
-/.claude/skills/feasible-writing/
+# Private tooling that must not ship with the open-source site.
+# The skills are symlinks, so no trailing slash: a slash only matches a real
+# directory and would let a link through.
+/.claude/skills/feasible-website
+/.claude/skills/feasible-writing
 /.research/
 
 # macOS
