@@ -52,7 +52,34 @@ Set `APP_ENV=staging` on staging. If you can't, register staging as [its own sit
 
 ## Server-side events
 
-Anything that happens away from a browser - a Stripe webhook, a queued job, an offline conversion - is what our PHP SDK is for, and it isn't published yet. Until it is, send what you can from the browser: a purchase from the page that confirms it, a signup from the page that follows it.
+The script counts page views, and it stays the right way to do that. Send an event from your server when the server is the one that knows: a form your controller handles, a checkout that settles the amount, an account that only exists once the row is written.
+
+Send it from the request the visitor made, with their address and user agent:
+
+```php
+use Illuminate\Support\Facades\Http;
+
+// In the controller that handles the form or the checkout.
+$chain = array_filter([$request->header('X-Forwarded-For'), $request->server('REMOTE_ADDR')]);
+
+rescue(fn () => Http::timeout(2)
+    ->withHeaders([
+        'X-Forwarded-For' => implode(', ', $chain),
+        'User-Agent' => (string) $request->userAgent(),
+    ])
+    ->post('https://app.feasible.lol/api/event', [
+        'n' => 'Purchase',
+        'd' => 'example.com',
+        'u' => $request->url(),
+        '$' => ['amount' => 49.00, 'currency' => 'USD'],
+    ]));
+```
+
+That header is the chain your own proxy built, plus the address the request came from. We read it right to left and skip private and loopback addresses, so it resolves to the visitor whether Laravel sits behind nginx or faces the internet directly. If Cloudflare is in front, pass its `CF-Connecting-IP` header along too. It wins over `X-Forwarded-For`.
+
+With the visitor's own address and user agent, the event counts as the same visitor as their browser, so it joins the visit they're already in and is credited to that visit's source. `rescue()` and the two-second timeout mean a slow network can't break the checkout. For the revenue to show, [mark the goal as a revenue goal](/help/how-do-i-track-revenue/).
+
+A Stripe webhook doesn't fit. It comes from Stripe, not the visitor, so an event sent from it is counted at your server and usually filed as `datacenter_ip`. A queued job works if you hand it the two header values from the original request. Every field is in [the API docs](/docs/api/#sending-events).
 
 ## Livewire and Turbo
 
