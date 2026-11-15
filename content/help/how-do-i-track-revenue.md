@@ -25,6 +25,6 @@ The part worth understanding is the attribution. **Revenue is credited to the so
 
 Two practical notes:
 
-**Send it from where you know the amount.** If the price is only correct on your server, use one of the server-side SDKs rather than the browser - and remember to forward the visitor's IP and user agent, which is the one thing every server-side integration gets wrong. The [SDK docs](/docs/sdks/) cover it.
+**Send it from where you know the amount.** Usually that's the confirmation page, in the browser, where the order total is already on screen. Our server-side SDKs, for an amount only your server knows, aren't published yet.
 
 **There's no dedicated ecommerce event set.** No cart, no product, no line items - just a generic revenue object on any event you like. Put the detail you need in [custom properties](/help/event-scope-vs-session-scope-for-custom-properties/) instead.

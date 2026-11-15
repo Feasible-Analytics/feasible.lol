@@ -148,8 +148,7 @@ because nothing is running to measure them.
 ## Server-side events
 
 Anything that happens away from a browser - a webhook, a background job, an offline conversion - can
-be posted straight to the events endpoint, or sent with one of the
-[server-side SDKs](/docs/sdks/).
+be posted straight to the events endpoint. Our [server-side SDKs](/docs/sdks/) aren't published yet.
 
 See [the APIs](/docs/api/) for the payload, including how to state the attribution for an event that
 has no referrer of its own.

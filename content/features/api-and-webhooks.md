@@ -101,7 +101,7 @@ deterministic sample. The response says so, in `meta.sampling`, with the rate - 
 estimate labeled as a fact.
 
 And the ingest side has a rule of its own: server-side events must carry the
-visitor's IP and user agent. All five SDKs - Node, Go, PHP, Python and Ruby - make them required arguments, because a call without them looks like a
+visitor's IP and user agent, because a call without them looks like a
 datacenter bot and gets classified as one. The endpoint returns a `400` naming
 what's missing rather than a silent success.
 

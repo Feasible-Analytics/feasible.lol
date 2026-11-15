@@ -1,8 +1,8 @@
 ---
 title: "WordPress analytics, without the Google round trip"
-seotitle: "WordPress analytics plugin: no cookies, no banner"
+seotitle: "WordPress analytics with no cookies and no banner"
 platform: "WordPress"
-description: "Three kinds of WordPress analytics plugin exist. Here's which one you want, and how to install ours in about a minute."
+description: "Three kinds of WordPress analytics exist. Here's which one you want, and how to add ours with WPCode in about a minute."
 lede: "Pick the kind you need first. Installing is the easy part."
 ---
 
@@ -16,7 +16,7 @@ There are three answers, and they're genuinely different products.
 
 **A plugin that stores the data in your own WordPress database.** [Independent Analytics](https://wordpress.org/plugins/independent-analytics/) and [Burst](https://wordpress.org/plugins/burst-statistics/) both work this way. Nothing leaves your server, which is a real advantage. The trade is that your database carries every pageview forever and your host does the counting, so the bill arrives as slower queries rather than as an invoice.
 
-**A hosted service with a plugin in front of it.** Feasible is this. The counting happens somewhere else, your database stays the size it was, and the reports don't compete with your site for CPU.
+**A hosted service you add with one tag.** Feasible is this. The counting happens somewhere else, your database stays the size it was, and the reports don't compete with your site for CPU.
 
 None of these is the right answer for everyone. If you're already deep in Google Ads and you need GA4's attribution, use the Google route. If you run one small site and never want a third party involved, the database route is honest and cheap. We built the third one because we had fifty sites and wanted one bill and one dashboard.
 
@@ -24,31 +24,21 @@ None of these is the right answer for everyone. If you're already deep in Google
 
 No cookies, so [most sites won't need a consent banner](/help/do-i-need-a-cookie-banner/). One page of reports rather than a builder. Unlimited sites and unlimited team members on [one price](/pricing/), because we count pageviews and nothing else.
 
-And two measurements a bare script tag can't give you on any platform: **404 hits and site-search terms**. Those come from the plugin reading WordPress itself.
+The tag counts outbound clicks, file downloads, form submissions and scroll depth on its own. A **404** needs one line, `feasible('404')`, in your theme's 404 template, because a browser can't tell an error page from any other page. **Site-search terms** aren't in the tag. They're part of our own WordPress plugin, which is on the way.
 
 ## Installing it
 
-Three routes. The plugin is the one we'd pick.
+Two routes. WPCode is the one we'd pick. Our own plugin isn't in the WordPress directory yet.
 
-### The Feasible plugin
+### WPCode
 
-Install **feasible.lol Analytics**, open **feasible.lol → Settings**, enter your domain exactly as you registered it, and save.
-
-It serves the script and the events endpoint from your own domain on randomized paths, which is the part that survives ad blockers. It's also where 404 and site-search tracking come from.
-
-{{< callout title="Those two are the plugin, not the script" >}}
-404 and site-search tracking come from the WordPress plugin. They aren't in the base script tag, on WordPress or anywhere else. Paste the snippet by hand and you get everything else - outbound clicks, file downloads, form submissions, scroll depth - but not those two.
-{{< /callout >}}
-
-### A header-scripts plugin
-
-1. Install one. WPCode is the one most people already have.
-2. Open its header field - the one labeled for the `<head>` section, not the footer.
-3. Paste the tag, save, and clear your cache.
+1. **Plugins → Add New Plugin**, search for **WPCode**, then install and activate it. Plenty of sites already have it.
+2. Open **Code Snippets → Header & Footer**.
+3. Paste the tag into the **Header** box, not the footer, click **Save Changes**, and clear your cache.
 
 {{< snippet >}}
 
-This survives theme updates, theme switches, and the day someone edits the theme files by hand.
+This survives theme updates, theme switches, and the day someone edits the theme files by hand. Any other header-scripts plugin works the same way: use the box for the `<head>` section.
 
 ### The theme file
 
@@ -59,7 +49,7 @@ This survives theme updates, theme switches, and the day someone edits the theme
 
 Use a child theme. A snippet pasted into a parent theme is erased by the next theme update, and your traffic stops with no warning at all - no error, no email, just a flat line you notice three weeks later.
 
-Block themes - Twenty Twenty-Four, Twenty Twenty-Five, anything built for the site editor - have no `header.php`. Use a plugin.
+Block themes - Twenty Twenty-Four, Twenty Twenty-Five, anything built for the site editor - have no `header.php`. Use WPCode.
 
 ## Caching plugins
 

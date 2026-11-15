@@ -52,7 +52,7 @@ Set `APP_ENV=staging` on staging. If you can't, register staging as [its own sit
 
 ## Server-side events
 
-Anything that happens away from a browser - a Stripe webhook, a queued job, an offline conversion - can be sent with the PHP SDK. It takes the visitor's IP and user agent as required arguments, because a server-side call without them looks like a datacenter bot and gets classified as one.
+Anything that happens away from a browser - a Stripe webhook, a queued job, an offline conversion - is what our PHP SDK is for, and it isn't published yet. Until it is, send what you can from the browser: a purchase from the page that confirms it, a signup from the page that follows it.
 
 ## Livewire and Turbo
 

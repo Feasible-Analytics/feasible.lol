@@ -38,8 +38,8 @@ Four goals are created with every new site, before you configure anything:
 tracking script emits three of those on its own, with no flag to set - an
 outbound click is counted without ever calling `preventDefault`, so the link
 still behaves like a link, and a middle-click counts too. The 404 goal is the
-exception: it's created for you, but the base script doesn't detect 404s. That
-one comes from the WordPress plugin.
+exception: it's created for you, but the base script doesn't detect 404s. You
+send that one with `feasible('404')` from your error template.
 
 ## Whether detours are allowed
 
