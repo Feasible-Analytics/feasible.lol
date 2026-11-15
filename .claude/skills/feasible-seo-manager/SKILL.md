@@ -89,10 +89,16 @@ what it was.
 - Campaign notes are plain Markdown with GFM tables on purpose, so they survive
   round-trips. Keep them that way. Do not introduce coloured HTML.
 
-The OpenSEO MCP tools provide the data. The `keyword-research`,
-`keyword-clustering`, `competitor-analysis`, `link-prospecting` and `seo-audit`
-skills are available when a run calls for that kind of work; prefer them over
-improvising.
+The OpenSEO MCP tools provide the data. OpenSEO's Claude Code plugin adds the
+`keyword-research`, `keyword-clustering`, `competitor-analysis`,
+`link-prospecting` and `seo-audit` skills (as `openseo:<name>`). Use them when a
+run calls for that kind of work, rather than improvising. If they're missing,
+install the plugin:
+
+```bash
+claude plugin marketplace add every-app/open-seo
+claude plugin install openseo@openseo
+```
 
 ---
 
