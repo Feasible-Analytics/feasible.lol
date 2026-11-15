@@ -59,11 +59,52 @@ The problem is a staging deployment on a real hostname with production settings 
 Multi-app projects often grow a second base - `admin/base.html`, `dashboard/base.html` - that doesn't extend the first. Each one needs the tag, or one whole section of the site reports no visitors and looks like a content problem.
 {{< /callout >}}
 
-## Behind a proxy
+## Server-side events
 
-If Django runs behind nginx, a load balancer or Cloudflare, make sure the visitor's address is being forwarded. The ingestion health panel warns you when it isn't - otherwise every visitor collapses into one and geolocates to your datacenter.
+The script counts page views, and it stays the right way to do that. Send an event from your server when the server is the one that knows: a form your view handles, a checkout that settles the amount, an account that only exists once the row is written.
 
-Server-side events - a webhook, a Celery task, an offline conversion - are what our Python SDK is for, and it isn't published yet. Until it is, send what you can from the browser: a purchase from the page that confirms it, a signup from the page that follows it.
+Send it from the request the visitor made, with their address and user agent. This needs nothing outside the standard library:
+
+```python
+import json
+import urllib.request
+
+
+def send_event(request, name, url, revenue=None):
+    forwarded = request.META.get("HTTP_X_FORWARDED_FOR")
+    address = request.META["REMOTE_ADDR"]
+    event = {"n": name, "d": "example.com", "u": url}
+    if revenue:
+        event["$"] = revenue
+    req = urllib.request.Request(
+        "https://app.feasible.lol/api/event",
+        data=json.dumps(event).encode(),
+        headers={
+            "Content-Type": "application/json",
+            "X-Forwarded-For": f"{forwarded}, {address}" if forwarded else address,
+            "User-Agent": request.META.get("HTTP_USER_AGENT", ""),
+        },
+    )
+    try:
+        urllib.request.urlopen(req, timeout=2)
+    except OSError:
+        pass  # Analytics never breaks a checkout.
+```
+
+Then, in the view that handles the form or the checkout:
+
+```python
+send_event(request, "Purchase", request.build_absolute_uri(),
+           {"amount": 49.00, "currency": "USD"})
+```
+
+That header is the chain your own proxy built, plus the address the request came from. We read it right to left and skip private and loopback addresses, so it resolves to the visitor whether Django sits behind nginx or faces the internet directly. If Cloudflare is in front, pass `request.META.get("HTTP_CF_CONNECTING_IP")` along as a `CF-Connecting-IP` header too. It wins over `X-Forwarded-For`.
+
+With the visitor's own address and user agent, the event counts as the same visitor as their browser, so it joins the visit they're already in and is credited to that visit's source. For the revenue to show, [mark the goal as a revenue goal](/help/how-do-i-track-revenue/).
+
+A payment webhook doesn't fit. It comes from your payment provider, not the visitor, so an event sent from it is counted at your server and usually filed as `datacenter_ip`. A Celery task works if you hand it the two header values from the original request. Every field is in [the API docs](/docs/api/#sending-events).
+
+The browser script doesn't care about any of this. It talks to us directly, so a proxy in front of Django never touches its requests.
 
 ## Check it worked
 
