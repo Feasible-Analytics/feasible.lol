@@ -45,7 +45,7 @@ numbers.
 
 | Tool | 100k pv/mo | 1M pv/mo | Counts | Sites | Seats | Retention | Source |
 |---|---|---|---|---|---|---|---|
-| **Feasible** | **$99** | **$99** | pageviews + custom events; properties free | unlimited | unlimited | 5 years | [pricing](/pricing/) |
+| **Feasible** | **$99** | **$99** | pageviews + custom events; properties free | unlimited | unlimited | unlimited | [pricing](/pricing/) |
 | Plausible Starter | $190 | $690 | pageviews + custom events | 1 | owner only | No limit while subscribed | [plausible.io](https://plausible.io/#pricing) |
 | Plausible Business | $390 | $1,390 | pageviews + custom events | 10 | 10 | No limit while subscribed | [plausible.io](https://plausible.io/#pricing) |
 | Fathom | $150 | $600 | pageviews + custom events | 75 | not published | "forever" | [usefathom.com](https://usefathom.com/pricing) |
@@ -168,7 +168,7 @@ event property** all count, and seats are $240 a year each beyond the first.
 
 Feasible costs $9.99 a month or $99 a year: unlimited
 sites, unlimited team members, unlimited custom properties, and a million
-pageviews and custom events a month between them, kept five years. Cookieless, AGPL-3.0-or-later,
+pageviews and custom events a month between them, kept with no time limit. Cookieless, AGPL-3.0-or-later,
 one Go binary on SQLite that runs on 512 MB of RAM. The API, funnels, custom
 properties, webhooks and raw event export are in every plan and every build.
 

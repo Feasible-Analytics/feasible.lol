@@ -43,7 +43,7 @@ You can set GA4's retention for user-level data to 2 months or 14 months. That's
 
 Get the scope right, because a lot of posts don't: the setting "does not affect standard aggregated reports." Your headline pageview chart survives. What hits the wall at 14 months is Explorations and funnel reports - the analysis you'd sit down to do. And Google notes that when a standard property becomes Large, the event-level retention setting is "automatically reduced to 2 months" and older data is "permanently deleted."
 
-For comparison, since we're a vendor and you should hear it from us plainly: Feasible keeps five years on the $99 plan, and Plausible's Business plan keeps five ([plausible.io](https://plausible.io/#pricing), checked September 3, 2026).
+For comparison, since we're a vendor and you should hear it from us plainly: Feasible keeps your data for as long as your account is open, with no time limit, and Plausible sets no limit while you're subscribed either ([plausible.io](https://plausible.io/#pricing), checked November 11, 2026).
 
 ## The history that's already gone
 
@@ -97,7 +97,7 @@ That's what [a one-page dashboard](/features/dashboard/) is for, and why we buil
 
 ## What $99 buys instead
 
-No banner for most sites. No thresholding, ever - if a row exists we show it. Five years of retention. A 3,569-byte script. Raw event export as a button, not a plan tier. Unlimited sites and unlimited teammates. A [health panel](/features/) that names every dropped event and why, because failing silently is the actual sin here.
+No banner for most sites. No thresholding, ever - if a row exists we show it. No time limit on your data. A 3,569-byte script. Raw event export as a button, not a plan tier. Unlimited sites and unlimited teammates. A [health panel](/features/) that names every dropped event and why, because failing silently is the actual sin here.
 
 And a company whose revenue is your subscription, which is a shorter sentence than any privacy policy.
 

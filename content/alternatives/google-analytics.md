@@ -82,7 +82,7 @@ bill** - read it before comparing two prices.
 
 | Tool | 100k pv/mo | 1M pv/mo | Counts | Sites | Seats | Cookies | Source | Retention |
 |---|---|---|---|---|---|---|---|---|
-| **Feasible** | **$99** | **$99** | pageviews + events | unlimited | unlimited | none | AGPL-3.0 | 5 years |
+| **Feasible** | **$99** | **$99** | pageviews + events | unlimited | unlimited | none | AGPL-3.0 | unlimited |
 | [Plausible Starter](https://plausible.io/#pricing) | $190 | $690 | pageviews + events | 1 | owner only | none | AGPL-3.0 (CE) | No limit while subscribed |
 | [Plausible Business](https://plausible.io/#pricing) | $390 | $1,390 | pageviews + events | 10 | 10 | none | AGPL-3.0 (CE) | No limit while subscribed |
 | [Fathom](https://usefathom.com/pricing) | $150 | $600 | pageviews + events | 75 | not published | none | closed | forever |
@@ -170,7 +170,7 @@ self-hosted build doesn't.
 $540 a year at a million on Standard, unlimited seats, unlimited retention, 50
 sites, German company.
 
-**Where it beats us:** unlimited retention and a German vendor at a low price.
+**Where it beats us:** a German vendor at a low price.
 
 **The cost:** Standard has no funnels and no teams - those start on Plus at
 $1,590 at a million. Product is closed; the Go tracking library is AGPL.
@@ -211,7 +211,7 @@ way to take your history anywhere.
 
 The flag we promised. $9.99 a month or $99 a year, one plan: unlimited sites,
 unlimited team members, unlimited custom properties, and a million pageviews and
-custom events a month between them, kept five years. Cookieless, AGPL-3.0-or-later, one Go
+custom events a month between them, kept with no time limit. Cookieless, AGPL-3.0-or-later, one Go
 binary on SQLite that runs on 512 MB of RAM. The API, funnels, custom properties,
 webhooks, the MCP server and raw event export are in every plan and every build - the API package has no plan check in it at all.
 

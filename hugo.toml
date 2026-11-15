@@ -350,7 +350,6 @@ disableKinds = ["taxonomy", "term"]
     trialDays = 30
     pageviews = "1,000,000"
     pageviewsShort = "1M"
-    retentionYears = 5
 
   # A named human on the byline and the founder entity. For a domain with no
   # links yet, this is the cheapest trust signal there is.

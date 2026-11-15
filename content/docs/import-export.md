@@ -99,6 +99,29 @@ audiences or saved reports. Visitor totals over multiple days are summed daily c
 [Follow the GA4 import guide](/help/can-i-import-my-google-analytics-history/) and verify a few dates
 before you remove the old tracker. Google may withhold report data, and metric definitions differ.
 
+### Google Search Console
+
+Search Console tells you what people typed into Google before they clicked through to your site. Our
+tracker can't see that on its own, because Google takes the search words out of the referrer.
+
+On the site's Imports screen, press **Connect search performance** and sign in with a Google account
+that has the site verified in Search Console. Choose the property this site should read, then press
+**Save and import**. The first import pulls everything Search Console still holds, about 16 months.
+After that, Feasible re-reads the last five days every six hours, because Google keeps revising its
+own figures for a few days.
+
+The data appears in the **Search performance** card on the dashboard. It has four tabs: search terms,
+landing pages, countries and devices. Every row shows clicks, impressions, click-through rate and
+average position, and the search terms and landing pages tabs have a box to narrow the list.
+
+A few things work differently from the rest of the dashboard:
+
+- Google publishes about a day and a half late, so today and usually yesterday are empty.
+- Google's clicks won't match our visit counts. Google counts clicks on a result, we count visits
+  that reached the page, and Google leaves out search terms too few people used.
+- The dashboard's filters don't apply to this card, and shared links and public dashboards don't
+  show it.
+
 ### Connection scope
 
 Google authorization is **per site**. Connecting a second site creates a separate grant, so revoking

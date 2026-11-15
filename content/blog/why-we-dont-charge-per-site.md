@@ -69,7 +69,7 @@ Two units, both of which you can count yourself before you buy. That's as simple
 
 ## What the limit is
 
-A million pageviews and custom events a month, between them. Per account, per calendar month, UTC. Unlimited sites, unlimited teammates, unlimited properties, five years of retention. $9.99 a month or $99 a year.
+A million pageviews and custom events a month, between them. Per account, per calendar month, UTC. Unlimited sites, unlimited teammates, unlimited properties, unlimited data retention. $9.99 a month or $99 a year.
 
 A limit has to exist somewhere. Storage is real, CPU is real, and a plan with no number on it is a plan that gets repriced the first time someone points a firehose at it - usually by adding a tier and moving everyone up one. We'd rather publish the number now.
 

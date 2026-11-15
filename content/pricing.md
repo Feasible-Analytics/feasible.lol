@@ -2,7 +2,7 @@
 title: "One plan. $9.99 a month."
 layout: "pricing"
 seotitle: "Pricing: $9.99 a month for everything"
-description: "One plan. $9.99 a month or $99 a year. Unlimited sites, unlimited users, a million pageviews a month, five years of data. No tiers, no per-site fees."
+description: "One plan. $9.99 a month or $99 a year. Unlimited sites, unlimited users, a million pageviews a month, unlimited data retention. No tiers, no per-site fees."
 lede: "One plan with everything in it. Thirty days free first, and we don't ask for a card to start."
 checked: 2026-09-03
 faqHeading: "Questions people ask before they pay"
@@ -60,13 +60,13 @@ tracking. That can push the same traffic into a larger plan.
 
 All of the above checked on the vendors' own published pages, September 3, 2026.
 
-## Five years, and what that means
+## How long we keep your data
 
-The plan guarantees five years of data. We don't delete older data while your
-account is open.
+For as long as your account is open. Nothing in Feasible deletes analytics data
+because it's old, and there's no bigger plan that keeps it longer.
 
-If you need a longer window written down, because a policy or an auditor requires it,
-[that's an email to sales](#enterprise).
+If an account stops paying, its data is deleted 90 days later. We email before
+each step, and export works the whole time.
 
 ## What the same traffic costs elsewhere
 
@@ -106,7 +106,7 @@ extra database. [Check the open source code](/open-source-web-analytics/).
 
 ## Over a million pageviews? {#enterprise}
 
-Need more traffic or longer retention? Email
+Need more traffic? Email
 **[sales@feasible.lol](mailto:sales@feasible.lol)**. It's the same product. We
 only need to price the extra volume.
 

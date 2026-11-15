@@ -106,7 +106,7 @@ calls for 2 GB at 100,000 monthly pageviews and 8 GB at one million.
 | Public API, funnels, custom properties, webhooks, MCP | Yes | Yes |
 | Raw event export | Yes | Yes |
 | Monthly limit | Whatever your box does | 1,000,000 pageviews and events, then talk to us |
-| Retention | Your disk, your rules | 5 years |
+| Retention | Your disk, your rules | Unlimited while your account is open |
 | Data location | Wherever you run it | United States |
 | Upgrades, backups, being paged at 3 a.m. | You | Us |
 

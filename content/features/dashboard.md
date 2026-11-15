@@ -1,7 +1,7 @@
 ---
 title: "The one-page dashboard"
 seotitle: "Website analytics dashboard: everything on one page"
-description: "Six numbers, a graph and five reports on one screen. Click any row to filter everything else, and every filter lives in the URL."
+description: "Six numbers, a graph and six reports on one screen. Click any row to filter everything else, and every filter lives in the URL."
 lede: "Everything Feasible collects is on one page. Click any row and it filters the rest of it."
 weight: 10
 shot: "app/dashboard-light.png"
@@ -26,7 +26,7 @@ monthly views. A period with no data shows a gap, not a false zero.
 Compare against the previous period or last year. Change markers appear on all
 six tiles.
 
-## Five cards
+## Six cards
 
 **Sources** - channels, sources, and UTM campaigns.
 
@@ -41,6 +41,11 @@ types and screen sizes, plus languages.
 **Behavior** - four tabs for
 [goals](/features/goals-and-funnels/),
 [custom properties](/features/custom-properties/), funnels, and page paths.
+
+**Search performance** - what people typed into Google to find you, once you
+[connect Search Console](/docs/import-export/#google-search-console). Search
+terms, landing pages, countries and devices, with clicks, impressions,
+click-through rate and position.
 
 Click "Details" for 100 rows, search, sorting, and breakdowns.
 

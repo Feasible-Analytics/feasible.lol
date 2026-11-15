@@ -17,6 +17,6 @@ What's transferred is worth putting next to that. There's no IP address in it, b
 Two more things:
 
 - **Each account gets its own database file.** Your data isn't sitting in a shared table with everyone else's, which makes both export and deletion a whole-file operation rather than a careful `DELETE`.
-- **Retention is 5 years**, and [export works in every account state](/help/how-do-i-export-my-data/) - including a locked or lapsed one, on purpose, because portability shouldn't depend on a payment.
+- **There's no time limit on retention** while your account is open, and [export works in every account state](/help/how-do-i-export-my-data/) - including a locked or lapsed one, on purpose, because portability shouldn't depend on a payment.
 
 If US hosting is a hard no for you, that's a legitimate reason to [run it yourself](/help/can-i-run-feasible-myself/) on a machine in whatever country you like. It's the same software, free, with every feature.

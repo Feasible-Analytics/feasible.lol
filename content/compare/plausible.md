@@ -91,7 +91,7 @@ while subscribed](https://plausible.io/#pricing).
 
 Feasible has one plan. Unlimited sites, unlimited team members, five roles plus
 per-site guests, funnels, custom properties, revenue goals, the full API at
-10,000 requests an hour, webhooks, an MCP server, and five years of retention.
+10,000 requests an hour, webhooks, an MCP server, and unlimited data retention.
 $99 a year.
 
 ## Raw export
@@ -131,7 +131,7 @@ is an email rather than a tier.
 | At 1M pageviews/mo | $99/yr | $690–$1,390/yr depending on plan |
 | Sites | Unlimited | 1 / 3 / 10 by plan |
 | Team members | Unlimited | 0 / 3 / 10 by plan |
-| Retention | 5 years guaranteed | No limit while subscribed |
+| Retention | Unlimited while subscribed | No limit while subscribed |
 | Billing unit | Pageviews + custom events | Pageviews + custom events |
 | Funnels | Yes | Business plan |
 | Custom properties | Yes | Business plan |
@@ -213,10 +213,6 @@ Want the wider list rather than the head-to-head? [Plausible alternatives, compa
 
 ## Where Plausible wins
 
-**No retention limit while subscribed.** That's now on every plan, according to
-[their pricing page](https://plausible.io/#pricing), checked November 11, 2026.
-Feasible guarantees five years. If a longer guaranteed history matters, compare that policy too.
-
 **Your data sits in Germany.** Plausible hosts in Falkenstein on Hetzner, and
 the company is in the EU. Cloudmanic Labs is in Oregon, and our international
 transfers run on standard contractual clauses through our DPA. If EU residency
@@ -235,8 +231,8 @@ your company requires it.
 segments only exist server-side behind a shared link.
 
 If any of those is the thing you need, buy theirs. If what you need is
-several sites, several people, funnels and the API without a tier change, and
-five years of history for $99, that's what we built.
+several sites, several people, funnels and the API without a tier change, all
+for $99, that's what we built.
 
 Next: [the whole price ladder](/compare/pricing/) across every vendor, or
 [what's in Feasible](/features/) with the gaps listed .

@@ -62,7 +62,7 @@ directions](/about/).
 ## The other addresses
 
 **[sales@feasible.lol](mailto:sales@feasible.lol)** - more than a million pageviews a
-month, or data kept longer than five years. Tell us roughly how much traffic you have
+month. Tell us roughly how much traffic you have
 and we'll go from there. [What's in the plan first](/pricing/).
 
 **[Bug reports on GitHub](https://github.com/Feasible-Analytics/app.feasible.lol/issues)**
