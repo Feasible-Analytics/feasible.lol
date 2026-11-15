@@ -136,7 +136,7 @@ containers. Of everyone in this comparison, Umami is the one whose self-hosting
 story we respect most - it's light, it's documented, and it works.
 
 Feasible is one Go binary and one SQLite file. No Node, no Postgres, no
-container required. 1 core, 512 MB of RAM. One process instead of two isn't a
+container required. It runs on [a small VPS](/docs/self-hosting/#how-big-a-server). One process instead of two isn't a
 revolution, and we're not going to dress it up as one.
 
 The difference that does matter is what's in the build. From

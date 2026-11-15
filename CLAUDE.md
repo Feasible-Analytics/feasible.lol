@@ -120,7 +120,11 @@ make a page factually incorrect.
   dashboard's Search performance card shows search terms, landing pages,
   countries and devices.
 - **SQLite is not more storage-efficient** than a column store. Our true claim is
-  operational: one file, one process, nothing to tune, 512 MB of RAM.
+  operational: one directory, one process, nothing to tune.
+- **There is no measured minimum server.** The app's `internal/bench/RESULTS.md`
+  measures throughput, disk and read times on a laptop, not RAM or CPU. Never
+  print "1 core, 512 MB" or any other floor, and never quote the production
+  box's size. Say "a small VPS" and link `/docs/self-hosting/#how-big-a-server`.
 - **Matomo is GPL-3.0**, not AGPL. **Umami is MIT**, which is genuinely more
   permissive than ours — say so when it comes up.
 

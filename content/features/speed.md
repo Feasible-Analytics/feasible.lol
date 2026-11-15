@@ -1,6 +1,6 @@
 ---
 title: "Why it's fast and small"
-description: "A 3,569-byte tracking script, reports that answer in 81 to 111 ms, about 210 bytes stored per event, and one binary that runs on 512 MB of RAM."
+description: "A 3,569-byte tracking script, reports that answer in 81 to 111 ms, about 210 bytes stored per event, and one binary with nothing to tune."
 lede: "A 3,569-byte script on your pages, and reports that come back before you've finished looking at the screen."
 weight: 120
 checked: 2026-09-08
@@ -72,8 +72,8 @@ weaker promise, and we've replaced it rather than kept the flattering number.
 It costs your visitors nothing either way. The script sends with `keepalive` and
 never waits for the answer.
 
-The minimum machine is 1 CPU core, 512 MB of RAM and 1 GB of disk. Two cores and
-2 GB is comfortable.
+We haven't measured a minimum machine, so we don't publish one.
+[What we have measured](/docs/self-hosting/#how-big-a-server) is on the self-hosting page.
 
 The dashboard is held to the same standard. React and `react-dom` are its only
 two runtime dependencies - no charting library, no map library, no router, no
@@ -95,8 +95,8 @@ one that decides whether you can run this.
 A column-store analytics stack is a different sport. ClickHouse's own
 documentation recommends 32 GB of RAM for ClickHouse alone, before you add the
 application in front of it, the cache, the queue and the person who understands
-all four at 3am. Feasible runs on 512 MB, in one process, with one file to back
-up and nothing to tune. `feasible db backup` writes a consistent snapshot;
+all four at 3am. Feasible is one process, with one directory to back up and
+nothing to tune. `feasible db backup` writes a consistent snapshot;
 that's the disaster recovery plan.
 
 For us that means the hosted service costs little enough that $9.99 a month

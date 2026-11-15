@@ -114,8 +114,8 @@ you should disable browser archiving and set up CLI archiving. And their
 archiving FAQ says your "most important job as an administrator will be to check
 weekly, or daily, for any messages which arise during the archiving process."
 
-Feasible self-hosted is one Go binary and one SQLite file, on 1 core and 512 MB
-of RAM. No PHP, no MySQL, no archiving cron, no plugin licenses. Every feature
+Feasible self-hosted is one Go binary and one SQLite file, on
+[a small VPS](/docs/self-hosting/#how-big-a-server). No PHP, no MySQL, no archiving cron, no plugin licenses. Every feature
 is in it, because there's only one build.
 
 We're not claiming SQLite is a better database than MySQL for analytics - that's

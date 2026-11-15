@@ -8,7 +8,7 @@ checked: 2026-09-03
 
 A pageview takes about 210 bytes to store. One million pageviews a month for a
 year takes about 3.5 GB. One process handles about 4,700 events a second. A
-small site can run Feasible on one CPU and 512 MB of RAM.
+small site can run Feasible on [a small VPS](/docs/self-hosting/#how-big-a-server).
 
 Counting pageviews is cheap. We priced it that way.
 
