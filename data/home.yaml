@@ -47,7 +47,7 @@ pillars:
 
   - title: "Built light on purpose"
     body: >-
-      One binary. One SQLite file. No cluster or queue. Run it on a $4 server,
+      One binary. One SQLite file. No cluster or queue. Run it on a small VPS,
       or let us host it for $99 a year. It's
       <a href="/open-source-web-analytics/" class="text-flag-700 underline">open
       source web analytics</a> if you'd rather run it yourself.

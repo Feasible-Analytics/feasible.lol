@@ -229,6 +229,55 @@
     </div>
   </section>
 
+  {{/* ---------------------------------------------------------------
+       AI assistants. Feasible is an MCP server, so this shows the shape
+       of one question and its answer, and links the setup steps.
+       --------------------------------------------------------------- */}}
+  <section class="shell pt-20 sm:pt-24">
+    <div class="grid gap-12 lg:grid-cols-12 lg:items-center lg:gap-16">
+      <div class="lg:col-span-5">
+        <p class="kicker">AI assistants</p>
+        <h2
+          class="mt-4 font-display text-[1.75rem] font-extrabold leading-tight tracking-tight sm:text-[2.25rem]"
+        >
+          Ask your assistant what changed.
+        </h2>
+        <p class="mt-4 leading-relaxed text-neutral-700">
+          Feasible is an MCP server. Add one URL to Claude, ChatGPT, Cursor or
+          VS Code, sign in, and click Allow. Your assistant can then read your
+          numbers, explain a change, and set up goals. It's in every plan.
+        </p>
+        <a
+          href="/docs/mcp/"
+          class="mt-6 inline-block font-display font-extrabold text-flag-700 hover:text-flag"
+          >Connect your assistant&nbsp;→</a
+        >
+      </div>
+      <div class="lg:col-span-7">
+        <figure class="border-2 border-ink p-6 sm:p-8">
+          <p class="kicker">You</p>
+          <p class="mt-2 font-display text-lg font-extrabold leading-snug">
+            Why are visitors down this week?
+          </p>
+          <p class="kicker mt-7">Your assistant</p>
+          <p class="mt-2 leading-relaxed text-neutral-800">
+            Visitors fell 18%, from 2,140 to 1,755, against the week before.
+            Nearly all of it is Google. Organic search sent 980 visitors, down
+            from 1,350, and the drop is on two pages, /pricing/ and
+            /blog/setup-guide/. Direct, email and social are flat.
+          </p>
+          <figcaption
+            class="mt-7 border-t-2 border-rule pt-4 text-sm leading-relaxed text-neutral-700"
+          >
+            An example. Behind the answer is one call to
+            <code>explain_traffic_change</code>, which ranks what accounts for a
+            change by source, page, country, device and more.
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
   <div class="shell pt-20"><hr class="rule" /></div>
 
   {{/* ---------------------------------------------------------------
