@@ -33,7 +33,8 @@ faq:
       is AGPL-3.0-or-later, and the build we host is the build you can run.
   - q: "Does Feasible have EU data isolation like Fathom?"
     a: >-
-      No. Cloudmanic Labs is in Oregon, and international transfers run on
+      No. Our server is in Montreal, Canada, Cloudmanic Labs is in Oregon, and
+      international transfers run on
       standard contractual clauses through our DPA. Fathom routes EU visitors to
       EU servers on every plan at no extra cost. If EU processing is a
       requirement, buy theirs.
@@ -135,8 +136,8 @@ whole argument, including what AGPL asks of you.
 
 **EU isolation, free on every plan.** European visitors' pageviews are routed to
 EU servers, and Fathom says the IP address is stripped inside the EU and never
-reaches their US infrastructure. We don't have this. Cloudmanic Labs is in
-Oregon; our transfers run on standard contractual clauses through our DPA. If
+reaches their US infrastructure. We don't have this. Our server is in Montreal,
+Canada, the company is in Oregon, and our transfers run on standard contractual clauses through our DPA. If
 your legal team wants EU processing, Fathom answers that and we don't.
 
 **A longer track record.** Years more production time, a large paying customer
@@ -144,8 +145,8 @@ base, and a company that has publicly worked through the compliance questions in
 detail. If you want the boring, proven option in this category, that's a real
 argument.
 
-**Their script is smaller than ours.** Measured September 8, 2026 with `gzip -9`:
-Fathom 2,086 bytes, Feasible 3,569. They win it.
+**Their script is smaller than ours.** Measured with `gzip -9`:
+Fathom 2,086 bytes on September 8, 2026, Feasible 3,629 on November 15, 2026. They win it.
 
 **Their over-limit policy is good.** They don't switch your analytics off over a
 traffic spike. Neither do we - we email you, and nothing stops mid-month. We're

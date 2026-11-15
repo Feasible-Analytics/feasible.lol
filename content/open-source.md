@@ -121,7 +121,7 @@ billing never starts, and public signup is off.
 | Price | $9.99/month or $99/year | Free |
 | Updates | We deploy them | You run `db migrate` |
 | Backups, uptime, TLS, email delivery | Ours | Yours |
-| Your data lives | Newberg, Oregon, USA | Wherever you put it |
+| Your data lives | Montreal, Canada | Wherever you put it |
 | Support | [help@feasible.lol](mailto:help@feasible.lol) | GitHub issues, best effort |
 
 The disk is never the expensive part. The expensive part is you: upgrades, TLS

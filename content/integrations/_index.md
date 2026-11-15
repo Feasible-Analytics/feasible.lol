@@ -9,7 +9,7 @@ Feasible is one snippet. If your site lets you paste one into its head, it works
 
 {{< snippet >}}
 
-It's 3,569 bytes gzipped, never blocks the page, and sets no cookies.
+It's about 3.6 KB gzipped, never blocks the page, and sets no cookies.
 
 Pick your platform below. We show you where the snippet goes.
 

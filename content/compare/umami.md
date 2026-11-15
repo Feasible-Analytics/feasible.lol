@@ -124,7 +124,7 @@ doesn't.
 | Webhooks | Yes | Not published |
 | MCP server | Built in | Not published |
 | Dropped-event log with reasons | Yes | No |
-| Data location | United States | United States and EU |
+| Data location | Montreal, Canada | United States and EU |
 | License | AGPL-3.0-or-later | **MIT** |
 | Self-hosted = hosted build | Yes | No - see below |
 | Trial | 30 days, no card | 14 days |
@@ -174,7 +174,8 @@ slogan.
 
 ## The script
 
-Measured September 8, 2026 with `gzip -9`: Umami 2,301 bytes, Feasible 3,569.
+Measured with `gzip -9`: Umami 2,301 bytes on September 8, 2026, Feasible
+3,629 on November 15, 2026.
 Theirs is smaller. Both are small enough that it isn't the reason to choose
 either one - the number that matters in this category is Google's 148,590.
 

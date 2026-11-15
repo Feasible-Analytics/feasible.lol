@@ -1,7 +1,7 @@
 ---
 title: "Why it's fast and small"
-description: "A 3,569-byte tracking script, reports that answer in 81 to 111 ms, about 210 bytes stored per event, and one binary with nothing to tune."
-lede: "A 3,569-byte script on your pages, and reports that come back before you've finished looking at the screen."
+description: "A 3.6 KB tracking script, reports that answer in 81 to 111 ms, about 210 bytes stored per event, and one binary with nothing to tune."
+lede: "A 3.6 KB script on your pages, and reports that come back before you've finished looking at the screen."
 weight: 120
 checked: 2026-09-08
 note: |
@@ -11,16 +11,16 @@ note: |
   filtered all-time query is the slow case, and we know it.
 ---
 
-**3,569 bytes gzipped.** That's the whole tracking script - 7,490 bytes before
+**3,629 bytes gzipped.** That's the whole tracking script - 7,598 bytes before
 compression, one request, cached for an hour.
 
-Measured against Google's `gtag.js` in September 2026, that's about 42 times
-smaller. The difference is a few hundred milliseconds on a slow phone. We'll
+Against Google's `gtag.js`, which measured 148,590 bytes in September 2026,
+that's about 40 times smaller. The difference is a few hundred milliseconds on a slow phone. We'll
 take it.
 
 ## A hard size limit
 
-There's a byte budget of 3,584 for the base script. Go over it and the build
+There's a byte budget of 3,840 for the base script. Go over it and the build
 exits 1 - enforced twice, once in the bundler and again in a Go test that reads
 the shipped file.
 

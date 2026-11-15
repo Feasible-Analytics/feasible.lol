@@ -126,7 +126,7 @@ AGPL-3.0-or-later with unlimited sites and seats, and it includes the Stats API.
 
 **Where it beats us:** maturity and EU hosting, plainly. Years of production, a
 big customer base, and a straightforward answer for a European buyer who wants
-data in Europe. We're a US company and can't match that.
+data in Europe. We're a US company hosting in Canada, with no EU region, and can't match that.
 
 If Plausible is what you're actually weighing, [seven alternatives to it,
 compared](/alternatives/plausible/) goes deeper than this entry does.
@@ -217,7 +217,7 @@ webhooks, the MCP server and raw event export are in every plan and every build 
 
 **Where we lose:** no EU hosting, no SSO or SAML, no mobile SDKs, no session
 replay, no heatmaps, no A/B testing, no cohort or retention report. Our script is
-3,569 bytes gzipped against Plausible's 1,285. And we launched in 2026, so we
+3,629 bytes gzipped against Plausible's 1,285. And we launched in 2026, so we
 have no track record - which is a real risk and you should price it in.
 
 ## Free Google Analytics alternatives

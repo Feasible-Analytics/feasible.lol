@@ -3,7 +3,7 @@ title: "What should my privacy policy say?"
 description: "A paragraph you can paste into your privacy policy, plus what each line of it rests on and when you'd need to change it."
 category: "privacy-and-the-law"
 weight: 15
-updated: 2026-09-06
+updated: 2026-11-15
 ---
 
 Here's a paragraph you can paste in and adapt.
@@ -14,7 +14,7 @@ Analytics
 We use Feasible to count visits to this site and see which pages get read.
 Feasible sets no cookies and stores nothing on your device. It doesn't record
 IP addresses, and it never follows you to other websites. Visitors are counted
-using an identifier that's rebuilt from scratch every day, so there's no way to
+using an identifier that's rebuilt from scratch every day, so Feasible doesn't
 recognise the same person tomorrow.
 
 What Feasible collects: https://feasible.lol/privacy-friendly-analytics/
@@ -36,7 +36,7 @@ Worth knowing what you're signing your name to, so here's the basis for each cla
 
 **"Doesn't record IP addresses."** The address is used in memory to work out a rough location and to build the daily hash, then discarded. It never reaches disk. [The detail](/help/do-you-store-ip-addresses/).
 
-**"Rebuilt from scratch every day."** The visitor identifier is a hash whose salt rotates every UTC day, and old salts can't be recovered. It's pseudonymous rather than anonymous, and [we're careful about that word](/help/how-do-you-count-unique-visitors-without-cookies/). If your jurisdiction is strict, that distinction is the one to raise with your lawyer.
+**"Rebuilt from scratch every day."** The visitor identifier is a hash whose salt rotates every UTC day and is never stored, and reports never join one day to the next. It's pseudonymous rather than anonymous, and [we're careful about that word](/help/how-do-you-count-unique-visitors-without-cookies/). If your jurisdiction is strict, that distinction is the one to raise with your lawyer.
 
 **"Never follows you to other websites."** There's no cross-site identifier and no advertising network. [What we don't collect](/help/what-do-you-not-collect/).
 
@@ -48,7 +48,7 @@ Worth knowing what you're signing your name to, so here's the basis for each cla
 
 **You self-host.** Then the operator is you, not us. Drop the link, name yourself, and say where the data lives.
 
-**Your visitors are in the EU and you want to be precise.** Our servers are in the United States. [Where your data lives](/help/where-is-my-data-stored/) covers how that's handled, and a careful policy names the transfer basis.
+**Your visitors are in the EU and you want to be precise.** Our server is in Montreal, Canada, and Cloudmanic Labs is in Oregon, USA. [Where your data lives](/help/where-is-my-data-stored/) covers how that's handled, and a careful policy names the transfer basis.
 
 {{< callout title="A word on what this is" >}}
 A starting point written by an analytics company, not legal advice from your

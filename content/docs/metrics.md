@@ -51,7 +51,7 @@ sixteen against twenty-four.
 ### Visitors aren't additive, and aren't quite what you think
 
 Unique visitors counts distinct **daily visitor identifiers**. There's no cookie and no durable id:
-the identifier is recomputed each day from a salt that rotates at midnight UTC and is then deleted,
+the identifier is recomputed each day from a salt that rotates at midnight UTC and is never stored,
 which is a large part of why [most sites don't need a consent banner](/docs/privacy/) for this.
 
 Two consequences follow, and they point in opposite directions.

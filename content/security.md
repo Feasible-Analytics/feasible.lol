@@ -46,9 +46,11 @@ The durable event record has nowhere to put one - this is a shape in the code, n
 policy someone has to remember to follow.
 
 The visitor identifier is a **daily-rotating SipHash** of user agent, IP and domain.
-The salt derives from the UTC day number and is never stored in a database, so
-yesterday's salts can't be recovered and the identifier can't be reversed or linked
-across days. It's **pseudonymous, not anonymous** - we won't call it anonymous,
+Each day's salt is an HMAC-SHA256 of one deployment secret and the UTC day number. Daily
+salts are never stored, and reports never link one day's identifiers to the next.
+Somebody holding both the deployment secret and the database could derive any day's salt
+and test guesses against the stored hashes. Somebody holding only the database can't.
+It's **pseudonymous, not anonymous** - we won't call it anonymous,
 because it isn't.
 
 **One SQLite database per account.** Your data isn't a row with a `team_id` on it in a
@@ -59,8 +61,8 @@ Geolocation is a local database file on our own disks - no network call to a thi
 party per pageview, ever. Source favicons in the dashboard are proxied through our
 own origin, so a referring site never learns you were reading about it.
 
-Where the data lives: **Newberg, Oregon, United States.** There's no EU region - we
-won't claim one. Everyone we rely on to run the service is named on the
+Where the data lives: **a server in Montreal, Canada.** The company is in Newberg,
+Oregon. There's no EU region - we won't claim one. Everyone we rely on to run the service is named on the
 [sub-processors list](/legal/subprocessors/).
 
 ## Shared dashboards

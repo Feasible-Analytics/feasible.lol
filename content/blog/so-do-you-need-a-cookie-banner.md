@@ -91,13 +91,13 @@ If a tool processes an IP address, even for a moment, that can be personal data 
 
 **We do use `localStorage`, for two things.** Every event is written to a small retry queue before the request goes out, so a dropped connection doesn't become a missing pageview; a successful response deletes it. And if you set `feasible_ignore` yourself, we skip you. That's storage on the device, and under Article 5(3) storage is storage. We're not going to pretend it isn't there to get a cleaner sentence.
 
-**No visitor identifier is stored on the device at all.** The visitor hash lives on our side: a daily-rotating SipHash of user agent, IP and domain. The salt changes every UTC day and the old one is unrecoverable, so nobody - us included - can connect Tuesday's visitor to Wednesday's. It's site-scoped, so it can't follow anyone between sites.
+**No visitor identifier is stored on the device at all.** The visitor hash lives on our side: a daily-rotating SipHash of user agent, IP and domain. The salt changes every UTC day and is never stored, and our reports never connect Tuesday's visitor to Wednesday's. Somebody holding both our deployment secret and the database could rebuild old salts and test guesses; somebody holding only the database couldn't. It's site-scoped, so it can't follow anyone between sites.
 
 **It's pseudonymous, not anonymous.** We won't use the second word. Pseudonymous data is still personal data, and a vendor who upgrades that adjective is telling you something about the rest of their claims.
 
 **The raw IP never reaches disk.** Geolocation and hashing happen in the ingest tier and the address is discarded before anything is written. Geolocation is a local lookup against DB-IP Lite - country, region, city, no network call per pageview, nothing finer.
 
-**Where we don't clear a bar:** we're a US company in Oregon with no EU region, and transfers run on standard contractual clauses through [our DPA](/dpa/). CNIL's own suggested alternative for anyone worried about transfers is a tool that makes none, and that isn't us. If EU-only hosting is your requirement, buy from someone who has it.
+**Where we don't clear a bar:** we're a US company in Oregon, our server is in Montreal, Canada, and there's no EU region, and transfers run on standard contractual clauses through [our DPA](/dpa/). CNIL's own suggested alternative for anyone worried about transfers is a tool that makes none, and that isn't us. If EU-only hosting is your requirement, buy from someone who has it.
 
 ## Do you need one?
 

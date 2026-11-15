@@ -140,7 +140,7 @@ is an email rather than a tier.
 | Webhooks | Yes | No |
 | MCP server | Built in | Community-built; Stats API key required |
 | Dropped-event log with reasons | Yes | No |
-| Data location | United States | Germany |
+| Data location | Montreal, Canada | Germany |
 | Saved segments | **No** | Yes |
 | SSO | **No** | Enterprise |
 | Looker Studio connector | Community-deployed | Yes, official |
@@ -215,13 +215,14 @@ Want the wider list rather than the head-to-head? [Plausible alternatives, compa
 ## Where Plausible wins
 
 **Your data sits in Germany.** Plausible hosts in Falkenstein on Hetzner, and
-the company is in the EU. Cloudmanic Labs is in Oregon, and our international
+the company is in the EU. Our server is in Montreal, Canada, Cloudmanic Labs
+is in Oregon, and our international
 transfers run on standard contractual clauses through our DPA. If EU residency
 is a requirement rather than a preference, that decides it, and no amount of
 price difference should change your mind.
 
-**Their script is smaller than ours.** Measured September 8, 2026, the same way:
-Plausible 1,285 bytes gzipped, Feasible 3,569. They win that one, comfortably.
+**Their script is smaller than ours.** Measured the same way:
+Plausible 1,285 bytes gzipped on September 8, 2026, Feasible 3,629 on November 15, 2026. They win that one, comfortably.
 
 **They've been at it longer.** More years in production, a much bigger
 community, more people who've already hit the edge case you're about to hit, an

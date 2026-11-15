@@ -51,7 +51,7 @@ One snippet in your `<head>`. Leave the GA4 tag where it is.
 
 {{< snippet >}}
 
-3,569 bytes gzipped. There's no second script file to choose between and no
+About 3.6 KB gzipped. There's no second script file to choose between and no
 plugin variants - outbound link clicks, file downloads, form submissions, scroll
 depth, time on page and single-page-app route changes are all counted with no
 extra configuration.

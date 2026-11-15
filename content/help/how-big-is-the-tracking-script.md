@@ -1,21 +1,25 @@
 ---
 title: "How big is the tracking script?"
-description: "3,569 bytes gzipped. 7,490 raw. That's the whole thing - there's no second file it pulls in afterwards."
+description: "3,629 bytes gzipped. 7,598 raw. That's the whole thing - there's no second file it pulls in afterwards."
 category: "installing"
 weight: 10
 ---
 
-**3,569 bytes gzipped.** 7,490 bytes raw.
+**3,629 bytes gzipped.** 7,598 bytes raw. Measured November 15, 2026, and you can check it yourself:
+
+```
+curl -s -H 'Accept-Encoding: identity' https://app.feasible.lol/js/script.js | gzip -9 | wc -c
+```
 
 That's the complete script, not a loader that fetches the real one afterwards. One request, and it's over.
 
-For scale: it's about 42× smaller than Google Analytics' tag on the wire. On a slow connection that's the difference between a measurable delay and nothing you could detect with a stopwatch.
+For scale: it's about 40× smaller than Google Analytics' `gtag.js`, which measured 148,590 bytes the same way in September 2026. On a slow connection that's the difference between a measurable delay and nothing you could detect with a stopwatch.
 
-The size is enforced rather than aspired to. The build has a byte budget baked in, and a build that exceeds it exits with an error - in the bundler *and* again in the Go server that serves it. It can't drift upward quietly between releases, because a release that made it bigger wouldn't compile.
+The size is enforced rather than aspired to. The build has a byte budget baked in, and a build that exceeds it exits with an error - in the bundler *and* again in a Go test over the copy the server embeds. It can't drift upward quietly between releases, because a release that made it bigger would fail its build.
 
 There's one optional extra: a Web Vitals module at 3,946 bytes gzipped, loaded only if you turn it on with `data-vitals`. Leave it off and it's never requested.
 
-What's in those 3,569 bytes is more than you'd guess: pageviews, single-page-app route changes, bfcache restores, outbound link clicks, file downloads, form submissions, scroll depth, focus-aware time on page, custom events and properties, revenue, a consent gate, Do Not Track, self-exclusion, and a retry queue that replays failed events on the next pageview so a flaky connection doesn't lose the data.
+What's in those 3,629 bytes is more than you'd guess: pageviews, single-page-app route changes, bfcache restores, outbound link clicks, file downloads, form submissions, scroll depth, focus-aware time on page, custom events and properties, revenue, a consent gate, Do Not Track, self-exclusion, and a retry queue that replays failed events on the next pageview so a flaky connection doesn't lose the data.
 
 The script is served with a one-hour cache header and an ETag, so returning visitors mostly get a 304 and no body at all.
 

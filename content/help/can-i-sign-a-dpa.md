@@ -18,7 +18,7 @@ It runs to ten numbered sections and covers what you'd expect a DPA to cover:
 - **An explicit prohibition on sending direct identifiers.** Don't put an email address in a custom property. It's in the contract, not just the docs.
 - **72-hour breach notification.**
 - **Sub-processors** by general authorization, against a public list you can check.
-- **The EU Standard Contractual Clauses, module two, plus the UK Addendum**, which is how [US hosting](/help/where-is-my-data-stored/) is handled.
+- **The EU Standard Contractual Clauses, module two, plus the UK Addendum**, which is how [data leaving the EU](/help/where-is-my-data-stored/) is handled.
 - **Security measures**: TLS, a hashing value derived fresh each day, one database per account, encrypted volumes, hashed credentials, least privilege.
 
 One carve-out worth knowing if you [self-host](/help/can-i-run-feasible-myself/): your own hosting providers aren't our sub-processors, and the DPA says so. On a self-hosted install the legal pages substitute your organization's details for ours, because in that arrangement we aren't processing anything.
