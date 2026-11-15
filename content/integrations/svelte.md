@@ -21,7 +21,7 @@ The tag goes in `src/app.html`, inside `<head>`. That file wraps every page Svel
   <link rel="icon" href="%sveltekit.assets%/favicon.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <script defer
-          src="https://app.feasible.lol/js/fs-k7m2q4x5r3n6t2v5.js"></script>
+          src="https://cdn.feasible.lol/js/fs-k7m2q4x5r3n6t2v5.js"></script>
   %sveltekit.head%
 </head>
 ```
@@ -33,7 +33,7 @@ If your project keeps head material in Svelte rather than in `app.html`, use `<s
 ```svelte
 <svelte:head>
   <script defer
-          src="https://app.feasible.lol/js/fs-k7m2q4x5r3n6t2v5.js"></script>
+          src="https://cdn.feasible.lol/js/fs-k7m2q4x5r3n6t2v5.js"></script>
 </svelte:head>
 ```
 

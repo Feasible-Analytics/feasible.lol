@@ -53,6 +53,9 @@ location /stats/js/ {
 }
 ```
 
+Point your proxy at `app.feasible.lol`, not `cdn.feasible.lol`. Both count the visitor correctly, but
+the CDN is one more hop your server doesn't need.
+
 ## Then point the script at your proxy
 
 ```

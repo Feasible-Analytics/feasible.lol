@@ -22,7 +22,7 @@ The hostname one works backwards from the others and catches people out. Subdoma
 
 ```html
 <script defer data-exclude="/admin/**,/preview/*"
-        src="https://app.feasible.lol/js/fs-k7m2q4x5r3n6t2v5.js"></script>
+        src="https://cdn.feasible.lol/js/fs-k7m2q4x5r3n6t2v5.js"></script>
 ```
 
 `*` matches within a path segment, `**` across segments. Use this when you'd rather the event never leave the browser at all. Use a page shield when you want it stopped centrally without a deploy.

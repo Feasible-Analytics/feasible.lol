@@ -19,7 +19,7 @@ import React from "react";
 
 export const onRenderBody = ({ setHeadComponents }) => {
   setHeadComponents([
-    <script key="feasible" defer src="https://app.feasible.lol/js/fs-k7m2q4x5r3n6t2v5.js" />,
+    <script key="feasible" defer src="https://cdn.feasible.lol/js/fs-k7m2q4x5r3n6t2v5.js" />,
   ]);
 };
 ```

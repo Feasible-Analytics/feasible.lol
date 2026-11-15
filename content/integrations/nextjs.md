@@ -20,7 +20,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body>{children}</body>
-      <Script src="https://app.feasible.lol/js/fs-k7m2q4x5r3n6t2v5.js" />
+      <Script src="https://cdn.feasible.lol/js/fs-k7m2q4x5r3n6t2v5.js" />
     </html>
   );
 }
@@ -39,7 +39,7 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
-        <script defer src="https://app.feasible.lol/js/fs-k7m2q4x5r3n6t2v5.js" />
+        <script defer src="https://cdn.feasible.lol/js/fs-k7m2q4x5r3n6t2v5.js" />
       </Head>
       <body>
         <Main />

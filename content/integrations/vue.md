@@ -34,7 +34,7 @@ Fix it with one attribute:
 
 ```html
 <script defer data-hash="true"
-        src="https://app.feasible.lol/js/fs-k7m2q4x5r3n6t2v5.js"></script>
+        src="https://cdn.feasible.lol/js/fs-k7m2q4x5r3n6t2v5.js"></script>
 ```
 
 A bare `data-hash` does nothing - it needs a value. Any non-empty value counts as on, including the string `"false"`, which is a trap worth knowing about. [Script options](/docs/script-options/) has the full list.

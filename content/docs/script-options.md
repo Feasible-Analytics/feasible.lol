@@ -113,7 +113,7 @@ Enable Web Vitals as an optional mode of the same tracker script. A bare attribu
 page; a decimal value between 0 and 1 samples that fraction of documents:
 
 ```
-<script defer data-vitals="0.1" src="https://app.feasible.lol/js/fs-k7m2q4x5r3n6t2v5.js"></script>
+<script defer data-vitals="0.1" src="https://cdn.feasible.lol/js/fs-k7m2q4x5r3n6t2v5.js"></script>
 ```
 
 It reports LCP, CLS, INP and TTFB as an event called **Web Vitals**, with one numeric property per
@@ -257,7 +257,9 @@ name yourself in the same line.
 ## Content security policy
 
 A strict CSP needs the analytics origin in **two** directives: `script-src` to load the file, and
-`connect-src` for the request that carries the events.
+`connect-src` for the request that carries the events. For today's snippet that's
+`https://cdn.feasible.lol`. An older snippet that loads from `app.feasible.lol` needs that origin
+instead, because the script sends events to wherever it loaded from.
 
 Allowing only `script-src` gives you a script that loads and then sends nothing, which looks like a broken install. There's no `nonce` support for the script file - allow the origin.
 
@@ -265,7 +267,7 @@ The queue stub is inline, so a strict policy needs to permit that one line too. 
 rather than turning on `unsafe-inline`, which would weaken the whole page on our account:
 
 ```
-script-src 'sha256-5k+O5YWs4lh0hHline+iuhh2erHUUv207J4/v8brHT0=' https://app.feasible.lol
+script-src 'sha256-5k+O5YWs4lh0hHline+iuhh2erHUUv207J4/v8brHT0=' https://cdn.feasible.lol
 ```
 
 The hash covers the stub exactly as the snippet ships it. Retype a character of it and the hash stops

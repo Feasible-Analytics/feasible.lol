@@ -33,7 +33,7 @@ def analytics(request):
 ```django
 {% if feasible_enabled %}
   <script defer
-          src="https://app.feasible.lol/js/fs-k7m2q4x5r3n6t2v5.js"></script>
+          src="https://cdn.feasible.lol/js/fs-k7m2q4x5r3n6t2v5.js"></script>
 {% endif %}
 ```
 

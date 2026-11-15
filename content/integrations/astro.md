@@ -12,7 +12,7 @@ The tag goes in the layout every page uses - usually `src/layouts/Layout.astro` 
   <meta charset="utf-8" />
   <title>{title}</title>
   <script is:inline defer
-          src="https://app.feasible.lol/js/fs-k7m2q4x5r3n6t2v5.js"></script>
+          src="https://cdn.feasible.lol/js/fs-k7m2q4x5r3n6t2v5.js"></script>
 </head>
 ```
 
