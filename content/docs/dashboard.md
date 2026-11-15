@@ -169,8 +169,15 @@ takes everything out.
 
 ## Conversions and journeys
 
-The full-width report at the bottom holds Goals, Properties, Funnels and Explore.
+The first full-width report under the four cards holds Goals, Properties, Funnels and Explore.
 
 Goals report conversions and revenue, Properties break registered metadata down into values, Funnels
 measure a configured sequence, and Explore discovers paths without a predefined sequence. See
 [goals and funnels](/docs/goals-funnels/) for the counting rules.
+
+## Search performance
+
+The last card shows what people typed into Google to find the site, once you
+[connect Search Console](/docs/import-export/#google-search-console). Its tabs are search terms,
+landing pages, countries and devices, each with clicks, impressions, click-through rate and average
+position. Google publishes about a day and a half late, and the dashboard's filters don't apply here.

@@ -61,7 +61,7 @@ From [Umami's pricing page](https://umami.is/pricing), read September 3, 2026.
 | | Umami | Feasible |
 |---|---|---|
 | Free | Hobby - 1 site, 100K events/mo, 6 months | 30-day trial, no card |
-| Paid | **Pro - $20/mo**, 1M events, 20 sites, 10 seats, 2 years | **$9.99/mo or $99/yr**, unlimited sites and seats, 1M pageviews, 5 years |
+| Paid | **Pro - $20/mo**, 1M events, 20 sites, 10 seats, 2 years | **$9.99/mo or $99/yr**, unlimited sites and seats, 1M pageviews, unlimited retention |
 | Bigger | Business - $200/mo, 10M events | Talk to us |
 
 **Umami has no annual billing.** Their FAQ: "Billing occurs on a monthly basis
@@ -115,7 +115,7 @@ doesn't.
 | Billing unit | Pageviews + custom events | Events - pageviews + custom events + **each stored property** |
 | Sites | Unlimited | 20 on Pro |
 | Team members | Unlimited, 5 roles + guests | 10 on Pro |
-| Retention | 5 years | 2 years on Pro, 5 on Business |
+| Retention | Unlimited | 2 years on Pro, 5 on Business |
 | API access | Every plan | Pro and up |
 | Data import | Every plan | Pro and up |
 | Session replay | **No** | Business - 5,000 included, then $0.005 each |

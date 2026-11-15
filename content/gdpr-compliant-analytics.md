@@ -150,8 +150,8 @@ or pick an EU-hosted vendor.
 security measures, sub-processors, breach notice, standard clauses, and UK
 Addendum.
 
-**Retention.** Five years on the hosted plan. Account records are deleted 90 days
-after cancellation, and invoices are kept as long as tax law requires.
+**Retention.** No time limit on the hosted plan while your account is open. Account
+data is deleted 90 days after a subscription stops paying, and invoices are kept as long as tax law requires.
 
 ---
 

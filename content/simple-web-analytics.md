@@ -50,7 +50,9 @@ Under the graph, four cards:
 - **Devices** - browsers and versions, systems and versions, device type and
   screen size, plus languages.
 
-The last card covers goals, custom properties, funnels, and page paths.
+Then one card for goals, custom properties, funnels, and page paths, and one
+for the search terms people typed into Google, once you
+[connect Search Console](/docs/import-export/#google-search-console).
 
 Click any row to filter the whole page. The filter stays in the URL, so you can
 share it. Click a card title for more rows and breakdowns.
@@ -104,7 +106,7 @@ If any of those describe you, choose another tool.
 ## What it costs
 
 $9.99 a month or $99 a year. Unlimited sites, teammates, and properties. One
-million pageviews and custom events a month. Five years of data. [See the full
+million pageviews and custom events a month. Unlimited data retention. [See the full
 price](/pricing/).
 
 ## Installing it

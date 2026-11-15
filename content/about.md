@@ -55,7 +55,7 @@ The domain is a joke about analytics bills. [Here's the story](/why-feasible/).
 ## Get in touch
 
 - **Support and anything technical** - [help@feasible.lol](mailto:help@feasible.lol)
-- **Larger plans or longer data retention** - <span class="whitespace-nowrap">[sales@feasible.lol](mailto:sales@feasible.lol)</span>
+- **Larger plans** - <span class="whitespace-nowrap">[sales@feasible.lol](mailto:sales@feasible.lol)</span>
 - **The code** - [github.com/Feasible-Analytics](https://github.com/Feasible-Analytics/app.feasible.lol)
 
 Cloudmanic Labs, LLC · 901 Brutscher Street, D112, Newberg, OR 97132, United States.

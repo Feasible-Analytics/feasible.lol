@@ -113,6 +113,12 @@ make a page factually incorrect.
 - **Google Analytics is not illegal in the EU.** The 2022 rulings were real, but
   the EU–US Data Privacy Framework adequacy decision of 2023-07-10 removed the
   transfer ground they rested on.
+- **Retention is not five years.** Nothing in the app ages analytics data out.
+  It's kept while the account is open and deleted 90 days after a subscription
+  stops paying. Say "unlimited data retention".
+- **We do have a search-terms report.** Connect Search Console and the
+  dashboard's Search performance card shows search terms, landing pages,
+  countries and devices.
 - **SQLite is not more storage-efficient** than a column store. Our true claim is
   operational: one file, one process, nothing to tune, 512 MB of RAM.
 - **Matomo is GPL-3.0**, not AGPL. **Umami is MIT**, which is genuinely more
@@ -120,8 +126,7 @@ make a page factually incorrect.
 
 ### Never claim a feature we don't have
 
-No SSO or SAML. No Search Console *report* (the data imports, nothing reads it
-back). No saved segments. No standalone referrers card. No mobile SDKs. No
+No SSO or SAML. No saved segments. No standalone referrers card. No mobile SDKs. No
 retention or cohort report, no session replay, no heatmaps, no A/B testing. No
 live demo dashboard — `app.feasible.lol/demo` is a 404 and must never be linked.
 

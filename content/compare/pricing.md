@@ -131,7 +131,7 @@ the plan with the features.
 
 | Vendor / plan | Annual | Sites | Team seats | Retention | Notable gaps at this price |
 |---|---:|---|---|---|---|
-| **Feasible** | **$99** | **Unlimited** | **Unlimited** | **5 years** | No SSO, session replay, heatmaps, A/B testing, cohort report or mobile SDKs |
+| **Feasible** | **$99** | **Unlimited** | **Unlimited** | **Unlimited** | No SSO, session replay, heatmaps, A/B testing, cohort report or mobile SDKs |
 | Plausible Starter | $690 | 1 | Owner only | No limit while subscribed | No custom properties, funnels or Stats API |
 | Plausible Growth | $1,040 | 3 | 3 | No limit while subscribed | Still no custom properties, funnels or Stats API |
 | Plausible Business | $1,390 | 10 | 10 | No limit while subscribed | Raw event export is Enterprise-only |

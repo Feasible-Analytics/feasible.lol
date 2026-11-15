@@ -99,7 +99,7 @@ until you're ten times busier than that.
 | Sites | Unlimited | 50 included, 75 at the 1M tier |
 | Extra sites | n/a | $100/yr per pack of 50 |
 | Team members | Unlimited, 5 roles + guests | Not published on the pricing page |
-| Retention | 5 years | "Forever," while you're a customer |
+| Retention | Unlimited while subscribed | "Forever," while you're a customer |
 | API | Yes, 10,000 req/hr | Yes, 600 req/hr |
 | Funnels | Yes | No |
 | Custom properties | Yes | No |
@@ -138,9 +138,6 @@ EU servers, and Fathom says the IP address is stripped inside the EU and never
 reaches their US infrastructure. We don't have this. Cloudmanic Labs is in
 Oregon; our transfers run on standard contractual clauses through our DPA. If
 your legal team wants EU processing, Fathom answers that and we don't.
-
-**"Forever" retention.** While you're a customer, your full history stays
-available. Ours is five years. Theirs is better.
 
 **A longer track record.** Years more production time, a large paying customer
 base, and a company that has publicly worked through the compliance questions in

@@ -7,7 +7,7 @@ date: 2026-08-31
 checked: 2026-09-03
 ---
 
-The Feasible dashboard is one screen. Six numbers across the top, one graph, four report cards, one wide card underneath. No menu. No report list. No place to go.
+The Feasible dashboard is one screen. Six numbers across the top, one graph, four report cards, two wide cards underneath. No menu. No report list. No place to go.
 
 You've either got what you came for by then or the product has failed, and we'd rather find that out than hide it behind navigation.
 
@@ -59,7 +59,9 @@ Plainly, because you'll find out anyway. Every argument for [simple web analytic
 
 **You can't build an arbitrary custom report.** There's no report builder, no drag-and-drop dimension canvas, no saving a view and naming it. If your job is to answer a question nobody has asked before, in a shape nobody has used before, this is the wrong screen.
 
-**There's no saved segment list, no session replay, no heatmaps, no cohort or retention report, and no A/B testing.** Referrer is a filter, not its own report card. There's no search-terms report either - you can connect a Search Console account, but nothing pulls the data across and nothing would read it back if it did.
+**There's no saved segment list, no session replay, no heatmaps, no cohort or retention report, and no A/B testing.** Referrer is a filter, not its own report card.
+
+Search terms aren't on that list. Connect Search Console and the last card shows what people typed into Google to find you.
 
 Some of those are missing because we haven't built them. Some are missing because we don't think they belong in a tool this size, and session replay is the clearest case: a recording of one person's session is a different product with a different privacy story, and the UK's own analytics exemption draws the line in that place.
 

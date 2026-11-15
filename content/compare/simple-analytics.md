@@ -110,7 +110,7 @@ nothing.
 | Users included | Unlimited | 1 |
 | Extra seats | $0 | $240/yr each |
 | Sites | Unlimited | 10 on the paid plan |
-| Retention | 5 years | 3 years |
+| Retention | Unlimited | 3 years |
 | Free plan | No - 30-day trial, no card | Yes, with a badge and 30-day retention |
 | Data location | United States | Netherlands |
 | Cookies on visitors | None | None |

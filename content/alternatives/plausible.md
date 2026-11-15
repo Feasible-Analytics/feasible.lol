@@ -42,7 +42,7 @@ Annual USD, on annual billing where offered. **The "counts" column decides the b
 
 | Tool | 100k pv/mo | 1M pv/mo | Counts | Sites | Seats | Source | Retention |
 |---|---|---|---|---|---|---|---|
-| **Feasible** | **$99** | **$99** | pageviews + events | unlimited | unlimited | AGPL-3.0 | 5 years |
+| **Feasible** | **$99** | **$99** | pageviews + events | unlimited | unlimited | AGPL-3.0 | unlimited |
 | [Plausible Starter](https://plausible.io/#pricing) | $190 | $690 | pageviews + events | 1 | owner only | AGPL-3.0 (CE) | No limit while subscribed |
 | [Plausible Growth](https://plausible.io/#pricing) | $290 | $1,040 | pageviews + events | 3 | 3 | AGPL-3.0 (CE) | No limit while subscribed |
 | [Plausible Business](https://plausible.io/#pricing) | $390 | $1,390 | pageviews + events | 10 | 10 | AGPL-3.0 (CE) | No limit while subscribed |
@@ -73,9 +73,9 @@ Cloud Pro is flat to a million events at $240 a year, which is the second-cheape
 
 ### Pirsch
 
-$540 a year at a million, unlimited seats, fifty sites, and **unlimited retention**. Fathom also advertises unlimited history, and Plausible now has no retention limit while subscribed.
+$540 a year at a million, unlimited seats, fifty sites, and **unlimited retention**. Fathom also advertises unlimited history, Plausible now has no retention limit while subscribed, and we don't set one either.
 
-**Where it beats us:** retention, plainly. If you need five-year-old data in ten years, Pirsch says yes and we say five years.
+**Where it beats us:** it's an EU vendor. Pirsch is a German company, and we're in Oregon.
 
 **The cost:** no funnels and no teams on Standard. The unit adds 10% of session-extension events on top of pageviews and custom events.
 
@@ -113,7 +113,7 @@ Free for reasonable public use, tiny, and run by one person who has been doing i
 
 ### Feasible - us
 
-$99 a year, flat, to a million pageviews and custom events. Unlimited sites, unlimited team members, unlimited goals, funnels and custom properties. Five years of retention. Full API, webhooks and raw export in every copy, including the self-hosted one.
+$99 a year, flat, to a million pageviews and custom events. Unlimited sites, unlimited team members, unlimited goals, funnels and custom properties. Unlimited data retention. Full API, webhooks and raw export in every copy, including the self-hosted one.
 
 **Where we beat the list:** nothing is metered except pageviews and events, and nothing is held back from the open-source build. No cut-down community edition, no feature behind a higher tier.
 
@@ -128,7 +128,6 @@ Roundups for this query often include [PostHog](https://posthog.com/) and simila
 - **You want the licence to be permissive.** Umami. MIT beats every AGPL and GPL option here.
 - **You need data in the EU.** Stay on Plausible, or look at Fathom's EU isolation. We cannot help and neither can most of this table.
 - **You need depth and on-premise procurement.** Matomo.
-- **You need retention measured in decades.** Pirsch or Fathom.
 - **You run a personal site.** GoatCounter, free.
 - **You left because of the ladder.** That is us. One price, nothing metered but pageviews and events, and everything included at the bottom tier.
 

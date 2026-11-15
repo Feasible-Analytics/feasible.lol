@@ -97,8 +97,8 @@ retention setting does not affect standard aggregated reports... The data
 retention setting only affects explorations and funnel reports." So your basic
 traffic charts survive. Explorations and funnels - the analysis you'd sit down to do - hit the wall.
 
-Feasible keeps five years on the $99 plan, and you can export the raw events to
-CSV whenever you want.
+Feasible keeps your data for as long as your account is open, with no time limit,
+and you can export the raw events to CSV whenever you want.
 
 ## Why reports disagree
 
@@ -184,14 +184,14 @@ company has no exposure to any of it either way.
 | Tracking script (gzipped) | 3,569 bytes | 148,590 bytes |
 | Cookies on your visitors | None | Yes |
 | Consent banner | Not needed for most sites | Yes, in the EU/UK |
-| Event-level retention | 5 years | 2 or 14 months (standard properties) |
+| Event-level retention | Unlimited | 2 or 14 months (standard properties) |
 | Report thresholding | None | System defined, can't be turned off |
 | Sampling | Disclosed and labeled when it happens | Possible in Reports and Explorations |
 | Raw data export | ZIP of raw events, any plan | BigQuery export |
 | Dropped events | Counted, with a named reason | Not surfaced |
 | Data goes to | Us, and nobody else | Google |
 | Google Ads / DV360 integration | No | Yes |
-| Search Console keyword report | No | Yes |
+| Search Console search terms | Yes | Yes |
 | Audience building for remarketing | No | Yes |
 | Session replay, heatmaps, A/B testing | No | No |
 | Cohort / retention analysis | No | Yes |
@@ -212,9 +212,6 @@ join web behavior to your own warehouse. That's more than we offer.
 
 It has cohort and retention analysis, mobile SDKs, audience building and
 cross-device modeling. We have none of those, and no plans we're announcing.
-Search Console is properly integrated in GA4 with a real keyword report. We
-don't have one, and there's nothing in Feasible that answers "which queries
-brought people here".
 
 And every agency and consultant already knows it. GA4 experience is common.
 Hiring for ours is a five-minute conversation, but there's no ecosystem behind
