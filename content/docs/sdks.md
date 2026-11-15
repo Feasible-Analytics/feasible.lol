@@ -28,7 +28,7 @@ snippet there rather than the per-site path, because tag managers rewrite opaque
 
 ```
 <script>window.feasible=window.feasible||function(){(window.feasible.q=window.feasible.q||[]).push(arguments)};</script>
-<script defer data-domain="example.com" src="https://app.feasible.lol/js/script.js"></script>
+<script defer data-domain="example.com" src="https://cdn.feasible.lol/js/script.js"></script>
 ```
 
 There's also a tag template. It isn't in Google's Community Template Gallery yet, so you import it

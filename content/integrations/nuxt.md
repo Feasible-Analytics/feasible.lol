@@ -13,7 +13,7 @@ export default defineNuxtConfig({
     head: {
       script: [
         {
-          src: "https://app.feasible.lol/js/fs-k7m2q4x5r3n6t2v5.js",
+          src: "https://cdn.feasible.lol/js/fs-k7m2q4x5r3n6t2v5.js",
           defer: true,
         },
       ],

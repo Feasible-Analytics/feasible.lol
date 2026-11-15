@@ -58,7 +58,7 @@ extra configuration.
 
 If you use a tag manager, you can add it there, though a tag in the template is
 one fewer thing between you and your data. If your site is behind a CSP, allow
-`app.feasible.lol` in both `script-src` and `connect-src`.
+`cdn.feasible.lol` in both `script-src` and `connect-src`.
 
 {{< callout title="Run both for a fortnight" >}}
 This is the step people skip, and it's the one that saves the argument later.

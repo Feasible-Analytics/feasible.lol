@@ -35,7 +35,7 @@ shares:
 
 ```
 <script>window.feasible=window.feasible||function(){(window.feasible.q=window.feasible.q||[]).push(arguments)};</script>
-<script defer data-domain="example.com" src="https://app.feasible.lol/js/script.js"></script>
+<script defer data-domain="example.com" src="https://cdn.feasible.lol/js/script.js"></script>
 ```
 
 Both forms behave identically. Use this one if you're migrating an existing install and would

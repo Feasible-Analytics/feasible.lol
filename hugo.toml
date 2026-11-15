@@ -332,12 +332,16 @@ disableKinds = ["taxonomy", "term"]
   email = "help@feasible.lol"
   salesEmail = "sales@feasible.lol"
   appURL = "https://app.feasible.lol"
+  # Where browser snippets load the tracker from, matching what the app hands
+  # out. The script posts events back to the host it loaded from, so a snippet
+  # needs nothing else. Servers and proxies still talk to appURL.
+  scriptURL = "https://cdn.feasible.lol"
   loginURL = "https://app.feasible.lol/login"
   signupURL = "https://app.feasible.lol/register"
   statusURL = "https://status.feasible.lol"
   # The per-site tracker. The token is not a secret — it is served to every
   # visitor — it just routes events to this site's account.
-  trackerURL = "https://app.feasible.lol/js/fs-pty4fgk7fztxzmkr.js"
+  trackerURL = "https://cdn.feasible.lol/js/fs-pty4fgk7fztxzmkr.js"
   githubURL = "https://github.com/Feasible-Analytics/app.feasible.lol"
   twitterURL = "https://x.com/FeasibleLOL"
   githubOrg = "https://github.com/Feasible-Analytics"
