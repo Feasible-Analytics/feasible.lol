@@ -110,7 +110,7 @@ number that looks right and isn't. Details on [SDKs and plugins](/docs/sdks/).
 ## Anything without a browser
 
 Mobile apps, background jobs, offline conversions: post to the [events endpoint](/docs/api/#sending-events).
-Our server-side SDKs aren't published yet. See [SDKs and plugins](/docs/sdks/).
+In Go, use the [Go SDK](/docs/sdks/#go). Our other server-side SDKs aren't published yet.
 
 There are no mobile SDKs yet - iOS, Android and React Native are scoped and not built. Post to the
 endpoint directly in the meantime.
