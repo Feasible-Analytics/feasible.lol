@@ -167,15 +167,21 @@ What each one means is on [metric definitions](/docs/metrics/). Numeric
 
 ### Dimensions
 
-Event-scoped: `event:name`, `event:page`, `event:page_title`, `event:hostname`, `event:goal`.
+Event-scoped: `event:name`, `event:page`, `event:page_title`, `event:hostname`, `event:goal`,
+`event:bot_reason`.
 
 Visit-scoped: `visit:source`, `visit:referrer`, `visit:channel`, `visit:utm_source`,
-`visit:utm_medium`, `visit:utm_campaign`, `visit:entry_page`, `visit:exit_page`, `visit:country`,
+`visit:utm_medium`, `visit:utm_campaign`, `visit:utm_content`, `visit:utm_term`,
+`visit:entry_page`, `visit:exit_page`, `visit:country`,
 `visit:region`, `visit:city`, `visit:device`, `visit:screen`, `visit:browser`,
 `visit:browser_version`, `visit:os`, `visit:os_version`, `visit:language`.
 
 Time: `time`, `time:minute`, `time:hour`, `time:day`, `time:week`, `time:month`. Bare `time` takes
 whatever width the range implies.
+
+`event:bot_reason` is the rule that marked traffic as automated, such as `datacenter_ip`. Automated
+traffic is left out of every query by default, so this dimension is empty unless the query sets
+`"include": {"bots": true}`.
 
 And `event:props:<name>` for any custom property. `visit:screen_size`, `visit:device_type` and
 `event:path` are accepted as aliases so an existing integration keeps working.

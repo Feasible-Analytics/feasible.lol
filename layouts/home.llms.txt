@@ -15,7 +15,8 @@ ${{ site.Params.pricing.monthly }} a month or ${{ site.Params.pricing.yearly }} 
 unlimited websites and unlimited team members, up to {{ site.Params.pricing.pageviews }}
 pageviews and custom events a month. It sets no cookies and stores no IP
 addresses. The source is open under AGPL-3.0-or-later and it runs as a single Go
-binary on SQLite.
+binary on SQLite. It's also an MCP server, so AI assistants such as Claude and
+ChatGPT can read a site's numbers and answer questions about them.
 
 Every competitor price on this site is that company's own published list price,
 with the date it was checked on the page.
