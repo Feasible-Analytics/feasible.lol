@@ -1,15 +1,15 @@
 ---
 title: "SDKs and plugins"
-description: "Which add-ons are published, which aren't yet, and what to use today: the script tag, WPCode, a Custom HTML tag, and two you can set up from the source."
+description: "The Go SDK is published. Which add-ons aren't yet, and what to use today: the script tag, WPCode, a Custom HTML tag, and two you can set up from the source."
 lede: "What's published, what isn't yet, and what to use today."
 weight: 140
 ---
 
-None of our add-ons is in a package registry or the WordPress directory yet. Checked November 15,
-2026: the WordPress plugin, the npm browser loader `@feasible/tracker`, and the server-side SDKs for
-Go, Node, PHP, Python and Ruby are all written, and their source is in the product's
+The [Go SDK](#go) is published. Checked November 15, 2026: the rest - the WordPress plugin, the npm
+browser loader `@feasible/tracker`, and the server-side SDKs for Node, PHP, Python and Ruby - are
+written, and their source is in the product's
 [repository](https://github.com/Feasible-Analytics/app.feasible.lol) under `ecosystem/`, but none of
-them can be installed with a package manager today. They're on the way.
+them can be installed with a package manager yet. They're on the way.
 
 Here's what to use instead:
 
@@ -17,9 +17,54 @@ Here's what to use instead:
 |---|---|
 | WordPress plugin | WPCode or your theme's header - [WordPress](/integrations/wordpress/) |
 | npm loader | The script tag in your root layout - [installation](/docs/installation/) |
-| Server-side SDKs | The [events API](/docs/api/#sending-events) they wrap |
+| Go SDK | Published: `go get github.com/Feasible-Analytics/feasible-go` - [below](#go) |
+| Node, PHP, Python and Ruby SDKs | The [events API](/docs/api/#sending-events) they wrap |
 | Google Tag Manager template | A Custom HTML tag, or [import the template](#google-tag-manager) yourself |
 | Looker Studio connector | [Deploy it](#looker-studio) from the repository |
+
+## Go
+
+[`feasible-go`](https://github.com/Feasible-Analytics/feasible-go) is published, at v0.1.0. It uses
+the standard library only, it's MIT licensed, and it needs Go 1.23 or newer.
+
+```
+go get github.com/Feasible-Analytics/feasible-go
+```
+
+Send the event from the handler serving the visitor, such as the one for a checkout or a form:
+
+```go
+client, err := feasible.New(feasible.Options{Domain: "example.com"})
+if err != nil {
+	log.Fatal(err)
+}
+
+// In the handler:
+event := feasible.NewEvent("Purchase", "https://example.com/checkout", feasible.FromRequest(r))
+event.Revenue = &feasible.Revenue{Amount: 99.50, Currency: "USD"}
+
+result, err := client.Send(r.Context(), event)
+```
+
+The visitor isn't optional. `NewEvent` takes one, and a visitor missing an address or a user agent
+is refused before anything is sent. `FromRequest` reads `CF-Connecting-IP`, then the first entry of
+`X-Forwarded-For`, then the connection, so use it only behind a proxy that writes those headers
+itself. If your app faces the internet directly, a visitor could put anything in them, so build the
+visitor from the connection instead:
+
+```go
+host, _, _ := net.SplitHostPort(r.RemoteAddr)
+visitor := feasible.NewVisitor(host, r.UserAgent())
+```
+
+The client sends the visitor's address in `X-Forwarded-For`, which the hosted service counts as the
+visitor. On a self-hosted install, forwarded addresses follow the
+[trusted-proxy rules](/docs/proxying/#self-hosting).
+
+`result.DropReason` says why an event wasn't counted, and `client.Debug` shows what the server
+would derive without writing anything. Set `Options.Disabled` in tests and the client records
+events instead of sending them. The
+[README](https://github.com/Feasible-Analytics/feasible-go#readme) has the rest.
 
 ## Google Tag Manager
 
@@ -69,8 +114,8 @@ right and isn't.
 - **The npm loader.** Every framework takes the script tag in its root layout, and the script
   follows client-side navigation itself. `window.feasible()` works from your own code as soon as the
   snippet's first line has run.
-- **The server-side SDKs.** Dependency-free clients for Go, Node, PHP, Python and Ruby. Each makes
-  the visitor's IP address and user agent required arguments, because a server-side event without
-  them looks like a datacenter bot.
+- **The other server-side SDKs.** Dependency-free clients for Node, PHP, Python and Ruby. Like the
+  Go one, each makes the visitor's IP address and user agent required arguments, because a
+  server-side event without them looks like a datacenter bot.
 
 There are no mobile SDKs. iOS, Android and React Native are scoped and not built.
