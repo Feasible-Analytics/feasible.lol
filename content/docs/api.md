@@ -47,6 +47,10 @@ dropped.
 all accepted, and the body is parsed as JSON regardless - the browser script sends `text/plain`
 deliberately, to avoid a CORS preflight on every pageview. The body is capped at 64 KiB.
 
+Sending from your server? Pass the visitor's address in `X-Forwarded-For` and their browser's
+`User-Agent`. Without them the event is counted at your server: no location, every visitor merged
+into one, and usually filed as `datacenter_ip`.
+
 ### Why it always answers 202
 
 The response is `202 Accepted` as soon as the event enters the process's write buffer, before it
@@ -83,8 +87,9 @@ can still become one of these:
   is the only place you'll ever see it.
 
 A genuine `400` is reserved for a body we couldn't read at all, a payload missing `n` or `d`, a
-malformed `k`, and a request arriving straight from a data center with no forwarded address or user
-agent - each with a sentence naming what's missing.
+malformed `k`, and, on a self-hosted install, a request arriving straight from a data center with no
+forwarded address or user agent - each with a sentence naming what's missing. The hosted service
+answers that last one with a `202` and files it as `datacenter_ip`.
 
 ### Stating attribution for a server-side event
 
