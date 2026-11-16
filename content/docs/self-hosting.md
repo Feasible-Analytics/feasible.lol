@@ -66,7 +66,7 @@ set -a; . ./feasible.env; set +a
 
 `serve` runs the dashboard, the API, the tracker and ingestion in one process, which is what almost
 every self-hoster should run. The other commands are `ingest`, `db migrate`, `db backup`, `rollup`,
-`imports`, `seed`, `api-key`, `mcp`, `billing`, `comp`, `account` and `mail`.
+`imports`, `seed`, `api-key`, `mcp`, `billing`, `comp`, `account`, `avatar` and `mail`.
 `./feasible help` describes each one.
 
 That's enough to try it. To keep it running on a server, [use systemd](#keep-it-running-with-systemd).
@@ -421,14 +421,19 @@ kept in `favicons/` in the data directory for 7 days, and a miss is remembered f
 folder is capped at 64 MB, and the oldest icons go first when it fills. There's no setting to turn
 this off yet.
 
-Account pictures don't go anywhere. The app draws each person's initials on a color. Someone who
-signs in with Google gets their Google profile picture instead, which your server fetches at each
-Google sign-in and serves from your own address.
+Account pictures stay on your server unless you turn Gravatar on. The app draws each person's
+initials on a color. Someone who signs in with Google gets their Google profile picture instead,
+which your server fetches at each Google sign-in and serves from your own address.
 
 Everything else happens only when you set it up or someone uses it:
 
 - **Email**, to your SMTP relay or Amazon SES, when the mail transport is `smtp` or `ses`.
 - **Google**, for sign-in, the GA4 import and Search Console, once the Google client is set.
+- **Gravatar**, only if you set `FEASIBLE_APP_GRAVATAR=true`. It's off on a self-hosted install.
+  When it's on, an account with no Google picture is looked up when it signs in, with a hash of its
+  email address. A picture found there is kept, and an address with none is asked about again at
+  most once a week. `feasible avatar backfill` asks about every verified account with no picture
+  and no miss in the last week, so you don't have to wait for people to sign in.
 - **Slack and webhooks**, to the addresses you and your users add for reports, alerts and webhooks.
 - **Your own sites**, when someone presses the button that checks a snippet is installed. The server
   loads that site's home page once.
