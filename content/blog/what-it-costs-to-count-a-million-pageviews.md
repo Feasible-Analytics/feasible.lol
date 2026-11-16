@@ -44,7 +44,7 @@ Then bandwidth. Our tracking script is 3,629 bytes gzipped, 7,598 raw. Assume a 
 
 Storage and bandwidth aren't what you're paying for: 3.5 GB of data a year and about 1 GB a month of script transfer. Memory is the one number we can't give you yet, so we're not going to tell you which row to buy.
 
-We don't run one box, to be clear. Ingest is a separate tier from the app, and there's more than one of each, because a single machine that reboots is an outage and we'd rather it weren't. That's a redundancy bill. It isn't a large one, and it doesn't scale with your pageviews the way an invoice does.
+To be clear, we run one server today, in Montreal, and a reboot there is an outage. Ingest is built as a separate process from the app so it can move to its own machines, and running more than one of each is a redundancy bill. It isn't a large one, and it doesn't scale with your pageviews the way an invoice does.
 
 ## Other architectures cost more
 
