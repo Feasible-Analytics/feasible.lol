@@ -19,9 +19,12 @@
 #   note-write.sh write <note-id> <file>   write it back, only if unchanged
 #   note-write.sh check <note-id>          has it moved since the read?
 #
-# Tasks live inside the note body as blocks that a Markdown read-back drops, so
-# every write passes --keep-tasks. Without it, saving the body deletes the
-# reminders attached to the note.
+# Tasks live inside the note body as <harbor-task> blocks that a Markdown
+# read-back drops, and harbor v0.1.5 deletes a task outright when a body update
+# leaves its block out, without refusing or warning. So a write carries every
+# block the stored note has back into the body as raw HTML, then checks the
+# stored note still has them all. A harbor that offers --keep-tasks gets that
+# flag instead.
 
 set -euo pipefail
 
@@ -86,8 +89,56 @@ EOF
     return 1
   fi
 
-  harbor notes update "$id" --file "$in" --keep-tasks --json | jq -r '"written, usn \(.usn)"'
+  # The note is unchanged since the read, so its task blocks are the ones the
+  # read dropped. Note which they are before writing.
+  local before
+  before="$(task_ids "$id")"
+
+  if keep_tasks_flag; then
+    harbor notes update "$id" --file "$in" --keep-tasks --json | jq -r '"written, usn \(.usn)"'
+  else
+    local body
+    body="$(mktemp "$STATE_DIR/body.XXXXXX")"
+    with_task_blocks "$in" "$before" > "$body"
+    harbor notes update "$id" --file "$body" --json | jq -r '"written, usn \(.usn)"'
+    rm -f "$body"
+  fi
   version_of "$id" > "$sf"
+
+  local missing
+  missing="$(comm -23 <(sort <<<"$before") <(task_ids "$id" | sort) | grep -v '^$' || true)"
+  if [[ -n "$missing" ]]; then
+    echo "WARNING: the note lost these tasks in the write: $missing" >&2
+    echo "Recreate them in Harbor before the next run." >&2
+    return 1
+  fi
+}
+
+# task_ids lists the ids of the <harbor-task> blocks in the stored note, one a
+# line, in body order.
+task_ids() {
+  harbor notes get "$1" --format html --json | jq -r '.content' \
+    | grep -oE '<harbor-task[^>]*id="[^"]+"' | sed -E 's/.*id="([^"]+)".*/\1/' || true
+}
+
+# keep_tasks_flag reports whether this harbor build can keep tasks itself.
+keep_tasks_flag() {
+  harbor notes update --help 2>&1 | grep -q -- '--keep-tasks'
+}
+
+# with_task_blocks prints a Markdown body with each task block appended as raw
+# HTML, skipping any the file already carries. The open and close tags go on
+# separate lines so Markdown keeps the element as a block of its own rather
+# than wrapping it in a paragraph. A task created in Harbor lands at the end of
+# the body, so the end is where these go back.
+with_task_blocks() {
+  local file="$1" ids="$2" id
+  cat "$file"
+  while IFS= read -r id; do
+    [[ -n "$id" ]] || continue
+    grep -q "harbor-task id=\"$id\"" "$file" && continue
+    printf '\n\n<harbor-task id="%s">\n</harbor-task>\n' "$id"
+  done <<<"$ids"
 }
 
 [[ $# -ge 2 ]] || usage

@@ -35,10 +35,10 @@ most here:
 - `notes update` **replaces the whole body**. Never patch by guessing. Fetch,
   edit, write back.
 - **A campaign note with reminders on it will lose them.** Tasks live inside the
-  note body as blocks that a Markdown read-back silently drops, so the ordinary
-  fetch-edit-write cycle deletes every reminder attached to the note. Harbor
-  refuses the write and names them; pass `--keep-tasks` and re-run. Never pass
-  `--allow-task-loss` to get past that message.
+  note body as `<harbor-task>` blocks that a Markdown read-back silently drops.
+  Write that Markdown back and Harbor deletes every task whose block is missing,
+  with no refusal and no warning. `note-write.sh` carries the blocks through for
+  you; a hand-rolled `notes update` does not.
 
 ### The note has two authors, and you are the one who overwrites
 
@@ -61,7 +61,10 @@ edited in between. Over a six-month campaign that is not a question of if.
 
 It records the note's `usn` on read and refuses the write if it has changed,
 which shrinks the window from the length of a whole run to the moment between
-check and write. It also passes `--keep-tasks` every time, so reminders survive.
+check and write. It also puts every task block the stored note has back into
+the body as raw HTML before it writes, then checks the stored note still has
+them all and says which it lost if it doesn't. (Where `harbor notes update`
+offers `--keep-tasks`, it passes that instead.)
 
 **When it refuses, do not re-read and overwrite.** That gets past the check and
 destroys the edit anyway, which is the exact thing being prevented. Re-read, find
