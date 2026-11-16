@@ -33,7 +33,7 @@ sub-processors, not ours.
 | **Cloudflare, Inc.** (Turnstile) | The human check on the sign-up form | Cloudflare's network, nearest the person signing up | The IP address and browser details of the person signing up, and whether the check passed. Never your visitors' data |
 | **Slack Technologies, LLC** | Carries our own notices to our team when an account is created, changes plan or closes | United States | For a new account: your name, email, team, how you signed up and where you came from. For a plan change: your billing email. For a closed account: your name and email |
 | **DuckDuckGo, Inc.** | Supplies the icon shown next to each traffic source in your reports. Our server asks for it, only for sources a report has shown, and keeps it for a week | Not published. The company is in the United States | Only the source's hostname, such as `news.ycombinator.com`. Never anything about a visitor or an account |
-| **Automattic Inc.** (Gravatar) | Supplies a picture for an account with no Google picture. Our server looks it up once | United States | A hash of that account's email address |
+| **Automattic Inc.** (Gravatar) | Supplies a picture for an account with no Google picture. Our server looks it up at sign-in. A picture found there is kept, and an address with none is asked about again at most once a week | United States | A hash of that account's email address |
 
 That's the whole list.
 
