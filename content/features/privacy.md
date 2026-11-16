@@ -38,10 +38,11 @@ The same instinct runs through the app. Source favicons on the dashboard are
 proxied through our own origin, so opening your reports never makes your browser
 contact the sites that linked to you. Our server fetches each icon from
 DuckDuckGo's icon service, which sees the source's hostname and nothing else,
-and keeps it for a week. Avatars are fetched once, re-encoded, and served from
-us. On the hosted service, an account with no Google picture is looked up on
-Gravatar once, with a hash of its email address. A self-hosted install leaves
-Gravatar off unless the operator turns it on.
+and keeps it for a week. It only fetches icons for well-known sources and for
+ones your reports have shown you. Account pictures are your initials on a color, drawn by the app. If
+you sign in with Google, our server fetches your Google profile picture when you
+sign in and serves it from our own address. Your email address, or a hash of
+it, never goes anywhere to find a picture.
 
 ## The identifier
 Every visit gets a 64-bit number, derived like this:

@@ -66,7 +66,7 @@ set -a; . ./feasible.env; set +a
 
 `serve` runs the dashboard, the API, the tracker and ingestion in one process, which is what almost
 every self-hoster should run. The other commands are `ingest`, `db migrate`, `db backup`, `rollup`,
-`imports`, `seed`, `api-key`, `mcp`, `billing`, `comp`, `account`, `avatar` and `mail`.
+`imports`, `seed`, `api-key`, `mcp`, `billing`, `comp`, `account` and `mail`.
 `./feasible help` describes each one.
 
 That's enough to try it. To keep it running on a server, [use systemd](#keep-it-running-with-systemd).
@@ -409,20 +409,26 @@ of reports by default, so a wrongly-classified human visitor can be recovered.
 
 ## What it connects to
 
-One outside service is always on: source icons. When a dashboard shows a source such as
+One outside service is always on: source icons. When a report shows a source such as
 `news.ycombinator.com`, your server asks DuckDuckGo's icon service, `icons.duckduckgo.com`, for that
 hostname's icon. The request carries the hostname and nothing else from your data. Nobody's browser
-makes it, because the dashboard loads the icon from your own server. An icon is kept in `favicons/`
-in the data directory for 7 days, and a miss is remembered for 6 hours. There's no setting to turn
+makes it, because the dashboard loads the icon from your own server.
+
+Your server only fetches an icon for a source on the app's built-in list, or for one a report has
+already shown to that same dashboard view, whether that's a signed-in user, a public dashboard or a
+shared link. Any other name gets a letter tile, with no fetch and nothing written to disk. Icons are
+kept in `favicons/` in the data directory for 7 days, and a miss is remembered for 6 hours. The
+folder is capped at 64 MB, and the oldest icons go first when it fills. There's no setting to turn
 this off yet.
+
+Account pictures don't go anywhere. The app draws each person's initials on a color. Someone who
+signs in with Google gets their Google profile picture instead, which your server fetches at each
+Google sign-in and serves from your own address.
 
 Everything else happens only when you set it up or someone uses it:
 
 - **Email**, to your SMTP relay or Amazon SES, when the mail transport is `smtp` or `ses`.
 - **Google**, for sign-in, the GA4 import and Search Console, once the Google client is set.
-- **Gravatar**, only if you set `FEASIBLE_APP_GRAVATAR=true`. It's off on a self-hosted install.
-  When it's on, an account with no Google picture is looked up once, with a hash of its email
-  address.
 - **Slack and webhooks**, to the addresses you and your users add for reports, alerts and webhooks.
 - **Your own sites**, when someone presses the button that checks a snippet is installed. The server
   loads that site's home page once.
