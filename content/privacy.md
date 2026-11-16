@@ -4,12 +4,11 @@ description: "Who controls what data, on what legal basis, and for how long. The
 lede: "Who controls what, on what legal basis, and for how long."
 toc: true
 nocta: true
-updated: 2026-09-03
+updated: 2026-11-16
 ---
 
-<!-- Source parity: the authoritative copy of this document is
-     internal/pages/docs/legal-privacy.html in the app repo, which substitutes the operator's
-     identity for self-hosted installs. Change both together. -->
+<!-- The app binary no longer carries a copy of this policy (the legal pages
+     left it in v0.0.20), so this is the only copy. -->
 
 {{< callout title="Which service this covers" >}}
 This is the privacy policy for the hosted service at feasible.lol, run by Cloudmanic Labs, LLC. If you run [your own copy of Feasible](/open-source/), you are the operator of that install — it serves its own version of this policy, with your name and address in place of ours, and this page does not govern your visitors' data.
@@ -33,6 +32,13 @@ name if you gave one, your team and site names, the transaction identifiers and 
 status Stripe shares with us, and the sessions and API keys you created. We hold them to run
 the service, provide your subscription, and email you about your account.
 
+We also keep where you came from when you signed up, if the link or your browser told us: the
+domain of the site that sent you, the campaign tags on the link (utm_source, utm_medium and
+utm_campaign) and the first page of ours you landed on. We don't keep your IP address or the full
+address of the page that referred you, and we don't use a cookie to do it. When you create an
+account we count one sign-up in our own Feasible analytics for feasible.lol, the same way a page
+view is counted. It has no cookie and nothing that names you.
+
 **Your payment.** For transactions in jurisdictions where Managed Payments is
 available and labeled "Sold through Link," Stripe Managed Payments is provided by Sold
 through Link, LLC as merchant of record. Stripe and Link process the billing and transaction
@@ -42,7 +48,7 @@ Managed Payments supports it, receipts and transaction support under
 
 **Your visitors.** You are the controller and we are the processor. What we
 store and what we deliberately do not is set out in full in
-[the privacy documentation](https://app.feasible.lol/docs/privacy), including the honest
+[the privacy documentation](/docs/privacy/), including the honest
 statement that the visitor identifier is pseudonymous rather than anonymous. The
 [data processing addendum](/dpa/) is the contract that governs it.
 

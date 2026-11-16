@@ -1,17 +1,16 @@
 ---
 title: "Sub-processors"
 description: "Every company that touches data on the hosted Feasible service, what each one does, and where it processes."
-lede: "Four companies touch your data. Here's what each one does, and where."
+lede: "Eight companies touch your data. Here's what each one does, and where."
 toc: true
 nocta: true
-updated: 2026-09-03
+updated: 2026-11-16
 ---
 
-<!-- Source parity: the privacy policy and the DPA — both here and in the app
-     binary at internal/pages/docs/legal-privacy.html and legal-dpa.html — link
-     to this page by absolute URL and commit to keeping it current. If a
-     sub-processor is added or removed, change it here and give the 30 days'
-     notice the DPA promises. -->
+<!-- The privacy policy and the DPA link to this page and commit to keeping it
+     current. The app binary no longer carries copies of the legal pages (they
+     left in v0.0.20), so this is the only copy. If a sub-processor is added or
+     removed, change it here and give the 30 days' notice the DPA promises. -->
 
 This is the current list of sub-processors for the **hosted service at
 feasible.lol**, kept here because the [privacy policy](/privacy/) and the
@@ -26,10 +25,15 @@ sub-processors, not ours.
 
 | Sub-processor | What it does | Where it processes | Data it can reach |
 |---|---|---|---|
-| **DigitalOcean, LLC** | Runs the servers and the storage the service lives on | United States | Everything the service stores: your account, your sites, and the pseudonymous event data |
+| **Rica Web Services Inc.** (Servarica) | Runs the servers and the databases the service lives on | Canada (Montreal) | Everything the service stores: your account, your sites, and the pseudonymous event data |
+| **Amazon Web Services, Inc.** (CloudFront) | Serves the tracker script from `cdn.feasible.lol` and passes your visitors' events on to our servers | Amazon's edge locations, nearest each visitor | Your visitors' requests for the script and their events: IP address, user agent, and what each event carries, such as the page address, the referrer and any properties you send |
 | **Amazon Web Services, Inc.** (Simple Email Service) | Sends the mail we send you — verification, password resets, login notices, your weekly and monthly reports, and traffic alerts | United States (us-east-1) | Your email address, your name, and whatever figures are in the report being sent |
 | **Stripe, Inc.** | Takes the payment and runs the billing portal | United States | Your billing name, email, address and card details. **We never see or store a card number** — it goes to Stripe directly |
 | **Sold through Link, LLC** | Merchant of record on transactions labeled "Sold through Link" — collects the payment, issues the receipt and handles indirect tax | United States | Your billing name, email, address and the transaction. Never your visitors' data |
+| **Cloudflare, Inc.** (Turnstile) | The human check on the sign-up form | Cloudflare's network, nearest the person signing up | The IP address and browser details of the person signing up, and whether the check passed. Never your visitors' data |
+| **Slack Technologies, LLC** | Carries our own notices to our team when an account is created, changes plan or closes | United States | For a new account: your name, email, team, how you signed up and where you came from. For a plan change: your billing email. For a closed account: your name and email |
+| **DuckDuckGo, Inc.** | Supplies the icon shown next to each traffic source in your reports. Our server asks for it, only for sources a report has shown, and keeps it for a week | Not published. The company is in the United States | Only the source's hostname, such as `news.ycombinator.com`. Never anything about a visitor or an account |
+| **Automattic Inc.** (Gravatar) | Supplies a picture for an account with no Google picture. Our server looks it up once | United States | A hash of that account's email address |
 
 That's the whole list.
 
@@ -45,15 +49,16 @@ something you start, and you can disconnect it at any time. Google isn't
 processing your visitors' data on our behalf, so it isn't a sub-processor — it's
 a source you chose to read from.
 
-**Slack.** If you point a report or an alert at a Slack webhook, we post to the
-URL you gave us. You chose the destination, so Slack is your processor for that,
-not ours.
+**Slack, for your reports.** Slack is on the list for our own notices. If you
+point a report or an alert at a Slack webhook, we post to the URL you gave us.
+You chose that destination, so Slack is your processor for it, not ours.
 
 **Any analytics vendor.** We use Feasible on feasible.lol. There is no third
 party measuring you here.
 
-**Any CDN, font host or tag manager.** This site serves its own fonts and its own
-stylesheet. Nothing on it calls out to another company.
+**A font host or tag manager.** This site serves its own fonts and its own
+stylesheet. Its analytics script comes from `cdn.feasible.lol`, which is the
+CloudFront row above. Nothing else on it calls out to another company.
 
 ## Changes
 
