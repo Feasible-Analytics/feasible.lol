@@ -23,7 +23,7 @@ metrics need totals rather than rates or averages.
 
 Import takes a ZIP or loose files. Recognized dimension columns cover page,
 hostname, page title, event name, entry and exit page, referrer, source,
-channel, the three UTM fields, country, region, city, device, screen size,
+channel, all five UTM fields, country, region, city, device, screen size,
 browser and version, operating system and version, and language. Metric columns
 are visitors, visits, pageviews, events, bounces, exits, visit duration and time
 on page. If your previous tool exports daily roll-up CSVs with columns named
@@ -34,9 +34,9 @@ guess whether `01/02` is January 2nd or February 1st, because guessing wrong
 puts a month of traffic on the wrong days and nothing about the result looks
 broken.
 
-The guards are generous and finite: 5,000,000 rows per file, 100 files per
-archive, 1 GiB uncompressed, and a compression-ratio limit that stops a zip
-bomb from being an interesting afternoon.
+The guards are generous and finite: 200 MB an upload, 5,000,000 rows per file,
+100 files per archive, 1 GiB uncompressed, and a compression-ratio limit that
+stops a zip bomb from being an interesting afternoon.
 
 ## Imported history
 

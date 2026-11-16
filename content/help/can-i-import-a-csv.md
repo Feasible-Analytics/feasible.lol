@@ -9,15 +9,17 @@ Yes. Loose CSV files or a ZIP of them, under **Site settings → [Imports](/docs
 
 The column headers are the interface. Every file needs a `date` column and recognized metric columns. Add supported dimension columns for the breakdowns you want to preserve. A column we don't recognize stops the import and names the column, rather than being dropped quietly and leaving you with numbers that are too small.
 
-**Dimension columns:** `page` (or `path`), `hostname`, `page_title`, `name` (or `event_name`), `entry_page`, `exit_page`, `referrer`, `source`, `channel`, `utm_source`, `utm_medium`, `utm_campaign`, `country`, `region`, `city`, `device`, `screen_size`, `browser`, `browser_version`, `operating_system`, `operating_system_version`, `language`.
+**Dimension columns:** `page` (or `path`), `hostname`, `page_title`, `name` (or `event_name`), `entry_page`, `exit_page`, `referrer`, `source`, `channel`, `utm_source`, `utm_medium`, `utm_campaign`, `utm_content`, `utm_term`, `country`, `region`, `city`, `device`, `screen_size`, `browser`, `browser_version`, `operating_system`, `operating_system_version`, `language`.
 
 **Metric columns:** `visitors`, `visits` (or `entrances`), `pageviews`, `events`, `bounces`, `exits`, `visit_duration`, `time_on_page`.
 
 **Dates** must be `2026-01-31`, `2026/01/31` or RFC 3339. Only unambiguous layouts are accepted - nothing that would let `03/04` mean either March or April, because a silent off-by-a-month in a year of history is unrecoverable.
 
-The limits are generous: 5,000,000 rows per file, 100 CSVs per archive, 1 GiB uncompressed. Archives are checked for compression-bomb ratios before they're opened.
+The limits are generous: 200 MB an upload, 5,000,000 rows per file, 100 CSVs per archive, 1 GiB uncompressed. Archives are checked for compression-bomb ratios before they're opened.
 
-It runs as a background job and emails you when it's done.
+It runs as a background job, and the Imports screen shows its progress file by file.
+
+Moving from Plausible? Its export ZIP uploads as it is, with no conversion. [What it brings in](/docs/import-export/#a-plausible-export).
 
 Two useful facts:
 

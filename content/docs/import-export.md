@@ -38,6 +38,34 @@ can't be added to another rate, so an export of averages is one you can look at 
 
 ## Import
 
+The upload on the Imports screen takes two kinds of file: the ZIP Plausible exports, and CSV files
+in our documented columns. Google Analytics 4 comes in through
+[its own connector](#google-analytics-4) instead.
+
+### A Plausible export
+
+Plausible exports a site's history as one ZIP of daily CSV files, from the site's settings under
+**Imports & Exports → Export to CSV**
+([Plausible's docs](https://plausible.io/docs/export-stats), checked November 16, 2026). Upload that
+ZIP as it is. There's nothing to unzip or rename.
+
+The import recognizes it from the file names inside and brings in visitors, sources, pages, entry
+and exit pages, locations, devices, browsers, operating systems, custom events and custom
+properties. Pages keep their scroll depth and time on page, and outbound-link and file-download
+events keep the link they were for. Sources get a channel worked out from the source and UTM tags,
+because the export doesn't carry one.
+
+When it finishes, each custom event name becomes an event [goal](/docs/goals-funnels/#goals) that
+starts on the first day of the import, so its imported history counts. Each custom property becomes
+one you can [break down by](/docs/custom-properties/#reading-them-back) in the dashboard and the API.
+
+The ZIP has to include the visitors file. If it holds a CSV we don't recognize, the import stops and
+names the problem rather than skipping the file. The limits below apply to it too.
+
+Nothing is de-duplicated, so if both scripts ran on your site for a while, those days count twice.
+
+### Your own CSVs
+
 Upload one CSV, or a ZIP of them. Use the [documented column names](/help/can-i-import-a-csv/)
 and include a `date` column. The ten formats match Feasible's own roll-up exports.
 Another tool's download may need conversion. In particular, don't assume an unchanged GA4 report
@@ -46,7 +74,8 @@ CSV will import: its headers, date layout and metrics may differ.
 A ZIP's `raw_events.csv` is skipped, so re-importing one of our own exports doesn't
 count everything twice.
 
-The limits: **200 MB** an upload, **5,000,000 rows** a file, and 100 CSVs in one ZIP.
+The limits: **200 MB** an upload, **5,000,000 rows** a file, 100 CSVs in one ZIP, and 1 GiB once a
+ZIP is unpacked.
 
 Dates have to be `2026-08-31`, `2026/08/31` or full RFC 3339. An ambiguous `03/04/2026` is refused
 rather than guessed at, because guessing wrong moves a quarter of your history by nine months and

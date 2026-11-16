@@ -36,8 +36,12 @@ with the datacenter's country.
 
 The same instinct runs through the app. Source favicons on the dashboard are
 proxied through our own origin, so opening your reports never makes your browser
-contact the sites that linked to you. Avatars are fetched once, re-encoded, and
-served from us. Gravatar is off unless an operator turns it on.
+contact the sites that linked to you. Our server fetches each icon from
+DuckDuckGo's icon service, which sees the source's hostname and nothing else,
+and keeps it for a week. Avatars are fetched once, re-encoded, and served from
+us. On the hosted service, an account with no Google picture is looked up on
+Gravatar once, with a hash of its email address. A self-hosted install leaves
+Gravatar off unless the operator turns it on.
 
 ## The identifier
 Every visit gets a 64-bit number, derived like this:

@@ -21,7 +21,7 @@ The list that matters more than [the one about what we do collect](/help/what-da
 
 **No fingerprinting beyond that daily hash.** No canvas, no fonts, no audio context, no device enumeration.
 
-**No third-party requests from the script.** It talks to one endpoint. Even the little source icons in the dashboard are proxied through our own origin, so the site that referred your visitor never hears about it.
+**No third-party requests from the script.** It talks to one endpoint. Even the little source icons in the dashboard are proxied through our own origin, so the site that referred your visitor never hears about it. Our server fetches each icon from DuckDuckGo's icon service, which sees the source's hostname and nothing else.
 
 **No advertising anything.** We don't sell it, share it, or hand it to a data broker. [Ever](/help/do-you-sell-my-data/). The whole [privacy model](/features/privacy/) is built on there being nothing worth taking.
 

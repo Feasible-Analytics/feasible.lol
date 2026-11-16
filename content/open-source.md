@@ -64,7 +64,7 @@ FEASIBLE_APP_BASE_URL=https://stats.example.com
 FEASIBLE_APP_LISTEN=127.0.0.1:19301
 FEASIBLE_APP_DATA_DIR=./data
 FEASIBLE_INGEST_SALT=$(openssl rand -hex 32)
-FEASIBLE_INGEST_TRUSTED_PROXIES=127.0.0.1
+FEASIBLE_INGEST_TRUSTED_PROXIES=127.0.0.1,::1
 FEASIBLE_OPERATOR_EMAIL=you@example.com
 EOF
 
@@ -93,9 +93,10 @@ That's the whole install. Five things worth knowing about it:
   proxy, which breaks countries and unique visitors.
 
 Every environment variable is documented in `.env.sample`, and CI fails if the
-source reads one that isn't. The full reference - the data directory, the shared
-ingest salt, email, geolocation, reverse proxies, health probes and running the
-ingest tier on its own box - is in [the self-hosting
+source reads one that isn't. The full reference - a systemd unit, the data
+directory, backups and restores, upgrades, the shared ingest salt, email,
+geolocation, what the app connects to, reverse proxies, health probes and running
+the ingest tier on its own box - is in [the self-hosting
 docs](/docs/self-hosting/).
 
 ## Every feature, on your box too
