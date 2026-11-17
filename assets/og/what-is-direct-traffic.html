@@ -1,0 +1,81 @@
+<!doctype html>
+<!--
+  what-is-direct-traffic.html
+  Source for static/images/og/what-is-direct-traffic.png, the share card for
+  /blog/what-is-direct-traffic/. Kept as HTML so the words can change without
+  redrawing it. Render it at exactly 1200x630:
+
+    npx playwright screenshot --viewport-size=1200,630 \
+      assets/og/what-is-direct-traffic.html static/images/og/what-is-direct-traffic.png
+
+  Created: 2026-11-17
+  Copyright (c) 2026 Cloudmanic Labs, LLC. All rights reserved.
+-->
+<html lang="en">
+<meta charset="utf-8" />
+<title>Share card: what is direct traffic</title>
+<style>
+  @font-face {
+    font-family: "Archivo";
+    font-weight: 100 900;
+    src: url("../../static/fonts/archivo-latin-wght-normal.woff2") format("woff2-variations");
+  }
+  :root {
+    --paper: #f3f2f2;
+    --ink: #201e1d;
+    --flag: #ec3013;
+    --muted: #605d5d;
+    --rule: #9b9797;
+    --off: #bab6b6;
+  }
+  * { margin: 0; box-sizing: border-box; }
+  html, body { width: 1200px; height: 630px; overflow: hidden; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Archivo", sans-serif;
+    padding: 62px 72px 0;
+    position: relative;
+  }
+  .mark { font-size: 28px; font-weight: 800; letter-spacing: -0.02em; }
+  .mark span, .red { color: var(--flag); }
+  h1 {
+    margin-top: 52px;
+    font-size: 92px;
+    font-weight: 800;
+    line-height: 0.93;
+    letter-spacing: -0.035em;
+  }
+  .rule {
+    position: absolute; left: 72px; right: 72px; top: 459px;
+    height: 3px; background: var(--rule);
+  }
+  .foot {
+    position: absolute; left: 72px; right: 72px; top: 500px;
+    display: flex; justify-content: space-between; align-items: flex-start;
+  }
+  .foot p { font-size: 24px; line-height: 1.3; }
+  .foot b { font-weight: 800; }
+  .clicks { width: 512px; }
+  .squares { display: flex; gap: 8px; }
+  .squares i { width: 32px; height: 32px; background: var(--off); }
+  .squares i.d { background: var(--flag); }
+  .key { display: flex; justify-content: space-between; margin-top: 14px; font-size: 20px; font-weight: 700; }
+  .key .n { color: var(--muted); }
+</style>
+<body>
+  <div class="mark">Feasible<span>.lol</span></div>
+  <h1>We clicked one link<br />13 ways.<br /><span class="red">6 landed in Direct.</span></h1>
+  <div class="rule"></div>
+  <div class="foot">
+    <p>Direct traffic isn't people<br /><b>typing your address.</b></p>
+    <div class="clicks">
+      <div class="squares">
+        <i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i><i class="d"></i>
+        <i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+      </div>
+      <div class="key"><span class="red">6 sent no referrer</span><span class="n">7 did</span></div>
+    </div>
+  </div>
+</body>
+</html>
