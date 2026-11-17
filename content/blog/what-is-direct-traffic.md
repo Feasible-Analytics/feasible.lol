@@ -8,6 +8,7 @@ description: "Direct means the browser sent no referrer and the link carried no 
 lede: "Direct is the label for \"the browser didn't say.\" We measured when it doesn't."
 date: 2026-11-17
 checked: 2026-11-17
+image: "/images/og/what-is-direct-traffic.png"
 ---
 
 Someone asked us this week why their visits from ChatGPT were showing up as Direct. People were clearly clicking through from ChatGPT. Their analytics said those people had typed the address in.
