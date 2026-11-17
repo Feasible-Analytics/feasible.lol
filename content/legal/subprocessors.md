@@ -1,7 +1,7 @@
 ---
 title: "Sub-processors"
 description: "Every company that touches data on the hosted Feasible service, what each one does, and where it processes."
-lede: "Eight companies touch your data. Here's what each one does, and where."
+lede: "Ten companies touch your data. Here's what each one does, and where."
 toc: true
 nocta: true
 updated: 2026-11-16
@@ -34,6 +34,8 @@ sub-processors, not ours.
 | **Slack Technologies, LLC** | Carries our own notices to our team when an account is created, changes plan or closes | United States | For a new account: your name, email, team, how you signed up and where you came from. For a plan change: your billing email. For a closed account: your name and email |
 | **DuckDuckGo, Inc.** | Supplies the icon shown next to each traffic source in your reports. Our server asks for it, only for sources a report has shown, and keeps it for a week | Not published. The company is in the United States | Only the source's hostname, such as `news.ycombinator.com`. Never anything about a visitor or an account |
 | **Automattic Inc.** (Gravatar) | Supplies a picture for an account with no Google picture. Our server looks it up at sign-in. A picture found there is kept, and an address with none is asked about again at most once a week | United States | A hash of that account's email address |
+| **PostHog, Inc.** | Our own product analytics: the account events we act on, such as a sign-up, a new site or a plan changing. It also keeps a copy of the service's log lines | United States (PostHog US Cloud) | Events filed under the account holder's email address. A sign-up carries your email, name, team, how you signed up and where you came from: the referring domain, campaign tags and landing page. A plan change carries the plan, the reason a plan ended and the billing email. A new site carries its domain. Log lines at info level and above, which can carry account holders' names and email addresses (every email we send is logged with its recipient and subject), the IP address of someone signing up, team names, your sites' domains, webhook addresses, request paths and error messages. Not your visitors' IP addresses or the pages they view |
+| **Backblaze, Inc.** (B2 Cloud Storage) | Holds the backups. Every database is streamed there: changes each minute and a full copy daily, kept 30 days | United States (us-west-001) | A copy of everything the service stores: your account, your sites, and the pseudonymous event data |
 
 That's the whole list.
 
@@ -53,8 +55,10 @@ a source you chose to read from.
 point a report or an alert at a Slack webhook, we post to the URL you gave us.
 You chose that destination, so Slack is your processor for it, not ours.
 
-**Any analytics vendor.** We use Feasible on feasible.lol. There is no third
-party measuring you here.
+**An analytics script in your browser.** We use Feasible on feasible.lol, and
+neither this site nor the app loads another company's analytics script.
+PostHog, above, gets account events and log lines from our servers, never from
+your browser.
 
 **A font host or tag manager.** This site serves its own fonts and its own
 stylesheet. Its analytics script comes from `cdn.feasible.lol`, which is the
