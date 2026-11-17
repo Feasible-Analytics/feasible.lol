@@ -102,6 +102,11 @@ taken on a 10-core laptop:
 There's nothing to tune, no column store to size, and no cluster to keep in quorum. The operational
 claim here is simplicity, not that SQLite beats a column store at anything.
 
+Want to try it without paying for a server? Every release has a Linux arm64 build, so the binary runs
+on the free Arm virtual machines some clouds offer. Dmytro Klymentiev's
+[free VPS comparison](https://klymentiev.com/blog/free-vps) lists what each free tier gives you and
+the catches that come with it.
+
 ## Turn off hosted mode
 
 ```
