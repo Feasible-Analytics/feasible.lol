@@ -38,10 +38,15 @@ Click **Allow access**.
 
 1. Go to **Customize → Connectors**.
 2. Click **+**, then **Add custom connector**.
-3. Name it Feasible and paste `https://app.feasible.lol/mcp` as the URL. Leave the OAuth client ID and
-   secret empty. If it asks how to get an OAuth client, pick **Register automatically**.
+3. Name it Feasible and paste `https://app.feasible.lol/mcp` as the URL. claude.ai picks
+   **Sign in now** under **Authentication** and **Register automatically** under **OAuth client**,
+   each marked Detected. Leave both as they are. If it ever shows **No sign-in** instead, pick
+   **Sign in now**, then **Register automatically**.
 4. Click **Add**. When the sign-in opens, click **Allow access**. If it doesn't open, find Feasible in
    the list and click **Connect**.
+
+If you added Feasible before November 18, 2026 and it says it has no tools, remove it and add it
+again.
 
 Add it once and it's there on the web, the desktop app and your phone. The Free plan allows one
 custom connector.

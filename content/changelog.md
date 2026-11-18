@@ -3,15 +3,58 @@ title: "Changelog"
 seotitle: "Changelog - what's shipped in Feasible"
 description: "What changed in Feasible, newest first and grouped by month: what you can do now that you couldn't before."
 lede: "What's changed, newest first. Each entry names the release, for anyone self-hosting."
-updated: 2026-11-15
+updated: 2026-11-18
 ---
 
 ## November 2026
 
+### November 18 - claude.ai asks you to sign in, then lists every tool
+
+Adding `https://app.feasible.lol/mcp` to claude.ai as a custom connector now works the way
+[the setup steps](/docs/mcp/#claude-on-desktop-web-and-mobile) say. claude.ai picks **Sign in now**
+and **Register automatically** by itself, both marked Detected, opens app.feasible.lol, and lists
+every Feasible tool once you click **Allow access**.
+
+Until today it never got that far. claude.ai checks a new connector with one request that carries no
+sign-in, our server answered it, and claude.ai decided no sign-in was needed. It showed "Connected"
+and "This connector has no tools available", and the sign-in page never opened. Now every request
+without a sign-in is asked for one, that first check included.
+
+If you added Feasible to claude.ai before November 18 and it shows no tools, remove the connector
+and add it again. ChatGPT and Claude Code connect the same way they did before.
+
+[Connect your assistant](/docs/mcp/) · v0.0.65
+
+### November 18 - Allow in the health panel lets the hostname in
+
+Clicking **Allow** beside a hostname in a site's health panel said the hostname was allowed, but its
+events were still refused. Now it adds the hostname to the site's
+[allowed hostnames](/docs/shields/#allowed-hostnames), the same list the Shields page edits, and its
+events count from then on. A hostname allowed on the Shields page always counted. v0.0.67.
+
+### November 16 and 17 - smaller things
+
+- An office, a campus or a phone carrier can put many people behind one address. Sign-up used to
+  allow 10 from one address in 15 minutes, and now allows 30. v0.0.56.
+- An account with no picture from a Google sign-in gets its Gravatar. Our server fetches it once and
+  serves it from app.feasible.lol, so no browser talks to Gravatar. It's off by default when you run
+  Feasible yourself (`FEASIBLE_APP_GRAVATAR`). v0.0.58 and v0.0.59.
+- The dashboard's footer shows the release you're running, linked to its GitHub release. Handy when
+  you're self-hosting. v0.0.60.
+
+### November 16 - "Check my installation" finds the snippet
+
+The check told sites that were installed correctly that they had no snippet. It looked for
+app.feasible.lol, but the snippet loads the script from cdn.feasible.lol, and it missed tags where a
+minifier had dropped the quotes. Now it accepts both hosts, unquoted attributes and proxied
+installs. If it can't see the snippet in the page's HTML but visits arrived in the last 24 hours, it
+passes with "Visits are arriving". That covers tag managers. v0.0.57.
+
 ### November 15 - events from your server count the real visitor
 
 If you serve the script from your own domain, or send events from your server, each event now
-counts at the visitor you forward in `X-Forwarded-For`. Until today the hosted service counted them
+counts at the visitor you forward in `X-Forwarded-For`, including when your requests pass through
+the CDN in front of our servers. Until today the hosted service counted them
 at your server instead: no location, every visitor merged into one, and usually filed as
 `datacenter_ip`.
 
@@ -19,7 +62,7 @@ The health panel's warning for a proxy that isn't forwarding the visitor now wor
 service too. It looks for requests from a hosting provider's address that name no visitor.
 
 [Proxying](/docs/proxying/) · [Sending events from your server](/docs/api/#sending-events) ·
-v0.0.53 and v0.0.54
+v0.0.53 to v0.0.55
 
 ### November 15 - help getting the snippet on
 
