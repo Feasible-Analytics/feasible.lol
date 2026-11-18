@@ -1,15 +1,17 @@
 ---
-title: "Moving off Google Analytics"
-seotitle: "Google Analytics 4 migration - move to Feasible"
-description: "Move from GA4 to Feasible: add the tracker, import a historical date range from your Google property, check your data, then remove the old tag."
-lede: "Seven steps, with two weeks of side-by-side data before you remove the old tag. Including what imports and why the numbers differ."
+title: "Leaving Google Analytics"
+seotitle: "Switch from Google Analytics and keep your history - Feasible"
+description: "Switch from Google Analytics without losing your history: import GA4 straight into Feasible, export what doesn't import, then remove the tag."
+lede: "Your GA4 history comes with you. Seven steps, with two weeks of side-by-side data before you remove the old tag."
 kicker: "MIGRATING"
 weight: 10
 faq:
+  - q: "How do I export my Google Analytics data?"
+    a: "In GA4, open a report, click Share this report, then Download File, and pick PDF, CSV or Export to Google Sheets. A CSV or sheet holds up to 100,000 rows. Explorations have their own Export data button, and BigQuery export is the route to raw events. To move your history into Feasible you don't need any of these: it reads your GA4 reports directly."
   - q: "How long does the migration take?"
     a: "Allow time to connect your property and check the imported reports, plus two weeks running both trackers. Installing the script is one line. The waiting is deliberate - you run both tools side by side long enough to trust the new numbers before you remove the old tag."
   - q: "Can I import my Google Analytics history?"
-    a: "Yes. Connect your GA4 property in Site settings → Imports and select historical dates before Feasible started collecting traffic. A raw GA4 CSV download may need conversion before the separate CSV importer can read it. Universal Analytics history is a different matter: Google cut off access to it from the week of July 1, 2024."
+    a: "Yes. Connect your GA4 property in Site settings → Imports, pick a date range from before Feasible started collecting traffic, and press Import Analytics history. Feasible reads the reports straight from Google, so there's no file to export first. Universal Analytics history is a different matter: Google cut off access to it from the week of July 1, 2024."
   - q: "What data comes across from GA4?"
     a: "Daily totals and breakdowns for pages, sources, locations, devices, browsers, operating systems and landing pages. What doesn't come across: GA4's own goals and conversions, audiences, Explorations, and any report data Google withholds."
   - q: "Why don't the numbers match Google Analytics?"
@@ -20,15 +22,58 @@ faq:
     a: "You can. The two scripts don't conflict, and some people keep GA4 purely for the Google Ads integration while doing their day-to-day reading elsewhere. If you keep GA4, you keep its consent banner."
 ---
 
-A Google Analytics 4 migration is seven steps here. Run both tools side by side
-for two weeks, and check the imported history before you remove the old tag.
+You can switch from Google Analytics and keep your history. Feasible reads your GA4
+reports straight from Google, so your pages, sources, countries and devices land beside
+the new numbers. There's no file to export and no columns to map.
 
-Before you start, the one thing worth knowing: **GA4 history can come across from a
-connected property. Universal Analytics history probably can't.** Google cut off access to current
-and historical Universal Analytics data from the week of July 1, 2024
-([Google's own page](https://support.google.com/analytics/answer/11583528)). If
-you didn't export it then, it isn't there to import. Nobody can get it back for
-you, and any vendor who says they can is wrong.
+The switch is seven steps. The one that takes time is running both tools side by side
+for two weeks, so you can trust the new numbers before you remove the old tag.
+
+**GA4 history comes across. Universal Analytics history probably can't.** Google cut
+off access to current and historical Universal Analytics data from the week of July 1,
+2024 ([Google's own page](https://support.google.com/analytics/answer/11583528)). If
+you didn't export it then, it isn't there to import. Nobody can get it back for you,
+and any vendor who says they can is wrong.
+
+## What comes with you
+
+The import reads your GA4 property month by month through Google's reporting API.
+It brings daily visitors, visits and pageviews, broken down by:
+
+- **Pages**, with the hostname each one was on, and **landing pages**.
+- **Sources**, with the medium, campaign and channel GA4 gave them.
+- **Countries, regions and cities.**
+- **Devices, browsers and operating systems.**
+
+It doesn't bring GA4's goals and conversions, audiences, Explorations or raw events.
+[Step 5](#5-bring-your-ga4-history-across-as-csv) has the details. If you want any of
+those, export them yourself before you go.
+
+## How to export your Google Analytics data
+
+You don't need an export to move your history into Feasible. You might still want
+one, for the reports the import doesn't carry or just to keep a copy. GA4 has four
+ways out, and each has a limit worth knowing.
+
+- **Report downloads.** Open a report, click **Share this report**, then
+  **Download File**, and pick **Download PDF**, **Download CSV** or **Export to Google
+  Sheets**. A CSV or sheet holds up to 100,000 rows. It's one report at a time
+  ([Google's guide](https://support.google.com/analytics/answer/9317657)).
+- **Explorations.** Each one has its own **Export data** button. They only reach back
+  as far as your data retention setting, which is 2 or 14 months on a standard
+  property. Standard reports aren't affected by that setting
+  ([Google's guide](https://support.google.com/analytics/answer/7667196)).
+- **BigQuery.** The route to raw events. A standard property can export up to 1
+  million events a day. BigQuery charges for storage and queries, though there's a
+  free sandbox with limits. Google's setup guide says data starts flowing within 24 hours of
+  linking, and offers nothing for the days before
+  ([Google's guide](https://support.google.com/analytics/answer/9823238)).
+- **The Data API.** For developers. It returns aggregated reports, not events, and
+  it's what Feasible's import reads.
+
+**Removing the tag doesn't delete anything.** It stops new data arriving. The property
+and its standard reports stay where they are, so you can still log in and look
+something up later.
 
 ## 1. Create the account
 
