@@ -73,6 +73,6 @@ A brand-new site takes about fifteen seconds before its first event is accepted,
 
 ## Moving from Google Analytics
 
-Upload your old GA reports as CSV and their pages, sources, locations, devices and browsers appear beside the new numbers. [How that works](/migrate/from-google-analytics/). You keep the history and drop the banner.
+Connect your GA4 property and its pages, sources, locations, devices and browsers appear beside the new numbers, with no file to export. [How that works](/migrate/from-google-analytics/). You keep the history and drop the banner.
 
 Running WordPress behind something else? See [Ghost](/integrations/ghost/), [Shopify](/integrations/shopify/), or the full [install docs](/docs/installation/).
