@@ -48,11 +48,12 @@ like a browser would, rather than calling an internal function and reporting
 success. A self-test that skips your proxy, your DNS and your headers is a test
 of the parts that were never broken.
 
-If events are arriving from a hostname you haven't allowed - a staging copy,
-somebody else's page running your snippet - the panel names the hostname and
-offers a one-click button to allow it. An empty allow-list accepts everything,
-which is what almost every site wants; the first hostname you add brings your own
-domain along with it, so turning it on can't accidentally switch you off.
+If events are arriving from a hostname outside your site's domain - a preview
+on another domain, somebody else's page running your snippet - the panel names
+the hostname and offers a one-click button to allow it. Your own domain and its
+subdomains always count, so there's nothing to set up for them. Allowing a
+hostname adds it to the same list as Allowed hostnames on the Shields page, and
+its events count from then on.
 
 ## Why this exists at all
 

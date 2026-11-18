@@ -173,7 +173,7 @@ would.
 
 Nobody else in this comparison publishes a counted, reasoned drop log. It's the
 difference between "the numbers look low this week" and "347 events were
-rejected because `staging.example.com` isn't on your hostname list, here's the
+rejected because `example.pages.dev` isn't on your hostname list, here's the
 button to allow it."
 
 ## Moving over

@@ -44,7 +44,7 @@ Using Inertia? The layout is `resources/views/app.blade.php`. Same rule.
 
 Which means a staging server deployed with `APP_ENV=production` in its `.env` - a common mistake, because it's what makes the error pages behave - reports straight into your live numbers. Staging traffic mixed into production numbers can't be unpicked afterwards. There's no filter that separates them later.
 
-Set `APP_ENV=staging` on staging. If you can't, register staging as [its own site](/help/can-i-track-more-than-one-website/), or exclude its hostname with a [shield](/docs/shields/).
+Set `APP_ENV=staging` on staging. If you can't, register staging as [its own site](/help/can-i-track-more-than-one-website/). A staging host outside your domain is refused already, as `hostname_not_allowed`. One on a subdomain, like `staging.example.com`, counts as your site, and a hostname [shield](/docs/shields/#allowed-hostnames) can't keep it out.
 
 {{< callout title="Local is already excluded" >}}
 `localhost` and `127.0.0.1` are never counted, with or without the `@production` wrapper. The wrapper is there for the machines that *do* have real hostnames - staging, review apps, that demo box someone spun up in March.

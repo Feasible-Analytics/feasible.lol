@@ -1,6 +1,6 @@
 ---
 title: "Excluding traffic"
-description: "Block traffic by IP, country, page or hostname, and merge URLs that are really one page with path cleaning."
+description: "Block traffic by IP, country or page, allow hostnames outside your domain, and merge URLs that are really one page with path cleaning."
 lede: "Blocking what you don't want counted, and merging URLs that are really one page."
 weight: 90
 ---
@@ -37,11 +37,15 @@ preview builds live here.
 
 ### Allowed hostnames
 
-This one is an **allow-list, not a block-list**. With no entries everything is accepted; with one or
-more entries, anything not named is dropped.
+This one is an **allow-list, not a block-list**, and it only adds. Your registered domain and its
+subdomains are always accepted, with or without entries: register `example.com` and
+`www.example.com`, `blog.example.com` and `app.example.com` all count. An event from any other
+hostname is dropped as `hostname_not_allowed` until you add that hostname here.
 
-It's the answer to somebody else's site sending events with your tracker id - a copied theme, a
-scraper, a staging clone nobody told you about.
+That's what keeps somebody else's site sending events with your tracker id out of your numbers, such
+as a copied theme or a scraper. Add a hostname when your snippet runs somewhere else on purpose, like
+a `pages.dev` preview or a checkout on another domain. The health panel's **Allow this hostname**
+button adds to this same list, and this screen is where you remove one.
 
 ### Thirty rules of each kind
 
@@ -57,7 +61,7 @@ happen in different places, which matters if you're testing a rule with `curl`:
   straight back in the `x-feasible-dropped` header.
 - **Countries, pages and hostnames** are decided at the shard that holds your data, after the request
   has already been answered with its `202`. They're counted as `shield_country`, `shield_page` and
-  `hostname_not_allowed`, and they can never appear in that header. A blocked page answers   like an accepted one; the event doesn't arrive in your reports.
+  `hostname_not_allowed`, and they can never appear in that header. A blocked page answers like an accepted one; the event doesn't arrive in your reports.
 
 Either way, the drop is on the ingestion health panel at `/settings/sites/<your domain>/health`, with
 its reason. Every reason is from a closed set - the list is on [the APIs](/docs/api/#why-it-always-answers-202).

@@ -123,8 +123,9 @@ named reason for each drop.
 Give each site its own snippet. The filename is what routes the events.
 
 A staging copy pointed at your production domain mixes staging traffic into your real numbers, and
-there's no way to unpick it afterwards. Register a separate site, or
-[exclude the hostname](/docs/shields/).
+there's no way to unpick it afterwards. Register a separate site for it. A staging copy on another
+domain is refused already, as `hostname_not_allowed`, but one on a subdomain of yours counts,
+because [your subdomains always do](/docs/shields/#allowed-hostnames).
 
 Subdomains are a different case. `app.example.com` and `example.com` share a visitor identifier by
 design, so a person moving between them is one visitor rather than two.

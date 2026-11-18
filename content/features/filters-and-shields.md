@@ -57,13 +57,14 @@ own office.
 
 **Page** - a path, or everything beneath it with a trailing `*`.
 
-**Hostname** - an allow-list. Leave it empty and every hostname is accepted,
-which is what nearly every site wants. Add one and only listed hostnames count,
-so a staging copy running your snippet stops polluting production.
+**Hostname** - an allow-list for hosts outside your domain. Your registered
+domain and its subdomains always count, with nothing listed. Any other hostname
+is refused until you add it, so somebody else's page running your snippet never
+reaches your numbers, and a preview on another domain counts once you list it.
 
 Rules take effect within 15 seconds. A shielded event isn't erased quietly - it
 shows up on [the health panel](/features/data-health/) as a drop with reason
-`shield_ip`, `shield_country` or `shield_page`, so you can prove your rule is
+`shield_ip`, `shield_country`, `shield_page` or `hostname_not_allowed`, so you can prove your rule is
 working instead of hoping.
 
 IP shields can only be evaluated in the ingest tier, because that's the only

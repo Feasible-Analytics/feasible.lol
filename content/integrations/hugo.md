@@ -39,7 +39,7 @@ The dev server runs on `localhost`, and `localhost` is not counted. That's not a
 
 **`baseURL` in production.** If it's still `http://localhost:1313/` when you build, your canonical URLs and everything derived from them are wrong. That's not a tracking problem - the script reports the browser's real URL either way - but you'll be reading a broken sitemap while you debug the wrong thing.
 
-**Apex and www.** Register the hostname you serve. If `www.yourdomain.com` redirects to `yourdomain.com`, register the destination. Traffic arriving on the other one shows up on the ingestion health panel as `hostname_not_allowed`, with a one-click action to allow it.
+**Apex and www.** They're one site to Feasible. Register `yourdomain.com` and both `yourdomain.com` and `www.yourdomain.com` count, whichever one you serve, along with any other subdomain. A host outside that domain, such as a `netlify.app` or `pages.dev` preview, shows up on the ingestion health panel as `hostname_not_allowed`, with a one-click action to allow it.
 
 ## Multilingual sites
 
