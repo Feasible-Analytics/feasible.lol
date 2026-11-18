@@ -53,7 +53,7 @@ Your own flag is two lines and it means what it says.
 
 `localhost` and `127.0.0.1` are never counted, with or without a guard, so `runserver` was never the problem.
 
-The problem is a staging deployment on a real hostname with production settings copied across. That traffic lands in your live numbers and can't be unpicked afterwards. Set the environment variable properly, or register staging as [its own site](/help/can-i-track-more-than-one-website/), or exclude its hostname with a [shield](/docs/shields/).
+The problem is a staging deployment on a real hostname with production settings copied across. That traffic lands in your live numbers and can't be unpicked afterwards. Set the environment variable properly, or register staging as [its own site](/help/can-i-track-more-than-one-website/). A staging host outside your domain is refused already, as `hostname_not_allowed`. One on a subdomain, like `staging.example.com`, counts as your site, and a hostname [shield](/docs/shields/#allowed-hostnames) can't keep it out.
 
 {{< callout title="If you have more than one base template" >}}
 Multi-app projects often grow a second base - `admin/base.html`, `dashboard/base.html` - that doesn't extend the first. Each one needs the tag, or one whole section of the site reports no visitors and looks like a content problem.
