@@ -25,7 +25,7 @@ The rest of this page is about running it.
 
 ## What it takes to run
 
-No Postgres, no ClickHouse, no Redis, no queue, no Docker. Nothing to tune,
+No Postgres, no ClickHouse, no Redis, no queue, no Docker required. Nothing to tune,
 nothing to shard, nothing that needs a second machine to be healthy. The one
 thing in front of it is a TLS proxy, because `serve` speaks plain HTTP.
 

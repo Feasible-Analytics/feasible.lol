@@ -194,7 +194,7 @@ or more" and warn that under 16 GB "you may experience various memory
 exceptions." Both things can be true - it runs on 2 GB, and the column store
 underneath it was built for machines an order of magnitude larger.
 
-Feasible is one Go binary and one SQLite file. No Docker, no Postgres, no
+Feasible is one Go binary and one SQLite file. No Docker required, no Postgres, no
 ClickHouse, no queue. We haven't measured a minimum machine, so we don't publish
 one; [the self-hosting docs](/docs/self-hosting/#how-big-a-server) have what we have measured.
 
