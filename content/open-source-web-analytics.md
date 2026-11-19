@@ -88,7 +88,7 @@ mode. The operator creates accounts.
 
 **Requirements:** a small VPS. We haven't measured a minimum machine, so we don't
 publish one; [the self-hosting docs](/docs/self-hosting/#how-big-a-server) have what we have measured. Written in Go 1.26, pure-Go SQLite with no cgo, one
-binary, no Docker file in the repo because there's nothing to orchestrate. No
+binary, and an optional container image with nothing beside it to orchestrate. No
 Postgres, no ClickHouse, no Redis, no message queue.
 
 **Storage:** about 210 bytes an event. A million pageviews a month for a year is
