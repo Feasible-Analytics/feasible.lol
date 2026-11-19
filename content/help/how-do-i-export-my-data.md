@@ -5,9 +5,9 @@ category: "importing-and-exporting"
 weight: 30
 ---
 
-One button, under **Site settings → Imports and exports**.
+One button, under **Site settings → Imports & exports**.
 
-1. Click **Create export**.
+1. Click **Prepare an export**.
 2. It runs as a background job - for a big site, go and do something else.
 3. Download the ZIP. The link is good for 24 hours; make another whenever you want.
 
