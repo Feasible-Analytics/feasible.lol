@@ -21,3 +21,5 @@ Two more notes:
 - **A bounce still has a duration** here, because engagement is measured continuously rather than only from one pageview to the next. Plenty of tools report zero seconds for every bounce; that's an artifact of how they measure, not a fact about the visitor.
 
 [Bounce rate and exit rate get confused constantly](/help/bounce-rate-vs-exit-rate/), and they answer different questions.
+
+GA4 counts a bounce differently: a visit of 10 seconds or less, with one page and no key event. [We counted the same visits both ways](/blog/what-is-a-good-bounce-rate/), and GA4's rule came out 16 to 21 points lower.
