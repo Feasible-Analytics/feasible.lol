@@ -4,6 +4,7 @@ slug: "what-it-costs-to-count-a-million-pageviews"
 description: "A million pageviews a month is about 3.5 GB a year on disk and under half an event a second. Here's the measured arithmetic, and the published price lists next to it."
 lede: "We measured what a million pageviews a month asks of a machine. Then we put the invoices next to it."
 date: 2026-08-21
+lastmod: 2026-11-20
 checked: 2026-09-03
 ---
 
@@ -60,11 +61,11 @@ And credit where it's due before we talk about money: the privacy-friendly analy
 
 ## Vendor prices
 
-Annual list price, annual billing, at 1,000,000 pageviews a month. Checked September 3, 2026.
+Annual list price, annual billing, at 1,000,000 pageviews a month. Checked November 20, 2026.
 
 | Vendor and plan | Per year | Sites | Seats | Retention |
 |---|---|---|---|---|
-| [Matomo Cloud](https://matomo.org/pricing/) | $2,040 | 30 | 30 | Configurable |
+| [Matomo Cloud](https://matomo.org/pricing/) | $2,040 | 30 | 30 | Raw data 24 months, reports forever |
 | [Plausible Business](https://plausible.io/#pricing) | $1,390 | 10 | 10 | No limit while subscribed |
 | [Plausible Growth](https://plausible.io/#pricing) | $1,040 | 3 | 3 | No limit while subscribed |
 | [Plausible Starter](https://plausible.io/#pricing) | $690 | 1 | Owner only | No limit while subscribed |
@@ -74,13 +75,11 @@ Annual list price, annual billing, at 1,000,000 pageviews a month. Checked Septe
 | [Umami Pro](https://umami.is/pricing) | $240 | 20 | 10 | 2 years |
 | **Feasible** | **$99** | Unlimited | Unlimited | Unlimited |
 
-Plausible retention rechecked November 11, 2026: [no retention limit while subscribed](https://plausible.io/#pricing) on every plan. The price-check dates above are unchanged.
-
 Two things about that table that matter more than the ordering.
 
 **The plans aren't the same plan.** Plausible's $690 Starter is one site and no teammates, and custom properties, funnels and the Stats API all start on Business at $1,390. Comparing our price to Starter's would be the same trick we're complaining about, so we've listed all three.
 
-**The units aren't the same unit.** Matomo bills in *hits* - [their own definition](https://matomo.org/faq/general/what-is-a-hit/) counts "a tracked page view, an event tracking, a download, an outlink, an onsite search or a content tracking request." Turn on download and outbound-link tracking and a million pageviews can be two or three million hits, which is a different row on that price list. Simple Analytics and Umami count each stored event *property* as a unit of its own. We wrote a [separate post about billing units](/blog/why-we-dont-charge-per-site/), because it's the part of the bill nobody puts on the comparison page.
+**The units aren't the same unit.** Matomo bills in *hits* - [their own definition](https://matomo.org/faq/general/what-is-a-hit/) counts "a tracked page view, an event tracking, a download, an outlink, an onsite search or a content tracking request." Turn on download and outbound-link tracking and a million pageviews can be two or three million hits, which is a different row on that price list. Umami counts each stored event *property* as a unit of its own. (An earlier version of this post said Simple Analytics does too; their docs describe a datapoint as a pageview or an event, so it doesn't. Corrected November 20, 2026.) We wrote a [separate post about billing units](/blog/why-we-dont-charge-per-site/), because it's the part of the bill nobody puts on the comparison page.
 
 ## Where the gap comes from
 

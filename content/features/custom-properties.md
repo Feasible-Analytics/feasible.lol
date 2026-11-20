@@ -74,9 +74,9 @@ like - and every cut is counted and shown to you on the
 
 Properties never cost you anything. Billable volume is pageviews plus custom
 events; the properties attached to them don't add to the count, however many
-there are. Several tools in this category bill per "datapoint" and count each
-property as one, which is a fine way to make instrumenting your product feel
-expensive.
+there are. Some tools in this category count each stored property as a
+billable event of its own, which is a fine way to make instrumenting your
+product feel expensive.
 
 One rule we'll be firm about: don't put personal data in a property. No email
 addresses, no user ids that map back to a person, no names. The

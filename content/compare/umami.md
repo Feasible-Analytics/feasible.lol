@@ -5,6 +5,7 @@ description: "Umami has a more permissive license and a free tier. Feasible coun
 lede: "Umami's license is more permissive than ours and its free tier is real. Its meter counts every stored event property. Both of those are worth knowing."
 versus: "Umami"
 checked: 2026-09-03
+lastmod: 2026-11-20
 weight: 60
 verdict: |
   If you're self-hosting and the license matters to you, take Umami - MIT is
@@ -56,7 +57,7 @@ Now the rest.
 
 ## The price
 
-From [Umami's pricing page](https://umami.is/pricing), read September 3, 2026.
+From [Umami's pricing page](https://umami.is/pricing), read November 20, 2026.
 
 | | Umami | Feasible |
 |---|---|---|

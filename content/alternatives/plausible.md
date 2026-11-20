@@ -6,12 +6,13 @@ lede: "Seven tools that do what Plausible does. What they cost, and where each o
 kicker: "ROUNDUP"
 weight: 20
 wide: true
+lastmod: 2026-11-20
 checked: 2026-09-03
 faq:
   - q: "What's the best alternative to Plausible?"
     a: "It depends what pushed you off it. For unlimited sites and seats on one price, Feasible - which we make. For an MIT licence, Umami. For a free personal site, GoatCounter. For feature depth and on-premise, Matomo. For unlimited retention, Pirsch. If you left because you wanted EU hosting, you should probably stay."
   - q: "Why do people look for a Plausible alternative?"
-    a: "Almost always the tier ladder rather than the product. Custom properties, funnels and the Stats API start at the Business plan, which is $1,390 a year at a million pageviews on their published pricing, checked September 3, 2026. People who only need those three things go looking for a flatter price."
+    a: "Almost always the tier ladder rather than the product. Custom properties, funnels and the Stats API start at the Business plan, which is $1,390 a year at a million pageviews on their published pricing, checked November 20, 2026. People who only need those three things go looking for a flatter price."
   - q: "Is there a free Plausible alternative?"
     a: "Yes. GoatCounter's hosted tier is free for reasonable public use, and Umami's Hobby plan is free up to 100,000 events a month. Umami, Matomo, Plausible and Feasible are all free if you run them on your own server, where you pay in setup, backups and upgrades instead."
   - q: "Will my numbers match after switching from Plausible?"
@@ -30,7 +31,7 @@ They are unhappy with the ladder.
 
 ## Why people leave
 
-Custom properties, funnels, ecommerce revenue and the Stats API all start at the Business plan. At a million pageviews a month that is **$1,390 a year** on [Plausible's published pricing](https://plausible.io/#pricing), checked September 3, 2026. The entry plan is $690 and has none of them.
+Custom properties, funnels, ecommerce revenue and the Stats API all start at the Business plan. At a million pageviews a month that is **$1,390 a year** on [Plausible's published pricing](https://plausible.io/#pricing), checked November 20, 2026. The entry plan is $690 and has none of them.
 
 The other two reasons come up less often. Scheduled raw event export is Enterprise-only, so no self-serve plan gets your own raw events out on a schedule. And Community Edition, the self-hosted build, ships twice a year and leaves out funnels, ecommerce revenue goals, SSO and the Sites API.
 
@@ -48,16 +49,14 @@ Annual USD, on annual billing where offered. **The "counts" column decides the b
 | [Plausible Business](https://plausible.io/#pricing) | $390 | $1,390 | pageviews + events | 10 | 10 | AGPL-3.0 (CE) | No limit while subscribed |
 | [Umami Cloud Pro](https://umami.is/pricing) | $240 | $240 | events, incl. each property | 20 | 10 | MIT | 2 years |
 | [Pirsch Standard](https://pirsch.io/pricing) | $120 | $540 | pageviews + events + 10% extensions | 50 | unlimited | closed | unlimited |
-| [Fathom](https://usefathom.com/pricing) | $150 | $600 | pageviews + events | 75 | not published | closed | forever |
-| [Simple Analytics](https://www.simpleanalytics.com/pricing) | $200 | $600 | datapoints, incl. each property | 10 | 1 (+$240/yr) | closed | 3 years |
-| [Matomo Cloud](https://matomo.org/pricing/) | $420 | $2,040 | **hits** | 30 | 30 | GPL-3.0 | configurable |
+| [Fathom](https://usefathom.com/pricing) | $150 | $600 | pageviews + events | 50; 75 at 1M | not published | closed | forever |
+| [Simple Analytics](https://www.simpleanalytics.com/pricing) | $200 | $600 | datapoints (pageviews + events) | 10 | 1 (+$200/yr) | closed | 3 years |
+| [Matomo Cloud](https://matomo.org/pricing/) | $420 | $2,040 | **hits** | 30 | 30 | GPL-3.0 | raw data 24 months, reports forever |
 | [GoatCounter](https://www.goatcounter.com/) | $0 | n/a | pageviews | - | - | EUPL-1.2 | - |
-
-Plausible retention rechecked November 11, 2026: [no retention limit while subscribed](https://plausible.io/#pricing) on every plan. The price-check dates elsewhere on this page are unchanged.
 
 All three Plausible tiers are listed because leaving the middle one out would flatter us. Growth is $1,040 at a million and still has no custom properties, funnels or Stats API, which is why Business is the tier this page compares against: it is the first one with them.
 
-Prices read from the vendor's own pricing page on September 3, 2026. Prices change; the links are there so you can check.
+Prices read from the vendor's own pricing page on November 20, 2026. Prices change; the links are there so you can check.
 
 ## Each one, and where it beats us
 
@@ -93,7 +92,7 @@ Clean, opinionated, and long-established. Good exports and a genuinely simple da
 
 **Where it beats us:** design taste and a longer history.
 
-**The cost:** the unit is datapoints, counting pageviews, events **and each stored event property separately**, so one pageview with five properties can bill as six. Extra seats are $240 a year each beyond the first.
+**The cost:** extra seats are $200 a year each beyond the first, and the self-serve plan stops at 2.5 million a month.
 
 ### Matomo
 

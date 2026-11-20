@@ -4,7 +4,7 @@ layout: "pricing"
 seotitle: "Pricing: $9.99 a month for everything"
 description: "One plan. $9.99 a month or $99 a year. Unlimited sites, unlimited users, a million pageviews a month, unlimited data retention. No tiers, no per-site fees."
 lede: "One plan with everything in it. Thirty days free first, and we don't ask for a card to start."
-checked: 2026-09-03
+checked: 2026-11-20
 faqHeading: "Questions people ask before they pay"
 faq:
   - q: "What happens when the trial ends?"
@@ -49,7 +49,7 @@ That second list is where the units stop agreeing:
 | **Feasible** | **Pageviews + custom events** | - |
 | Plausible | Pageviews + custom events | [plausible.io](https://plausible.io/#pricing) |
 | Fathom | Pageviews + custom events | [usefathom.com](https://usefathom.com/pricing) |
-| Simple Analytics | Datapoints - pageviews, events, and **each stored event property** | [simpleanalytics.com](https://www.simpleanalytics.com/pricing) |
+| Simple Analytics | Datapoints - pageviews and events | [simpleanalytics.com](https://www.simpleanalytics.com/pricing) |
 | Umami Cloud | Events - pageviews, custom events, and **each stored property** | [umami.is](https://umami.is/pricing) |
 | Matomo Cloud | Hits - pageviews, events, downloads, outbound clicks and site searches | [matomo.org](https://matomo.org/faq/general/what-is-a-hit/) |
 | Pirsch | Pageviews + custom events + 10% of session-extension events | [pirsch.io](https://pirsch.io/pricing) |
@@ -58,7 +58,7 @@ Read what each company counts before comparing prices. Plausible and Fathom use
 the same meter we do. Other tools may also count properties, searches, or content
 tracking. That can push the same traffic into a larger plan.
 
-All of the above checked on the vendors' own published pages, September 3, 2026.
+All of the above checked on the vendors' own published pages, November 20, 2026.
 
 ## How long we keep your data
 
@@ -79,7 +79,7 @@ million pageviews a month.
 | Umami Cloud - Pro | $240 | 20 / 10 | [umami.is](https://umami.is/pricing) |
 | Pirsch - Standard | $540 | 50 / unlimited | [pirsch.io](https://pirsch.io/pricing) |
 | Fathom | $600 | 75 / not published | [usefathom.com](https://usefathom.com/pricing) |
-| Simple Analytics | $600 | 10 / 1 (+$240 a year each) | [simpleanalytics.com](https://www.simpleanalytics.com/pricing) |
+| Simple Analytics | $600 | 10 / 1 (+$200 a year each) | [simpleanalytics.com](https://www.simpleanalytics.com/pricing) |
 | Plausible - Business | $1,390 | 10 / 10 | [plausible.io](https://plausible.io/#pricing) |
 | Matomo Cloud | $2,040 | 30 / 30 | [matomo.org](https://matomo.org/pricing/) |
 

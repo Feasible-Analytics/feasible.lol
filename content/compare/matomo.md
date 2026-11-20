@@ -5,6 +5,7 @@ description: "Matomo Cloud is $2,040 a year at a million hits - and hits aren't 
 lede: "Matomo does much more than Feasible, and charges about twenty times as much. Whether that's a good trade depends entirely on which reports you open."
 versus: "Matomo"
 checked: 2026-09-03
+lastmod: 2026-11-20
 weight: 40
 verdict: |
   Matomo is the right answer if you need depth - heatmaps, session recording,
@@ -23,12 +24,12 @@ faq:
   - q: "How much is Matomo Cloud at a million?"
     a: >-
       $2,040 a year at a million hits a month, from their pricing page on
-      September 3, 2026. Feasible is $99 at a million pageviews.
+      November 20, 2026. Feasible is $99 at a million pageviews.
   - q: "Is self-hosted Matomo free?"
     a: >-
       The core is, under GPL-3.0. Funnels, heatmaps, session recording, A/B
       testing and form analytics are proprietary premium plugins sold as
-      On-Premise bundles starting at €2,750 a year. Feasible's self-hosted build
+      On-Premise bundles starting at $3,300 a year. Feasible's self-hosted build
       has every feature and no license key.
   - q: "What does Matomo do that Feasible doesn't?"
     a: >-
@@ -48,8 +49,8 @@ because on features this isn't close.
 
 ## Price
 
-From [Matomo's pricing page](https://matomo.org/pricing/), read September 3,
-2026. Matomo publishes in euros; the USD figures are theirs, from the same page.
+From [Matomo's pricing page](https://matomo.org/pricing/), read November 20,
+2026. Matomo publishes in euros and US dollars; the USD figures are theirs, from the same page.
 Annual billing is ten times monthly.
 
 | Hits / month | Matomo Cloud | Feasible |
@@ -102,7 +103,7 @@ Two things follow that people miss.
 **The features that make Matomo Matomo are proprietary and sold separately.**
 Funnels, heatmaps, session recording, A/B testing and form analytics are premium
 plugins under the InnoCraft license. Since 2025 they're sold as On-Premise
-bundles, and the cheapest one - Team, up to 4 users and 5 million hits a month - is €2,750 a year on Matomo's pricing page. Business is €14,500.
+bundles, and the cheapest one - Team, up to 4 users and 5 million hits a month - is $3,300 a year on Matomo's pricing page ($275 a month, billed annually). Business is $17,400. On Matomo Cloud the same features are part of the plan.
 
 **It needs a real server, and a cron job you have to watch.** Matomo's own
 [requirements page](https://matomo.org/faq/on-premise/matomo-requirements/)
@@ -151,11 +152,11 @@ have to live somewhere. It's still 46 KB on every page load.
 | Data location | Montreal, Canada | Europe |
 | Tracking script (gzipped) | 3,629 bytes | 46,323 bytes |
 | Cookies on visitors | None | Yes by default, can be disabled |
-| Funnels | Yes, in the plan | Yes (premium plugin on-premise) |
-| Heatmaps | **No** | Yes (premium) |
-| Session recording | **No** | Yes (premium) |
-| A/B testing | **No** | Yes (premium) |
-| Form analytics | **No** | Yes (premium) |
+| Funnels | Yes, in the plan | Yes (in Cloud; a paid bundle on-premise) |
+| Heatmaps | **No** | Yes (in Cloud; a paid bundle on-premise) |
+| Session recording | **No** | Yes (in Cloud; a paid bundle on-premise) |
+| A/B testing | **No** | Yes (in Cloud; Enterprise bundle on-premise) |
+| Form analytics | **No** | Yes (in Cloud; a paid bundle on-premise) |
 | Tag manager | **No** | Yes |
 | Server-log import | **No** | Yes |
 | Cohort / retention report | **No** | Yes |
@@ -165,7 +166,7 @@ have to live somewhere. It's still 46 KB on every page load.
 | MCP server | Built in | No |
 | Dropped-event log with reasons | Yes | No |
 | License | AGPL-3.0-or-later | GPL-3.0-or-later (core) |
-| Self-host cost | Free, every feature | Free core, €2,750/yr for the premium bundle |
+| Self-host cost | Free, every feature | Free core, $3,300/yr for the cheapest premium bundle |
 
 ## Where Matomo wins
 

@@ -5,6 +5,7 @@ description: "Every privacy-friendly analytics vendor's published price at 10k, 
 lede: "Ten vendors. Five traffic levels. One table that shows what each vendor counts."
 versus: "everyone else"
 checked: 2026-09-03
+lastmod: 2026-11-20
 weight: 5
 wide: true
 verdict: |
@@ -24,9 +25,9 @@ faq:
   - q: "Why do analytics vendors charge such different prices for the same traffic?"
     a: >-
       Mostly because they count different things. Some bill pageviews, some bill
-      pageviews plus events, and some bill "datapoints" or "hits" that include
-      downloads, outbound clicks, site searches and each individual event
-      property. Two sites with identical traffic can land three tiers apart.
+      pageviews plus events, and some bill "events" or "hits" that also count
+      downloads, outbound clicks, site searches or each stored event property.
+      Two sites with identical traffic can land three tiers apart.
   - q: "What does Feasible count against its million-a-month limit?"
     a: >-
       Pageviews and custom events, between them - including the outbound
@@ -48,7 +49,7 @@ different plan tiers hiding different features, sliders that don't show you the
 top of the ladder.
 
 So here's all of it in one table, at list price, from each vendor's own pricing
-page, read on September 3, 2026.
+page, read on November 20, 2026.
 
 ## The price table
 
@@ -70,13 +71,12 @@ it, before tax.
 | Plausible - Growth | $140 | $290 | $1,040 | $1,940 | $2,540 |
 | Plausible - Business | $190 | $390 | $1,390 | $2,590 | $3,390 |
 | Fathom | $150 | $150 | $600 | $1,400 | $2,000 |
-| Simple Analytics - Simple | $150 | $200 | $600 | $1,200 | $1,600 |
-| Umami Cloud - Pro | $240 | $240 | $240 | $1,680 | - |
+| Simple Analytics - Simple | $200 | $200 | $600 | - | - |
+| Umami Cloud - Pro | $240 | $240 | $240 | $1,680 | $3,480 |
+| Umami Cloud - Business | $2,400 | $2,400 | $2,400 | $2,400 | $2,400 |
 | Matomo Cloud | $260 | $420 | $2,040 | $9,750 | $19,000 |
 
-Plausible retention rechecked November 11, 2026: [no retention limit while subscribed](https://plausible.io/#pricing) on every plan. The price-check dates elsewhere on this page are unchanged.
-
-A dash means the vendor doesn't offer that volume on that plan.
+A dash means the vendor doesn't offer that volume on that plan. Simple Analytics' self-serve plan stops at 2.5 million a month ($1,200 a year); above that it's a quoted Enterprise plan, and their smallest paid tier is 100,000, so a 10,000-pageview site pays $200 or takes their free plan. Umami Pro has no ceiling: past its million, each event is $0.00003, so its 5M and 10M figures are overage, and at 10M their Business plan is the cheaper one.
 
 **We're not the cheapest at the bottom.** At 10,000 pageviews a month, Pirsch
 Standard is $60 and Plausible Starter is $90, both under our $99, and Google
@@ -95,8 +95,8 @@ identical traffic land on different tiers.
 |---|---|---|
 | **Feasible** | **Pageviews + custom events** | Same unit as Plausible and Fathom. Custom properties, goal conversions and engagement pings are free and uncounted. |
 | Plausible | Pageviews + custom events | Every custom event you fire eats a pageview. |
-| Fathom | Pageviews + custom events | Their FAQ: custom event and API requests "will be counted as if they were pageviews." |
-| Simple Analytics | **Datapoints** | Pageviews, plus events, plus stored event metadata. |
+| Fathom | Pageviews + custom events | Their FAQ: custom events, on the site or sent through their API, each count "towards your monthly pageview allowance." |
+| Simple Analytics | Datapoints | Their docs: "events or page views." The same two things we count, under another name. |
 | Umami | **Events** | Their FAQ: "each data property stored counts as one event." Five properties on one event is six events. |
 | Pirsch | Pageviews + events + 10% of session extensions | Their pricing page also notes deleted domains keep counting until the limit resets. |
 | Matomo | **Hits** | Their FAQ: pageviews, events, downloads, outlinks, site searches, content tracking and crashes. |
@@ -136,8 +136,8 @@ the plan with the features.
 | Plausible Growth | $1,040 | 3 | 3 | No limit while subscribed | Still no custom properties, funnels or Stats API |
 | Plausible Business | $1,390 | 10 | 10 | No limit while subscribed | Raw event export is Enterprise-only |
 | Fathom | $600 | 75 | Not published | "Forever" | No funnels or custom properties |
-| Simple Analytics | $600 | 10 | 1 (+$240/yr each) | 3 years | No funnels; seats are billed |
-| Matomo Cloud | $2,040 | 30 | 30 | Configurable | Funnels, heatmaps, replay and A/B tests are premium plugins |
+| Simple Analytics | $600 | 10 | 1 (+$200/yr each) | 3 years | No funnels; seats are billed |
+| Matomo Cloud | $2,040 | 30 | 30 | Raw data 24 months, reports forever | Bills hits, so tracked downloads and outlinks push you up a tier |
 | Pirsch Standard | $540 | 50 | Unlimited | Unlimited | No funnels, no teams |
 | Umami Pro | $240 | 20 | 10 | 2 years | Session replay and heatmaps are Business-tier |
 
@@ -149,8 +149,9 @@ on Business - $1,390 a year at a million pageviews. And scheduled raw event
 export is Enterprise-only, so there's no published self-serve price at which
 you can get your own raw events out.
 
-**Simple Analytics bills per seat.** One user included, $20 a month for each
-extra. Five people at a million datapoints is $1,560 a year.
+**Simple Analytics bills per seat.** One user included, then $20 a month, or
+$200 a year on annual billing, for each extra. Five people at a million
+datapoints is $1,400 a year.
 
 ## The cost of free analytics
 
@@ -188,10 +189,11 @@ you reach the usage limit before the end of your billing period, your access
 will be limited to the day you reached the limit," with five days to upgrade
 before you get gaps.
 
-**Fathom** deserves credit here - they say they won't switch your analytics off
-over an occasional spike, and if you're over two months running they'll tell you
-they're upgrading you. That's a decent policy and we're not claiming an edge
-over it.
+**Fathom** deserves credit here. They say they'll "never turn your analytics off
+for occasional traffic spikes." Stay well over and they email about a larger
+plan and leave the choice to you; after a few reminders and extra time they
+pause dashboard and API access, and they keep collecting your data throughout.
+That's close to our own policy, and we're not claiming an edge over it.
 
 ## Self-hosting
 
@@ -229,12 +231,14 @@ For Feasible, step 1 is the whole calculation. That's the design.
 
 ## Sources
 
-Every figure above was read from the vendor's own page on **September 3, 2026**.
-Prices change; if something here is stale, tell us and we'll fix it.
+Every price, plan limit and billing unit above was re-read from the vendor's own
+page on **November 20, 2026**. The self-hosting requirements were read September
+3, 2026. Prices change; if something here is stale, tell us and we'll fix it.
 
 - Plausible - <https://plausible.io/#pricing>
 - Fathom - <https://usefathom.com/pricing>
-- Simple Analytics - <https://www.simpleanalytics.com/pricing>
+- Simple Analytics - <https://www.simpleanalytics.com/pricing> · datapoints described
+  at <https://docs.simpleanalytics.com/metadata>
 - Matomo - <https://matomo.org/pricing/> · hits defined at
   <https://matomo.org/faq/general/what-is-a-hit/>
 - Pirsch - <https://pirsch.io/pricing>
