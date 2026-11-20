@@ -5,6 +5,7 @@ description: "Fathom's smallest plan is $150 a year and starts at 100,000 pagevi
 lede: "Fathom's smallest plan is bigger than most sites need. Here's what that costs, and the two things they do that we can't."
 versus: "Fathom"
 checked: 2026-09-03
+lastmod: 2026-11-20
 weight: 30
 verdict: |
   If your visitors are in Europe and you want their data to stay there, Fathom's
@@ -17,12 +18,12 @@ faq:
     a: >-
       Their smallest plan is $15 a month, or $150 a year, and it starts at
       100,000 pageviews a month - there's nothing below that. A million
-      pageviews is $600 a year. Read from their pricing page on September 3,
+      pageviews is $600 a year. Read from their pricing page on November 20,
       2026.
   - q: "Do custom events count against Fathom's pageview limit?"
     a: >-
-      Yes. Their FAQ says custom event and API requests "will be counted as if
-      they were pageviews." Ours works the same way - a million pageviews and
+      Yes. Their FAQ says each custom event, on the site or sent through their
+      API, "counts towards your monthly pageview allowance." Ours works the same way - a million pageviews and
       custom events a month, between them. The unit is the same on both sides;
       the price is $600 a year there and $99 here.
   - q: "Is Fathom open source?"
@@ -48,7 +49,7 @@ Now the prices.
 
 ## Price
 
-From [Fathom's pricing page](https://usefathom.com/pricing), read September 3,
+From [Fathom's pricing page](https://usefathom.com/pricing), read November 20,
 2026. Annual is ten times monthly.
 
 | Pageviews / month | Fathom | Feasible |
@@ -73,8 +74,8 @@ At a million pageviews a month it's $600 against $99. Six times.
 
 Fathom is direct about what counts, which we appreciate. From their pricing FAQ:
 
-> "If you decide to use our custom event tracking system on your website or use
-> our API, those requests will be counted as if they were pageviews."
+> "If you use custom events on your website or send them through our API, each
+> one counts towards your monthly pageview allowance."
 
 We count the same way. A million pageviews and custom events a month, between
 them - including the outbound clicks, downloads and form submissions our script
@@ -114,7 +115,7 @@ until you're ten times busier than that.
 | Session replay, heatmaps, A/B tests | No | No |
 | SSO | No | Not published |
 | Mobile SDKs | No | No |
-| Trial | 30 days, no card | 7 days |
+| Trial | 30 days, no card | 7 days, card required |
 
 ## Open source
 

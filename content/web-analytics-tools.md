@@ -6,6 +6,7 @@ lede: "Ten tools. Real prices, real limits, and the best fit for each job."
 kicker: "ROUNDUP"
 weight: 60
 wide: true
+lastmod: 2026-11-20
 checked: 2026-09-03
 faq:
   - q: "What is a web analytics tool?"
@@ -13,17 +14,17 @@ faq:
   - q: "What are the best free web analytics tools?"
     a: "Google Analytics 4 has the most features and Google Ads integration. Cloudflare is free, cookieless, and limited. GoatCounter is free for reasonable public use. Umami and Matomo are free when you host them."
   - q: "How much do web analytics tools cost?"
-    a: "At a million pageviews a month, on published annual pricing checked September 3, 2026: Feasible $99, Pirsch Standard $540, Fathom $600, Simple Analytics $600, Plausible Starter $690, Plausible Business $1,390, Matomo Cloud $2,040. Umami Cloud Pro is $20 a month with no annual discount."
+    a: "At a million pageviews a month, on published annual pricing checked November 20, 2026: Feasible $99, Pirsch Standard $540, Fathom $600, Simple Analytics $600, Plausible Starter $690, Plausible Business $1,390, Matomo Cloud $2,040. Umami Cloud Pro is $20 a month with no annual discount."
   - q: "Which web analytics tools don't need a cookie banner?"
     a: "Feasible, Plausible, Fathom, Simple Analytics, Umami, Pirsch, GoatCounter and Cloudflare all avoid cookies, so most sites running them won't need a banner for analytics. It isn't a legal guarantee and the rules vary by country - check with your own lawyer if you're somewhere strict."
   - q: "Why do vendors count different things?"
-    a: "Because the billing unit decides the bill. Some count pageviews, some count 'hits' that include downloads and outbound clicks, some count each stored event property as a separate billable item. The same site can land two tiers apart depending on which one you picked."
+    a: "Because the billing unit decides the bill. Some count pageviews, some count 'hits' that include downloads and outbound clicks, and Umami counts each stored event property as a separate billable item. The same site can land two tiers apart depending on which one you picked."
 ---
 
 {{< callout title="A word about us before the table" >}}
 We make one of these. Feasible is in the list on the same terms as everyone else,
 and we'll flag it again when we get there. Every price below comes from the
-vendor's own published pricing page, linked, and read on September 3, 2026.
+vendor's own published pricing page, linked, and read on November 20, 2026.
 {{< /callout >}}
 
 Pick the right category first:
@@ -48,11 +49,11 @@ numbers.
 | **Feasible** | **$99** | **$99** | pageviews + custom events; properties free | unlimited | unlimited | unlimited | [pricing](/pricing/) |
 | Plausible Starter | $190 | $690 | pageviews + custom events | 1 | owner only | No limit while subscribed | [plausible.io](https://plausible.io/#pricing) |
 | Plausible Business | $390 | $1,390 | pageviews + custom events | 10 | 10 | No limit while subscribed | [plausible.io](https://plausible.io/#pricing) |
-| Fathom | $150 | $600 | pageviews + custom events | 75 | not published | "forever" | [usefathom.com](https://usefathom.com/pricing) |
-| Simple Analytics | $200 | $600 | datapoints - pageviews, events **and each stored property** | 10 | 1 (+$240/yr each) | 3 years | [simpleanalytics.com](https://www.simpleanalytics.com/pricing) |
+| Fathom | $150 | $600 | pageviews + custom events | 50; 75 at 1M | not published | "forever" | [usefathom.com](https://usefathom.com/pricing) |
+| Simple Analytics | $200 | $600 | datapoints - pageviews and events | 10 | 1 (+$200/yr each) | 3 years | [simpleanalytics.com](https://www.simpleanalytics.com/pricing) |
 | Pirsch Standard | $120 | $540 | pageviews + events + 10% of session extensions | 50 | unlimited | unlimited | [pirsch.io](https://pirsch.io/pricing) |
 | Umami Cloud Pro | $240 | $240 | events - **each stored property counts** | 20 | 10 | 2 years | [umami.is](https://umami.is/pricing) |
-| Matomo Cloud | $420 | $2,040 | **hits** - views, events, downloads, outbound clicks, site searches | 30 | 30 | configurable | [matomo.org](https://matomo.org/pricing/) |
+| Matomo Cloud | $420 | $2,040 | **hits** - views, events, downloads, outbound clicks, site searches | 30 | 30 | raw data 24 months, reports forever | [matomo.org](https://matomo.org/pricing/) |
 | Google Analytics 4 | $0 | $0 | events | unlimited | unlimited | 2 or 14 months (event-level) | [Google](https://support.google.com/analytics/answer/11202874) |
 | Cloudflare Web Analytics | $0 | $0 | pageviews | - | - | not published | [cloudflare.com](https://www.cloudflare.com/web-analytics/) |
 
@@ -63,8 +64,8 @@ Three billing details change the answer:
 **Matomo bills hits.** Pageviews, events, downloads, outlinks, searches, and
 content tracking can each count.
 
-**Simple Analytics and Umami bill stored properties.** One event with five
-properties can count as six units.
+**Umami bills stored properties.** One event with five properties counts as six
+events.
 
 **Plausible Starter covers one site and its owner.** Business adds custom
 properties, funnels, and teammates. At one million pageviews, it costs $1,390.
@@ -88,7 +89,8 @@ Matomo has segments, custom dimensions, heatmaps, A/B testing, roll-up reports,
 and ecommerce. It's GPL-3.0, hosts Cloud in Europe, and offers the core
 On-Premise product free.
 
-Cloud costs $2,040 a year at one million hits. Premium plugins cost extra.
+Cloud costs $2,040 a year at one million hits, with the premium features
+included. Self-hosted, they're paid bundles.
 
 **Best for:** organizations that need depth, EU hosting or a real on-premise
 install, and have someone to run it.
@@ -159,8 +161,8 @@ history elsewhere.
 ### Simple Analytics - clean, and priced by datapoint
 
 Dutch, EU-hosted, and one of the tidier dashboards in the category. $600 a year
-at a million. The unit is the thing to model: pageviews, events **and each stored
-event property** all count, and seats are $240 a year each beyond the first.
+at a million. Their datapoint is a pageview or an event, the same two things we
+count, and seats are $200 a year each beyond the first.
 
 **Best for:** EU-hosted simplicity where one person does the looking.
 

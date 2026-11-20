@@ -5,6 +5,7 @@ description: "A million pageviews, unlimited sites and unlimited users for $99 a
 lede: "Two published price lists, side by side, and an account of what Plausible does better."
 versus: "Plausible"
 checked: 2026-09-03
+lastmod: 2026-11-20
 weight: 20
 verdict: |
   If your data has to sit in the EU, or you want the tool with the longest
@@ -18,7 +19,7 @@ faq:
   - q: "How much does Plausible cost at a million pageviews a month?"
     a: >-
       $690 a year on Starter, $1,040 on Growth and $1,390 on Business, from
-      their published pricing on September 3, 2026. Business is the first plan
+      their published pricing on November 20, 2026. Business is the first plan
       with custom properties, funnels and the Stats API. Feasible is $99 with
       all three included.
   - q: "Is Feasible more permissively licensed than Plausible?"
@@ -51,7 +52,7 @@ other.
 ## Price
 
 Plausible's ladder is on [their pricing page](https://plausible.io/#pricing),
-read September 3, 2026. Annual is ten times monthly - two months free, their
+read November 20, 2026. Annual is ten times monthly - two months free, their
 words. Feasible is $99 a year, or $9.99 a month, up to a million pageviews.
 
 | Pageviews / month | Plausible Starter | Plausible Growth | Plausible Business | Feasible |
@@ -77,9 +78,8 @@ it's the whole reason this company exists.
 Comparing headline prices only works if the plans contain the same things. They
 don't.
 
-Plan sizes and features below were read from Plausible's pricing cards on September 3, 2026.
-Retention was rechecked on November 11, 2026: [all plans now have no retention limit
-while subscribed](https://plausible.io/#pricing).
+Plan sizes and features below were read from Plausible's pricing cards on November 20, 2026.
+Every plan has [no retention limit while subscribed](https://plausible.io/#pricing).
 
 - **Starter** - one site. No team members.
 - **Growth** - up to 3 sites, up to 3 team members.
@@ -112,9 +112,8 @@ The same two things. Plausible's limit counts pageviews plus custom events, and
 so does ours - including the outbound clicks, downloads and form submissions our
 script fires on its own. Same arithmetic on both sides.
 
-Neither of us bills for the properties attached to an event, which is the line
-that separates both of us from the vendors selling "datapoints" and "hits".
-Credit where it's due.
+Neither of us bills for the properties attached to an event (Umami does), or
+for site searches and content tracking (Matomo's hits do). Credit where it's due.
 
 So there's no unit trick to point at here. A site at 900,000 pageviews a month
 firing `Signup`, `Purchase` and `Download` on 150,000 visits is 1,050,000

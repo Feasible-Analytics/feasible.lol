@@ -6,6 +6,7 @@ lede: "Nine Google Analytics alternatives. What they cost, where they win, and w
 kicker: "ROUNDUP"
 weight: 10
 wide: true
+lastmod: 2026-11-20
 checked: 2026-09-03
 faq:
   - q: "What's the best alternative to Google Analytics?"
@@ -25,7 +26,7 @@ faq:
 {{< callout title="A word about us before the table" >}}
 We make one of these. Feasible is in the list on the same terms as everyone else,
 and we'll flag it again when we get there. Every competitor price below comes
-from that vendor's own published pricing page, linked, and read on September 3,
+from that vendor's own published pricing page, linked, and read on November 20,
 2026.
 {{< /callout >}}
 
@@ -85,16 +86,14 @@ bill** - read it before comparing two prices.
 | **Feasible** | **$99** | **$99** | pageviews + events | unlimited | unlimited | none | AGPL-3.0 | unlimited |
 | [Plausible Starter](https://plausible.io/#pricing) | $190 | $690 | pageviews + events | 1 | owner only | none | AGPL-3.0 (CE) | No limit while subscribed |
 | [Plausible Business](https://plausible.io/#pricing) | $390 | $1,390 | pageviews + events | 10 | 10 | none | AGPL-3.0 (CE) | No limit while subscribed |
-| [Fathom](https://usefathom.com/pricing) | $150 | $600 | pageviews + events | 75 | not published | none | closed | forever |
-| [Simple Analytics](https://www.simpleanalytics.com/pricing) | $200 | $600 | datapoints, incl. each property | 10 | 1 (+$240/yr) | none | closed | 3 years |
+| [Fathom](https://usefathom.com/pricing) | $150 | $600 | pageviews + events | 50; 75 at 1M | not published | none | closed | forever |
+| [Simple Analytics](https://www.simpleanalytics.com/pricing) | $200 | $600 | datapoints (pageviews + events) | 10 | 1 (+$200/yr) | none | closed | 3 years |
 | [Pirsch Standard](https://pirsch.io/pricing) | $120 | $540 | pageviews + events + 10% extensions | 50 | unlimited | none | closed | unlimited |
 | [Umami Cloud Pro](https://umami.is/pricing) | $240 | $240 | events, incl. each property | 20 | 10 | none | MIT | 2 years |
-| [Matomo Cloud](https://matomo.org/pricing/) | $420 | $2,040 | **hits** | 30 | 30 | configurable | GPL-3.0 | configurable |
+| [Matomo Cloud](https://matomo.org/pricing/) | $420 | $2,040 | **hits** | 30 | 30 | configurable | GPL-3.0 | raw data 24 months, reports forever |
 | [GoatCounter](https://www.goatcounter.com/) | $0 | n/a | pageviews | - | - | none | EUPL-1.2 | - |
 | [Cloudflare](https://www.cloudflare.com/web-analytics/) | $0 | $0 | pageviews | - | - | none | closed | not published |
-| [Google Analytics 4](https://support.google.com/analytics/answer/11202874) | $0 | $0 | events | unlimited | unlimited | yes | closed | 14 months |
-
-Plausible retention rechecked November 11, 2026: [no retention limit while subscribed](https://plausible.io/#pricing) on every plan. The price-check dates elsewhere on this page are unchanged.
+| [Google Analytics 4](https://support.google.com/analytics/answer/11202874) | $0 | $0 | events | unlimited | unlimited | yes | closed | 2 or 14 months |
 
 Matomo's unit is worth repeating: a hit "can be either a tracked page view, an
 event tracking, a download, an outlink, an onsite search or a content tracking
@@ -182,8 +181,8 @@ million.
 
 **Where it beats us:** EU hosting and a calm interface.
 
-**The cost:** the datapoint unit counts pageviews, events **and** each stored
-event property, and extra seats are $240 a year each.
+**The cost:** extra seats are $200 a year each beyond the first, and the
+self-serve plan stops at 2.5 million a month.
 
 ### GoatCounter
 

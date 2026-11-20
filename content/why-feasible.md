@@ -3,6 +3,7 @@ title: "Why we built Feasible"
 seotitle: "Why we built Feasible: the math behind $99 a year"
 description: "A pageview takes about 210 bytes. So why does analytics cost hundreds a month?"
 lede: "A pageview takes about 210 bytes. The bill should match."
+lastmod: 2026-11-20
 checked: 2026-09-03
 ---
 
@@ -14,7 +15,7 @@ Counting pageviews is cheap. We priced it that way.
 
 ## What that costs to buy
 
-Here is the annual price for one million pageviews a month, checked September 3,
+Here is the annual price for one million pageviews a month, checked November 20,
 2026:
 
 | Plan | A year |

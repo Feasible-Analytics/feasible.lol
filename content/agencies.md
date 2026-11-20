@@ -9,7 +9,7 @@ kicker: "FOR AGENCIES"
 image: "/images/og/agencies.png"
 date: 2026-11-20
 lastmod: 2026-11-20
-checked: 2026-09-03
+checked: 2026-11-20
 toc: true
 ctaLine1: "Every client site."
 ctaLine2: "Free for 30 days."
@@ -62,8 +62,8 @@ only need to price the extra volume. The details are on the
 
 We sell one of these, so check our work. Prices are annual list prices before
 tax, from each vendor's own pricing page, as on
-[our price table](/compare/pricing/) (read September 3, 2026). The site limits
-were checked again on November 20, 2026.
+[our price table](/compare/pricing/). Prices and site limits were read on
+November 20, 2026.
 
 Two agencies: one with 20 client sites and 100,000 pageviews a month between
 them, and one with 40 sites and a million.

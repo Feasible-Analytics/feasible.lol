@@ -1,30 +1,31 @@
 ---
 title: "Feasible vs Simple Analytics"
-seotitle: "Feasible vs Simple Analytics - price, datapoints, seats"
-description: "Simple Analytics bills datapoints, not pageviews, and charges $240 a year per extra seat. Feasible is $99 flat with unlimited users. Compared."
-lede: "Simple Analytics keeps your data in the Netherlands, which we can't. It also bills for datapoints and charges per seat, which adds up faster than the sticker suggests."
+seotitle: "Feasible vs Simple Analytics - price, seats, limits"
+description: "Simple Analytics is $600 a year at a million datapoints and $200 a year per extra seat. Feasible is $99 flat with unlimited users. Compared."
+lede: "Simple Analytics keeps your data in the Netherlands, which we can't. It also charges per seat, which adds up faster than the sticker suggests once you're a team."
 versus: "Simple Analytics"
 checked: 2026-09-03
+lastmod: 2026-11-20
 weight: 50
 verdict: |
   If your data has to stay in the EU, Simple Analytics hosts in the Netherlands
   and we host in Montreal, Canada - that's the whole decision, and price
   shouldn't move you. If you're a team, the per-seat pricing is where this gets
-  expensive: five people at a million a month is $1,560 a year there and $99
+  expensive: five people at a million a month is $1,400 a year there and $99
   here.
 faq:
   - q: "What is a datapoint in Simple Analytics?"
     a: >-
-      Their meter counts datapoints rather than pageviews - pageviews plus
-      events plus stored event metadata. Feasible counts pageviews and custom
-      events, and stops there. The metadata you attach to an event is free here
-      and billable there, so a well-instrumented site burns through their tier
-      faster than its traffic suggests.
+      Their meter is named datapoints rather than pageviews, and their docs
+      describe a datapoint as "events or page views." That's the same two
+      things Feasible counts, so the same traffic reads about the same on both
+      meters. The difference is the price on top of it, and the seats.
   - q: "How much does Simple Analytics cost for a team?"
     a: >-
       The plan includes one user, and their pricing page lists extra seats at
-      $20 a month each - $240 a year. Five people at a million datapoints a
-      month works out at $1,560 a year. Feasible has no seat pricing at all.
+      $20 a month each, or $200 a year on annual billing. Five people at a
+      million datapoints a month works out at $1,400 a year. Feasible has no
+      seat pricing at all.
   - q: "Where is Simple Analytics data stored?"
     a: >-
       In the Netherlands, so inside the EU. Feasible is hosted in Montreal,
@@ -47,31 +48,34 @@ Here's the rest of it.
 ## Price
 
 From [their pricing page](https://www.simpleanalytics.com/pricing), read
-September 3, 2026. Their ladder is measured in **datapoints**, not pageviews - more on that in a second. Annual is ten times monthly.
+November 20, 2026. Their ladder is measured in **datapoints** - more on that in a
+second. Annual is ten times monthly.
 
 | Datapoints / month | Simple Analytics | Feasible |
 |---|---:|---:|
-| Up to 20,000 | $150 | **$99** |
 | Up to 100,000 | $200 | **$99** |
+| Up to 250,000 | $300 | **$99** |
 | Up to 500,000 | $400 | **$99** |
 | Up to 1,000,000 | $600 | **$99** |
-| Up to 5,000,000 | $1,200 | Talk to us |
-| Up to 10,000,000 | $1,600 | Talk to us |
+| Up to 2,500,000 | $1,200 | Talk to us |
+| Above 2,500,000 | Enterprise, quoted | Talk to us |
 
-Annual USD, list price, before tax. Those figures are for one user.
+Annual USD, list price, before tax. Those figures are for one user. The smallest
+paid tier is 100,000; below that, their free plan covers five sites with 30 days
+of history.
 
 ## Seats
 
 Simple Analytics' paid plan includes **one user**. Their pricing page puts extra
-seats at "+$20/mo per extra user" - $240 a year each.
+seats at $20 a month each, or "+$200/yr per extra user" on annual billing.
 
 So a five-person team at a million datapoints a month:
 
 | | Simple Analytics | Feasible |
 |---|---:|---:|
 | Plan | $600 | $99 |
-| 4 extra seats | $960 | $0 |
-| **Total per year** | **$1,560** | **$99** |
+| 4 extra seats | $800 | $0 |
+| **Total per year** | **$1,400** | **$99** |
 
 Feasible has no seat pricing at all. Unlimited team members, five roles - owner,
 admin, editor, billing, viewer - plus per-site guest editors and guest viewers.
@@ -80,35 +84,31 @@ which is the point.
 
 ## What counts
 
-This is the part that catches people. Their meter counts datapoints: pageviews,
-plus events, plus stored event metadata - not pageviews alone.
+Their meter counts datapoints, and their docs describe a datapoint as "events or
+page views" ([docs.simpleanalytics.com](https://docs.simpleanalytics.com/metadata)).
+We count pageviews and custom events. Same two things.
 
-We count pageviews and custom events, so the first two match. The third is where
-it splits. Take a site doing 800,000 pageviews a month that fires 50,000 events
-- signups, downloads, outbound clicks - and attaches three fields to each one:
-plan, source and value.
+So a site doing 800,000 pageviews a month that fires 50,000 events reads about
+850,000 on both meters: inside our $99 plan, and in their $600 band. Metadata you
+attach to an event goes in with that event; their docs don't describe it as a
+datapoint of its own. Our engagement pings, the ones behind scroll depth and time
+on page, don't count either, because you can't turn those off and billing you for
+them would be a trick.
 
-| | Counted | Which band |
-|---|---:|---|
-| Simple Analytics | 1,000,000 | The top of the $600 band. A fourth field is $800. |
-| Feasible | 850,000 | Inside the $99 plan |
+So the meter isn't the difference here. The price on top of it is, and the seats.
 
-The 150,000 in the gap is entirely metadata. We never count it. Three fields on
-an event or thirty, it's one event on our meter. Neither do the engagement pings
-behind scroll depth and time on page, because you can't turn those off and
-billing you for them would be a trick.
-
-So describing your conversions properly costs you a tier there. Here it costs
-nothing.
+*Correction, November 20, 2026: an earlier version of this page said Simple
+Analytics counts each stored metadata field as a datapoint. Their docs describe a
+datapoint as a pageview or an event, so it doesn't.*
 
 ## Side by side
 
 | | Feasible | Simple Analytics |
 |---|---|---|
 | At 1M/month | $99/yr | $600/yr (one user) |
-| Billing unit | Pageviews + custom events | Datapoints - pageviews, events, metadata |
+| Billing unit | Pageviews + custom events | Datapoints - pageviews and events |
 | Users included | Unlimited | 1 |
-| Extra seats | $0 | $240/yr each |
+| Extra seats | $0 | $200/yr each, on annual billing |
 | Sites | Unlimited | 10 on the paid plan |
 | Retention | Unlimited | 3 years |
 | Free plan | No - 30-day trial, no card | Yes, with a badge and 30-day retention |
@@ -124,7 +124,7 @@ nothing.
 | Source code | AGPL-3.0-or-later | Closed |
 | Session replay, heatmaps, A/B tests | No | No |
 | Cohort / retention report | No | No |
-| SSO | No | Enterprise |
+| SSO | No | Not on their pricing page |
 | Mobile SDKs | No | No |
 | Trial | 30 days, no card | 14 days, no card |
 
@@ -199,12 +199,11 @@ matters.
 ## Where Feasible wins
 
 You have more than one person. You have more than ten sites. You want funnels
-and webhooks. You'd rather your event tracking didn't raise your bill. Or you
-want the source code, because a hosted-only product is a company you're betting
+and webhooks. Or you want the source code, because a hosted-only product is a company you're betting
 on rather than software you own.
 
 At one user, one site, low traffic and EU hosting required, buy theirs. Past
-that, the gap is $99 against $600 and up.
+that, the gap is $99 against $200 to $1,200, plus $200 for each extra person.
 
 More: [the whole price ladder](/compare/pricing/), or
 [what Feasible does](/features/), gaps included.
