@@ -16,4 +16,4 @@ at every volume in one table. Or pick the product you're weighing us against.
 If you haven't narrowed it to one product yet, the [alternatives
 roundups](/alternatives/) cover several tools at once rather than two.
 
-And if you would rather look than read, <a href="https://app.feasible.lol/public/stopoverpayingforanalytics.com" class="feasible-event-name=demo-click feasible-event-location=compare-hub">the live demo</a> is a real dashboard with no signup in front of it.
+And if you would rather look than read, <a href="https://app.feasible.lol/public/stopoverpayingforanalytics.com" class="feasible-event-name=demo-click feasible-event-location=compare-hub">the live demo</a> is the real dashboard on a demo site with generated traffic, with no signup in front of it.

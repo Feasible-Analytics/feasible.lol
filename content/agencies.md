@@ -72,7 +72,7 @@ them, and one with 40 sites and a million.
 |---|---:|---:|---|
 | **Feasible** | **$99** | **$99** | **Unlimited** |
 | [Pirsch](https://pirsch.io/pricing) - Standard | $120 | $540 | 50 |
-| [Fathom](https://usefathom.com/pricing) | $150 | $600 | 50 or more |
+| [Fathom](https://usefathom.com/pricing) | $150 | $600 | 50, or 75 at 1M |
 | [Umami Cloud](https://umami.is/pricing) - Pro | $240 | Too many sites | 20 |
 | [Plausible](https://plausible.io/#pricing) - Business | Too many sites | Too many sites | 10 |
 
@@ -158,4 +158,4 @@ tool, or pull the numbers into reports you already send.
 
 Rather see it first?
 <a href="https://app.feasible.lol/public/stopoverpayingforanalytics.com" class="feasible-event-name=demo-click feasible-event-location=agencies">The live demo</a>
-is the whole dashboard, open to anyone, with no sign-up.
+is the whole dashboard on a demo site with generated traffic, so you can click everything. There's no sign-up.
