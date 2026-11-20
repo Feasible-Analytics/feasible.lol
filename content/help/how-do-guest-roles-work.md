@@ -7,7 +7,7 @@ weight: 70
 
 A guest is attached to one site, not to your [team](/help/what-are-the-team-roles/).
 
-They sign in, they see that site, and there's no trace of anything else you run. No site list with grayed-out rows, no team page, no billing, no hint of the client next door. Which is what you want if you're an agency.
+They sign in, they see that site, and there's no trace of anything else you run. No site list with grayed-out rows, no team page, no billing, no hint of the client next door. Which is what you want if you're an agency, and [the agencies page](/agencies/) covers the rest of that setup.
 
 There are two:
 

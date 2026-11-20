@@ -246,6 +246,7 @@ Analytics or Fathom's EU isolation. Not us, unless you self-host in the EU.
 **A freelancer or agency with a lot of client sites.** This is where per-site
 pricing bites hardest. Fathom includes 75 sites; Pirsch 50 with unlimited seats;
 Feasible unlimited on both. Count your sites before you read the headline price.
+[How it works for agencies on Feasible](/agencies/).
 
 **A SaaS that needs funnels and custom properties.** Check which plan they're on.
 Funnels and custom properties are Business-tier on Plausible ($1,390 at a

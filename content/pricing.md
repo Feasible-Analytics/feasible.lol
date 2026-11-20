@@ -18,7 +18,7 @@ faq:
   - q: "Do you count events?"
     a: "Yes. The one-million limit covers pageviews and custom events, including automatic outbound-click, download, and form events. Properties, engagement pings, sites, seats, goals, and funnels don't count."
   - q: "Do you charge per site?"
-    a: "No. Add unlimited sites. The one-million allowance is shared across them."
+    a: "No. Add unlimited sites. The one-million allowance is shared across them. Running client sites? [Here's how it works for agencies](/agencies/)."
   - q: "Do you charge per seat?"
     a: "No. Add unlimited teammates. Five roles and per-site guest access are included."
   - q: "Is there a free plan?"
