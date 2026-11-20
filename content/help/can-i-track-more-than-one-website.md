@@ -18,6 +18,6 @@ Once you're past about a dozen sites, two things help:
 - **Folders.** Group them on the sites list - one folder per client, or per brand. Drag to reorder.
 - **Pinning.** Pin the two or three you look at every morning so they sit at the top.
 
-Agencies usually want [guest roles](/help/how-do-guest-roles-work/) on top of this: a client gets view access to their own site and sees nothing about anyone else's.
+Agencies usually want [guest roles](/help/how-do-guest-roles-work/) on top of this: a client gets view access to their own site and sees nothing about anyone else's. [The agencies page](/agencies/) puts the whole setup in one place.
 
 Subdomains of a domain you've already added are [a different thing](/help/can-i-track-a-subdomain/) - those don't need a second site at all.
