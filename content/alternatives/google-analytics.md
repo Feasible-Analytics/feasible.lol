@@ -244,7 +244,8 @@ this list replaces the Google Ads connection.
 Analytics or Fathom's EU isolation. Not us, unless you self-host in the EU.
 
 **A freelancer or agency with a lot of client sites.** This is where per-site
-pricing bites hardest. Fathom includes 75 sites; Pirsch 50 with unlimited seats;
+pricing bites hardest. Fathom includes 50 sites below a million pageviews and 75 at a million
+(checked November 20, 2026); Pirsch 50 with unlimited seats;
 Feasible unlimited on both. Count your sites before you read the headline price.
 [How it works for agencies on Feasible](/agencies/).
 

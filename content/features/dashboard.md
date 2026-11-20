@@ -72,4 +72,4 @@ setting.
 More in [the docs](/docs/), and the numbers themselves are defined in
 [metric definitions](/docs/metrics/).
 
-Rather see it than read about it? <a href="https://app.feasible.lol/public/stopoverpayingforanalytics.com" class="feasible-event-name=demo-click feasible-event-location=features-dashboard">The live demo</a> is a real dashboard with real traffic on it. No signup, no login.
+Rather see it than read about it? <a href="https://app.feasible.lol/public/stopoverpayingforanalytics.com" class="feasible-event-name=demo-click feasible-event-location=features-dashboard">The live demo</a> is the real dashboard on a demo site with generated traffic, so you can click everything. No signup, no login.

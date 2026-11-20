@@ -192,7 +192,8 @@ and swapping it out to save $99 would be a bad trade.
 polished, and the entry plan is $190 a year at 100k.
 
 **Several sites, or several people.** This is where per-site and per-seat pricing
-stops being trivial. Fathom includes 75 sites; Pirsch has unlimited seats;
+stops being trivial. Fathom includes 50 sites below a million pageviews and 75 at a
+million (checked November 20, 2026); Pirsch has unlimited seats;
 Feasible has both unlimited. Count your sites and your teammates before you look
 at the headline price.
 
