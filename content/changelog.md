@@ -3,10 +3,26 @@ title: "Changelog"
 seotitle: "Changelog - what's shipped in Feasible"
 description: "What changed in Feasible, newest first and grouped by month: what you can do now that you couldn't before."
 lede: "What's changed, newest first. Each entry names the release, for anyone self-hosting."
-updated: 2026-11-18
+updated: 2026-11-22
 ---
 
 ## November 2026
+
+### November 22 - assistants can total revenue in one currency
+
+If your site takes money in more than one currency, an assistant asked "which sources made me the
+most money this week?" got a refusal it couldn't act on. The query said to name a currency, and the
+`query_stats` and `compare_periods` tools had no way to name one. Now both take `currency`, the
+refusal says exactly what to add (`"currency": "EUR"`), and the assistant can ask again by itself.
+
+Every revenue answer, from the tools and from the [Stats API](/docs/api/#currency), now says what
+unit it's in under `meta.metric_units`: whole hundredths of the currency, so 845000 is 8,450.00. And
+a comparison's earlier period is totalled in the same currency as the current one. Before, a week
+of dollars against a week of euros showed up as a change in revenue.
+
+Nothing is converted between currencies. Each one is totalled on its own.
+
+[How currencies work](/docs/goals-funnels/#revenue) · v0.0.71 and v0.0.72
 
 ### November 18 - claude.ai asks you to sign in, then lists every tool
 

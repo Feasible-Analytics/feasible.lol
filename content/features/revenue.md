@@ -54,9 +54,11 @@ that has to reconcile with an accounting system can't drift, so it isn't stored
 in a type that drifts.
 
 Currency is a standard ISO-4217 code, and a goal can use any of them. If you
-sell in dollars, euros and yen, each goal keeps its own currency and reports
-that span more than one convert using stored exchange rates refreshed every 24
-hours. The original amount is never overwritten by the converted one.
+sell in dollars, euros and yen, each goal keeps its own currency. Nothing is
+converted: Feasible doesn't fetch exchange rates, so each currency is totalled
+on its own, and a query over a range that holds more than one asks you
+[which one to total](/docs/goals-funnels/#revenue) rather than adding dollars to
+euros.
 
 ## What it covers
 

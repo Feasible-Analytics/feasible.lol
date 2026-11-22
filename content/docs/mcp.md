@@ -193,6 +193,14 @@ Eleven of them, all working:
 - `compare_periods` - a period and the one before it, with the change. It's its own tool because both
   windows have to be resolved against one clock; two separate calls near midnight compare the wrong
   days.
+
+  `query_stats` and `compare_periods` both take an optional `currency`, a three-letter ISO 4217 code
+  such as `"EUR"`. It's needed only when the range holds revenue in more than one currency. Without
+  it that question is refused, and the refusal tells the assistant to add `"currency": "EUR"` or
+  another code it found, so it can ask again by itself. Nothing is converted: each currency is
+  totalled on its own, and there's no combined total. Every money figure comes back with its unit in
+  `meta.metric_units` (whole hundredths, so 845000 is 8,450.00), which keeps an assistant from
+  reading cents as dollars. [More on currencies](/docs/api/#currency).
 - `explain_traffic_change` - breaks a movement in visitors, visits, pageviews or events down by
   source, channel, campaign, page, country, device, browser and operating system, so the answer is
   "paid social fell by a third" rather than "traffic is down".

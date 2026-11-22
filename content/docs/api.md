@@ -213,6 +213,37 @@ Buckets are cut in the site's own time zone unless you override `timezone` with 
 `include.comparisons` to `previous_period`, `year_over_year` or `custom`; a period still in progress
 is compared against the same elapsed time, not against a whole earlier one.
 
+### Currency
+
+`currency` is optional. It's a three-letter ISO 4217 code, such as `USD` or `EUR`, in any case. You
+need it only when the range holds revenue in more than one currency:
+
+```
+{
+  "site_id": "example.com",
+  "metrics": ["total_revenue"],
+  "date_range": "7d",
+  "dimensions": ["visit:source"],
+  "currency": "EUR"
+}
+```
+
+Leave it out and a range with one currency is totalled in that one. A range with two or more is
+refused with a 400 that names them and says what to send:
+
+```
+this range holds revenue in EUR, GBP, USD, so name the one to total it in: add "currency": "EUR",
+or another of those codes, to the request
+```
+
+**Nothing is converted.** Feasible doesn't fetch exchange rates, so each currency is totalled on its
+own. Ask for `EUR` and you get the euros. Revenue in the other currencies is left out, and
+`meta.metric_warnings` says how many events were left out and which currencies they were in. To see
+all of it, run the query once per currency. There's no combined total across currencies.
+
+A comparison uses the same currency as the current period, so a week of dollars is never set against
+a week of euros.
+
 ### Limits
 
 Up to 5 dimensions, 32 filters, 1,000 values in one filter, 10,000 rows per page (100 by default),
@@ -239,9 +270,20 @@ percentage change from nothing.
 And `meta.sources` tells you whether an answer came from raw events, from pre-computed summaries, or
 from both, so "this number moved and nothing changed" has somewhere to start.
 
-`meta.metric_warnings` is where a metric says it isn't telling you the whole truth - money left out
-for want of an exchange rate, groups truncated, a bucket still filling. It's attached per metric
-rather than to the whole query.
+`meta.metric_warnings` is where a metric says it isn't telling you the whole truth - revenue in
+another currency left out of the total, groups truncated, a bucket still filling. It's attached per
+metric rather than to the whole query.
+
+`meta.metric_units` names the unit of every money metric you asked for. Amounts are whole
+hundredths of the currency (cents, for dollars), so 845000 is 8,450.00:
+
+```
+"meta": { "metric_units": { "total_revenue": "hundredths of EUR (divide by 100: 845000 is 8,450.00 EUR)" } },
+"query": { "currency": "EUR" }
+```
+
+It's left out when the query asked for no money metric. `query.currency` names the currency the
+money was totalled in, even when you left it to the data.
 
 ### When a query is sampled
 
