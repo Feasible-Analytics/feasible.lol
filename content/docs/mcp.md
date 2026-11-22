@@ -1,13 +1,13 @@
 ---
 title: "The MCP server"
-description: "Connect Claude, ChatGPT, Cursor or VS Code to your Feasible analytics. Paste one URL, sign in, and click Allow. No API key to copy."
+description: "Connect Claude, ChatGPT, Codex, Gemini CLI, Cursor, VS Code, Zed or Devin Desktop to your Feasible analytics. Paste one URL, sign in, click Allow."
 lede: "Paste one URL into your assistant, sign in, and click Allow."
 weight: 130
 ---
 
 Feasible has a Model Context Protocol server built in. MCP is the standard way AI assistants connect
-to other apps, so Claude, ChatGPT, Cursor or VS Code can read your analytics and ask follow-up
-questions.
+to other apps, so Claude, ChatGPT, Codex, Gemini CLI, Cursor, VS Code, Zed or Devin Desktop can read
+your analytics and ask follow-up questions.
 
 Here's the whole setup:
 
@@ -124,6 +124,111 @@ code --add-mcp '{"name":"feasible","type":"http","url":"https://app.feasible.lol
 ```
 
 [VS Code's MCP guide](https://code.visualstudio.com/docs/agent-customization/mcp-servers)
+
+### Codex
+
+The Codex CLI and the Codex IDE extension share one settings file, `~/.codex/config.toml`, so adding
+Feasible to one adds it to both.
+
+In a terminal:
+
+```
+codex mcp add feasible --url https://app.feasible.lol/mcp
+```
+
+Codex sees that Feasible needs a sign-in and starts it. If your browser doesn't open, open the link
+Codex prints. Click **Allow access**. Once you're signed in, `codex mcp list` shows `OAuth` under
+**Auth**.
+
+To sign in again later, run `codex mcp login feasible`.
+
+You can also add it to `~/.codex/config.toml` by hand, then run `codex mcp login feasible`:
+
+```
+[mcp_servers.feasible]
+url = "https://app.feasible.lol/mcp"
+```
+
+In the IDE extension, open the gear menu, pick **MCP servers**, then **Add server**. Name it
+`feasible`, choose **Streamable HTTP**, paste `https://app.feasible.lol/mcp`, save, and click
+**Restart extension**. Click **Authenticate** when the list says Feasible needs a sign-in, then
+**Allow access** in the browser.
+
+[OpenAI's MCP guide for Codex](https://learn.chatgpt.com/docs/extend/mcp?surface=cli)
+
+### Gemini CLI
+
+```
+gemini mcp add --transport http -s user feasible https://app.feasible.lol/mcp
+```
+
+`-s user` saves it in `~/.gemini/settings.json`, so it works in every folder. Leave it out and it
+goes in the current folder's `.gemini/settings.json` instead.
+
+Start `gemini` and run `/mcp auth feasible`. Choose **Yes** when it asks to open your browser, then
+click **Allow access**. `/mcp list` shows Feasible's tools once you're signed in.
+
+Gemini CLI turns off MCP servers in a folder you haven't trusted, so say yes when it asks whether
+you trust the folder.
+
+[Google's MCP guide for Gemini CLI](https://geminicli.com/docs/tools/mcp-server/)
+
+### Zed
+
+Open **Settings → AI → MCP Servers**, click **Add Server**, and choose **Add Remote Server**. Or run
+`zed: open settings file` from the Command Palette and add:
+
+```
+{
+  "context_servers": {
+    "feasible": {
+      "url": "https://app.feasible.lol/mcp"
+    }
+  }
+}
+```
+
+Don't add an `Authorization` header. Without one, Zed asks you to sign in. Click **Allow access** in
+the browser. The dot next to Feasible in **MCP Servers** turns green, with "Server is active", once
+it's connected.
+
+Zed's own agent in the Agent Panel uses it. A command-line agent you run in Zed's terminal, like
+Codex or Gemini CLI, reads its own settings, so set that one up from its section above.
+
+[Zed's MCP guide](https://zed.dev/docs/ai/mcp)
+
+### Devin Desktop (formerly Windsurf)
+
+Windsurf became Devin Desktop on June 2, 2026, and its agent is now Devin Local. Add Feasible to
+`~/.config/devin/mcp_config.json` to use it in every project, or to `.devin/mcp_config.json` inside
+one:
+
+```
+{
+  "mcpServers": {
+    "feasible": {
+      "url": "https://app.feasible.lol/mcp",
+      "transport": "http"
+    }
+  }
+}
+```
+
+To find the file from the app, open **Customize** from the Agents window, click **MCPs**, pick
+**This computer**, and open the config file. Refresh the list after you save. If Feasible shows
+**Needs authentication**, click **Authenticate**, then **Allow access** in the browser.
+
+The Devin CLI uses the same file. From a terminal, this adds Feasible and signs you in:
+
+```
+devin mcp add -s user feasible https://app.feasible.lol/mcp
+devin mcp login feasible
+```
+
+On an Enterprise plan, an admin decides which MCP servers are allowed, under **MCP & ACP** in team
+settings.
+
+[Devin's MCP guide](https://docs.devin.ai/desktop/cascade/mcp)
 
 ### Any other app
 
