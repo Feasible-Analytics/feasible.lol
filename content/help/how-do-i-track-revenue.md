@@ -17,7 +17,7 @@ feasible('Purchase', {
 
 **2. Create the goal.** Under **Site settings → Goals**, add a custom-event goal named `Purchase`, tick the revenue box, and set the currency.
 
-Amounts are stored as integer minor units, so there's no floating-point drift on your totals. Any ISO-4217 currency works, and if you take money in several, cross-currency reporting uses stored exchange rates that refresh every 24 hours.
+Amounts are stored as integer minor units, so there's no floating-point drift on your totals. Any ISO-4217 currency works. If you take money in several, each currency is totalled on its own: nothing is converted, and a query over a range with more than one [asks which to total](/docs/goals-funnels/#revenue).
 
 You get [three revenue metrics](/features/revenue/) out of it - total revenue, average revenue and revenue per visitor - alongside the goal's own conversion rate. Revenue shows as a sub-line under the goal in the **Goals** tab.
 

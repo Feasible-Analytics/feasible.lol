@@ -134,16 +134,21 @@ Revenue rides on a custom event, as an amount and an ISO 4217 currency:
 feasible('Purchase', { revenue: { amount: 49.00, currency: 'USD' } })
 ```
 
-It's stored in minor units - cents, pence - and never converted when it's written, so a change in
-exchange rates can't rewrite a past quarter. Conversion happens at read time.
+It's stored in minor units - cents, pence - in the currency it was sent in. Nothing is converted:
+Feasible doesn't fetch exchange rates, so each currency is totalled on its own, and there's no
+combined total across currencies.
 
 Three consequences worth knowing:
 
 - If a range holds more than one currency and you haven't said which one to total in, the query is
   **refused**, with a message naming the currencies it found. Adding numbers in different currencies
-  and calling it a total is worse than an error.
-- Money we couldn't convert for want of a rate is reported as a warning naming how much was left out,
-  rather than being silently dropped from the total.
+  and calling it a total is worse than an error. To pick one, add `"currency": "EUR"` (or whichever
+  code you want) to the [API query](/docs/api/#currency). With an assistant, ask for the figure in
+  euros: [its tools](/docs/mcp/#the-tools) take the same field. Run it again with the next code to
+  see that currency's money.
+- Once you've named a currency, revenue in the others is left out of that total, and the answer
+  carries a warning saying how many events were left out and in which currencies, so nothing drops
+  out silently.
 - Rounding happens once, on the total - not on every event and then again on the sum.
 
 {{< callout title="Stripe will never be your best marketing channel" >}}
