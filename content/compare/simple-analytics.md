@@ -5,7 +5,7 @@ description: "Simple Analytics is $600 a year at a million datapoints and $200 a
 lede: "Simple Analytics keeps your data in the Netherlands, which we can't. It also charges per seat, which adds up faster than the sticker suggests once you're a team."
 versus: "Simple Analytics"
 checked: 2026-09-03
-lastmod: 2026-11-20
+lastmod: 2026-11-23
 weight: 50
 verdict: |
   If your data has to stay in the EU, Simple Analytics hosts in the Netherlands
@@ -101,6 +101,10 @@ So the meter isn't the difference here. The price on top of it is, and the seats
 Analytics counts each stored metadata field as a datapoint. Their docs describe a
 datapoint as a pageview or an event, so it doesn't.*
 
+*Correction, November 23, 2026: an earlier version of this page said Simple
+Analytics has no funnels. Their paid plan has multi-step goals that work much
+like one, described under the table below.*
+
 ## Side by side
 
 | | Feasible | Simple Analytics |
@@ -114,7 +118,7 @@ datapoint as a pageview or an event, so it doesn't.*
 | Free plan | No - 30-day trial, no card | Yes, with a badge and 30-day retention |
 | Data location | Montreal, Canada | Netherlands |
 | Cookies on visitors | None | None |
-| Funnels | Yes | No |
+| Funnels | Yes, one visit, in order | Multi-step goals, not tied to one visit |
 | Custom properties | Yes | Metadata on events |
 | API | Yes, 10,000 req/hr | Yes |
 | Webhooks | Yes | No |
@@ -127,6 +131,14 @@ datapoint as a pageview or an event, so it doesn't.*
 | SSO | No | Not on their pricing page |
 | Mobile SDKs | No | No |
 | Trial | 30 days, no card | 14 days, no card |
+
+**About funnels.** On Simple Analytics' paid plan a goal can have several
+steps, and it shows the conversion rate from one step to the next, so it does
+much of what a funnel does. Their
+[changelog](https://www.simpleanalytics.com/changelog) says they renamed the
+feature from funnel to goal in July 2024 because the steps aren't always from
+the same visit. A Feasible funnel follows one visit through its steps, in
+order. Checked November 23, 2026.
 
 ## The script
 
@@ -198,8 +210,8 @@ matters.
 
 ## Where Feasible wins
 
-You have more than one person. You have more than ten sites. You want funnels
-and webhooks. Or you want the source code, because a hosted-only product is a company you're betting
+You have more than one person. You have more than ten sites. You want webhooks,
+or a funnel that follows one visit through its steps. Or you want the source code, because a hosted-only product is a company you're betting
 on rather than software you own.
 
 At one user, one site, low traffic and EU hosting required, buy theirs. Past
