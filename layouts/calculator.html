@@ -1,0 +1,286 @@
+{{/*
+  calculator.html
+  The pricing calculator at /pricing/calculator/. The form and the answer are
+  drawn by assets/js/pricing-calculator.js from data/calculator.json. Without
+  JavaScript the form stays hidden and the page still shows every price the
+  calculator uses, by traffic level, with each plan's limits.
+
+  Selected by `layout: "calculator"` in front matter.
+
+  Created: 2026-11-23
+  Copyright (c) 2026 Cloudmanic Labs, LLC. All rights reserved.
+*/}}
+{{ define "main" }}
+  {{ $calc := hugo.Data.calculator }}
+  {{ $checked := time.AsTime $calc.checked }}
+  {{ $volumes := slice 10000 100000 1000000 5000000 10000000 }}
+
+  <article class="shell pt-12 sm:pt-16">
+    {{ partial "breadcrumb.html" . }}
+
+    <header class="max-w-[48rem]">
+      <p class="kicker mb-4">{{ .Params.kicker | default "Pricing" }}</p>
+      <h1
+        class="optical-l font-display text-[2.25rem] font-extrabold leading-[1.06] tracking-tight sm:text-[3rem]"
+      >
+        {{ .Title }}
+      </h1>
+      {{ with .Params.lede }}
+        <p class="mt-5 text-lg leading-relaxed text-neutral-700">
+          {{ . | markdownify }}
+        </p>
+      {{ end }}
+    </header>
+
+    {{/* The same disclosure the comparison pages open with, because this
+         compares us with the people we compete with. */}}
+    <div class="mt-8 max-w-[48rem] border-2 border-ink p-6">
+      <p class="leading-relaxed">
+        <strong class="font-display font-extrabold">We make one of these.</strong>
+        Feasible is our product. Every other price here is the vendor's own
+        published list price, linked under the table, and the answer says so
+        when someone else is cheaper.
+      </p>
+    </div>
+
+    <noscript>
+      <p class="mt-10 max-w-[48rem] border-2 border-rule bg-surface p-6 leading-relaxed">
+        The calculator needs JavaScript. Every price it uses is in the table
+        below, at five traffic levels, with each plan's site and team limits.
+      </p>
+    </noscript>
+
+    <section id="calc" class="mt-10 border-2 border-ink" aria-label="Pricing calculator" hidden>
+      <div class="grid lg:grid-cols-12">
+        <form
+          id="calc-form"
+          class="border-rule p-6 sm:p-8 lg:col-span-4 lg:border-r-2"
+          action="{{ .RelPermalink }}"
+          method="get"
+        >
+          <p class="font-display text-xs font-extrabold uppercase tracking-[0.08em] text-neutral-700">
+            Your setup
+          </p>
+
+          <div class="mt-5">
+            <label for="calc-sites" class="block font-display text-sm font-extrabold">Sites</label>
+            <input
+              id="calc-sites"
+              name="sites"
+              type="number"
+              min="1"
+              step="1"
+              inputmode="numeric"
+              autocomplete="off"
+              class="tnum mt-2 w-full border-2 border-ink bg-paper px-3 py-2.5 font-display text-lg font-extrabold"
+            />
+          </div>
+
+          <div class="mt-5">
+            <label for="calc-pv" class="block font-display text-sm font-extrabold">Pageviews a month</label>
+            <input
+              id="calc-pv"
+              name="pv"
+              type="text"
+              inputmode="numeric"
+              autocomplete="off"
+              aria-describedby="calc-pv-hint"
+              class="tnum mt-2 w-full border-2 border-ink bg-paper px-3 py-2.5 font-display text-lg font-extrabold"
+            />
+            <p id="calc-pv-hint" class="mt-2 text-sm text-neutral-700">
+              All your sites together, plus the custom events you fire. Most of
+              these vendors count events too. 300k and 2M work.
+            </p>
+          </div>
+
+          <div class="mt-5">
+            <label for="calc-team" class="block font-display text-sm font-extrabold">Teammates</label>
+            <input
+              id="calc-team"
+              name="team"
+              type="number"
+              min="0"
+              step="1"
+              inputmode="numeric"
+              autocomplete="off"
+              aria-describedby="calc-team-hint"
+              class="tnum mt-2 w-full border-2 border-ink bg-paper px-3 py-2.5 font-display text-lg font-extrabold"
+            />
+            <p id="calc-team-hint" class="mt-2 text-sm text-neutral-700">
+              People besides you who need their own login, clients included.
+            </p>
+          </div>
+
+          <fieldset class="mt-6">
+            <legend class="font-display text-sm font-extrabold">You need</legend>
+            <label class="mt-3 flex items-center gap-3">
+              <input id="calc-funnels" name="funnels" value="1" type="checkbox" class="size-5 accent-ink" />
+              <span>Funnels</span>
+            </label>
+            <label class="mt-2 flex items-center gap-3">
+              <input id="calc-revenue" name="revenue" value="1" type="checkbox" class="size-5 accent-ink" />
+              <span>Revenue tracking</span>
+            </label>
+          </fieldset>
+
+          <div class="mt-7 border-t-2 border-rule pt-5">
+            <p class="font-display text-xs font-extrabold uppercase tracking-[0.08em] text-neutral-700">
+              Or try
+            </p>
+            <ul class="mt-3 space-y-2 text-[0.9375rem]">
+              <li>
+                <a href="{{ .RelPermalink }}?sites=1&pv=20000&team=0" data-calc-preset class="underline hover:text-flag-700"
+                  >One blog: 1 site, 20k pageviews</a
+                >
+              </li>
+              <li>
+                <a href="{{ .RelPermalink }}?sites=12&pv=300000&team=0" data-calc-preset class="underline hover:text-flag-700"
+                  >12 sites, 300k pageviews</a
+                >
+              </li>
+              <li>
+                <a href="{{ .RelPermalink }}?sites=40&pv=2000000&team=5" data-calc-preset class="underline hover:text-flag-700"
+                  >An agency: 40 sites, 2M, 5 teammates</a
+                >
+              </li>
+            </ul>
+          </div>
+        </form>
+
+        <div class="min-w-0 border-t-2 border-rule p-6 sm:p-8 lg:col-span-8 lg:border-t-0">
+          <p class="font-display text-xs font-extrabold uppercase tracking-[0.08em] text-neutral-700">
+            What it costs you a year
+          </p>
+          <p id="calc-summary" class="mt-2 text-sm text-neutral-700"></p>
+          <div id="calc-verdict" class="mt-4 space-y-3 leading-relaxed sm:text-lg" aria-live="polite"></div>
+          <ol id="calc-results" class="mt-6 border-t-2 border-rule"></ol>
+          <div class="mt-6 flex flex-wrap items-center gap-x-5 gap-y-3">
+            <button id="calc-copy" type="button" class="btn btn-secondary feasible-event-name=calculator-copy-link">
+              Copy a link to this setup
+            </button>
+            <p class="text-sm text-neutral-700">
+              Prices read {{ $checked | time.Format "January 2, 2006" }}.
+              Yearly, USD, before tax.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {{/* One answer row. Cloned by the script, and kept in the page so the
+         stylesheet build sees these classes. */}}
+    <template id="calc-row">
+      <li
+        class="grid grid-cols-[minmax(0,1fr)_auto] gap-x-4 gap-y-1 border-b border-rule-soft py-4 data-[us]:-mx-3 data-[us]:bg-surface data-[us]:px-3 sm:grid-cols-12"
+      >
+        <span data-f="name" class="font-display font-extrabold sm:col-span-4"></span>
+        <span data-f="price" class="tnum text-right font-display font-extrabold sm:col-span-3"></span>
+        <span class="col-span-2 text-sm leading-relaxed text-neutral-700 sm:col-span-5">
+          <span data-f="why" class="block font-medium text-ink"></span>
+          <span data-f="notes" class="block"></span>
+          <span data-f="unit" class="block"></span>
+        </span>
+      </li>
+    </template>
+
+    <script type="application/json" id="calc-data">
+      {{ $calc | jsonify | safeJS }}
+    </script>
+    {{ with resources.Get "js/pricing-calculator.js" }}
+      <script>{{ .Content | safeJS }}</script>
+    {{ end }}
+
+    <section id="every-price" class="mt-16">
+      <h2 class="font-display text-2xl font-extrabold tracking-tight">
+        Every price the calculator uses
+      </h2>
+      <p class="mt-3 max-w-[46rem] leading-relaxed text-neutral-700">
+        A year, in USD, before tax, on annual billing where the vendor offers
+        it, read from each vendor's own pricing page on
+        {{ $checked | time.Format "January 2, 2006" }}. A dash means that plan
+        doesn't go that high.
+      </p>
+
+      <div class="copy mt-6 max-w-none">
+        <div class="table-scroll">
+          <table>
+            <thead>
+              <tr>
+                <th>Plan</th>
+                {{ range $volumes }}
+                  <th style="text-align: right">
+                    {{ if ge . 1000000 }}{{ div . 1000000 }}M{{ else }}{{ div . 1000 }}k{{ end }}
+                  </th>
+                {{ end }}
+                <th>Sites</th>
+                <th>Team</th>
+                <th>Funnels</th>
+                <th>Revenue</th>
+              </tr>
+            </thead>
+            <tbody>
+              {{ range hugo.Data.competitors.plans }}
+                {{ $row := . }}
+                {{ $vendor := index (where $calc.vendors "name" .vendor) 0 }}
+                {{ $plan := index $vendor.plans 0 }}
+                {{ with where $vendor.plans "name" .plan }}{{ $plan = index . 0 }}{{ end }}
+                <tr>
+                  <td>
+                    {{ if .us }}<strong>{{ .vendor }}</strong>{{ else }}{{ .vendor }}{{ with $plan.name }} {{ . }}{{ end }}{{ end }}
+                  </td>
+                  {{ range .tiers }}
+                    <td style="text-align: right">
+                      {{ if $row.us }}<strong>{{ . | default "-" }}</strong>{{ else }}{{ . | default "-" }}{{ end }}
+                    </td>
+                  {{ end }}
+                  <td>{{ .sites }}</td>
+                  <td>{{ .seats }}</td>
+                  {{ range slice $plan.funnels $plan.revenue }}
+                    <td>
+                      {{- if eq . true }}Yes{{ else if eq . false }}No{{ else }}{{ .short }}{{ end -}}
+                    </td>
+                  {{ end }}
+                </tr>
+              {{ end }}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <p class="mt-4 max-w-[46rem] text-sm leading-relaxed text-neutral-700">
+        Between those columns it also uses the other steps our comparison
+        pages list.
+        {{- $groups := slice -}}
+        {{- range $calc.vendors -}}
+          {{- $v := . -}}
+          {{- range .plans -}}
+            {{- $p := . -}}
+            {{- $extra := slice -}}
+            {{- range .steps -}}
+              {{- $n := int (index . 0) -}}
+              {{- if not (in $volumes $n) -}}
+                {{- $vol := cond (ge $n 1000000) (printf "%vM" (div $n 1000000.0)) (printf "%dk" (div $n 1000)) -}}
+                {{- $extra = $extra | append (printf "%s ($%s)" $vol (lang.FormatNumberCustom 0 (index . 1))) -}}
+              {{- end -}}
+            {{- end -}}
+            {{- with $extra -}}
+              {{- $groups = $groups | append (printf "%s%s at %s" $v.name (cond (eq $p.name "") "" (printf " %s" $p.name)) (delimit . ", " " and ")) -}}
+            {{- end -}}
+          {{- end -}}
+        {{- end }}
+        {{ delimit $groups ". " }}.
+      </p>
+    </section>
+
+    <div class="copy mt-16 max-w-[46rem]">{{ .Content }}</div>
+
+    {{ partial "faq.html" . }}
+    {{ partial "updated.html" . }}
+  </article>
+
+  {{ partial "cta.html" (dict
+    "site" .Site
+    "line1" (.Params.ctaLine1 | default "Every site, every teammate.")
+    "line2" (.Params.ctaLine2 | default "Free for 30 days.")
+  ) }}
+{{ end }}

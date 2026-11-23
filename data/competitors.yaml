@@ -11,6 +11,10 @@
 #      counts. Never compare two numbers without it.
 #   4. If you can't source it, don't publish it.
 #
+# The calculator at /pricing/calculator/ reads data/calculator.json, which
+# holds the same prices as numbers. Change a price here and change it there:
+# scripts/pricing-calculator.test.cjs fails until the two agree.
+#
 # Created: 2026-09-03
 # Copyright (c) 2026 Cloudmanic Labs, LLC. All rights reserved.
 

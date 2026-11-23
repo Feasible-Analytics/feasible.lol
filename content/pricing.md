@@ -5,6 +5,7 @@ seotitle: "Pricing: $9.99 a month for everything"
 description: "One plan. $9.99 a month or $99 a year. Unlimited sites, unlimited users, a million pageviews a month, unlimited data retention. No tiers, no per-site fees."
 lede: "One plan with everything in it. Thirty days free first, and we don't ask for a card to start."
 checked: 2026-11-20
+lastmod: 2026-11-23
 faqHeading: "Questions people ask before they pay"
 faq:
   - q: "What happens when the trial ends?"
@@ -89,6 +90,9 @@ funnels, and the Stats API, so that is the closest match.
 At 10,000 pageviews a month, Plausible Starter is $90 a year and Pirsch Standard
 is $60. Both cost less than Feasible. Our price wins when you add traffic, sites,
 teammates, or features.
+
+To see what each of them would charge for your own sites, traffic and team,
+use the [pricing calculator](/pricing/calculator/).
 
 The whole ladder, at 10k, 100k, 1M, 5M and 10M pageviews a month, is on
 [the pricing comparison page](/compare/pricing/). One vendor at a time, there's

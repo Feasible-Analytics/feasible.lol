@@ -8,7 +8,7 @@ lede: "Add every client. Give each one their own login. It's still $99 a year."
 kicker: "FOR AGENCIES"
 image: "/images/og/agencies.png"
 date: 2026-11-20
-lastmod: 2026-11-20
+lastmod: 2026-11-23
 checked: 2026-11-20
 toc: true
 ctaLine1: "Every client site."
@@ -81,6 +81,11 @@ is $21 a year more than us. At that size, pick on features, not price.
 
 The 40-site column is where per-site and capped plans get expensive. It's also
 right at our limit, so read the section above before you sign client 41.
+
+Your own client count will differ. Put it in the
+[pricing calculator](/pricing/calculator/?sites=40&pv=1000000&team=5), with your
+traffic and the people who need a login, and it runs the same math for every
+vendor.
 
 **Where we aren't cheaper.** If every client site you run adds up to less than
 10,000 pageviews a month, Pirsch Standard is $60 a year for up to 50 sites.

@@ -5,7 +5,7 @@ description: "Every privacy-friendly analytics vendor's published price at 10k, 
 lede: "Ten vendors. Five traffic levels. One table that shows what each vendor counts."
 versus: "everyone else"
 checked: 2026-09-03
-lastmod: 2026-11-20
+lastmod: 2026-11-23
 weight: 5
 wide: true
 verdict: |
@@ -85,6 +85,9 @@ of those is a better deal and you should take it.
 
 At a million pageviews a month, the same list runs $99 to $2,040. That's the
 part we built a company around.
+
+To run your own sites, traffic and team against this table, use the
+[pricing calculator](/pricing/calculator/).
 
 ## What each vendor counts
 
@@ -228,6 +231,9 @@ doesn't. The claim is operational: one process, one file, nothing to tune.
    several of these, it doesn't.
 
 For Feasible, step 1 is the whole calculation. That's the design.
+
+The [pricing calculator](/pricing/calculator/) does steps 5 and 6 for you,
+including site limits, seats, funnels and revenue tracking.
 
 ## Sources
 
