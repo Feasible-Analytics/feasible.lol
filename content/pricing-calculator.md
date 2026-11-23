@@ -71,9 +71,11 @@ there show as the top of a range.
 **Funnels and revenue tracking can move you up a plan.** On Plausible both
 start on Business. Pirsch Standard has neither; their Plus plan has both.
 Fathom tracks revenue but has no funnels. Umami Cloud, Matomo Cloud and GA4
-have both. Simple Analytics' goals can have several steps, which their docs
-call a funnel, and we couldn't find revenue tracking there. We checked all of
-that on each vendor's own pages on November 23, 2026.
+have both. Simple Analytics' goals can have several steps and show the
+conversion rate between them, which their features page calls funnels, though
+their changelog says the steps aren't always one visit. We couldn't find
+revenue tracking there. We checked all of that on each vendor's own pages on
+November 23, 2026.
 
 **Past a million pageviews a month, we don't publish a price.** So there the
 calculator says "Talk to us" and doesn't claim we're cheapest. That's the
@@ -106,7 +108,9 @@ each other on each ladder were checked again on November 23, 2026.
 - Plausible - <https://plausible.io/#pricing>
 - Fathom - <https://usefathom.com/pricing>
 - Simple Analytics - <https://www.simpleanalytics.com/pricing> · goals:
-  <https://docs.simpleanalytics.com/goals>
+  <https://docs.simpleanalytics.com/goals> · features:
+  <https://www.simpleanalytics.com/features> · changelog:
+  <https://www.simpleanalytics.com/changelog>
 - Matomo Cloud - <https://matomo.org/pricing/>
 - Pirsch - <https://pirsch.io/pricing>
 - Umami Cloud - <https://umami.is/pricing>

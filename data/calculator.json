@@ -118,9 +118,9 @@
           "teamUsd": 200,
           "funnels": {
             "fits": true,
-            "short": "Goals with steps",
-            "note": "Their goals can have several steps, and their docs call that a funnel.",
-            "source": "https://docs.simpleanalytics.com/goals"
+            "short": "Multi-step goals",
+            "note": "Their goals can have several steps and show the conversion rate between them. Their changelog says the steps aren't always one visit.",
+            "source": "https://www.simpleanalytics.com/changelog"
           },
           "revenue": {
             "fits": false,

@@ -139,10 +139,15 @@ the plan with the features.
 | Plausible Growth | $1,040 | 3 | 3 | No limit while subscribed | Still no custom properties, funnels or Stats API |
 | Plausible Business | $1,390 | 10 | 10 | No limit while subscribed | Raw event export is Enterprise-only |
 | Fathom | $600 | 75 | Not published | "Forever" | No funnels or custom properties |
-| Simple Analytics | $600 | 10 | 1 (+$200/yr each) | 3 years | No funnels; seats are billed |
+| Simple Analytics | $600 | 10 | 1 (+$200/yr each) | 3 years | Seats are billed; multi-step goals stand in for funnels but aren't tied to one visit |
 | Matomo Cloud | $2,040 | 30 | 30 | Raw data 24 months, reports forever | Bills hits, so tracked downloads and outlinks push you up a tier |
 | Pirsch Standard | $540 | 50 | Unlimited | Unlimited | No funnels, no teams |
 | Umami Pro | $240 | 20 | 10 | 2 years | Session replay and heatmaps are Business-tier |
+
+*Correction, November 23, 2026: this table said Simple Analytics has no funnels.
+It has multi-step goals that show the conversion rate between steps; their
+[changelog](https://www.simpleanalytics.com/changelog) says the steps aren't
+always from the same visit.*
 
 Two numbers to notice.
 
