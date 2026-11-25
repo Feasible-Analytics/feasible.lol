@@ -3,10 +3,24 @@ title: "Changelog"
 seotitle: "Changelog - what's shipped in Feasible"
 description: "What changed in Feasible, newest first and grouped by month: what you can do now that you couldn't before."
 lede: "What's changed, newest first. Each entry names the release, for anyone self-hosting."
-updated: 2026-11-22
+updated: 2026-11-25
 ---
 
 ## November 2026
+
+### November 20 to 24 - smaller things
+
+- Google's URL Inspection tool, GoogleOther, Read Aloud and about a dozen other Google fetchers load
+  pages in a real Chrome, so they were counted as visitors. Each **Request indexing** in Search
+  Console showed up as two direct visitors from Mountain View. They're counted as automated now.
+  Events from before the fix keep their classification. More in
+  [Half the pageviews on our site last month weren't people](/blog/how-much-website-traffic-is-bots/).
+  v0.0.69.
+- After resending an event that had failed earlier, the tracker put "e is not a function" on the
+  page and into the site's error tracker. It doesn't now. No data was lost. v0.0.70.
+- The dashboard printed every date range a day too long. Last month read Oct 1 – Nov 1, and Today
+  read as two days. Now Last month reads Oct 1 – Oct 31 and Today reads as one day. Only the label
+  was wrong. The numbers always covered the right days. v0.0.73.
 
 ### November 22 - assistants can total revenue in one currency
 
@@ -23,6 +37,32 @@ of dollars against a week of euros showed up as a change in revenue.
 Nothing is converted between currencies. Each one is totalled on its own.
 
 [How currencies work](/docs/goals-funnels/#revenue) · v0.0.71 and v0.0.72
+
+### November 19 - imported history uses the same names as new visits
+
+History you imported from Google Analytics 4 or a Plausible export kept that tool's spelling of
+things, and new visits use ours. So any date range that covered both showed two rows for one thing:
+"Macintosh" and "macOS", "Edge" and "Microsoft Edge", "(direct)" and Direct / None.
+
+Now every import, CSV uploads included, stores the names live collection uses. Imported days and new
+days fold into one row. The same goes for sources (`X (Twitter)` is `X`, `Youtube` is
+`YouTube`), country codes, hostnames and page paths. Versions are cut the way live collection cuts
+them, so Chrome `140.0` is `140`. Placeholders like `(not set)` are stored empty, as live collection
+stores them.
+
+Imports already on the hosted service were updated on November 19. There's nothing to do.
+
+If you run Feasible yourself and imported history before v0.0.68, upgrade, run `feasible db backup`,
+then run `feasible imports rename`. Add `--dry-run` first to see what it would change. It only
+rewrites imported rows, never collected events, and a second run finds nothing to do.
+
+Three things it doesn't cover. Region and city from a Plausible export stay as the export wrote
+them, ISO region codes like `US-OR` and numeric city ids, because matching them to names needs lookup
+tables Feasible doesn't ship. The GA4 import reports iPads as iOS with nothing on the row to tell
+them apart, so they stay iOS where new visits say iPadOS. And GA4's `Unassigned` channel stays as
+one extra row, because live collection has no such channel.
+
+[What imported history becomes](/docs/import-export/#what-imported-history-becomes) · v0.0.68
 
 ### November 18 - claude.ai asks you to sign in, then lists every tool
 

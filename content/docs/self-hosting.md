@@ -305,6 +305,16 @@ sudo -u feasible sh -c 'set -a; . /etc/feasible/feasible.env; set +a; /usr/local
 sudo systemctl start feasible
 ```
 
+**If this install imported history before v0.0.68**, run `feasible imports rename` once after
+`db migrate`. It rewrites those imports into the names new visits use, so one browser or source
+shows as one row. `--dry-run` prints what it would change and writes nothing. It only touches
+imported rows, never collected events, and the backup from step 3 covers it:
+
+```
+sudo -u feasible sh -c 'set -a; . /etc/feasible/feasible.env; set +a; /usr/local/bin/feasible imports rename --dry-run'
+sudo -u feasible sh -c 'set -a; . /etc/feasible/feasible.env; set +a; /usr/local/bin/feasible imports rename'
+```
+
 ### Rolling back
 
 If `db migrate` said every database was already current, the release didn't change the schema. Stop
