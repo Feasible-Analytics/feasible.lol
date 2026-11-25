@@ -18,6 +18,9 @@ Here's the whole setup:
 There's no key to create or copy. It's in every plan, and it runs on the same query engine as the
 dashboard, so an assistant gets the numbers you'd see there.
 
+Using Google Analytics? Google has an MCP server of its own, and
+[here's what setting it up takes](/google-analytics-mcp/).
+
 ## Setting up your app
 
 These apps move their menus around. Each section links to the app's own guide, in case a step

@@ -69,7 +69,9 @@ ways out, and each has a limit worth knowing.
   linking, and offers nothing for the days before
   ([Google's guide](https://support.google.com/analytics/answer/9823238)).
 - **The Data API.** For developers. It returns aggregated reports, not events, and
-  it's what Feasible's import reads.
+  it's what Feasible's import reads. Google's own
+  [MCP server](/google-analytics-mcp/) reads it too, so an AI assistant can query GA4
+  directly.
 
 **Removing the tag doesn't delete anything.** It stops new data arriving. The property
 and its standard reports stay where they are, so you can still log in and look
