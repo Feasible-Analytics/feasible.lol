@@ -99,6 +99,14 @@ record of which dimensions it reported at all. Two consequences:
 Storing per-dimension totals instead is the common shortcut, and it's why applying any filter to
 imported data elsewhere makes it vanish.
 
+**Imported values are stored under the names live collection uses**, so one browser, system or
+source is one row across imported and collected days. "Macintosh" is stored as macOS, "Edge" as
+Microsoft Edge, "(direct)" as Direct / None, and placeholders like `(not set)` as empty. Two
+exceptions: region and city from a Plausible export stay as ISO region codes (`US-OR`) and numeric
+city ids, and the GA4 import reports iPads as iOS where collected visits say iPadOS. A self-hosted
+install that imported history before v0.0.68 renames it with
+[one command](/docs/self-hosting/#upgrade).
+
 Imported history behaves differently in the two places you read it. **The dashboard folds it into
 every non-realtime query**, so your charts show one continuous history. **The query API leaves it
 out unless you ask** - send `"include": {"imports": true}` - so an integration's number can never
