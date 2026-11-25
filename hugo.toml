@@ -281,6 +281,11 @@ disableKinds = ["taxonomy", "term"]
     name = "Leaving Google Analytics"
     url = "/migrate/from-google-analytics/"
     weight = 7
+  [[menus.footer]]
+    parent = "guides"
+    name = "Google Analytics MCP"
+    url = "/google-analytics-mcp/"
+    weight = 8
 
   [[menus.footer]]
     identifier = "company"
