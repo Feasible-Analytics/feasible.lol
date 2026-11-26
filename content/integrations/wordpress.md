@@ -2,11 +2,11 @@
 title: "WordPress analytics, without the Google round trip"
 seotitle: "WordPress analytics with no cookies and no banner"
 platform: "WordPress"
-description: "Three kinds of WordPress analytics exist. Here's which one you want, and how to add ours with WPCode in about a minute."
+description: "Three kinds of WordPress analytics exist. Here's which one you want, and how to add ours with our plugin from the WordPress directory."
 lede: "Pick the kind you need first. Installing is the easy part."
 ---
 
-Most people searching for a WordPress analytics plugin don't need a plugin. They need to decide what happens to the numbers.
+Most people searching for a WordPress analytics plugin are really choosing what happens to the numbers. Decide that first.
 
 There are three answers, and they're genuinely different products.
 
@@ -16,7 +16,7 @@ There are three answers, and they're genuinely different products.
 
 **A plugin that stores the data in your own WordPress database.** [Independent Analytics](https://wordpress.org/plugins/independent-analytics/) and [Burst](https://wordpress.org/plugins/burst-statistics/) both work this way. Nothing leaves your server, which is a real advantage. The trade is that your database carries every pageview forever and your host does the counting, so the bill arrives as slower queries rather than as an invoice.
 
-**A hosted service you add with one tag.** Feasible is this. The counting happens somewhere else, your database stays the size it was, and the reports don't compete with your site for CPU.
+**A hosted service, added with a plugin or one tag.** Feasible is this. The counting happens somewhere else, your database stays the size it was, and the reports don't compete with your site for CPU.
 
 None of these is the right answer for everyone. If you're already deep in Google Ads and you need GA4's attribution, use the Google route. If you run one small site and never want a third party involved, the database route is honest and cheap. We built the third one because we had fifty sites and wanted one bill and one dashboard.
 
@@ -24,11 +24,23 @@ None of these is the right answer for everyone. If you're already deep in Google
 
 No cookies, so [most sites won't need a consent banner](/help/do-i-need-a-cookie-banner/). One page of reports rather than a builder. Unlimited sites and unlimited team members on [one price](/pricing/), because we count pageviews and nothing else.
 
-The tag counts outbound clicks, file downloads, form submissions and scroll depth on its own. A **404** needs one line, `feasible('404')`, in your theme's 404 template, because a browser can't tell an error page from any other page. **Site-search terms** aren't in the tag. They're part of our own WordPress plugin, which is on the way.
+Our plugin, [Feasible Analytics](https://wordpress.org/plugins/feasible-analytics/), counts **site searches** (the term, how many results came back, and whether it found anything) and **404s** (the missing path and where the visitor came from) by itself, with no theme edit. Outbound clicks, file downloads and form submissions are on too, each with its own switch, and scroll depth comes with the script.
+
+Without the plugin, the tag still counts outbound clicks, file downloads, form submissions and scroll depth on its own. A **404** then needs one line, `feasible('404')`, in your theme's 404 template, because a browser can't tell an error page from any other page. Site-search terms come with the plugin.
 
 ## Installing it
 
-Two routes. WPCode is the one we'd pick. Our own plugin isn't in the WordPress directory yet.
+Three routes. Our plugin is the one we'd pick. WPCode and the theme file are there if you'd rather not add a plugin.
+
+### The plugin
+
+1. **Plugins → Add New Plugin**, search for **Feasible Analytics**, then click **Install Now** and **Activate**.
+2. Open **Feasible → Settings**. Check the site domain matches the site in your Feasible account.
+3. Tick **Turn on tracking**, click **Save Changes**, and clear your cache.
+
+Nothing is added to your pages until that box is ticked. It needs WordPress 5.9 or later and PHP 7.4 or later, and a Feasible account or your own [self-hosted copy](/docs/self-hosting/). It stores no statistics in your WordPress database.
+
+The plugin serves the tracking script and the event endpoint from your own domain, on random paths made up for your site. That's [proxying](/docs/proxying/) without touching a server config. It's on by default, so leave it on. The same screen can leave out logged-in users or the roles you pick. Paste a [shared link](/help/who-can-see-my-analytics/) without a password and your dashboard shows up in wp-admin under **Feasible → Dashboard**.
 
 ### WPCode
 
@@ -49,15 +61,15 @@ This survives theme updates, theme switches, and the day someone edits the theme
 
 Use a child theme. A snippet pasted into a parent theme is erased by the next theme update, and your traffic stops with no warning at all - no error, no email, just a flat line you notice three weeks later.
 
-Block themes - Twenty Twenty-Four, Twenty Twenty-Five, anything built for the site editor - have no `header.php`. Use WPCode.
+Block themes - Twenty Twenty-Four, Twenty Twenty-Five, anything built for the site editor - have no `header.php`. Use the plugin or WPCode.
 
 ## Caching plugins
 
 This is where WordPress installs go wrong.
 
-**Don't add the tag to a "delay JavaScript execution" or "defer JavaScript" list.** WP Rocket, LiteSpeed Cache and Autoptimize all offer one. The tag is already deferred. Delaying it a second time holds it until the first user interaction, and a visitor who reads one page and leaves never gets counted.
+**Don't add the script to a "delay JavaScript execution" or "defer JavaScript" list.** WP Rocket, LiteSpeed Cache and Autoptimize all offer one. The tag is already deferred. Delaying it a second time holds it until the first user interaction, and a visitor who reads one page and leaves never gets counted.
 
-**Purge the cache after you paste it.** Otherwise you're testing a page rendered before the tag existed, and you'll spend twenty minutes debugging a file that's already correct.
+**Purge the cache after you turn tracking on or paste the tag.** Otherwise you're testing a page rendered before the tag existed, and you'll spend twenty minutes debugging a file that's already correct.
 
 If you use a minifier, exclude the tag or check the rendered source afterwards. Some of them rewrite or drop script tags they don't recognise, and the tag then loads nothing.
 
@@ -65,7 +77,7 @@ If you use a minifier, exclude the tag or check the rendered source afterwards. 
 
 Clear your cache, open your site in a normal browser window, and click through two or three pages. Then open Feasible.
 
-You should show up under Real-time visitors. If you don't, go to **Site settings → Ingestion health**. It counts every event that arrived and every one that was dropped, each with a named reason - `unknown_site` means the snippet is for a site you haven't registered, `hostname_not_allowed` means the page is on a hostname that isn't on your list.
+You should show up under Real-time visitors. With the plugin, **Tools → Site Health** also says whether Feasible is measuring the site. If you don't show up, go to **Site settings → Ingestion health**. It counts every event that arrived and every one that was dropped, each with a named reason - `unknown_site` means the snippet is for a site you haven't registered, `hostname_not_allowed` means the page is on a hostname that isn't on your list.
 
 The **send a test event** button there posts through the real public URL, so it exercises what a browser does.
 

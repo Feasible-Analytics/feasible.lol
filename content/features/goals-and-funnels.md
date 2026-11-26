@@ -39,7 +39,8 @@ tracking script emits three of those on its own, with no flag to set - an
 outbound click is counted without ever calling `preventDefault`, so the link
 still behaves like a link, and a middle-click counts too. The 404 goal is the
 exception: it's created for you, but the base script doesn't detect 404s. You
-send that one with `feasible('404')` from your error template.
+send that one with `feasible('404')` from your error template, or let the
+[WordPress plugin](/integrations/wordpress/) send it.
 
 ## Whether detours are allowed
 

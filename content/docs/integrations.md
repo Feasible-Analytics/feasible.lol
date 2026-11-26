@@ -11,9 +11,11 @@ the same instructions with your own snippet already filled in.
 
 ## WordPress
 
-Paste the snippet with a header-scripts plugin such as WPCode (*Code Snippets → Header & Footer*,
-the **Header** box), or into your child theme's `header.php` before `</head>`.
-[Step by step](/integrations/wordpress/). Our own plugin isn't in the WordPress directory yet.
+Install our plugin, [Feasible Analytics](https://wordpress.org/plugins/feasible-analytics/), from **Plugins → Add New Plugin**,
+then tick **Turn on tracking** under **Feasible → Settings**. It serves the script from your own
+domain and counts site searches and 404s by itself. Without it, paste the snippet with a
+header-scripts plugin such as WPCode (*Code Snippets → Header & Footer*, the **Header** box), or
+into your child theme's `header.php` before `</head>`. [Step by step](/integrations/wordpress/).
 
 {{< callout title="Use a child theme" >}}
 A snippet pasted into a parent theme is erased by the next theme update, and the traffic stops with
