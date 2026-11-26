@@ -56,11 +56,13 @@ That leaves 13 from other websites: 3 from Product Hunt, and 9 from one site tha
 
 ## Where our own rules got it wrong
 
-Feasible believes a tag over the referrer, because someone set the tag on purpose. Usually that's right. When the tag is a name it doesn't know, it throws away the better answer the referrer already had.
+Feasible believed a tag over the referrer, because someone set the tag on purpose. Usually that's right. When the tag was a name it didn't know, it threw away the better answer the referrer already had.
 
-Twelve visits across the two sites were tagged `utm_source=gemini`, three of them with `gemini.google.com` as the referrer. Feasible knows `chatgpt`, `claude` and `perplexity` as tags, but not `gemini`, so all twelve went to Referral instead of AI Assistants. The three visits from our posts on X arrived with X's `t.co` referrer and a tag we'd made up, so they missed Organic Social. Three visits from our email sequence came through the Gmail app and still missed Email.
+Twelve visits across the two sites were tagged `utm_source=gemini`, three of them with `gemini.google.com` as the referrer. Feasible knew `chatgpt`, `claude` and `perplexity` as tags, but not `gemini`, so all twelve went to Referral instead of AI Assistants. The three visits from our posts on X arrived with X's `t.co` referrer and a tag we'd made up, so they missed Organic Social. Three visits from our email sequence came through the Gmail app and still missed Email.
 
 The referrer is still stored with each visit, so filtering by it under Acquisition finds them. But the channel report got them wrong.
+
+**Fixed in v0.0.78, on November 26.** A tag Feasible doesn't know still names the source, but a referrer it does know now decides the channel. A `t.co` click with a made-up tag lands in Organic Social, and a Gmail app click lands in Email. `utm_source=gemini` counts as AI Assistants, and so do links from Duck.ai, Meta AI, Grok and DeepSeek. The fix applies to visits from that day on. Older visits, including every one in this sample, keep the channel they were given.
 
 ## How to read yours
 
@@ -68,7 +70,7 @@ The referrer is still stored with each visit, so filtering by it under Acquisiti
 
 **Read it by week, not by total.** A launch buries everything. 708 visits from Product Hunt make 51 from a directory look like nothing, until you see the directory sent people every week and the launch now sends about nine a week.
 
-**Give every tag a medium.** `utm_source=newsletter&utm_medium=email` lands in Email in Feasible and in GA4. A source name the tool doesn't know, with no medium, lands in Referral in Feasible and in Unassigned in GA4. There's more on [UTM parameters](/help/what-are-utm-parameters/) if you haven't used them.
+**Give every tag a medium.** `utm_source=newsletter&utm_medium=email` lands in Email in Feasible and in GA4. A source name the tool doesn't know, with no medium, lands in Unassigned in GA4. In Feasible it lands in Referral, unless the referrer is a site Feasible knows. There's more on [UTM parameters](/help/what-are-utm-parameters/) if you haven't used them.
 
 **Check the sign-up path.** If sign-ups say they came from accounts.google.com or your payment provider, a redirect in the middle of the visit is taking the credit. Feasible keeps the source a visit started with, so [that round trip doesn't count](/help/why-doesnt-stripe-show-up-as-a-source/). In GA4, add those domains to [List unwanted referrals](https://support.google.com/analytics/answer/10327750).
 

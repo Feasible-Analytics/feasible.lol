@@ -3,10 +3,25 @@ title: "Changelog"
 seotitle: "Changelog - what's shipped in Feasible"
 description: "What changed in Feasible, newest first and grouped by month: what you can do now that you couldn't before."
 lede: "What's changed, newest first. Each entry names the release, for anyone self-hosting."
-updated: 2026-11-25
+updated: 2026-11-26
 ---
 
 ## November 2026
+
+### November 26 - a referrer Feasible knows decides the channel
+
+A click from a site Feasible knows (X, the Gmail app, a search engine, an AI chat) that carried a
+`utm_source` Feasible didn't recognize landed in Referral. The tag threw the referrer away. Now the
+referrer decides the channel, and the tag still names the source. A `t.co` click with a made-up tag
+lands in Organic Social, and a Gmail app click lands in Email. A tag Feasible does recognize, like
+`newsletter`, `chatgpt` or `facebook`, still decides the channel, as before.
+
+`utm_source=gemini` counts as AI Assistants now, next to `chatgpt`, `claude` and `perplexity`. So do
+links from Duck.ai, Meta AI, Grok and DeepSeek.
+
+Visits from before the fix keep the channel they were given.
+
+[What's in referral traffic?](/blog/what-is-referral-traffic/) · v0.0.78
 
 ### November 20 to 24 - smaller things
 
