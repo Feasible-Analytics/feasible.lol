@@ -143,8 +143,8 @@ One script tag per site. Each site gets its own dashboard, goals and time zone.
 There are [install guides](/integrations/) for 18 platforms, including
 [WordPress](/integrations/wordpress/), [Webflow](/integrations/webflow/),
 [Squarespace](/integrations/squarespace/), [Wix](/integrations/wix/) and
-[Shopify](/integrations/shopify/). On WordPress the guide uses WPCode. Our own
-plugin isn't in the WordPress directory yet.
+[Shopify](/integrations/shopify/). On WordPress, install
+[our plugin](https://wordpress.org/plugins/feasible-analytics/) from the plugin directory and tick one box.
 
 Past a dozen sites, put them in folders on the sites list, one per client, and
 pin the few you check every morning.

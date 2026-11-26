@@ -1,13 +1,13 @@
 ---
 title: "SDKs and plugins"
-description: "The Go SDK is published. Which add-ons aren't yet, and what to use today: the script tag, WPCode, a Custom HTML tag, and two you can set up from the source."
+description: "The Go SDK and the WordPress plugin are published. Which add-ons aren't yet, and what to use today: the script tag, a Custom HTML tag, and the source."
 lede: "What's published, what isn't yet, and what to use today."
 weight: 140
 ---
 
-The [Go SDK](#go) is published. Checked November 15, 2026: the rest - the WordPress plugin, the npm
-browser loader `@feasible/tracker`, and the server-side SDKs for Node, PHP, Python and Ruby - are
-written, and their source is in the product's
+The [Go SDK](#go) and the [WordPress plugin](#wordpress) are published. Checked November 26, 2026:
+the rest - the npm browser loader `@feasible/tracker`, and the server-side SDKs for Node, PHP, Python
+and Ruby - are written, and their source is in the product's
 [repository](https://github.com/Feasible-Analytics/app.feasible.lol) under `ecosystem/`, but none of
 them can be installed with a package manager yet. They're on the way.
 
@@ -15,7 +15,7 @@ Here's what to use instead:
 
 | Add-on | What works today |
 |---|---|
-| WordPress plugin | WPCode or your theme's header - [WordPress](/integrations/wordpress/) |
+| WordPress plugin | Published: [Feasible Analytics](https://wordpress.org/plugins/feasible-analytics/) - [below](#wordpress) |
 | npm loader | The script tag in your root layout - [installation](/docs/installation/) |
 | Go SDK | Published: `go get github.com/Feasible-Analytics/feasible-go` - [below](#go) |
 | Node, PHP, Python and Ruby SDKs | The [events API](/docs/api/#sending-events) they wrap |
@@ -66,6 +66,15 @@ would derive without writing anything. Set `Options.Disabled` in tests and the c
 events instead of sending them. The
 [README](https://github.com/Feasible-Analytics/feasible-go#readme) has the rest.
 
+## WordPress
+
+[Feasible Analytics](https://wordpress.org/plugins/feasible-analytics/) is in the WordPress plugin directory, at 1.0.2.
+It needs WordPress 5.9 or later and PHP 7.4 or later.
+
+Install it from **Plugins → Add New Plugin** by searching for **Feasible Analytics**, then tick
+**Turn on tracking** under **Feasible → Settings**. It serves the script from your own domain and
+counts site searches and 404s with no theme edit. [Setup and what it counts](/integrations/wordpress/).
+
 ## Google Tag Manager
 
 A **Custom HTML** tag on an *All Pages* trigger works today. Use the `data-domain` form of the
@@ -109,8 +118,6 @@ right and isn't.
 
 ## On the way
 
-- **The WordPress plugin.** Until it's in the directory, paste the snippet with WPCode or into a
-  child theme. [The steps](/integrations/wordpress/).
 - **The npm loader.** Every framework takes the script tag in its root layout, and the script
   follows client-side navigation itself. `window.feasible()` works from your own code as soon as the
   snippet's first line has run.

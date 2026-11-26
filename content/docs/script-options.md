@@ -188,6 +188,7 @@ monthly volume. Engagement pings never do.
 
 404 tracking isn't in this script, because a browser can't tell an error page from any other page.
 Send it with `feasible('404')` from your error template. Site-search tracking isn't in it either.
+On WordPress, [the plugin](/integrations/wordpress/) sends both for you.
 
 ## Tagging an element without writing JavaScript
 
