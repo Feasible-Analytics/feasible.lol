@@ -5,8 +5,8 @@ lede: "One binary, one directory, every feature, no billing."
 weight: 150
 ---
 
-One binary and one directory. No Docker, no external database, no queue, and no feature that only
-exists in the hosted version.
+One binary and one directory. No Docker required, no external database, no queue, and no feature
+that only exists in the hosted version.
 
 The software is **AGPL-3.0-or-later**. You can run, modify and self-host it freely. If you offer it
 to others as a network service, you have to make your source available to those users.
@@ -28,6 +28,8 @@ Or build it from source with Go 1.26 or newer:
 ```
 go build -o feasible ./cmd/feasible
 ```
+
+If you run everything in containers, there's also [an image of the same binary](#run-it-with-docker).
 
 ## Start it
 
@@ -200,9 +202,139 @@ such as a database that needs `db migrate`.
 If a value in `feasible.env` has spaces in it, put it in double quotes:
 `FEASIBLE_APP_MAIL_FROM="Stats <stats@example.com>"`. systemd and the shell then read it the same way.
 
+## Run it with Docker
+
+You don't need Docker. If you run everything in containers, there's an image of the same binary on
+GitHub's container registry:
+
+```
+docker pull ghcr.io/feasible-analytics/feasible:latest
+```
+
+It's built for linux/amd64 and linux/arm64. The download is 9.7 MB on amd64 and 8.9 MB on arm64,
+and the binary inside is byte for byte the one in the Linux release archive. Every release gets a
+tag of its release number without the `v`, such as `0.0.78`, and `latest` follows the newest. The base is
+distroless static: time zone data and CA certificates, with no shell and no package manager. It
+runs as a non-root user, uid 65532.
+
+There's no database or queue container to go with it, because there's no database or queue server.
+One container and one volume is the whole install.
+
+### Start it with Compose
+
+Put the repository's
+[`compose.yaml`](https://github.com/Feasible-Analytics/app.feasible.lol/blob/main/compose.yaml) in
+a folder:
+
+```
+curl -O https://raw.githubusercontent.com/Feasible-Analytics/app.feasible.lol/main/compose.yaml
+```
+
+It's one service: the image, a named volume called `feasible-data` mounted at `/data`, your settings
+from `feasible.env`, and port 19301 published on `127.0.0.1` only, for a TLS proxy on the same
+machine. It restarts unless you stop it.
+
+Write `feasible.env` next to it. It's the file from [Start it](#start-it) without the listen address
+and the data directory, because the image sets those:
+
+```
+cat > feasible.env <<EOF
+FEASIBLE_APP_BASE_URL=https://stats.example.com
+FEASIBLE_INGEST_SALT=$(openssl rand -hex 32)
+FEASIBLE_INGEST_TRUSTED_PROXIES=172.16.0.0/12
+FEASIBLE_OPERATOR_EMAIL=you@example.com
+EOF
+```
+
+The image also sets `FEASIBLE_ENV=production` and `FEASIBLE_APP_HOSTED=false`, so two of the
+[required settings](#required-settings) are already done. It listens on port 19301 on every
+interface inside the container and keeps its data in `/data`. Every other setting is the same
+`FEASIBLE_*` variable as the binary's, and goes in the same file. Leave a required one out and the
+container stops and names it, such as
+`FEASIBLE_INGEST_SALT: production cannot run with the development default`.
+
+Then create the databases, make your account and start it:
+
+```
+docker compose run --rm feasible db migrate
+docker compose run --rm feasible account create --email you@example.com --name "Your Name"
+docker compose up -d
+```
+
+Every other command runs the same way. `docker compose run --rm feasible <command>` works whether
+the container is running or stopped. `docker compose exec feasible feasible <command>` runs one
+inside the running container: the first `feasible` is the service, the second is the program.
+
+### The proxy
+
+Point your TLS proxy at `127.0.0.1:19301`, the same address as the binary's. Inside the container,
+though, the proxy's connections don't arrive from `127.0.0.1`. They come through Docker's network
+gateway, which is usually an address in `172.16.0.0/12` (ours was `172.19.0.1`). That's
+why the trusted proxy above is that range. If your Docker hands out other ranges,
+`docker network inspect` shows the gateway to trust. The rest of
+[behind a reverse proxy](#behind-a-reverse-proxy) applies unchanged.
+
+### The volume
+
+Everything is in the `feasible-data` volume, at `/data`, laid out exactly like the binary's
+[data directory](#the-data-directory): the databases, `app.key`, `script.key`, `backups/` and the
+rest. To use a folder on the host instead of a named volume, `chown 65532:65532` it first. The
+container runs as that user and can't write to a folder it doesn't own.
+
+### Backups in a container
+
+```
+docker compose exec feasible feasible db backup
+docker compose cp feasible:/data/backups ./backups
+```
+
+The first writes a snapshot into `/data/backups`, inside the volume. The second copies them out to a
+`backups` folder on the host, to send off the machine from there. With the container stopped, use
+`docker compose run --rm feasible db backup` instead. The [keys](#backups) are in the volume too, so
+copy `app.key` and `script.key` out once the same way and keep them with your backups.
+
+To restore, do the file swap from [restore a backup](#restore-a-backup) inside the volume. The image
+has no shell, so do it from a throwaway container that mounts the same volume and runs as the same
+user. With one account, and the time stamp of the backup you're restoring:
+
+```
+docker compose stop
+docker run --rm --volumes-from "$(docker compose ps -aq feasible)" --user 65532:65532 -w /data busybox sh -c '
+  set -e
+  mkdir -p before-restore/accounts/000001
+  mv system.db* before-restore/
+  mv accounts/000001/analytics.db* before-restore/accounts/000001/
+  cp backups/system-20261116T171127Z.db system.db
+  cp backups/account-000001-20261116T171127Z.db accounts/000001/analytics.db
+'
+docker compose up -d
+```
+
+If the image is newer than the backup, run `docker compose run --rm feasible db migrate` before
+starting it. Once you've checked the dashboard, delete `before-restore` the same way, with
+`rm -r before-restore` as the script.
+
+### Upgrade the image
+
+Back up with the old image, then migrate with the new one:
+
+```
+docker compose stop
+docker compose run --rm feasible db backup
+docker compose pull
+docker compose run --rm feasible db migrate
+docker compose up -d
+```
+
+`latest` moves with every release. To choose when you upgrade, swap it in `compose.yaml` for a
+release number, such as `ghcr.io/feasible-analytics/feasible:0.0.78`. Rolling back works like
+[rolling back](#rolling-back) the binary: put the old tag back, and if `db migrate` changed anything,
+restore the backup first.
+
 ## The data directory
 
-Everything lives under `FEASIBLE_APP_DATA_DIR`:
+Everything lives under `FEASIBLE_APP_DATA_DIR`, which is `/data` in the
+[container image](#run-it-with-docker):
 
 - `system.db`, which holds users, teams and sites;
 - `accounts/`, one SQLite database per account;
@@ -424,7 +556,7 @@ of reports by default, so a wrongly-classified human visitor can be recovered.
 
 ## What it connects to
 
-One outside service is always on: source icons. When a report shows a source such as
+One outside service is on by default: source icons. When a report shows a source such as
 `news.ycombinator.com`, your server asks DuckDuckGo's icon service, `icons.duckduckgo.com`, for that
 hostname's icon. The request carries the hostname and nothing else from your data. Nobody's browser
 makes it, because the dashboard loads the icon from your own server.
@@ -433,8 +565,10 @@ Your server only fetches an icon for a source on the app's built-in list, or for
 already shown to that same dashboard view, whether that's a signed-in user, a public dashboard or a
 shared link. Any other name gets a letter tile, with no fetch and nothing written to disk. Icons are
 kept in `favicons/` in the data directory for 7 days, and a miss is remembered for 6 hours. The
-folder is capped at 64 MB, and the oldest icons go first when it fills. There's no setting to turn
-this off yet.
+folder is capped at 64 MB, and the oldest icons go first when it fills.
+
+To turn it off, set `FEASIBLE_APP_SOURCE_ICONS=false`. Every source then gets its letter tile, and
+your server never contacts the icon service. It defaults to on, and the switch is there from v0.0.66.
 
 Account pictures stay on your server unless you turn Gravatar on. The app draws each person's
 initials on a color. Someone who signs in with Google gets their Google profile picture instead,

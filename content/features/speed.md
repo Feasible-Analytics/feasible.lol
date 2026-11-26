@@ -85,7 +85,7 @@ own origin so opening your reports doesn't tell anyone else you did.
 ## One binary and one file
 
 Go 1.26, SQLite with a pure-Go driver so there's no cgo, compiled into a single
-executable. No Docker, no Postgres, no ClickHouse, no Redis, no message queue.
+executable. No Docker required, no Postgres, no ClickHouse, no Redis, no message queue.
 `feasible serve` is the whole product.
 
 This isn't a claim about storage density - a column store beats SQLite on disk,
