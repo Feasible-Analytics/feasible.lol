@@ -13,7 +13,7 @@ faq:
   - q: "Is the self-hosted version cut down?"
     a: "No. It's the same build. Set `FEASIBLE_APP_HOSTED=false` and every feature is free and unrestricted - the API, funnels, custom properties, webhooks, the MCP server, raw event export, teams. There's no Community Edition and no license-key module."
   - q: "What does it take to run?"
-    a: "One binary and one directory of SQLite files, on a small VPS. We haven't measured a minimum machine, so we don't publish one; [the self-hosting docs](/docs/self-hosting/#how-big-a-server) have what we have measured. No Docker, no Postgres, no ClickHouse, no Redis, no queue."
+    a: "One binary and one directory of SQLite files, on a small VPS. We haven't measured a minimum machine, so we don't publish one; [the self-hosting docs](/docs/self-hosting/#how-big-a-server) have what we have measured. No Docker required, no Postgres, no ClickHouse, no Redis, no queue."
   - q: "Does AGPL mean I have to open-source my website?"
     a: "No. The license concerns the analytics software, not the site you point it at. It asks you to publish source if you modify Feasible and then offer it to other people over a network."
   - q: "Is Feasible's license more permissive than Plausible's?"

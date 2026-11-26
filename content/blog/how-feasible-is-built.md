@@ -13,7 +13,7 @@ author: "Spicer Matthews"
 
 The whole of Feasible is one file. You download about 8 MB, run it, and you have web analytics: the dashboard, the tracking script, the email reports, the API.
 
-There's no Docker, no Postgres, no ClickHouse and no queue. I want to show how that works, with the code, and then show where it hurts.
+You don't need Docker, and there's no Postgres, no ClickHouse and no queue. I want to show how that works, with the code, and then show where it hurts.
 
 Everything below is in [the repo](https://github.com/Feasible-Analytics/app.feasible.lol). It's AGPL-3.0.
 

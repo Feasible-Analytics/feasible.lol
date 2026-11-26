@@ -211,9 +211,9 @@ GitHub's container registry:
 docker pull ghcr.io/feasible-analytics/feasible:latest
 ```
 
-It's built for linux/amd64 and linux/arm64. The download is 9.6 MB on amd64 and 8.9 MB on arm64,
+It's built for linux/amd64 and linux/arm64. The download is 9.7 MB on amd64 and 8.9 MB on arm64,
 and the binary inside is byte for byte the one in the Linux release archive. Every release gets a
-tag of its release number without the `v`, such as `0.0.66`, and `latest` follows the newest. The base is
+tag of its release number without the `v`, such as `0.0.78`, and `latest` follows the newest. The base is
 distroless static: time zone data and CA certificates, with no shell and no package manager. It
 runs as a non-root user, uid 65532.
 
@@ -327,7 +327,7 @@ docker compose up -d
 ```
 
 `latest` moves with every release. To choose when you upgrade, swap it in `compose.yaml` for a
-release number, such as `ghcr.io/feasible-analytics/feasible:0.0.66`. Rolling back works like
+release number, such as `ghcr.io/feasible-analytics/feasible:0.0.78`. Rolling back works like
 [rolling back](#rolling-back) the binary: put the old tag back, and if `db migrate` changed anything,
 restore the backup first.
 
