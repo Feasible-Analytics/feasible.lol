@@ -17,6 +17,8 @@ Both are tabs on the **Sources** card, and they're the first two.
 
 Where each comes from: the source is derived from the referrer, or taken straight from `utm_source` if the link carried one, which is [the reason to tag your own links](/help/what-are-utm-parameters/). The channel is derived from the source and the medium together. Type the address by hand or arrive with no referrer at all and you're Direct.
 
+Referral is the channel for whatever's left over, so it holds more than links from other sites. [We sorted 1,321 referral visits by hand](/blog/what-is-referral-traffic/) to see what was in it.
+
 Two things people trip on.
 
 **Attribution is frozen when the visit starts.** Whatever brought someone in owns the whole visit, even if they bounce through a payment page in the middle of it. [That's why Stripe never appears as a source](/help/why-doesnt-stripe-show-up-as-a-source/).

@@ -1,0 +1,87 @@
+<!doctype html>
+<!--
+  what-is-referral-traffic.html
+  Source for static/images/og/what-is-referral-traffic.png, the share card for
+  /blog/what-is-referral-traffic/. Kept as HTML so the words can change without
+  redrawing it. Render it at exactly 1200x630:
+
+    npx -y playwright@1.58.2 screenshot --channel chrome --viewport-size=1200,630 \
+      assets/og/what-is-referral-traffic.html static/images/og/what-is-referral-traffic.png
+
+  --channel chrome uses the installed Google Chrome, so Playwright's own browser
+  download isn't needed.
+
+  The bar's widths are the post's numbers out of 1,321 referral visits (172 from
+  every website other than the launch and our own), scaled to the 508px left after the gap.
+
+  Created: 2026-11-26
+  Copyright (c) 2026 Cloudmanic Labs, LLC. All rights reserved.
+-->
+<html lang="en">
+<meta charset="utf-8" />
+<title>Share card: what is referral traffic</title>
+<style>
+  @font-face {
+    font-family: "Archivo";
+    font-weight: 100 900;
+    src: url("../../static/fonts/archivo-latin-wght-normal.woff2") format("woff2-variations");
+  }
+  :root {
+    --paper: #f3f2f2;
+    --ink: #201e1d;
+    --flag: #ec3013;
+    --muted: #605d5d;
+    --rule: #9b9797;
+    --off: #bab6b6;
+  }
+  * { margin: 0; box-sizing: border-box; }
+  html, body { width: 1200px; height: 630px; overflow: hidden; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Archivo", sans-serif;
+    padding: 62px 72px 0;
+    position: relative;
+  }
+  .mark { font-size: 28px; font-weight: 800; letter-spacing: -0.02em; }
+  .mark span, .red { color: var(--flag); }
+  h1 {
+    margin-top: 52px;
+    font-size: 92px;
+    font-weight: 800;
+    line-height: 0.93;
+    letter-spacing: -0.035em;
+  }
+  .rule {
+    position: absolute; left: 72px; right: 72px; top: 459px;
+    height: 3px; background: var(--rule);
+  }
+  .foot {
+    position: absolute; left: 72px; right: 72px; top: 500px;
+    display: flex; justify-content: space-between; align-items: flex-start;
+  }
+  .foot p { font-size: 24px; line-height: 1.3; }
+  .foot b { font-weight: 800; }
+  .split { width: 512px; }
+  .bar { display: flex; gap: 4px; height: 32px; }
+  .bar i { display: block; height: 32px; background: var(--flag); }
+  .bar i.rest { background: var(--off); }
+  .key { display: flex; justify-content: space-between; margin-top: 14px; font-size: 20px; font-weight: 700; }
+  .key .n { color: var(--muted); }
+</style>
+<body>
+  <div class="mark">Feasible<span>.lol</span></div>
+  <h1>1,321 referrals.<br />13% were<br /><span class="red">everyone else.</span></h1>
+  <div class="rule"></div>
+  <div class="foot">
+    <p>What is referral traffic?<br /><b>We sorted 91 days by hand.</b></p>
+    <div class="split">
+      <div class="bar">
+        <i class="rest" style="width: 442px" title="a launch, our own links, apps, AI, bots: 1,149"></i>
+        <i style="width: 66px" title="everyone else: 172"></i>
+      </div>
+      <div class="key"><span class="n">1,149 a launch, us and the rest</span><span class="red">172 everyone else</span></div>
+    </div>
+  </div>
+</body>
+</html>
