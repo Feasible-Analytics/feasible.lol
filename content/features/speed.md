@@ -11,7 +11,7 @@ note: |
   filtered all-time query is the slow case, and we know it.
 ---
 
-**3,629 bytes gzipped.** That's the whole tracking script - 7,598 bytes before
+**3,650 bytes gzipped.** That's the whole tracking script - 7,645 bytes before
 compression, one request, cached for an hour.
 
 Against Google's `gtag.js`, which measured 148,590 bytes in September 2026,
@@ -30,7 +30,7 @@ reasonable, until one day the "lightweight" script is 40 KB and nobody can point
 at the change that did it. A number that breaks the build gets argued about
 before it ships.
 
-The optional Web Vitals module is a separate 3,946 gzipped bytes, dynamically
+The optional Web Vitals module is a separate 3,951 gzipped bytes, dynamically
 imported only if you turn it on, so people who don't want it don't carry it.
 
 The transport is `fetch` with `keepalive` sending `text/plain`, which avoids a

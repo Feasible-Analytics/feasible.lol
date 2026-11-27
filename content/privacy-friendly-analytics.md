@@ -82,7 +82,7 @@ at country, region, and city.
 
 **Google Analytics 4** sets cookies and connects analytics to an advertising
 business. Its script measured 148,590 bytes gzipped on September 8, 2026.
-Feasible's measured 3,629 on November 15, 2026.
+Feasible's measured 3,650 on November 27, 2026.
 
 **Other privacy-friendly tools** also avoid cookies and cross-site identity. The
 main differences are price and limits. [Compare them](/compare/pricing/).

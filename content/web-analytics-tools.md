@@ -176,7 +176,7 @@ properties, webhooks and raw event export are in every plan and every build.
 
 Where we lose: no EU hosting, SSO, or SAML. No
 mobile SDKs, no session replay, no heatmaps, no A/B testing, no cohort report.
-Our script is 3,629 bytes gzipped against Plausible's 1,285. We're also new.
+Our script is 3,650 bytes gzipped against Plausible's 1,285. We're also new.
 
 **Best for:** people running more than one site, or more than one person, who
 want everything included and don't want a plan ladder.

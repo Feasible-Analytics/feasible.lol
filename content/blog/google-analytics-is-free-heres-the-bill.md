@@ -57,12 +57,12 @@ You can't price that line. You can only notice that it happened, and ask what yo
 
 ## A 148 KB script
 
-Measured with `curl -H 'Accept-Encoding: identity' <url> | gzip -9 | wc -c`, Google's on September 8, 2026 and ours again on November 15, 2026:
+Measured with `curl -H 'Accept-Encoding: identity' <url> | gzip -9 | wc -c`, Google's on September 8, 2026 and ours again on November 27, 2026:
 
 | Script | Raw | gzip -9 |
 |---|---|---|
 | Google `gtag.js` | 427,812 B | 148,590 B |
-| Feasible | 7,598 B | 3,629 B |
+| Feasible | 7,645 B | 3,650 B |
 
 Over the wire on September 8, `gtag.js` came in at 147,171 bytes. Ours is about 3.6 KB. About 40 times. And `gtag.js` is only the first request - it pulls more payloads once it loads, so the real figure is worse than the table.
 

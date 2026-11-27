@@ -176,7 +176,7 @@ slogan.
 ## The script
 
 Measured with `gzip -9`: Umami 2,301 bytes on September 8, 2026, Feasible
-3,629 on November 15, 2026.
+3,650 on November 27, 2026.
 Theirs is smaller. Both are small enough that it isn't the reason to choose
 either one - the number that matters in this category is Google's 148,590.
 
