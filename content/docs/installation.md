@@ -9,7 +9,7 @@ One snippet, on every page you want counted. No build step, no consent gate to w
 
 {{< snippet >}}
 
-The second tag is the tracker: 3,629 bytes gzipped - a handful more for your copy, which has your
+The second tag is the tracker: 3,650 bytes gzipped - a handful more for your copy, which has your
 domain baked into it - and it's deferred, so it never blocks rendering.
 
 The first is a 103-byte queue stub. The tracker is deferred, so your own code can run before it

@@ -41,7 +41,7 @@ This part is just shopping. Prices below are list, checked September 3, 2026. Th
 
 One note on that last row, because stale numbers circulate: Hetzner raised prices on June 15, 2026 - the CX23 went from €3.99 to €5.49, and their ARM boxes are now *more* expensive than the Intel ones. Any Hetzner figure from an older blog post is wrong, including the ones we used to quote at each other.
 
-Then bandwidth. Our tracking script is 3,629 bytes gzipped, 7,598 raw. Assume a pessimistic 30% of pageviews fetch it fresh rather than from cache: 300,000 × 3,629 bytes is about 1 GB a month, against the 500 GiB that $4 droplet includes. It's a rounding error, and it would still be a rounding error if we were ten times worse at caching.
+Then bandwidth. Our tracking script is 3,650 bytes gzipped, 7,645 raw. Assume a pessimistic 30% of pageviews fetch it fresh rather than from cache: 300,000 × 3,650 bytes is about 1 GB a month, against the 500 GiB that $4 droplet includes. It's a rounding error, and it would still be a rounding error if we were ten times worse at caching.
 
 Storage and bandwidth aren't what you're paying for: 3.5 GB of data a year and about 1 GB a month of script transfer. Memory is the one number we can't give you yet, so we're not going to tell you which row to buy.
 

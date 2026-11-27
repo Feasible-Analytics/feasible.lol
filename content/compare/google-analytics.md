@@ -36,7 +36,7 @@ faq:
   - q: "How much smaller is the Feasible script than Google's?"
     a: >-
       About 40 times. Measured with `gzip -9`: Google's gtag.js 148,590 bytes on
-      September 8, 2026, Feasible 3,629 bytes on November 15, 2026. And gtag.js fetches more after it
+      September 8, 2026, Feasible 3,650 bytes on November 27, 2026. And gtag.js fetches more after it
       loads.
 ---
 
@@ -49,11 +49,11 @@ one is dated.
 
 ## The script
 
-Measured with `gzip -9`, Google's on September 8, 2026 and ours on November 15, 2026:
+Measured with `gzip -9`, Google's on September 8, 2026 and ours on November 27, 2026:
 
 | | Raw bytes | Gzipped |
 |---|---:|---:|
-| Feasible - `app.feasible.lol/js/script.js` | 7,598 | **3,629** |
+| Feasible - `app.feasible.lol/js/script.js` | 7,645 | **3,650** |
 | Google Analytics 4 - `gtag.js` | 427,812 | **148,590** |
 
 That's about 40 times bigger. Reproduce it yourself:
@@ -181,7 +181,7 @@ company has no exposure to any of it either way.
 | | Feasible | Google Analytics 4 |
 |---|---|---|
 | Price | $9.99/mo, $99/yr | Free |
-| Tracking script (gzipped) | 3,629 bytes | 148,590 bytes |
+| Tracking script (gzipped) | 3,650 bytes | 148,590 bytes |
 | Cookies on your visitors | None | Yes |
 | Consent banner | Not needed for most sites | Yes, in the EU/UK |
 | Event-level retention | Unlimited | 2 or 14 months (standard properties) |

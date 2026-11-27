@@ -216,7 +216,7 @@ webhooks, the MCP server and raw event export are in every plan and every build 
 
 **Where we lose:** no EU hosting, no SSO or SAML, no mobile SDKs, no session
 replay, no heatmaps, no A/B testing, no cohort or retention report. Our script is
-3,629 bytes gzipped against Plausible's 1,285. And we launched in 2026, so we
+3,650 bytes gzipped against Plausible's 1,285. And we launched in 2026, so we
 have no track record - which is a real risk and you should price it in.
 
 ## Free Google Analytics alternatives

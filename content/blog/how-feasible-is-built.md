@@ -169,7 +169,7 @@ Keep the scale in mind, though. A site with a million pageviews a month sends un
 
 **The hosted service is one server.** It's in Montreal. There's no EU region. Releases are still numbered 0.0.x, and they ship often.
 
-**The script isn't the smallest.** It's 3,629 bytes gzipped. The build fails if it grows past 3.75 KiB. Others are smaller.
+**The script isn't the smallest.** It's 3,650 bytes gzipped. The build fails if it grows past 3.75 KiB. Others are smaller.
 
 ## Try it
 

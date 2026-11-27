@@ -147,7 +147,7 @@ detail. If you want the boring, proven option in this category, that's a real
 argument.
 
 **Their script is smaller than ours.** Measured with `gzip -9`:
-Fathom 2,086 bytes on September 8, 2026, Feasible 3,629 on November 15, 2026. They win it.
+Fathom 2,086 bytes on September 8, 2026, Feasible 3,650 on November 27, 2026. They win it.
 
 **Their over-limit policy is good.** They don't switch your analytics off over a
 traffic spike. Neither do we - we email you, and nothing stops mid-month. We're

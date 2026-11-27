@@ -221,7 +221,7 @@ is a requirement rather than a preference, that decides it, and no amount of
 price difference should change your mind.
 
 **Their script is smaller than ours.** Measured the same way:
-Plausible 1,285 bytes gzipped on September 8, 2026, Feasible 3,629 on November 15, 2026. They win that one, comfortably.
+Plausible 1,285 bytes gzipped on September 8, 2026, Feasible 3,650 on November 27, 2026. They win that one, comfortably.
 
 **They've been at it longer.** More years in production, a much bigger
 community, more people who've already hit the edge case you're about to hit, an

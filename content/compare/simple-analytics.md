@@ -143,7 +143,7 @@ order. Checked November 23, 2026.
 ## The script
 
 Measured with `gzip -9`: Simple Analytics 3,826 bytes on September 8, 2026,
-Feasible 3,629 on November 15, 2026. Close enough that neither of us should make a fuss about it,
+Feasible 3,650 on November 27, 2026. Close enough that neither of us should make a fuss about it,
 and both a rounding error next to Google's 148,590.
 
 ## When the numbers look wrong

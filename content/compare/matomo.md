@@ -125,11 +125,11 @@ nothing to tune.
 
 ## The script
 
-Measured with `gzip -9`, Matomo's on September 8, 2026 and ours on November 15, 2026:
+Measured with `gzip -9`, Matomo's on September 8, 2026 and ours on November 27, 2026:
 
 | | Gzipped |
 |---|---:|
-| Feasible | **3,629 bytes** |
+| Feasible | **3,650 bytes** |
 | Matomo (`matomo.js`) | 46,323 bytes |
 
 About thirteen times. Reproduce with
@@ -150,7 +150,7 @@ have to live somewhere. It's still 46 KB on every page load.
 | Goals | Unlimited | 150 |
 | Custom dimensions | Custom properties, unlimited | 30 |
 | Data location | Montreal, Canada | Europe |
-| Tracking script (gzipped) | 3,629 bytes | 46,323 bytes |
+| Tracking script (gzipped) | 3,650 bytes | 46,323 bytes |
 | Cookies on visitors | None | Yes by default, can be disabled |
 | Funnels | Yes, in the plan | Yes (in Cloud; a paid bundle on-premise) |
 | Heatmaps | **No** | Yes (in Cloud; a paid bundle on-premise) |
